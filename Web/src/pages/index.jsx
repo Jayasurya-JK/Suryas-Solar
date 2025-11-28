@@ -5,26 +5,28 @@ import StatsStrip from '../components/StatsStrip'
 import BookingForm from '../components/BookingForm'
 import TimelineSteps from '../components/TimelineSteps'
 import Partners from '../components/Partners'
+import WhyChoose from '../components/WhyChoose'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
+import { getHomeContent, getSiteSettings } from '../lib/content'
 
-export default function Home() {
+export default function Home({ content, settings }) {
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Surya's Solar",
-    "description": "Cuddalore's most trusted solar company. Expert residential and commercial solar installation with government subsidy assistance.",
+    "name": settings.siteTitle || "Surya's Solar",
+    "description": settings.siteDescription || "Cuddalore's most trusted solar company",
     "image": "https://suryassolar.com/images/og-home.jpg",
     "logo": "https://suryassolar.com/images/logo.png",
     "url": "https://suryassolar.com",
-    "telephone": "+919876543210",
-    "email": "info@suryassolar.com",
+    "telephone": settings.phone || "+919876543210",
+    "email": settings.email || "info@suryassolar.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Main Street",
-      "addressLocality": "Cuddalore",
-      "addressRegion": "Tamil Nadu",
-      "postalCode": "607001",
+      "streetAddress": settings.address || "123 Main Street",
+      "addressLocality": settings.city || "Cuddalore",
+      "addressRegion": settings.state || "Tamil Nadu",
+      "postalCode": settings.pincode || "607001",
       "addressCountry": "IN"
     },
     "geo": {
@@ -48,9 +50,9 @@ export default function Home() {
       }
     ],
     "sameAs": [
-      "https://facebook.com/suryassolar",
-      "https://instagram.com/suryassolar",
-      "https://linkedin.com/company/suryassolar"
+      settings.facebook || "https://facebook.com/suryassolar",
+      settings.instagram || "https://instagram.com/suryassolar",
+      settings.linkedin || "https://linkedin.com/company/suryassolar"
     ],
     "priceRange": "₹₹",
     "areaServed": {
@@ -72,9 +74,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Surya's Solar - Cuddalore's #1 Trusted Solar Company | Residential Solar Experts</title>
-        <meta name="description" content="Leading residential solar installation in Cuddalore. Expert 24-hour installation, 25-year warranty, government subsidy assistance. Book your free home visit today!" />
-        <meta name="keywords" content="solar panel Cuddalore, residential solar, rooftop solar Cuddalore, solar installation, solar subsidy, Cuddalore solar company" />
+        <title>{settings.siteTitle || "Surya's Solar - Cuddalore's #1 Trusted Solar Company"}</title>
+        <meta name="description" content={settings.siteDescription || "Leading residential solar installation in Cuddalore"} />
+        <meta name="keywords" content={settings.siteKeywords || "solar panel Cuddalore, residential solar, rooftop solar"} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://suryassolar.com" />
@@ -82,18 +84,18 @@ export default function Home() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://suryassolar.com" />
-        <meta property="og:title" content="Surya's Solar - Cuddalore's #1 Trusted Solar Company" />
-        <meta property="og:description" content="Power your home with clean solar energy. 50+ happy homes, 100kW+ installations, 25-year warranty. Book free home visit!" />
-        <meta property="og:image" content="https://suryassolar.com/images/og-home.jpg" />
+        <meta property="og:title" content={settings.siteTitle || "Surya's Solar"} />
+        <meta property="og:description" content={settings.siteDescription || "Power your home with clean solar energy"} />
+        <meta property="og:image" content={settings.ogImage || "https://suryassolar.com/images/og-home.jpg"} />
         <meta property="og:locale" content="en_IN" />
         <meta property="og:site_name" content="Surya's Solar" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://suryassolar.com" />
-        <meta property="twitter:title" content="Surya's Solar - Cuddalore's #1 Trusted Solar Company" />
-        <meta property="twitter:description" content="Power your home with clean solar energy. 50+ happy homes, 100kW+ installations, 25-year warranty." />
-        <meta property="twitter:image" content="https://suryassolar.com/images/og-home.jpg" />
+        <meta property="twitter:title" content={settings.siteTitle || "Surya's Solar"} />
+        <meta property="twitter:description" content={settings.siteDescription || "Power your home with clean solar energy"} />
+        <meta property="twitter:image" content={settings.ogImage || "https://suryassolar.com/images/og-home.jpg"} />
 
         {/* Additional SEO */}
         <meta name="robots" content="index, follow" />
@@ -114,16 +116,30 @@ export default function Home() {
         />
       </Head>
 
-      <Header />
+      <Header settings={settings} />
       <main>
-        <HeroCarousel />
-        <StatsStrip />
+        <HeroCarousel slides={content.heroSlides} />
+        <StatsStrip stats={content.stats} />
         <BookingForm />
-        <TimelineSteps />
-        <Partners />
-        <Testimonials />
+        <TimelineSteps steps={content.timelineSteps} />
+        <Partners partners={content.partners} />
+        <WhyChoose />
+        <Testimonials testimonials={content.testimonials} />
       </main>
-      <Footer />
+      <Footer settings={settings} />
     </>
   )
+}
+
+// Load CMS content at build time
+export async function getStaticProps() {
+  const content = getHomeContent()
+  const settings = getSiteSettings()
+
+  return {
+    props: {
+      content,
+      settings
+    }
+  }
 }
