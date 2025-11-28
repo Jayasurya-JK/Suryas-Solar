@@ -1,0 +1,107 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "content/pages/home.md"
+        fields:
+          - label: "Hero Slides"
+            name: "heroSlides"
+            widget: "list"
+            summary: "{{fields.headline}}"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Subhead", name: "subhead", widget: "string" }
+              - { label: "Hero Image", name: "image", widget: "image" }
+              - label: "Primary CTA"
+                name: "primaryCTA"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string", default: "Book Free Home Visit" }
+                  - { label: "Link", name: "href", widget: "string", default: "#booking" }
+              - label: "Secondary CTA"
+                name: "secondaryCTA"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string", default: "Get a Quote" }
+                  - { label: "Link", name: "href", widget: "string", default: "#contact" }
+          
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            summary: "{{fields.value}} - {{fields.label}}"
+            fields:
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Icon Name", name: "icon", widget: "string", hint: "bolt, home, shield" }
+          
+          - label: "Timeline Steps"
+            name: "timelineSteps"
+            widget: "list"
+            summary: "Step {{fields.stepNumber}}: {{fields.title}}"
+            fields:
+              - { label: "Step Number", name: "stepNumber", widget: "number", min: 1, max: 10 }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Icon Name", name: "icon", widget: "string" }
+          
+          - label: "Partners"
+            name: "partners"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Logo", name: "logo", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
+          
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            summary: "{{fields.name}} - {{fields.location}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number", min: 1, max: 5, default: 5 }
+              - { label: "Testimonial", name: "text", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Surya's Solar Team" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["solar"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "SEO Title", name: "seoTitle", widget: "string", required: false }
+      - { label: "SEO Description", name: "seoDescription", widget: "text", required: false }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "content/settings/general.md"
+        fields:
+          - { label: "Site Title", name: "siteTitle", widget: "string" }
+          - { label: "Site Description", name: "siteDescription", widget: "text" }
+          - { label: "Contact Phone", name: "phone", widget: "string" }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
+          - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+          - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+          - { label: "WhatsApp Number", name: "whatsapp", widget: "string", required: false }
