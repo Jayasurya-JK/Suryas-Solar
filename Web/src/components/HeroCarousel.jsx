@@ -79,7 +79,7 @@ export default function HeroCarousel() {
   }
 
   return (
-    <section 
+    <section
       id="home"
       className="relative h-screen min-h-[600px] overflow-hidden pt-16"
       onMouseEnter={() => setIsPaused(true)}
@@ -89,11 +89,11 @@ export default function HeroCarousel() {
       onTouchEnd={handleTouchEnd}
     >
       {/* Screen reader announcement */}
-      <div 
+      <div
         ref={announceRef}
-        className="sr-only" 
-        role="status" 
-        aria-live="polite" 
+        className="sr-only"
+        role="status"
+        aria-live="polite"
         aria-atomic="true"
       />
 
@@ -101,9 +101,8 @@ export default function HeroCarousel() {
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+            }`}
         >
           {/* Background Image */}
           <div className="absolute inset-0">
@@ -117,7 +116,7 @@ export default function HeroCarousel() {
           </div>
 
           {/* Content */}
-          <div className="relative h-full flex items-center">
+          <div className="relative h-full flex items-start md:items-center pt-24 md:pt-0">
             <div className="container-custom">
               <div className="max-w-3xl">
                 {index === 0 ? (
@@ -133,14 +132,14 @@ export default function HeroCarousel() {
                   {slide.subhead}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
-                  <a 
-                    href={slide.primaryCTA.href} 
+                  <a
+                    href={slide.primaryCTA.href}
                     className="btn-primary text-center inline-block"
                   >
                     {slide.primaryCTA.text}
                   </a>
-                  <a 
-                    href={slide.secondaryCTA.href} 
+                  <a
+                    href={slide.secondaryCTA.href}
                     className="btn-secondary text-center inline-block"
                   >
                     {slide.secondaryCTA.text}
@@ -162,11 +161,10 @@ export default function HeroCarousel() {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentSlide 
-                      ? 'bg-white w-8' 
+                  className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
+                      ? 'bg-white w-8'
                       : 'bg-white/50 hover:bg-white/75'
-                  }`}
+                    }`}
                   aria-label={`Go to slide ${index + 1}`}
                   aria-current={index === currentSlide}
                 />

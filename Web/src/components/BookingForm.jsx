@@ -54,7 +54,7 @@ export default function BookingForm() {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }))
-    
+
     // Clear error for this field
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }))
@@ -63,7 +63,7 @@ export default function BookingForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
+
     if (!validateForm()) {
       return
     }
@@ -116,10 +116,11 @@ export default function BookingForm() {
       <div className="container-custom">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-800 mb-6 relative inline-block">
               Book Your Free Home Visit
+              <div className="absolute -bottom-2 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full transform scale-x-75"></div>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
               Get a personalized solar assessment and quote. Our experts will visit your home at your convenience.
             </p>
           </div>
@@ -143,7 +144,7 @@ export default function BookingForm() {
 
             {/* Right: Form */}
             <div className="card">
-              <form 
+              <form
                 onSubmit={handleSubmit}
                 name="booking"
                 method="POST"
@@ -171,9 +172,8 @@ export default function BookingForm() {
                       value={formData.name}
                       onChange={handleChange}
                       autoComplete="name"
-                      className={`w-full px-4 py-3 rounded-lg border ${
-                        errors.name ? 'border-red-500' : 'border-gray-300'
-                      } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.name ? 'border-red-500' : 'border-gray-300'
+                        } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
                       placeholder="Enter your full name"
                     />
                     {errors.name && (
@@ -193,9 +193,8 @@ export default function BookingForm() {
                       value={formData.mobile}
                       onChange={handleChange}
                       autoComplete="tel"
-                      className={`w-full px-4 py-3 rounded-lg border ${
-                        errors.mobile ? 'border-red-500' : 'border-gray-300'
-                      } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.mobile ? 'border-red-500' : 'border-gray-300'
+                        } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
                       placeholder="10-digit mobile number"
                       maxLength="10"
                     />
@@ -216,9 +215,8 @@ export default function BookingForm() {
                       value={formData.email}
                       onChange={handleChange}
                       autoComplete="email"
-                      className={`w-full px-4 py-3 rounded-lg border ${
-                        errors.email ? 'border-red-500' : 'border-gray-300'
-                      } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.email ? 'border-red-500' : 'border-gray-300'
+                        } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
                       placeholder="your.email@example.com"
                     />
                     {errors.email && (
@@ -238,9 +236,8 @@ export default function BookingForm() {
                       value={formData.pincode}
                       onChange={handleChange}
                       autoComplete="postal-code"
-                      className={`w-full px-4 py-3 rounded-lg border ${
-                        errors.pincode ? 'border-red-500' : 'border-gray-300'
-                      } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.pincode ? 'border-red-500' : 'border-gray-300'
+                        } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
                       placeholder="6-digit pincode"
                       maxLength="6"
                     />
@@ -299,11 +296,10 @@ export default function BookingForm() {
                       ].map((option) => (
                         <label
                           key={option.value}
-                          className={`flex-1 min-w-[140px] px-4 py-3 rounded-lg border-2 cursor-pointer transition-all text-center ${
-                            formData.electricityBill === option.value
+                          className={`flex-1 min-w-[140px] px-4 py-3 rounded-lg border-2 cursor-pointer transition-all text-center ${formData.electricityBill === option.value
                               ? 'border-primary bg-primary/5 text-primary font-medium'
                               : 'border-gray-200 hover:border-gray-300'
-                          }`}
+                            }`}
                         >
                           <input
                             type="radio"
@@ -343,9 +339,8 @@ export default function BookingForm() {
                         name="consent"
                         checked={formData.consent}
                         onChange={handleChange}
-                        className={`mt-1 w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary ${
-                          errors.consent ? 'border-red-500' : ''
-                        }`}
+                        className={`mt-1 w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary ${errors.consent ? 'border-red-500' : ''
+                          }`}
                       />
                       <span className="text-sm text-gray-600">
                         I agree to be contacted by Surya's Solar regarding my inquiry <span className="text-red-500">*</span>
