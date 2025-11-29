@@ -15,6 +15,7 @@ export default function Header() {
   const menuItems = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/#services' },
+    { name: 'Calculator', href: '/calc' },
     { name: 'About Us', href: '/#about' },
     { name: 'Contact Us', href: '/#contact' },
     { name: 'Blogs', href: '/blog' },
@@ -30,7 +31,7 @@ export default function Header() {
         <div className="container-custom">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" className="flex items-center space-x-2">
+            <a href="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">SS</span>
               </div>
@@ -51,7 +52,7 @@ export default function Header() {
                   {item.name}
                 </a>
               ))}
-              <a href="#booking" className="btn-primary">
+              <a href="/#booking" className="btn-primary">
                 Book Free Home Visit
               </a>
             </nav>
@@ -97,7 +98,7 @@ export default function Header() {
                   </a>
                 ))}
                 <a 
-                  href="#booking" 
+                  href="/#booking" 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="btn-primary text-center mt-4"
                 >

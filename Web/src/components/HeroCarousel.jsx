@@ -7,7 +7,7 @@ const slides = [
     headline: "Cuddalore's Most Trusted Residential Solar Experts",
     subhead: 'Power your home with clean, reliable solar energy. Save up to 90% on electricity bills.',
     primaryCTA: { text: 'Book Free Home Visit', href: '#booking' },
-    secondaryCTA: { text: 'Get a Quote', href: '#contact' },
+    secondaryCTA: { text: 'Get a Quote', href: '#booking' },
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const slides = [
     headline: 'Leading Rooftop Solar for Cuddalore Homes',
     subhead: 'Expert installation in 24 hours. Government subsidy assistance included.',
     primaryCTA: { text: 'Book Free Home Visit', href: '#booking' },
-    secondaryCTA: { text: 'Get a Quote', href: '#contact' },
+    secondaryCTA: { text: 'Get a Quote', href: '#booking' },
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const slides = [
     headline: 'Trusted by Cuddalore Families for Clean, Reliable Solar',
     subhead: '25-year warranty. 50+ happy homes powered by the sun.',
     primaryCTA: { text: 'Book Free Home Visit', href: '#booking' },
-    secondaryCTA: { text: 'Get a Quote', href: '#contact' },
+    secondaryCTA: { text: 'Get a Quote', href: '#booking' },
   },
 ]
 

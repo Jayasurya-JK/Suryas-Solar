@@ -5,6 +5,7 @@ import StatsStrip from '../components/StatsStrip'
 import BookingForm from '../components/BookingForm'
 import TimelineSteps from '../components/TimelineSteps'
 import Partners from '../components/Partners'
+import SolarCalculator from '../components/SolarCalculator'
 import WhyChoose from '../components/WhyChoose'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
@@ -124,6 +125,7 @@ export default function Home({ content, settings }) {
         <BookingForm />
         <TimelineSteps steps={content.timelineSteps} />
         <Partners partners={content.partners} />
+        <SolarCalculator />
         <WhyChoose />
         <Testimonials testimonials={content.testimonials} />
       </main>

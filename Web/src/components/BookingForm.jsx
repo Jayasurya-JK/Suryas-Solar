@@ -93,7 +93,7 @@ export default function BookingForm() {
   }
 
   return (
-    <section id="booking" className="py-16 md:py-24 bg-gray-50">
+    <section id="booking" className="py-10 md:py-14 bg-gray-50">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
