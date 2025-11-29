@@ -8,6 +8,7 @@ import Partners from '../components/Partners'
 import WhyChoose from '../components/WhyChoose'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
+import WhatsAppFloat from '../components/WhatsAppFloat'
 import { getHomeContent, getSiteSettings } from '../lib/content'
 
 export default function Home({ content, settings }) {
@@ -127,6 +128,12 @@ export default function Home({ content, settings }) {
         <Testimonials testimonials={content.testimonials} />
       </main>
       <Footer settings={settings} />
+      
+      {/* WhatsApp Floating Button */}
+      <WhatsAppFloat 
+        phoneNumber={settings.whatsapp || "919876543210"} 
+        message="Hi! I'm interested in solar installation for my home."
+      />
     </>
   )
 }

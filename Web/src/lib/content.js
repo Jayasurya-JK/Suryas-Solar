@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { marked } from 'marked'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
@@ -91,10 +92,13 @@ export function getBlogPost(slug) {
     const fileContents = fs.readFileSync(filePath, 'utf8')
     const { data, content } = matter(fileContents)
     
+    // Convert markdown to HTML
+    const htmlContent = marked(content)
+    
     return {
       slug,
       ...data,
-      content
+      content: htmlContent
     }
   } catch (error) {
     console.error(`Error loading blog post ${slug}:`, error)

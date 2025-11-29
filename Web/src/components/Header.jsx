@@ -13,11 +13,11 @@ export default function Header() {
   }, [])
 
   const menuItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact Us', href: '#contact' },
-    { name: 'Blogs', href: '#blogs' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/#services' },
+    { name: 'About Us', href: '/#about' },
+    { name: 'Contact Us', href: '/#contact' },
+    { name: 'Blogs', href: '/blog' },
   ]
 
   return (
@@ -108,13 +108,6 @@ export default function Header() {
           </div>
         </div>
       )}
-
-      {/* Mobile Sticky CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white border-t border-gray-200 shadow-lg p-3">
-        <a href="#booking" className="btn-primary block text-center w-full">
-          Book Free Home Visit
-        </a>
-      </div>
     </>
   )
 }

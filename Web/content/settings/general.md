@@ -7,5 +7,5 @@ address: "123 Main Street, Cuddalore, Tamil Nadu 607001"
 facebook: "https://facebook.com/suryassolar"
 instagram: "https://instagram.com/suryassolar"
 linkedin: "https://linkedin.com/company/suryassolar"
-whatsapp: "https://wa.me/919876543210"
+whatsapp: "https://wa.me/917904369094"
 ---
