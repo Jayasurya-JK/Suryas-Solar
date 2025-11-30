@@ -111,6 +111,7 @@ export default function HeroCarousel() {
                 alt=""
                 className="w-full h-full object-cover object-top"
                 loading={index === 0 ? 'eager' : 'lazy'}
+                fetchpriority={index === 0 ? 'high' : 'auto'}
               />
             </picture>
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:bg-gradient-to-r md:from-black/70 md:via-black/50 md:to-transparent" />
