@@ -4,10 +4,16 @@ import Footer from '../../components/Footer'
 import WhatsAppFloat from '../../components/WhatsAppFloat'
 import Link from 'next/link'
 import Image from 'next/image'
+import Head from 'next/head'
 
 export default function BlogIndex({ posts, settings }) {
   return (
     <>
+      <Head>
+        <title>Solar Energy Blog | Surya's Solar</title>
+        <meta name="description" content="Latest insights, tips, and updates about solar energy in Cuddalore and beyond." />
+        <link rel="icon" href="/images/Surya solar Logo.png" />
+      </Head>
       <Header settings={settings} />
       
       <main className="pt-24 pb-16 bg-gray-50 min-h-screen">

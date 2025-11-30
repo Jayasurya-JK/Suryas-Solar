@@ -9,6 +9,7 @@ export default function TermsConditions() {
             <Head>
                 <title>Terms & Conditions - Surya's Solar</title>
                 <meta name="description" content="Terms and Conditions for Surya's Solar. Please read these terms carefully before using our services." />
+                <link rel="icon" href="/images/Surya solar Logo.png" />
             </Head>
 
             <Header />

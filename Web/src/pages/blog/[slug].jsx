@@ -4,10 +4,16 @@ import Footer from '../../components/Footer'
 import WhatsAppFloat from '../../components/WhatsAppFloat'
 import Link from 'next/link'
 import Image from 'next/image'
+import Head from 'next/head'
 
 export default function BlogPost({ post, settings }) {
   return (
     <>
+      <Head>
+        <title>{post.title} | Surya's Solar</title>
+        <meta name="description" content={post.excerpt || `Read about ${post.title}`} />
+        <link rel="icon" href="/images/Surya solar Logo.png" />
+      </Head>
       <Header settings={settings} />
       
       <article className="py-16 bg-white">

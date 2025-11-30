@@ -1,5 +1,5 @@
 ---
-siteTitle: "Surya's Solar - Cuddalore's #1 Solar Company"
+siteTitle: "Surya's Solar - Cuddalore’s trusted residential solar expert"
 siteDescription: "Leading residential solar installation in Cuddalore. Expert 24-hour installation, 25-year warranty, government subsidy assistance."
 phone: "+917904369094"
 email: "suryassolarenergy@gmail.com"
