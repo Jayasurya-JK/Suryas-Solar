@@ -49,6 +49,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        playfair: ['"Playfair Display"', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',

@@ -26,6 +26,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/router';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -48,6 +49,25 @@ ChartJS.register(
   Legend
 );
 
+// ==================== HELPER FUNCTIONS ====================
+
+/**
+ * Format numbers with Indian numbering system (lakhs, crores) using regular commas
+ * Replaces toLocaleString('en-IN') to avoid thin spaces that cause display issues
+ */
+const formatIndianNumber = (num) => {
+  if (num === null || num === undefined || isNaN(num)) return '0';
+  
+  const numStr = Math.round(num).toString();
+  const lastThree = numStr.substring(numStr.length - 3);
+  const otherNumbers = numStr.substring(0, numStr.length - 3);
+  
+  if (otherNumbers !== '') {
+    return otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + lastThree;
+  }
+  return lastThree;
+};
+
 // ==================== CONSTANTS ====================
 // These can be easily adjusted for different markets or assumptions
 
@@ -61,6 +81,7 @@ const INPUT_MIN = 2000;                    // Minimum bi-monthly bill (₹2000 =
 const INPUT_MAX = 30000;                    // Maximum bi-monthly bill (₹)
 
 export default function SolarCalculator({ showBreakdown = false }) {
+  const router = useRouter();
   // ==================== STATE ====================
   const [biMonthlyBill, setBiMonthlyBill] = useState('5000');
   const [calculatedData, setCalculatedData] = useState(null);
@@ -74,7 +95,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
 
     // Validate input range
     if (isNaN(bill) || bill < 0 || bill > INPUT_MAX) {
-      setValidationError(`Please enter a value between ₹${INPUT_MIN.toLocaleString('en-IN')} and ₹${INPUT_MAX.toLocaleString('en-IN')}`);
+      setValidationError(`Please enter a value between ₹${formatIndianNumber(INPUT_MIN)} and ₹${formatIndianNumber(INPUT_MAX)}`);
       setCalculatedData(null);
       setIsCalculated(false);
       return;
@@ -96,7 +117,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
       });
       setIsCalculated(true);
       if (bill > 0 && bill < INPUT_MIN) {
-        setValidationError(`Minimum bill amount is ₹${INPUT_MIN.toLocaleString('en-IN')} (approx. 2.5 kW system). We specialize in 3 kW and above installations.`);
+        setValidationError(`Minimum bill amount is ₹${formatIndianNumber(INPUT_MIN)} (approx. 2.5 kW system). We specialize in 3 kW and above installations.`);
       }
       return;
     }
@@ -143,6 +164,17 @@ export default function SolarCalculator({ showBreakdown = false }) {
     });
     setIsCalculated(true);
   }, []);
+
+  // ==================== INITIALIZATION FROM URL ====================
+  useEffect(() => {
+    if (router.isReady && router.query.bill) {
+      const billParam = router.query.bill;
+      if (!isNaN(parseFloat(billParam))) {
+        setBiMonthlyBill(billParam);
+        calculateSavings(billParam);
+      }
+    }
+  }, [router.isReady, router.query.bill, calculateSavings]);
 
   // ==================== INPUT HANDLER WITH DEBOUNCE ====================
   useEffect(() => {
@@ -216,7 +248,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
         cornerRadius: 8,
         callbacks: {
           label: function(context) {
-            return `₹${context.parsed.y.toLocaleString('en-IN')}`;
+            return `₹${formatIndianNumber(context.parsed.y)}`;
           },
         },
       },
@@ -228,7 +260,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
         formatter: (value) => {
           // Always show value, even if it's 0
           if (value === 0) return '₹0';
-          return `₹${value.toLocaleString('en-IN')}`;
+          return `₹${formatIndianNumber(value)}`;
         },
         font: {
           weight: '700',
@@ -329,7 +361,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
                       setHasUserInteracted(true);
                       calculateSavings(biMonthlyBill);
                       if (typeof window !== 'undefined' && window.location.pathname !== '/calc') {
-                        window.location.href = '/calc';
+                        window.location.href = `/calc?bill=${biMonthlyBill}`;
                       }
                     }
                   }}
@@ -346,7 +378,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
                   setHasUserInteracted(true);
                   calculateSavings(biMonthlyBill);
                   if (typeof window !== 'undefined' && window.location.pathname !== '/calc') {
-                    window.location.href = '/calc';
+                    window.location.href = `/calc?bill=${biMonthlyBill}`;
                   }
                 }}
                 className="px-5 sm:px-6 py-3 sm:py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm sm:text-base rounded-xl shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 whitespace-nowrap"
@@ -361,7 +393,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
             )}
             {!validationError && (
               <p id="billHelp" className="text-xs sm:text-sm text-slate-500 mt-3 text-center">
-                Enter amount between ₹{INPUT_MIN.toLocaleString('en-IN')} and ₹{INPUT_MAX.toLocaleString('en-IN')} • We specialize in 3 kW+ systems
+                Enter amount between ₹{formatIndianNumber(INPUT_MIN)} and ₹{formatIndianNumber(INPUT_MAX)} • We specialize in 3 kW+ systems
               </p>
             )}
           </div>
@@ -377,12 +409,16 @@ export default function SolarCalculator({ showBreakdown = false }) {
               aria-live="polite" 
               aria-atomic="true"
             >
-              For ₹{calculatedData.regularBill.toLocaleString('en-IN')} bi-monthly bill, 
+              For ₹{formatIndianNumber(calculatedData.regularBill)} bi-monthly bill, 
               estimated recommended system is {calculatedData.recommendedKw} kilowatt, 
-              annual savings ₹{calculatedData.annualSavings.toLocaleString('en-IN')}, 
+              annual savings ₹{formatIndianNumber(calculatedData.annualSavings)}, 
               estimated payback {calculatedData.paybackYears_internal} years, 
               return on investment {calculatedData.roiPercent_internal} percent per annum.
             </div>
+
+            <p className="text-center text-slate-600 font-medium text-sm sm:text-base">
+              Calculation for your <span className="text-slate-900 font-bold">₹{formatIndianNumber(calculatedData.regularBill)}</span> bi-monthly electricity bill
+            </p>
 
             {/* Top Stats - Annual & Lifetime Savings - Premium Design */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
@@ -392,13 +428,13 @@ export default function SolarCalculator({ showBreakdown = false }) {
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center">
                       <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 8.25H9m6 3H9m3 6l-3-3h1.5a3 3 0 100-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <p className="text-slate-600 text-xs sm:text-sm font-semibold">Annual Savings</p>
                   </div>
                   <p className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-1">
-                    ₹{calculatedData.annualSavings.toLocaleString('en-IN')}
+                    ₹{formatIndianNumber(calculatedData.annualSavings)}
                   </p>
                   <p className="text-slate-500 text-xs">Estimated yearly savings with solar</p>
                 </div>
@@ -416,7 +452,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
                     <p className="text-slate-600 text-xs sm:text-sm font-semibold">Lifetime Savings</p>
                   </div>
                   <p className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-1">
-                    ₹{calculatedData.lifetimeSavings.toLocaleString('en-IN')}
+                    ₹{formatIndianNumber(calculatedData.lifetimeSavings)}
                   </p>
                   <p className="text-slate-500 text-xs">Total savings over 25 years</p>
                 </div>
@@ -497,8 +533,8 @@ export default function SolarCalculator({ showBreakdown = false }) {
                     {/* Accessibility: Offscreen chart summary */}
                     <div className="sr-only">
                       Chart showing bi-monthly bill comparison: 
-                      Regular electricity bill is ₹{calculatedData.regularBill.toLocaleString('en-IN')}, 
-                      with solar it becomes ₹{calculatedData.solarBimonthlyBill.toLocaleString('en-IN')}.
+                      Regular electricity bill is ₹{formatIndianNumber(calculatedData.regularBill)}, 
+                      with solar it becomes ₹{formatIndianNumber(calculatedData.solarBimonthlyBill)}.
                     </div>
                   </div>
                 )}
@@ -508,7 +544,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
                   <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-3 sm:p-4 border border-slate-300">
                     <p className="text-xs sm:text-sm text-slate-600 font-semibold mb-1.5">Regular Bill</p>
                     <p className="text-lg sm:text-xl font-black text-slate-900">
-                      ₹{calculatedData.regularBill.toLocaleString('en-IN')}
+                      ₹{formatIndianNumber(calculatedData.regularBill)}
                     </p>
                     <p className="text-xs text-slate-500 mt-0.5">bi-monthly</p>
                   </div>
@@ -519,7 +555,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
                     </div>
                     <p className="text-xs sm:text-sm text-emerald-700 font-semibold mb-1.5">With Solar</p>
                     <p className="text-lg sm:text-xl font-black text-emerald-900">
-                      ₹{calculatedData.solarBimonthlyBill.toLocaleString('en-IN')}
+                      ₹{formatIndianNumber(calculatedData.solarBimonthlyBill)}
                     </p>
                     <p className="text-xs text-emerald-600 mt-0.5">bi-monthly</p>
                   </div>
@@ -536,22 +572,6 @@ export default function SolarCalculator({ showBreakdown = false }) {
                 <span>
                   <strong>Note:</strong> Calculations are based on current electricity tariff of ₹7.8/unit and average Tamil Nadu sunlight conditions. Actual system cost and detailed pricing will be provided during your free consultation based on your specific requirements.
                 </span>
-              </p>
-            </div>
-
-            {/* CTA Button */}
-            <div className="text-center pt-5 sm:pt-6">
-              <a
-                href="/#booking"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 transition-all duration-200"
-              >
-                <span>Book Free Consultation Now!</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </a>
-              <p className="text-slate-600 mt-3 text-xs sm:text-sm">
-                Free site assessment • Expert consultation • Customized quote
               </p>
             </div>
 
@@ -573,9 +593,9 @@ export default function SolarCalculator({ showBreakdown = false }) {
                     <div className="flex-1">
                       <p className="font-semibold text-slate-900 text-sm mb-1">Your Current Electricity Usage</p>
                       <p className="text-xs sm:text-sm text-slate-600">
-                        Bi-monthly bill: <span className="font-semibold text-slate-900">₹{calculatedData.regularBill.toLocaleString('en-IN')}</span>
+                        Bi-monthly bill: <span className="font-semibold text-slate-900">₹{formatIndianNumber(calculatedData.regularBill)}</span>
                         <br />
-                        Annual bill: <span className="font-semibold text-slate-900">₹{calculatedData.regularBill.toLocaleString('en-IN')} × 6 = ₹{calculatedData.annualBill.toLocaleString('en-IN')}</span>
+                        Annual bill: <span className="font-semibold text-slate-900">₹{formatIndianNumber(calculatedData.regularBill)} × 6 = ₹{formatIndianNumber(calculatedData.annualBill)}</span>
                       </p>
                     </div>
                   </div>
@@ -588,7 +608,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
                     <div className="flex-1">
                       <p className="font-semibold text-slate-900 text-sm mb-1">Energy Consumption Calculation</p>
                       <p className="text-xs sm:text-sm text-slate-600">
-                        Annual usage: <span className="font-semibold text-slate-900">₹{calculatedData.annualBill.toLocaleString('en-IN')} ÷ ₹7.8/unit = {Math.round(calculatedData.annualBill / TARIFF).toLocaleString('en-IN')} units/year</span>
+                        Annual usage: <span className="font-semibold text-slate-900">₹{formatIndianNumber(calculatedData.annualBill)} ÷ ₹7.8/unit = {formatIndianNumber(Math.round(calculatedData.annualBill / TARIFF))} units/year</span>
                       </p>
                     </div>
                   </div>
@@ -616,11 +636,11 @@ export default function SolarCalculator({ showBreakdown = false }) {
                     <div className="flex-1">
                       <p className="font-semibold text-slate-900 text-sm mb-1">Your Savings with Solar</p>
                       <p className="text-xs sm:text-sm text-slate-600">
-                        Annual savings: <span className="font-semibold text-emerald-600">₹{calculatedData.annualSavings.toLocaleString('en-IN')}/year</span>
+                        Annual savings: <span className="font-semibold text-emerald-600">₹{formatIndianNumber(calculatedData.annualSavings)}/year</span>
                         <br />
-                        25-year savings: <span className="font-semibold text-emerald-600">₹{calculatedData.lifetimeSavings.toLocaleString('en-IN')}</span>
+                        25-year savings: <span className="font-semibold text-emerald-600">₹{formatIndianNumber(calculatedData.lifetimeSavings)}</span>
                         <br />
-                        <span className="text-xs text-slate-500">Solar reduces your bill by 95% - You only pay ₹{calculatedData.solarBimonthlyBill.toLocaleString('en-IN')} bi-monthly!</span>
+                        <span className="text-xs text-slate-500">Solar reduces your bill by 95% - You only pay ₹{formatIndianNumber(calculatedData.solarBimonthlyBill)} bi-monthly!</span>
                       </p>
                     </div>
                   </div>

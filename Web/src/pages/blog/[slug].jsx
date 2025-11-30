@@ -104,7 +104,7 @@ export default function BlogPost({ post, settings }) {
       
       {/* WhatsApp Floating Button */}
       <WhatsAppFloat 
-        phoneNumber={settings.whatsapp || "919876543210"} 
+        phoneNumber={settings.whatsapp || "917904369094"} 
         message="Hi! I read your blog and want to know more about solar installation."
       />
     </>

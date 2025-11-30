@@ -108,17 +108,17 @@ export default function BookingForm() {
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Left: Image */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-64 md:h-auto">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-64 md:h-[520px]">
               <img
-                src="/images/default-installation.jpg"
+                src="/images/Form%20Picture.png"
                 alt="Professional solar panel installation on residential rooftop"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 md:p-8">
                 <div className="text-white">
-                  <h3 className="text-2xl font-bold mb-2">Expert Installation</h3>
-                  <p className="text-white/90">Completed in just 24 hours with premium quality panels</p>
+                  <h3 className="text-lg md:text-2xl font-bold mb-1 md:mb-2">Personalized Solar Plans & Clear Paperwork</h3>
+                  <p className="text-sm md:text-base text-white/90">Get a tailored quotation and seamless, high-quality installation from our expert team.</p>
                 </div>
               </div>
             </div>
@@ -140,7 +140,7 @@ export default function BookingForm() {
                   </label>
                 </p>
 
-                <div className="space-y-5">
+                <div className="space-y-4">
                   {/* Name */}
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -153,7 +153,7 @@ export default function BookingForm() {
                       value={formData.name}
                       onChange={handleChange}
                       autoComplete="name"
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.name ? 'border-red-500' : 'border-gray-300'
+                      className={`w-full px-4 py-2.5 rounded-lg border ${errors.name ? 'border-red-500' : 'border-gray-300'
                         } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
                       placeholder="Enter your name"
                     />
@@ -174,7 +174,7 @@ export default function BookingForm() {
                       value={formData.mobile}
                       onChange={handleChange}
                       autoComplete="tel"
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.mobile ? 'border-red-500' : 'border-gray-300'
+                      className={`w-full px-4 py-2.5 rounded-lg border ${errors.mobile ? 'border-red-500' : 'border-gray-300'
                         } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
                       placeholder="Enter your mobile number"
                       maxLength="10"
@@ -196,7 +196,7 @@ export default function BookingForm() {
                       value={formData.pincode}
                       onChange={handleChange}
                       autoComplete="postal-code"
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.pincode ? 'border-red-500' : 'border-gray-300'
+                      className={`w-full px-4 py-2.5 rounded-lg border ${errors.pincode ? 'border-red-500' : 'border-gray-300'
                         } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
                       placeholder="Enter your pin code"
                       maxLength="6"
@@ -208,7 +208,7 @@ export default function BookingForm() {
 
                   {/* Electricity Bill */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-3">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       What is your Monthly Electricity Bill? <span className="text-red-500">*</span>
                     </label>
                     <div className="flex flex-col sm:flex-row gap-3">
@@ -219,9 +219,9 @@ export default function BookingForm() {
                       ].map((option) => (
                         <label
                           key={option.value}
-                          className={`flex-1 px-4 py-3 rounded-lg border-2 cursor-pointer transition-all text-center ${formData.electricityBill === option.value
-                              ? 'border-primary bg-primary/5 text-primary font-medium'
-                              : 'border-gray-200 hover:border-gray-300'
+                          className={`flex-1 px-4 py-2.5 rounded-lg border-2 cursor-pointer transition-all text-center ${formData.electricityBill === option.value
+                            ? 'border-primary bg-primary/5 text-primary font-medium'
+                            : 'border-gray-200 hover:border-gray-300'
                             }`}
                         >
                           <input

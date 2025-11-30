@@ -91,7 +91,7 @@ export default function BlogIndex({ posts, settings }) {
       
       {/* WhatsApp Floating Button */}
       <WhatsAppFloat 
-        phoneNumber={settings.whatsapp || "919876543210"} 
+        phoneNumber={settings.whatsapp || "917904369094"} 
         message="Hi! I have a question about your blog."
       />
     </>

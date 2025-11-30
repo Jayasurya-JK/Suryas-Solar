@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
 import Header from '../components/Header'
 import HeroCarousel from '../components/HeroCarousel'
 import StatsStrip from '../components/StatsStrip'
@@ -7,12 +8,21 @@ import TimelineSteps from '../components/TimelineSteps'
 import Partners from '../components/Partners'
 import SolarCalculator from '../components/SolarCalculator'
 import WhyChoose from '../components/WhyChoose'
+import OurWorks from '../components/OurWorks'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
 import WhatsAppFloat from '../components/WhatsAppFloat'
 import { getHomeContent, getSiteSettings } from '../lib/content'
 
 export default function Home({ content, settings }) {
+  useEffect(() => {
+    // If there's a hash in the URL (like #booking), scroll to top initially
+    // This prevents the page from jumping down on reload/initial visit
+    if (window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -21,14 +31,14 @@ export default function Home({ content, settings }) {
     "image": "https://suryassolar.com/images/og-home.jpg",
     "logo": "https://suryassolar.com/images/logo.png",
     "url": "https://suryassolar.com",
-    "telephone": settings.phone || "+919876543210",
-    "email": settings.email || "info@suryassolar.com",
+    "telephone": settings.phone || "+917904369094",
+    "email": settings.email || "suryassolarenergy@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": settings.address || "123 Main Street",
+      "streetAddress": settings.address || "No.33, Nellikuppam Main Rd, Kondur",
       "addressLocality": settings.city || "Cuddalore",
       "addressRegion": settings.state || "Tamil Nadu",
-      "postalCode": settings.pincode || "607001",
+      "postalCode": settings.pincode || "607002",
       "addressCountry": "IN"
     },
     "geo": {
@@ -76,13 +86,13 @@ export default function Home({ content, settings }) {
   return (
     <>
       <Head>
-        <title>{settings.siteTitle || "Surya's Solar - Cuddalore's #1 Trusted Solar Company"}</title>
+        <title>{settings.siteTitle || "Surya's Solar - Cuddalore’s trusted residential solar expert"}</title>
         <meta name="description" content={settings.siteDescription || "Leading residential solar installation in Cuddalore"} />
         <meta name="keywords" content={settings.siteKeywords || "solar panel Cuddalore, residential solar, rooftop solar"} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://suryassolar.com" />
-        
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://suryassolar.com" />
@@ -122,18 +132,23 @@ export default function Home({ content, settings }) {
       <main>
         <HeroCarousel slides={content.heroSlides} />
         <StatsStrip stats={content.stats} />
-        <BookingForm />
+        <section id="booking">
+          <BookingForm />
+        </section>
         <TimelineSteps steps={content.timelineSteps} />
         <Partners partners={content.partners} />
         <SolarCalculator />
         <WhyChoose />
+        <OurWorks />
         <Testimonials testimonials={content.testimonials} />
       </main>
-      <Footer settings={settings} />
-      
+      <section id="contact">
+        <Footer settings={settings} />
+      </section>
+
       {/* WhatsApp Floating Button */}
-      <WhatsAppFloat 
-        phoneNumber={settings.whatsapp || "919876543210"} 
+      <WhatsAppFloat
+        phoneNumber={settings.whatsapp || "917904369094"}
         message="Hi! I'm interested in solar installation for my home."
       />
     </>

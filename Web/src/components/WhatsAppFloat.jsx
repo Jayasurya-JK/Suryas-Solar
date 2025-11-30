@@ -1,4 +1,4 @@
-export default function WhatsAppFloat({ phoneNumber = "919876543210", message = "Hi! I'm interested in solar installation for my home." }) {
+export default function WhatsAppFloat({ phoneNumber = "917904369094", message = "Hi! I'm interested in solar installation for my home." }) {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
   const scrollToBooking = (e) => {

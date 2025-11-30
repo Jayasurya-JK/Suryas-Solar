@@ -3,7 +3,8 @@ import { useState, useEffect, useRef } from 'react'
 const slides = [
   {
     id: 1,
-    image: '/images/hero-slide-1.jpg',
+    imageDesktop: '/images/Banner_1_desktop.png',
+    imageMobile: '/images/Banner_1_mobile.png',
     headline: "Cuddalore's Most Trusted Residential Solar Experts",
     subhead: 'Power your home with clean, reliable solar energy. Save up to 90% on electricity bills.',
     primaryCTA: { text: 'Book Free Home Visit', href: '#booking' },
@@ -11,15 +12,17 @@ const slides = [
   },
   {
     id: 2,
-    image: '/images/hero-slide-2.jpg',
-    headline: 'Leading Rooftop Solar for Cuddalore Homes',
-    subhead: 'Expert installation in 24 hours. Government subsidy assistance included.',
+    imageDesktop: '/images/Banner_3_desktop.png',
+    imageMobile: '/images/Banner_3_mobile.png',
+    headline: 'Go Solar with PM Surya Ghar Subsidy + Easy EMI Support',
+    subhead: 'We handle all paperwork, approvals, and installation—zero hassle for your family.',
     primaryCTA: { text: 'Book Free Home Visit', href: '#booking' },
     secondaryCTA: { text: 'Get a Quote', href: '#booking' },
   },
   {
     id: 3,
-    image: '/images/hero-slide-3.jpg',
+    imageDesktop: '/images/Banner_2_desktop.png',
+    imageMobile: '/images/Banner_2_mobile.png',
     headline: 'Trusted by Cuddalore Families for Clean, Reliable Solar',
     subhead: '25-year warranty. 50+ happy homes powered by the sun.',
     primaryCTA: { text: 'Book Free Home Visit', href: '#booking' },
@@ -29,19 +32,16 @@ const slides = [
 
 export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
   const announceRef = useRef(null)
 
   useEffect(() => {
-    if (!isPaused) {
-      const timer = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length)
-      }, 5000)
-      return () => clearInterval(timer)
-    }
-  }, [isPaused])
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
 
   useEffect(() => {
     if (announceRef.current) {
@@ -81,9 +81,7 @@ export default function HeroCarousel() {
   return (
     <section
       id="home"
-      className="relative h-screen min-h-[600px] overflow-hidden pt-16"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      className="relative h-[550px] md:h-[650px] overflow-hidden pt-16"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -105,46 +103,35 @@ export default function HeroCarousel() {
             }`}
         >
           {/* Background Image */}
-          <div className="absolute inset-0">
-            <img
-              src={slide.image}
-              alt=""
-              className="w-full h-full object-cover"
-              loading={index === 0 ? 'eager' : 'lazy'}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+          <div className="absolute inset-0 top-20">
+            <picture>
+              <source media="(min-width: 768px)" srcSet={slide.imageDesktop} />
+              <img
+                src={slide.imageMobile}
+                alt=""
+                className="w-full h-full object-cover object-top"
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
+            </picture>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:bg-gradient-to-r md:from-black/70 md:via-black/50 md:to-transparent" />
           </div>
 
           {/* Content */}
-          <div className="relative h-full flex items-start md:items-center pt-24 md:pt-0">
+          <div className="relative h-full flex items-end pb-20 md:pb-24">
             <div className="container-custom">
               <div className="max-w-3xl">
                 {index === 0 ? (
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 animate-fade-in leading-tight">
+                  <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 animate-fade-in leading-tight">
                     {slide.headline}
                   </h1>
                 ) : (
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 animate-fade-in leading-tight">
+                  <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 animate-fade-in leading-tight">
                     {slide.headline}
                   </h2>
                 )}
-                <p className="text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-fade-in">
+                <p className="text-base md:text-xl text-white/90 animate-fade-in">
                   {slide.subhead}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
-                  <a
-                    href={slide.primaryCTA.href}
-                    className="btn-primary text-center inline-block"
-                  >
-                    {slide.primaryCTA.text}
-                  </a>
-                  <a
-                    href={slide.secondaryCTA.href}
-                    className="btn-secondary text-center inline-block"
-                  >
-                    {slide.secondaryCTA.text}
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -154,58 +141,21 @@ export default function HeroCarousel() {
       {/* Navigation Controls */}
       <div className="absolute bottom-8 left-0 right-0 z-20">
         <div className="container-custom">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-center">
             {/* Dots */}
-            <div className="flex gap-3">
+            <div className="flex gap-4">
               {slides.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
-                      ? 'bg-white w-8'
-                      : 'bg-white/50 hover:bg-white/75'
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                      ? 'bg-white scale-125'
+                      : 'bg-white/50 hover:bg-white/80'
                     }`}
                   aria-label={`Go to slide ${index + 1}`}
                   aria-current={index === currentSlide}
                 />
               ))}
-            </div>
-
-            {/* Prev/Next Buttons */}
-            <div className="hidden md:flex gap-2">
-              <button
-                onClick={prevSlide}
-                className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 flex items-center justify-center text-white transition-all"
-                aria-label="Previous slide"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={nextSlide}
-                className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 flex items-center justify-center text-white transition-all"
-                aria-label="Next slide"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-              <button
-                onClick={() => setIsPaused(!isPaused)}
-                className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 flex items-center justify-center text-white transition-all ml-2"
-                aria-label={isPaused ? 'Play slideshow' : 'Pause slideshow'}
-              >
-                {isPaused ? (
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                ) : (
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-                  </svg>
-                )}
-              </button>
             </div>
           </div>
         </div>

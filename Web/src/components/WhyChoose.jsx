@@ -1,4 +1,31 @@
+import { useState, useEffect, useRef } from 'react'
+
 export default function WhyChoose() {
+  const [isFlipped, setIsFlipped] = useState(false)
+  const [hasAutoFlipped, setHasAutoFlipped] = useState(false)
+  const cardRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAutoFlipped) {
+          setHasAutoFlipped(true)
+          // Flip to back after 500ms
+          setTimeout(() => setIsFlipped(true), 500)
+          // Flip back to front after 2.5s (2s duration on back)
+          setTimeout(() => setIsFlipped(false), 2500)
+        }
+      },
+      { threshold: 0.5 }
+    )
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [hasAutoFlipped])
+
   return (
     <section className="py-8 md:py-12 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,52 +37,96 @@ export default function WhyChoose() {
           <p className="text-base md:text-lg text-gray-600 mb-4">
             Book a <span className="font-semibold text-primary">FREE</span> solar consultation at home!
           </p>
-          <a 
-            href="/#booking" 
-            className="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300"
-          >
-            <span>Get Free Quote</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
         </div>
 
         {/* Main Content - Single Row on Desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          
-          {/* LEFT: Image with Text Overlay */}
-          <div className="relative rounded-2xl overflow-hidden shadow-lg">
-            <div className="relative h-80">
-              <img
-                src="/images/installation-expert.png"
-                alt="Solar Installation Expert"
-                className="w-full h-full object-cover"
-                onError={(e) => { e.target.style.display = 'none' }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/40 to-transparent"></div>
+
+          {/* LEFT: Image with Text Overlay - FLIP CARD */}
+          <div 
+            className="relative h-80 rounded-2xl [perspective:1000px] cursor-pointer group"
+            ref={cardRef}
+            onClick={() => setIsFlipped(!isFlipped)}
+          >
+            <div className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] shadow-lg rounded-2xl ${isFlipped ? '[transform:rotateY(180deg)]' : ''}`}>
               
-              <div className="absolute top-4 left-4">
-                <div className="inline-flex items-center gap-2 bg-white rounded-full px-3 py-1.5 shadow-md">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-xs font-bold text-gray-900">10+ Years Experience</span>
+              {/* FRONT FACE */}
+              <div className="absolute inset-0 [backface-visibility:hidden] rounded-2xl overflow-hidden">
+                <img
+                  src="/images/installation-expert.png"
+                  alt="Solar Installation Expert"
+                  className="w-full h-full object-cover"
+                  onError={(e) => { e.target.style.display = 'none' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/40 to-transparent"></div>
+
+                <div className="absolute top-4 left-4">
+                  <div className="inline-flex items-center gap-2 bg-white rounded-full px-3 py-1.5 shadow-md">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-xs font-bold text-gray-900">10+ Years Experience</span>
+                  </div>
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                    Trusted Rooftop Solar Partner
+                  </h3>
+                  <p className="text-gray-200 text-sm leading-relaxed">
+                    With over a decade of expertise, we're trusted by satisfied residential and commercial customers.
+                  </p>
+                </div>
+                
+                {/* Hint to flip */}
+                <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full animate-pulse">
+                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                   </svg>
                 </div>
               </div>
-              
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                  Trusted Rooftop Solar Partner
-                </h3>
-                <p className="text-gray-200 text-sm leading-relaxed">
-                  With over a decade of expertise, we're trusted by satisfied residential and commercial customers.
-                </p>
+
+              {/* BACK FACE */}
+              <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-gradient-to-br from-indigo-900 to-blue-800 text-white p-6 rounded-2xl flex flex-col justify-center overflow-hidden">
+                 {/* Decorative background */}
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
+                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
+                 
+                 <div className="relative z-10">
+                   <h3 className="text-xl font-bold mb-4 text-yellow-300">Why Surya's Solar?</h3>
+                   <ul className="space-y-3">
+                     <li className="flex items-start gap-3">
+                       <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                       </svg>
+                       <span className="text-sm text-gray-100">Official TATA Power Solaroof Partner</span>
+                     </li>
+                     <li className="flex items-start gap-3">
+                       <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                       </svg>
+                       <span className="text-sm text-gray-100">50+ Happy Homes Powered</span>
+                     </li>
+                     <li className="flex items-start gap-3">
+                       <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                       </svg>
+                       <span className="text-sm text-gray-100">Certified Installation Team</span>
+                     </li>
+                     <li className="flex items-start gap-3">
+                       <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                       </svg>
+                       <span className="text-sm text-gray-100">Best-in-class After Sales Service</span>
+                     </li>
+                   </ul>
+                 </div>
               </div>
+
             </div>
           </div>
 
           {/* RIGHT: Feature Cards */}
           <div className="space-y-4">
-            
+
             {/* Card 1 */}
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200">
               <div className="flex items-start gap-3">
@@ -80,16 +151,15 @@ export default function WhyChoose() {
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M3 14h18m-9-4v8m-7-8v8m14-8v8M3 6a2 2 0 012-2h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6z" />
                   </svg>
                 </div>
                 <div>
                   <h4 className="text-base md:text-lg font-bold text-gray-900 mb-1">
-                    5-Year Professional Maintenance
+                    High-Efficiency Tier-1 Solar Panels
                   </h4>
                   <p className="text-gray-700 text-sm">
-                    Monthly deep cleaning, health checks & repairs included.
+                    Premium panels from TATA / Adani / Waaree for higher lifetime output.
                   </p>
                 </div>
               </div>
@@ -121,11 +191,11 @@ export default function WhyChoose() {
           {/* Decorative Background Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full -ml-24 -mb-24"></div>
-          
+
           <div className="relative z-10">
             {/* Two Column Layout for Desktop */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              
+
               {/* LEFT SIDE - Main Content */}
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1.5 mb-3">
@@ -134,18 +204,18 @@ export default function WhyChoose() {
                   </svg>
                   <span className="text-white font-semibold text-xs">Government Approved</span>
                 </div>
-                
+
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4">
                   Solar Subsidy + Easy Financing
                 </h3>
                 <p className="text-indigo-100 text-sm md:text-base lg:text-lg mb-6">
                   Interest from <span className="text-yellow-300 font-bold">6.75%</span> with up to 10 years financing. <span className="font-semibold">PM Surya Ghar Yojana</span> support included.
                 </p>
-                
+
                 {/* CTA Button - Moved to Left Side */}
                 <div className="text-center lg:text-left">
-                  <a 
-                    href="/#booking" 
+                  <a
+                    href="/#booking"
                     className="inline-flex items-center gap-2 bg-white text-indigo-600 hover:bg-indigo-50 font-bold px-6 md:px-8 lg:px-10 py-3 md:py-4 rounded-xl transition-all duration-300 shadow-lg text-sm md:text-base lg:text-lg"
                   >
                     <span>Apply for Solar Loan</span>
@@ -164,54 +234,54 @@ export default function WhyChoose() {
                   <p className="text-center text-indigo-200 text-xs md:text-sm font-medium mb-4">Trusted Banking Partners</p>
                   <div className="grid grid-cols-3 gap-3 md:gap-4 lg:gap-5 max-w-md mx-auto">
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
-                      <img 
-                        src="/images/SBI.png" 
-                        alt="SBI" 
+                      <img
+                        src="/images/SBI.png"
+                        alt="SBI"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
                       />
                       <span className="text-blue-600 font-bold text-xs hidden">SBI</span>
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
-                      <img 
-                        src="/images/Bank Of maharastra.png" 
-                        alt="Bank of Maharashtra" 
+                      <img
+                        src="/images/Bank Of maharastra.png"
+                        alt="Bank of Maharashtra"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
                       />
                       <span className="text-orange-600 font-bold text-[9px] text-center leading-tight px-1 hidden">Bank of Maharashtra</span>
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
-                      <img 
-                        src="/images/indian bank.png" 
-                        alt="Indian Bank" 
+                      <img
+                        src="/images/indian bank.png"
+                        alt="Indian Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
                       />
                       <span className="text-blue-700 font-bold text-[9px] text-center leading-tight hidden">Indian Bank</span>
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
-                      <img 
-                        src="/images/canara bank.png" 
-                        alt="Canara Bank" 
+                      <img
+                        src="/images/canara bank.png"
+                        alt="Canara Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
                       />
                       <span className="text-yellow-600 font-bold text-[9px] text-center leading-tight hidden">Canara Bank</span>
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
-                      <img 
-                        src="/images/union bank.png" 
-                        alt="Union Bank" 
+                      <img
+                        src="/images/union bank.png"
+                        alt="Union Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
                       />
                       <span className="text-red-600 font-bold text-[9px] text-center leading-tight hidden">Union Bank</span>
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
-                      <img 
-                        src="/images/indian overseasbank.png" 
-                        alt="Indian Overseas Bank" 
+                      <img
+                        src="/images/indian overseasbank.png"
+                        alt="Indian Overseas Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
                       />
@@ -219,7 +289,7 @@ export default function WhyChoose() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Features Grid */}
                 <div className="flex justify-center gap-4 md:gap-8 lg:gap-10">
                   <div className="text-center">

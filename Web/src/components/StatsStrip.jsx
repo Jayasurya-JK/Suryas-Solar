@@ -35,9 +35,9 @@ export default function StatsStrip() {
   return (
     <section>
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-primary to-primary-700 py-3 text-center">
-        <h2 className="text-white font-semibold text-lg md:text-xl tracking-wide">
-          Cuddalore's #1 Trusted Solar Company
+      <div className="bg-gradient-to-r from-primary to-primary-700 py-3 text-center px-4">
+        <h2 className="text-white font-semibold text-sm md:text-xl tracking-wide">
+          <span className="text-yellow-300 font-bold text-base md:text-2xl">Cuddalore’s</span> trusted residential solar expert
         </h2>
       </div>
 
