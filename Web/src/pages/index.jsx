@@ -16,10 +16,15 @@ import { getHomeContent, getSiteSettings } from '../lib/content'
 
 export default function Home({ content, settings }) {
   useEffect(() => {
-    // If there's a hash in the URL (like #booking), scroll to top initially
-    // This prevents the page from jumping down on reload/initial visit
+    // Handle hash navigation on load
     if (window.location.hash) {
-      window.scrollTo(0, 0);
+      const id = window.location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
     }
   }, []);
 
@@ -35,10 +40,10 @@ export default function Home({ content, settings }) {
     "email": settings.email || "suryassolarenergy@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": settings.address || "No.33, Nellikuppam Main Rd, Kondur",
+      "streetAddress": settings.address || "No.33, Sri Gokul Enterprises Building, Nellikuppam Main Rd, Chavadi, Kondur",
       "addressLocality": settings.city || "Cuddalore",
       "addressRegion": settings.state || "Tamil Nadu",
-      "postalCode": settings.pincode || "607002",
+      "postalCode": settings.pincode || "607006",
       "addressCountry": "IN"
     },
     "geo": {

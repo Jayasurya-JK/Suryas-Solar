@@ -93,10 +93,16 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <h3 className="font-bold text-gray-900 mb-1">Visit Us</h3>
-                                            <p className="text-gray-600 text-sm md:text-base">
-                                                No.33, Nellikuppam Main Rd,<br />
-                                                Kondur, Cuddalore - 607002
-                                            </p>
+                                            <a 
+                                                href="https://www.google.com/maps/search/?api=1&query=Suryas+Solar+Cuddalore"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-gray-600 text-sm md:text-base hover:text-primary transition-colors"
+                                            >
+                                                No.33, Sri Gokul Enterprises Building,<br />
+                                                Nellikuppam Main Rd, Chavadi,<br />
+                                                Kondur, Cuddalore - 607006
+                                            </a>
                                         </div>
                                     </div>
 

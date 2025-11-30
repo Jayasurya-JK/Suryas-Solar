@@ -1,8 +1,8 @@
 const partners = [
   { name: 'Tata Power Solar', logo: '/images/tata-solar-power.png', alt: 'Tata Power Solar - Authorized Dealer', tagline: 'Authorized Dealer', highlight: true },
-  { name: 'Premier Energies', logo: '/images/Premier energies.png', alt: 'Premier Energies - Certified Partner', tagline: 'Premier Energies', highlight: false },
-  { name: 'Waaree Energies', logo: '/images/waaree.png', alt: 'Waaree Energies - Official Partner', tagline: 'Waaree Energies', highlight: false },
-  { name: 'Adani Solar', logo: '/images/adani-power-.png', alt: 'Adani Solar - Official Partner', tagline: 'Adani Solar', highlight: false },
+  { name: 'Premier Energies', logo: '/images/Premier energies.png', alt: 'Premier Energies - Certified Partner', tagline: 'Solar Partner', highlight: false },
+  { name: 'Waaree Energies', logo: '/images/waaree.png', alt: 'Waaree Energies - Official Partner', tagline: 'Solar Partner', highlight: false },
+  { name: 'Adani Solar', logo: '/images/adani-power-.png', alt: 'Adani Solar - Official Partner', tagline: 'Solar Partner', highlight: false },
 ]
 
 export default function Partners() {

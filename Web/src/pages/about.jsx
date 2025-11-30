@@ -7,6 +7,14 @@ import { useEffect, useState } from 'react'
 export default function AboutPage() {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [cardsToShow, setCardsToShow] = useState(1)
+    const [flippedCards, setFlippedCards] = useState({})
+
+    const handleCardClick = (index) => {
+        setFlippedCards(prev => ({
+            ...prev,
+            [index]: !prev[index]
+        }))
+    }
 
     useEffect(() => {
         const handleResize = () => {
@@ -188,13 +196,15 @@ export default function AboutPage() {
                             {whyChooseUs.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="flip-card-container h-52 md:h-64 group cursor-pointer"
+                                    className="flip-card-container h-52 md:h-64 cursor-pointer"
                                     style={{ perspective: '1000px' }}
+                                    onClick={() => handleCardClick(index)}
                                 >
                                     <div
                                         className="flip-card-inner relative w-full h-full transition-transform duration-700 ease-out"
                                         style={{
                                             transformStyle: 'preserve-3d',
+                                            transform: flippedCards[index] ? 'rotateY(180deg)' : 'rotateY(0deg)'
                                         }}
                                     >
                                         {/* Front Side - Clean White with Icon */}
@@ -217,9 +227,9 @@ export default function AboutPage() {
                                                 {item.title}
                                             </h3>
 
-                                            {/* Hover indicator */}
-                                            <div className="mt-3 md:mt-4 text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                Tap to learn more
+                                            {/* Click indicator */}
+                                            <div className="mt-3 md:mt-4 text-xs text-gray-400 animate-pulse">
+                                                Tap to flip
                                             </div>
                                         </div>
 
@@ -251,57 +261,7 @@ export default function AboutPage() {
                         </div>
                     </div>
 
-                    <style jsx>{`
-                        .flip-card-container:hover .flip-card-inner,
-                        .flip-card-container:active .flip-card-inner {
-                            transform: rotateY(180deg);
-                        }
-                        
-                        .flip-card-container.auto-flip .flip-card-inner {
-                            animation: autoFlipOnce 1.2s ease-in-out forwards;
-                        }
-                        
-                        @keyframes autoFlipOnce {
-                            0% {
-                                transform: rotateY(0deg);
-                            }
-                            50% {
-                                transform: rotateY(180deg);
-                            }
-                            100% {
-                                transform: rotateY(360deg);
-                            }
-                        }
-                    `}</style>
 
-                    <script dangerouslySetInnerHTML={{
-                        __html: `
-                        (function() {
-                            if (typeof window !== 'undefined' && typeof IntersectionObserver !== 'undefined') {
-                                const observer = new IntersectionObserver((entries) => {
-                                    entries.forEach(entry => {
-                                        if (entry.isIntersecting && !entry.target.dataset.animated) {
-                                            entry.target.dataset.animated = 'true';
-                                            entry.target.classList.add('auto-flip');
-                                            setTimeout(() => {
-                                                entry.target.classList.remove('auto-flip');
-                                            }, 1200);
-                                            // Stop observing after animation
-                                            observer.unobserve(entry.target);
-                                        }
-                                    });
-                                }, { threshold: 0.5 });
-                                
-                                setTimeout(() => {
-                                    // Only select the first card
-                                    const firstCard = document.querySelector('.flip-card-container');
-                                    if (firstCard) {
-                                        observer.observe(firstCard);
-                                    }
-                                }, 100);
-                            }
-                        })();
-                    `}} />
                 </section>
 
                 {/* Our Works Gallery Section */}
@@ -406,10 +366,16 @@ export default function AboutPage() {
                                 <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/20">
                                     <div className="text-2xl md:text-3xl mb-2 md:mb-3">📍</div>
                                     <h3 className="font-bold mb-2 text-sm md:text-base">Visit Us</h3>
-                                    <p className="text-xs md:text-sm text-blue-100">
-                                        No.33, Nellikuppam Main Rd<br />
-                                        Kondur, Cuddalore-607002
-                                    </p>
+                                    <a 
+                                        href="https://www.google.com/maps/search/?api=1&query=Suryas+Solar+Cuddalore"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-xs md:text-sm text-blue-100 hover:text-white transition-colors block"
+                                    >
+                                        No.33, Sri Gokul Enterprises Building,<br />
+                                        Nellikuppam Main Rd, Chavadi,<br />
+                                        Kondur, Cuddalore - 607006
+                                    </a>
                                 </div>
 
                                 <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/20">
