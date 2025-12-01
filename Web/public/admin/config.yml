@@ -5,6 +5,11 @@ backend:
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
 collections:
   - name: "pages"
     label: "Pages"
