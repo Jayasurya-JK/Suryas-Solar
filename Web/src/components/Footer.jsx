@@ -55,11 +55,16 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="relative overflow-hidden w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg shrink-0">
-                <img 
-                  src="/images/Surya solar Logo.png" 
-                  alt="Surya's Solar Logo" 
-                  className="w-full h-full object-contain scale-125"
-                />
+                <picture>
+                  <source srcSet="/images/surya-solar-logo.webp" type="image/webp" />
+                  <img
+                    src="/images/surya-solar-logo.png"
+                    alt="Surya's Solar Logo"
+                    width="48"
+                    height="48"
+                    className="w-full h-full object-contain scale-125"
+                  />
+                </picture>
               </div>
               <div className="flex flex-col justify-center">
                 <span className="font-playfair font-bold text-xl text-white uppercase tracking-wide leading-none">Surya's Solar</span>
@@ -123,9 +128,9 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <a 
-                  href="https://www.google.com/maps/search/?api=1&query=Suryas+Solar+Cuddalore" 
-                  target="_blank" 
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Suryas+Solar+Cuddalore"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                 >

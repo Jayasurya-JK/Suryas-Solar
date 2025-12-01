@@ -4,7 +4,7 @@ export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
-    pincode: '',
+    address: '',
     electricityBill: '',
     consent: false,
   })
@@ -26,10 +26,8 @@ export default function BookingForm() {
       newErrors.mobile = 'Please enter a valid 10-digit mobile number'
     }
 
-    if (!formData.pincode.trim()) {
-      newErrors.pincode = 'Pincode is required'
-    } else if (!/^\d{6}$/.test(formData.pincode)) {
-      newErrors.pincode = 'Please enter a valid 6-digit pincode'
+    if (!formData.address.trim()) {
+      newErrors.address = 'Address is required'
     }
 
     if (!formData.consent) {
@@ -80,7 +78,7 @@ export default function BookingForm() {
       setFormData({
         name: '',
         mobile: '',
-        pincode: '',
+        address: '',
         electricityBill: '',
         consent: false,
       })
@@ -109,12 +107,17 @@ export default function BookingForm() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Left: Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl h-64 md:h-[520px]">
-              <img
-                src="/images/Form%20Picture.png"
-                alt="Professional solar panel installation on residential rooftop"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet="/images/form-picture.webp" type="image/webp" />
+                <img
+                  src="/images/form-picture.png"
+                  alt="Professional solar panel installation on residential rooftop"
+                  width="864"
+                  height="1100"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 md:p-8">
                 <div className="text-white">
                   <h3 className="text-lg md:text-2xl font-bold mb-1 md:mb-2">Personalized Solar Plans & Clear Paperwork</h3>
@@ -184,25 +187,24 @@ export default function BookingForm() {
                     )}
                   </div>
 
-                  {/* Pincode */}
+                  {/* Address */}
                   <div>
-                    <label htmlFor="pincode" className="block text-sm font-medium text-gray-700 mb-1">
-                      Pin Code <span className="text-red-500">*</span>
+                    <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
+                      Address <span className="text-red-500">*</span>
                     </label>
-                    <input
-                      type="text"
-                      id="pincode"
-                      name="pincode"
-                      value={formData.pincode}
+                    <textarea
+                      id="address"
+                      name="address"
+                      value={formData.address}
                       onChange={handleChange}
-                      autoComplete="postal-code"
-                      className={`w-full px-4 py-2.5 rounded-lg border ${errors.pincode ? 'border-red-500' : 'border-gray-300'
-                        } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
-                      placeholder="Enter your pin code"
-                      maxLength="6"
+                      autoComplete="street-address"
+                      rows="3"
+                      className={`w-full px-4 py-2.5 rounded-lg border ${errors.address ? 'border-red-500' : 'border-gray-300'
+                        } focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none`}
+                      placeholder="Enter your full address"
                     />
-                    {errors.pincode && (
-                      <p className="mt-1 text-sm text-red-500" role="alert">{errors.pincode}</p>
+                    {errors.address && (
+                      <p className="mt-1 text-sm text-red-500" role="alert">{errors.address}</p>
                     )}
                   </div>
 

@@ -1,8 +1,8 @@
 const partners = [
-  { name: 'Tata Power Solar', logo: '/images/tata-solar-power.png', alt: 'Tata Power Solar - Authorized Dealer', tagline: 'Authorized Dealer', highlight: true },
-  { name: 'Premier Energies', logo: '/images/Premier energies.png', alt: 'Premier Energies - Certified Partner', tagline: 'Solar Partner', highlight: false },
-  { name: 'Waaree Energies', logo: '/images/waaree.png', alt: 'Waaree Energies - Official Partner', tagline: 'Solar Partner', highlight: false },
-  { name: 'Adani Solar', logo: '/images/adani-power-.png', alt: 'Adani Solar - Official Partner', tagline: 'Solar Partner', highlight: false },
+  { name: 'Tata Power Solar', logo: '/images/tata-solar-power.png', logoWebP: '/images/tata-solar-power.webp', alt: 'Tata Power Solar - Authorized Dealer', tagline: 'Authorized Dealer', highlight: true },
+  { name: 'Premier Energies', logo: '/images/premier-energies.png', logoWebP: '/images/premier-energies.webp', alt: 'Premier Energies - Certified Partner', tagline: 'Solar Partner', highlight: false },
+  { name: 'Waaree Energies', logo: '/images/waaree.png', logoWebP: '/images/waaree.webp', alt: 'Waaree Energies - Official Partner', tagline: 'Solar Partner', highlight: false },
+  { name: 'Adani Solar', logo: '/images/adani-power-.png', logoWebP: '/images/adani-power-.webp', alt: 'Adani Solar - Official Partner', tagline: 'Solar Partner', highlight: false },
 ]
 
 export default function Partners() {
@@ -25,13 +25,16 @@ export default function Partners() {
               className="group bg-white rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100"
             >
               <div className="mb-4 h-24 md:h-32 lg:h-36 w-full flex items-center justify-center">
-                <img
-                  src={partner.logo}
-                  alt={partner.alt}
-                  className="max-w-full max-h-full object-contain transition-all duration-300"
-                  loading="lazy"
-                  onError={(e) => { e.target.style.display = 'none' }}
-                />
+                <picture>
+                  <source srcSet={partner.logoWebP} type="image/webp" />
+                  <img
+                    src={partner.logo}
+                    alt={partner.alt}
+                    className="max-w-full max-h-full object-contain transition-all duration-300"
+                    loading="lazy"
+                    onError={(e) => { e.target.style.display = 'none' }}
+                  />
+                </picture>
               </div>
               <div className="text-center mt-2">
                 {partner.highlight ? (

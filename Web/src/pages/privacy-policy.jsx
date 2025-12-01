@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
             <Head>
                 <title>Privacy Policy - Surya's Solar</title>
                 <meta name="description" content="Privacy Policy for Surya's Solar. Learn how we collect, use, and protect your personal information." />
-                <link rel="icon" href="/images/Surya solar Logo.png" />
+                <link rel="icon" href="/images/surya-solar-logo.png" />
             </Head>
 
             <Header />

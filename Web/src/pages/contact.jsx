@@ -9,7 +9,8 @@ export default function ContactPage() {
         name: '',
         email: '',
         mobile: '',
-        message: ''
+        message: '',
+        'bot-field': ''
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [showSuccess, setShowSuccess] = useState(false)
@@ -51,7 +52,7 @@ export default function ContactPage() {
                 <title>Contact Us - Surya's Solar | Cuddalore</title>
                 <meta name="description" content="Get in touch with Surya's Solar for all your solar energy needs in Cuddalore. Visit our office or call us for a free consultation." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/images/Surya solar Logo.png" />
+                <link rel="icon" href="/images/surya-solar-logo.png" />
             </Head>
 
             <Header />
@@ -94,7 +95,7 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <h3 className="font-bold text-gray-900 mb-1">Visit Us</h3>
-                                            <a 
+                                            <a
                                                 href="https://www.google.com/maps/search/?api=1&query=Suryas+Solar+Cuddalore"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -148,7 +149,12 @@ export default function ContactPage() {
                                     <input type="hidden" name="form-name" value="contact" />
                                     <p className="hidden">
                                         <label>
-                                            Don't fill this out if you're human: <input name="bot-field" />
+                                            Don't fill this out if you're human:
+                                            <input
+                                                name="bot-field"
+                                                value={formData['bot-field']}
+                                                onChange={handleChange}
+                                            />
                                         </label>
                                     </p>
 

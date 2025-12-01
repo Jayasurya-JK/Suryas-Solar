@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
     const formData = JSON.parse(event.body)
     
     // Validate required fields
-    if (!formData.name || !formData.mobile || !formData.pincode) {
+    if (!formData.name || !formData.mobile) {
       return {
         statusCode: 400,
         body: JSON.stringify({ error: 'Missing required fields' }),
@@ -34,7 +34,8 @@ exports.handler = async (event, context) => {
           name: formData.name,
           mobile: formData.mobile,
           email: formData.email || '',
-          pincode: formData.pincode,
+          address: formData.address || '',
+          pincode: formData.pincode || '',
           visitDate: formData.visitDate || '',
           roofType: formData.roofType || '',
           electricityBill: formData.electricityBill || '',

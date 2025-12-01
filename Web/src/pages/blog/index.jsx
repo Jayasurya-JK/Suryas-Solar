@@ -12,10 +12,10 @@ export default function BlogIndex({ posts, settings }) {
       <Head>
         <title>Solar Energy Blog | Surya's Solar</title>
         <meta name="description" content="Latest insights, tips, and updates about solar energy in Cuddalore and beyond." />
-        <link rel="icon" href="/images/Surya solar Logo.png" />
+        <link rel="icon" href="/images/surya-solar-logo.png" />
       </Head>
       <Header settings={settings} />
-      
+
       <main className="pt-24 pb-16 bg-gray-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Page Header */}
@@ -36,8 +36,8 @@ export default function BlogIndex({ posts, settings }) {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {posts.map((post) => (
-                <Link 
-                  key={post.slug} 
+                <Link
+                  key={post.slug}
                   href={`/blog/${post.slug}`}
                   className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 >
@@ -51,7 +51,7 @@ export default function BlogIndex({ posts, settings }) {
                       />
                     </div>
                   )}
-                  
+
                   <div className="p-5 sm:p-6">
                     <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-500 mb-3">
                       <time dateTime={post.date}>
@@ -68,19 +68,19 @@ export default function BlogIndex({ posts, settings }) {
                         </>
                       )}
                     </div>
-                    
+
                     <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 line-clamp-2 leading-tight">
                       {post.title}
                     </h2>
-                    
+
                     {post.excerpt && (
                       <p className="text-sm sm:text-base text-gray-600 line-clamp-3 mb-4">
                         {post.excerpt}
                       </p>
                     )}
-                    
+
                     <span className="text-solar-orange font-semibold hover:underline inline-flex items-center text-sm sm:text-base">
-                      Read More 
+                      Read More
                       <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
@@ -94,10 +94,10 @@ export default function BlogIndex({ posts, settings }) {
       </main>
 
       <Footer settings={settings} />
-      
+
       {/* WhatsApp Floating Button */}
-      <WhatsAppFloat 
-        phoneNumber={settings.whatsapp || "917904369094"} 
+      <WhatsAppFloat
+        phoneNumber={settings.whatsapp || "917904369094"}
         message="Hi! I have a question about your blog."
       />
     </>

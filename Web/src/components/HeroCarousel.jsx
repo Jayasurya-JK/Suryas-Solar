@@ -4,7 +4,9 @@ const slides = [
   {
     id: 1,
     imageDesktop: '/images/Banner_1_desktop.png',
+    imageDesktopWebP: '/images/Banner_1_desktop.webp',
     imageMobile: '/images/Banner_1_mobile.png',
+    imageMobileWebP: '/images/Banner_1_mobile.webp',
     headline: "Cuddalore's Most Trusted Residential Solar Experts",
     subhead: 'Power your home with clean, reliable solar energy. Save up to 90% on electricity bills.',
     primaryCTA: { text: 'Book Free Home Visit', href: '#booking' },
@@ -13,7 +15,9 @@ const slides = [
   {
     id: 2,
     imageDesktop: '/images/Banner_3_desktop.png',
+    imageDesktopWebP: '/images/Banner_3_desktop.webp',
     imageMobile: '/images/Banner_3_mobile.png',
+    imageMobileWebP: '/images/Banner_3_mobile.webp',
     headline: 'Go Solar with PM Surya Ghar Subsidy + Easy EMI Support',
     subhead: 'We handle all paperwork, approvals, and installation—zero hassle for your family.',
     primaryCTA: { text: 'Book Free Home Visit', href: '#booking' },
@@ -22,7 +26,9 @@ const slides = [
   {
     id: 3,
     imageDesktop: '/images/Banner_2_desktop.png',
+    imageDesktopWebP: '/images/Banner_2_desktop.webp',
     imageMobile: '/images/Banner_2_mobile.png',
+    imageMobileWebP: '/images/Banner_2_mobile.webp',
     headline: 'Trusted by Cuddalore Families for Clean, Reliable Solar',
     subhead: '25-year warranty. 50+ happy homes powered by the sun.',
     primaryCTA: { text: 'Book Free Home Visit', href: '#booking' },
@@ -105,10 +111,14 @@ export default function HeroCarousel() {
           {/* Background Image */}
           <div className="absolute inset-0 top-20">
             <picture>
+              <source media="(min-width: 768px)" srcSet={slide.imageDesktopWebP} type="image/webp" />
               <source media="(min-width: 768px)" srcSet={slide.imageDesktop} />
+              <source srcSet={slide.imageMobileWebP} type="image/webp" />
               <img
                 src={slide.imageMobile}
-                alt=""
+                alt={slide.headline}
+                width="800"
+                height="666"
                 className="w-full h-full object-cover object-top"
                 loading={index === 0 ? 'eager' : 'lazy'}
                 fetchpriority={index === 0 ? 'high' : 'auto'}
@@ -150,8 +160,8 @@ export default function HeroCarousel() {
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
-                      ? 'bg-white scale-125'
-                      : 'bg-white/50 hover:bg-white/80'
+                    ? 'bg-white scale-125'
+                    : 'bg-white/50 hover:bg-white/80'
                     }`}
                   aria-label={`Go to slide ${index + 1}`}
                   aria-current={index === currentSlide}

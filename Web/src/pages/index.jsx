@@ -95,7 +95,7 @@ export default function Home({ content, settings }) {
         <meta name="description" content={settings.siteDescription || "Leading residential solar installation in Cuddalore"} />
         <meta name="keywords" content={settings.siteKeywords || "solar panel Cuddalore, residential solar, rooftop solar"} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/Surya solar Logo.png" />
+        <link rel="icon" href="/images/surya-solar-logo.png" />
         <link rel="canonical" href="https://suryassolar.com" />
 
         {/* Open Graph / Facebook */}
@@ -140,11 +140,11 @@ export default function Home({ content, settings }) {
         <section id="booking">
           <BookingForm />
         </section>
+        <OurWorks />
         <TimelineSteps steps={content.timelineSteps} />
         <Partners partners={content.partners} />
         <SolarCalculator />
         <WhyChoose />
-        <OurWorks />
         <Testimonials testimonials={content.testimonials} />
       </main>
       <section id="contact">

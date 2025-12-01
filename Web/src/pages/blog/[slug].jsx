@@ -12,14 +12,14 @@ export default function BlogPost({ post, settings }) {
       <Head>
         <title>{post.title} | Surya's Solar</title>
         <meta name="description" content={post.excerpt || `Read about ${post.title}`} />
-        <link rel="icon" href="/images/Surya solar Logo.png" />
+        <link rel="icon" href="/images/surya-solar-logo.png" />
       </Head>
       <Header settings={settings} />
-      
+
       <article className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Link */}
-          <Link 
+          <Link
             href="/blog"
             className="inline-flex items-center text-solar-orange hover:underline mb-8"
           >
@@ -49,11 +49,11 @@ export default function BlogPost({ post, settings }) {
                 {post.category}
               </span>
             )}
-            
+
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {post.title}
             </h1>
-            
+
             <div className="flex items-center gap-4 text-gray-600">
               {post.author && (
                 <span className="font-medium">{post.author}</span>
@@ -69,7 +69,7 @@ export default function BlogPost({ post, settings }) {
           </header>
 
           {/* Post Content */}
-          <div 
+          <div
             className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-solar-orange prose-strong:text-gray-900"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
@@ -79,7 +79,7 @@ export default function BlogPost({ post, settings }) {
             <div className="mt-12 pt-8 border-t border-gray-200">
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
-                  <span 
+                  <span
                     key={tag}
                     className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
                   >
@@ -107,10 +107,10 @@ export default function BlogPost({ post, settings }) {
       </article>
 
       <Footer settings={settings} />
-      
+
       {/* WhatsApp Floating Button */}
-      <WhatsAppFloat 
-        phoneNumber={settings.whatsapp || "917904369094"} 
+      <WhatsAppFloat
+        phoneNumber={settings.whatsapp || "917904369094"}
         message="Hi! I read your blog and want to know more about solar installation."
       />
     </>
@@ -119,7 +119,7 @@ export default function BlogPost({ post, settings }) {
 
 export async function getStaticPaths() {
   const posts = getAllBlogPosts()
-  
+
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }))

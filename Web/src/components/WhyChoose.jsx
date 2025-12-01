@@ -43,21 +43,26 @@ export default function WhyChoose() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
 
           {/* LEFT: Image with Text Overlay - FLIP CARD */}
-          <div 
+          <div
             className="relative h-80 rounded-2xl [perspective:1000px] cursor-pointer group"
             ref={cardRef}
             onClick={() => setIsFlipped(!isFlipped)}
           >
             <div className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] shadow-lg rounded-2xl ${isFlipped ? '[transform:rotateY(180deg)]' : ''}`}>
-              
+
               {/* FRONT FACE */}
               <div className="absolute inset-0 [backface-visibility:hidden] rounded-2xl overflow-hidden">
-                <img
-                  src="/images/installation-expert.png"
-                  alt="Solar Installation Expert"
-                  className="w-full h-full object-cover"
-                  onError={(e) => { e.target.style.display = 'none' }}
-                />
+                <picture>
+                  <source srcSet="/images/installation-expert.webp" type="image/webp" />
+                  <img
+                    src="/images/installation-expert.png"
+                    alt="Solar Installation Expert"
+                    width="864"
+                    height="1081"
+                    className="w-full h-full object-cover"
+                    onError={(e) => { e.target.style.display = 'none' }}
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/40 to-transparent"></div>
 
                 <div className="absolute top-4 left-4">
@@ -75,50 +80,50 @@ export default function WhyChoose() {
                     With over a decade of expertise, we're trusted by satisfied residential and commercial customers.
                   </p>
                 </div>
-                
+
                 {/* Hint to flip */}
                 <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full animate-pulse">
-                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                   </svg>
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
                 </div>
               </div>
 
               {/* BACK FACE */}
               <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-gradient-to-br from-indigo-900 to-blue-800 text-white p-6 rounded-2xl flex flex-col justify-center overflow-hidden">
-                 {/* Decorative background */}
-                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
-                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
-                 
-                 <div className="relative z-10">
-                   <h3 className="text-xl font-bold mb-4 text-yellow-300">Why Surya's Solar?</h3>
-                   <ul className="space-y-3">
-                     <li className="flex items-start gap-3">
-                       <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                       </svg>
-                       <span className="text-sm text-gray-100">Official TATA Power Solaroof Partner</span>
-                     </li>
-                     <li className="flex items-start gap-3">
-                       <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                       </svg>
-                       <span className="text-sm text-gray-100">50+ Happy Homes Powered</span>
-                     </li>
-                     <li className="flex items-start gap-3">
-                       <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                       </svg>
-                       <span className="text-sm text-gray-100">Certified Installation Team</span>
-                     </li>
-                     <li className="flex items-start gap-3">
-                       <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                       </svg>
-                       <span className="text-sm text-gray-100">Best-in-class After Sales Service</span>
-                     </li>
-                   </ul>
-                 </div>
+                {/* Decorative background */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
+
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold mb-4 text-yellow-300">Why Surya's Solar?</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-100">Official TATA Power Solaroof Partner</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-100">50+ Happy Homes Powered</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-100">Certified Installation Team</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm text-gray-100">Best-in-class After Sales Service</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
 
             </div>
@@ -244,7 +249,7 @@ export default function WhyChoose() {
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
                       <img
-                        src="/images/Bank Of maharastra.png"
+                        src="/images/bank-of-maharastra.png"
                         alt="Bank of Maharashtra"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
@@ -253,7 +258,7 @@ export default function WhyChoose() {
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
                       <img
-                        src="/images/indian bank.png"
+                        src="/images/indian-bank.png"
                         alt="Indian Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
@@ -262,7 +267,7 @@ export default function WhyChoose() {
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
                       <img
-                        src="/images/canara bank.png"
+                        src="/images/canara-bank.png"
                         alt="Canara Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
@@ -271,7 +276,7 @@ export default function WhyChoose() {
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
                       <img
-                        src="/images/union bank.png"
+                        src="/images/union-bank.png"
                         alt="Union Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
@@ -280,7 +285,7 @@ export default function WhyChoose() {
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
                       <img
-                        src="/images/indian overseasbank.png"
+                        src="/images/indian-overseas-bank.png"
                         alt="Indian Overseas Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}

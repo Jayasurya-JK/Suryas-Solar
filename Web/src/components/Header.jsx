@@ -43,11 +43,16 @@ export default function Header() {
             {/* Clean Logo */}
             <Link href="/" className="flex items-center space-x-1 group">
               <div className="relative overflow-hidden w-12 h-12 flex items-center justify-center">
-                <img 
-                  src="/images/Surya solar Logo.png" 
-                  alt="Surya's Solar Logo" 
-                  className="w-full h-full object-contain scale-150 group-hover:scale-[1.6] transition-transform duration-200"
-                />
+                <picture>
+                  <source srcSet="/images/surya-solar-logo.webp" type="image/webp" />
+                  <img
+                    src="/images/surya-solar-logo.png"
+                    alt="Surya's Solar Logo"
+                    width="48"
+                    height="48"
+                    className="w-full h-full object-contain scale-150 group-hover:scale-[1.6] transition-transform duration-200"
+                  />
+                </picture>
               </div>
               <div className="flex flex-col justify-center">
                 <span className="font-playfair font-bold text-xl text-accent uppercase tracking-wide leading-none">Surya's Solar</span>

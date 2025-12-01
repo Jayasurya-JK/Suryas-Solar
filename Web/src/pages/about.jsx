@@ -36,10 +36,10 @@ export default function AboutPage() {
     }, [cardsToShow])
 
     const partners = [
-        { name: 'TATA Power Solaroof', logo: '/images/tata-solar-power.png', type: 'Official Partner' },
-        { name: 'Premier Energies', logo: '/images/Premier energies.png', type: 'Solar Partner' },
-        { name: 'Waaree', logo: '/images/waaree.png', type: 'Solar Partner' },
-        { name: 'Adani Solar', logo: '/images/adani-power-.png', type: 'Solar Partner' }
+        { name: 'TATA Power Solaroof', logo: '/images/tata-solar-power.png', logoWebP: '/images/tata-solar-power.webp', type: 'Official Partner' },
+        { name: 'Premier Energies', logo: '/images/premier-energies.png', logoWebP: '/images/premier-energies.webp', type: 'Solar Partner' },
+        { name: 'Waaree', logo: '/images/waaree.png', logoWebP: '/images/waaree.webp', type: 'Solar Partner' },
+        { name: 'Adani Solar', logo: '/images/adani-power-.png', logoWebP: '/images/adani-power-.webp', type: 'Solar Partner' }
     ]
 
     const whyChooseUs = [
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 />
                 <meta name="keywords" content="solar company Cuddalore, TATA solar partner, PM Surya Ghar vendor, residential solar expert" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/images/Surya solar Logo.png" />
+                <link rel="icon" href="/images/surya-solar-logo.png" />
                 <link rel="canonical" href="https://suryassolar.com/about" />
 
                 {/* Open Graph */}
@@ -335,12 +335,15 @@ export default function AboutPage() {
                                     className="bg-white p-4 md:p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center justify-center group"
                                 >
                                     <div className="mb-3 md:mb-4 relative h-16 md:h-20 w-full flex items-center justify-center">
-                                        <img
-                                            src={partner.logo}
-                                            alt={partner.name}
-                                            className="max-h-full max-w-full object-contain transition-all duration-300"
-                                            loading="lazy"
-                                        />
+                                        <picture>
+                                            <source srcSet={partner.logoWebP} type="image/webp" />
+                                            <img
+                                                src={partner.logo}
+                                                alt={partner.name}
+                                                className="max-h-full max-w-full object-contain transition-all duration-300"
+                                                loading="lazy"
+                                            />
+                                        </picture>
                                     </div>
                                     <span className="text-xs font-semibold text-primary-600 bg-primary-50 px-2 md:px-3 py-1 rounded-full">
                                         {partner.type}
@@ -366,7 +369,7 @@ export default function AboutPage() {
                                 <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/20">
                                     <div className="text-2xl md:text-3xl mb-2 md:mb-3">📍</div>
                                     <h3 className="font-bold mb-2 text-sm md:text-base">Visit Us</h3>
-                                    <a 
+                                    <a
                                         href="https://www.google.com/maps/search/?api=1&query=Suryas+Solar+Cuddalore"
                                         target="_blank"
                                         rel="noopener noreferrer"
