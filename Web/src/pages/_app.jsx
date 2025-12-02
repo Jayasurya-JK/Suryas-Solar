@@ -1,6 +1,7 @@
 import Script from 'next/script'
 import { Playfair_Display } from 'next/font/google'
 import '../styles/globals.css'
+import BookingPopup from '../components/BookingPopup'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -27,6 +28,7 @@ export default function App({ Component, pageProps }) {
       </Script>
 
       <Component {...pageProps} />
+      <BookingPopup />
     </div>
   )
 }

@@ -57,11 +57,11 @@ ChartJS.register(
  */
 const formatIndianNumber = (num) => {
   if (num === null || num === undefined || isNaN(num)) return '0';
-  
+
   const numStr = Math.round(num).toString();
   const lastThree = numStr.substring(numStr.length - 3);
   const otherNumbers = numStr.substring(0, numStr.length - 3);
-  
+
   if (otherNumbers !== '') {
     return otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + lastThree;
   }
@@ -196,7 +196,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
 
   // ==================== CHART CONFIGURATION ====================
   const chartData = calculatedData ? {
-    labels: ['Regular Electricity Bill', 'With Solar'],
+    labels: ['Regular Bill', 'With Solar'],
     datasets: [
       {
         label: 'Bi-monthly Cost (₹)',
@@ -211,7 +211,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
         ],
         borderWidth: 2,
         borderRadius: 8,
-        barThickness: 70,
+        maxBarThickness: 50,
       },
     ],
   } : null;
@@ -247,7 +247,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
         borderWidth: 1,
         cornerRadius: 8,
         callbacks: {
-          label: function(context) {
+          label: function (context) {
             return `₹${formatIndianNumber(context.parsed.y)}`;
           },
         },
@@ -277,7 +277,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
         beginAtZero: true,
         ticks: {
           maxTicksLimit: 6,
-          callback: function(value) {
+          callback: function (value) {
             if (value >= 1000) {
               return '₹' + (value / 1000).toFixed(0) + 'k';
             }
@@ -326,26 +326,26 @@ export default function SolarCalculator({ showBreakdown = false }) {
   // ==================== RENDER ====================
   return (
     <div className="w-full bg-gradient-to-br from-slate-50 via-white to-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-12">
         {/* Header Section */}
-        <div className="text-center mb-6 sm:mb-8">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 tracking-tight leading-tight">
+        <div className="text-center mb-4 sm:mb-8">
+          <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 tracking-tight leading-tight">
             Solar Savings Calculator
           </h1>
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Calculate your potential savings with precision
           </p>
         </div>
 
-        {/* Input Section - Premium Design */}
-        <div className="max-w-xl mx-auto mb-6 sm:mb-8">
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 sm:p-6">
-            <label htmlFor="billInput" className="block text-sm sm:text-base font-semibold text-slate-900 mb-3">
+        {/* Input Section - Compact Design */}
+        <div className="max-w-xl mx-auto mb-5 sm:mb-8">
+          <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 p-4 sm:p-6">
+            <label htmlFor="billInput" className="block text-sm sm:text-base font-semibold text-slate-900 mb-2 sm:mb-3">
               Your Bi-monthly Electricity Bill
             </label>
-            <div className="flex items-center gap-3 sm:gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <div className="relative flex-1">
-                <span className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 text-slate-500 text-xl sm:text-2xl font-semibold">
+                <span className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 text-slate-500 text-lg sm:text-2xl font-semibold">
                   ₹
                 </span>
                 <input
@@ -368,7 +368,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
                   placeholder="5000"
                   min="0"
                   max={INPUT_MAX}
-                  className="w-full pl-10 sm:pl-12 pr-4 sm:pr-6 py-3 sm:py-4 text-lg sm:text-xl font-semibold border-2 border-slate-200 rounded-xl focus:border-indigo-500 focus:ring-4 focus:ring-indigo-50 transition-all outline-none bg-slate-50 focus:bg-white text-slate-900"
+                  className="w-full pl-8 sm:pl-12 pr-3 sm:pr-6 py-2.5 sm:py-4 text-base sm:text-xl font-semibold border-2 border-slate-200 rounded-lg sm:rounded-xl focus:border-indigo-500 focus:ring-4 focus:ring-indigo-50 transition-all outline-none bg-slate-50 focus:bg-white text-slate-900"
                   aria-describedby="billHelp billError"
                   aria-invalid={validationError ? 'true' : 'false'}
                 />
@@ -381,18 +381,18 @@ export default function SolarCalculator({ showBreakdown = false }) {
                     window.location.href = `/calc?bill=${biMonthlyBill}`;
                   }
                 }}
-                className="px-5 sm:px-6 py-3 sm:py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm sm:text-base rounded-xl shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 whitespace-nowrap"
+                className="px-4 sm:px-6 py-2.5 sm:py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm sm:text-base rounded-lg sm:rounded-xl shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 whitespace-nowrap"
               >
                 Calculate
               </button>
             </div>
             {validationError && (
-              <p id="billError" className="text-sm text-rose-600 mt-3 font-medium text-center" role="alert">
+              <p id="billError" className="text-xs sm:text-sm text-rose-600 mt-2 sm:mt-3 font-medium text-center" role="alert">
                 {validationError}
               </p>
             )}
             {!validationError && (
-              <p id="billHelp" className="text-xs sm:text-sm text-slate-500 mt-3 text-center">
+              <p id="billHelp" className="text-[10px] sm:text-sm text-slate-500 mt-2 sm:mt-3 text-center">
                 Enter amount between ₹{formatIndianNumber(INPUT_MIN)} and ₹{formatIndianNumber(INPUT_MAX)} • We specialize in 3 kW+ systems
               </p>
             )}
@@ -401,112 +401,112 @@ export default function SolarCalculator({ showBreakdown = false }) {
 
         {/* Results Section */}
         {isCalculated && calculatedData && (
-          <div className="space-y-4 sm:space-y-6 animate-fadeIn">
+          <div className="space-y-3 sm:space-y-6 animate-fadeIn">
             {/* Accessibility: Live region for screen readers */}
-            <div 
-              className="sr-only" 
-              role="status" 
-              aria-live="polite" 
+            <div
+              className="sr-only"
+              role="status"
+              aria-live="polite"
               aria-atomic="true"
             >
-              For ₹{formatIndianNumber(calculatedData.regularBill)} bi-monthly bill, 
-              estimated recommended system is {calculatedData.recommendedKw} kilowatt, 
-              annual savings ₹{formatIndianNumber(calculatedData.annualSavings)}, 
-              estimated payback {calculatedData.paybackYears_internal} years, 
+              For ₹{formatIndianNumber(calculatedData.regularBill)} bi-monthly bill,
+              estimated recommended system is {calculatedData.recommendedKw} kilowatt,
+              annual savings ₹{formatIndianNumber(calculatedData.annualSavings)},
+              estimated payback {calculatedData.paybackYears_internal} years,
               return on investment {calculatedData.roiPercent_internal} percent per annum.
             </div>
 
-            <p className="text-center text-slate-600 font-medium text-sm sm:text-base">
+            <p className="text-center text-slate-600 font-medium text-xs sm:text-base">
               Calculation for your <span className="text-slate-900 font-bold">₹{formatIndianNumber(calculatedData.regularBill)}</span> bi-monthly electricity bill
             </p>
 
-            {/* Top Stats - Annual & Lifetime Savings - Premium Design */}
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="relative overflow-hidden bg-white rounded-2xl shadow-md border border-slate-200 p-4 sm:p-5 group hover:shadow-lg transition-all duration-300">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-100 to-indigo-50 rounded-full -mr-12 -mt-12 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+            {/* Top Stats - Annual & Lifetime Savings - Compact Grid */}
+            <div className="grid grid-cols-2 gap-2 sm:gap-4">
+              <div className="relative overflow-hidden bg-white rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 p-3 sm:p-5 group hover:shadow-lg transition-all duration-300">
+                <div className="absolute top-0 right-0 w-16 sm:w-24 h-16 sm:h-24 bg-gradient-to-br from-indigo-100 to-indigo-50 rounded-full -mr-8 -mt-8 sm:-mr-12 sm:-mt-12 opacity-50 group-hover:opacity-70 transition-opacity"></div>
                 <div className="relative">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-indigo-100 flex items-center justify-center">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 8.25H9m6 3H9m3 6l-3-3h1.5a3 3 0 100-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <p className="text-slate-600 text-xs sm:text-sm font-semibold">Annual Savings</p>
+                    <p className="text-slate-600 text-[10px] sm:text-sm font-semibold">Annual Savings</p>
                   </div>
-                  <p className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-1">
+                  <p className="text-lg sm:text-2xl font-bold text-slate-900 tracking-tight mb-0.5 sm:mb-1">
                     ₹{formatIndianNumber(calculatedData.annualSavings)}
                   </p>
-                  <p className="text-slate-500 text-xs">Estimated yearly savings with solar</p>
+                  <p className="text-slate-500 text-[10px] sm:text-xs">Estimated yearly savings</p>
                 </div>
               </div>
 
-              <div className="relative overflow-hidden bg-white rounded-2xl shadow-md border border-slate-200 p-4 sm:p-5 group hover:shadow-lg transition-all duration-300">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-full -mr-12 -mt-12 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+              <div className="relative overflow-hidden bg-white rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 p-3 sm:p-5 group hover:shadow-lg transition-all duration-300">
+                <div className="absolute top-0 right-0 w-16 sm:w-24 h-16 sm:h-24 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-full -mr-8 -mt-8 sm:-mr-12 sm:-mt-12 opacity-50 group-hover:opacity-70 transition-opacity"></div>
                 <div className="relative">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>
                     </div>
-                    <p className="text-slate-600 text-xs sm:text-sm font-semibold">Lifetime Savings</p>
+                    <p className="text-slate-600 text-[10px] sm:text-sm font-semibold">Lifetime Savings</p>
                   </div>
-                  <p className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-1">
+                  <p className="text-lg sm:text-2xl font-bold text-slate-900 tracking-tight mb-0.5 sm:mb-1">
                     ₹{formatIndianNumber(calculatedData.lifetimeSavings)}
                   </p>
-                  <p className="text-slate-500 text-xs">Total savings over 25 years</p>
+                  <p className="text-slate-500 text-[10px] sm:text-xs">Total savings over 25 years</p>
                 </div>
               </div>
             </div>
 
             {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-6">
               {/* LEFT CARD: System Details */}
-              <div className="bg-white rounded-2xl shadow-md p-4 sm:p-5 border border-slate-200">
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm p-3 sm:p-5 border border-slate-200">
+                <h3 className="text-base sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4 flex items-center gap-2">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   Your Solar System
                 </h3>
 
                 {/* Recommended System Size - Hero Stat */}
-                <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-4 sm:p-5 mb-3 border border-slate-200">
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-indigo-200 rounded-full -mr-10 -mt-10 opacity-20"></div>
-                  <p className="text-xs sm:text-sm text-slate-600 font-semibold mb-1">Recommended Solar Capacity</p>
-                  <div className="flex items-baseline gap-2">
-                    <p className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg sm:rounded-xl p-3 sm:p-5 mb-2 sm:mb-3 border border-slate-200">
+                  <div className="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-indigo-200 rounded-full -mr-8 -mt-8 sm:-mr-10 sm:-mt-10 opacity-20"></div>
+                  <p className="text-[10px] sm:text-sm text-slate-600 font-semibold mb-0.5 sm:mb-1">Recommended Solar Capacity</p>
+                  <div className="flex items-baseline gap-1.5 sm:gap-2">
+                    <p className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
                       {calculatedData.recommendedKw}
                     </p>
-                    <p className="text-lg sm:text-xl font-bold text-indigo-600">kW</p>
+                    <p className="text-base sm:text-xl font-bold text-indigo-600">kW</p>
                   </div>
                 </div>
 
                 {/* Secondary Stats Grid */}
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-gradient-to-br from-violet-50 to-violet-100 rounded-xl p-3 sm:p-4 border border-violet-200">
-                    <p className="text-xs text-violet-700 font-medium mb-1">Payback Period</p>
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                  <div className="bg-gradient-to-br from-violet-50 to-violet-100 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-violet-200">
+                    <p className="text-[10px] sm:text-xs text-violet-700 font-medium mb-0.5 sm:mb-1">Payback Period</p>
                     <div className="flex items-baseline gap-1">
-                      <p className="text-xl sm:text-2xl font-black text-violet-900">{calculatedData.paybackYears_internal}</p>
-                      <p className="text-xs font-semibold text-violet-700">years</p>
+                      <p className="text-lg sm:text-2xl font-black text-violet-900">{calculatedData.paybackYears_internal}</p>
+                      <p className="text-[10px] sm:text-xs font-semibold text-violet-700">years</p>
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-3 sm:p-4 border border-amber-200">
-                    <p className="text-xs text-amber-700 font-medium mb-1">Return on Investment</p>
+                  <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-amber-200">
+                    <p className="text-[10px] sm:text-xs text-amber-700 font-medium mb-0.5 sm:mb-1">Return on Investment</p>
                     <div className="flex items-baseline gap-1">
-                      <p className="text-xl sm:text-2xl font-black text-amber-900">{calculatedData.roiPercent_internal}</p>
-                      <p className="text-xs font-semibold text-amber-700">% p.a.</p>
+                      <p className="text-lg sm:text-2xl font-black text-amber-900">{calculatedData.roiPercent_internal}</p>
+                      <p className="text-[10px] sm:text-xs font-semibold text-amber-700">% p.a.</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Solar Panel Image */}
-                <div className="mt-4 flex justify-center">
-                  <img 
-                    src="/images/solar-panel-illustration.png" 
+                <div className="mt-3 sm:mt-4 flex justify-center">
+                  <img
+                    src="/images/solar-panel-illustration.png"
                     alt="Rooftop solar panel installation"
-                    className="w-full max-w-xs h-auto rounded-xl opacity-80"
+                    className="w-full max-w-[200px] sm:max-w-xs h-auto rounded-xl opacity-80"
                     onError={(e) => {
                       e.target.style.display = 'none';
                     }}
@@ -515,58 +515,58 @@ export default function SolarCalculator({ showBreakdown = false }) {
               </div>
 
               {/* RIGHT CARD: Bill Comparison */}
-              <div className="bg-white rounded-2xl shadow-md p-4 sm:p-5 border border-slate-200">
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm p-3 sm:p-5 border border-slate-200">
+                <h3 className="text-base sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4 flex items-center gap-2">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
-                  Bill Comparison (Bi-monthly)
+                  Bill Comparison
                 </h3>
 
                 {/* Chart */}
                 {chartData && (
-                  <div className="mb-5">
-                    <div className="h-56 sm:h-64">
+                  <div className="mb-4 sm:mb-5">
+                    <div className="h-48 sm:h-64">
                       <Bar data={chartData} options={chartOptions} plugins={[ChartDataLabels]} />
                     </div>
 
                     {/* Accessibility: Offscreen chart summary */}
                     <div className="sr-only">
-                      Chart showing bi-monthly bill comparison: 
-                      Regular electricity bill is ₹{formatIndianNumber(calculatedData.regularBill)}, 
+                      Chart showing bi-monthly bill comparison:
+                      Regular electricity bill is ₹{formatIndianNumber(calculatedData.regularBill)},
                       with solar it becomes ₹{formatIndianNumber(calculatedData.solarBimonthlyBill)}.
                     </div>
                   </div>
                 )}
 
                 {/* Comparison Cards */}
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-3 sm:p-4 border border-slate-300">
-                    <p className="text-xs sm:text-sm text-slate-600 font-semibold mb-1.5">Regular Bill</p>
-                    <p className="text-lg sm:text-xl font-black text-slate-900">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                  <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-slate-300">
+                    <p className="text-[10px] sm:text-sm text-slate-600 font-semibold mb-1">Regular Bill</p>
+                    <p className="text-base sm:text-xl font-black text-slate-900">
                       ₹{formatIndianNumber(calculatedData.regularBill)}
                     </p>
-                    <p className="text-xs text-slate-500 mt-0.5">bi-monthly</p>
+                    <p className="text-[10px] text-slate-500 mt-0.5">bi-monthly</p>
                   </div>
 
-                  <div className="relative bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl p-3 sm:p-4 border border-emerald-300 overflow-hidden">
-                    <div className="absolute top-2 right-2 bg-emerald-600 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-sm">
+                  <div className="relative bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-emerald-300 overflow-hidden">
+                    <div className="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-sm">
                       95% OFF
                     </div>
-                    <p className="text-xs sm:text-sm text-emerald-700 font-semibold mb-1.5">With Solar</p>
-                    <p className="text-lg sm:text-xl font-black text-emerald-900">
+                    <p className="text-[10px] sm:text-sm text-emerald-700 font-semibold mb-1">With Solar</p>
+                    <p className="text-base sm:text-xl font-black text-emerald-900">
                       ₹{formatIndianNumber(calculatedData.solarBimonthlyBill)}
                     </p>
-                    <p className="text-xs text-emerald-600 mt-0.5">bi-monthly</p>
+                    <p className="text-[10px] text-emerald-600 mt-0.5">bi-monthly</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Note - Moved before CTA */}
-            <div className="mt-6 bg-indigo-50 rounded-lg p-3 border border-indigo-200">
-              <p className="text-xs text-indigo-800 flex items-start gap-2">
-                <svg className="w-4 h-4 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <div className="mt-4 sm:mt-6 bg-indigo-50 rounded-lg p-2.5 sm:p-3 border border-indigo-200">
+              <p className="text-[10px] sm:text-xs text-indigo-800 flex items-start gap-2">
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                 </svg>
                 <span>
@@ -577,106 +577,106 @@ export default function SolarCalculator({ showBreakdown = false }) {
 
             {/* How We Calculate Section - Only show on calc page */}
             {showBreakdown && (
-              <div className="mt-8 sm:mt-10 bg-slate-50 rounded-2xl p-5 sm:p-6 border border-slate-200">
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="mt-6 sm:mt-10 bg-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200">
+                <h3 className="text-base sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4 flex items-center gap-2">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
                   How We Calculate Your Savings
                 </h3>
-              
-              <div className="space-y-4">
-                {/* Step 1 */}
-                <div className="bg-white rounded-lg p-4 border border-slate-200">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-indigo-100 text-indigo-600 font-bold text-sm flex items-center justify-center mt-0.5">1</div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-900 text-sm mb-1">Your Current Electricity Usage</p>
-                      <p className="text-xs sm:text-sm text-slate-600">
-                        Bi-monthly bill: <span className="font-semibold text-slate-900">₹{formatIndianNumber(calculatedData.regularBill)}</span>
-                        <br />
-                        Annual bill: <span className="font-semibold text-slate-900">₹{formatIndianNumber(calculatedData.regularBill)} × 6 = ₹{formatIndianNumber(calculatedData.annualBill)}</span>
-                      </p>
+
+                <div className="space-y-3 sm:space-y-4">
+                  {/* Step 1 */}
+                  <div className="bg-white rounded-lg p-3 sm:p-4 border border-slate-200">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-indigo-100 text-indigo-600 font-bold text-xs sm:text-sm flex items-center justify-center mt-0.5">1</div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-slate-900 text-xs sm:text-sm mb-1">Your Current Electricity Usage</p>
+                        <p className="text-[10px] sm:text-sm text-slate-600">
+                          Bi-monthly bill: <span className="font-semibold text-slate-900">₹{formatIndianNumber(calculatedData.regularBill)}</span>
+                          <br />
+                          Annual bill: <span className="font-semibold text-slate-900">₹{formatIndianNumber(calculatedData.regularBill)} × 6 = ₹{formatIndianNumber(calculatedData.annualBill)}</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Step 2 */}
-                <div className="bg-white rounded-lg p-4 border border-slate-200">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-indigo-100 text-indigo-600 font-bold text-sm flex items-center justify-center mt-0.5">2</div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-900 text-sm mb-1">Energy Consumption Calculation</p>
-                      <p className="text-xs sm:text-sm text-slate-600">
-                        Annual usage: <span className="font-semibold text-slate-900">₹{formatIndianNumber(calculatedData.annualBill)} ÷ ₹7.8/unit = {formatIndianNumber(Math.round(calculatedData.annualBill / TARIFF))} units/year</span>
-                      </p>
+                  {/* Step 2 */}
+                  <div className="bg-white rounded-lg p-3 sm:p-4 border border-slate-200">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-indigo-100 text-indigo-600 font-bold text-xs sm:text-sm flex items-center justify-center mt-0.5">2</div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-slate-900 text-xs sm:text-sm mb-1">Energy Consumption Calculation</p>
+                        <p className="text-[10px] sm:text-sm text-slate-600">
+                          Annual usage: <span className="font-semibold text-slate-900">₹{formatIndianNumber(calculatedData.annualBill)} ÷ ₹7.8/unit = {formatIndianNumber(Math.round(calculatedData.annualBill / TARIFF))} units/year</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Step 3 */}
-                <div className="bg-white rounded-lg p-4 border border-slate-200">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-indigo-100 text-indigo-600 font-bold text-sm flex items-center justify-center mt-0.5">3</div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-900 text-sm mb-1">Recommended Solar System</p>
-                      <p className="text-xs sm:text-sm text-slate-600">
-                        System size: <span className="font-semibold text-slate-900">{calculatedData.recommendedKw} kW</span>
-                        <br />
-                        <span className="text-xs text-slate-500">Based on 1400 units generation per kW annually in Tamil Nadu</span>
-                      </p>
+                  {/* Step 3 */}
+                  <div className="bg-white rounded-lg p-3 sm:p-4 border border-slate-200">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-indigo-100 text-indigo-600 font-bold text-xs sm:text-sm flex items-center justify-center mt-0.5">3</div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-slate-900 text-xs sm:text-sm mb-1">Recommended Solar System</p>
+                        <p className="text-[10px] sm:text-sm text-slate-600">
+                          System size: <span className="font-semibold text-slate-900">{calculatedData.recommendedKw} kW</span>
+                          <br />
+                          <span className="text-[10px] text-slate-500">Based on 1400 units generation per kW annually in Tamil Nadu</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Step 4 */}
-                <div className="bg-white rounded-lg p-4 border border-slate-200">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-emerald-100 text-emerald-600 font-bold text-sm flex items-center justify-center mt-0.5">4</div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-900 text-sm mb-1">Your Savings with Solar</p>
-                      <p className="text-xs sm:text-sm text-slate-600">
-                        Annual savings: <span className="font-semibold text-emerald-600">₹{formatIndianNumber(calculatedData.annualSavings)}/year</span>
-                        <br />
-                        25-year savings: <span className="font-semibold text-emerald-600">₹{formatIndianNumber(calculatedData.lifetimeSavings)}</span>
-                        <br />
-                        <span className="text-xs text-slate-500">Solar reduces your bill by 95% - You only pay ₹{formatIndianNumber(calculatedData.solarBimonthlyBill)} bi-monthly!</span>
-                      </p>
+                  {/* Step 4 */}
+                  <div className="bg-white rounded-lg p-3 sm:p-4 border border-slate-200">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-emerald-100 text-emerald-600 font-bold text-xs sm:text-sm flex items-center justify-center mt-0.5">4</div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-slate-900 text-xs sm:text-sm mb-1">Your Savings with Solar</p>
+                        <p className="text-[10px] sm:text-sm text-slate-600">
+                          Annual savings: <span className="font-semibold text-emerald-600">₹{formatIndianNumber(calculatedData.annualSavings)}/year</span>
+                          <br />
+                          25-year savings: <span className="font-semibold text-emerald-600">₹{formatIndianNumber(calculatedData.lifetimeSavings)}</span>
+                          <br />
+                          <span className="text-[10px] text-slate-500">Solar reduces your bill by 95% - You only pay ₹{formatIndianNumber(calculatedData.solarBimonthlyBill)} bi-monthly!</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Step 5 - Payback Period */}
-                <div className="bg-white rounded-lg p-4 border border-slate-200">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-violet-100 text-violet-600 font-bold text-sm flex items-center justify-center mt-0.5">5</div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-900 text-sm mb-1">Payback Period</p>
-                      <p className="text-xs sm:text-sm text-slate-600">
-                        <span className="font-semibold text-violet-600">{calculatedData.paybackYears_internal} years</span> to recover your investment
-                        <br />
-                        <span className="text-xs text-slate-500">This is the time it takes for your electricity savings to equal your initial solar investment. After this period, you enjoy free electricity!</span>
-                      </p>
+                  {/* Step 5 - Payback Period */}
+                  <div className="bg-white rounded-lg p-3 sm:p-4 border border-slate-200">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-violet-100 text-violet-600 font-bold text-xs sm:text-sm flex items-center justify-center mt-0.5">5</div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-slate-900 text-xs sm:text-sm mb-1">Payback Period</p>
+                        <p className="text-[10px] sm:text-sm text-slate-600">
+                          <span className="font-semibold text-violet-600">{calculatedData.paybackYears_internal} years</span> to recover your investment
+                          <br />
+                          <span className="text-[10px] text-slate-500">This is the time it takes for your electricity savings to equal your initial solar investment. After this period, you enjoy free electricity!</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Step 6 - ROI */}
-                <div className="bg-white rounded-lg p-4 border border-slate-200">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-amber-100 text-amber-600 font-bold text-sm flex items-center justify-center mt-0.5">6</div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-900 text-sm mb-1">Return on Investment (ROI)</p>
-                      <p className="text-xs sm:text-sm text-slate-600">
-                        <span className="font-semibold text-amber-600">{calculatedData.roiPercent_internal}% per year</span>
-                        <br />
-                        <span className="text-xs text-slate-500">Your annual return from going solar. Over 25 years, your total return is {Math.round(calculatedData.roiPercent_internal * 25)}%! Much better than traditional investments.</span>
-                      </p>
+                  {/* Step 6 - ROI */}
+                  <div className="bg-white rounded-lg p-3 sm:p-4 border border-slate-200">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-amber-100 text-amber-600 font-bold text-xs sm:text-sm flex items-center justify-center mt-0.5">6</div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-slate-900 text-xs sm:text-sm mb-1">Return on Investment (ROI)</p>
+                        <p className="text-[10px] sm:text-sm text-slate-600">
+                          <span className="font-semibold text-amber-600">{calculatedData.roiPercent_internal}% per year</span>
+                          <br />
+                          <span className="text-[10px] text-slate-500">Your annual return from going solar. Over 25 years, your total return is {Math.round(calculatedData.roiPercent_internal * 25)}%! Much better than traditional investments.</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
             )}
           </div>
         )}

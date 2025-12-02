@@ -10,7 +10,7 @@ const contentDirectory = path.join(process.cwd(), 'content')
  */
 export function getHomeContent() {
   const filePath = path.join(contentDirectory, 'pages', 'home.md')
-  
+
   try {
     const fileContents = fs.readFileSync(filePath, 'utf8')
     const { data } = matter(fileContents)
@@ -33,7 +33,7 @@ export function getHomeContent() {
  */
 export function getSiteSettings() {
   const filePath = path.join(contentDirectory, 'settings', 'general.md')
-  
+
   try {
     const fileContents = fs.readFileSync(filePath, 'utf8')
     const { data } = matter(fileContents)
@@ -55,9 +55,11 @@ export function getSiteSettings() {
  */
 export function getAllBlogPosts() {
   const blogDirectory = path.join(contentDirectory, 'blog')
-  
+
   try {
+    console.log('Scanning blog directory:', blogDirectory)
     const fileNames = fs.readdirSync(blogDirectory)
+    console.log('Found files:', fileNames)
     const posts = fileNames
       .filter(fileName => fileName.endsWith('.md'))
       .map(fileName => {
@@ -65,7 +67,7 @@ export function getAllBlogPosts() {
         const filePath = path.join(blogDirectory, fileName)
         const fileContents = fs.readFileSync(filePath, 'utf8')
         const { data, content } = matter(fileContents)
-        
+
         return {
           slug,
           ...data,
@@ -74,7 +76,7 @@ export function getAllBlogPosts() {
       })
       // Sort by date (newest first)
       .sort((a, b) => new Date(b.date) - new Date(a.date))
-    
+
     return posts
   } catch (error) {
     console.error('Error loading blog posts:', error)
@@ -87,14 +89,14 @@ export function getAllBlogPosts() {
  */
 export function getBlogPost(slug) {
   const filePath = path.join(contentDirectory, 'blog', `${slug}.md`)
-  
+
   try {
     const fileContents = fs.readFileSync(filePath, 'utf8')
     const { data, content } = matter(fileContents)
-    
+
     // Convert markdown to HTML
     const htmlContent = marked(content)
-    
+
     return {
       slug,
       ...data,

@@ -46,6 +46,19 @@ module.exports = {
           800: '#00433c',
           900: '#00221e',
         },
+        'solar-orange': {
+          DEFAULT: '#FF5F15',
+          50: '#FFF0E5',
+          100: '#FFDCC2',
+          200: '#FFB88A',
+          300: '#FF9452',
+          400: '#FF7A2E',
+          500: '#FF5F15',
+          600: '#CC4C11',
+          700: '#99390D',
+          800: '#662608',
+          900: '#331304',
+        },
       },
       fontFamily: {
         sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
@@ -77,5 +90,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
   ],
 }

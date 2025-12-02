@@ -42,7 +42,7 @@ export default function BlogIndex({ posts, settings }) {
                   className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   {post.featuredImage && (
-                    <div className="relative h-48 sm:h-56 w-full">
+                    <div className="relative aspect-[2/1] w-full">
                       <Image
                         src={post.featuredImage}
                         alt={post.title}

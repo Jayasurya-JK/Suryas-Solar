@@ -23,6 +23,8 @@ export default function Home({ content, settings }) {
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
+          // Clean up URL after scroll for a professional look
+          window.history.replaceState(null, '', window.location.pathname);
         }, 100);
       }
     }
