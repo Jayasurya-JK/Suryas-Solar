@@ -35,8 +35,8 @@ export default function Home({ content, settings }) {
     "@type": "LocalBusiness",
     "name": settings.siteTitle || "Surya's Solar",
     "description": settings.siteDescription || "Cuddalore's most trusted solar company",
-    "image": "https://suryassolar.com/images/Banner_1_desktop.png",
-    "logo": "https://suryassolar.com/images/surya-solar-logo.png",
+    "image": "https://suryassolar.com/images/Banner_1_desktop.webp",
+    "logo": "https://suryassolar.com/images/surya-solar-logo.webp",
     "url": "https://suryassolar.com",
     "telephone": settings.phone || "+917904369094",
     "email": settings.email || "suryassolarenergy@gmail.com",
@@ -97,7 +97,7 @@ export default function Home({ content, settings }) {
         <meta name="description" content={settings.siteDescription || "Leading residential solar installation in Cuddalore"} />
         <meta name="keywords" content={settings.siteKeywords || "solar panel Cuddalore, residential solar, rooftop solar"} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/surya-solar-logo.png" />
+        <link rel="icon" href="/images/surya-solar-logo.webp" />
         <link rel="canonical" href="https://suryassolar.com" />
 
         {/* Open Graph / Facebook */}
@@ -105,7 +105,7 @@ export default function Home({ content, settings }) {
         <meta property="og:url" content="https://suryassolar.com" />
         <meta property="og:title" content={settings.siteTitle || "Surya's Solar"} />
         <meta property="og:description" content={settings.siteDescription || "Power your home with clean solar energy"} />
-        <meta property="og:image" content={settings.ogImage || "https://suryassolar.com/images/Banner_1_desktop.png"} />
+        <meta property="og:image" content={settings.ogImage || "https://suryassolar.com/images/Banner_1_desktop.webp"} />
         <meta property="og:locale" content="en_IN" />
         <meta property="og:site_name" content="Surya's Solar" />
 
@@ -114,7 +114,7 @@ export default function Home({ content, settings }) {
         <meta property="twitter:url" content="https://suryassolar.com" />
         <meta property="twitter:title" content={settings.siteTitle || "Surya's Solar"} />
         <meta property="twitter:description" content={settings.siteDescription || "Power your home with clean solar energy"} />
-        <meta property="twitter:image" content={settings.ogImage || "https://suryassolar.com/images/Banner_1_desktop.png"} />
+        <meta property="twitter:image" content={settings.ogImage || "https://suryassolar.com/images/Banner_1_desktop.webp"} />
 
         {/* Additional SEO */}
         <meta name="robots" content="index, follow" />

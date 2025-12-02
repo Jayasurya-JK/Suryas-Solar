@@ -2,7 +2,7 @@
 title: "Solar Panel Generation in Tamil Nadu: How Many Units Does 1kW, 2kW, 3kW, 5kW Produce? (2025 Guide)"
 date: 2025-12-10
 excerpt: "Find out exactly how many units a 1kW, 2kW, 3kW, or 5kW solar system generates in Tamil Nadu. A complete guide to daily, monthly, and yearly solar production."
-featuredImage: "/images/Solar Generation Units Guide.png"
+featuredImage: "/images/Solar Generation Units Guide.webp"
 category: "Solar Guide"
 author: "Surya's Solar Team"
 tags: ["Solar Generation", "1kW Solar", "3kW Solar", "5kW Solar", "Tamil Nadu Solar"]

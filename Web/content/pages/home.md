@@ -2,7 +2,7 @@
 heroSlides:
   - headline: "Cuddalore's Most Trusted Residential Solar Experts"
     subhead: "Power your home with clean, reliable solar energy. Save up to 90% on electricity bills."
-    image: "/images/hero-slide-1.jpg"
+    image: "/images/hero-slide-1.webp"
     primaryCTA:
       text: "Book Free Home Visit"
       href: "#booking"
@@ -12,7 +12,7 @@ heroSlides:
   
   - headline: "Leading Rooftop Solar for Cuddalore Homes"
     subhead: "Expert installation in 24 hours. Government subsidy assistance included."
-    image: "/images/hero-slide-2.jpg"
+    image: "/images/hero-slide-2.webp"
     primaryCTA:
       text: "Book Free Home Visit"
       href: "#booking"
@@ -22,7 +22,7 @@ heroSlides:
   
   - headline: "Trusted by Cuddalore Families for Clean, Reliable Solar"
     subhead: "25-year warranty. 50+ happy homes powered by the sun."
-    image: "/images/hero-slide-3.jpg"
+    image: "/images/hero-slide-3.webp"
     primaryCTA:
       text: "Book Free Home Visit"
       href: "#booking"
@@ -78,7 +78,7 @@ partners:
     logo: "/images/partner-logos/vikram.png"
     alt: "Vikram Solar - Certified Installer"
   - name: "Waaree"
-    logo: "/images/partner-logos/waaree.png"
+    logo: "/images/partner-logos/waaree.webp"
     alt: "Waaree Energies - Official Partner"
   - name: "Luminous"
     logo: "/images/partner-logos/luminous.png"
@@ -89,20 +89,20 @@ testimonials:
     location: "Cuddalore"
     rating: 5
     text: "Excellent service! The team completed the installation in just one day and my electricity bill has dropped by 80%. Highly recommended for anyone looking to go solar."
-    image: "/images/testimonials/customer-1.jpg"
+    image: "/images/testimonials/customer-1.webp"
   - name: "Priya Selvam"
     location: "Panruti"
     rating: 5
     text: "Very professional team. They handled all the government paperwork and helped me get the subsidy. The panels are working perfectly for 6 months now."
-    image: "/images/testimonials/customer-2.jpg"
+    image: "/images/testimonials/customer-2.webp"
   - name: "Anand Mohan"
     location: "Chidambaram"
     rating: 5
     text: "Best decision for my home! The free consultation was very informative. Installation was quick and clean. Already seeing great savings on my bills."
-    image: "/images/testimonials/customer-3.jpg"
+    image: "/images/testimonials/customer-3.webp"
   - name: "Lakshmi Narayan"
     location: "Cuddalore"
     rating: 5
     text: "Trustworthy company with transparent pricing. No hidden costs. The after-sales support is also excellent. Thank you Surya's Solar!"
-    image: "/images/testimonials/customer-4.jpg"
+    image: "/images/testimonials/customer-4.webp"
 ---

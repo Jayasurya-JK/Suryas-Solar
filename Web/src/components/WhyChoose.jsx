@@ -55,7 +55,7 @@ export default function WhyChoose() {
                 <picture>
                   <source srcSet="/images/installation-expert.webp" type="image/webp" />
                   <img
-                    src="/images/installation-expert.png"
+                    src="/images/installation-expert.webp"
                     alt="Solar Installation Expert"
                     width="864"
                     height="1081"
@@ -240,7 +240,7 @@ export default function WhyChoose() {
                   <div className="grid grid-cols-3 gap-3 md:gap-4 lg:gap-5 max-w-md mx-auto">
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
                       <img
-                        src="/images/SBI.png"
+                        src="/images/SBI.webp"
                         alt="SBI"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
@@ -249,7 +249,7 @@ export default function WhyChoose() {
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
                       <img
-                        src="/images/bank-of-maharastra.png"
+                        src="/images/bank-of-maharastra.webp"
                         alt="Bank of Maharashtra"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
@@ -258,7 +258,7 @@ export default function WhyChoose() {
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
                       <img
-                        src="/images/indian-bank.png"
+                        src="/images/indian-bank.webp"
                         alt="Indian Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
@@ -267,7 +267,7 @@ export default function WhyChoose() {
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
                       <img
-                        src="/images/canara-bank.png"
+                        src="/images/canara-bank.webp"
                         alt="Canara Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
@@ -276,7 +276,7 @@ export default function WhyChoose() {
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
                       <img
-                        src="/images/union-bank.png"
+                        src="/images/union-bank.webp"
                         alt="Union Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
@@ -285,7 +285,7 @@ export default function WhyChoose() {
                     </div>
                     <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-md p-2 mx-auto">
                       <img
-                        src="/images/indian-overseas-bank.png"
+                        src="/images/indian-overseas-bank.webp"
                         alt="Indian Overseas Bank"
                         className="w-full h-full object-contain"
                         onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}

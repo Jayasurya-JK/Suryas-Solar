@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from 'react'
 const slides = [
   {
     id: 1,
-    imageDesktop: '/images/Banner_1_desktop.png',
+    imageDesktop: '/images/Banner_1_desktop.webp',
     imageDesktopWebP: '/images/Banner_1_desktop.webp',
-    imageMobile: '/images/Banner_1_mobile.png',
+    imageMobile: '/images/Banner_1_mobile.webp',
     imageMobileWebP: '/images/Banner_1_mobile.webp',
     headline: "Cuddalore's Most Trusted Residential Solar Experts",
     subhead: 'Power your home with clean, reliable solar energy. Save up to 90% on electricity bills.',
@@ -14,9 +14,9 @@ const slides = [
   },
   {
     id: 2,
-    imageDesktop: '/images/Banner_3_desktop.png',
+    imageDesktop: '/images/Banner_3_desktop.webp',
     imageDesktopWebP: '/images/Banner_3_desktop.webp',
-    imageMobile: '/images/Banner_3_mobile.png',
+    imageMobile: '/images/Banner_3_mobile.webp',
     imageMobileWebP: '/images/Banner_3_mobile.webp',
     headline: 'Go Solar with PM Surya Ghar Subsidy + Easy EMI Support',
     subhead: 'We handle all paperwork, approvals, and installation—zero hassle for your family.',
@@ -25,9 +25,9 @@ const slides = [
   },
   {
     id: 3,
-    imageDesktop: '/images/Banner_2_desktop.png',
+    imageDesktop: '/images/Banner_2_desktop.webp',
     imageDesktopWebP: '/images/Banner_2_desktop.webp',
-    imageMobile: '/images/Banner_2_mobile.png',
+    imageMobile: '/images/Banner_2_mobile.webp',
     imageMobileWebP: '/images/Banner_2_mobile.webp',
     headline: 'Trusted by Cuddalore Families for Clean, Reliable Solar',
     subhead: '25-year warranty. 50+ happy homes powered by the sun.',

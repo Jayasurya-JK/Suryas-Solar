@@ -1,8 +1,8 @@
 const partners = [
-  { name: 'Tata Power Solar', logo: '/images/tata-solar-power.png', logoWebP: '/images/tata-solar-power.webp', alt: 'Tata Power Solar - Authorized Dealer', tagline: 'Authorized Dealer', highlight: true },
-  { name: 'Premier Energies', logo: '/images/premier-energies.png', logoWebP: '/images/premier-energies.webp', alt: 'Premier Energies - Certified Partner', tagline: 'Solar Partner', highlight: false },
-  { name: 'Waaree Energies', logo: '/images/waaree.png', logoWebP: '/images/waaree.webp', alt: 'Waaree Energies - Official Partner', tagline: 'Solar Partner', highlight: false },
-  { name: 'Adani Solar', logo: '/images/adani-power-.png', logoWebP: '/images/adani-power-.webp', alt: 'Adani Solar - Official Partner', tagline: 'Solar Partner', highlight: false },
+  { name: 'Tata Power Solar', logo: '/images/tata-solar-power.webp', logoWebP: '/images/tata-solar-power.webp', alt: 'Tata Power Solar - Authorized Dealer', tagline: 'Authorized Dealer', highlight: true },
+  { name: 'Premier Energies', logo: '/images/premier-energies.webp', logoWebP: '/images/premier-energies.webp', alt: 'Premier Energies - Certified Partner', tagline: 'Solar Partner', highlight: false },
+  { name: 'Waaree Energies', logo: '/images/waaree.webp', logoWebP: '/images/waaree.webp', alt: 'Waaree Energies - Official Partner', tagline: 'Solar Partner', highlight: false },
+  { name: 'Adani Solar', logo: '/images/adani-power-.webp', logoWebP: '/images/adani-power-.webp', alt: 'Adani Solar - Official Partner', tagline: 'Solar Partner', highlight: false },
 ]
 
 export default function Partners() {

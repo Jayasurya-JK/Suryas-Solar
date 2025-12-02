@@ -2,7 +2,7 @@
 title: "Solar Myths vs Facts (Tamil Nadu Edition) — Most Common Misunderstandings Homeowners Have (2025)"
 date: 2025-12-11
 excerpt: "Debunking the top 10 solar myths in Tamil Nadu & Puducherry. Learn the truth about solar generation, roof damage, AC usage, and zero bills."
-featuredImage: "/images/Solar Myths vs Facts.png"
+featuredImage: "/images/Solar Myths vs Facts.webp"
 category: "Solar Guide"
 author: "Surya's Solar Team"
 tags: ["Solar Myths", "Solar Facts", "Tamil Nadu Solar", "Puducherry Solar", "Solar Education"]

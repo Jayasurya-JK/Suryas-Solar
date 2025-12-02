@@ -7,7 +7,7 @@ const testimonials = [
     location: 'Cuddalore',
     rating: 5,
     text: 'Excellent service! The team completed the installation in just one day and my electricity bill has dropped by 80%. Highly recommended for anyone looking to go solar.',
-    image: '/images/testimonials/customer-1.jpg',
+    image: '/images/testimonials/customer-1.webp',
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const testimonials = [
     location: 'Panruti',
     rating: 5,
     text: 'Very professional team. They handled all the government paperwork and helped me get the subsidy. The panels are working perfectly for 6 months now.',
-    image: '/images/testimonials/customer-2.jpg',
+    image: '/images/testimonials/customer-2.webp',
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const testimonials = [
     location: 'Chidambaram',
     rating: 5,
     text: 'Best decision for my home! The free consultation was very informative. Installation was quick and clean. Already seeing great savings on my bills.',
-    image: '/images/testimonials/customer-3.jpg',
+    image: '/images/testimonials/customer-3.webp',
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const testimonials = [
     location: 'Cuddalore',
     rating: 5,
     text: 'Trustworthy company with transparent pricing. No hidden costs. The after-sales support is also excellent. Thank you Surya\'s Solar!',
-    image: '/images/testimonials/customer-4.jpg',
+    image: '/images/testimonials/customer-4.webp',
   },
 ]
 

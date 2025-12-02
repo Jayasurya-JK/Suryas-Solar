@@ -52,9 +52,9 @@ export default function OurWorks() {
                             style={{ transform: `translateX(-${currentSlide * (100 / cardsToShow)}%)` }}
                         >
                             {[
-                                '/images/1.jpg', '/images/2.jpg', '/images/3.jpg',
-                                '/images/4.jpg', '/images/5.jpg', '/images/6.jpg',
-                                '/images/7.jpg', '/images/8.jpeg', '/images/9.jpg'
+                                '/images/1.webp', '/images/2.webp', '/images/3.webp',
+                                '/images/4.webp', '/images/5.webp', '/images/6.webp',
+                                '/images/7.webp', '/images/8.webp', '/images/9.webp'
                             ].map((img, index) => (
                                 <div
                                     key={index}

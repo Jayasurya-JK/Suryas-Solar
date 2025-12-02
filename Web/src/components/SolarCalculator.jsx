@@ -502,16 +502,7 @@ export default function SolarCalculator({ showBreakdown = false }) {
                 </div>
 
                 {/* Solar Panel Image */}
-                <div className="mt-3 sm:mt-4 flex justify-center">
-                  <img
-                    src="/images/solar-panel-illustration.png"
-                    alt="Rooftop solar panel installation"
-                    className="w-full max-w-[200px] sm:max-w-xs h-auto rounded-xl opacity-80"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                    }}
-                  />
-                </div>
+                {/* Solar Panel Image - Removed as file is missing */}
               </div>
 
               {/* RIGHT CARD: Bill Comparison */}

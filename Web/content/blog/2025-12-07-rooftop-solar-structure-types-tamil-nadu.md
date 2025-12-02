@@ -2,7 +2,7 @@
 title: "Rooftop Solar Structure Types (2025): GI, Hot-Dip, RCC, Rail-Less — Which Is Best for Your Home?"
 date: 2025-12-07
 excerpt: "Compare GI, Hot-Dip Galvanized, RCC, and Rail-Less solar structures. Find the best mounting system for Tamil Nadu & Puducherry homes."
-featuredImage: "/images/Rooftop Structure Types.png"
+featuredImage: "/images/Rooftop Structure Types.webp"
 category: "Solar Guide"
 author: "Surya's Solar Team"
 tags: ["Solar Structure", "Mounting System", "Tamil Nadu Solar", "Puducherry Solar", "Hot-Dip Galvanized"]

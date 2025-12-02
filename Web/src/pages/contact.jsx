@@ -52,7 +52,7 @@ export default function ContactPage() {
                 <title>Contact Us - Surya's Solar | Cuddalore</title>
                 <meta name="description" content="Get in touch with Surya's Solar for all your solar energy needs in Cuddalore. Visit our office or call us for a free consultation." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/images/surya-solar-logo.png" />
+                <link rel="icon" href="/images/surya-solar-logo.webp" />
             </Head>
 
             <Header />

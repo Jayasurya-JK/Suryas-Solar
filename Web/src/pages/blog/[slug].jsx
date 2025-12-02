@@ -443,7 +443,7 @@ export default function BlogPost({ post, settings }) {
       <Head>
         <title>{post.title} | Surya's Solar</title>
         <meta name="description" content={post.excerpt || `Read about ${post.title}`} />
-        <link rel="icon" href="/images/surya-solar-logo.png" />
+        <link rel="icon" href="/images/surya-solar-logo.webp" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

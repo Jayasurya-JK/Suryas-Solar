@@ -110,7 +110,7 @@ export default function BookingForm() {
               <picture>
                 <source srcSet="/images/form-picture.webp" type="image/webp" />
                 <img
-                  src="/images/form-picture.png"
+                  src="/images/form-picture.webp"
                   alt="Professional solar panel installation on residential rooftop"
                   width="864"
                   height="1100"

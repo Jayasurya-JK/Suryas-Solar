@@ -36,10 +36,10 @@ export default function AboutPage() {
     }, [cardsToShow])
 
     const partners = [
-        { name: 'TATA Power Solaroof', logo: '/images/tata-solar-power.png', logoWebP: '/images/tata-solar-power.webp', type: 'Official Partner' },
-        { name: 'Premier Energies', logo: '/images/premier-energies.png', logoWebP: '/images/premier-energies.webp', type: 'Solar Partner' },
-        { name: 'Waaree', logo: '/images/waaree.png', logoWebP: '/images/waaree.webp', type: 'Solar Partner' },
-        { name: 'Adani Solar', logo: '/images/adani-power-.png', logoWebP: '/images/adani-power-.webp', type: 'Solar Partner' }
+        { name: 'TATA Power Solaroof', logo: '/images/tata-solar-power.webp', logoWebP: '/images/tata-solar-power.webp', type: 'Official Partner' },
+        { name: 'Premier Energies', logo: '/images/premier-energies.webp', logoWebP: '/images/premier-energies.webp', type: 'Solar Partner' },
+        { name: 'Waaree', logo: '/images/waaree.webp', logoWebP: '/images/waaree.webp', type: 'Solar Partner' },
+        { name: 'Adani Solar', logo: '/images/adani-power-.webp', logoWebP: '/images/adani-power-.webp', type: 'Solar Partner' }
     ]
 
     const whyChooseUs = [
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 />
                 <meta name="keywords" content="solar company Cuddalore, TATA solar partner, PM Surya Ghar vendor, residential solar expert" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/images/surya-solar-logo.png" />
+                <link rel="icon" href="/images/surya-solar-logo.webp" />
                 <link rel="canonical" href="https://suryassolar.com/about" />
 
                 {/* Open Graph */}
@@ -117,14 +117,14 @@ export default function AboutPage() {
                 <meta property="og:url" content="https://suryassolar.com/about" />
                 <meta property="og:title" content="About Surya's Solar - Cuddalore’s trusted residential solar expert" />
                 <meta property="og:description" content="10+ years of experience, 100kW+ installations, Official TATA Power Solaroof Partner" />
-                <meta property="og:image" content="https://suryassolar.com/images/og-home.jpg" />
+                <meta property="og:image" content="https://suryassolar.com/images/og-home.webp" />
 
                 {/* Twitter */}
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://suryassolar.com/about" />
                 <meta property="twitter:title" content="About Surya's Solar" />
                 <meta property="twitter:description" content="Cuddalore's most trusted solar company with 10+ years of experience" />
-                <meta property="twitter:image" content="https://suryassolar.com/images/og-home.jpg" />
+                <meta property="twitter:image" content="https://suryassolar.com/images/og-home.webp" />
             </Head>
 
             <Header />
@@ -279,9 +279,9 @@ export default function AboutPage() {
                                     style={{ transform: `translateX(-${currentSlide * (100 / cardsToShow)}%)` }}
                                 >
                                     {[
-                                        '/images/1.jpg', '/images/2.jpg', '/images/3.jpg',
-                                        '/images/4.jpg', '/images/5.jpg', '/images/6.jpg',
-                                        '/images/7.jpg', '/images/8.jpeg', '/images/9.jpg'
+                                        '/images/1.webp', '/images/2.webp', '/images/3.webp',
+                                        '/images/4.webp', '/images/5.webp', '/images/6.webp',
+                                        '/images/7.webp', '/images/8.webp', '/images/9.webp'
                                     ].map((img, index) => (
                                         <div
                                             key={index}

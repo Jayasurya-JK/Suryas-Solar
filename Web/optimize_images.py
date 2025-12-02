@@ -1,73 +1,88 @@
 import os
 from PIL import Image
 
-def get_size_format(b, factor=1024, suffix="B"):
-    """
-    Scale bytes to its proper byte format
-    e.g:
-        1253656 => '1.20MB'
-        1253656678 => '1.17GB'
-    """
-    for unit in ["", "K", "M", "G", "T", "P", "E", "Z"]:
-        if b < factor:
-            return f"{b:.2f}{unit}{suffix}"
-        b /= factor
-    return f"{b:.2f}Y{suffix}"
+# Configuration
+IMAGE_DIR = 'public/images'
+CONTENT_DIRS = ['src', 'content']
+EXTENSIONS = ('.png', '.jpg', '.jpeg')
+QUALITY = 75  # 0-100, 75 is a good balance for "very low kb" without destroying artifacts
 
-def optimize_images(directory):
-    print(f"Scanning {directory}...")
+def convert_images():
+    replacements = {}
+    print(f"Scanning {IMAGE_DIR} for images to convert...")
     
-    total_saved = 0
-    
-    for root, dirs, files in os.walk(directory):
+    for root, dirs, files in os.walk(IMAGE_DIR):
         for file in files:
-            if file.lower().endswith(('.png', '.jpg', '.jpeg')):
-                filepath = os.path.join(root, file)
-                original_size = os.path.getsize(filepath)
+            if file.lower().endswith(EXTENSIONS):
+                file_path = os.path.join(root, file)
+                file_name, ext = os.path.splitext(file)
+                new_file_name = file_name + ".webp"
+                new_file_path = os.path.join(root, new_file_name)
                 
                 try:
-                    with Image.open(filepath) as img:
-                        # Determine max width based on filename
+                    with Image.open(file_path) as img:
+                        # Resize if huge (e.g. raw photos)
                         max_width = 1920
-                        if 'mobile' in file.lower():
-                            max_width = 800
-                        
-                        # Resize if needed
                         if img.width > max_width:
                             ratio = max_width / img.width
                             new_height = int(img.height * ratio)
                             img = img.resize((max_width, new_height), Image.Resampling.LANCZOS)
-                            print(f"Resizing {file}: {img.width}x{img.height} -> {max_width}x{new_height}")
                         
-                        # Save optimized
-                        # For PNGs, we can try to reduce colors if it's not a photo, but these look like banners.
-                        # We will just use optimize=True.
+                        # Save as WebP
+                        img.save(new_file_path, 'WEBP', quality=QUALITY, method=6)
                         
-                        if file.lower().endswith('.png'):
-                            # Check if it has transparency
-                            if img.mode in ('RGBA', 'LA') or (img.mode == 'P' and 'transparency' in img.info):
-                                # Keep as PNG
-                                img.save(filepath, optimize=True, quality=85)
-                            else:
-                                # If no transparency, maybe we could convert to JPG? 
-                                # But user wants to keep filenames.
-                                # We'll stick to PNG optimization.
-                                # Pngquant is better but this is Python only.
-                                img.save(filepath, optimize=True)
-                                
-                        elif file.lower().endswith(('.jpg', '.jpeg')):
-                            img.save(filepath, optimize=True, quality=80)
-                            
-                    new_size = os.path.getsize(filepath)
-                    saved = original_size - new_size
-                    total_saved += saved
+                    print(f"Converted: {file} -> {new_file_name}")
                     
-                    print(f"Optimized {file}: {get_size_format(original_size)} -> {get_size_format(new_size)} (Saved {get_size_format(saved)})")
+                    # Store mapping for code update
+                    replacements[file] = new_file_name
+                    
+                    # Delete original file to save space and force usage of new one
+                    os.remove(file_path)
                     
                 except Exception as e:
-                    print(f"Error processing {file}: {e}")
+                    print(f"Error converting {file}: {e}")
 
-    print(f"\nTotal space saved: {get_size_format(total_saved)}")
+    return replacements
+
+def update_references(replacements):
+    print(f"Updating references in {CONTENT_DIRS}...")
+    
+    # Sort replacements by length (descending) to avoid substring issues
+    # e.g. replace "background-image.png" before "image.png"
+    sorted_replacements = dict(sorted(replacements.items(), key=lambda item: len(item[0]), reverse=True))
+    
+    count = 0
+    for directory in CONTENT_DIRS:
+        if not os.path.exists(directory):
+            continue
+            
+        for root, dirs, files in os.walk(directory):
+            for file in files:
+                if file.endswith(('.js', '.jsx', '.md', '.json', '.css', '.html')):
+                    file_path = os.path.join(root, file)
+                    try:
+                        with open(file_path, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                        
+                        new_content = content
+                        for old_name, new_name in sorted_replacements.items():
+                            if old_name in new_content:
+                                new_content = new_content.replace(old_name, new_name)
+                                
+                        if new_content != content:
+                            with open(file_path, 'w', encoding='utf-8') as f:
+                                f.write(new_content)
+                            print(f"Updated {file}")
+                            count += 1
+                                
+                    except Exception as e:
+                        print(f"Error updating {file}: {e}")
+    
+    print(f"Updated references in {count} files.")
 
 if __name__ == "__main__":
-    optimize_images("public/images")
+    replacements = convert_images()
+    if replacements:
+        update_references(replacements)
+    else:
+        print("No images found to convert.")

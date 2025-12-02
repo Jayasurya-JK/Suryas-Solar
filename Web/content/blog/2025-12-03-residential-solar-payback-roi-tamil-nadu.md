@@ -2,7 +2,7 @@
 title: "Residential Solar Payback & ROI in Tamil Nadu (2025): Real Savings & Real Examples"
 date: 2025-12-03
 excerpt: "Discover the real ROI and payback period for residential solar in Tamil Nadu. See case studies from Cuddalore, Panruti, and Neyveli, and calculate your savings."
-featuredImage: "/images/Blog 2.png"
+featuredImage: "/images/Blog 2.webp"
 category: "Solar Guide"
 author: "Surya's Solar Team"
 tags: ["Solar ROI", "Payback Period", "Tamil Nadu Solar", "Cuddalore", "Electricity Savings"]
