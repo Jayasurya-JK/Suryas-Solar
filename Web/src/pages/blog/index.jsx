@@ -54,18 +54,8 @@ export default function BlogIndex({ posts, settings }) {
 
                   <div className="p-5 sm:p-6">
                     <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-500 mb-3">
-                      <time dateTime={post.date}>
-                        {new Date(post.date).toLocaleDateString('en-IN', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}
-                      </time>
                       {post.category && (
-                        <>
-                          <span className="hidden sm:inline">•</span>
-                          <span className="text-solar-orange font-medium">{post.category}</span>
-                        </>
+                        <span className="text-solar-orange font-medium">{post.category}</span>
                       )}
                     </div>
 

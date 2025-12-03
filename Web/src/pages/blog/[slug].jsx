@@ -497,14 +497,7 @@ export default function BlogPost({ post, settings }) {
                         <span className="font-medium text-gray-900">{post.author}</span>
                       </div>
                     )}
-                    <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                    <time dateTime={post.date}>
-                      {new Date(post.date).toLocaleDateString('en-IN', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}
-                    </time>
+
                   </div>
                 </header>
 
