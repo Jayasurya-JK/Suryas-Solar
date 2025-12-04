@@ -1,6 +1,6 @@
 ---
 title: "3kW vs 5kW Solar System — Which Is Better for Your Home? (2025 Comparison)"
-date: 2025-12-09
+date: 2025-12-03
 excerpt: "Compare 3kW and 5kW solar systems for Tamil Nadu & Puducherry homes. Find out which size is best for your electricity bill, roof space, and budget."
 featuredImage: "/images/3kW vs 5kW Comparison.webp"
 category: "Solar Guide"

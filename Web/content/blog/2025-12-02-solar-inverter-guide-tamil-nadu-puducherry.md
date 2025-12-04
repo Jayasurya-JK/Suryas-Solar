@@ -1,6 +1,6 @@
 ---
 title: "Solar Inverter Guide for Homes in Tamil Nadu & Puducherry (2025): Types, Best Brands & Price Comparison"
-date: 2025-12-06
+date: 2025-12-02
 excerpt: "Compare the best solar inverters for Tamil Nadu & Puducherry homes in 2025. Learn about On-Grid vs Hybrid, top brands like Solis & SolaX, and prices."
 featuredImage: "/images/Blog 5.webp"
 category: "Solar Guide"

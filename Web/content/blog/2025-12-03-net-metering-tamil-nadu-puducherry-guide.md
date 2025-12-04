@@ -1,6 +1,6 @@
 ---
 title: "How Net-Metering Works in Tamil Nadu & Puducherry (2025): Complete Homeowner Guide"
-date: 2025-12-08
+date: 2025-12-03
 excerpt: "Understand solar net-metering in Tamil Nadu & Puducherry. Learn how to reduce your electricity bill to zero with TNEB & PED net-metering."
 featuredImage: "/images/Net-Metering Guide.webp"
 category: "Solar Guide"

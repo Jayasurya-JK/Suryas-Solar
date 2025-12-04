@@ -1,6 +1,6 @@
 ---
 title: "1-Phase to 3-Phase Upgrade for Solar: Cost, Process, and When It’s Required (Tamil Nadu 2025 Guide)"
-date: 2025-12-13
+date: 2025-12-04
 excerpt: "Do you need to upgrade to 3-phase for solar? Learn the TNEB rules, costs, and process for upgrading from single-phase to 3-phase in Tamil Nadu."
 featuredImage: "/images/1-Phase to 3-Phase Upgrade.webp"
 category: "Solar Guide"

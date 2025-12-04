@@ -1,6 +1,6 @@
 ---
 title: "Best Solar Panel Brands for Homes in Tamil Nadu & Puducherry (2025): Performance, Price & Efficiency Compared"
-date: 2025-12-04
+date: 2025-12-01
 excerpt: "Compare the top solar panel brands for Tamil Nadu & Puducherry homes in 2025. Find the best Mono PERC & TOPCon panels for Cuddalore, Pondy, and Neyveli."
 featuredImage: "/images/Blog 3.webp"
 category: "Solar Guide"
