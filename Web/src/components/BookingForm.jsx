@@ -61,18 +61,19 @@ export default function BookingForm() {
     setIsSubmitting(true)
 
     try {
-      // Submit to Netlify Forms (this will capture in Netlify dashboard)
-      const netlifyFormData = new FormData()
-      netlifyFormData.append('form-name', 'booking')
-      Object.keys(formData).forEach(key => {
-        netlifyFormData.append(key, formData[key])
+      // Submit to Web3Forms (Works on Vercel)
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '111437b6-7422-4929-b9b3-b0361d387ee0', // Web3Forms Access Key
+          ...formData,
+          subject: 'New Booking Request - Surya Solar',
+          from_name: 'Suryas Solar Website'
+        })
       })
 
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(netlifyFormData).toString()
-      })
+      if (!response.ok) throw new Error('Network response was not ok')
 
       setShowSuccess(true)
       setFormData({
@@ -130,18 +131,8 @@ export default function BookingForm() {
             <div className="card">
               <form
                 onSubmit={handleSubmit}
-                name="booking"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
+                className="space-y-4"
               >
-                {/* Hidden fields for Netlify */}
-                <input type="hidden" name="form-name" value="booking" />
-                <p className="hidden">
-                  <label>
-                    Don't fill this out if you're human: <input name="bot-field" />
-                  </label>
-                </p>
 
                 <div className="space-y-4">
                   {/* Name */}

@@ -24,17 +24,18 @@ export default function ContactPage() {
         setIsSubmitting(true)
 
         try {
-            const netlifyFormData = new FormData()
-            netlifyFormData.append('form-name', 'contact')
-            Object.keys(formData).forEach(key => {
-                netlifyFormData.append(key, formData[key])
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    access_key: '111437b6-7422-4929-b9b3-b0361d387ee0', // Web3Forms Access Key
+                    ...formData,
+                    subject: 'New Contact Inquiry - Surya Solar',
+                    from_name: 'Suryas Solar Website'
+                })
             })
 
-            await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(netlifyFormData).toString()
-            })
+            if (!response.ok) throw new Error('Network response was not ok')
 
             setShowSuccess(true)
             setFormData({ name: '', email: '', mobile: '', message: '' })
@@ -141,22 +142,7 @@ export default function ContactPage() {
                                 <form
                                     onSubmit={handleSubmit}
                                     className="space-y-4 md:space-y-6"
-                                    name="contact"
-                                    method="POST"
-                                    data-netlify="true"
-                                    data-netlify-honeypot="bot-field"
                                 >
-                                    <input type="hidden" name="form-name" value="contact" />
-                                    <p className="hidden">
-                                        <label>
-                                            Don't fill this out if you're human:
-                                            <input
-                                                name="bot-field"
-                                                value={formData['bot-field']}
-                                                onChange={handleChange}
-                                            />
-                                        </label>
-                                    </p>
 
                                     <div>
                                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
