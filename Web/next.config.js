@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  trailingSlash: false, // Enforce no trailing slashes to match canonical tags
   images: {
     unoptimized: true,
   },
