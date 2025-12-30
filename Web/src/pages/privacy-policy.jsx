@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
         <>
             <Head>
                 <title>Privacy Policy - Surya's Solar</title>
-                <meta name="description" content="Privacy Policy for Surya's Solar. Learn how we collect, use, and protect your personal information." />
+                <meta name="description" content="Your privacy matters. Learn how Surya's Solar protects your data during free consultations and subsidy applications. We never sell your info." />
 
             </Head>
 

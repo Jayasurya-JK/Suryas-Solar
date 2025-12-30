@@ -1,7 +1,7 @@
 ---
-title: "Solar Myths vs Facts (Tamil Nadu Edition) — Most Common Misunderstandings Homeowners Have (2025)"
+title: "10 Solar Myths Busted: Can Solar Really Run an AC? (2025 Facts)"
 date: 2025-12-04
-excerpt: "Debunking the top 10 solar myths in Tamil Nadu & Puducherry. Learn the truth about solar generation, roof damage, AC usage, and zero bills."
+excerpt: "Debunking common solar myths in Tamil Nadu. Learn the truth about running ACs on solar, ongoing maintenance, and 'Zero Bill' promises."
 featuredImage: "/images/Solar Myths vs Facts.webp"
 category: "Solar Guide"
 author: "Surya's Solar Team"

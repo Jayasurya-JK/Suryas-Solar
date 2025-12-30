@@ -11,6 +11,8 @@ const staticPages = [
     { url: '/calc', changefreq: 'monthly', priority: 0.8 },
     { url: '/contact', changefreq: 'monthly', priority: 0.8 },
     { url: '/blog', changefreq: 'weekly', priority: 0.7 },
+    { url: '/privacy-policy', changefreq: 'yearly', priority: 0.5 },
+    { url: '/terms-conditions', changefreq: 'yearly', priority: 0.5 },
 ];
 
 function generateSitemap() {

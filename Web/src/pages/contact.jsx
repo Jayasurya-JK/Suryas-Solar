@@ -51,7 +51,7 @@ export default function ContactPage() {
         <>
             <Head>
                 <title>Contact Us - Surya's Solar | Cuddalore</title>
-                <meta name="description" content="Get in touch with Surya's Solar for all your solar energy needs in Cuddalore. Visit our office or call us for a free consultation." />
+                <meta name="description" content="Visit Surya's Solar in Cuddalore (Kondur). Call +91 7904369094 for instant pricing & site visit booking. We serve Cuddalore, Panruti, Neyveli & Puducherry." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
             </Head>
@@ -66,7 +66,7 @@ export default function ContactPage() {
                         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
                     </div>
                     <div className="container-custom relative z-10 text-center">
-                        <h1 className="text-3xl md:text-5xl font-bold mb-4">Get in Touch</h1>
+                        <h1 className="text-3xl md:text-5xl font-bold mb-4">Contact Surya's Solar Cuddalore</h1>
                         <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
                             Have questions about going solar? We're here to help you every step of the way.
                         </p>

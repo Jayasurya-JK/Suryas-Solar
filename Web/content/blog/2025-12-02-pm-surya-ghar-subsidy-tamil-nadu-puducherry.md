@@ -1,7 +1,7 @@
 ---
-title: "PM Surya Ghar Subsidy for Home Solar in Tamil Nadu & Puducherry (2025): Eligibility, Documents & Step-by-Step Process"
+title: "PM Surya Ghar Subsidy Tamil Nadu (2025) - Claim ₹78,000 | Step-by-Step"
 date: 2025-12-02
-excerpt: "Complete guide to the PM Surya Ghar Muft Bijli Yojana subsidy in Tamil Nadu & Puducherry. Learn about eligibility, documents, and how to apply for up to ₹78,000 subsidy."
+excerpt: "Apply for PM Surya Ghar Yojana in Tamil Nadu. Get ₹78,000 subsidy for 3kW solar systems. Full guide on documents, eligibility & application process."
 featuredImage: "/images/Blog 4.webp"
 category: "Solar Guide"
 author: "Surya's Solar Team"

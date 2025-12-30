@@ -1,7 +1,7 @@
 ---
-title: "Residential Solar Payback & ROI in Tamil Nadu (2025): Real Savings & Real Examples"
+title: "Solar ROI & Payback Calculator Tamil Nadu (2025) - Real Case Studies"
 date: 2025-12-01
-excerpt: "Discover the real ROI and payback period for residential solar in Tamil Nadu. See case studies from Cuddalore, Panruti, and Neyveli, and calculate your savings."
+excerpt: "Is solar worth it in Tamil Nadu? See real ROI case studies from Cuddalore. Learn how a 3kW system pays for itself in just 3 years. 2025 Data."
 featuredImage: "/images/Blog 2.webp"
 category: "Solar Guide"
 author: "Surya's Solar Team"

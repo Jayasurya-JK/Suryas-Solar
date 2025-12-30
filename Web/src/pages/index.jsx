@@ -74,15 +74,28 @@ export default function Home({ content, settings }) {
       settings.linkedin || "https://linkedin.com/company/suryassolar"
     ],
     "priceRange": "₹₹",
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": "11.7563",
-        "longitude": "79.7689"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Cuddalore"
       },
-      "geoRadius": "50000"
-    },
+      {
+        "@type": "City",
+        "name": "Puducherry"
+      },
+      {
+        "@type": "City",
+        "name": "Neyveli"
+      },
+      {
+        "@type": "City",
+        "name": "Panruti"
+      },
+      {
+        "@type": "City",
+        "name": "Chidambaram"
+      }
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5",
@@ -94,7 +107,7 @@ export default function Home({ content, settings }) {
     <>
       <Head>
         <title>{settings.siteTitle || "Surya's Solar - Cuddalore’s trusted residential solar expert"}</title>
-        <meta name="description" content={settings.siteDescription || "Leading residential solar installation in Cuddalore"} />
+        <meta name="description" content={settings.siteDescription || "Surya's Solar: Cuddalore's #1 Residential Solar Installer. Get max subsidy under PM Surya Ghar Yojana. Recognized Tata Power & Adani Partner. Book Free Visit!"} />
         <meta name="keywords" content={settings.siteKeywords || "solar panel Cuddalore, residential solar, rooftop solar"} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 

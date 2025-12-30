@@ -8,7 +8,7 @@ export default function TermsConditions() {
         <>
             <Head>
                 <title>Terms & Conditions - Surya's Solar</title>
-                <meta name="description" content="Terms and Conditions for Surya's Solar. Please read these terms carefully before using our services." />
+                <meta name="description" content="Service terms for Surya's Solar Cuddalore. Understand our installation policies, warranties, and jurisdiction details before booking." />
 
             </Head>
 

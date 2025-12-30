@@ -11,7 +11,7 @@ export default function BlogIndex({ posts, settings }) {
     <>
       <Head>
         <title>Solar Energy Blog | Surya's Solar</title>
-        <meta name="description" content="Latest insights, tips, and updates about solar energy in Cuddalore and beyond." />
+        <meta name="description" content="Expert Solar Guides: Price breakdowns, 3kW vs 5kW comparisons, PM Surya Ghar subsidy details, and maintenance tips for Cuddalore homeowners." />
 
       </Head>
       <Header settings={settings} />

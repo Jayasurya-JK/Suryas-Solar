@@ -11,7 +11,7 @@ export default function CalcPage() {
         <title>Solar Savings Calculator | Surya's Solar</title>
         <meta
           name="description"
-          content="Calculate your potential solar energy savings with our easy-to-use calculator. Get instant estimates on system size, annual savings, and payback period."
+          content="Free Solar Savings Calculator 2025. Compare 3kW vs 5kW ROI. Calculate exact electricity bill savings & payback period for Tamil Nadu / Puducherry homes."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 

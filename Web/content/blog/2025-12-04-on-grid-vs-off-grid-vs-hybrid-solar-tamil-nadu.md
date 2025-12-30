@@ -1,7 +1,7 @@
 ---
-title: "On-Grid vs Off-Grid vs Hybrid Solar Systems (2025): Which Is Right for Your Home in Tamil Nadu & Puducherry?"
+title: "On-Grid vs Hybrid Solar - Which is Best for Tamil Nadu? (2025 Price)"
 date: 2025-12-04
-excerpt: "Compare On-Grid, Off-Grid, and Hybrid solar systems. Find out which type is best for your home in Tamil Nadu & Puducherry based on cost, backup needs, and net-metering."
+excerpt: "On-Grid vs Off-Grid vs Hybrid: Side-by-side comparison for Tamil Nadu homes. Price, battery backup, and subsidy eligibility explained."
 featuredImage: "/images/On-Grid vs Off-Grid vs Hybrid.webp"
 category: "Solar Guide"
 author: "Surya's Solar Team"

@@ -1,7 +1,7 @@
 ---
-title: "Best Solar Panel Brands for Homes in Tamil Nadu & Puducherry (2025): Performance, Price & Efficiency Compared"
+title: "Top 6 Solar Panel Brands in Tamil Nadu (2025) - Tata vs Adani vs Waaree"
 date: 2025-12-01
-excerpt: "Compare the top solar panel brands for Tamil Nadu & Puducherry homes in 2025. Find the best Mono PERC & TOPCon panels for Cuddalore, Pondy, and Neyveli."
+excerpt: "Best solar panels for Tamil Nadu homes (2025). Compare Tata, Adani, Waaree & more. Price, efficiency, and warranty guide for Cuddalore & Puducherry."
 featuredImage: "/images/Blog 3.webp"
 category: "Solar Guide"
 author: "Surya's Solar Team"

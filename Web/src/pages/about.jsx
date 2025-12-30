@@ -105,7 +105,7 @@ export default function AboutPage() {
                 <title>About Us - Surya's Solar | Cuddalore’s trusted residential solar expert</title>
                 <meta
                     name="description"
-                    content="Learn about Surya's Solar - Cuddalore's most trusted solar company with 10+ years of experience, 100kW+ installations, and official TATA Power Solaroof partner."
+                    content="10+ Years Experience & 100kW+ Installed. We are Cuddalore's authorized solar experts. Partners with Tata Power, Waaree & Adani. See our completed projects."
                 />
                 <meta name="keywords" content="solar company Cuddalore, TATA solar partner, PM Surya Ghar vendor, residential solar expert" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
