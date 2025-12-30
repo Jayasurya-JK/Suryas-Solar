@@ -216,6 +216,11 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <p>&copy; {currentYear} Surya's Solar. All rights reserved.</p>
+
+          <p className="text-gray-500 text-xs md:text-sm">
+            Designed & Developed by <span className="text-white font-semibold">Jay Web Studio</span>
+          </p>
+
           <div className="flex gap-6">
             <a href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</a>
             <a href="/terms-conditions" className="hover:text-primary transition-colors">Terms & Conditions</a>
