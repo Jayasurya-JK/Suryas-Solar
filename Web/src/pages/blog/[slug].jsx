@@ -441,7 +441,7 @@ export default function BlogPost({ post, settings }) {
   return (
     <>
       <Head>
-        <title>{post.title} | Surya's Solar</title>
+        <title>{`${post.title} | Surya's Solar`}</title>
         <meta name="description" content={post.excerpt || `Read about ${post.title}`} />
 
         <link rel="canonical" href={`https://suryassolar.com/blog/${post.slug}`} />

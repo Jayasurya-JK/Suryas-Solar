@@ -1,4 +1,5 @@
 import Script from 'next/script'
+import Head from 'next/head'
 import { Playfair_Display } from 'next/font/google'
 import '../styles/globals.css'
 import BookingPopup from '../components/BookingPopup'
@@ -12,6 +13,9 @@ const playfair = Playfair_Display({
 export default function App({ Component, pageProps }) {
   return (
     <div className={`${playfair.variable} font-sans`}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       {/* Google Analytics */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-5C79VEBNMK"

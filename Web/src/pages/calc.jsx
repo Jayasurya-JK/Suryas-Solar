@@ -21,7 +21,7 @@ export default function CalcPage() {
       <Header />
 
       <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white pt-24">
-        <SolarCalculator showBreakdown={true} />
+        <SolarCalculator showBreakdown={true} headingLevel="h1" />
 
         {/* FAQ Section specific to Calculator */}
         <section className="py-12 bg-white">

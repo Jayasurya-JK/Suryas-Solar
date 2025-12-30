@@ -80,7 +80,7 @@ const SOLAR_RESIDUAL_FACTOR = 0.05;        // 5% leftover bill after solar insta
 const INPUT_MIN = 2000;                    // Minimum bi-monthly bill (₹2000 = ~2.5kW system)
 const INPUT_MAX = 30000;                    // Maximum bi-monthly bill (₹)
 
-export default function SolarCalculator({ showBreakdown = false }) {
+export default function SolarCalculator({ showBreakdown = false, headingLevel = 'h2' }) {
   const router = useRouter();
   // ==================== STATE ====================
   const [biMonthlyBill, setBiMonthlyBill] = useState('5000');
@@ -88,6 +88,10 @@ export default function SolarCalculator({ showBreakdown = false }) {
   const [validationError, setValidationError] = useState('');
   const [isCalculated, setIsCalculated] = useState(false);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
+
+  const HeadingTag = headingLevel;
+
+  // ... (rest of the state and logic)
 
   // ==================== CALCULATION LOGIC ====================
   const calculateSavings = useCallback((inputBill) => {
@@ -329,9 +333,9 @@ export default function SolarCalculator({ showBreakdown = false }) {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-12">
         {/* Header Section */}
         <div className="text-center mb-4 sm:mb-8">
-          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 tracking-tight leading-tight">
+          <HeadingTag className="text-xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 tracking-tight leading-tight">
             Solar Savings Calculator Tamil Nadu
-          </h2>
+          </HeadingTag>
           <p className="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Calculate your potential savings with precision
           </p>

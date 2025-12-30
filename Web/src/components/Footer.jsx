@@ -96,7 +96,7 @@ export default function Footer() {
                   <source srcSet="/images/surya-solar-logo.webp" type="image/webp" />
                   <img
                     src="/images/surya-solar-logo.webp"
-                    alt="Surya's Solar Logo"
+                    alt="Surya's Solar Footer Logo"
                     width="48"
                     height="48"
                     className="w-full h-full object-contain scale-125"
