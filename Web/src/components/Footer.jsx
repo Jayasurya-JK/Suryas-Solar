@@ -49,7 +49,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 pb-24 md:pb-0">
       <div className="container-custom py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12">
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -110,11 +110,19 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold text-lg mb-4">Our Services</h3>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service} className="text-sm">
-                  {service}
-                </li>
-              ))}
+            </ul>
+          </div>
+
+          {/* Areas Served - SEO Boost */}
+          <div>
+            <h3 className="text-white font-semibold text-lg mb-4">Areas Served</h3>
+            <ul className="space-y-2">
+              <li className="text-sm">Cuddalore</li>
+              <li className="text-sm">Puducherry (Pondicherry)</li>
+              <li className="text-sm">Neyveli Township</li>
+              <li className="text-sm">Panruti</li>
+              <li className="text-sm">Chidambaram</li>
+              <li className="text-sm">Villupuram</li>
             </ul>
           </div>
 
