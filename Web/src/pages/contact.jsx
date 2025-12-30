@@ -53,7 +53,18 @@ export default function ContactPage() {
                 <title>Contact Us - Surya's Solar | Cuddalore</title>
                 <meta name="description" content="Visit Surya's Solar in Cuddalore (Kondur). Call +91 7904369094 for instant pricing & site visit booking. We serve Cuddalore, Panruti, Neyveli & Puducherry." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="canonical" href="https://suryassolar.com/contact" />
 
+                <meta property="og:title" content="Contact Us - Surya's Solar | Cuddalore" />
+                <meta property="og:description" content="Visit Surya's Solar in Cuddalore (Kondur). Call +91 7904369094 for instant pricing & site visit booking. We serve Cuddalore, Panruti, Neyveli & Puducherry." />
+                <meta property="og:image" content="https://suryassolar.com/images/surya-solar-logo.webp" />
+                <meta property="og:url" content="https://suryassolar.com/contact" />
+                <meta property="og:type" content="website" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Contact Us - Surya's Solar | Cuddalore" />
+                <meta name="twitter:description" content="Visit Surya's Solar in Cuddalore (Kondur). Call +91 7904369094 for instant pricing & site visit booking." />
+                <meta name="twitter:image" content="https://suryassolar.com/images/surya-solar-logo.webp" />
             </Head>
 
             <Header />
@@ -210,8 +221,71 @@ export default function ContactPage() {
                     </div>
                 </section>
 
+
+                {/* FAQ Section */}
+                <section className="py-10 md:py-16 bg-white border-t border-gray-100">
+                    <div className="container-custom">
+                        <div className="max-w-3xl mx-auto">
+                            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-8">
+                                Frequently Asked Questions
+                            </h2>
+                            <div className="space-y-4">
+                                <details className="group bg-gray-50 rounded-xl p-4 cursor-pointer">
+                                    <summary className="font-semibold text-gray-900 flex justify-between items-center list-none">
+                                        Which areas do you serve in Tamil Nadu?
+                                        <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                                    </summary>
+                                    <p className="mt-3 text-gray-600 text-sm md:text-base leading-relaxed">
+                                        We primarily serve <strong>Cuddalore</strong>, <strong>Puducherry</strong>, <strong>Panruti</strong>, <strong>Neyveli</strong>, <strong>Chidambaram</strong>, and surrounding districts. If you are within 50km of Cuddalore, our team can visit your site for a free inspection.
+                                    </p>
+                                </details>
+
+                                <details className="group bg-gray-50 rounded-xl p-4 cursor-pointer">
+                                    <summary className="font-semibold text-gray-900 flex justify-between items-center list-none">
+                                        Is the site visit and consultation really free?
+                                        <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                                    </summary>
+                                    <p className="mt-3 text-gray-600 text-sm md:text-base leading-relaxed">
+                                        Yes! We provide a <strong>100% free site survey and solar consultation</strong>. Our engineer will visit your home, measure your shadow-free roof area, check your electricity usage, and propose the best solar system for your needs—with no obligation to buy.
+                                    </p>
+                                </details>
+
+                                <details className="group bg-gray-50 rounded-xl p-4 cursor-pointer">
+                                    <summary className="font-semibold text-gray-900 flex justify-between items-center list-none">
+                                        Do you handle the PM Surya Ghar subsidy paperwork?
+                                        <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                                    </summary>
+                                    <p className="mt-3 text-gray-600 text-sm md:text-base leading-relaxed">
+                                        Absolutely. As a registered vendor, we handle the entire <strong>PM Surya Ghar Muft Bijli Yojana</strong> process for you—from application and technical feasibility to net-meter installation and subsidy release.
+                                    </p>
+                                </details>
+
+                                <details className="group bg-gray-50 rounded-xl p-4 cursor-pointer">
+                                    <summary className="font-semibold text-gray-900 flex justify-between items-center list-none">
+                                        What are your office hours?
+                                        <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                                    </summary>
+                                    <p className="mt-3 text-gray-600 text-sm md:text-base leading-relaxed">
+                                        Our office in Kondur, Cuddalore is open <strong>Monday to Saturday, 9:00 AM to 6:00 PM</strong>. However, our WhatsApp support is available 24/7 for urgent queries.
+                                    </p>
+                                </details>
+
+                                <details className="group bg-gray-50 rounded-xl p-4 cursor-pointer">
+                                    <summary className="font-semibold text-gray-900 flex justify-between items-center list-none">
+                                        Can I visit your office to see solar panels?
+                                        <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                                    </summary>
+                                    <p className="mt-3 text-gray-600 text-sm md:text-base leading-relaxed">
+                                        Yes, you are welcome to visit our experience center at No.33, Sri Gokul Enterprises Building, Nellikuppam Main Rd, Kondur. We can show you samples of Mono PERC and Bifacial panels from brands like Tata Power and Adani.
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Map Section */}
-                <section className="pb-10 md:pb-20 bg-gray-50">
+                <section className="pb-10 md:pb-20 bg-gray-50 pt-10">
                     <div className="container-custom">
                         <div className="h-80 md:h-96 w-full bg-gray-200 rounded-3xl overflow-hidden shadow-lg border border-gray-200">
                             <iframe
@@ -227,7 +301,7 @@ export default function ContactPage() {
                         </div>
                     </div>
                 </section>
-            </main>
+            </main >
 
             <Footer />
 
@@ -237,25 +311,27 @@ export default function ContactPage() {
             />
 
             {/* Success Modal */}
-            {showSuccess && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
-                    <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl text-center transform transition-all scale-100">
-                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span className="text-3xl">✅</span>
+            {
+                showSuccess && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
+                        <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl text-center transform transition-all scale-100">
+                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span className="text-3xl">✅</span>
+                            </div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+                            <p className="text-gray-600 mb-6">
+                                Thank you for contacting us. We'll get back to you shortly.
+                            </p>
+                            <button
+                                onClick={() => setShowSuccess(false)}
+                                className="bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors"
+                            >
+                                Close
+                            </button>
                         </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-                        <p className="text-gray-600 mb-6">
-                            Thank you for contacting us. We'll get back to you shortly.
-                        </p>
-                        <button
-                            onClick={() => setShowSuccess(false)}
-                            className="bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors"
-                        >
-                            Close
-                        </button>
                     </div>
-                </div>
-            )}
+                )
+            }
         </>
     )
 }

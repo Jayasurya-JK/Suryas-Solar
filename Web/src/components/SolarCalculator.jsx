@@ -329,9 +329,9 @@ export default function SolarCalculator({ showBreakdown = false }) {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-12">
         {/* Header Section */}
         <div className="text-center mb-4 sm:mb-8">
-          <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 tracking-tight leading-tight">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 tracking-tight leading-tight">
             Solar Savings Calculator Tamil Nadu
-          </h1>
+          </h2>
           <p className="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Calculate your potential savings with precision
           </p>

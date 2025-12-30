@@ -453,6 +453,16 @@ export default function BlogPost({ post, settings }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
+        <meta property="og:title" content={`${post.title} | Surya's Solar`} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={`https://suryassolar.com${post.featuredImage}`} />
+        <meta property="og:url" content={`https://suryassolar.com/blog/${post.slug}`} />
+        <meta property="og:type" content="article" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${post.title} | Surya's Solar`} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={`https://suryassolar.com${post.featuredImage}`} />
       </Head>
       <Header settings={settings} />
 
