@@ -97,7 +97,7 @@ export default function Home({ content, settings }) {
         <meta name="description" content={settings.siteDescription || "Leading residential solar installation in Cuddalore"} />
         <meta name="keywords" content={settings.siteKeywords || "solar panel Cuddalore, residential solar, rooftop solar"} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/surya-solar-logo.webp" />
+
         <link rel="canonical" href="https://suryassolar.com" />
 
         {/* Open Graph / Facebook */}

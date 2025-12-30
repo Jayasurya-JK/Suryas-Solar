@@ -14,7 +14,7 @@ export default function CalcPage() {
           content="Calculate your potential solar energy savings with our easy-to-use calculator. Get instant estimates on system size, annual savings, and payback period."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/surya-solar-logo.webp" />
+
       </Head>
 
       <Header />

@@ -109,7 +109,7 @@ export default function AboutPage() {
                 />
                 <meta name="keywords" content="solar company Cuddalore, TATA solar partner, PM Surya Ghar vendor, residential solar expert" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/images/surya-solar-logo.webp" />
+
                 <link rel="canonical" href="https://suryassolar.com/about" />
 
                 {/* Open Graph */}

@@ -1,0 +1,30 @@
+# Surya's Solar Website
+
+## Project Overview
+Surya's Solar is a trusted residential solar expert in Cuddalore. This website is a static site built with Next.js, Tailwind CSS, and Netlify CMS. It is designed to be fast, accessible, and mobile-first.
+
+## Site Structure & Key Links
+- [Home](/) - Main landing page featuring a hero carousel, stats strip, timeline of services, testimonials, and partners.
+- [About Us](/about) - Information about the company history, mission, and trusted partners.
+- [Contact](/contact) - Contact page with a booking form, location details, and business inquiries.
+- [Solar Calculator](/calc) - interactive tool for users to estimate solar savings and power generation.
+- [Blog](/blog) - Educational content and updates about solar energy.
+- [Privacy Policy](/privacy-policy) - Data protection and privacy information.
+- [Terms & Conditions](/terms-conditions) - User agreements and terms of service.
+
+## Core Services
+- **Rooftop Solar Installation**: Custom solar solutions for homes and businesses.
+- **Solar Water Heaters**: Efficient water heating systems.
+- **Solar Street Lights**: Outdoor lighting solutions.
+- **Solar Fencing**: Security fencing powered by solar.
+- **Solar Pumps**: Agricultural and water pumping solutions.
+
+## Technical Context
+- **Framework**: Next.js 14 (Static Export)
+- **Styling**: Tailwind CSS 3
+- **CMS**: Netlify CMS (Decap CMS)
+- **Deployment**: Static hosting (Netlify/Hostinger)
+
+## Contact Information
+- **Location**: Cuddalore, Tamil Nadu
+- **Service Area**: Cuddalore and surrounding districts

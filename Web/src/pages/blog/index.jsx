@@ -12,7 +12,7 @@ export default function BlogIndex({ posts, settings }) {
       <Head>
         <title>Solar Energy Blog | Surya's Solar</title>
         <meta name="description" content="Latest insights, tips, and updates about solar energy in Cuddalore and beyond." />
-        <link rel="icon" href="/images/surya-solar-logo.webp" />
+
       </Head>
       <Header settings={settings} />
 
