@@ -95,12 +95,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm hover:text-primary transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -110,6 +110,11 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold text-lg mb-4">Our Services</h3>
             <ul className="space-y-2">
+              {services.map((service) => (
+                <li key={service} className="text-sm">
+                  {service}
+                </li>
+              ))}
             </ul>
           </div>
 
