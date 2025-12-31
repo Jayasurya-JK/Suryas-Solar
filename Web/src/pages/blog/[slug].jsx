@@ -584,14 +584,14 @@ export default function BlogPost({ post, settings }) {
         />
         <meta property="og:title" content={`${post.title} | Surya's Solar`} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:image" content={`https://suryassolar.com${post.featuredImage}`} />
+        <meta property="og:image" content={post.featuredImage ? (post.featuredImage.startsWith('http') ? post.featuredImage : `https://suryassolar.com${post.featuredImage}`) : 'https://suryassolar.com/logo.png'} />
         <meta property="og:url" content={`https://suryassolar.com/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${post.title} | Surya's Solar`} />
         <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content={`https://suryassolar.com${post.featuredImage}`} />
+        <meta name="twitter:image" content={post.featuredImage ? (post.featuredImage.startsWith('http') ? post.featuredImage : `https://suryassolar.com${post.featuredImage}`) : 'https://suryassolar.com/logo.png'} />
       </Head>
       <Header settings={settings} />
 

@@ -35,7 +35,7 @@ export default function BlogIndex({ posts, settings }) {
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {posts.map((post) => (
+              {posts.map((post, index) => (
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
@@ -47,7 +47,9 @@ export default function BlogIndex({ posts, settings }) {
                         src={post.featuredImage}
                         alt={post.title}
                         fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover"
+                        priority={index < 6}
                       />
                     </div>
                   )}
