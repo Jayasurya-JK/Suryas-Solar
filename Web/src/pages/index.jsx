@@ -141,6 +141,10 @@ export default function Home({ content, settings }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
+        {/* Preload LCP Hero Images */}
+        <link rel="preload" as="image" href="/images/Banner_1_mobile.webp" media="(max-width: 767px)" />
+        <link rel="preload" as="image" href="/images/Banner_1_desktop.webp" media="(min-width: 768px)" />
+
         {/* JSON-LD Schema */}
         <script
           type="application/ld+json"
