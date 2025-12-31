@@ -85,7 +85,7 @@ export default function ContactPage() {
                 </section>
 
                 {/* Contact Info & Form Section */}
-                <section className="py-10 md:py-20 bg-gray-50">
+                <section id="booking" className="py-10 md:py-20 bg-gray-50">
                     <div className="container-custom">
                         <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
                             {/* Contact Information */}

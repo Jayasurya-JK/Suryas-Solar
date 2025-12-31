@@ -99,10 +99,15 @@ export async function getStaticProps() {
   const settings = getSiteSettings()
 
   // Serialize dates to strings
-  const serializedPosts = posts.map(post => ({
-    ...post,
-    date: post.date ? post.date.toString() : new Date().toISOString()
-  }))
+  // Serialize dates to strings and strip content body to reduce JSON size
+  const serializedPosts = posts.map(post => {
+    // eslint-disable-next-line no-unused-vars
+    const { content, ...metaData } = post
+    return {
+      ...metaData,
+      date: post.date ? post.date.toString() : new Date().toISOString()
+    }
+  })
 
   return {
     props: {

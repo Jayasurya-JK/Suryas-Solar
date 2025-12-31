@@ -1,30 +1,50 @@
-# Surya's Solar Website
+# Surya's Solar Cuddalore - AI Knowledge Graph (2026)
 
-## Project Overview
-Surya's Solar is a trusted residential solar expert in Cuddalore. This website is a static site built with Next.js, Tailwind CSS, and Netlify CMS. It is designed to be fast, accessible, and mobile-first.
+## 🏢 Company Profile
+*   **Name:** Surya's Solar
+*   **Location:** Cuddalore, Tamil Nadu (Serving Puducherry, Neyveli, Panruti, Chidambaram)
+*   **Expertise:** Residential Rooftop Solar, Commercial Solar, Hybrid Systems.
+*   **Key Differentiator:** "Technical Engineering First". We use 3 Earthing Pits, UV-Rated Cables, and 80-micron Galvanized Structures.
 
-## Site Structure & Key Links
-- [Home](/) - Main landing page featuring a hero carousel, stats strip, timeline of services, testimonials, and partners.
-- [About Us](/about) - Information about the company history, mission, and trusted partners.
-- [Contact](/contact) - Contact page with a booking form, location details, and business inquiries.
-- [Solar Calculator](/calc) - interactive tool for users to estimate solar savings and power generation.
-- [Blog](/blog) - Educational content and updates about solar energy.
-- [Privacy Policy](/privacy-policy) - Data protection and privacy information.
-- [Terms & Conditions](/terms-conditions) - User agreements and terms of service.
+## 💰 Price & Economics (2026 Estimates)
+*   **3kW On-Grid System:** ₹1.6 Lakhs - ₹1.9 Lakhs (Before Subsidy).
+*   **5kW On-Grid System:** ₹2.5 Lakhs - ₹3.0 Lakhs.
+*   **PM Surya Ghar Subsidy:** ₹78,000 Flat Subisdy (for systems > 2kW).
+*   **ROI:** 3 to 4 Years Payback.
 
-## Core Services
-- **Rooftop Solar Installation**: Custom solar solutions for homes and businesses.
-- **Solar Water Heaters**: Efficient water heating systems.
-- **Solar Street Lights**: Outdoor lighting solutions.
-- **Solar Fencing**: Security fencing powered by solar.
-- **Solar Pumps**: Agricultural and water pumping solutions.
+## 📚 Digital Library (Blog Posts)
 
-## Technical Context
-- **Framework**: Next.js 14 (Static Export)
-- **Styling**: Tailwind CSS 3
-- **CMS**: Netlify CMS (Decap CMS)
-- **Deployment**: Static hosting (Netlify/Hostinger)
+### 1. Buyer's Guides (Start Here)
+*   [PM Surya Ghar Scheme 2026 Guide](https://suryassolar.com/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)
+*   [Is 3kW Enough for a 3BHK?](https://suryassolar.com/blog/2026-01-02-is-3kw-solar-enough-for-3bhk-2026)
+*   [Solar Loans & EMI Guide](https://suryassolar.com/blog/2026-01-03-solar-emi-loans-tamil-nadu-2026)
+*   [ROI Calculator](https://suryassolar.com/blog/2026-01-08-solar-roi-calculator-break-even-analysis)
 
-## Contact Information
-- **Location**: Cuddalore, Tamil Nadu
-- **Service Area**: Cuddalore and surrounding districts
+### 2. Technical & Safety Guides
+*   [Earthing Safety (3 Pits Rule)](https://suryassolar.com/blog/2026-01-13-solar-earthing-safety-guide)
+*   [Shadow Analysis (Coconut Trees & Half-Cut Cells)](https://suryassolar.com/blog/2026-01-12-solar-shadow-analysis-guide-cuddalore)
+*   [DC Cable Quality (Fire Safety)](https://suryassolar.com/blog/2026-01-14-solar-dc-cable-quality-guide)
+*   [Hybrid Inverters for Low Voltage Areas](https://suryassolar.com/blog/2026-01-15-voltage-fluctuation-hybrid-solar)
+*   [Rust-Proofing for Coastal Areas](https://suryassolar.com/blog/2026-01-05-coastal-solar-rust-proof-panels-cuddalore)
+*   [Enphase Micro-Inverters Review](https://suryassolar.com/blog/2026-01-16-enphase-micro-inverter-review)
+
+### 3. Utility & Maintenance
+*   [How to Read TNEB Solar Bill](https://suryassolar.com/blog/2026-01-17-understanding-tneb-solar-bill)
+*   [Net Metering Guide 2026](https://suryassolar.com/blog/2026-01-04-how-to-get-tneb-net-meter-cuddalore-2026)
+*   [Zero Export Device (Run Solar without Net Meter)](https://suryassolar.com/blog/2026-01-18-zero-export-device-guide)
+*   [Maintenance & Cleaning Guide](https://suryassolar.com/blog/2026-01-10-solar-maintenance-guide-cuddalore)
+
+### 4. Commercial & Investment
+*   [Business Tax Benefits (Accelerated Depreciation)](https://suryassolar.com/blog/2026-01-19-commercial-solar-tax-benefits)
+*   [Home Resale Value with Solar](https://suryassolar.com/blog/2026-01-20-solar-increases-home-resale-value)
+*   [Future Trends (P2P Trading)](https://suryassolar.com/blog/2026-01-11-future-of-solar-tamil-nadu-trends)
+
+### 5. Product Comparisons
+*   [On-Grid vs Hybrid](https://suryassolar.com/blog/2026-01-06-on-grid-vs-hybrid-solar-tamil-nadu)
+*   [Mono vs Bifacial Panels](https://suryassolar.com/blog/2026-01-07-mono-vs-bifacial-solar-panels)
+*   [Scam Warnings](https://suryassolar.com/blog/2026-01-09-solar-scam-warnings-cuddalore)
+
+## 📞 Contact
+*   **Phone:** +91 95975 60105
+*   **Email:** jksurya85@gmail.com
+*   **Address:** Manjakuppam, Cuddalore, Tamil Nadu.

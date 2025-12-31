@@ -1,0 +1,34 @@
+Blog Filename                                                | Word Count | Status
+-------------------------------------------------------------------------------------
+2025-12-01-best-solar-panel-brands-tamil-nadu-puducherry.m   | 1338       | ✅ OK
+2025-12-01-how-much-does-residential-solar-installation-co   | 1325       | ✅ OK
+2025-12-01-residential-solar-payback-roi-tamil-nadu.md       | 1265       | ✅ OK
+2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry.md    | 1255       | ✅ OK
+2025-12-02-rooftop-solar-structure-types-tamil-nadu.md       | 1325       | ✅ OK
+2025-12-02-solar-inverter-guide-tamil-nadu-puducherry.md     | 1416       | ✅ OK
+2025-12-03-3kw-vs-5kw-solar-system-comparison.md             | 1199       | ✅ OK
+2025-12-03-net-metering-tamil-nadu-puducherry-guide.md       | 1422       | ✅ OK
+2025-12-03-solar-panel-generation-units-tamil-nadu-guide.m   | 1372       | ✅ OK
+2025-12-04-1-phase-to-3-phase-upgrade-solar-tamil-nadu.md    | 1358       | ✅ OK
+2025-12-04-on-grid-vs-off-grid-vs-hybrid-solar-tamil-nadu.   | 1307       | ✅ OK
+2025-12-04-solar-myths-vs-facts-tamil-nadu.md                | 1369       | ✅ OK
+2026-01-01-pm-surya-ghar-scheme-cuddalore-2026.md            | 1530       | ✅ OK
+2026-01-02-is-3kw-solar-enough-for-3bhk-2026.md              | 1133       | ✅ OK
+2026-01-03-solar-emi-loans-tamil-nadu-2026.md                | 1108       | ✅ OK
+2026-01-04-how-to-get-tneb-net-meter-cuddalore-2026.md       | 1245       | ✅ OK
+2026-01-05-coastal-solar-rust-proof-panels-cuddalore.md      | 1037       | ✅ OK
+2026-01-06-on-grid-vs-hybrid-solar-tamil-nadu.md             | 922        | ⚠️ LOW
+2026-01-07-mono-vs-bifacial-solar-panels.md                  | 711        | ⚠️ LOW
+2026-01-08-solar-roi-calculator-break-even-analysis.md       | 882        | ⚠️ LOW
+2026-01-09-solar-scam-warnings-cuddalore.md                  | 779        | ⚠️ LOW
+2026-01-10-solar-maintenance-guide-cuddalore.md              | 978        | ⚠️ LOW
+2026-01-11-future-of-solar-tamil-nadu-trends.md              | 690        | ⚠️ LOW
+2026-01-12-solar-shadow-analysis-guide-cuddalore.md          | 862        | ⚠️ LOW
+2026-01-13-solar-earthing-safety-guide.md                    | 763        | ⚠️ LOW
+2026-01-14-solar-dc-cable-quality-guide.md                   | 1008       | ✅ OK
+2026-01-15-voltage-fluctuation-hybrid-solar.md               | 790        | ⚠️ LOW
+2026-01-16-enphase-micro-inverter-review.md                  | 691        | ⚠️ LOW
+2026-01-17-understanding-tneb-solar-bill.md                  | 710        | ⚠️ LOW
+2026-01-18-zero-export-device-guide.md                       | 765        | ⚠️ LOW
+2026-01-19-commercial-solar-tax-benefits.md                  | 907        | ⚠️ LOW
+2026-01-20-solar-increases-home-resale-value.md              | 1147       | ✅ OK
