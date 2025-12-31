@@ -49,7 +49,7 @@ export default function BlogIndex({ posts, settings }) {
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover"
-                        priority={index < 6}
+                        priority={index < 2}
                       />
                     </div>
                   )}
