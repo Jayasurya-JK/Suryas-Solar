@@ -2,7 +2,7 @@
 const nextConfig = {
   trailingSlash: false, // Enforce no trailing slashes to match canonical tags
   images: {
-    // Enabled by default on Vercel
+    unoptimized: true,
   },
   async headers() {
     return [
