@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://suryassolar.com/</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
   <url>
     <loc>https://suryassolar.com/about</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://suryassolar.com/calc</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://suryassolar.com/contact</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://suryassolar.com/blog</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://suryassolar.com/privacy-policy</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://suryassolar.com/terms-conditions</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -111,6 +111,126 @@
   <url>
     <loc>https://suryassolar.com/blog/2025-12-04-solar-myths-vs-facts-tamil-nadu</loc>
     <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-02-is-3kw-solar-enough-for-3bhk-2026</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-03-solar-emi-loans-tamil-nadu-2026</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-04-how-to-get-tneb-net-meter-cuddalore-2026</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-05-coastal-solar-rust-proof-panels-cuddalore</loc>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-06-on-grid-vs-hybrid-solar-tamil-nadu</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-07-mono-vs-bifacial-solar-panels</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-08-solar-roi-calculator-break-even-analysis</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-09-solar-scam-warnings-cuddalore</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-10-solar-maintenance-guide-cuddalore</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-11-future-of-solar-tamil-nadu-trends</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-12-solar-shadow-analysis-guide-cuddalore</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-13-solar-earthing-safety-guide</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-14-solar-dc-cable-quality-guide</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-15-voltage-fluctuation-hybrid-solar</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-16-enphase-micro-inverter-review</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-17-understanding-tneb-solar-bill</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-18-zero-export-device-guide</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-19-commercial-solar-tax-benefits</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suryassolar.com/blog/2026-01-20-solar-increases-home-resale-value</loc>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
