@@ -4,35 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  async redirects() {
-    return [
-      // Redirect www to non-www (enforce suryassolar.com as canonical)
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.suryassolar.com',
-          },
-        ],
-        destination: 'https://suryassolar.com/:path*',
-        permanent: true, // 301 redirect
-      },
-      // Redirect HTTP to HTTPS (if somehow accessed via HTTP)
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'header',
-            key: 'x-forwarded-proto',
-            value: 'http',
-          },
-        ],
-        destination: 'https://suryassolar.com/:path*',
-        permanent: true, // 301 redirect
-      },
-    ]
-  },
+  // REDIRECTS REMOVED: Hosting provider handles www/HTTPS at server level
+  // Adding redirects here created a loop (ERR_TOO_MANY_REDIRECTS)
   async headers() {
     return [
       {
