@@ -7,7 +7,3 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.suryassolar\.com$ [NC]
 RewriteRule ^(.*)$ https://suryassolar.com/$1 [R=301,L]
 
-# Remove trailing slashes (except for root)
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} (.+)/$
-RewriteRule ^ %1 [R=301,L]

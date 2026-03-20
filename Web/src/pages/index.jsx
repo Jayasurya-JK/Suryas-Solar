@@ -111,7 +111,7 @@ export default function Home({ content, settings }) {
         <meta name="keywords" content={settings.siteKeywords || "solar panel Cuddalore, residential solar, rooftop solar"} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="canonical" href="https://suryassolar.com" />
+        <link rel="canonical" href="https://suryassolar.com/" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
