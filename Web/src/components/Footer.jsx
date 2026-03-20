@@ -218,7 +218,7 @@ export default function Footer() {
           <p>&copy; {currentYear} Surya's Solar. All rights reserved.</p>
 
           <p className="text-gray-500 text-xs md:text-sm">
-            Designed & Developed by <span className="text-white font-semibold">Jay Web Studio</span>
+            Designed & Developed by <a href="https://www.jaywebstudio.in/" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:text-primary transition-colors">Jay Web Studio</a>
           </p>
 
           <div className="flex gap-6">
