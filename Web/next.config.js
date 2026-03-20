@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Static HTML export (replaces `next export` in Next.js 14)
   trailingSlash: false, // Enforce no trailing slashes to match canonical tags
   images: {
     unoptimized: true,
