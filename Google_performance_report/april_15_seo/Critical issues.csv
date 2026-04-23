@@ -1,0 +1,8 @@
+Reason,Source,Validation,Pages
+Alternative page with proper canonical tag,Website,Failed,16
+Not found (404),Website,Failed,9
+Page with redirect,Website,Failed,2
+Redirect error,Website,Not Started,11
+Discovered – currently not indexed,Google systems,Started,10
+Crawled - currently not indexed,Google systems,Started,1
+Blocked by robots.txt,Website,N/A,0
