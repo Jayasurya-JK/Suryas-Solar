@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
                             <section>
                                 <h2 className="text-xl font-bold text-gray-900 mb-3">1. Introduction</h2>
                                 <p>
-                                    Welcome to <strong>Surya's Solar</strong> ("we," "our," or "us"). We are committed to protecting your privacy and ensuring your personal information is handled in a safe and responsible manner. This Privacy Policy explains how we collect, use, and protect your data when you visit our website <strong>suryassolar.com</strong>.
+                                    Welcome to <strong>Surya's Solar</strong> ("we," "our," or "us"). We are committed to protecting your privacy and ensuring your personal information is handled in a safe, transparent, and highly secure manner. This Privacy Policy comprehensively explains how we collect, carefully utilize, and rigorously protect your data when you visit our website <strong>suryassolar.com</strong>, request a PM Surya Ghar subsidy consultation, or book a free rooftop solar site inspection in Tamil Nadu.
                                 </p>
                             </section>
 

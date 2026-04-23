@@ -411,6 +411,21 @@ export default function AboutPage() {
                         </div>
                     </div>
                 </section>
+                
+                {/* SEO Text Block to increase Text-to-HTML ratio */}
+                <section className="bg-white py-16 border-t border-gray-100">
+                    <div className="container-custom max-w-5xl mx-auto text-center md:text-left">
+                        <h2 className="text-2xl md:text-3xl font-playfair font-bold text-gray-900 mb-6">Empowering Tamil Nadu with Sustainable Solar Energy</h2>
+                        <div className="text-gray-600 space-y-4 text-sm md:text-base leading-relaxed">
+                            <p>
+                                At Surya's Solar, our core mission is to accelerate Tamil Nadu's transition to sustainable, independent energy. We understand the local challenges of rising TNEB electricity tariffs, frequent voltage fluctuations, and the unique weather conditions of coastal districts like Puducherry and Cuddalore. That is why our solar installations strictly utilize Tier-1, ALMM-approved solar panels—including Monocrystalline, N-Type TopCon, and Bifacial variants—paired with robust, rust-proof mounting structures designed specifically for coastal resilience.
+                            </p>
+                            <p>
+                                Unlike aggregators, we are a locally rooted company. Our dedicated in-house engineers manage every technical aspect: from conducting thorough rooftop shadow analyses and precision load calculations, to navigating the complex documentation required for PM Surya Ghar Muft Bijli Yojana subsidies and TNEB net-metering. Our commitment doesn't end at installation; we provide comprehensive long-term solar maintenance, panel cleaning services, and proactive generation monitoring to ensure your solar investment yields maximum ROI for the next 25 years.
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             <Footer />

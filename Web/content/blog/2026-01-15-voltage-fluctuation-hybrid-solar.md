@@ -44,7 +44,7 @@ They are designed to operate only when the Grid Voltage is "Healthy".
 ## 3. The Solution: [Hybrid](/blog/2026-01-06-on-grid-vs-hybrid-solar-tamil-nadu) Inverters (The "Active Stabilizer")
 
 If you live in a low-voltage zone, **do not buy a standard On-Grid inverter.**
-You need a **[Hybrid Inverter](/blog/2026-01-15-voltage-fluctuation-hybrid-solar.md)** (like Deye, SolaX, or GoodWe GW5048-ES).
+You need a **[Hybrid Inverter](/blog/2026-01-15-voltage-fluctuation-hybrid-solar)** (like Deye, SolaX, or GoodWe GW5048-ES).
 
 **Why? What makes it different?**
 Hybrid inverters are "Masters", not slaves.

@@ -153,7 +153,7 @@ Choosing the right brand isn't just about the price tag; it's about long-term re
 *   **Good Low-Light Performance:** Crucial for cloudy days in the monsoon season.
 *   **Warranty:** Guarantees your investment is safe for 25 years.
 
-➡ **Read More:** [Residential Solar ROI in Tamil Nadu (2025)](/blog/2025-12-03-residential-solar-payback-roi-tamil-nadu)
+➡ **Read More:** [Residential Solar ROI in Tamil Nadu (2025)](/blog/2025-12-01-residential-solar-payback-roi-tamil-nadu)
 
 ---
 

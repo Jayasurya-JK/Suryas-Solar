@@ -284,6 +284,16 @@ export default function ContactPage() {
                     </div>
                 </section>
 
+                {/* SEO Text Block for Local Service Areas */}
+                <section className="py-12 bg-white">
+                    <div className="container-custom max-w-4xl mx-auto text-center md:text-left">
+                        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Dedicated Solar Services Across Tamil Nadu</h2>
+                        <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Based in the heart of Cuddalore, Surya's Solar provides dedicated, rapid-response solar installation and maintenance services throughout key districts in Tamil Nadu and Puducherry. Our primary service areas include Cuddalore, Panruti, Neyveli, Chidambaram, Villupuram, and the entire Union Territory of Puducherry (Pondicherry). We understand the specific rooftop structures, local TNEB grid infrastructure, and weather patterns unique to this coastal belt. By focusing hyper-locally, we ensure faster site inspections, precise PM Surya Ghar subsidy processing, and immediate post-installation support when you need it most.
+                        </p>
+                    </div>
+                </section>
+
                 {/* Map Section */}
                 <section className="pb-10 md:pb-20 bg-gray-50 pt-10">
                     <div className="container-custom">

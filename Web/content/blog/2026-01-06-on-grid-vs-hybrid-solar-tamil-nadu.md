@@ -49,7 +49,7 @@ It syncs with the TNEB grid.
 This is the "Tesla" of solar systems. It connects to TNEB *and* a Lithium Battery bank.
 
 ### How it Works
-It has a smart brain ([Hybrid Inverter](/blog/2026-01-15-voltage-fluctuation-hybrid-solar.md)).
+It has a smart brain ([Hybrid Inverter](/blog/2026-01-15-voltage-fluctuation-hybrid-solar)).
 *   **Normal Mode:** Works like On-Grid (Reduces Bill).
 *   **Backup Mode:** When TNEB fails, it **instantly (<10ms)** switches to battery power. It isolates your house from the grid so you can run ACs, Lights, and Computers from Solar + Battery.
 

@@ -117,7 +117,7 @@ The inverter is the heart of your system.
     *   **Performance:** Handles heavy daytime loads (like a water pump or AC) much better.
     *   **Hybrid Option:** If you choose a **Hybrid Inverter**, a 5kW unit can charge batteries faster, providing better backup during power cuts.
 
-➡ **Read More:** [Solar Inverter Guide for Tamil Nadu](/blog/2025-12-06-solar-inverter-guide-tamil-nadu-puducherry)
+➡ **Read More:** [Solar Inverter Guide for Tamil Nadu](/blog/2025-12-02-solar-inverter-guide-tamil-nadu-puducherry)
 
 ---
 
@@ -130,7 +130,7 @@ Which one pays back faster?
 
 **Why?** A 5kW system generates significantly more "excess" units that are exported to the grid. This builds up a larger credit in your net-metering account, potentially wiping out your bill entirely even in peak summer months when your AC usage spikes.
 
-➡ **Read More:** [Residential Solar ROI in Tamil Nadu](/blog/2025-12-03-residential-solar-payback-roi-tamil-nadu)
+➡ **Read More:** [Residential Solar ROI in Tamil Nadu](/blog/2025-12-01-residential-solar-payback-roi-tamil-nadu)
 
 ---
 

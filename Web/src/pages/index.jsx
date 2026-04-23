@@ -165,6 +165,27 @@ export default function Home({ content, settings }) {
         <SolarCalculator />
         <WhyChoose />
         <Testimonials testimonials={content.testimonials} />
+        
+        {/* SEO Text Block to increase Text-to-HTML ratio */}
+        <section className="bg-white py-16 border-t border-gray-100">
+          <div className="container-custom max-w-5xl mx-auto text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-playfair font-bold text-gray-900 mb-6">Your Trusted Solar Installation Partner in Tamil Nadu</h2>
+            <div className="text-gray-600 space-y-4 text-sm md:text-base leading-relaxed">
+              <p>
+                Surya's Solar is the premier provider of residential and commercial solar energy systems across Tamil Nadu and Puducherry. 
+                Based in Cuddalore, we specialize in designing and installing high-efficiency On-Grid, Off-Grid, and Hybrid solar power plants 
+                tailored specifically for the regional climate. Our certified engineering team manages the entire process end-to-end: from precise 
+                3kW to 10kW load calculations and structural shadow analysis, to complete TNEB net-metering liaisoning and PM Surya Ghar Muft Bijli Yojana subsidy processing.
+              </p>
+              <p>
+                We are fiercely committed to helping local homeowners and large-scale businesses completely eliminate their electricity bills while significantly 
+                increasing their property value through clean, renewable energy. Whether you are actively comparing N-Type TopCon vs Bifacial solar panels, 
+                calculating your long-term solar ROI, or seeking professional post-installation maintenance and generation tracking, Surya's Solar delivers 
+                uncompromised engineering quality, transparent pricing, and robust 25-year performance warranties.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
       <section id="contact">
         <Footer settings={settings} />
