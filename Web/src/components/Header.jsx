@@ -5,6 +5,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null)
+  const [openMobileDropdown, setOpenMobileDropdown] = useState(null)
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 60)
@@ -37,18 +38,30 @@ export default function Header() {
     { name: 'Blog', href: '/blog' },
   ]
 
-  const mobileLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Cuddalore Solar', href: '/service-areas/cuddalore' },
-    { label: 'Puducherry Solar', href: '/service-areas/puducherry' },
-    { label: 'Panruti Solar', href: '/service-areas/panruti' },
-    { label: 'Neyveli Solar', href: '/service-areas/neyveli' },
-    { label: '5kW Solar System', href: '/systems/5kw-solar-system-with-subsidy' },
-    { label: '3kW Solar System', href: '/systems/3kw-solar-system-with-subsidy' },
-    { label: 'Solar Calculator', href: '/calc' },
-    { label: 'About Us', href: '/about' },
-    { label: 'Contact Us', href: '/contact' },
-    { label: 'Blog', href: '/blog' },
+  const mobileNavLinks = [
+    { name: 'Home', href: '/' },
+    {
+      name: 'Locations',
+      isDropdown: true,
+      items: [
+        { name: 'Cuddalore', href: '/service-areas/cuddalore' },
+        { name: 'Puducherry', href: '/service-areas/puducherry' },
+        { name: 'Panruti', href: '/service-areas/panruti' },
+        { name: 'Neyveli', href: '/service-areas/neyveli' },
+      ],
+    },
+    {
+      name: 'Solar Systems',
+      isDropdown: true,
+      items: [
+        { name: '5kW System — Best Seller', href: '/systems/5kw-solar-system-with-subsidy' },
+        { name: '3kW System', href: '/systems/3kw-solar-system-with-subsidy' },
+      ],
+    },
+    { name: 'Calculator', href: '/calc' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Blog', href: '/blog' },
   ]
 
   return (
@@ -217,29 +230,49 @@ export default function Header() {
 
           {/* Links */}
           <nav className="flex-1 overflow-y-auto py-2">
-            {mobileLinks.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center px-6 py-4 text-[0.92rem] font-medium text-gray-800 hover:bg-primary-50 hover:text-primary transition-colors border-b border-gray-50"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {mobileNavLinks.map((item) => {
+              if (item.isDropdown) {
+                return (
+                  <div key={item.name}>
+                    <button
+                      onClick={() => setOpenMobileDropdown(openMobileDropdown === item.name ? null : item.name)}
+                      className="flex items-center justify-between w-full px-6 py-4 text-[0.92rem] font-medium text-gray-800 hover:bg-primary-50 hover:text-primary transition-colors border-b border-gray-50"
+                    >
+                      <span>{item.name}</span>
+                      <svg className={`w-4 h-4 transition-transform duration-200 ${openMobileDropdown === item.name ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    
+                    {/* Mobile Dropdown */}
+                    <div className={`overflow-hidden transition-all duration-300 ${openMobileDropdown === item.name ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                      {item.items.map((subItem) => (
+                        <Link
+                          key={subItem.href}
+                          href={subItem.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="flex items-center px-8 py-3 text-[0.85rem] font-medium text-gray-600 hover:bg-primary-50 hover:text-primary transition-colors border-b border-gray-50 last:border-b-0"
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )
+              }
+              
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center px-6 py-4 text-[0.92rem] font-medium text-gray-800 hover:bg-primary-50 hover:text-primary transition-colors border-b border-gray-50"
+                >
+                  {item.name}
+                </Link>
+              )
+            })}
           </nav>
-
-          {/* CTA */}
-          <div className="p-5 border-t border-gray-100 bg-gray-50">
-            <Link
-              href="/#booking"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 px-4 py-4 rounded-2xl bg-gradient-to-r from-primary to-primary-700 text-white font-bold text-base shadow-lg"
-            >
-              📅 Book Free Home Visit
-            </Link>
-            <p className="text-center text-xs text-gray-400 mt-2">Our expert visits your home — 100% free</p>
-          </div>
         </div>
       </div>
     </>
