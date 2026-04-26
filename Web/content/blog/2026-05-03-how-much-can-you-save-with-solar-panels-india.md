@@ -3,9 +3,7 @@ title: 'How Much Can You Save With Solar Panels in India? (Real Numbers, 2026)'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-
-  A completely honest, data-driven breakdown of exactly how much money you can
-  save per month, per year, and over 25 years by installing rooftop solar panels
-  in India.
+  Curious about the financial benefits of solar? Discover the real savings, ROI, and long-term financial advantages of installing solar panels for your home in India.
 featuredImage: /images/how-much-can-you-save-with-solar-panels-india.webp
 category: Solar Finance
 tags:

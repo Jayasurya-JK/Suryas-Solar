@@ -3,9 +3,7 @@ title: Can a 1.5 Ton AC Run on Solar Power in Tamil Nadu? (2026 Ultimate Guide)
 date: '2026-04-25'
 author: Surya's Solar Engineering Team
 excerpt: >-
-  An exhaustive 1,500+ word technical guide on running a 1.5-ton AC entirely on
-  solar power in Tamil Nadu. We cover precise load calculations, TNEB slab
-  impacts, On-grid vs Hybrid, and exact ROI.
+  Can a 1.5-ton AC run on solar power in Tamil Nadu? Learn exactly how many solar panels you need, the best system type, and how to eliminate your summer cooling bills.
 featuredImage: /images/can-1-5-ton-ac-run-on-solar-power-tamil-nadu.webp
 category: Appliances
 tags:

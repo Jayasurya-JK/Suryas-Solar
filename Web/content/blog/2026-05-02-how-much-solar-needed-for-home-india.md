@@ -5,9 +5,7 @@ title: >-
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-
-  Stop guessing. This engineering guide provides the exact formula, step-by-step
-  calculation, and real-world tables to determine precisely how much solar your
-  Indian home needs.
+  Planning to go solar? Learn a simple, step-by-step method to calculate the exact solar panel capacity your home needs based on your daily energy consumption.
 featuredImage: /images/how-much-solar-needed-for-home-india.webp
 category: Technical Guides
 tags:

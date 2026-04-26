@@ -3,9 +3,7 @@ title: Solar Panel Cost in Tamil Nadu 2026
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-
-  A transparent, comprehensive breakdown of solar panel installation costs in
-  Tamil Nadu for 2026, including component-wise pricing, PM Surya Ghar subsidy
-  details, and realistic payback calculations.
+  Planning a solar installation in 2026? Get the complete breakdown of solar panel costs in Tamil Nadu, including current prices, available subsidies, and expected savings.
 featuredImage: /images/solar-panel-cost-tamil-nadu-2026.webp
 category: Solar Finance
 tags:

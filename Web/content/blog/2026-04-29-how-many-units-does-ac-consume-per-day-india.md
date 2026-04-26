@@ -3,9 +3,7 @@ title: How Many Units Does an AC Consume Per Day in India? (2026 Engineering Gui
 date: '2026-04-26'
 author: Surya's Solar Technical Team
 excerpt: >-
-  Stop guessing your electricity bill. We provide the exact mathematical
-  formulas and real-world tables showing exactly how many units 1-ton, 1.5-ton,
-  and 2-ton ACs consume per day.
+  Wondering how much electricity your AC really uses? Get clear calculations on daily unit consumption for 1-ton and 1.5-ton ACs to better manage your energy bills.
 featuredImage: /images/how-many-units-does-ac-consume-per-day-india.webp
 category: Appliances
 tags:

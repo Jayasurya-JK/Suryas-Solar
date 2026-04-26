@@ -3,9 +3,7 @@ title: Solar Cost in Puducherry 2026
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-
-  A comprehensive, transparent price guide for solar panel installation in
-  Puducherry in 2026. Covers 1kW to 5kW system costs, subsidy eligibility, TNEB
-  vs PPCL differences, and ROI.
+  Ready to switch to solar in Puducherry? Check out our detailed 2026 price guide covering 1kW, 3kW, and 5kW systems, subsidies, and local installation costs.
 featuredImage: /images/solar-cost-puducherry-2026.webp
 category: Solar Finance
 tags:

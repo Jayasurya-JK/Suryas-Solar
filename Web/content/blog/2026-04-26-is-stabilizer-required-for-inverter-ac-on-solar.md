@@ -5,9 +5,7 @@ title: >-
 date: '2026-04-26'
 author: Surya's Solar Technical Team
 excerpt: >-
-  A comprehensive 1,500+ word engineering analysis of Inverter AC PCBs, TNEB
-  grid voltage fluctuations, Hybrid AVRs, and why 'stabilizer-free' marketing
-  might cost you ₹15,000.
+  Do Inverter ACs need a stabilizer on solar in Tamil Nadu? We explain voltage issues, warranty risks, and when a stabilizer actually saves you money.
 featuredImage: /images/is-stabilizer-required-for-inverter-ac-on-solar.webp
 category: Technical Guides
 tags:

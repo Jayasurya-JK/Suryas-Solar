@@ -3,9 +3,7 @@ title: 5kW Solar System Cost in Tamil Nadu
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-
-  The complete engineering guide to a 5kW solar system in Tamil Nadu: actual
-  cost breakdown, daily unit generation, what it can power, subsidy eligibility,
-  and 25-year ROI calculation.
+  Need a larger solar setup? Dive into our complete 2026 guide on 5kW solar systems in Tamil Nadu, covering pricing, power generation, and how to maximize your government subsidy.
 featuredImage: /images/5kw-solar-system-cost-tamil-nadu-2026.webp
 category: Solar Finance
 tags:

@@ -3,8 +3,7 @@ title: 'How Much Solar for a ₹5,000 Electricity Bill?'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-
-  If your TNEB bill is between ₹3,000 and ₹5,000 every two months, this guide
-  calculates the exact solar system size you need to eliminate it permanently.
+  Paying 5,000 rupees for electricity in Tamil Nadu? Find out the exact solar system size you need to wipe out your bill and how much you can save with PM Surya Ghar subsidies.
 featuredImage: /images/how-much-solar-for-5000-electricity-bill-tamil-nadu.webp
 category: Energy Saving
 tags:

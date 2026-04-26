@@ -3,9 +3,7 @@ title: 3kW Solar System Price in India
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-
-  Everything you need to know about a 3kW solar system: exact price, how many
-  units it generates, subsidy eligibility, what loads it can run, and the true
-  payback period.
+  Is a 3kW solar system right for you? Explore the total cost, daily unit generation, and payback period for India's most popular residential solar setup.
 featuredImage: /images/3kw-solar-system-price-india-2026.webp
 category: Solar Finance
 tags:

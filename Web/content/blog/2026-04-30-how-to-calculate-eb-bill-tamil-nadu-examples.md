@@ -3,9 +3,7 @@ title: How to Calculate Your EB Bill in Tamil Nadu (With 2026 Math Examples)
 date: '2026-04-26'
 author: Surya's Solar Technical Team
 excerpt: >-
-  A complete, step-by-step mathematical guide to understanding the TNEB
-  telescopic tariff slabs. We provide exact calculation examples for 300, 500,
-  and 800 units.
+  Confused by TNEB slab rates? Learn how to calculate your Tamil Nadu electricity bill easily with clear examples, helping you track and reduce your monthly expenses.
 featuredImage: /images/how-to-calculate-eb-bill-tamil-nadu-examples.webp
 category: Electricity Bill
 tags:
