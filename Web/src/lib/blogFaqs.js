@@ -145,7 +145,7 @@ export function getFaqsForPost(post) {
     },
     {
       question: "What maintenance costs should I expect?",
-      answer: "Maintenance is minimal—mostly cleaning. You may need to replace the inverter once in year 11-12 (approx ₹25,000)."
+      answer: "Maintenance is minimal-mostly cleaning. You may need to replace the inverter once in year 11-12 (approx ₹25,000)."
     },
     {
       question: "Does solar increase home resale value?",

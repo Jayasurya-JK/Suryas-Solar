@@ -29,7 +29,7 @@ export default function Header() {
       name: 'Solar Systems',
       isDropdown: true,
       items: [
-        { name: '5kW System — Best Seller', href: '/systems/5kw-solar-system-with-subsidy' },
+        { name: '5kW System - Best Seller', href: '/systems/5kw-solar-system-with-subsidy' },
         { name: '3kW System', href: '/systems/3kw-solar-system-with-subsidy' },
       ],
     },
@@ -54,7 +54,7 @@ export default function Header() {
       name: 'Solar Systems',
       isDropdown: true,
       items: [
-        { name: '5kW System — Best Seller', href: '/systems/5kw-solar-system-with-subsidy' },
+        { name: '5kW System - Best Seller', href: '/systems/5kw-solar-system-with-subsidy' },
         { name: '3kW System', href: '/systems/3kw-solar-system-with-subsidy' },
       ],
     },

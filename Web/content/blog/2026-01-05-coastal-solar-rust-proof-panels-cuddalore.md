@@ -38,7 +38,7 @@ Not all solar panels are created equal. Most "Standard" panels are tested for in
 3.  **PID (Potential Induced Degradation):** Sodium ions from salt degrade the solar cells, reducing output by 30-40% permanently.
 
 ### The Solution: IEC 61701 Certification
-You **must** ask for panels certified for **IEC 61701**. But be careful—there are different "Severity Levels".
+You **must** ask for panels certified for **IEC 61701**. But be careful-there are different "Severity Levels".
 
 | Severity Level | Environment | Suitability for Cuddalore |
 | :--- | :--- | :--- |

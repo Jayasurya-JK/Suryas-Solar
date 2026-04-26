@@ -15,7 +15,7 @@ tags:
   - TOPCon
 updated: '2026-04-26'
 ---
-In 2025, homeowners across Tamil Nadu and Puducherry — especially in regions like **Cuddalore, Neyveli, and Panruti** — are switching to rooftop solar systems to reduce high electricity bills and secure long-term savings. With electricity tariffs in Tamil Nadu and Puducherry rising to ₹7–₹9 per unit, solar is the most effective way to cut costs.
+In 2025, homeowners across Tamil Nadu and Puducherry - especially in regions like **Cuddalore, Neyveli, and Panruti** - are switching to rooftop solar systems to reduce high electricity bills and secure long-term savings. With electricity tariffs in Tamil Nadu and Puducherry rising to ₹7–₹9 per unit, solar is the most effective way to cut costs.
 
 But the most important decision every homeowner must make is choosing the right solar panel brand. The market is flooded with options, from premium international brands to cost-effective Indian manufacturers. Making the wrong choice can lead to lower generation, faster degradation, and warranty headaches down the line.
 
@@ -35,7 +35,7 @@ Before looking at brands, it's crucial to understand the technology. The "best" 
 
 ### b) N-Type TOPCon (Premium, Next-Gen)
 **Tunnel Oxide Passivated Contact (TOPCon)** is the latest buzzword in the solar industry.
-*   **Why it works:** These panels have lower degradation rates and perform better in high temperatures—a huge plus for the hot summers in **Neyveli and Chidambaram**.
+*   **Why it works:** These panels have lower degradation rates and perform better in high temperatures-a huge plus for the hot summers in **Neyveli and Chidambaram**.
 *   **Efficiency:** Can exceed 22.5%.
 *   **Best For:** Homeowners who want the absolute highest generation and have slightly higher budgets.
 
@@ -175,6 +175,6 @@ For the next step, compare your estimated savings with our [Solar Savings Calcul
 
 ## Need Help Choosing the Right Solar Panel?
 
-Book a free rooftop assessment with **Surya’s Solar** — we serve all areas of Tamil Nadu and Puducherry including Cuddalore, Panruti, Neyveli, Chidambaram and Pondicherry. We help you select the perfect brand for your specific roof and budget.
+Book a free rooftop assessment with **Surya’s Solar** - we serve all areas of Tamil Nadu and Puducherry including Cuddalore, Panruti, Neyveli, Chidambaram and Pondicherry. We help you select the perfect brand for your specific roof and budget.
 
 <!-- COMPONENT: CONTACT_CTA -->

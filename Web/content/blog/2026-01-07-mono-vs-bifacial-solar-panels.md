@@ -105,7 +105,7 @@ Is the performance worth the premium price tag?
 **Winner: Bifacial.** The reflection bonus makes this a no-brainer. You will get 5kW performance from a 4kW plant.
 
 **Scenario C: "I have a red tiled/sloped roof or low budget."**
-**Winner: Mono PERC.** Without a reflective floor or height, Bifacial is a waste of money. Stick to the proven Mono panels—they are still excellent technology.
+**Winner: Mono PERC.** Without a reflective floor or height, Bifacial is a waste of money. Stick to the proven Mono panels-they are still excellent technology.
 
 **Still not sure about your Albedo?**
 We can bring a demo Bifacial module to your roof and measure the reflection with a lux meter.

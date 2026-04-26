@@ -46,7 +46,7 @@ Specialized Solar DC Cable uses **XLPO (Cross-Linked Polyolefin)** insulation.
 *   **Electron Beam Cured:** The plastic is bombarded with electrons during manufacturing to make it tough.
 *   **UV Resistant:** It is tested to withstand UV radiation for **25 years**.
 *   **Halogen Free:** In case of a fire, it does not release black toxic smoke (unlike PVC).
-*   **Durability:** You can leave it in the sun, rain, or mud—it will not crack.
+*   **Durability:** You can leave it in the sun, rain, or mud-it will not crack.
 
 ---
 

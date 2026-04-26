@@ -30,7 +30,7 @@ faqs:
 ---
 If you are reading this, there is a very strong chance you recently opened your bi-monthly TNEB electricity bill and felt a wave of frustration when you saw a figure between ₹3,000 and ₹5,000. You are not alone. 
 
-In Tamil Nadu—especially in cities like Cuddalore, Puducherry, Panruti, and Neyveli—summer electricity bills between ₹3,000 and ₹8,000 are now the norm for middle-class households running air conditioners. And the pain is only going to get worse as TNEB tariffs continue to rise annually.
+In Tamil Nadu-especially in cities like Cuddalore, Puducherry, Panruti, and Neyveli-summer electricity bills between ₹3,000 and ₹8,000 are now the norm for middle-class households running air conditioners. And the pain is only going to get worse as TNEB tariffs continue to rise annually.
 
 But here is the good news: a high electricity bill actually tells us precisely how much solar power you need. Your bill is essentially a road map. In this detailed engineering guide, we will reverse-engineer your ₹3,000 to ₹5,000 bill to calculate the exact solar system size that will eliminate it permanently.
 

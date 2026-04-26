@@ -30,7 +30,7 @@ faqs:
       5kW is better only when your consumption justifies it. For lower bills,
       3kW may provide a faster payback.
 ---
-When your bi-monthly TNEB electricity bill consistently exceeds ₹5,000—perhaps because you run two air conditioners, have a large 4 BHK home, or operate a small business from home—a 3kW solar system is simply not going to be enough. You need a larger, more powerful installation.
+When your bi-monthly TNEB electricity bill consistently exceeds ₹5,000-perhaps because you run two air conditioners, have a large 4 BHK home, or operate a small business from home-a 3kW solar system is simply not going to be enough. You need a larger, more powerful installation.
 
 The 5kW solar system is the natural next step, and it is the most popular choice among large households, high-consumption families, and small commercial establishments across Tamil Nadu, including Cuddalore, Puducherry, Villupuram, and Chidambaram.
 
@@ -112,7 +112,7 @@ The following pricing represents quality (not budget, not premium) installations
 
 **Average Market Price in Tamil Nadu (2026): ₹2,40,000 to ₹2,75,000** for a quality 5kW On-Grid system with Tier-1 panels.
 
-> **Why does pricing vary so much?** The spread from ₹2,01,000 to ₹3,00,000 reflects real differences in panel brand, inverter quality, structure thickness, cable section, and the level of documentation and after-sales support provided. Always ask for a component-wise breakup—never accept a single lump-sum quote without knowing what panels and inverter you are receiving.
+> **Why does pricing vary so much?** The spread from ₹2,01,000 to ₹3,00,000 reflects real differences in panel brand, inverter quality, structure thickness, cable section, and the level of documentation and after-sales support provided. Always ask for a component-wise breakup-never accept a single lump-sum quote without knowing what panels and inverter you are receiving.
 
 ---
 
@@ -122,7 +122,7 @@ The central government's PM Surya Ghar Muft Bijli Yojana provides a direct finan
 
 For systems **3kW and above**, the maximum central government subsidy is **₹78,000.**
 
-This subsidy is a direct bank transfer—it is not a tax rebate or a coupon. It goes straight into your bank account within 30 to 90 days of your system being commissioned and your TNEB net meter being formally activated.
+This subsidy is a direct bank transfer-it is not a tax rebate or a coupon. It goes straight into your bank account within 30 to 90 days of your system being commissioned and your TNEB net meter being formally activated.
 
 **Net Investment After Subsidy:**
 *   Average Gross Price: ₹2,57,500
@@ -165,7 +165,7 @@ If your property is within 10 km of the sea (Cuddalore coast, Puducherry beach z
 Tamil Nadu is classified under a high wind zone (Wind Zone IV). Your mounting structure must be designed to withstand winds of up to 180 km/h per IS 875 structural standards. Demand a wind load calculation certificate from your installer.
 
 **High Ambient Temperature:**
-In May and June, rooftop temperatures in Tamil Nadu can exceed 60°C. All solar panels suffer from temperature derating—their output drops roughly 0.35% to 0.40% per degree above 25°C (the standard test temperature). Premium Tier-1 panels have lower temperature coefficients and will outperform cheaper panels during peak Tamil Nadu summer heat.
+In May and June, rooftop temperatures in Tamil Nadu can exceed 60°C. All solar panels suffer from temperature derating-their output drops roughly 0.35% to 0.40% per degree above 25°C (the standard test temperature). Premium Tier-1 panels have lower temperature coefficients and will outperform cheaper panels during peak Tamil Nadu summer heat.
 
 ---
 

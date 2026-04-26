@@ -16,7 +16,7 @@ updated: '2026-04-26'
 ---
 Are you a homeowner in Tamil Nadu tired of rising electricity bills? You are not alone. With electricity tariffs increasing across the state, more residents in **Cuddalore, Panruti, Neyveli, and Chidambaram** are switching to solar power to secure their energy future.
 
-In 2025, solar is no longer just a luxury—it is a financial necessity. But the #1 question we get at **Surya’s Solar**, a trusted solar installer in the region, is: *"How much does it actually cost?"*
+In 2025, solar is no longer just a luxury-it is a financial necessity. But the #1 question we get at **Surya’s Solar**, a trusted solar installer in the region, is: *"How much does it actually cost?"*
 
 This guide provides a transparent, 100% accurate breakdown of **Tamil Nadu rooftop solar cost**, specifically for Cuddalore and surrounding districts, including the latest **PM Surya Ghar: Muft Bijli Yojana** subsidies. We will break down the pricing for 1kW, 3kW, and 5kW systems, explain the hidden costs, and show you exactly how to calculate your return on investment (ROI).
 

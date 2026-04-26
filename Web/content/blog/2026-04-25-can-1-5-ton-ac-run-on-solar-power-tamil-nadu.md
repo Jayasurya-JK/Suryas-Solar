@@ -43,7 +43,7 @@ faqs:
       run selected loads during outages, you need a hybrid inverter with
       suitable battery backup and proper load segregation.
 ---
-With Tamil Nadu’s sweltering summers pushing temperatures well past 40°C in cities like Cuddalore, Puducherry, Panruti, and Neyveli, running an air conditioner has irrevocably shifted from a luxury to an absolute necessity for health and comfort. However, as the Tamil Nadu Electricity Board (TNEB) tariffs continue to rise—especially if you cross the dreaded 500-unit bimonthly slab—many homeowners are turning to renewable energy to escape crushing utility bills.
+With Tamil Nadu’s sweltering summers pushing temperatures well past 40°C in cities like Cuddalore, Puducherry, Panruti, and Neyveli, running an air conditioner has irrevocably shifted from a luxury to an absolute necessity for health and comfort. However, as the Tamil Nadu Electricity Board (TNEB) tariffs continue to rise-especially if you cross the dreaded 500-unit bimonthly slab-many homeowners are turning to renewable energy to escape crushing utility bills.
 
 At Surya's Solar, the single most common question our engineers receive during site visits is: **"Can a 1.5-ton AC run directly on solar power without tripping the system?"**
 
@@ -95,7 +95,7 @@ To understand why solar is so crucial, you must understand the TNEB billing slab
 
 If your house normally consumes 400 units bi-monthly without an AC, your bill is relatively low. However, running a single 1.5-ton non-inverter AC for 8 hours a night adds roughly 600 units to your bi-monthly bill. 
 
-This pushes your total consumption to 1,000 units. You are no longer paying ₹4.50 per unit; your new consumption is being penalized at ₹10.00 and ₹11.00 per unit. Your bill doesn't just double—it quadruples. We call this the "AC Penalty."
+This pushes your total consumption to 1,000 units. You are no longer paying ₹4.50 per unit; your new consumption is being penalized at ₹10.00 and ₹11.00 per unit. Your bill doesn't just double-it quadruples. We call this the "AC Penalty."
 
 ---
 
@@ -142,7 +142,7 @@ Running heavy heating or cooling loads on batteries is a completely different en
 To extract the absolute maximum value out of your solar investment while keeping your home freezing cold during the Tamil Nadu summer, follow these engineering best practices:
 
 1.  **Thermal Pre-Cooling During Peak Sun:** If you have an On-Grid system, do not wait until 6 PM to turn on your AC. Turn your AC on and set it to 22°C between 1 PM and 4 PM while your solar panels are generating maximum peak power. Your house's walls, furniture, and air will act like a "thermal battery," storing the cold. In the evening, you can raise the AC to 26°C or rely entirely on ceiling fans, drastically minimizing your nighttime grid import.
-2.  **Maintain Your Panels Relentlessly:** During the dry, dusty months of April and May—right when you need your AC the most—dust accumulation on solar panels can drop power generation by a staggering 15% to 20%. Wash your panels with plain water (no harsh chemicals) at least twice a month early in the morning.
+2.  **Maintain Your Panels Relentlessly:** During the dry, dusty months of April and May-right when you need your AC the most-dust accumulation on solar panels can drop power generation by a staggering 15% to 20%. Wash your panels with plain water (no harsh chemicals) at least twice a month early in the morning.
 3.  **Stagger Your Heavy Loads:** If you have two ACs, do not turn them on at the exact same second. Turn the first one on, wait 10 minutes for its compressor to settle into its low-power maintenance phase, and then turn on the second one. This prevents extreme voltage drops that can stress the inverter components.
 4.  **Set the Right Temperature:** Every degree below 24°C increases your AC's power consumption by roughly 6%. Setting your AC to 18°C does not cool the room any faster; it simply forces the compressor to run at 100% capacity continuously without ever ramping down. Keep it at 24°C for maximum solar efficiency.
 5.  **Seal Your Room:** Solar energy is essentially "free," but that doesn't mean you should waste it. Ensure your windows have thick blackout curtains to block radiant heat from the sun, and seal gaps under doors to prevent your hard-earned cold air from escaping into hallways.

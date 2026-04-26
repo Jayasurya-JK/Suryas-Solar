@@ -24,12 +24,12 @@ We welcome this question. It gives us a chance to save a customer from a disaste
 In Cuddalore, the solar market is booming. And where there is money, there are shortcuts. A "Cheap Quote" is never magic; it’s usually a compromise on safety, compliance, or longevity.
 
 Solar is a 25-year product. If the installer cheats you today, you will pay for it for decades.
-In **2026**, here are the **7 Dirty Tricks** unreliable installers use to lower their price—and why you will pay double for it later.
+In **2026**, here are the **7 Dirty Tricks** unreliable installers use to lower their price-and why you will pay double for it later.
 
 ---
 
 ## 1. The "Sticker" Scam (Fake DCR)
-The **[PM Surya Ghar](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)** subsidy strictly demands **DCR (Domestic Content Requirement)** panels—i.e., Indian cells and Indian modules.
+The **[PM Surya Ghar](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)** subsidy strictly demands **DCR (Domestic Content Requirement)** panels-i.e., Indian cells and Indian modules.
 *   **The Scam:** Unethical vendors buy cheaper imported/Chinese panels (which are 20% cheaper) and paste a fake "DCR" sticker on the back.
 *   **The Result:** During the TNEB inspection, the AE scans the barcode. If it fails the ALMM (Approved List of Models and Manufacturers) database check, **Subsidy is Rejected.**
 *   **The Loss:** You lose ₹78,000 subsidy to save ₹10,000 upfront.

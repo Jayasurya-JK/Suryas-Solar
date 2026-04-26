@@ -107,7 +107,7 @@ export default function FiveKwPage({ settings }) {
 
               <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-orange-500/20 border border-orange-400/30">
                 <div className="w-1.5 h-1.5 rounded-full bg-orange-400" />
-                <span className="text-orange-200 text-sm font-semibold tracking-wide">Best Seller — {SYSTEM.recommended}</span>
+                <span className="text-orange-200 text-sm font-semibold tracking-wide">Best Seller - {SYSTEM.recommended}</span>
               </div>
 
               <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6">
@@ -118,7 +118,7 @@ export default function FiveKwPage({ settings }) {
 
               <p className="text-blue-100/90 text-lg leading-relaxed mb-10 max-w-xl">
                 Eliminate up to <strong className="text-white">₹6,000/month</strong> from your TNEB electricity bill. Exact pricing after the{' '}
-                <strong className="text-yellow-300">₹78,000 PM Surya Ghar subsidy</strong> — calculated for your home.
+                <strong className="text-yellow-300">₹78,000 PM Surya Ghar subsidy</strong> - calculated for your home.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -239,7 +239,7 @@ export default function FiveKwPage({ settings }) {
               {[
                 {
                   q: 'Can a 5kW system run two 1.5 ton ACs simultaneously?',
-                  a: 'Yes — a 5kW system generates 20–25 units per day, which comfortably powers two 5-Star Inverter ACs running 8 hours each, plus your full household load of lights, fans, fridge, and TV. We recommend Inverter ACs for solar use due to their soft-start and variable compressor technology.'
+                  a: 'Yes - a 5kW system generates 20–25 units per day, which comfortably powers two 5-Star Inverter ACs running 8 hours each, plus your full household load of lights, fans, fridge, and TV. We recommend Inverter ACs for solar use due to their soft-start and variable compressor technology.'
                 },
                 {
                   q: 'How is the ₹78,000 PM Surya Ghar subsidy processed?',
@@ -251,7 +251,7 @@ export default function FiveKwPage({ settings }) {
                 },
                 {
                   q: 'What panel brands does Surya\'s Solar use?',
-                  a: 'We supply ALMM-listed, Tier-1 panels from TATA Power, Adani Solar, and Waaree — all BIS certified and required for the PM Surya Ghar subsidy. We do not use unverified brands.'
+                  a: 'We supply ALMM-listed, Tier-1 panels from TATA Power, Adani Solar, and Waaree - all BIS certified and required for the PM Surya Ghar subsidy. We do not use unverified brands.'
                 },
               ].map((faq, i) => (
                 <details key={i} className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">

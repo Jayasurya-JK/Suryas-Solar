@@ -31,7 +31,7 @@ faqs:
       Avoid oversizing beyond realistic consumption. A slightly future-ready
       system is fine, but unnecessary oversizing can reduce ROI.
 ---
-"How much solar do I need for my home?" is the single most important question in all of residential solar power. Get the sizing right and you enjoy zero electricity bills for 25 years. Get it wrong—by going too small—and you are still stuck paying TNEB thousands of rupees every two months despite having expensive panels on your roof.
+"How much solar do I need for my home?" is the single most important question in all of residential solar power. Get the sizing right and you enjoy zero electricity bills for 25 years. Get it wrong-by going too small-and you are still stuck paying TNEB thousands of rupees every two months despite having expensive panels on your roof.
 
 Sizing a solar system is not guesswork. It is a precise engineering discipline based on your actual electricity consumption, your roof's geographic orientation, the local solar irradiation levels, and the technical efficiency of the system components you choose.
 

@@ -17,12 +17,12 @@ tags:
   - Vehicle to Home
 updated: '2026-04-26'
 ---
-We have covered the *now*—the 2026 subsidies, the banking rules, the trusted brands.
+We have covered the *now*-the 2026 subsidies, the banking rules, the trusted brands.
 But solar is an asset you buy for 25 years. It is important to know where the industry is heading.
 
 In **2026**, the energy landscape in Tamil Nadu is shifting faster than ever before. TANGEDCO (Tamil Nadu Generation and Distribution Corporation) is transforming from a traditional electricity provider into a **Smart Grid Manager**.
 
-For a homeowner in Cuddalore, these changes aren't just "news"—they are opportunities to monetize your roof even further.
+For a homeowner in Cuddalore, these changes aren't just "news"-they are opportunities to monetize your roof even further.
 
 Here are the Top 5 Trends shaping the future of solar in our state between now and 2030.
 

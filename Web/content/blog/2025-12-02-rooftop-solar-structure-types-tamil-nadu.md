@@ -17,7 +17,7 @@ updated: '2026-04-26'
 ---
 When installing solar panels, most homeowners focus on the panels and inverters. However, the **mounting structure** is the backbone of your entire solar system. It ensures stability, safety, and longevity. A weak structure can lead to panel damage during cyclones or rust issues that compromise the entire setup within a few years.
 
-In **Tamil Nadu and Puducherry**, homes face unique challenges—strong sun, coastal winds, and high humidity. The quality of your structure directly affects the life of your panels and your warranty. Many homeowners get confused between GI, Hot-Dip, clamp-based, and rail-less options.
+In **Tamil Nadu and Puducherry**, homes face unique challenges-strong sun, coastal winds, and high humidity. The quality of your structure directly affects the life of your panels and your warranty. Many homeowners get confused between GI, Hot-Dip, clamp-based, and rail-less options.
 
 At **Surya’s Solar**, we use only MNRE-approved structures designed to withstand the specific climate conditions of **Cuddalore, Panruti, Neyveli, and Puducherry**. This guide explains the different types of structures available in 2025 and helps you choose the best one for your home.
 

@@ -41,7 +41,7 @@ At Surya's Solar, we believe in giving you the authentic, unvarnished financial 
 
 Before we present any numbers, you must understand that solar savings are not a flat figure. Your specific savings depend on four critical variables that are unique to your situation:
 
-1.  **Your Current Electricity Consumption:** The more you consume—and specifically, the higher your TNEB tariff slab—the more you save. A household stuck in the ₹9.00/unit slab saves far more per unit than one comfortably in the ₹4.50/unit slab.
+1.  **Your Current Electricity Consumption:** The more you consume-and specifically, the higher your TNEB tariff slab-the more you save. A household stuck in the ₹9.00/unit slab saves far more per unit than one comfortably in the ₹4.50/unit slab.
 2.  **Your Solar System Size:** Larger systems generate more units and eliminate more bill value. A 5kW system saves more than a 1kW system.
 3.  **Your Roof's Solar Potential:** A south-facing, shadow-free roof in Cuddalore will generate more power than a partially shaded, west-facing roof in Mumbai.
 4.  **Future Electricity Tariff Increases:** TNEB tariffs have historically increased by 3% to 5% per year. The savings from your solar panels automatically grow in value every year as TNEB charges more per unit.
@@ -128,7 +128,7 @@ A solar inverter's typical lifespan is 10 to 15 years. You will likely need to r
 
 Solar panels are a certified, tangible home asset. An increasing number of property valuers in Tamil Nadu are beginning to factor in the presence of a commissioned rooftop solar system when calculating property resale value.
 
-Studies from mature solar markets like the United States and Australia have demonstrated that homes with grid-tied solar systems sell for 3% to 6% higher than comparable homes without solar. In the Tamil Nadu real estate market, this is still an emerging trend, but in areas like Cuddalore and Puducherry, where electricity costs are high and solar awareness is growing rapidly, a 3kW solar system on your rooftop is increasingly seen as a premium feature—not unlike a modular kitchen or a covered car park.
+Studies from mature solar markets like the United States and Australia have demonstrated that homes with grid-tied solar systems sell for 3% to 6% higher than comparable homes without solar. In the Tamil Nadu real estate market, this is still an emerging trend, but in areas like Cuddalore and Puducherry, where electricity costs are high and solar awareness is growing rapidly, a 3kW solar system on your rooftop is increasingly seen as a premium feature-not unlike a modular kitchen or a covered car park.
 
 ---
 

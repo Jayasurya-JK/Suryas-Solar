@@ -4,7 +4,7 @@ date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-
   Planning to install solar in Cuddalore? This honest guide tells you exactly
-  what to verify before hiring any solar company—from MNRE empanelment to
+  what to verify before hiring any solar company-from MNRE empanelment to
   structural warranties.
 featuredImage: /images/best-solar-company-cuddalore-2026.webp
 category: Solar Installation
@@ -31,7 +31,7 @@ faqs:
 ---
 If you live in Cuddalore district and you have finally decided to install a rooftop solar system, congratulations. You are making one of the smartest financial decisions available to a homeowner in Tamil Nadu in 2026. The combination of Tamil Nadu's excellent solar irradiation, high TNEB electricity tariffs, and the massive PM Surya Ghar government subsidy makes solar a genuinely compelling investment.
 
-However, the solar installation market in Cuddalore—like most of India—is deeply unregulated. The barrier to entry is almost nonexistent. Any person with a pickup truck and access to cheap Chinese components can call themselves a "solar company" and begin offering quotes to unsuspecting homeowners. 
+However, the solar installation market in Cuddalore-like most of India-is deeply unregulated. The barrier to entry is almost nonexistent. Any person with a pickup truck and access to cheap Chinese components can call themselves a "solar company" and begin offering quotes to unsuspecting homeowners. 
 
 The result is a market full of vendors ranging from highly professional, certified engineering firms to completely unqualified fly-by-night operators who will take your money, install an inferior system, and become unreachable when it stops performing after 3 years.
 
@@ -69,11 +69,11 @@ A legitimate solar engineering company will never give you a final system design
 
 A professional solar quotation should be fully transparent and itemized. It must clearly specify:
 
-*   **Panel Brand and Model Number:** (e.g., "Waaree WS-335M Monocrystalline PERC") — not just "335W solar panel."
+*   **Panel Brand and Model Number:** (e.g., "Waaree WS-335M Monocrystalline PERC") - not just "335W solar panel."
 *   **Inverter Brand, Model, and Warranty Period:** (e.g., "Growatt MIN 3000TL-X, 5-year manufacturer warranty")
 *   **Mounting Structure Material:** (e.g., "Hot-Dip Galvanized Steel, 3mm thickness")
 *   **Cable Specification:** (e.g., "4mm² DC solar cable, UV-rated, POLYCAB")
-*   **Scope of Work:** What exactly is included — does it include TNEB net meter application? Does it include TNEB liaison for the subsidy? Who handles the PM Surya Ghar portal application?
+*   **Scope of Work:** What exactly is included - does it include TNEB net meter application? Does it include TNEB liaison for the subsidy? Who handles the PM Surya Ghar portal application?
 
 If a vendor provides only a single lump-sum quote (e.g., "3kW system fully installed for ₹1,10,000"), this is a serious red flag. You have absolutely no visibility into what quality of components you are receiving.
 
@@ -100,7 +100,7 @@ This is a point that is almost universally overlooked by homeowners, but our eng
 
 Cuddalore district lies directly on the Coromandel Coast. The salt-laden sea breeze that blows from the Bay of Bengal is highly corrosive to ferrous metals. A mounting structure made of standard painted mild steel (the cheapest option used by cut-rate vendors) will begin showing rust within 2 to 3 years in coastal Cuddalore areas like Semmandalam, Thambipettai, and the harbor zones.
 
-Once the structure rusts severely, it needs to be replaced—a process that involves removing all the panels, dismantling the old structure, installing a new one, and reinstalling the panels. This can cost ₹30,000 to ₹60,000 and completely negates the savings from the first few years of solar generation.
+Once the structure rusts severely, it needs to be replaced-a process that involves removing all the panels, dismantling the old structure, installing a new one, and reinstalling the panels. This can cost ₹30,000 to ₹60,000 and completely negates the savings from the first few years of solar generation.
 
 **What to insist on:**
 *   **Hot-Dip Galvanized (HDG) Steel:** This is the minimum acceptable standard for coastal areas. The steel is dipped in molten zinc, providing a sacrificial protective layer that is far superior to paint.
@@ -192,7 +192,7 @@ To summarize, before you sign any solar installation contract in Cuddalore, veri
 7. ✅ AMC service availability post-installation
 8. ✅ Local Cuddalore customer references
 
-*At Surya's Solar, we are proud to tick every single box on this list. We are a PM Surya Ghar empanelled vendor with an established track record in Cuddalore, Panruti, Neyveli, and Puducherry. [Contact us today](/contact) for a free site assessment — no obligation, no pressure.*
+*At Surya's Solar, we are proud to tick every single box on this list. We are a PM Surya Ghar empanelled vendor with an established track record in Cuddalore, Panruti, Neyveli, and Puducherry. [Contact us today](/contact) for a free site assessment - no obligation, no pressure.*
 
 
 

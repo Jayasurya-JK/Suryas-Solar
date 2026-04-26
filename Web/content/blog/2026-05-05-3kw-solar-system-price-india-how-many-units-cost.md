@@ -38,7 +38,7 @@ But before you commit to any purchase, you need clear, accurate, and honest answ
 *   What appliances can it run?
 *   How long will it take to pay for itself?
 
-This guide answers all of those questions with real engineering data—not marketing numbers.
+This guide answers all of those questions with real engineering data-not marketing numbers.
 
 ---
 
@@ -71,7 +71,7 @@ Daily Generation = System Capacity × Peak Sun Hours × Performance Ratio
 
 **Practical Answer: A well-installed 3kW system in Tamil Nadu generates approximately 11 to 14 units per day**, or approximately 330 to 420 units per month, or 3,960 to 5,040 units per year.
 
-Over a two-month TNEB billing cycle, your 3kW system generates approximately **660 to 840 units**—comfortably covering a standard household's bi-monthly consumption.
+Over a two-month TNEB billing cycle, your 3kW system generates approximately **660 to 840 units**-comfortably covering a standard household's bi-monthly consumption.
 
 ---
 
@@ -92,7 +92,7 @@ This is perhaps the most important practical question for a homeowner. Let us be
 **Important clarifications:**
 *   ❌ A 3kW system cannot reliably run **two ACs simultaneously** if you want to completely eliminate your bill. For two ACs, you need at least a 5kW system.
 *   ❌ A 3kW system **cannot run appliances during TNEB power cuts** (for that, you need a Hybrid system with batteries). On-Grid inverters shut down during power cuts by law.
-*   ✅ The system works by Net Metering—it generates power during the day (which you export to the grid), and your nighttime AC usage is offset by those export credits.
+*   ✅ The system works by Net Metering-it generates power during the day (which you export to the grid), and your nighttime AC usage is offset by those export credits.
 
 ---
 
@@ -176,7 +176,7 @@ Not all solar panels are created equal. For a 3kW system in Tamil Nadu's harsh c
 ## 8. Common Mistakes to Avoid When Buying a 3kW System
 
 1. **Do not buy based on price alone.** The cheapest quote almost always uses inferior components that will underperform within 5 years.
-2. **Always verify MNRE empanelment.** If the vendor is not empanelled under PM Surya Ghar, you will not receive the ₹78,000 subsidy—even if you paid the full price.
+2. **Always verify MNRE empanelment.** If the vendor is not empanelled under PM Surya Ghar, you will not receive the ₹78,000 subsidy-even if you paid the full price.
 3. **Insist on a written warranty document.** Verbal warranties mean nothing. Get the panel and inverter warranty in writing.
 4. **Demand a site survey before finalizing.** Any legitimate vendor will do a roof measurement and shade analysis before quoting. If someone quotes you over the phone without seeing your roof, be cautious.
 

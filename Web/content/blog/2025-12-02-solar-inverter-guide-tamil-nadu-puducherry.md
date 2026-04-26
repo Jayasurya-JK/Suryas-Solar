@@ -130,7 +130,7 @@ Use our Solar Calculator to know the correct panel size, inverter capacity, and 
 
 ---
 
-## Choosing the Right Inverter — Expert Checklist
+## Choosing the Right Inverter - Expert Checklist
 
 Before you buy, check these 8 points to ensure you are getting a quality product:
 

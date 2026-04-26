@@ -142,7 +142,7 @@ Use our Solar Calculator to estimate daily units, monthly savings, and ROI for a
 
 ---
 
-## 1kW vs 2kW vs 3kW vs 5kW — Which Should You Choose?
+## 1kW vs 2kW vs 3kW vs 5kW - Which Should You Choose?
 
 Making the right choice depends on your goals.
 

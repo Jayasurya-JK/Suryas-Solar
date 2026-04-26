@@ -21,7 +21,7 @@ updated: '2026-04-26'
 ---
 Solar power is great, but it has a specific weakness that few installers talk about: **The Grid Reference.**
 
-A huge problem plagues homeowners in the rural belts of Cuddalore District—specifically **Vadalur, Panruti, Neyveli Outskirts, and Kurinjipadi**.
+A huge problem plagues homeowners in the rural belts of Cuddalore District-specifically **Vadalur, Panruti, Neyveli Outskirts, and Kurinjipadi**.
 The scenario is always the same:
 **"Sir, it is sunny outside, but my Solar Inverter is showing 'Grid Fault' / 'Grid Under Voltage'. I am not generating any power!"**
 

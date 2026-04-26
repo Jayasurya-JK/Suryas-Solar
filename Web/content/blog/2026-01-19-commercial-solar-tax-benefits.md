@@ -16,7 +16,7 @@ tags:
   - Solar Depreciation Rate 2026
 updated: '2026-04-26'
 ---
-If you run a profitable business—whether it’s a **Textile Mill in Coimbatore**, a **Hotel in Puducherry**, or a **Cashew Factory in Panruti**—you face two major drains on your cash flow:
+If you run a profitable business-whether it’s a **Textile Mill in Coimbatore**, a **Hotel in Puducherry**, or a **Cashew Factory in Panruti**-you face two major drains on your cash flow:
 1.  **Electricity Bills:** Rising at 5% per year.
 2.  **Corporate Tax:** Taking away 25% - 30% of your hard-earned profits.
 

@@ -31,7 +31,7 @@ faqs:
 ---
 Whether you live in the humid coastal belts of Tamil Nadu or the dry heat of northern India, surviving the summer without an Air Conditioner is nearly impossible. However, the relief of cold air is almost immediately followed by a wave of anxiety regarding the impending electricity bill. 
 
-The most common question we receive from homeowners trying to budget their utility costs—or size a new rooftop solar plant—is: **"Exactly how many units does an AC consume per day in India?"**
+The most common question we receive from homeowners trying to budget their utility costs-or size a new rooftop solar plant-is: **"Exactly how many units does an AC consume per day in India?"**
 
 Unfortunately, you cannot simply look at the sticker on the side of your AC to find the answer. Air conditioners do not consume power at a flat, constant rate like a lightbulb. Their power consumption fluctuates violently based on compressor technology, ambient outside temperature, room insulation, and thermostat settings.
 

@@ -23,7 +23,7 @@ When you put ₹1 Lakh in Gold, you maybe get 10% appreciation (volatile).
 **When you put ₹1 Lakh in Rooftop Solar, what do you get?**
 
 As engineers, we love math. But as homeowners, we love **Savings**.
-Financially speaking, Rooftop Solar in Tamil Nadu is currently the **highest-performing risk-free asset** available to a middle-class family. It beats the stock market, real estate, and gold—and it is tax-free.
+Financially speaking, Rooftop Solar in Tamil Nadu is currently the **highest-performing risk-free asset** available to a middle-class family. It beats the stock market, real estate, and gold-and it is tax-free.
 
 In this analysis, we open our actual Excel models to show you the Return on Investment (ROI) for a homeowner in Cuddalore in **2026**. We account for subsidies, inflation, degradation, and [maintenance](/blog/2026-01-10-solar-maintenance-guide-cuddalore).
 

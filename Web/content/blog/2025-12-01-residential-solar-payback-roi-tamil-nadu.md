@@ -15,7 +15,7 @@ tags:
   - Electricity Savings
 updated: '2026-04-26'
 ---
-In 2025, more households in Tamil Nadu — especially in **Cuddalore, Panruti, Neyveli, and Chidambaram** — are choosing rooftop solar to cut their electricity bills and secure long-term energy savings. With electricity tariffs in Tamil Nadu hovering between ₹7–₹9 per unit for many consumers, the shift to solar is no longer just a luxury; it's a smart financial decision.
+In 2025, more households in Tamil Nadu - especially in **Cuddalore, Panruti, Neyveli, and Chidambaram** - are choosing rooftop solar to cut their electricity bills and secure long-term energy savings. With electricity tariffs in Tamil Nadu hovering between ₹7–₹9 per unit for many consumers, the shift to solar is no longer just a luxury; it's a smart financial decision.
 
 One of the most common questions our team at **Surya’s Solar** receives is: *What is the payback period?*
 

@@ -29,7 +29,7 @@ faqs:
       If your monthly average bill is above Rs. 2,000, it is worth checking 3kW
       to 5kW solar sizing and subsidy eligibility.
 ---
-Every year between April and July, millions of residents across Tamil Nadu—from Cuddalore and Puducherry to Chennai and Coimbatore—open their bi-monthly TNEB (Tamil Nadu Generation and Distribution Corporation) SMS or app notification and experience severe sticker shock. 
+Every year between April and July, millions of residents across Tamil Nadu-from Cuddalore and Puducherry to Chennai and Coimbatore-open their bi-monthly TNEB (Tamil Nadu Generation and Distribution Corporation) SMS or app notification and experience severe sticker shock. 
 
 *"Current bill high why?"* is one of the most frequently asked questions in local community groups during peak summer. It is not uncommon for a household that pays ₹1,500 in December to suddenly receive a ₹6,000 to ₹8,000 electricity bill in May. 
 
@@ -90,7 +90,7 @@ During the summer:
 *   You open the fridge door more frequently for cold water or ice. 
 *   Every time you open the door, 35°C air rushes in, completely replacing the 4°C air inside. 
 
-To compensate for the hot kitchen and frequent door openings, the refrigerator's compressor runs almost constantly. A standard double-door fridge that consumes 1.5 units a day in winter can easily consume 3 units a day in summer. Over a 60-day billing cycle, that single appliance just added 90 units to your bill—pushing you dangerously close to the higher TNEB tariff slabs.
+To compensate for the hot kitchen and frequent door openings, the refrigerator's compressor runs almost constantly. A standard double-door fridge that consumes 1.5 units a day in winter can easily consume 3 units a day in summer. Over a 60-day billing cycle, that single appliance just added 90 units to your bill-pushing you dangerously close to the higher TNEB tariff slabs.
 
 ---
 
@@ -116,7 +116,7 @@ Old, 3-star non-inverter ACs use a brute-force on/off mechanism that draws a mas
 
 ## 6. How to Authentically Reduce Your Summer Bill
 
-There are no "magic devices" that plug into the wall and magically slash your EB bill. (Beware of cheap "power saver" boxes sold online—they are mostly scams utilizing simple capacitors that do nothing to reduce residential meter readings). Real savings require behavioral changes and engineering solutions.
+There are no "magic devices" that plug into the wall and magically slash your EB bill. (Beware of cheap "power saver" boxes sold online-they are mostly scams utilizing simple capacitors that do nothing to reduce residential meter readings). Real savings require behavioral changes and engineering solutions.
 
 ### Behavioral Changes:
 1.  **Set ACs to 24°C or 26°C:** Every single degree you lower your thermostat below 24°C increases the AC's power consumption by 6%. Setting your AC to 18°C does not cool the room faster; it simply forces the compressor to run nonstop.
@@ -134,7 +134,7 @@ The very same scorching sun that causes your AC to work overtime is exactly what
 *   Over a 60-day TNEB billing cycle, the system injects roughly **720 to 900 units** into the grid. 
 *   Through the Net Metering system, these generated units are directly subtracted from your total consumption. 
 
-If your total summer consumption was 1,000 units, the solar system subtracts 900 units. TNEB will only bill you for the remaining 100 units—which fall into the "Free" slab! Your massive ₹10,000 summer bill instantly becomes zero.
+If your total summer consumption was 1,000 units, the solar system subtracts 900 units. TNEB will only bill you for the remaining 100 units-which fall into the "Free" slab! Your massive ₹10,000 summer bill instantly becomes zero.
 
 Furthermore, with the introduction of the **PM Surya Ghar Subsidy**, homeowners can receive a massive ₹78,000 direct subsidy to install a 3kW system, making the Return on Investment (ROI) incredibly fast (usually under 4 years).
 

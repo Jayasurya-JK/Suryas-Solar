@@ -47,7 +47,7 @@ Puducherry receives approximately **5.0 to 5.4 Peak Sun Hours (PSH) per day** av
 Residents in Puducherry who are connected to the Puducherry Power Corporation Limited (PPCL) grid pay tariffs that are broadly similar to TNEB's structure, with tiered slabs that punish high-consumption households. Homeowners with air conditioners, water heaters, and large refrigerators regularly encounter bi-monthly bills of ₹3,000 to ₹8,000.
 
 **The Combination:**
-High solar potential + High electricity tariffs = Extremely fast solar payback periods. In Puducherry, a well-installed 3kW system can pay for itself in as little as **3.5 to 4.5 years**—one of the fastest solar ROIs in all of India.
+High solar potential + High electricity tariffs = Extremely fast solar payback periods. In Puducherry, a well-installed 3kW system can pay for itself in as little as **3.5 to 4.5 years**-one of the fastest solar ROIs in all of India.
 
 ---
 
@@ -59,7 +59,7 @@ This is a critical distinction that many homeowners in Puducherry are unaware of
 Most residential homes within the Puducherry city limits and the Union Territory are connected to PPCL. The net metering application for solar goes through PPCL, and the billing and credits are managed by PPCL.
 
 **TNEB (Tamil Nadu Electricity Board):**
-Some areas in the Puducherry Union Territory—particularly in villages and semi-rural zones bordering Tamil Nadu—may actually be supplied by TNEB rather than PPCL. It is important to check your electricity bill carefully. Your utility provider is clearly printed on the bill.
+Some areas in the Puducherry Union Territory-particularly in villages and semi-rural zones bordering Tamil Nadu-may actually be supplied by TNEB rather than PPCL. It is important to check your electricity bill carefully. Your utility provider is clearly printed on the bill.
 
 **Why Does It Matter for Solar?**
 The net meter application process, required documentation, and processing timelines differ between PPCL and TNEB. An experienced local solar installer in Puducherry will know exactly which set of documents and which office to approach for your specific connection. Always confirm that your installer has experience with your specific utility provider.
@@ -88,7 +88,7 @@ The following prices are for fully installed, quality (not budget, not premium) 
 
 ### 3kW On-Grid Solar System in Puducherry
 *   **Number of Panels:** 9 panels of 335W
-*   **Best Suited For:** 3 BHK homes with one 1.5-ton AC — the most popular choice in Puducherry
+*   **Best Suited For:** 3 BHK homes with one 1.5-ton AC - the most popular choice in Puducherry
 *   **Daily Generation:** 13 to 15 units/day
 *   **Bi-Monthly Offset:** ~800 to 900 units
 *   **Installed Price (Pre-Subsidy):** ₹1,70,000 to ₹2,05,000
@@ -138,7 +138,7 @@ The central government's **PM Surya Ghar Muft Bijli Yojana** applies to Puducher
 *   **New bi-monthly bill:** ₹0 (bill entirely eliminated plus surplus banked)
 *   **Net investment:** ₹80,000
 *   **Annual savings:** ~₹5,400
-*   **Payback period:** ~15 years (Less compelling — this household's bill is already low)
+*   **Payback period:** ~15 years (Less compelling - this household's bill is already low)
 
 > **Honest Advice:** If your current bi-monthly bill is below ₹1,500, the financial ROI of solar is weak. Solar makes maximum financial sense when your bill is high.
 

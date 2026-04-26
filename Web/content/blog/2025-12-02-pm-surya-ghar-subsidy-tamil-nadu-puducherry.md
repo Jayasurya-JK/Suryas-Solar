@@ -19,7 +19,7 @@ The **PM Surya Ghar: Muft Bijli Yojana** is a revolutionary government scheme de
 
 Lakhs of families across Tamil Nadu, including districts like **Cuddalore, Panruti, and Neyveli**, are already applying for this scheme to slash their electricity bills and secure their energy future. With the subsidy covering a massive portion of the installation cost, the payback period for a solar system has dropped to an all-time low.
 
-At **Surya’s Solar**, we don't just install panels; we guide you through the entire process—from application to subsidy release—ensuring a hassle-free experience. This guide explains everything you need to know about eligibility, documents, and the step-by-step application process for 2025.
+At **Surya’s Solar**, we don't just install panels; we guide you through the entire process-from application to subsidy release-ensuring a hassle-free experience. This guide explains everything you need to know about eligibility, documents, and the step-by-step application process for 2025.
 
 ---
 
@@ -146,7 +146,7 @@ Local regulations play a key role in the process.
 
 ---
 
-## Surya’s Solar Role — How We Help You
+## Surya’s Solar Role - How We Help You
 
 We handle the entire headache so you can enjoy the savings.
 

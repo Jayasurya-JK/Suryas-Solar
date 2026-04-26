@@ -44,7 +44,7 @@ When buying a brand new, premium Inverter Air Conditioner, the appliance showroo
 
 This marketing claim is highly appealing. Nobody wants to spend an extra ₹2,500 and drill more holes in their pristine living room walls for a bulky metal box. 
 
-But when you connect that same state-of-the-art Air Conditioner to a rooftop solar system in Tamil Nadu—especially in areas notorious for severe grid fluctuations like Panruti, Neyveli, rural Cuddalore, or the industrial outskirts of Puducherry—the engineering rules of the game change completely. 
+But when you connect that same state-of-the-art Air Conditioner to a rooftop solar system in Tamil Nadu-especially in areas notorious for severe grid fluctuations like Panruti, Neyveli, rural Cuddalore, or the industrial outskirts of Puducherry-the engineering rules of the game change completely. 
 
 Do you actually need an external voltage stabilizer for your highly advanced Inverter AC when running on a solar power plant? Does connecting a stabilizer to a solar inverter cause "double regulation" conflicts? 
 
@@ -110,7 +110,7 @@ For a standard 1.5-ton residential Inverter AC operating on a residential solar 
 
 ## 5. Busting the "Double Regulation" Myth
 
-One of the most persistent myths we hear from customers—and even some uneducated electricians—is the fear of "Double Regulation." 
+One of the most persistent myths we hear from customers-and even some uneducated electricians-is the fear of "Double Regulation." 
 
 The concern usually goes like this: *"Won't connecting an external stabilizer to my AC, while I already have a smart solar inverter, cause the two devices to fight each other? Won't double regulation confuse the AC's internal PCB?"*
 
@@ -118,7 +118,7 @@ The concern usually goes like this: *"Won't connecting an external stabilizer to
 
 A high-quality relay-based stabilizer is an essentially passive device under normal conditions. If the incoming voltage from your solar inverter / TNEB grid is a healthy, normal 230V, the stabilizer does absolutely nothing. It simply acts as a wire, passing the current straight through to the AC. 
 
-It only kicks into action (you will hear an audible, physical 'click' as the relay fires) when it detects a dangerous anomaly—like the voltage sagging to 170V. When it clicks, it boosts the voltage back to a safe 220V before handing it to the AC. 
+It only kicks into action (you will hear an audible, physical 'click' as the relay fires) when it detects a dangerous anomaly-like the voltage sagging to 170V. When it clicks, it boosts the voltage back to a safe 220V before handing it to the AC. 
 
 It will never interfere with your solar inverter's operation. It will never confuse your AC's internal inverter. It simply acts as an unyielding bouncer at the door, guaranteeing that the AC's delicate internal microcomputer never has to sweat or overheat trying to regulate bad, dirty voltage.
 

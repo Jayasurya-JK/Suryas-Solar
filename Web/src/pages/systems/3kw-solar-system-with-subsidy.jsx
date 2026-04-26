@@ -105,7 +105,7 @@ export default function ThreeKwPage({ settings }) {
 
               <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-green-500/20 border border-green-400/30">
                 <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                <span className="text-green-200 text-sm font-semibold tracking-wide">Maximum Subsidy — {SYSTEM.recommended} Ideal</span>
+                <span className="text-green-200 text-sm font-semibold tracking-wide">Maximum Subsidy - {SYSTEM.recommended} Ideal</span>
               </div>
 
               <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6">
@@ -116,7 +116,7 @@ export default function ThreeKwPage({ settings }) {
 
               <p className="text-blue-100/90 text-lg leading-relaxed mb-10 max-w-xl">
                 Wipe out up to <strong className="text-white">₹3,500/month</strong> from your TNEB bill. A 3kW system gets the{' '}
-                <strong className="text-yellow-300">highest possible PM Surya Ghar subsidy of ₹78,000</strong> — the smartest value choice.
+                <strong className="text-yellow-300">highest possible PM Surya Ghar subsidy of ₹78,000</strong> - the smartest value choice.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -237,11 +237,11 @@ export default function ThreeKwPage({ settings }) {
               {[
                 {
                   q: 'Why does a 3kW system get the maximum ₹78,000 subsidy?',
-                  a: 'Under PM Surya Ghar Muft Bijli Yojana, the Government provides ₹30,000/kW for the first 2kW and ₹18,000/kW for the 3rd kW = ₹78,000 total. This is the maximum slab. Installing 4kW or 5kW does NOT increase the subsidy — so 3kW gives the best subsidy-per-rupee value.'
+                  a: 'Under PM Surya Ghar Muft Bijli Yojana, the Government provides ₹30,000/kW for the first 2kW and ₹18,000/kW for the 3rd kW = ₹78,000 total. This is the maximum slab. Installing 4kW or 5kW does NOT increase the subsidy - so 3kW gives the best subsidy-per-rupee value.'
                 },
                 {
                   q: 'Can a 3kW system make my TNEB bill zero?',
-                  a: 'Yes — if your monthly consumption is around 300–400 units, a 3kW system generating 12–15 units/day will exceed your daily consumption. Your bill reduces to only the fixed charges (typically ₹120–₹180 for a residential connection).'
+                  a: 'Yes - if your monthly consumption is around 300–400 units, a 3kW system generating 12–15 units/day will exceed your daily consumption. Your bill reduces to only the fixed charges (typically ₹120–₹180 for a residential connection).'
                 },
                 {
                   q: 'How long does the full installation take?',

@@ -85,7 +85,7 @@ Let's tackle the biggest misunderstandings head-on.
 *   **1kW:** ~₹40,000 (after subsidy)
 *   **2kW:** ~₹80,000 (after subsidy)
 *   **3kW:** ~₹1.1 Lakh (after subsidy)
-*   **ROI:** With a payback period of just 3–5 years and a lifespan of 25 years, it is one of the best financial investments you can make—better than a fixed deposit!
+*   **ROI:** With a payback period of just 3–5 years and a lifespan of 25 years, it is one of the best financial investments you can make-better than a fixed deposit!
 
 ---
 
@@ -135,7 +135,7 @@ Why do these myths persist?
 
 ---
 
-## Surya’s Solar — Transparent Information You Can Trust
+## Surya’s Solar - Transparent Information You Can Trust
 
 We believe in honesty. We don't sell you a system; we sell you a solution.
 
@@ -157,6 +157,6 @@ If AC usage is driving your bill, compare your monthly units in the [Solar Savin
 
 ## Still Confused About Going Solar?
 
-Book a free consultation with **Surya’s Solar** — we clear all doubts and help you choose the right system based on your home, usage, and budget.
+Book a free consultation with **Surya’s Solar** - we clear all doubts and help you choose the right system based on your home, usage, and budget.
 
 <!-- COMPONENT: CONTACT_CTA -->

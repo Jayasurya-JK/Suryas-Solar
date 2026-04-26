@@ -29,7 +29,7 @@ faqs:
       Subsidy is usually credited after approval and commissioning, so
       homeowners should plan cash flow accordingly.
 ---
-If you have been researching solar power for your home or business in Tamil Nadu, you have inevitably been confronted with wildly different price quotes from different vendors. One contractor might quote ₹80,000 for a 3kW system, while another quotes ₹2,20,000 for the same capacity. This massive price discrepancy is deeply confusing—and often a sign that very different quality levels are being offered.
+If you have been researching solar power for your home or business in Tamil Nadu, you have inevitably been confronted with wildly different price quotes from different vendors. One contractor might quote ₹80,000 for a 3kW system, while another quotes ₹2,20,000 for the same capacity. This massive price discrepancy is deeply confusing-and often a sign that very different quality levels are being offered.
 
 In this definitive 2026 guide, we provide a fully transparent, component-wise breakdown of the authentic cost of installing a quality rooftop solar system in Tamil Nadu. We also explain exactly how the PM Surya Ghar subsidy works to dramatically reduce your net investment.
 
@@ -137,7 +137,7 @@ If a vendor quotes you ₹80,000 for a fully installed 3kW system in Tamil Nadu,
 
 The cost of a quality solar installation in Tamil Nadu in 2026 is between ₹1,65,000 and ₹2,00,000 for a 3kW system (pre-subsidy). After the PM Surya Ghar subsidy of ₹78,000, your net investment is approximately ₹1,00,000. 
 
-Given that a 3kW system saves a Tamil Nadu household between ₹20,000 and ₹26,000 per year, the payback period is under 5 years—after which 20+ years of free electricity awaits.
+Given that a 3kW system saves a Tamil Nadu household between ₹20,000 and ₹26,000 per year, the payback period is under 5 years-after which 20+ years of free electricity awaits.
 
 *Want an exact quote for your roof? [Contact the engineering team at Surya's Solar today](/contact) for a free, transparent, component-wise quotation with no hidden charges.*
 

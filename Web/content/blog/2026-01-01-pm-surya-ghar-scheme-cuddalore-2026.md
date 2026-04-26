@@ -18,7 +18,7 @@ updated: '2026-04-26'
 ---
 Welcome to **2026**. If you are a homeowner in Cuddalore, Neyveli, or Pondicherry, you have likely heard about the massive push for solar energy. But amidst the headlines, there is often confusion. Is the electricity really free? Is the subsidy amount guaranteed? How long does the TNEB process actually take?
 
-The **PM Surya Ghar: Muft Bijli Yojana** has evolved into one of the most successful green energy initiatives in India. For residents of Tamil Nadu, specifically in high-solar-yield districts like Cuddalore, this scheme is not just an environmental choice—it is a financial no-brainer.
+The **PM Surya Ghar: Muft Bijli Yojana** has evolved into one of the most successful green energy initiatives in India. For residents of Tamil Nadu, specifically in high-solar-yield districts like Cuddalore, this scheme is not just an environmental choice-it is a financial no-brainer.
 
 At **Surya's Solar**, we have successfully guided hundreds of local families through this process. We’ve seen the approvals, the inspections, and most importantly, the subsidy credits hitting bank accounts. 
 
@@ -30,7 +30,7 @@ In this exhaustive 2026 guide, we will walk you through every single detail of t
 
 The "Muft Bijli Yojana" (Free Electricity Scheme) aims to power 1 crore households across India with rooftop solar. The government’s goal is simple: **reduce the burden on the national grid** and **lower electricity bills for the common man**.
 
-In 2026, the scheme has been streamlined. It is no longer just about "getting solar"—it is about becoming an independent power producer.
+In 2026, the scheme has been streamlined. It is no longer just about "getting solar"-it is about becoming an independent power producer.
 
 ### Key Highlights for 2026:
 1.  **Direct Benefit Transfer (DBT):** The subsidy is NOT given to the vendor; it is credited directly to **your** bank account within 30 days of commissioning.

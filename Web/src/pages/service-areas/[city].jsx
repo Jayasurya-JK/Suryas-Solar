@@ -51,7 +51,7 @@ export default function LocationPage({ location, settings }) {
       <main className="bg-white">
 
         {/* ══════════════════════════════════════════════
-            HERO SECTION — full-screen premium dark hero
+            HERO SECTION - full-screen premium dark hero
         ══════════════════════════════════════════════ */}
         <section className="relative min-h-[88vh] flex items-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f2e6e 0%, #1542a7 50%, #1e62d4 100%)' }}>
 
@@ -87,7 +87,7 @@ export default function LocationPage({ location, settings }) {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400" />
                 </span>
-                <span className="text-green-300 text-sm font-semibold tracking-wide">Serving {location.name} — Book Today</span>
+                <span className="text-green-300 text-sm font-semibold tracking-wide">Serving {location.name} - Book Today</span>
               </div>
 
               {/* Heading */}
@@ -197,7 +197,7 @@ export default function LocationPage({ location, settings }) {
                 </h2>
 
                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                  Installing solar in {location.name} is not a one-size-fits-all job. Our local engineers know the specific grid conditions, roof types, and TNEB processes in this district — making your installation smooth and hassle-free.
+                  Installing solar in {location.name} is not a one-size-fits-all job. Our local engineers know the specific grid conditions, roof types, and TNEB processes in this district - making your installation smooth and hassle-free.
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -292,7 +292,7 @@ export default function LocationPage({ location, settings }) {
                   href={sys.href}
                   className={`group relative rounded-3xl overflow-hidden ${sys.glow} hover:-translate-y-1 transition-all duration-300 block`}
                 >
-                  {/* Card top — dark gradient */}
+                  {/* Card top - dark gradient */}
                   <div className={`bg-gradient-to-br ${sys.gradient} p-8 pb-10 relative overflow-hidden`}>
                     <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -mr-10 -mt-10 pointer-events-none" />
                     <div className={`inline-block text-xs font-bold ${sys.badgeBg} text-white px-3 py-1.5 rounded-full mb-5`}>{sys.badge}</div>
@@ -300,7 +300,7 @@ export default function LocationPage({ location, settings }) {
                     <div className="text-blue-300/80 text-sm font-medium">Solar System · PM Subsidy Eligible</div>
                   </div>
 
-                  {/* Card bottom — white */}
+                  {/* Card bottom - white */}
                   <div className="bg-white p-6 space-y-3">
                     <div className="flex items-center justify-between py-2 border-b border-gray-50">
                       <span className="text-gray-500 text-sm">After subsidy price</span>

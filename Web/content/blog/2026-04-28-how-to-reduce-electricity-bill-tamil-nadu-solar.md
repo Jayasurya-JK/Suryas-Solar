@@ -29,7 +29,7 @@ faqs:
       Choose 3kW for moderate homes and 5kW for higher AC usage, larger
       families, or bills that regularly cross higher tariff slabs.
 ---
-If you live in Tamil Nadu—especially in coastal or industrial belts like Cuddalore, Puducherry, Panruti, and Neyveli—you are already intimately familiar with the brutal reality of the bi-monthly TNEB (Tamil Nadu Electricity Board) bill. 
+If you live in Tamil Nadu-especially in coastal or industrial belts like Cuddalore, Puducherry, Panruti, and Neyveli-you are already intimately familiar with the brutal reality of the bi-monthly TNEB (Tamil Nadu Electricity Board) bill. 
 
 With soaring summer temperatures pushing air conditioners to run for 10 to 12 hours a day, residential electricity bills have skyrocketed. Homeowners are desperately searching online for "how to reduce EB bill" and trying everything from replacing old fans to turning off the refrigerator at night. 
 

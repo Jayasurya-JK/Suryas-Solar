@@ -21,7 +21,7 @@ updated: '2026-04-26'
 We hear this question often. The honest answer is: **No.**
 While occasional rain helps, it rarely cleans the sticky dust layer that forms in Cuddalore's humid, coastal climate. The salt in the air mixes with dust to form a grime layer that feels almost like cement.
 
-In **2026**, the biggest reason for "Low Generation" complaints isn't faulty inverters or bad wiring—it is simply **Dust.**
+In **2026**, the biggest reason for "Low Generation" complaints isn't faulty inverters or bad wiring-it is simply **Dust.**
 
 A dirty solar panel is like a dirty car windshield. If light can't get in, power can't get out.
 Field studies in Tamil Nadu show that a thick layer of dust can reduce your solar output by **15% to 25%**.

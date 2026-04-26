@@ -23,7 +23,7 @@ Standard String Inverters (from brands like Growatt, Solis, or GoodWe) are great
 **They run 600V to 800V DC (High Voltage) [cables](/blog/2026-01-14-solar-dc-cable-quality-guide) across your roof to your ground floor.**
 
 High Voltage DC is inherently dangerous. It is difficult to extinguish. It can cause DC Arc Faults (fire) if a rat chews the wire or a connector becomes loose.
-Enter **Enphase Micro-Inverters**—the "iPhone" of solar inverters.
+Enter **Enphase Micro-Inverters**-the "iPhone" of solar inverters.
 
 ---
 
