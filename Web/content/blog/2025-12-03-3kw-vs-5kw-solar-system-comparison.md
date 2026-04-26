@@ -1,13 +1,20 @@
 ---
-title: "3kW vs 5kW Solar System - Which is Best for Your Home? (2025)"
-date: 2025-12-03
-excerpt: "Confused between 3kW and 5kW? Compare generation, cost, and AC running capacity. Find the perfect solar system size for your TNEB bill."
-featuredImage: "/images/3kW vs 5kW Comparison.webp"
-category: "Solar Guide"
-author: "Surya's Solar Team"
-tags: ["3kW Solar", "5kW Solar", "Solar Comparison", "Tamil Nadu Solar", "Puducherry Solar"]
+title: 3kW vs 5kW Solar System - Which is Best for Your Home? (2025)
+date: '2025-12-03'
+excerpt: >-
+  Confused between 3kW and 5kW? Compare generation, cost, and AC running
+  capacity. Find the perfect solar system size for your TNEB bill.
+featuredImage: /images/3kW vs 5kW Comparison.webp
+category: Solar Guide
+author: Surya's Solar Team
+tags:
+  - 3kW Solar
+  - 5kW Solar
+  - Solar Comparison
+  - Tamil Nadu Solar
+  - Puducherry Solar
+updated: '2026-04-26'
 ---
-
 When switching to solar, the most common question homeowners in **Tamil Nadu and Puducherry** ask is: *"Should I install a 3kW or a 5kW system?"*
 
 These two sizes are the most popular for residential rooftops in districts like **Cuddalore and Panruti**. With electricity bills rising to ₹1,500 – ₹3,500 monthly, choosing the right capacity is critical to eliminating your bill completely. A system that is too small won't cover your bills, and one that is too big might be an unnecessary expense if you don't have the load for it.
@@ -152,8 +159,6 @@ Think ahead before you buy. Solar is a 25-year investment.
 4.  **Expecting "Zero Bill":** A 3kW system might not give a zero bill if your consumption is high. Be realistic about your usage.
 
 ---
-
-## Frequently Asked Questions (FAQs)
 
 <!-- COMPONENT: FAQ_SECTION -->
 

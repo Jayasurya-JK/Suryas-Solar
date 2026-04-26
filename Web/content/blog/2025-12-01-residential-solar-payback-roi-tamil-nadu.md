@@ -1,13 +1,20 @@
 ---
-title: "Solar ROI & Payback Calculator Tamil Nadu (2025) - Real Case Studies"
-date: 2025-12-01
-excerpt: "Is solar worth it in Tamil Nadu? See real ROI case studies from Cuddalore. Learn how a 3kW system pays for itself in just 3 years. 2025 Data."
-featuredImage: "/images/Blog 2.webp"
-category: "Solar Guide"
-author: "Surya's Solar Team"
-tags: ["Solar ROI", "Payback Period", "Tamil Nadu Solar", "Cuddalore", "Electricity Savings"]
+title: Solar ROI & Payback Calculator Tamil Nadu (2025) - Real Case Studies
+date: '2025-12-01'
+excerpt: >-
+  Is solar worth it in Tamil Nadu? See real ROI case studies from Cuddalore.
+  Learn how a 3kW system pays for itself in just 3 years. 2025 Data.
+featuredImage: /images/Blog 2.webp
+category: Solar Guide
+author: Surya's Solar Team
+tags:
+  - Solar ROI
+  - Payback Period
+  - Tamil Nadu Solar
+  - Cuddalore
+  - Electricity Savings
+updated: '2026-04-26'
 ---
-
 In 2025, more households in Tamil Nadu — especially in **Cuddalore, Panruti, Neyveli, and Chidambaram** — are choosing rooftop solar to cut their electricity bills and secure long-term energy savings. With electricity tariffs in Tamil Nadu hovering between ₹7–₹9 per unit for many consumers, the shift to solar is no longer just a luxury; it's a smart financial decision.
 
 One of the most common questions our team at **Surya’s Solar** receives is: *What is the payback period?*
@@ -175,9 +182,12 @@ To get the best ROI, you need the best system.
 *   **Strong Support:** We are located in Cuddalore (Kondur) for fast, reliable service.
 *   **Accurate Projections:** We provide realistic ROI reports, not inflated numbers.
 
----
 
-## Frequently Asked Questions (FAQs)
+## Related Solar Guides
+
+If AC usage is driving your bill, compare your monthly units in the [Solar Savings Calculator](/calc), then check whether a [3kW system](/systems/3kw-solar-system-with-subsidy) or [5kW system](/systems/5kw-solar-system-with-subsidy) is the better fit.
+
+---
 
 <!-- COMPONENT: FAQ_SECTION -->
 

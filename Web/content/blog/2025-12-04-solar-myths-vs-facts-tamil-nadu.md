@@ -1,13 +1,20 @@
 ---
-title: "10 Solar Myths Busted: Can Solar Really Run an AC? (2025 Facts)"
-date: 2025-12-04
-excerpt: "Debunking common solar myths in Tamil Nadu. Learn the truth about running ACs on solar, ongoing maintenance, and 'Zero Bill' promises."
-featuredImage: "/images/Solar Myths vs Facts.webp"
-category: "Solar Guide"
-author: "Surya's Solar Team"
-tags: ["Solar Myths", "Solar Facts", "Tamil Nadu Solar", "Puducherry Solar", "Solar Education"]
+title: '10 Solar Myths Busted: Can Solar Really Run an AC? (2025 Facts)'
+date: '2025-12-04'
+excerpt: >-
+  Debunking common solar myths in Tamil Nadu. Learn the truth about running ACs
+  on solar, ongoing maintenance, and 'Zero Bill' promises.
+featuredImage: /images/Solar Myths vs Facts.webp
+category: Solar Guide
+author: Surya's Solar Team
+tags:
+  - Solar Myths
+  - Solar Facts
+  - Tamil Nadu Solar
+  - Puducherry Solar
+  - Solar Education
+updated: '2026-04-26'
 ---
-
 In recent years, households across **Tamil Nadu** have rapidly adopted solar power to combat rising electricity bills. However, despite the clear benefits, many homeowners hesitate to install solar due to persistent myths and misunderstandings.
 
 These myths often stem from outdated information, rumors, or bad experiences with poor-quality installations from a decade ago. In this guide, we clear up the confusion with factual data specific to the climate and conditions of **Tamil Nadu and Puducherry**. At **Surya’s Solar**, we have installed systems across **Cuddalore, Panruti, Neyveli, and Puducherry**, and we believe an informed customer is a happy customer.
@@ -137,9 +144,12 @@ We believe in honesty. We don't sell you a system; we sell you a solution.
 *   **Accuracy:** We give realistic generation predictions, not false promises of "zero bills" if your usage is high.
 *   **Full Service:** From rooftop assessment to subsidy release, we are with you every step of the way.
 
----
 
-## Frequently Asked Questions (FAQs)
+## Related Solar Guides
+
+If AC usage is driving your bill, compare your monthly units in the [Solar Savings Calculator](/calc), then check whether a [3kW system](/systems/3kw-solar-system-with-subsidy) or [5kW system](/systems/5kw-solar-system-with-subsidy) is the better fit.
+
+---
 
 <!-- COMPONENT: FAQ_SECTION -->
 

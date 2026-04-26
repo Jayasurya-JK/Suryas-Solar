@@ -35,9 +35,9 @@ export default function Home({ content, settings }) {
     "@type": "LocalBusiness",
     "name": settings.siteTitle || "Surya's Solar",
     "description": settings.siteDescription || "Cuddalore's most trusted solar company",
-    "image": "https://suryassolar.com/images/Banner_1_desktop.webp",
-    "logo": "https://suryassolar.com/images/surya-solar-logo.webp",
-    "url": "https://suryassolar.com",
+    "image": "https://www.suryassolar.com/images/Banner_1_desktop.webp",
+    "logo": "https://www.suryassolar.com/images/surya-solar-logo.webp",
+    "url": "https://www.suryassolar.com",
     "telephone": settings.phone || "+917904369094",
     "email": settings.email || "suryassolarenergy@gmail.com",
     "address": {
@@ -111,23 +111,23 @@ export default function Home({ content, settings }) {
         <meta name="keywords" content={settings.siteKeywords || "solar panel Cuddalore, residential solar, rooftop solar"} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="canonical" href="https://suryassolar.com/" />
+        <link rel="canonical" href="https://www.suryassolar.com/" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://suryassolar.com" />
+        <meta property="og:url" content="https://www.suryassolar.com" />
         <meta property="og:title" content={settings.siteTitle || "Surya's Solar"} />
         <meta property="og:description" content={settings.siteDescription || "Power your home with clean solar energy"} />
-        <meta property="og:image" content={settings.ogImage || "https://suryassolar.com/images/Banner_1_desktop.webp"} />
+        <meta property="og:image" content={settings.ogImage || "https://www.suryassolar.com/images/Banner_1_desktop.webp"} />
         <meta property="og:locale" content="en_IN" />
         <meta property="og:site_name" content="Surya's Solar" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://suryassolar.com" />
+        <meta property="twitter:url" content="https://www.suryassolar.com" />
         <meta property="twitter:title" content={settings.siteTitle || "Surya's Solar"} />
         <meta property="twitter:description" content={settings.siteDescription || "Power your home with clean solar energy"} />
-        <meta property="twitter:image" content={settings.ogImage || "https://suryassolar.com/images/Banner_1_desktop.webp"} />
+        <meta property="twitter:image" content={settings.ogImage || "https://www.suryassolar.com/images/Banner_1_desktop.webp"} />
 
         {/* Additional SEO */}
         <meta name="robots" content="index, follow" />

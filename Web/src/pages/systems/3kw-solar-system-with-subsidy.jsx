@@ -79,10 +79,10 @@ export default function ThreeKwPage({ settings }) {
       <Head>
         <title>3kW Solar Panel System Price in Tamil Nadu (With ₹78,000 Subsidy)</title>
         <meta name="description" content="Get the complete breakdown of a 3kW solar system price in Tamil Nadu. Claim the maximum ₹78,000 PM Surya Ghar Subsidy. Perfect for 2BHK homes. Free site visit." />
-        <link rel="canonical" href="https://suryassolar.com/systems/3kw-solar-system-with-subsidy" />
+        <link rel="canonical" href="https://www.suryassolar.com/systems/3kw-solar-system-with-subsidy" />
         <meta property="og:title" content="3kW Solar Panel System Price in Tamil Nadu (With Subsidy)" />
         <meta property="og:description" content="Get the complete breakdown of a 3kW solar system price in Tamil Nadu. Claim the ₹78,000 PM Surya Ghar Subsidy. Perfect for 2BHK homes." />
-        <meta property="og:url" content="https://suryassolar.com/systems/3kw-solar-system-with-subsidy" />
+        <meta property="og:url" content="https://www.suryassolar.com/systems/3kw-solar-system-with-subsidy" />
       </Head>
 
       <Header settings={settings} />

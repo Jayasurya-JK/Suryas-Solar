@@ -1,13 +1,20 @@
 ---
-title: "PM Surya Ghar Subsidy Tamil Nadu (2025) - Claim ₹78,000 | Step-by-Step"
-date: 2025-12-02
-excerpt: "Apply for PM Surya Ghar Yojana in Tamil Nadu. Get ₹78,000 subsidy for 3kW solar systems. Full guide on documents, eligibility & application process."
-featuredImage: "/images/Blog 4.webp"
-category: "Solar Guide"
-author: "Surya's Solar Team"
-tags: ["PM Surya Ghar", "Solar Subsidy", "Tamil Nadu Solar", "Puducherry Solar", "Free Electricity"]
+title: 'PM Surya Ghar Subsidy Tamil Nadu (2025) - Claim ₹78,000 | Step-by-Step'
+date: '2025-12-02'
+excerpt: >-
+  Apply for PM Surya Ghar Yojana in Tamil Nadu. Get ₹78,000 subsidy for 3kW
+  solar systems. Full guide on documents, eligibility & application process.
+featuredImage: /images/Blog 4.webp
+category: Solar Guide
+author: Surya's Solar Team
+tags:
+  - PM Surya Ghar
+  - Solar Subsidy
+  - Tamil Nadu Solar
+  - Puducherry Solar
+  - Free Electricity
+updated: '2026-04-26'
 ---
-
 The **PM Surya Ghar: Muft Bijli Yojana** is a revolutionary government scheme designed to make solar power accessible to every household in India. In 2025, the subsidy amount has been significantly increased, making it the perfect time for homeowners in **Tamil Nadu and Puducherry** to switch to solar.
 
 Lakhs of families across Tamil Nadu, including districts like **Cuddalore, Panruti, and Neyveli**, are already applying for this scheme to slash their electricity bills and secure their energy future. With the subsidy covering a massive portion of the installation cost, the payback period for a solar system has dropped to an all-time low.
@@ -150,9 +157,12 @@ We handle the entire headache so you can enjoy the savings.
 *   **Liaisoning:** We follow up with TNEB/PED for faster approvals.
 *   **Service Area:** We actively serve **Cuddalore, Panruti, Neyveli, Chidambaram, and Puducherry**.
 
----
 
-## Frequently Asked Questions (FAQs)
+## Related Solar Guides
+
+For a price-specific estimate, compare your monthly units with our [Solar Savings Calculator](/calc), then review the [3kW solar system with subsidy](/systems/3kw-solar-system-with-subsidy) and [5kW solar system cost](/systems/5kw-solar-system-with-subsidy) pages.
+
+---
 
 <!-- COMPONENT: FAQ_SECTION -->
 

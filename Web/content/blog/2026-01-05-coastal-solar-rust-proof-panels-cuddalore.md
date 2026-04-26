@@ -1,13 +1,23 @@
 ---
-title: "Coastal Solar Guide: Best Rust-Proof Panels for Cuddalore & Pondicherry (2026)"
-date: 2026-01-05
-excerpt: "Living near the sea? Salt air can destroy standard solar panels in 3 years. We present the definitive 2026 guide to IEC 61701 Level 6 certification, Hot-Dip Galvanized structures, and how to protect your investment in Cuddalore's saline climate."
-featuredImage: "/images/coastal-solar-rust-proof-panels-cuddalore.webp"
-category: "Technical Guides"
-author: "Surya's Solar Team"
-tags: ["Coastal Solar Panels", "Rust Proof Structure", "IEC 61701 Salt Mist", "Cuddalore Solar", "Pondicherry Solar maintenance", "Galvanized Solar Structure"]
+title: 'Coastal Solar Guide: Best Rust-Proof Panels for Cuddalore & Pondicherry (2026)'
+date: '2026-01-05'
+excerpt: >-
+  Living near the sea? Salt air can destroy standard solar panels in 3 years. We
+  present the definitive 2026 guide to IEC 61701 Level 6 certification, Hot-Dip
+  Galvanized structures, and how to protect your investment in Cuddalore's
+  saline climate.
+featuredImage: /images/coastal-solar-rust-proof-panels-cuddalore.webp
+category: Technical Guides
+author: Surya's Solar Team
+tags:
+  - Coastal Solar Panels
+  - Rust Proof Structure
+  - IEC 61701 Salt Mist
+  - Cuddalore Solar
+  - Pondicherry Solar maintenance
+  - Galvanized Solar Structure
+updated: '2026-04-26'
 ---
-
 Cuddalore and Pondicherry are blessed with abundant sun, but they come with a hidden, silent enemy: **Salt Mist.**
 
 If you live within 10km of the Bay of Bengal (Silver Beach, Devanampattinam, Pondy White Town, or even up to Chidambaram), the air carries microscopic salt particles.

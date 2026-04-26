@@ -1,13 +1,33 @@
 ---
-title: "How Much Solar Is Needed for a ₹3000–₹5000 Electricity Bill in Tamil Nadu? (2026 Guide)"
-date: "2026-05-01"
-author: "Surya's Solar Engineering Team"
-excerpt: "If your TNEB bill is between ₹3,000 and ₹5,000 every two months, this guide calculates the exact solar system size you need to eliminate it permanently."
-featuredImage: "/images/how-much-solar-for-5000-electricity-bill-tamil-nadu.webp"
-category: "Energy Saving"
-tags: ["Solar Sizing", "Electricity Bill", "Tamil Nadu", "Solar Savings", "System Sizing"]
+title: 'How Much Solar for a ₹5,000 Electricity Bill?'
+date: '2026-04-26'
+author: Surya's Solar Engineering Team
+excerpt: >-
+  If your TNEB bill is between ₹3,000 and ₹5,000 every two months, this guide
+  calculates the exact solar system size you need to eliminate it permanently.
+featuredImage: /images/how-much-solar-for-5000-electricity-bill-tamil-nadu.webp
+category: Energy Saving
+tags:
+  - Solar Sizing
+  - Electricity Bill
+  - Tamil Nadu
+  - Solar Savings
+  - System Sizing
+updated: '2026-04-26'
+faqs:
+  - question: 'How much solar is needed for a Rs. 5,000 bill?'
+    answer: >-
+      Many homes with a Rs. 5,000 monthly bill should evaluate around 4kW to
+      5kW, but exact sizing depends on units consumed and daytime usage.
+  - question: 'Is 3kW enough for a Rs. 5,000 bill?'
+    answer: >-
+      3kW can reduce the bill, but it may not fully offset high AC or
+      large-family usage. A 5kW quote is often worth comparing.
+  - question: Should I size solar from bill amount or units?
+    answer: >-
+      Units are more accurate than rupees. Bill amount changes with slabs, but
+      units show the actual energy requirement.
 ---
-
 If you are reading this, there is a very strong chance you recently opened your bi-monthly TNEB electricity bill and felt a wave of frustration when you saw a figure between ₹3,000 and ₹5,000. You are not alone. 
 
 In Tamil Nadu—especially in cities like Cuddalore, Puducherry, Panruti, and Neyveli—summer electricity bills between ₹3,000 and ₹8,000 are now the norm for middle-class households running air conditioners. And the pain is only going to get worse as TNEB tariffs continue to rise annually.
@@ -175,3 +195,17 @@ We believe in giving you the full, unvarnished truth.
 The answer is a **3kW On-Grid Solar System**, and it is genuinely the best financial investment available to a middle-class household in Tamil Nadu today.
 
 *Are you ready to permanently eliminate your heavy TNEB bill? [Contact the engineering team at Surya's Solar](/contact) for a free site visit and exact system design calculation tailored to your specific bi-monthly bill history.*
+
+
+
+## Related Solar Guides
+
+If AC usage is driving your bill, compare your monthly units in the [Solar Savings Calculator](/calc), then check whether a [3kW system](/systems/3kw-solar-system-with-subsidy) or [5kW system](/systems/5kw-solar-system-with-subsidy) is the better fit.
+
+---
+
+<!-- COMPONENT: FAQ_SECTION -->
+
+---
+
+<!-- COMPONENT: CONTACT_CTA -->

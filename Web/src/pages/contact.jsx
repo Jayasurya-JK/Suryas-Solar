@@ -53,18 +53,18 @@ export default function ContactPage() {
                 <title>Contact Us - Surya's Solar | Cuddalore</title>
                 <meta name="description" content="Visit Surya's Solar in Cuddalore (Kondur). Call +91 7904369094 for instant pricing & site visit booking. We serve Cuddalore, Panruti, Neyveli & Puducherry." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="canonical" href="https://suryassolar.com/contact" />
+                <link rel="canonical" href="https://www.suryassolar.com/contact" />
 
                 <meta property="og:title" content="Contact Us - Surya's Solar | Cuddalore" />
                 <meta property="og:description" content="Visit Surya's Solar in Cuddalore (Kondur). Call +91 7904369094 for instant pricing & site visit booking. We serve Cuddalore, Panruti, Neyveli & Puducherry." />
-                <meta property="og:image" content="https://suryassolar.com/images/surya-solar-logo.webp" />
-                <meta property="og:url" content="https://suryassolar.com/contact" />
+                <meta property="og:image" content="https://www.suryassolar.com/images/surya-solar-logo.webp" />
+                <meta property="og:url" content="https://www.suryassolar.com/contact" />
                 <meta property="og:type" content="website" />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Contact Us - Surya's Solar | Cuddalore" />
                 <meta name="twitter:description" content="Visit Surya's Solar in Cuddalore (Kondur). Call +91 7904369094 for instant pricing & site visit booking." />
-                <meta name="twitter:image" content="https://suryassolar.com/images/surya-solar-logo.webp" />
+                <meta name="twitter:image" content="https://www.suryassolar.com/images/surya-solar-logo.webp" />
             </Head>
 
             <Header />

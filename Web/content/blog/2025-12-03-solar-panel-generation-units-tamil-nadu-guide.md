@@ -1,13 +1,39 @@
 ---
-title: "Solar Generation Guide: How Many Units Does 1kW Produce in Tamil Nadu?"
-date: 2025-12-03
-excerpt: "Exact daily & monthly generation charts for 1kW, 2kW, 3kW, 5kW solar systems in Tamil Nadu. Check if solar can cover your household consumption."
-featuredImage: "/images/Solar Generation Units Guide.webp"
-category: "Solar Guide"
-author: "Surya's Solar Team"
-tags: ["Solar Generation", "1kW Solar", "3kW Solar", "5kW Solar", "Tamil Nadu Solar"]
+title: 'Solar Generation Guide: How Many Units Does 1kW Produce in Tamil Nadu?'
+date: '2025-12-03'
+excerpt: >-
+  Exact daily & monthly generation charts for 1kW, 2kW, 3kW, 5kW solar systems
+  in Tamil Nadu. Check if solar can cover your household consumption.
+featuredImage: /images/Solar Generation Units Guide.webp
+category: Solar Guide
+author: Surya's Solar Team
+tags:
+  - Solar Generation
+  - 1kW Solar
+  - 3kW Solar
+  - 5kW Solar
+  - Tamil Nadu Solar
+updated: '2026-04-26'
+faqs:
+  - question: How many units does 1kW solar produce in Tamil Nadu?
+    answer: >-
+      A good 1kW rooftop solar system can often produce around 4 to 5 units per
+      day in Tamil Nadu, depending on season, shade, panel angle, and cleaning.
+  - question: How many units does a 3kW solar system generate?
+    answer: >-
+      A 3kW system commonly generates around 12 to 15 units per day in good
+      sunlight, but actual output depends on roof direction, shading, and
+      equipment quality.
+  - question: Why is my solar generation lower than expected?
+    answer: >-
+      Common reasons include dust, shadows, wrong panel angle, cloudy weather,
+      inverter clipping, loose connections, or comparing one bad day instead of
+      monthly average generation.
+  - question: Does solar generation drop during monsoon?
+    answer: >-
+      Yes. Cloud cover and rain reduce output during monsoon, but annual
+      generation is usually balanced by strong summer and clear-sky months.
 ---
-
 Tamil Nadu is blessed with some of the highest solar irradiation levels in India, making it a goldmine for rooftop solar power. For homeowners in **Cuddalore, Panruti, Neyveli, and Puducherry**, understanding exactly how much power a system generates is the first step towards energy independence.
 
 The most common question we get is: *"How many units will a 1kW, 3kW, or 5kW system produce per day?"* The answer depends on your location, panel efficiency, and roof orientation. At **Surya’s Solar**, we use high-efficiency Mono PERC and N-Type TOPCon panels to ensure you get the maximum output from every ray of sunshine. This guide provides a detailed breakdown of what you can expect from different system sizes in 2025.
@@ -145,11 +171,10 @@ See the difference solar makes with real numbers.
 *   **Net Billable:** 550 - 600 = -50 units.
 *   **Result:** The bill is **Zero**. The homeowner earns a credit of 50 units, which carries forward to the next month to offset higher usage in summer.
 
----
 
-## Frequently Asked Questions (FAQs)
+## Related Solar Guides
 
-<!-- COMPONENT: FAQ_SECTION -->
+For the next step, compare your estimated savings with our [Solar Savings Calculator](/calc), review the [3kW solar system with subsidy](/systems/3kw-solar-system-with-subsidy), and book a [free site visit](/contact) for a roof-specific quote.
 
 ---
 
@@ -158,3 +183,7 @@ See the difference solar makes with real numbers.
 **Surya’s Solar** provides free rooftop assessment across Tamil Nadu & Puducherry to calculate your generation and savings accurately. We use advanced software to predict your exact output.
 
 <!-- COMPONENT: CONTACT_CTA -->
+
+---
+
+<!-- COMPONENT: FAQ_SECTION -->

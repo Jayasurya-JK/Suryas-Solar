@@ -1,13 +1,34 @@
 ---
-title: "How to Calculate Your EB Bill in Tamil Nadu (With 2026 Math Examples)"
-date: "2026-04-30"
-author: "Surya's Solar Technical Team"
-excerpt: "A complete, step-by-step mathematical guide to understanding the TNEB telescopic tariff slabs. We provide exact calculation examples for 300, 500, and 800 units."
-featuredImage: "/images/how-to-calculate-eb-bill-tamil-nadu-examples.webp"
-category: "Electricity Bill"
-tags: ["Electricity Bill", "Energy Saving", "Tamil Nadu", "TNEB Tariffs", "Engineering Guide"]
+title: How to Calculate Your EB Bill in Tamil Nadu (With 2026 Math Examples)
+date: '2026-04-26'
+author: Surya's Solar Technical Team
+excerpt: >-
+  A complete, step-by-step mathematical guide to understanding the TNEB
+  telescopic tariff slabs. We provide exact calculation examples for 300, 500,
+  and 800 units.
+featuredImage: /images/how-to-calculate-eb-bill-tamil-nadu-examples.webp
+category: Electricity Bill
+tags:
+  - Electricity Bill
+  - Energy Saving
+  - Tamil Nadu
+  - TNEB Tariffs
+  - Engineering Guide
+updated: '2026-04-26'
+faqs:
+  - question: How do I calculate my Tamil Nadu EB bill?
+    answer: >-
+      Add your bimonthly units, apply the correct domestic slab, then include
+      fixed charges and any applicable adjustments.
+  - question: Why does the bill jump after a certain unit level?
+    answer: >-
+      Slab billing means extra units can move into a higher rate band, so
+      AC-heavy months can increase the bill disproportionately.
+  - question: Can solar reduce higher slab charges?
+    answer: >-
+      Yes. Solar reduces imported units, which can help keep consumption away
+      from the most expensive slab levels.
 ---
-
 For millions of residents across Tamil Nadu—from Chennai and Puducherry to Cuddalore and Coimbatore—the arrival of the bi-monthly TNEB (Tamil Nadu Generation and Distribution Corporation) electricity bill is often a moment of confusion. 
 
 You look at the total "Units Consumed" and you look at the "Total Amount Due." But how did 650 units turn into a massive ₹4,300 bill? Why did your neighbor, who consumed 450 units, only pay ₹1,100? 
@@ -197,3 +218,12 @@ Understanding TNEB tariff calculation empowers you to stop guessing and start pl
 With the massive financial incentives offered under the central government's **PM Surya Ghar Subsidy scheme** (up to ₹78,000 direct subsidy), investing in a rooftop solar system is mathematically the smartest, highest-yielding financial decision a homeowner in Tamil Nadu can make to defeat the telescopic tariff trap permanently.
 
 *Are you tired of doing the math on massive EB bills? [Contact the engineering team at Surya's Solar today](/contact) for a free roof assessment. We will analyze your past EB bills and design a custom solar plant that permanently drops your net consumption into the Free Slab.*
+
+
+---
+
+<!-- COMPONENT: FAQ_SECTION -->
+
+---
+
+<!-- COMPONENT: CONTACT_CTA -->

@@ -15,34 +15,34 @@
 ## 📚 Digital Library (Blog Posts)
 
 ### 1. Buyer's Guides (Start Here)
-*   [PM Surya Ghar Scheme 2026 Guide](https://suryassolar.com/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)
-*   [Is 3kW Enough for a 3BHK?](https://suryassolar.com/blog/2026-01-02-is-3kw-solar-enough-for-3bhk-2026)
-*   [Solar Loans & EMI Guide](https://suryassolar.com/blog/2026-01-03-solar-emi-loans-tamil-nadu-2026)
-*   [ROI Calculator](https://suryassolar.com/blog/2026-01-08-solar-roi-calculator-break-even-analysis)
+*   [PM Surya Ghar Scheme 2026 Guide](https://www.suryassolar.com/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)
+*   [Is 3kW Enough for a 3BHK?](https://www.suryassolar.com/blog/2026-01-02-is-3kw-solar-enough-for-3bhk-2026)
+*   [Solar Loans & EMI Guide](https://www.suryassolar.com/blog/2026-01-03-solar-emi-loans-tamil-nadu-2026)
+*   [ROI Calculator](https://www.suryassolar.com/blog/2026-01-08-solar-roi-calculator-break-even-analysis)
 
 ### 2. Technical & Safety Guides
-*   [Earthing Safety (3 Pits Rule)](https://suryassolar.com/blog/2026-01-13-solar-earthing-safety-guide)
-*   [Shadow Analysis (Coconut Trees & Half-Cut Cells)](https://suryassolar.com/blog/2026-01-12-solar-shadow-analysis-guide-cuddalore)
-*   [DC Cable Quality (Fire Safety)](https://suryassolar.com/blog/2026-01-14-solar-dc-cable-quality-guide)
-*   [Hybrid Inverters for Low Voltage Areas](https://suryassolar.com/blog/2026-01-15-voltage-fluctuation-hybrid-solar)
-*   [Rust-Proofing for Coastal Areas](https://suryassolar.com/blog/2026-01-05-coastal-solar-rust-proof-panels-cuddalore)
-*   [Enphase Micro-Inverters Review](https://suryassolar.com/blog/2026-01-16-enphase-micro-inverter-review)
+*   [Earthing Safety (3 Pits Rule)](https://www.suryassolar.com/blog/2026-01-13-solar-earthing-safety-guide)
+*   [Shadow Analysis (Coconut Trees & Half-Cut Cells)](https://www.suryassolar.com/blog/2026-01-12-solar-shadow-analysis-guide-cuddalore)
+*   [DC Cable Quality (Fire Safety)](https://www.suryassolar.com/blog/2026-01-14-solar-dc-cable-quality-guide)
+*   [Hybrid Inverters for Low Voltage Areas](https://www.suryassolar.com/blog/2026-01-15-voltage-fluctuation-hybrid-solar)
+*   [Rust-Proofing for Coastal Areas](https://www.suryassolar.com/blog/2026-01-05-coastal-solar-rust-proof-panels-cuddalore)
+*   [Enphase Micro-Inverters Review](https://www.suryassolar.com/blog/2026-01-16-enphase-micro-inverter-review)
 
 ### 3. Utility & Maintenance
-*   [How to Read TNEB Solar Bill](https://suryassolar.com/blog/2026-01-17-understanding-tneb-solar-bill)
-*   [Net Metering Guide 2026](https://suryassolar.com/blog/2026-01-04-how-to-get-tneb-net-meter-cuddalore-2026)
-*   [Zero Export Device (Run Solar without Net Meter)](https://suryassolar.com/blog/2026-01-18-zero-export-device-guide)
-*   [Maintenance & Cleaning Guide](https://suryassolar.com/blog/2026-01-10-solar-maintenance-guide-cuddalore)
+*   [How to Read TNEB Solar Bill](https://www.suryassolar.com/blog/2026-01-17-understanding-tneb-solar-bill)
+*   [Net Metering Guide 2026](https://www.suryassolar.com/blog/2026-01-04-how-to-get-tneb-net-meter-cuddalore-2026)
+*   [Zero Export Device (Run Solar without Net Meter)](https://www.suryassolar.com/blog/2026-01-18-zero-export-device-guide)
+*   [Maintenance & Cleaning Guide](https://www.suryassolar.com/blog/2026-01-10-solar-maintenance-guide-cuddalore)
 
 ### 4. Commercial & Investment
-*   [Business Tax Benefits (Accelerated Depreciation)](https://suryassolar.com/blog/2026-01-19-commercial-solar-tax-benefits)
-*   [Home Resale Value with Solar](https://suryassolar.com/blog/2026-01-20-solar-increases-home-resale-value)
-*   [Future Trends (P2P Trading)](https://suryassolar.com/blog/2026-01-11-future-of-solar-tamil-nadu-trends)
+*   [Business Tax Benefits (Accelerated Depreciation)](https://www.suryassolar.com/blog/2026-01-19-commercial-solar-tax-benefits)
+*   [Home Resale Value with Solar](https://www.suryassolar.com/blog/2026-01-20-solar-increases-home-resale-value)
+*   [Future Trends (P2P Trading)](https://www.suryassolar.com/blog/2026-01-11-future-of-solar-tamil-nadu-trends)
 
 ### 5. Product Comparisons
-*   [On-Grid vs Hybrid](https://suryassolar.com/blog/2026-01-06-on-grid-vs-hybrid-solar-tamil-nadu)
-*   [Mono vs Bifacial Panels](https://suryassolar.com/blog/2026-01-07-mono-vs-bifacial-solar-panels)
-*   [Scam Warnings](https://suryassolar.com/blog/2026-01-09-solar-scam-warnings-cuddalore)
+*   [On-Grid vs Hybrid](https://www.suryassolar.com/blog/2026-01-06-on-grid-vs-hybrid-solar-tamil-nadu)
+*   [Mono vs Bifacial Panels](https://www.suryassolar.com/blog/2026-01-07-mono-vs-bifacial-solar-panels)
+*   [Scam Warnings](https://www.suryassolar.com/blog/2026-01-09-solar-scam-warnings-cuddalore)
 
 ## 📞 Contact
 *   **Phone:** +91 95975 60105

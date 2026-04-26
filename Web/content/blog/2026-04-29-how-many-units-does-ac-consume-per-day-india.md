@@ -1,13 +1,34 @@
 ---
-title: "How Many Units Does an AC Consume Per Day in India? (2026 Engineering Guide)"
-date: "2026-04-29"
-author: "Surya's Solar Technical Team"
-excerpt: "Stop guessing your electricity bill. We provide the exact mathematical formulas and real-world tables showing exactly how many units 1-ton, 1.5-ton, and 2-ton ACs consume per day."
-featuredImage: "/images/how-many-units-does-ac-consume-per-day-india.webp"
-category: "Appliances"
-tags: ["Appliances", "System Sizing", "Air Conditioning", "Energy Saving", "Engineering Guide"]
+title: How Many Units Does an AC Consume Per Day in India? (2026 Engineering Guide)
+date: '2026-04-26'
+author: Surya's Solar Technical Team
+excerpt: >-
+  Stop guessing your electricity bill. We provide the exact mathematical
+  formulas and real-world tables showing exactly how many units 1-ton, 1.5-ton,
+  and 2-ton ACs consume per day.
+featuredImage: /images/how-many-units-does-ac-consume-per-day-india.webp
+category: Appliances
+tags:
+  - Appliances
+  - System Sizing
+  - Air Conditioning
+  - Energy Saving
+  - Engineering Guide
+updated: '2026-04-26'
+faqs:
+  - question: How many units does a 1.5 ton AC use per day?
+    answer: >-
+      A 1.5 ton inverter AC may use roughly 4 to 8 units per day depending on
+      star rating, room heat load, set temperature, and runtime.
+  - question: Can solar cover daily AC units?
+    answer: >-
+      Yes, if the solar system is sized around total home consumption. A 3kW or
+      5kW system can offset a meaningful portion of AC usage.
+  - question: Does setting AC to 24 degrees save power?
+    answer: >-
+      Yes. Keeping the AC around 24 to 26 degrees usually reduces compressor
+      load and improves daily unit savings.
 ---
-
 Whether you live in the humid coastal belts of Tamil Nadu or the dry heat of northern India, surviving the summer without an Air Conditioner is nearly impossible. However, the relief of cold air is almost immediately followed by a wave of anxiety regarding the impending electricity bill. 
 
 The most common question we receive from homeowners trying to budget their utility costs—or size a new rooftop solar plant—is: **"Exactly how many units does an AC consume per day in India?"**
@@ -172,3 +193,12 @@ Stop guessing why your electricity bill is high. By understanding the math of Ki
 And if you want to run that AC absolutely guilt-free all summer long? It's time to put those relentless summer sun rays to work for you.
 
 *Are you ready to stop paying the "AC penalty" to your utility company? [Contact the engineering team at Surya's Solar today](/contact) for a free roof assessment and exact mathematical calculation of how much solar you need to wipe out your AC bill.*
+
+
+---
+
+<!-- COMPONENT: FAQ_SECTION -->
+
+---
+
+<!-- COMPONENT: CONTACT_CTA -->

@@ -1,13 +1,22 @@
 ---
-title: "How to Read Your TNEB Solar Bill: Understanding Import vs. Export Units"
-date: 2026-01-17
-excerpt: "Got your first solar bill and confused by terms like 'Import', 'Export', and 'Banked Units'? We decode the new TNEB Digital Net Meter bill format so you never overpay. Includes 2026 Tariff explanations."
-featuredImage: "/images/understanding-tneb-solar-bill.webp"
-category: "Solar Finance"
-author: "Surya's Solar Team"
-tags: ["TNEB Solar Bill Explained", "Solar Net Meter Reading", "Import Export Units Meaning", "Solar Banking Charges Tamil Nadu", "Cuddalore Electricity Bill", "Electricity Tariff 2026"]
+title: 'How to Read Your TNEB Solar Bill: Understanding Import vs. Export Units'
+date: '2026-01-17'
+excerpt: >-
+  Got your first solar bill and confused by terms like 'Import', 'Export', and
+  'Banked Units'? We decode the new TNEB Digital Net Meter bill format so you
+  never overpay. Includes 2026 Tariff explanations.
+featuredImage: /images/understanding-tneb-solar-bill.webp
+category: Solar Finance
+author: Surya's Solar Team
+tags:
+  - TNEB Solar Bill Explained
+  - Solar Net Meter Reading
+  - Import Export Units Meaning
+  - Solar Banking Charges Tamil Nadu
+  - Cuddalore Electricity Bill
+  - Electricity Tariff 2026
+updated: '2026-04-26'
 ---
-
 Congratulations! You installed solar. The green light is blinking.
 But then the first bi-monthly bill arrives, and it looks complicated.
 **"Why did I get a bill of ₹120 when I made 500 units?"**
@@ -102,6 +111,21 @@ For domestic users, TNEB usually sums them up. For factories, Solar is great bec
 **Summary:**
 As long as your "Export" is higher than "Import" on average, you will receive a bill of just the Fixed Charges (approx ₹120 - ₹200). That is financial freedom.
 
+
+
+## Local Decision Notes
+
+After solar commissioning, compare import, export, and net units every billing cycle. Do not judge performance from the payable amount alone because fixed charges and banking rules can confuse the picture. If generation looks lower than expected, check inverter app data, cleaning condition, shading, and meter readings together. A good installer should explain the first few bills so the homeowner understands whether the system is performing correctly.
+
+
+## Monthly Bill Review Habit
+
+After each billing cycle, save a photo or PDF of the EB bill and compare it with inverter app generation. Track three numbers: grid import, solar export, and total solar generation. If import is high even during sunny months, your daytime usage may be low or your system may need checking. If generation drops suddenly, inspect cleaning, shade, inverter status, and meter readings before assuming the bill is wrong.
+
+
+## When to Call the Installer
+
+Call your installer if export units suddenly drop, the inverter app shows errors, generation falls after normal cleaning, or the meter reading does not match expected behavior. Early checking prevents small issues from becoming months of lost savings.
 
 ---
 

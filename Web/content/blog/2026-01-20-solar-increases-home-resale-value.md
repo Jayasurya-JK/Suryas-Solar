@@ -1,13 +1,22 @@
 ---
-title: "Real Estate 2026: Does a Solar System Increase Home Resale Value in Cuddalore?"
-date: 2026-01-20
-excerpt: "Selling your house in the future? A Pre-Installed Solar System is a massive asset. Market trends in Manjakuppam and Pondicherry show that 'Zero Bill' homes sell 6% faster and for a higher price. Read our detailed investment analysis."
-featuredImage: "/images/solar-increases-home-resale-value.webp"
-category: "Solar Finance"
-author: "Surya's Solar Team"
-tags: ["Solar House Value India", "Green Home Resale Cuddalore", "Solar Property Premium", "Real Estate Trends Tamil Nadu", "Pondicherry Villa Solar"]
+title: 'Real Estate 2026: Does a Solar System Increase Home Resale Value in Cuddalore?'
+date: '2026-01-20'
+excerpt: >-
+  Selling your house in the future? A Pre-Installed Solar System is a massive
+  asset. Market trends in Manjakuppam and Pondicherry show that 'Zero Bill'
+  homes sell 6% faster and for a higher price. Read our detailed investment
+  analysis.
+featuredImage: /images/solar-increases-home-resale-value.webp
+category: Solar Finance
+author: Surya's Solar Team
+tags:
+  - Solar House Value India
+  - Green Home Resale Cuddalore
+  - Solar Property Premium
+  - Real Estate Trends Tamil Nadu
+  - Pondicherry Villa Solar
+updated: '2026-04-26'
 ---
-
 In Cuddalore, when you buy a house, you traditionally check the water quality, the road width, and the build quality (Pillars vs Load Bearing). You check if the area floods during monsoon. You check the distance to schools.
 
 But in **2026**, buyers are asking a new, critical question that nobody asked 5 years ago:

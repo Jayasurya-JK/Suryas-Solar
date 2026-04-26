@@ -13,7 +13,7 @@ export default function CalcPage() {
           name="description"
           content="Free Solar Savings Calculator 2025. Compare 3kW vs 5kW ROI. Calculate exact electricity bill savings & payback period for Tamil Nadu / Puducherry homes."
         />
-        <link rel="canonical" href="https://suryassolar.com/calc" />
+        <link rel="canonical" href="https://www.suryassolar.com/calc" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       </Head>

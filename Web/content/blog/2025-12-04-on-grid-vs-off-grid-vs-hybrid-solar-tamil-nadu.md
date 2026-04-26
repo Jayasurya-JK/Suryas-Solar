@@ -1,13 +1,20 @@
 ---
-title: "On-Grid vs Hybrid Solar - Which is Best for Tamil Nadu? (2025 Price)"
-date: 2025-12-04
-excerpt: "On-Grid vs Off-Grid vs Hybrid: Side-by-side comparison for Tamil Nadu homes. Price, battery backup, and subsidy eligibility explained."
-featuredImage: "/images/On-Grid vs Off-Grid vs Hybrid.webp"
-category: "Solar Guide"
-author: "Surya's Solar Team"
-tags: ["On-Grid Solar", "Off-Grid Solar", "Hybrid Solar", "Tamil Nadu Solar", "Puducherry Solar"]
+title: On-Grid vs Hybrid Solar - Which is Best for Tamil Nadu? (2025 Price)
+date: '2025-12-04'
+excerpt: >-
+  On-Grid vs Off-Grid vs Hybrid: Side-by-side comparison for Tamil Nadu homes.
+  Price, battery backup, and subsidy eligibility explained.
+featuredImage: /images/On-Grid vs Off-Grid vs Hybrid.webp
+category: Solar Guide
+author: Surya's Solar Team
+tags:
+  - On-Grid Solar
+  - Off-Grid Solar
+  - Hybrid Solar
+  - Tamil Nadu Solar
+  - Puducherry Solar
+updated: '2026-04-26'
 ---
-
 Choosing the right type of solar system is just as important as choosing the right panels. Most homeowners get confused between the three main types: **On-Grid, Off-Grid, and Hybrid**. Each system works differently, offering unique benefits depending on whether you prioritize savings, backup power, or total independence.
 
 In **Tamil Nadu**, where sunlight is abundant but power cuts can vary by district, the right choice depends on your specific needs. **Puducherry** residents, for example, often have different load requirements compared to those in **Cuddalore or Neyveli**. At **Surya’s Solar**, we install all three types and help you select the perfect configuration for your home. This guide breaks down the pros, cons, and costs of each system to help you decide.
@@ -168,9 +175,12 @@ Our Solar Calculator helps you compare on-grid, off-grid, and hybrid based on yo
 
 <!-- COMPONENT: SOLAR_CALCULATOR -->
 
----
 
-## Frequently Asked Questions (FAQs)
+## Related Solar Guides
+
+For a price-specific estimate, compare your monthly units with our [Solar Savings Calculator](/calc), then review the [3kW solar system with subsidy](/systems/3kw-solar-system-with-subsidy) and [5kW solar system cost](/systems/5kw-solar-system-with-subsidy) pages.
+
+---
 
 <!-- COMPONENT: FAQ_SECTION -->
 

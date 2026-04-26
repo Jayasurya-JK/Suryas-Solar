@@ -1,13 +1,21 @@
 ---
-title: "Accelerated Depreciation Benefits for Solar Explained (2026 Tax Guide)"
-date: 2026-01-19
-excerpt: "Running a business? Learn exactly how Accelerated Depreciation benefits for solar (Section 32) allow you to write off 40% of your Solar Plant value in Year 1. A comprehensive guide with ROI tables and tax strategies."
-featuredImage: "/images/commercial-solar-tax-benefits.webp"
-category: "Commercial Solar"
-author: "Surya's Solar Team"
-tags: ["Accelerated Depreciation Solar", "Accelerated Depreciation Benefits for Solar Explained", "Commercial Solar Tax Benefit", "Section 32 Income Tax", "Solar Depreciation Rate 2026"]
+title: Accelerated Depreciation Benefits for Solar Explained (2026 Tax Guide)
+date: '2026-01-19'
+excerpt: >-
+  Running a business? Learn exactly how Accelerated Depreciation benefits for
+  solar (Section 32) allow you to write off 40% of your Solar Plant value in
+  Year 1. A comprehensive guide with ROI tables and tax strategies.
+featuredImage: /images/commercial-solar-tax-benefits.webp
+category: Commercial Solar
+author: Surya's Solar Team
+tags:
+  - Accelerated Depreciation Solar
+  - Accelerated Depreciation Benefits for Solar Explained
+  - Commercial Solar Tax Benefit
+  - Section 32 Income Tax
+  - Solar Depreciation Rate 2026
+updated: '2026-04-26'
 ---
-
 If you run a profitable business—whether it’s a **Textile Mill in Coimbatore**, a **Hotel in Puducherry**, or a **Cashew Factory in Panruti**—you face two major drains on your cash flow:
 1.  **Electricity Bills:** Rising at 5% per year.
 2.  **Corporate Tax:** Taking away 25% - 30% of your hard-earned profits.
@@ -137,6 +145,11 @@ Shift your expense from "Revenue Expenditure" (paying bills) to "Capital Expendi
 
 **Don't pay TNEB. Don't pay Tax. Pay yourself.**
 
+
+
+## Local Decision Notes
+
+Commercial solar decisions should be reviewed with both the installer and the accountant. The engineering team should size the plant around actual daytime load, while the accountant confirms depreciation, GST treatment, and documentation. A factory, office, school, or shop can get strong value from solar when working hours overlap with generation hours. Keep invoices, commissioning documents, and asset records clean from day one because tax benefits depend on documentation as much as installation.
 
 ---
 

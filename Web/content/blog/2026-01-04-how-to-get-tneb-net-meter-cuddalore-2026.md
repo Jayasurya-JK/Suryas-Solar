@@ -1,13 +1,21 @@
 ---
-title: "How to Get TNEB Net Meter in Cuddalore (2026 Process & Timeline)"
-date: 2026-01-04
-excerpt: "Struggling with TNEB paperwork? We decode the 2026 Net Metering process in Cuddalore. Learn the exact documents needed, official fees, AE inspection checklist, and how to track your application online."
-featuredImage: "/images/how-to-get-tneb-net-meter-cuddalore-2026.webp"
-category: "Solar Guides"
-author: "Surya's Solar Team"
-tags: ["TNEB Net Meter", "Cuddalore Solar Rules", "Solar Commissioning", "TANGEDCO Application", "Solar Bi-Directional Meter"]
+title: How to Get TNEB Net Meter in Cuddalore (2026 Process & Timeline)
+date: '2026-01-04'
+excerpt: >-
+  Struggling with TNEB paperwork? We decode the 2026 Net Metering process in
+  Cuddalore. Learn the exact documents needed, official fees, AE inspection
+  checklist, and how to track your application online.
+featuredImage: /images/how-to-get-tneb-net-meter-cuddalore-2026.webp
+category: Solar Guides
+author: Surya's Solar Team
+tags:
+  - TNEB Net Meter
+  - Cuddalore Solar Rules
+  - Solar Commissioning
+  - TANGEDCO Application
+  - Solar Bi-Directional Meter
+updated: '2026-04-26'
 ---
-
 If there is one thing that scares homeowners away from solar, it’s not the cost - it’s the **“TNEB Headache.”**
 
 We hear it all the time: *"Sir, will TNEB give permission? Will they delay it for months? Do I need to pay bribes?"*

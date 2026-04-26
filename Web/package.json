@@ -1,16 +1,15 @@
 {
   "name": "suryas-solar",
   "version": "1.0.0",
-  "description": "Production-ready static website for Surya's Solar with Netlify CMS",
+  "description": "Production-ready static website for Surya's Solar with manual Markdown blog content",
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/generate-sitemap.js && next build",
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "netlify": "netlify dev",
     "deploy": "npm run build && npm run export",
-    "clean": "rm -rf .next out node_modules/.cache"
+    "clean": "node -e \"const fs=require('fs'); ['.next','out','node_modules/.cache'].forEach((p)=>fs.rmSync(p,{recursive:true,force:true}))\""
   },
   "dependencies": {
     "chart.js": "^4.5.1",

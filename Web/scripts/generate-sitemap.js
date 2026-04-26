@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-const SITE_URL = 'https://suryassolar.com';
+const SITE_URL = 'https://www.suryassolar.com';
 
 // Static pages
 const staticPages = [
@@ -15,9 +15,28 @@ const staticPages = [
     { url: '/terms-conditions', changefreq: 'yearly', priority: 0.5 },
 ];
 
+const serviceAreaPages = [
+    { url: '/service-areas/cuddalore', changefreq: 'monthly', priority: 0.85 },
+    { url: '/service-areas/puducherry', changefreq: 'monthly', priority: 0.85 },
+    { url: '/service-areas/panruti', changefreq: 'monthly', priority: 0.8 },
+    { url: '/service-areas/neyveli', changefreq: 'monthly', priority: 0.8 },
+];
+
+const systemPages = [
+    { url: '/systems/3kw-solar-system-with-subsidy', changefreq: 'monthly', priority: 0.85 },
+    { url: '/systems/5kw-solar-system-with-subsidy', changefreq: 'monthly', priority: 0.85 },
+];
+
+const landingPages = [
+    ...staticPages,
+    ...serviceAreaPages,
+    ...systemPages,
+];
+
 function generateSitemap() {
     const contentDirectory = path.join(process.cwd(), 'content');
     const blogDirectory = path.join(contentDirectory, 'blog');
+    const today = new Date().toISOString().split('T')[0];
 
     let blogPosts = [];
 
@@ -32,7 +51,7 @@ function generateSitemap() {
                     const fileContents = fs.readFileSync(filePath, 'utf8');
                     const { data } = matter(fileContents);
 
-                    let dateStr = new Date().toISOString().split('T')[0];
+                    let dateStr = today;
                     if (data.date) {
                         try {
                             dateStr = new Date(data.date).toISOString().split('T')[0];
@@ -53,9 +72,9 @@ function generateSitemap() {
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${staticPages.map(page => `  <url>
+${landingPages.map(page => `  <url>
     <loc>${SITE_URL}${page.url}</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <lastmod>${today}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`).join('\n')}
@@ -68,7 +87,7 @@ ${blogPosts.map(post => `  <url>
 </urlset>`;
 
     fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), sitemap);
-    console.log(`Sitemap generated successfully with ${staticPages.length} static pages and ${blogPosts.length} blog posts.`);
+    console.log(`Sitemap generated successfully with ${landingPages.length} landing pages and ${blogPosts.length} blog posts.`);
 }
 
 generateSitemap();

@@ -79,10 +79,10 @@ export default function FiveKwPage({ settings }) {
       <Head>
         <title>5kW Solar Panel System Price in Tamil Nadu (With ₹78,000 Subsidy)</title>
         <meta name="description" content="Get the complete breakdown of a 5kW solar system price in Tamil Nadu. Claim the ₹78,000 PM Surya Ghar Subsidy. Can it run 2 ACs? Get your free quote today." />
-        <link rel="canonical" href="https://suryassolar.com/systems/5kw-solar-system-with-subsidy" />
+        <link rel="canonical" href="https://www.suryassolar.com/systems/5kw-solar-system-with-subsidy" />
         <meta property="og:title" content="5kW Solar Panel System Price in Tamil Nadu (With Subsidy)" />
         <meta property="og:description" content="Get the complete breakdown of a 5kW solar system price in Tamil Nadu. Claim the ₹78,000 PM Surya Ghar Subsidy." />
-        <meta property="og:url" content="https://suryassolar.com/systems/5kw-solar-system-with-subsidy" />
+        <meta property="og:url" content="https://www.suryassolar.com/systems/5kw-solar-system-with-subsidy" />
       </Head>
 
       <Header settings={settings} />

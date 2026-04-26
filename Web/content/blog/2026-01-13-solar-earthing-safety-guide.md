@@ -1,13 +1,21 @@
 ---
-title: "Solar Earthing Guide: Why You Need 3 Separate Pits (AC, DC, LA)"
-date: 2026-01-13
-excerpt: "Solar safety is not just about panels; it's about grounding. Many cheap installers cut costs by using only 1 earthing pit. Learn why 'Chemical Earthing' and 3 separate pits are mandatory for safety in Cuddalore."
-featuredImage: "/images/solar-earthing-safety-guide.webp"
-category: "Technical Guides"
-author: "Surya's Solar Team"
-tags: ["Solar Earthing Kit", "Chemical Earthing vs Pipe Earthing", "Lightning Arrester Solar", "Solar Safety Standards", "Earthing Pit Resistance"]
+title: 'Solar Earthing Guide: Why You Need 3 Separate Pits (AC, DC, LA)'
+date: '2026-01-13'
+excerpt: >-
+  Solar safety is not just about panels; it's about grounding. Many cheap
+  installers cut costs by using only 1 earthing pit. Learn why 'Chemical
+  Earthing' and 3 separate pits are mandatory for safety in Cuddalore.
+featuredImage: /images/solar-earthing-safety-guide.webp
+category: Technical Guides
+author: Surya's Solar Team
+tags:
+  - Solar Earthing Kit
+  - Chemical Earthing vs Pipe Earthing
+  - Lightning Arrester Solar
+  - Solar Safety Standards
+  - Earthing Pit Resistance
+updated: '2026-04-26'
 ---
-
 "Sir, the other quoter said 1 earthing pit is enough. Why are you quoting for 3?"
 
 This is the most common objection we face.
@@ -108,6 +116,16 @@ When reviewing a quote, check for these line items:
 
 **Safety First. Savings Second.**
 
+
+
+## Local Decision Notes
+
+Earthing is not a decorative line item. It protects people, equipment, and the building during leakage, surge, or lightning events. A proper solar installation should separate AC earthing, DC earthing, and lightning protection where required. The installer should also test resistance rather than simply burying a rod and calling it complete. In coastal or damp soil conditions, material choice and corrosion resistance matter because poor earthing can quietly degrade over time.
+
+
+## Inspection Questions for Earthing
+
+During installation, ask where each earthing pit is placed, what material is used, and whether resistance is tested after completion. The installer should explain the difference between inverter earthing, panel-frame earthing, and lightning protection. Keep photos of the pits and connections for future maintenance. If any technician later changes wiring, these records help prevent unsafe shortcuts and make troubleshooting easier.
 
 ---
 

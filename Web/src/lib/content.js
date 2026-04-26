@@ -57,9 +57,7 @@ export function getAllBlogPosts() {
   const blogDirectory = path.join(contentDirectory, 'blog')
 
   try {
-    console.log('Scanning blog directory:', blogDirectory)
     const fileNames = fs.readdirSync(blogDirectory)
-    console.log('Found files:', fileNames)
     const posts = fileNames
       .filter(fileName => fileName.endsWith('.md'))
       .map(fileName => {

@@ -110,21 +110,21 @@ export default function AboutPage() {
                 <meta name="keywords" content="solar company Cuddalore, TATA solar partner, PM Surya Ghar vendor, residential solar expert" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-                <link rel="canonical" href="https://suryassolar.com/about" />
+                <link rel="canonical" href="https://www.suryassolar.com/about" />
 
                 {/* Open Graph */}
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://suryassolar.com/about" />
+                <meta property="og:url" content="https://www.suryassolar.com/about" />
                 <meta property="og:title" content="About Surya's Solar - Cuddalore’s trusted residential solar expert" />
                 <meta property="og:description" content="10+ years of experience, 100kW+ installations, Official TATA Power Solaroof Partner" />
-                <meta property="og:image" content="https://suryassolar.com/images/og-home.webp" />
+                <meta property="og:image" content="https://www.suryassolar.com/images/og-home.webp" />
 
                 {/* Twitter */}
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://suryassolar.com/about" />
+                <meta property="twitter:url" content="https://www.suryassolar.com/about" />
                 <meta property="twitter:title" content="About Surya's Solar" />
                 <meta property="twitter:description" content="Cuddalore's most trusted solar company with 10+ years of experience" />
-                <meta property="twitter:image" content="https://suryassolar.com/images/og-home.webp" />
+                <meta property="twitter:image" content="https://www.suryassolar.com/images/og-home.webp" />
             </Head>
 
             <Header />

@@ -1,13 +1,21 @@
 ---
-title: "Solar Maintenance Guide 2026: How to Clean Panels & Maintain Efficiency"
-date: 2026-01-10
-excerpt: "Solar panels are low maintenance, not 'Zero' maintenance. Learn the golden rules of cleaning solar panels in Cuddalore's dusty climate to prevent 15-20% generation loss. A complete guide to tools, safety, and schedules."
-featuredImage: "/images/solar-maintenance-guide-cuddalore.webp"
-category: "Service & Care"
-author: "Surya's Solar Team"
-tags: ["Solar Panel Cleaning", "Solar Maintenance Cuddalore", "Solar Efficiency Tips", "Cleaning Tools", "Inverter Error Codes"]
+title: 'Solar Maintenance Guide 2026: How to Clean Panels & Maintain Efficiency'
+date: '2026-01-10'
+excerpt: >-
+  Solar panels are low maintenance, not 'Zero' maintenance. Learn the golden
+  rules of cleaning solar panels in Cuddalore's dusty climate to prevent 15-20%
+  generation loss. A complete guide to tools, safety, and schedules.
+featuredImage: /images/solar-maintenance-guide-cuddalore.webp
+category: Service & Care
+author: Surya's Solar Team
+tags:
+  - Solar Panel Cleaning
+  - Solar Maintenance Cuddalore
+  - Solar Efficiency Tips
+  - Cleaning Tools
+  - Inverter Error Codes
+updated: '2026-04-26'
 ---
-
 "Sir, are these panels 'Self-Cleaning'?"
 
 We hear this question often. The honest answer is: **No.**

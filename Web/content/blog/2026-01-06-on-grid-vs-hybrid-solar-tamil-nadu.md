@@ -1,13 +1,22 @@
 ---
-title: "On-Grid vs. Hybrid Solar: Which is Best for Tamil Nadu Power Cuts in 2026?"
-date: 2026-01-06
-excerpt: "Power cuts are annoying, but is a Hybrid Solar (Battery) system worth the extra ₹1.5 Lakhs? We compare On-Grid, Off-Grid, and Hybrid systems for 2026. Includes a detailed 'Cost vs Benefit' analysis for Cuddalore homeowners."
-featuredImage: "/images/on-grid-vs-hybrid-solar-tamil-nadu.webp"
-category: "Technical Guides"
-author: "Surya's Solar Team"
-tags: ["On Grid vs Hybrid", "Solar Battery Price", "TNEB Power Cut Solution", "Hybrid Inverter Tamil Nadu", "Solar Backup", "Lithium Battery Cost"]
+title: 'On-Grid vs. Hybrid Solar: Which is Best for Tamil Nadu Power Cuts in 2026?'
+date: '2026-01-06'
+excerpt: >-
+  Power cuts are annoying, but is a Hybrid Solar (Battery) system worth the
+  extra ₹1.5 Lakhs? We compare On-Grid, Off-Grid, and Hybrid systems for 2026.
+  Includes a detailed 'Cost vs Benefit' analysis for Cuddalore homeowners.
+featuredImage: /images/on-grid-vs-hybrid-solar-tamil-nadu.webp
+category: Technical Guides
+author: Surya's Solar Team
+tags:
+  - On Grid vs Hybrid
+  - Solar Battery Price
+  - TNEB Power Cut Solution
+  - Hybrid Inverter Tamil Nadu
+  - Solar Backup
+  - Lithium Battery Cost
+updated: '2026-04-26'
 ---
-
 Here is a shocking fact for many first-time solar buyers in Cuddalore:
 **A standard On-Grid Solar System shuts down during a power cut.**
 
@@ -141,3 +150,7 @@ We can install a data logger at your home to check power cut frequency before yo
 - **[System Sizing](/blog/2026-01-02-is-3kw-solar-enough-for-3bhk-2026)** - Right capacity selection
 
 <!-- COMPONENT: CONTACT_CTA -->
+
+## Local Decision Notes
+
+For most Tamil Nadu homes, the decision should start with grid reliability. If your area has stable supply and your main goal is bill reduction, on-grid solar usually gives the cleanest ROI. If your area has frequent cuts, low voltage, or sensitive appliances, hybrid solar becomes more useful because it can protect daily comfort and keep selected loads running. In Cuddalore and nearby towns, we usually compare both options only after checking EB units, sanctioned load, inverter placement, and backup expectations.

@@ -1,13 +1,21 @@
 ---
-title: "PM Surya Ghar Scheme 2026: The Ultimate Guide to Solar Subsidy in Cuddalore"
-date: 2026-01-01
-excerpt: "Comprehensive 2026 Guide: How to claim up to ₹78,000 subsidy for rooftop solar in Cuddalore. We cover the new eligibility rules, step-by-step National Portal application, TNEB net metering process, and common rejection reasons."
-featuredImage: "/images/pm-surya-ghar-scheme-cuddalore-2026.webp"
-category: "Government Schemes"
-author: "Surya's Solar Team"
-tags: ["PM Surya Ghar 2026", "Solar Subsidy Tamil Nadu", "Cuddalore Solar Application", "TNEB Net Meter Rules", "Free Electricity Scheme"]
+title: 'PM Surya Ghar Scheme 2026: The Ultimate Guide to Solar Subsidy in Cuddalore'
+date: '2026-01-01'
+excerpt: >-
+  Comprehensive 2026 Guide: How to claim up to ₹78,000 subsidy for rooftop solar
+  in Cuddalore. We cover the new eligibility rules, step-by-step National Portal
+  application, TNEB net metering process, and common rejection reasons.
+featuredImage: /images/pm-surya-ghar-scheme-cuddalore-2026.webp
+category: Government Schemes
+author: Surya's Solar Team
+tags:
+  - PM Surya Ghar 2026
+  - Solar Subsidy Tamil Nadu
+  - Cuddalore Solar Application
+  - TNEB Net Meter Rules
+  - Free Electricity Scheme
+updated: '2026-04-26'
 ---
-
 Welcome to **2026**. If you are a homeowner in Cuddalore, Neyveli, or Pondicherry, you have likely heard about the massive push for solar energy. But amidst the headlines, there is often confusion. Is the electricity really free? Is the subsidy amount guaranteed? How long does the TNEB process actually take?
 
 The **PM Surya Ghar: Muft Bijli Yojana** has evolved into one of the most successful green energy initiatives in India. For residents of Tamil Nadu, specifically in high-solar-yield districts like Cuddalore, this scheme is not just an environmental choice—it is a financial no-brainer.

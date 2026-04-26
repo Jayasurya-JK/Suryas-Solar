@@ -1,13 +1,23 @@
 ---
-title: "7 Solar Scam Warnings for 2026: Don't Get Cheated by Cheap Quotes"
-date: 2026-01-09
-excerpt: "Did someone quote you ₹20,000 less? Be careful. In Cuddalore's booming solar market, fly-by-night operators are cutting corners. Learn how to spot fake DCR panels, rusted structures, and hidden warranty exclusions to save your investment."
-featuredImage: "/images/solar-scam-warnings-cuddalore.webp"
-category: "Buyer Awareness"
-author: "Surya's Solar Team"
-tags: ["Solar Scams India", "Fake Solar Panels", "Solar Quality Check", "Cuddalore Solar Complaints", "Choosing Solar Installer", "DCR Panel Verification"]
+title: '7 Solar Scam Warnings for 2026: Don''t Get Cheated by Cheap Quotes'
+date: '2026-01-09'
+excerpt: >-
+  Did someone quote you ₹20,000 less? Be careful. In Cuddalore's booming solar
+  market, fly-by-night operators are cutting corners. Learn how to spot fake DCR
+  panels, rusted structures, and hidden warranty exclusions to save your
+  investment.
+featuredImage: /images/solar-scam-warnings-cuddalore.webp
+category: Buyer Awareness
+author: Surya's Solar Team
+tags:
+  - Solar Scams India
+  - Fake Solar Panels
+  - Solar Quality Check
+  - Cuddalore Solar Complaints
+  - Choosing Solar Installer
+  - DCR Panel Verification
+updated: '2026-04-26'
 ---
-
 "Sir, your quote is ₹1.9 Lakhs. But 'XYZ Solar' offered me ₹1.6 Lakhs. Why are you expensive?"
 
 We welcome this question. It gives us a chance to save a customer from a disaster.
@@ -75,6 +85,16 @@ Quality is remembered long after the price is forgotten.
 > Get a free quote verification service. Send us any quote and we'll tell you if it's genuine or has red flags.
 > 
 > **[Verify Quote](/#booking)**
+
+
+## Local Decision Notes
+
+A serious quote should mention panel brand, inverter model, structure material, cable brand, earthing scope, monitoring, warranty process, and subsidy handling. If a vendor only gives a round number without engineering details, compare carefully. In coastal and semi-urban areas, the cheapest quote often hides compromises in structure coating, fasteners, DC cable, or after-sales support. Ask for previous installations nearby and verify whether the team can support you after commissioning, not just during installation.
+
+
+## Safe Quote Checklist
+
+Before paying an advance, ask the installer to write the panel brand, inverter model, structure type, cable brand, earthing scope, net-metering support, warranty process, and payment milestones on the quotation. A trustworthy proposal should make it clear what is included and what is excluded. If two quotes differ sharply, compare the hidden items first: structure coating, DC cable quality, monitoring, safety devices, and post-installation service.
 
 ---
 

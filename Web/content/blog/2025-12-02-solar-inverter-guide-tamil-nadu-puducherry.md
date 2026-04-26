@@ -1,13 +1,21 @@
 ---
-title: "Solar Inverter Price List Tamil Nadu (2025) - Microtek, Luminous, Solis"
-date: 2025-12-02
-excerpt: "On-grid vs Hybrid inverters – which is best for Cuddalore? Compare 2025 prices of top inverter brands like Solis, Growatt & Luminous."
-featuredImage: "/images/Blog 5.webp"
-category: "Solar Guide"
-author: "Surya's Solar Team"
-tags: ["Solar Inverter", "Hybrid Inverter", "Tamil Nadu Solar", "Puducherry Solar", "Solis", "SolaX"]
+title: 'Solar Inverter Price List Tamil Nadu (2025) - Microtek, Luminous, Solis'
+date: '2025-12-02'
+excerpt: >-
+  On-grid vs Hybrid inverters – which is best for Cuddalore? Compare 2025 prices
+  of top inverter brands like Solis, Growatt & Luminous.
+featuredImage: /images/Blog 5.webp
+category: Solar Guide
+author: Surya's Solar Team
+tags:
+  - Solar Inverter
+  - Hybrid Inverter
+  - Tamil Nadu Solar
+  - Puducherry Solar
+  - Solis
+  - SolaX
+updated: '2026-04-26'
 ---
-
 The solar inverter is often called the "brain" of your solar system. While panels generate the power, the inverter manages it. Choosing the wrong inverter can lead to lower generation, frequent breakdowns, and poor ROI on your investment.
 
 In the unique climate of **Tamil Nadu and Puducherry**, selecting an efficient MPPT inverter is crucial. For homeowners in districts like **Cuddalore and Panruti**, high-efficiency on-grid inverters are the standard. However, with occasional power cuts in **Puducherry**, the demand for hybrid inverters with battery backup is rising fast.
@@ -148,9 +156,12 @@ We take pride in our engineering quality. A great inverter is useless if install
 *   **Net-Metering:** We handle the full liaisoning with TNEB/PED to get your net meter installed and activated.
 *   **Support:** Our team covers the entire Cuddalore-Puducherry corridor for fast service.
 
----
 
-## Frequently Asked Questions (FAQs)
+## Related Solar Guides
+
+For a price-specific estimate, compare your monthly units with our [Solar Savings Calculator](/calc), then review the [3kW solar system with subsidy](/systems/3kw-solar-system-with-subsidy) and [5kW solar system cost](/systems/5kw-solar-system-with-subsidy) pages.
+
+---
 
 <!-- COMPONENT: FAQ_SECTION -->
 

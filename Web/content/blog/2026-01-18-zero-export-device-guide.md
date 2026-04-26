@@ -1,13 +1,23 @@
 ---
-title: "Zero Export Device (ZED): How to Use Solar Before TNEB Net Meter Arrives"
-date: 2026-01-18
-excerpt: "TNEB Net Meter approval can take 30-60 days. Don't let your investment sit idle. A Zero Export Device (ZED) lets you run your solar plant legally from Day 1. Detailed guide on CT Coils, DG Sync, and Installation."
-featuredImage: "/images/zero-export-device-guide.webp"
-category: "Technical Guides"
-author: "Surya's Solar Team"
-tags: ["Zero Export Device Price", "Solar Limiter", "Run Solar Without Net Meter", "TNEB Delay Solution", "Self Consumption Solar", "DG Sync Solar", "CT Coil Installation"]
+title: 'Zero Export Device (ZED): How to Use Solar Before TNEB Net Meter Arrives'
+date: '2026-01-18'
+excerpt: >-
+  TNEB Net Meter approval can take 30-60 days. Don't let your investment sit
+  idle. A Zero Export Device (ZED) lets you run your solar plant legally from
+  Day 1. Detailed guide on CT Coils, DG Sync, and Installation.
+featuredImage: /images/zero-export-device-guide.webp
+category: Technical Guides
+author: Surya's Solar Team
+tags:
+  - Zero Export Device Price
+  - Solar Limiter
+  - Run Solar Without Net Meter
+  - TNEB Delay Solution
+  - Self Consumption Solar
+  - DG Sync Solar
+  - CT Coil Installation
+updated: '2026-04-26'
 ---
-
 You paid ₹2 Lakhs for a Solar System. Installation is done. The panels are shining on the roof.
 But the TNEB Junior Engineer says: *"Sir, no Net Meters in stock. Wait 1 month."* or *"Sir, the local Transformer is overloaded, we cannot approve export yet."*
 
@@ -123,6 +133,21 @@ If you are buying a system today in 2026, ensure your inverter has **"Export Lim
 
 **Use Solar from Day 1.** Don't let bureaucracy pause your savings.
 
+
+
+## Local Decision Notes
+
+Zero export is useful when approval or meter timelines delay full net-metering operation. It lets the system serve local loads while preventing export to the grid. The tradeoff is that unused solar may be curtailed when home consumption is low. For this reason, zero export should be treated as a practical control feature, not a replacement for proper net-metering when credits and subsidy processes require it.
+
+
+## Best Use Case for Zero Export
+
+Zero export is most useful as a temporary or compliance-focused setup. It helps when the customer wants to start using solar but export approval or net-metering is pending. It is also useful for some commercial sites where export is not allowed. For homes, the best long-term savings usually come from proper net-metering because unused daytime generation can receive credit instead of being curtailed.
+
+
+## Design Caution
+
+A zero-export setup should be configured by someone who understands inverter settings and meter behavior. Incorrect configuration can either waste too much solar generation or accidentally export when export is not permitted. Always document the settings used during commissioning.
 
 ---
 

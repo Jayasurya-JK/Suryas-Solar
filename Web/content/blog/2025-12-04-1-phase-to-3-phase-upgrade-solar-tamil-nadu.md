@@ -1,13 +1,20 @@
 ---
-title: "Single Phase to 3-Phase Upgrade for Solar in Tamil Nadu - Cost & Rules"
-date: 2025-12-04
-excerpt: "Do you need 3-phase for 3kW solar? Understand TNEB rules, upgrade costs, and procedure for converting single phase to three phase service."
-featuredImage: "/images/1-Phase to 3-Phase Upgrade.webp"
-category: "Solar Guide"
-author: "Surya's Solar Team"
-tags: ["3-Phase Upgrade", "TNEB Rules", "Solar Installation", "Tamil Nadu Solar", "Puducherry Solar"]
+title: Single Phase to 3-Phase Upgrade for Solar in Tamil Nadu - Cost & Rules
+date: '2025-12-04'
+excerpt: >-
+  Do you need 3-phase for 3kW solar? Understand TNEB rules, upgrade costs, and
+  procedure for converting single phase to three phase service.
+featuredImage: /images/1-Phase to 3-Phase Upgrade.webp
+category: Solar Guide
+author: Surya's Solar Team
+tags:
+  - 3-Phase Upgrade
+  - TNEB Rules
+  - Solar Installation
+  - Tamil Nadu Solar
+  - Puducherry Solar
+updated: '2026-04-26'
 ---
-
 Many households in **Tamil Nadu** operate on a single-phase electricity connection. While this is sufficient for basic needs like lights, fans, and a TV, installing a larger solar system often requires an upgrade to a three-phase connection. This can be a point of confusion for homeowners planning to install a 3kW or 5kW system.
 
 TNEB (TANGEDCO) has specific rules regarding the maximum load allowed on a single-phase connection. Understanding these rules is crucial to avoid delays in your net-metering approval. At **Surya’s Solar**, we guide homeowners in **Cuddalore, Panruti, Neyveli, and Puducherry** through this process, ensuring a smooth transition to solar. This guide explains when an upgrade is mandatory, how much it costs, and the step-by-step process in 2025.
@@ -146,9 +153,12 @@ Use our Solar Calculator or book a free home assessment to know if upgrading fro
 
 <!-- COMPONENT: CONTACT_CTA -->
 
----
 
-## Frequently Asked Questions (FAQs)
+## Related Solar Guides
+
+For a price-specific estimate, compare your monthly units with our [Solar Savings Calculator](/calc), then review the [3kW solar system with subsidy](/systems/3kw-solar-system-with-subsidy) and [5kW solar system cost](/systems/5kw-solar-system-with-subsidy) pages.
+
+---
 
 <!-- COMPONENT: FAQ_SECTION -->
 

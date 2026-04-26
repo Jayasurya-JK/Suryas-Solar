@@ -1,13 +1,22 @@
 ---
-title: "Solar Shadow Analysis: Can I Install Panels Near Coconut Trees or Water Tanks?"
-date: 2026-01-12
-excerpt: "Shadow is the enemy of solar. But did you know that a shadow on just ONE panel can kill the power of the entire system? Learn about 2026 Half-Cut Cell technology and how we deal with Cuddalore's coconut tree problem."
-featuredImage: "/images/solar-shadow-analysis-guide-cuddalore.webp"
-category: "Technical Guides"
-author: "Surya's Solar Team"
-tags: ["Solar Shadow Loss", "Half Cut Solar Panels", "Bypass Diodes Explained", "Solar Panel Hotspots", "Cuddalore Solar Design", "Solar Pathfinder"]
+title: 'Solar Shadow Analysis: Can I Install Panels Near Coconut Trees or Water Tanks?'
+date: '2026-01-12'
+excerpt: >-
+  Shadow is the enemy of solar. But did you know that a shadow on just ONE panel
+  can kill the power of the entire system? Learn about 2026 Half-Cut Cell
+  technology and how we deal with Cuddalore's coconut tree problem.
+featuredImage: /images/solar-shadow-analysis-guide-cuddalore.webp
+category: Technical Guides
+author: Surya's Solar Team
+tags:
+  - Solar Shadow Loss
+  - Half Cut Solar Panels
+  - Bypass Diodes Explained
+  - Solar Panel Hotspots
+  - Cuddalore Solar Design
+  - Solar Pathfinder
+updated: '2026-04-26'
 ---
-
 "Sir, I have a big overhead water tank. Can we put panels next to it?"
 "Sir, my neighbor has a huge coconut tree. Will it affect generation?"
 
@@ -110,6 +119,11 @@ This is Cuddalore's unique problem. A neighbor's tree is 40ft tall.
 **Don't let a shadow steal your [ROI](/blog/2026-01-08-solar-roi-calculator-break-even-analysis).**
 We use simulation software to model your roof 365 days a year before we install.
 
+
+
+## Local Decision Notes
+
+A shadow check should be done at the actual roof, not guessed from the ground. Coconut trees, water tanks, dish antennas, nearby walls, and future construction can all affect generation. The key hours are roughly 10 AM to 3 PM, when solar output is most valuable. If shade is unavoidable, the design may need panel rearrangement, string separation, optimizers, or micro-inverters. A smaller shadow-free system can outperform a larger badly shaded system.
 
 ---
 

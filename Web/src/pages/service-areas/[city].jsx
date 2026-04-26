@@ -17,11 +17,11 @@ export default function LocationPage({ location, settings }) {
       <Head>
         <title>{location.title}</title>
         <meta name="description" content={location.description} />
-        <link rel="canonical" href={`https://suryassolar.com/service-areas/${location.name.toLowerCase()}`} />
+        <link rel="canonical" href={`https://www.suryassolar.com/service-areas/${location.name.toLowerCase()}`} />
         <meta property="og:title" content={location.title} />
         <meta property="og:description" content={location.description} />
-        <meta property="og:image" content="https://suryassolar.com/images/surya-solar-logo.webp" />
-        <meta property="og:url" content={`https://suryassolar.com/service-areas/${location.name.toLowerCase()}`} />
+        <meta property="og:image" content="https://www.suryassolar.com/images/surya-solar-logo.webp" />
+        <meta property="og:url" content={`https://www.suryassolar.com/service-areas/${location.name.toLowerCase()}`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -29,7 +29,7 @@ export default function LocationPage({ location, settings }) {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Surya's Solar",
-              "image": "https://suryassolar.com/logo.png",
+              "image": "https://www.suryassolar.com/logo.png",
               "description": location.description,
               "address": {
                 "@type": "PostalAddress",
@@ -40,7 +40,7 @@ export default function LocationPage({ location, settings }) {
               "telephone": "+917904369094",
               "areaServed": location.name,
               "priceRange": "₹₹",
-              "url": `https://suryassolar.com/service-areas/${location.name.toLowerCase()}`
+              "url": `https://www.suryassolar.com/service-areas/${location.name.toLowerCase()}`
             })
           }}
         />

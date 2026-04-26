@@ -1,13 +1,23 @@
 ---
-title: "Solar EMI & Loans in 2026: The Complete Financial Guide for Tamil Nadu"
-date: 2026-01-03
-excerpt: "Don't pay upfront. Learn how to finance your solar system in 2026. Compare deep-dive interest rates from SBI, Canara, and Union Bank. We illustrate how swapping your electricity bill for a Solar EMI creates positive cash flow from Day 1."
-featuredImage: "/images/solar-emi-loans-tamil-nadu-2026.webp"
-category: "Solar Finance"
-author: "Surya's Solar Team"
-tags: ["Solar Loan Tamil Nadu", "SBI Surya Ghar Loan", "Solar EMI Calculator", "Cuddalore Solar Finance", "Canara Bank Solar Loan", "Green Finance"]
+title: 'Solar EMI & Loans in 2026: The Complete Financial Guide for Tamil Nadu'
+date: '2026-01-03'
+excerpt: >-
+  Don't pay upfront. Learn how to finance your solar system in 2026. Compare
+  deep-dive interest rates from SBI, Canara, and Union Bank. We illustrate how
+  swapping your electricity bill for a Solar EMI creates positive cash flow from
+  Day 1.
+featuredImage: /images/solar-emi-loans-tamil-nadu-2026.webp
+category: Solar Finance
+author: Surya's Solar Team
+tags:
+  - Solar Loan Tamil Nadu
+  - SBI Surya Ghar Loan
+  - Solar EMI Calculator
+  - Cuddalore Solar Finance
+  - Canara Bank Solar Loan
+  - Green Finance
+updated: '2026-04-26'
 ---
-
 It is 2026. Solar panels are no longer a luxury "nice-to-have" gadget for the wealthy. They are a standard home utility, just like your water connection or internet.
 
 Yet, one barrier remains for many families in Cuddalore: **The Upfront Cost.**

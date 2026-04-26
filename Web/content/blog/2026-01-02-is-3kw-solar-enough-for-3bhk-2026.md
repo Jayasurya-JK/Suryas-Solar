@@ -1,13 +1,21 @@
 ---
-title: "Is 3kW Solar Enough for a 3BHK House in 2026? (Real TNEB Bill Analysis)"
-date: 2026-01-02
-excerpt: "The definitive 2026 analysis: Can a 3kW solar system truly run a 3BHK home with ACs? We break down the load calculation, TNEB slab rates, and generation data for Cuddalore to give you a clear 'Yes' or 'No'."
-featuredImage: "/images/is-3kw-solar-enough-for-3bhk-2026.webp"
-category: "Solar Education"
-author: "Surya's Solar Team"
-tags: ["3kW Solar System", "Solar Load Calculator", "TNEB Bill Savings", "Residential Solar Tamil Nadu", "Run AC on Solar"]
+title: Is 3kW Solar Enough for a 3BHK House in 2026? (Real TNEB Bill Analysis)
+date: '2026-01-02'
+excerpt: >-
+  The definitive 2026 analysis: Can a 3kW solar system truly run a 3BHK home
+  with ACs? We break down the load calculation, TNEB slab rates, and generation
+  data for Cuddalore to give you a clear 'Yes' or 'No'.
+featuredImage: /images/is-3kw-solar-enough-for-3bhk-2026.webp
+category: Solar Education
+author: Surya's Solar Team
+tags:
+  - 3kW Solar System
+  - Solar Load Calculator
+  - TNEB Bill Savings
+  - Residential Solar Tamil Nadu
+  - Run AC on Solar
+updated: '2026-04-26'
 ---
-
 "Sir, I have a standard 3BHK house—3 bedrooms, a hall, a kitchen. We have two ACs, a fridge, and a washing machine. Is a 3kW system enough, or will I regret not buying 5kW?"
 
 This is, without a doubt, the single most frequent question we receive at our Cuddalore office. And in **2026**, the answer is more important than ever because electricity consumption patterns are changing. Families now have larger refrigerators, more gadgets, and often, an Electric Scooter.

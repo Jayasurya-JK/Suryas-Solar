@@ -1,13 +1,20 @@
 ---
-title: "TNEB Net Metering Guide 2025 - How to Get Zero Electricity Bills"
-date: 2025-12-03
-excerpt: "Complete guide to TNEB & Puducherry Net Metering. Learn how to export excess power, earn credits, and reduce your electricity bill to zero."
-featuredImage: "/images/Net-Metering Guide.webp"
-category: "Solar Guide"
-author: "Surya's Solar Team"
-tags: ["Net Metering", "Solar Billing", "Tamil Nadu Solar", "Puducherry Solar", "TNEB"]
+title: TNEB Net Metering Guide 2025 - How to Get Zero Electricity Bills
+date: '2025-12-03'
+excerpt: >-
+  Complete guide to TNEB & Puducherry Net Metering. Learn how to export excess
+  power, earn credits, and reduce your electricity bill to zero.
+featuredImage: /images/Net-Metering Guide.webp
+category: Solar Guide
+author: Surya's Solar Team
+tags:
+  - Net Metering
+  - Solar Billing
+  - Tamil Nadu Solar
+  - Puducherry Solar
+  - TNEB
+updated: '2026-04-26'
 ---
-
 For most homeowners, the primary reason to install solar is to cut down on electricity bills. The mechanism that makes this possible is called **Net-Metering**. It allows you to "store" your excess solar power in the grid and use it when needed, effectively turning the electricity grid into a giant battery for your home.
 
 However, the rules and processes for net-metering differ between **Tamil Nadu (TNEB)** and **Puducherry (PED)**. With 2025 bringing new policy updates, it's crucial to understand how the system works to maximize your savings.
@@ -176,9 +183,12 @@ Avoid these pitfalls to ensure smooth net-metering.
 4.  **No Earthing:** TNEB will strictly reject the installation if earthing is poor or resistance is high.
 5.  **Not Checking Generation:** You must monitor your app to ensure the system is actually exporting. If the Wi-Fi disconnects, you might not know if the system is down.
 
----
 
-## Frequently Asked Questions (FAQs)
+## Related Solar Guides
+
+If AC usage is driving your bill, compare your monthly units in the [Solar Savings Calculator](/calc), then check whether a [3kW system](/systems/3kw-solar-system-with-subsidy) or [5kW system](/systems/5kw-solar-system-with-subsidy) is the better fit.
+
+---
 
 <!-- COMPONENT: FAQ_SECTION -->
 

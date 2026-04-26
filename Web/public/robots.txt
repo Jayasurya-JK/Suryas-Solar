@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://suryassolar.com/sitemap.xml
+Sitemap: https://www.suryassolar.com/sitemap.xml

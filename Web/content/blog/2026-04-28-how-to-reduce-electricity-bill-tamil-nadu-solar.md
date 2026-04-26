@@ -1,13 +1,34 @@
 ---
-title: "How to Reduce Your Electricity Bill in Tamil Nadu Using Solar Panels (2026)"
-date: "2026-04-28"
-author: "Surya's Solar Engineering Team"
-excerpt: "A comprehensive, data-backed guide on how to permanently reduce your TNEB electricity bill using rooftop solar. We cover net metering, slab avoidance, and true ROI."
-featuredImage: "/images/how-to-reduce-electricity-bill-tamil-nadu-solar.webp"
-category: "Energy Saving"
-tags: ["Electricity Bill", "Energy Saving", "Solar Subsidy", "Tamil Nadu", "Net Metering"]
+title: How to Reduce Your Electricity Bill in Tamil Nadu Using Solar Panels (2026)
+date: '2026-04-26'
+author: Surya's Solar Engineering Team
+excerpt: >-
+  A comprehensive, data-backed guide on how to permanently reduce your TNEB
+  electricity bill using rooftop solar. We cover net metering, slab avoidance,
+  and true ROI.
+featuredImage: /images/how-to-reduce-electricity-bill-tamil-nadu-solar.webp
+category: Energy Saving
+tags:
+  - Electricity Bill
+  - Energy Saving
+  - Solar Subsidy
+  - Tamil Nadu
+  - Net Metering
+updated: '2026-04-26'
+faqs:
+  - question: What is the fastest way to reduce a high electricity bill?
+    answer: >-
+      Start with AC temperature discipline, LED/fan efficiency, and then size
+      solar based on your average EB units, not only one peak bill.
+  - question: How much can solar reduce my bill?
+    answer: >-
+      A correctly sized on-grid system can offset a large share of daytime
+      consumption and reduce grid imports significantly.
+  - question: Should I choose 3kW or 5kW solar?
+    answer: >-
+      Choose 3kW for moderate homes and 5kW for higher AC usage, larger
+      families, or bills that regularly cross higher tariff slabs.
 ---
-
 If you live in Tamil Nadu—especially in coastal or industrial belts like Cuddalore, Puducherry, Panruti, and Neyveli—you are already intimately familiar with the brutal reality of the bi-monthly TNEB (Tamil Nadu Electricity Board) bill. 
 
 With soaring summer temperatures pushing air conditioners to run for 10 to 12 hours a day, residential electricity bills have skyrocketed. Homeowners are desperately searching online for "how to reduce EB bill" and trying everything from replacing old fans to turning off the refrigerator at night. 
@@ -176,3 +197,17 @@ Stop searching for generic tips on "how to reduce EB bill" by turning off your f
 If you live in Cuddalore, Puducherry, Panruti, Neyveli, or surrounding areas, it is time to turn your empty, sun-baked roof into a private power plant.
 
 **[Contact the engineering team at Surya's Solar today](/contact)** for a free, zero-obligation site feasibility check. We will analyze your past EB bills, measure your roof space, calculate your exact subsidy eligibility, and design a system that permanently eliminates your electricity bill.
+
+
+
+## Related Solar Guides
+
+If AC usage is driving your bill, compare your monthly units in the [Solar Savings Calculator](/calc), then check whether a [3kW system](/systems/3kw-solar-system-with-subsidy) or [5kW system](/systems/5kw-solar-system-with-subsidy) is the better fit.
+
+---
+
+<!-- COMPONENT: FAQ_SECTION -->
+
+---
+
+<!-- COMPONENT: CONTACT_CTA -->

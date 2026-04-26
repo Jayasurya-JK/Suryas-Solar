@@ -1,13 +1,23 @@
 ---
-title: "Solar Wire Quality: Why We Use Polycab/Siechem DC Cables (Fire Safety)"
-date: 2026-01-14
-excerpt: "Solar cables face 25 years of harsh UV sun and rain. Using cheap AC wires instead of specialized DC cables is the #1 cause of solar fires in India. Learn why 'Tinned Copper', 'XLPO Insulation', and UV Protection are non-negotiable for Cuddalore's climate."
-featuredImage: "/images/solar-dc-cable-quality-guide.webp"
-category: "Technical Guides"
-author: "Surya's Solar Team"
-tags: ["Polycab Solar Wire", "Siechem DC Cable", "Solar Fire Safety", "Tinned Copper vs Bare Copper", "UV Protected Solar Cable", "MC4 Connector Quality"]
+title: 'Solar Wire Quality: Why We Use Polycab/Siechem DC Cables (Fire Safety)'
+date: '2026-01-14'
+excerpt: >-
+  Solar cables face 25 years of harsh UV sun and rain. Using cheap AC wires
+  instead of specialized DC cables is the #1 cause of solar fires in India.
+  Learn why 'Tinned Copper', 'XLPO Insulation', and UV Protection are
+  non-negotiable for Cuddalore's climate.
+featuredImage: /images/solar-dc-cable-quality-guide.webp
+category: Technical Guides
+author: Surya's Solar Team
+tags:
+  - Polycab Solar Wire
+  - Siechem DC Cable
+  - Solar Fire Safety
+  - Tinned Copper vs Bare Copper
+  - UV Protected Solar Cable
+  - MC4 Connector Quality
+updated: '2026-04-26'
 ---
-
 Solar Panels generate **DC (Direct Current)**.
 The grid in your house is **AC (Alternating Current)**.
 You cannot use normal house wire (flexible PVC wire) for solar panels.

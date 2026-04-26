@@ -1,13 +1,20 @@
 ---
-title: "Best Solar Structure for Coastal Tamil Nadu: GI vs Hot-Dip Galvanized"
-date: 2025-12-02
-excerpt: "Don't let your solar structure rust! Compare GI vs Hot-Dip Galvanized structures for Cuddalore & Puducherry. Essential guide for coastal homes."
-featuredImage: "/images/Rooftop Structure Types.webp"
-category: "Solar Guide"
-author: "Surya's Solar Team"
-tags: ["Solar Structure", "Mounting System", "Tamil Nadu Solar", "Puducherry Solar", "Hot-Dip Galvanized"]
+title: 'Best Solar Structure for Coastal Tamil Nadu: GI vs Hot-Dip Galvanized'
+date: '2025-12-02'
+excerpt: >-
+  Don't let your solar structure rust! Compare GI vs Hot-Dip Galvanized
+  structures for Cuddalore & Puducherry. Essential guide for coastal homes.
+featuredImage: /images/Rooftop Structure Types.webp
+category: Solar Guide
+author: Surya's Solar Team
+tags:
+  - Solar Structure
+  - Mounting System
+  - Tamil Nadu Solar
+  - Puducherry Solar
+  - Hot-Dip Galvanized
+updated: '2026-04-26'
 ---
-
 When installing solar panels, most homeowners focus on the panels and inverters. However, the **mounting structure** is the backbone of your entire solar system. It ensures stability, safety, and longevity. A weak structure can lead to panel damage during cyclones or rust issues that compromise the entire setup within a few years.
 
 In **Tamil Nadu and Puducherry**, homes face unique challenges—strong sun, coastal winds, and high humidity. The quality of your structure directly affects the life of your panels and your warranty. Many homeowners get confused between GI, Hot-Dip, clamp-based, and rail-less options.
@@ -152,9 +159,12 @@ We don't compromise on the bones of your system.
 *   **Wire Routing:** Cables are routed neatly through UV-protected conduits, not left hanging loose.
 *   **Guarantee:** We offer a **20-year structural safety guarantee**.
 
----
 
-## Frequently Asked Questions (FAQs)
+## Related Solar Guides
+
+For the next step, compare your estimated savings with our [Solar Savings Calculator](/calc), review the [3kW solar system with subsidy](/systems/3kw-solar-system-with-subsidy), and book a [free site visit](/contact) for a roof-specific quote.
+
+---
 
 <!-- COMPONENT: FAQ_SECTION -->
 
