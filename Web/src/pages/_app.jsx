@@ -1,6 +1,7 @@
 import Script from 'next/script'
 import Head from 'next/head'
 import { Playfair_Display } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 import '../styles/globals.css'
 import BookingPopup from '../components/BookingPopup'
 
@@ -33,6 +34,7 @@ export default function App({ Component, pageProps }) {
 
       <Component {...pageProps} />
       <BookingPopup />
+      <Analytics />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 ---
-title: 3kW Solar System Price in India
+title: 3kW Solar Price in Tamil Nadu 2026 (Units, Cost, Payback)
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-

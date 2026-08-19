@@ -45,25 +45,27 @@ function generateSitemap() {
             const fileNames = fs.readdirSync(blogDirectory);
             blogPosts = fileNames
                 .filter(fileName => fileName.endsWith('.md'))
-                .map(fileName => {
+                .flatMap((fileName) => {
                     const slug = fileName.replace(/\.md$/, '');
                     const filePath = path.join(blogDirectory, fileName);
-                    const fileContents = fs.readFileSync(filePath, 'utf8');
-                    const { data } = matter(fileContents);
+                    try {
+                        const fileContents = fs.readFileSync(filePath, 'utf8');
+                        const { data } = matter(fileContents);
 
-                    let dateStr = today;
-                    if (data.date) {
-                        try {
-                            dateStr = new Date(data.date).toISOString().split('T')[0];
-                        } catch (e) {
-                            console.warn(`Invalid date for ${slug}, using today.`);
+                        let dateStr = today;
+                        if (data.date) {
+                            try {
+                                dateStr = new Date(data.date).toISOString().split('T')[0];
+                            } catch (e) {
+                                console.warn(`Invalid date for ${slug}, using today.`);
+                            }
                         }
-                    }
 
-                    return {
-                        slug,
-                        date: dateStr
-                    };
+                        return [{ slug, date: dateStr }];
+                    } catch (err) {
+                        console.warn(`Skipping ${slug}: ${err.message}`);
+                        return [];
+                    }
                 });
         }
     } catch (error) {

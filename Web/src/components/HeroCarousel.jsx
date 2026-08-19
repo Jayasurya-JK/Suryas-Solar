@@ -30,7 +30,7 @@ const slides = [
     imageMobile: '/images/Banner_2_mobile.webp',
     imageMobileWebP: '/images/Banner_2_mobile.webp',
     headline: 'Trusted by Cuddalore Families for Clean, Reliable Solar',
-    subhead: '25-year warranty. 50+ happy homes powered by the sun.',
+    subhead: '25-year warranty. 100+ happy homes powered by the sun.',
     primaryCTA: { text: 'Book Free Home Visit', href: '#booking' },
     secondaryCTA: { text: 'Get a Quote', href: '#booking' },
   },

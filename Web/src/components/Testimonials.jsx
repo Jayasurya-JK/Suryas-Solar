@@ -54,7 +54,7 @@ export default function Testimonials() {
             What Our Customers Say
           </h2>
           <p className="text-lg text-gray-600">
-            Join 50+ happy families powering their homes with solar
+            Join 100+ happy families powering their homes with solar
           </p>
         </div>
 

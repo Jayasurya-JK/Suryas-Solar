@@ -99,7 +99,7 @@ export default function Home({ content, settings }) {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5",
-      "reviewCount": "50"
+      "reviewCount": "100"
     }
   }
 
@@ -107,7 +107,7 @@ export default function Home({ content, settings }) {
     <>
       <Head>
         <title>{settings.siteTitle || "Surya's Solar - Cuddalore’s trusted residential solar expert"}</title>
-        <meta name="description" content={settings.siteDescription || "Surya's Solar: Cuddalore's #1 Residential Solar Installer. Get max subsidy under PM Surya Ghar Yojana. Recognized Tata Power & Adani Partner. Book Free Visit!"} />
+        <meta name="description" content={settings.siteDescription || "Rooftop solar in Cuddalore: 100+ homes, 400+ kW installed. PM Surya Ghar subsidy + free home visit. TATA partner. Book today."} />
         <meta name="keywords" content={settings.siteKeywords || "solar panel Cuddalore, residential solar, rooftop solar"} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -165,6 +165,29 @@ export default function Home({ content, settings }) {
         <SolarCalculator />
         <WhyChoose />
         <Testimonials testimonials={content.testimonials} />
+
+        <section className="bg-slate-50 py-12 md:py-16 border-t border-gray-100">
+          <div className="container-custom max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center md:text-left">Solar guides, prices, and service areas</h2>
+            <p className="text-gray-600 mb-8 text-sm md:text-base">
+              Start with these pages if you are comparing a 3kW or 5kW rooftop system, checking PM Surya Ghar subsidy, or booking an install in Cuddalore, Puducherry, Panruti, or Neyveli.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm md:text-base">
+              <a className="text-primary font-semibold hover:underline" href="/systems/3kw-solar-system-with-subsidy">3kW solar price in Tamil Nadu (after subsidy)</a>
+              <a className="text-primary font-semibold hover:underline" href="/systems/5kw-solar-system-with-subsidy">5kW solar system with subsidy</a>
+              <a className="text-primary font-semibold hover:underline" href="/service-areas/cuddalore">Solar installation in Cuddalore</a>
+              <a className="text-primary font-semibold hover:underline" href="/service-areas/puducherry">Solar installation in Puducherry</a>
+              <a className="text-primary font-semibold hover:underline" href="/service-areas/panruti">Solar installation in Panruti</a>
+              <a className="text-primary font-semibold hover:underline" href="/service-areas/neyveli">Solar installation in Neyveli</a>
+              <a className="text-primary font-semibold hover:underline" href="/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry">PM Surya Ghar subsidy 2026 (TN + Puducherry)</a>
+              <a className="text-primary font-semibold hover:underline" href="/blog/2026-04-30-how-to-calculate-eb-bill-tamil-nadu-examples">How to calculate your TN EB bill (200 free units)</a>
+              <a className="text-primary font-semibold hover:underline" href="/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide">Solar cost in Puducherry 2026</a>
+              <a className="text-primary font-semibold hover:underline" href="/blog/2025-12-03-3kw-vs-5kw-solar-system-comparison">3kW vs 5kW: which size for your home</a>
+              <a className="text-primary font-semibold hover:underline" href="/calc">Solar savings calculator</a>
+              <a className="text-primary font-semibold hover:underline" href="/blog">All solar blog guides</a>
+            </div>
+          </div>
+        </section>
         
         {/* SEO Text Block to increase Text-to-HTML ratio */}
         <section className="bg-white py-16 border-t border-gray-100">

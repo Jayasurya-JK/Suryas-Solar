@@ -43,11 +43,14 @@ To understand your high bill, you must first understand how TNEB charges you for
 
 Electricity is billed bi-monthly (once every two months). Let's look at the standard domestic tariff slabs (as of recent revisions):
 
-*   **0 to 100 Units:** Free (₹0)
-*   **101 to 400 Units:** ₹4.50 per unit
+*   **0 to 200 Units (if bi-monthly use is 500 or less):** Free (₹0) from 10 May 2026
+*   **0 to 100 Units (if you cross 500):** Free (₹0)
+*   **101/201 to 400 Units:** ₹4.50 per unit *(see your bill)*
 *   **401 to 500 Units:** ₹6.00 per unit
 
-If your bi-monthly consumption stays strictly under 500 units, your bill remains highly subsidized. However, the moment your household consumes **501 units**, you fall off a financial cliff. 
+If your bi-monthly consumption stays strictly under 500 units, you keep the extra free slab. The moment your household consumes **501 units**, you lose the extra 100 free units *and* you fall off the high-slab cliff.
+
+There was **no TNEB tariff hike announced for 2026**. High July–August bills were widely reported as usage spikes and meter/reading issues (TNPDCL ordered reinspections), not a new unit rate. 
 
 Once you cross 500 units, the subsidy heavily drops, and the pricing structure completely shifts:
 

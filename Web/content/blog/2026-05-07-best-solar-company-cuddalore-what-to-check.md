@@ -1,5 +1,5 @@
 ---
-title: Best Solar Company in Cuddalore
+title: Best Solar Company in Cuddalore 2026 — What to Check Before You Book
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-

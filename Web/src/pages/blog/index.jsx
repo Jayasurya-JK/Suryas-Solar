@@ -10,8 +10,8 @@ export default function BlogIndex({ posts, settings }) {
   return (
     <>
       <Head>
-        <title>Solar Energy Blog | Surya's Solar</title>
-        <meta name="description" content="Expert Solar Guides: Price breakdowns, 3kW vs 5kW comparisons, PM Surya Ghar subsidy details, and maintenance tips for Cuddalore homeowners." />
+        <title>Solar Blog 2026: TN EB Bill, Subsidy and Price Guides | Surya's Solar</title>
+        <meta name="description" content="Tamil Nadu solar guides: 200-unit free EB rules, PM Surya Ghar subsidy, 3kW vs 5kW cost, and Cuddalore–Puducherry install tips." />
         <link rel="canonical" href="https://www.suryassolar.com/blog" />
       </Head>
       <Header settings={settings} />
@@ -26,6 +26,13 @@ export default function BlogIndex({ posts, settings }) {
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Latest insights, tips, and updates about solar energy in Cuddalore and beyond
             </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold text-primary">
+              <Link href="/blog/2026-04-30-how-to-calculate-eb-bill-tamil-nadu-examples" className="hover:underline">TN EB bill 2026</Link>
+              <Link href="/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry" className="hover:underline">PM Surya Ghar subsidy</Link>
+              <Link href="/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide" className="hover:underline">Puducherry solar cost</Link>
+              <Link href="/blog/2025-12-03-3kw-vs-5kw-solar-system-comparison" className="hover:underline">3kW vs 5kW</Link>
+              <Link href="/systems/3kw-solar-system-with-subsidy" className="hover:underline">3kW system page</Link>
+            </div>
           </div>
 
           {/* Blog Grid */}

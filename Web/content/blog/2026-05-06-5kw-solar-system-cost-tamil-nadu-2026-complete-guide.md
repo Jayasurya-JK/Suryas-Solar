@@ -1,5 +1,5 @@
 ---
-title: 5kW Solar System Cost in Tamil Nadu
+title: 5kW Solar System Cost in Tamil Nadu 2026 (Complete Price Guide)
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-

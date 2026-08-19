@@ -1,5 +1,5 @@
 ---
-title: TNEB Net Metering Guide 2025 - How to Get Zero Electricity Bills
+title: TNEB / TNPDCL Net Metering Guide 2026 — Zero-Bill Homes
 date: '2025-12-03'
 excerpt: >-
   Complete guide to TNEB & Puducherry Net Metering. Learn how to export excess

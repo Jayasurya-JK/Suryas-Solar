@@ -77,8 +77,8 @@ export default function ThreeKwPage({ settings }) {
   return (
     <>
       <Head>
-        <title>3kW Solar Panel System Price in Tamil Nadu (With ₹78,000 Subsidy)</title>
-        <meta name="description" content="Get the complete breakdown of a 3kW solar system price in Tamil Nadu. Claim the maximum ₹78,000 PM Surya Ghar Subsidy. Perfect for 2BHK homes. Free site visit." />
+        <title>3kW Solar Price in Tamil Nadu 2026 (Net After Subsidy)</title>
+        <meta name="description" content="3kW rooftop solar in Tamil Nadu: typical net cost after PM Surya Ghar (₹78,000) plus announced state top-up. 12–15 units/day. Free Cuddalore site visit." />
         <link rel="canonical" href="https://www.suryassolar.com/systems/3kw-solar-system-with-subsidy" />
         <meta property="og:title" content="3kW Solar Panel System Price in Tamil Nadu (With Subsidy)" />
         <meta property="og:description" content="Get the complete breakdown of a 3kW solar system price in Tamil Nadu. Claim the ₹78,000 PM Surya Ghar Subsidy. Perfect for 2BHK homes." />

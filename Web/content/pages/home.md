@@ -21,7 +21,7 @@ heroSlides:
       href: "#contact"
   
   - headline: "Trusted by Cuddalore Families for Clean, Reliable Solar"
-    subhead: "25-year warranty. 50+ happy homes powered by the sun."
+    subhead: "25-year warranty. 100+ happy homes powered by the sun."
     image: "/images/hero-slide-3.webp"
     primaryCTA:
       text: "Book Free Home Visit"
@@ -31,10 +31,10 @@ heroSlides:
       href: "#contact"
 
 stats:
-  - value: "100 kW+"
+  - value: "400+ kW"
     label: "Installations"
     icon: "bolt"
-  - value: "50+"
+  - value: "100+"
     label: "Happy Homes"
     icon: "home"
   - value: "25 Years"

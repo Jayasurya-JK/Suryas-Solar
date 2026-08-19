@@ -1,5 +1,5 @@
 ---
-title: How to Calculate Your EB Bill in Tamil Nadu (With 2026 Math Examples)
+title: 'TN EB Bill 2026: 200 Free Units vs the 500-Unit Cliff'
 date: '2026-04-26'
 author: Surya's Solar Technical Team
 excerpt: >-
@@ -12,7 +12,7 @@ tags:
   - Tamil Nadu
   - TNEB Tariffs
   - Engineering Guide
-updated: '2026-04-26'
+updated: '2026-08-19'
 faqs:
   - question: How do I calculate my Tamil Nadu EB bill?
     answer: >-
@@ -27,13 +27,15 @@ faqs:
       Yes. Solar reduces imported units, which can help keep consumption away
       from the most expensive slab levels.
 ---
-For millions of residents across Tamil Nadu-from Chennai and Puducherry to Cuddalore and Coimbatore-the arrival of the bi-monthly TNEB (Tamil Nadu Generation and Distribution Corporation) electricity bill is often a moment of confusion. 
+For millions of residents across Tamil Nadu-from Chennai and Puducherry to Cuddalore and Coimbatore-the arrival of the bi-monthly TNEB / TNPDCL electricity bill is often a moment of confusion. 
 
-You look at the total "Units Consumed" and you look at the "Total Amount Due." But how did 650 units turn into a massive ₹4,300 bill? Why did your neighbor, who consumed 450 units, only pay ₹1,100? 
+You look at the total "Units Consumed" and you look at the "Total Amount Due." But how did 650 units turn into a massive ₹4,300 bill? Why did your neighbor, who consumed 450 units, only pay a fraction of that?
+
+**2026 policy update (from 10 May 2026):** domestic consumers whose *bi-monthly* use is **500 units or less** now get **200 units free** (earlier this was 100). If you cross **500 units**, the free benefit stays **100 units**. Energy Minister C.T.R. Nirmalkumar also said there is **no CPI tariff hike this year**—so a sudden July bill spike is usually more AC use or a meter/reading issue, not a secret rate increase. Always match the numbers on your actual TNPDCL bill.
 
 The math never seems to add up if you try to multiply your units by a single, flat rate. This is because TNEB does not use a flat rate; it uses a highly complex "Telescopic Tariff Slab" system. 
 
-If you are searching for *"EB bill calculation Tamil Nadu"*, you are likely frustrated with a recent high bill. In this comprehensive, 1,500+ word technical guide, we will pull back the curtain on TNEB's billing algorithms. We will provide exact, step-by-step mathematical examples so you can audit your own bill, spot errors, and understand exactly when it makes financial sense to switch to rooftop solar power.
+If you are searching for *"EB bill calculation Tamil Nadu"*, you are likely frustrated with a recent high bill. In this guide we walk through the slabs, the 200-vs-100 free-unit split, and when rooftop solar still pays even after extra free power.
 
 ---
 
@@ -49,13 +51,13 @@ If you consume 499 units, your entire bill benefits from heavy subsidies. The ex
 
 Here are the official TNEB domestic tariff slabs (approximate rates as of recent revisions for residential homes, billed bi-monthly):
 
-### Scenario A: If total consumption is UP TO 500 Units:
-*   **0 to 100 Units:** ₹0.00 (Free)
-*   **101 to 400 Units:** ₹4.50 per unit
+### Scenario A: If total consumption is UP TO 500 Units (200 units free from May 2026):
+*   **0 to 200 Units:** ₹0.00 (Free)
+*   **201 to 400 Units:** ₹4.50 per unit *(confirm on your bill)*
 *   **401 to 500 Units:** ₹6.00 per unit
 
 ### Scenario B: If total consumption crosses 500 Units (501 Units and above):
-*   **0 to 100 Units:** ₹0.00 (Free)
+*   **0 to 100 Units:** ₹0.00 (Free — the extra 100 free units do **not** apply above 500)
 *   **101 to 400 Units:** ₹4.50 per unit *(Subsidy heavily reduced)*
 *   **401 to 500 Units:** ₹6.00 per unit
 *   **501 to 600 Units:** ₹8.00 per unit
@@ -73,21 +75,21 @@ Let's assume it is the winter season. You run fans and a refrigerator, but no he
 
 Because 350 is strictly under the 500-unit threshold, we use the heavily subsidized Scenario A slabs.
 
-**Step 1: The Free Slab (0 - 100)**
-*   The first 100 units are totally free.
-*   100 units × ₹0.00 = **₹0**
-*   Remaining units to calculate: 350 - 100 = 250 units.
+**Step 1: The Free Slab (0 - 200)**
+*   The first 200 units are totally free (≤500 unit bi-monthly homes, from May 2026).
+*   200 units × ₹0.00 = **₹0**
+*   Remaining units to calculate: 350 - 200 = 150 units.
 
-**Step 2: The Second Slab (101 - 400)**
-*   The remaining 250 units fall completely into the ₹4.50 slab.
-*   250 units × ₹4.50 = **₹1,125**
+**Step 2: The Second Slab (201 - 400)**
+*   The remaining 150 units fall completely into the ₹4.50 slab.
+*   150 units × ₹4.50 = **₹675**
 
 **Final Math:**
-*   Total Unit Charges: ₹0 + ₹1,125 = ₹1,125.
+*   Total Unit Charges: ₹0 + ₹675 = ₹675.
 *   Add Fixed Charge: ~₹100
-*   **Total EB Bill: ₹1,225.**
+*   **Total EB Bill: about ₹775.**
 
-You consumed a respectable 350 units and paid a very affordable ₹1,225. 
+You consumed a respectable 350 units and stayed in the subsidized zone with 200 free units. 
 
 ---
 
@@ -97,23 +99,23 @@ It is early summer. You start running one AC for a few hours a night. Your bi-mo
 
 You are still strictly under the 500-unit cliff, so we continue using Scenario A.
 
-**Step 1: The Free Slab (0 - 100)**
-*   100 units × ₹0.00 = **₹0**
-*   Remaining units to calculate: 480 - 100 = 380 units.
+**Step 1: The Free Slab (0 - 200)**
+*   200 units × ₹0.00 = **₹0**
+*   Remaining units to calculate: 480 - 200 = 280 units.
 
-**Step 2: The Second Slab (101 - 400)**
-*   This slab maxes out at 300 units (from 101 up to 400).
-*   300 units × ₹4.50 = **₹1,350**
-*   Remaining units to calculate: 380 - 300 = 80 units.
+**Step 2: The Second Slab (201 - 400)**
+*   This slab covers 200 units (201 up to 400).
+*   200 units × ₹4.50 = **₹900**
+*   Remaining units to calculate: 280 - 200 = 80 units.
 
 **Step 3: The Third Slab (401 - 500)**
 *   The remaining 80 units fall into the ₹6.00 slab.
 *   80 units × ₹6.00 = **₹480**
 
 **Final Math:**
-*   Total Unit Charges: ₹0 + ₹1,350 + ₹480 = ₹1,830.
+*   Total Unit Charges: ₹0 + ₹900 + ₹480 = ₹1,380.
 *   Add Fixed Charge: ~₹100
-*   **Total EB Bill: ₹1,930.**
+*   **Total EB Bill: about ₹1,480.**
 
 This is the absolute maximum limit of the subsidized "safe zone."
 
@@ -154,9 +156,9 @@ Because you crossed the 500-unit threshold, you lose the deep subsidies. We must
 *   **Total EB Bill: ₹4,250.**
 
 ### The Harsh Reality Check:
-*   In Example 2, you used **480 units** and paid **₹1,930.**
+*   In Example 2, you used **480 units** and paid about **₹1,480.**
 *   In Example 3, you used **750 units** and paid **₹4,250.**
-*   You only used roughly 50% more electricity, but your bill increased by a staggering **120%.** This is why TNEB bills feel so brutally unfair during the summer.
+*   Crossing 500 units drops you from 200 free units to 100 free units *and* into high slabs. That is why AC-heavy summers still hurt.
 
 ---
 

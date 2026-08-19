@@ -1,5 +1,5 @@
 ---
-title: 3kW vs 5kW Solar System - Which is Best for Your Home? (2025)
+title: 3kW vs 5kW Solar in Tamil Nadu 2026 — Which Size Fits Your Bill
 date: '2025-12-03'
 excerpt: >-
   Confused between 3kW and 5kW? Compare generation, cost, and AC running

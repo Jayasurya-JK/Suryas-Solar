@@ -1,5 +1,5 @@
 ---
-title: Solar Cost in Puducherry 2026
+title: 'Solar Cost in Puducherry 2026: 1kW, 3kW, 5kW After Subsidy'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-

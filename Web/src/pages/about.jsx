@@ -85,8 +85,8 @@ export default function AboutPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
             ),
-            title: '100kW+ Installations',
-            description: 'Successfully installed over 100kW across 50+ happy homes'
+            title: '400+ kW Installations',
+            description: 'Successfully installed over 400 kW across 100+ happy homes'
         },
         {
             icon: (
@@ -105,7 +105,7 @@ export default function AboutPage() {
                 <title>About Us - Surya's Solar | Cuddalore’s trusted residential solar expert</title>
                 <meta
                     name="description"
-                    content="10+ Years Experience & 100kW+ Installed. We are Cuddalore's authorized solar experts. Partners with Tata Power, Waaree & Adani. See our completed projects."
+                    content="10+ Years Experience & 400+ kW Installed. We are Cuddalore's authorized solar experts. Partners with Tata Power, Waaree & Adani. See our completed projects."
                 />
                 <meta name="keywords" content="solar company Cuddalore, TATA solar partner, PM Surya Ghar vendor, residential solar expert" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -116,7 +116,7 @@ export default function AboutPage() {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.suryassolar.com/about" />
                 <meta property="og:title" content="About Surya's Solar - Cuddalore’s trusted residential solar expert" />
-                <meta property="og:description" content="10+ years of experience, 100kW+ installations, Official TATA Power Solaroof Partner" />
+                <meta property="og:description" content="10+ years of experience, 400+ kW installations, Official TATA Power Solaroof Partner" />
                 <meta property="og:image" content="https://www.suryassolar.com/images/og-home.webp" />
 
                 {/* Twitter */}
@@ -154,10 +154,10 @@ export default function AboutPage() {
                                     🏆 TATA Partner
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm px-3 py-2 md:px-6 md:py-3 rounded-full border border-white/20">
-                                    ⚡ 100kW+ Installed
+                                    ⚡ 400+ kW Installed
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm px-3 py-2 md:px-6 md:py-3 rounded-full border border-white/20">
-                                    🏠 50+ Homes
+                                    🏠 100+ Homes
                                 </div>
                             </div>
                         </div>
@@ -176,7 +176,7 @@ export default function AboutPage() {
                                     Since our inception over a decade ago, <strong>Surya's Solar</strong> has been at the forefront of the solar revolution in Cuddalore. We started with a simple mission: to make clean, affordable solar energy accessible to every home in our community.
                                 </p>
                                 <p className="text-sm md:text-lg mb-4 md:mb-6">
-                                    Today, we're proud to be <strong>Cuddalore’s trusted residential solar expert</strong>, having successfully installed over <strong>100kW of solar capacity</strong> across <strong>50+ happy homes</strong>. Our journey from a small local installer to an <strong>Official Partner of TATA Power Solaroof</strong> and an <strong>Official Vendor of PM Surya Ghar Muft Bijli Yojana</strong> reflects our commitment to excellence and customer satisfaction.
+                                    Today, we're proud to be <strong>Cuddalore’s trusted residential solar expert</strong>, having successfully installed over <strong>400 kW of solar capacity</strong> across <strong>100+ happy homes</strong>. Our journey from a small local installer to an <strong>Official Partner of TATA Power Solaroof</strong> and an <strong>Official Vendor of PM Surya Ghar Muft Bijli Yojana</strong> reflects our commitment to excellence and customer satisfaction.
                                 </p>
                                 <p className="text-sm md:text-lg">
                                     What sets us apart is our <strong>specialized expertise in residential rooftop solar installations</strong>. We don't just install solar panels – we partner with homeowners to create customized energy solutions that maximize savings, minimize environmental impact, and provide energy independence for decades to come.
@@ -362,7 +362,7 @@ export default function AboutPage() {
                                 Ready to Go Solar?
                             </h2>
                             <p className="text-base md:text-xl mb-8 md:mb-12 text-blue-100">
-                                Join 50+ happy homeowners who've made the switch to clean energy
+                                Join 100+ happy homeowners who've made the switch to clean energy
                             </p>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12">

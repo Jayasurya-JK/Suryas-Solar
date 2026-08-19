@@ -1,5 +1,5 @@
 ---
-title: 'PM Surya Ghar Subsidy Tamil Nadu (2025) - Claim ₹78,000 | Step-by-Step'
+title: 'PM Surya Ghar + TN Solar Subsidy 2026: Claim up to ₹1 Lakh'
 date: '2025-12-02'
 excerpt: >-
   Apply for PM Surya Ghar Yojana in Tamil Nadu. Get ₹78,000 subsidy for 3kW
@@ -15,9 +15,9 @@ tags:
   - Free Electricity
 updated: '2026-04-26'
 ---
-The **PM Surya Ghar: Muft Bijli Yojana** is a revolutionary government scheme designed to make solar power accessible to every household in India. In 2025, the subsidy amount has been significantly increased, making it the perfect time for homeowners in **Tamil Nadu and Puducherry** to switch to solar.
+The **PM Surya Ghar: Muft Bijli Yojana** is the central rooftop-solar subsidy for homes. In 2026 it still pays up to **₹78,000** for a 3kW+ system (credited after commissioning). Tamil Nadu’s 2026–27 Budget also announced a **state rooftop solar top-up** so combined support can reach about **₹1 lakh** for eligible domestic consumers (TNPDCL sources have cited about ₹22,000 state + ₹78,000 central for a typical 3kW). Confirm the live amount on [pmsuryaghar.gov.in](https://pmsuryaghar.gov.in) and the TNPDCL USRP portal before you pay.
 
-Lakhs of families across Tamil Nadu, including districts like **Cuddalore, Panruti, and Neyveli**, are already applying for this scheme to slash their electricity bills and secure their energy future. With the subsidy covering a massive portion of the installation cost, the payback period for a solar system has dropped to an all-time low.
+Lakhs of families across Tamil Nadu, including districts like **Cuddalore, Panruti, and Neyveli**, are already applying for this scheme to slash their electricity bills and secure their energy future.
 
 At **Surya’s Solar**, we don't just install panels; we guide you through the entire process-from application to subsidy release-ensuring a hassle-free experience. This guide explains everything you need to know about eligibility, documents, and the step-by-step application process for 2025.
 

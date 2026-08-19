@@ -1,0 +1,20 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "suryassolar.com" }],
+      "destination": "https://www.suryassolar.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2025-12-07-rooftop-solar-structure-types-tamil-nadu",
+      "destination": "/blog/2025-12-02-rooftop-solar-structure-types-tamil-nadu",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2025-12-11-solar-myths-vs-facts-tamil-nadu",
+      "destination": "/blog/2025-12-04-solar-myths-vs-facts-tamil-nadu",
+      "permanent": true
+    }
+  ]
+}

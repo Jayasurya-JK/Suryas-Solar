@@ -4,8 +4,22 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // REDIRECTS REMOVED: Hosting provider handles www/HTTPS at server level
-  // Adding redirects here created a loop (ERR_TOO_MANY_REDIRECTS)
+  // Host/www redirects stay at Cloudflare (or Vercel domain settings), not here.
+  // Next.js host redirects previously looped with Cloudflare "Flexible" SSL.
+  async redirects() {
+    return [
+      {
+        source: '/blog/2025-12-07-rooftop-solar-structure-types-tamil-nadu',
+        destination: '/blog/2025-12-02-rooftop-solar-structure-types-tamil-nadu',
+        permanent: true,
+      },
+      {
+        source: '/blog/2025-12-11-solar-myths-vs-facts-tamil-nadu',
+        destination: '/blog/2025-12-04-solar-myths-vs-facts-tamil-nadu',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {

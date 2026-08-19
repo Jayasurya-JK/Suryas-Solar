@@ -140,7 +140,7 @@ Why do these myths persist?
 We believe in honesty. We don't sell you a system; we sell you a solution.
 
 *   **MNRE-Approved:** We follow all government standards and use only approved components (DCR panels).
-*   **Experience:** 50+ successful installations in the Cuddalore-Puducherry region.
+*   **Experience:** 100+ successful installations in the Cuddalore-Puducherry region.
 *   **Accuracy:** We give realistic generation predictions, not false promises of "zero bills" if your usage is high.
 *   **Full Service:** From rooftop assessment to subsidy release, we are with you every step of the way.
 
