@@ -163,6 +163,8 @@ For a price-specific estimate, compare your monthly units with our [Solar Saving
 
 ---
 
+**Choosing an on-grid inverter?** Read [best on-grid solar inverter in India 2026: how to choose](/blog/2026-10-17-best-on-grid-solar-inverter-india).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

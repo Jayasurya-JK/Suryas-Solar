@@ -189,6 +189,7 @@ For the next step, compare your estimated savings with our [Solar Savings Calcul
 *   [Does solar work on cloudy days?](/blog/2026-10-17-does-solar-work-on-cloudy-days-tamil-nadu)
 *   [3kW solar: units per day, price and payback](/blog/2026-05-05-3kw-solar-system-price-india-how-many-units-cost)
 *   [5kW solar: units per day and month](/blog/2026-10-17-5kw-solar-panel-units-per-day-month-tamil-nadu)
+*   [10kW solar: price, units and who needs it](/blog/2026-10-17-10kw-solar-system-price-units-tamil-nadu)
 *   [Solar output in rain and cyclones](/blog/2026-10-17-solar-panels-rain-cyclone-cuddalore-monsoon-guide)
 
 <!-- COMPONENT: CONTACT_CTA -->

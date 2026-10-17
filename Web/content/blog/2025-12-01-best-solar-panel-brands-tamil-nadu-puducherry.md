@@ -174,6 +174,8 @@ For the next step, compare your estimated savings with our [Solar Savings Calcul
 *   [Premier vs Adani solar panel: which is better?](/blog/2026-10-17-premier-vs-adani-solar-panel-which-is-better)
 *   [Premier vs Waaree solar panel: which is better?](/blog/2026-10-17-premier-vs-waaree-solar-panel-which-is-better)
 *   [Tata Power Solar panel: price and review](/blog/2026-10-17-tata-power-solar-panel-price-review-tamil-nadu)
+*   [Waaree vs Adani vs Tata solar panel](/blog/2026-10-17-waaree-vs-adani-vs-tata-solar-panel-comparison)
+*   [Exide solar panel and battery review](/blog/2026-10-17-exide-solar-panel-battery-review-tamil-nadu)
 
 <!-- COMPONENT: FAQ_SECTION -->
 

@@ -137,7 +137,7 @@ For homes well above 500 units, these help but solar is what really changes the 
 
 ## With the ₹1 Lakh Subsidy, the Math Is Better Than Ever
 
-A 3kW system now gets up to **₹1,00,000** in subsidy (₹78,000 PM Surya Ghar + ₹22,000 Tamil Nadu top-up for eligible homes). For a 2BHK home with one AC paying about ₹1,500-2,000 a month on average across the year, the payback can drop to roughly **3-4 years**. Details: [₹1 lakh solar subsidy in Tamil Nadu](/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry).
+A 3kW system now gets up to **₹1,00,000** in subsidy (₹78,000 PM Surya Ghar + ₹22,000 Tamil Nadu top-up for eligible homes). For a 2BHK home with one AC paying about ₹1,500-2,000 a month on average across the year, the payback is roughly **4-5 years**, and faster for bigger bills. See the full math in [solar payback after ₹1 lakh subsidy](/blog/2026-10-17-solar-payback-after-1-lakh-subsidy-tamil-nadu). Details: [₹1 lakh solar subsidy in Tamil Nadu](/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry).
 
 <!-- COMPONENT: FAQ_SECTION -->
 

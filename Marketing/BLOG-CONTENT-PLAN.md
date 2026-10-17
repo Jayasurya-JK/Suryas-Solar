@@ -111,9 +111,15 @@ cost in Tamil Nadu, 3kW price, 5kW cost, Puducherry cost (central only), ROI/pay
 | 7 | published | 2026-10-17 | /blog/2026-10-17-2kw-solar-system-units-per-day-price-subsidy | | | photo 4 |
 | 8 | published | 2026-10-17 | /blog/2026-10-17-does-solar-work-on-cloudy-days-tamil-nadu | | | photo 8 |
 | 9 | published | 2026-10-17 | /blog/2026-10-17-tata-power-solar-panel-price-review-tamil-nadu | | | partner disclosure included |
-| 10 | waiting | | | | | needs owner: which Exide products we install |
+| 10 | published | 2026-10-17 | /blog/2026-10-17-exide-solar-panel-battery-review-tamil-nadu | | | generic: panels + batteries (owner) |
 | 11 | published | 2026-10-17 | /blog/2026-10-17-average-electricity-bill-tamil-nadu-by-home-size | | | slab rates = site's existing figures |
 | 12 | published | 2026-10-17 | /blog/2026-10-17-solar-terms-in-tamil-on-grid-off-grid-meaning | | | owner to check Tamil wording |
-| 13-30 | planned | | | | | #29 dropped (owner: rooftop only) - replace with a rooftop topic |
+| 13 | published | 2026-10-17 | /blog/2026-10-17-solar-payback-after-1-lakh-subsidy-tamil-nadu | | | slab-based payback by bill size |
+| 14 | published | 2026-10-17 | /blog/2026-10-17-10kw-solar-system-price-units-tamil-nadu | | | |
+| 15 | published | 2026-10-17 | /blog/2026-10-17-best-on-grid-solar-inverter-india | | | grouped brands, not a fake ranking |
+| 16 | published | 2026-10-17 | /blog/2026-10-17-why-eb-bill-high-chennai-causes-fixes | | | states service area honestly |
+| 17 | published | 2026-10-17 | /blog/2026-10-17-waaree-vs-adani-vs-tata-solar-panel-comparison | | | |
+| 18, 24, 30 | waiting | | | | | case studies need owner bill numbers |
+| 19-29 | planned | | | | | #29 dropped (rooftop only) - replace with a rooftop topic |
 
 **Refresh queue:** 15 Jan-2026 posts are under the 1,000-word minimum (check_posts.js warnings) - expand with real follow-up sections during Sprints 3-5.

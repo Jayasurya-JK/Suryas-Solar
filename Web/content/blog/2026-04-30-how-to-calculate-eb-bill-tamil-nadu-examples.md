@@ -224,6 +224,8 @@ With the massive financial incentives offered under the central government's **P
 
 **Is your bill normal?** Compare it with the [average electricity bill in Tamil Nadu by home size](/blog/2026-10-17-average-electricity-bill-tamil-nadu-by-home-size).
 
+**Living in Chennai?** Read [why your EB bill is high in Chennai: 9 causes and fixes](/blog/2026-10-17-why-eb-bill-high-chennai-causes-fixes).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

@@ -142,6 +142,8 @@ We are an **official partner of TATA Power Solar and Exide**, with 10+ years in 
 
 **Deadline check:** read [PM Surya Ghar last date 2027: is the scheme ending?](/blog/2026-10-17-pm-surya-ghar-last-date-2027-scheme-ending)
 
+**Is it worth it for your bill?** See [solar payback after the ₹1 lakh subsidy](/blog/2026-10-17-solar-payback-after-1-lakh-subsidy-tamil-nadu).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

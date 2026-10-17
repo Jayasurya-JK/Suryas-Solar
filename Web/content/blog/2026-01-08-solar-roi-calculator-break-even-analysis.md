@@ -156,6 +156,8 @@ A good ROI estimate should use units, not only rupees. Two homes with the same b
 
 ---
 
+**Updated for 2026:** with the new ₹1 lakh subsidy, see [solar payback after ₹1 lakh subsidy: Tamil Nadu math by bill size](/blog/2026-10-17-solar-payback-after-1-lakh-subsidy-tamil-nadu).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ## Related Articles
