@@ -182,6 +182,13 @@ For the next step, compare your estimated savings with our [Solar Savings Calcul
 
 **Surya’s Solar** provides free rooftop assessment across Tamil Nadu & Puducherry to calculate your generation and savings accurately. We use advanced software to predict your exact output.
 
+## Detailed Guides by System Size
+
+*   [1kW solar: how many units per day](/blog/2026-10-17-1kw-solar-panel-how-many-units-per-day)
+*   [3kW solar: units per day, price and payback](/blog/2026-05-05-3kw-solar-system-price-india-how-many-units-cost)
+*   [5kW solar: units per day and month](/blog/2026-10-17-5kw-solar-panel-units-per-day-month-tamil-nadu)
+*   [Solar output in rain and cyclones](/blog/2026-10-17-solar-panels-rain-cyclone-cuddalore-monsoon-guide)
+
 <!-- COMPONENT: CONTACT_CTA -->
 
 ---

@@ -62,6 +62,8 @@ What we are not: the cheapest quote. Our content should teach buyers *why cheap 
 
 ## 6. Content calendar (next 8 weeks)
 
+> Superseded by the full 30-post plan in **BLOG-CONTENT-PLAN.md** (17 Oct 2026). The table below is kept for history.
+
 Priority = search demand seen in Search Console + business value. One primary keyword per post (check `Web/BLOG-AUTHORING.md` Keyword Intent Map).
 
 | # | Post / page | Type | Why |

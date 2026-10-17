@@ -140,6 +140,8 @@ We are an **official partner of TATA Power Solar and Exide**, with 10+ years in 
 *   [Solar EMI and loans in Tamil Nadu](/blog/2026-01-03-solar-emi-loans-tamil-nadu-2026)
 *   [Solar installation in Cuddalore](/service-areas/cuddalore)
 
+**Deadline check:** read [PM Surya Ghar last date 2027: is the scheme ending?](/blog/2026-10-17-pm-surya-ghar-last-date-2027-scheme-ending)
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

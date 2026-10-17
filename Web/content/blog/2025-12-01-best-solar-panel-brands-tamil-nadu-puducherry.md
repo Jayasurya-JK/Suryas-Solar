@@ -169,6 +169,11 @@ For the next step, compare your estimated savings with our [Solar Savings Calcul
 
 ---
 
+## Head-to-Head Brand Comparisons
+
+*   [Premier vs Adani solar panel: which is better?](/blog/2026-10-17-premier-vs-adani-solar-panel-which-is-better)
+*   [Premier vs Waaree solar panel: which is better?](/blog/2026-10-17-premier-vs-waaree-solar-panel-which-is-better)
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---
