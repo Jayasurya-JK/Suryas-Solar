@@ -23,6 +23,8 @@ export default function Header() {
         { name: 'Puducherry', href: '/service-areas/puducherry' },
         { name: 'Panruti', href: '/service-areas/panruti' },
         { name: 'Neyveli', href: '/service-areas/neyveli' },
+        { name: 'Chidambaram', href: '/service-areas/chidambaram' },
+        { name: 'Villupuram', href: '/service-areas/villupuram' },
       ],
     },
     {
@@ -48,6 +50,8 @@ export default function Header() {
         { name: 'Puducherry', href: '/service-areas/puducherry' },
         { name: 'Panruti', href: '/service-areas/panruti' },
         { name: 'Neyveli', href: '/service-areas/neyveli' },
+        { name: 'Chidambaram', href: '/service-areas/chidambaram' },
+        { name: 'Villupuram', href: '/service-areas/villupuram' },
       ],
     },
     {

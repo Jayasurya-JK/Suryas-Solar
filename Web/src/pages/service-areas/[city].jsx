@@ -7,11 +7,28 @@ import BookingForm from '../../components/BookingForm'
 import SubsidyEligibilityChecker from '../../components/SubsidyEligibilityChecker'
 import WhatsAppFloat from '../../components/WhatsAppFloat'
 import CountUp from 'react-countup'
-import { getAllLocations, getLocationData } from '../../lib/locationsData'
+import { getAllLocations, getLocationData, locationsData } from '../../lib/locationsData'
+
+const NAMES = Object.fromEntries(Object.entries(locationsData).map(([slug, l]) => [slug, l.name]))
+
+// Market averages, Oct 2026 (same figures as the blog price list)
+const PRICE_ROWS = [
+  { kw: '1kW', price: '₹70,000 - ₹80,000', subsidyTN: '₹35,000', subsidyPY: '₹30,000', netTN: '₹35,000 - ₹45,000', netPY: '₹40,000 - ₹50,000', units: '4 - 5' },
+  { kw: '2kW', price: '₹1.3 - 1.45 lakh', subsidyTN: '₹70,000', subsidyPY: '₹60,000', netTN: '₹60,000 - ₹75,000', netPY: '₹70,000 - ₹85,000', units: '8 - 10' },
+  { kw: '3kW', price: '₹1.8 - 2.1 lakh', subsidyTN: '₹1,00,000', subsidyPY: '₹78,000', netTN: '₹80,000 - ₹1,10,000', netPY: '₹1 - 1.3 lakh', units: '12 - 15' },
+  { kw: '5kW', price: '₹3.0 - 3.3 lakh', subsidyTN: '₹1,00,000', subsidyPY: '₹78,000', netTN: '₹2.0 - 2.3 lakh', netPY: '₹2.2 - 2.5 lakh', units: '20 - 25' },
+]
 import { getSiteSettings } from '../../lib/content'
 
 export default function LocationPage({ location, settings }) {
   if (!location) return null
+  const isPY = location.region === 'PY'
+  const pageUrl = `https://www.suryassolar.com/service-areas/${location.name.toLowerCase()}`
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: location.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  }
 
   return (
     <>
@@ -27,24 +44,28 @@ export default function LocationPage({ location, settings }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "Surya's Solar",
-              "image": "https://www.suryassolar.com/logo.png",
-              "description": location.description,
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": location.name,
-                "addressRegion": "TN",
-                "addressCountry": "IN"
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              '@id': 'https://www.suryassolar.com/#business',
+              name: "Surya's Solar",
+              image: 'https://www.suryassolar.com/images/Banner_1_desktop.webp',
+              url: pageUrl,
+              telephone: '+917904369094',
+              priceRange: '₹₹',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'No.33, Sri Gokul Enterprises Building, Nellikuppam Main Rd, Chavadi, Kondur',
+                addressLocality: 'Cuddalore',
+                addressRegion: 'Tamil Nadu',
+                postalCode: '607006',
+                addressCountry: 'IN',
               },
-              "telephone": "+917904369094",
-              "areaServed": location.name,
-              "priceRange": "₹₹",
-              "url": `https://www.suryassolar.com/service-areas/${location.name.toLowerCase()}`
-            })
+              areaServed: [location.name, ...location.areas].map((n) => ({ '@type': 'Place', name: n })),
+              aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '45' },
+            }),
           }}
         />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
 
       <Header settings={settings} />
@@ -126,8 +147,8 @@ export default function LocationPage({ location, settings }) {
               <div className="flex flex-wrap items-center gap-6 mt-10">
                 {[
                   { icon: '✦', text: '10+ Years Experience' },
-                  { icon: '✦', text: 'TNEB Approved Vendor' },
-                  { icon: '✦', text: 'PM Surya Ghar Certified' },
+                  { icon: '✦', text: isPY ? 'PED Net Meter Handled' : 'TNEB Net Meter Handled' },
+                  { icon: '✦', text: 'Registered PM Surya Ghar Vendor' },
                 ].map(t => (
                   <div key={t.text} className="flex items-center gap-2 text-sm text-blue-300/80">
                     <span className="text-solar-orange text-xs">{t.icon}</span>
@@ -154,11 +175,11 @@ export default function LocationPage({ location, settings }) {
                   Icon: () => <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
                 },
                 {
-                  val: <CountUp end={50} suffix="+" duration={2.5} enableScrollSpy scrollSpyOnce />, sub: `Homes in ${location.name}`, color: 'text-green-600',
+                  val: <CountUp end={122} duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'PM Surya Ghar Installs', color: 'text-green-600',
                   Icon: () => <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 22V12h6v10" /></svg>
                 },
                 {
-                  val: <CountUp end={78} prefix="₹" suffix="K" duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'Max Govt Subsidy', color: 'text-indigo-600',
+                  val: isPY ? <CountUp end={78} prefix="₹" suffix="K" duration={2.5} enableScrollSpy scrollSpyOnce /> : <CountUp end={1} prefix="₹" suffix=" Lakh" duration={1} enableScrollSpy scrollSpyOnce />, sub: 'Max Subsidy', color: 'text-indigo-600',
                   Icon: () => <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 },
                 {
@@ -174,6 +195,103 @@ export default function LocationPage({ location, settings }) {
               ))}
 
             </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════
+            TOWN INTRO
+        ══════════════════════════════════════════════ */}
+        <section className="pt-20 md:pt-24 pb-8">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 grid lg:grid-cols-[1.6fr_1fr] gap-10 lg:gap-14 items-start">
+            <div>
+              <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Solar in {location.name}</span>
+              <h2 className="mt-3 text-3xl md:text-4xl font-playfair font-bold text-gray-900 leading-tight">
+                What {location.name} Homeowners Should Know
+              </h2>
+              <div className="mt-6 space-y-4 text-gray-600 text-lg leading-relaxed">
+                {location.intro.map((p, i) => <p key={i}>{p}</p>)}
+              </div>
+            </div>
+            <aside className="bg-slate-50 border border-slate-200 rounded-3xl p-6 lg:sticky lg:top-32">
+              <p className="text-sm font-bold text-gray-900 mb-4">{location.name} at a glance</p>
+              <dl className="divide-y divide-slate-200 text-sm">
+                {[
+                  ['Max subsidy', isPY ? 'Up to ₹78,000 (central)' : 'Up to ₹1,00,000 (₹78,000 + ₹22,000 TN)'],
+                  ['Net meter by', isPY ? 'Electricity Department, Puducherry (PED)' : 'TNEB / TNPDCL'],
+                  ['3kW makes', '12 - 15 units a day'],
+                  ['3kW price', isPY ? '₹1 - 1.3 lakh after subsidy' : '₹80,000 - ₹1,10,000 after subsidy'],
+                  ['Process', 'About 6 - 10 weeks end to end'],
+                ].map(([k, v]) => (
+                  <div key={k} className="py-3 flex justify-between gap-4">
+                    <dt className="text-gray-500">{k}</dt>
+                    <dd className="font-semibold text-gray-900 text-right">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-4 text-xs text-gray-500 leading-relaxed">{location.distance}</p>
+            </aside>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════
+            LOCAL CONDITIONS
+        ══════════════════════════════════════════════ */}
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              Designed for <span className="text-primary">{location.name}</span> Conditions
+            </h2>
+            <div className="grid md:grid-cols-3 gap-5">
+              {location.conditions.map((c, i) => (
+                <div key={c.title} className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                  <span className="w-10 h-10 rounded-xl bg-primary-50 text-primary flex items-center justify-center font-black">{i + 1}</span>
+                  <h3 className="mt-4 text-lg font-bold text-gray-900">{c.title}</h3>
+                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">{c.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════
+            PRICE TABLE
+        ══════════════════════════════════════════════ */}
+        <section className="py-12">
+          <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Solar Price in {location.name} <span className="text-primary">(2026)</span>
+            </h2>
+            <p className="mt-2 text-gray-600">On-grid systems with DCR panels. Market averages as of October 2026, not our quotes; your exact price comes after a free site visit.</p>
+            <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+              <table className="w-full text-left text-sm md:text-base bg-white">
+                <thead className="bg-slate-50 text-gray-700">
+                  <tr>
+                    <th className="px-4 py-3 font-semibold">System</th>
+                    <th className="px-4 py-3 font-semibold">Installed price</th>
+                    <th className="px-4 py-3 font-semibold">Subsidy</th>
+                    <th className="px-4 py-3 font-semibold">You pay (approx.)</th>
+                    <th className="px-4 py-3 font-semibold">Units / day</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {PRICE_ROWS.map((r) => (
+                    <tr key={r.kw} className={r.kw === '3kW' ? 'bg-primary-50/50' : ''}>
+                      <td className="px-4 py-3 font-bold text-gray-900">{r.kw}</td>
+                      <td className="px-4 py-3 text-gray-700">{r.price}</td>
+                      <td className="px-4 py-3 text-green-700 font-semibold">{isPY ? r.subsidyPY : r.subsidyTN}</td>
+                      <td className="px-4 py-3 font-semibold text-gray-900">{isPY ? r.netPY : r.netTN}</td>
+                      <td className="px-4 py-3 text-gray-700">{r.units}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-sm text-gray-500">
+              {isPY
+                ? 'Puducherry homes get the central PM Surya Ghar subsidy only; the ₹22,000 Tamil Nadu top-up does not apply.'
+                : 'TN top-up applies to eligible domestic consumers registered on PM Surya Ghar from 5 Aug 2026, reportedly limited to the first 1 lakh homes.'}{' '}
+              Full price list: <Link href="/blog/2026-10-17-solar-panel-price-list-tamil-nadu-by-brand" className="text-primary font-medium hover:underline">solar panel price list 2026</Link>.
+            </p>
           </div>
         </section>
 
@@ -198,7 +316,7 @@ export default function LocationPage({ location, settings }) {
                 </h2>
 
                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                  Installing solar in {location.name} is not a one-size-fits-all job. Our local engineers know the specific grid conditions, roof types, and TNEB processes in this district - making your installation smooth and hassle-free.
+                  Installing solar in {location.name} is not a one-size-fits-all job. Our engineers know the local grid conditions, roof types and {isPY ? 'PED' : 'TNEB'} processes - making your installation smooth and hassle-free.
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -261,7 +379,7 @@ export default function LocationPage({ location, settings }) {
                 Choose Your Solar System
               </h2>
               <p className="text-gray-500 mt-3 text-base max-w-lg mx-auto">
-                {location.name === 'Puducherry'
+                {isPY
                   ? 'Both qualify for the PM Surya Ghar subsidy of up to ₹78,000'
                   : 'Both qualify for up to ₹1 lakh subsidy (₹78,000 PM Surya Ghar + ₹22,000 TN top-up)'}
               </p>
@@ -274,8 +392,8 @@ export default function LocationPage({ location, settings }) {
                   badge: 'Perfect for 2BHK',
                   badgeBg: 'bg-primary',
                   href: '/systems/3kw-solar-system-with-subsidy',
-                  price: '~₹1,10,000',
-                  savings: '₹3,500/month',
+                  price: isPY ? '₹1 - 1.3 lakh' : '₹80,000 - ₹1,10,000',
+                  savings: '₹2,000 - 2,500/month',
                   units: '12–15 units/day',
                   ac: '1 AC supported',
                   gradient: 'from-primary-900 to-primary-700',
@@ -285,8 +403,8 @@ export default function LocationPage({ location, settings }) {
                   badge: 'Best Seller',
                   badgeBg: 'bg-orange-500',
                   href: '/systems/5kw-solar-system-with-subsidy',
-                  price: '~₹2,40,000',
-                  savings: '₹6,000/month',
+                  price: isPY ? '₹2.2 - 2.5 lakh' : '₹2.0 - 2.3 lakh',
+                  savings: '₹3,500 - 4,500/month',
                   units: '20–25 units/day',
                   ac: '2 ACs supported',
                   gradient: 'from-[#1a1a2e] to-[#16213e]',
@@ -353,6 +471,106 @@ export default function LocationPage({ location, settings }) {
               </p>
             </div>
             <SubsidyEligibilityChecker town={location.name} source={`Town page: ${location.name}`} />
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════
+            PROCESS STEPS
+        ══════════════════════════════════════════════ */}
+        <section className="py-16 md:py-20 bg-slate-50">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                How Solar Works in <span className="text-primary">{location.name}</span>
+              </h2>
+              <p className="mt-3 text-gray-600">From first call to subsidy in your bank, about 6-10 weeks. We handle the paperwork at every step.</p>
+            </div>
+            <ol className="grid md:grid-cols-5 gap-4">
+              {[
+                ['Free site visit', 'Roof, shade and bill check; written quote within days.'],
+                ['Portal registration', 'We help you apply on the PM Surya Ghar portal with your EB consumer number.'],
+                [isPY ? 'PED approval' : 'TNEB approval', isPY ? 'Electricity Department, Puducherry reviews feasibility.' : 'Your TNEB section office checks feasibility and sanctioned load.'],
+                ['Installation', '1-3 days on site: structure, panels, inverter, earthing.'],
+                ['Net meter + subsidy', isPY ? 'PED inspects and fixes the net meter; central subsidy follows.' : 'TNEB fixes the net meter; subsidy is credited to your bank.'],
+              ].map(([t, d], i) => (
+                <li key={t} className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+                  <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">{i + 1}</span>
+                  <h3 className="mt-3 font-bold text-gray-900">{t}</h3>
+                  <p className="mt-1 text-sm text-gray-600 leading-relaxed">{d}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════
+            FAQ
+        ══════════════════════════════════════════════ */}
+        <section className="py-16 md:py-20">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8">
+              Solar in {location.name}: <span className="text-primary">FAQs</span>
+            </h2>
+            <div className="space-y-3">
+              {location.faqs.map((f) => (
+                <details key={f.q} className="group bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                  <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between gap-4">
+                    {f.q}
+                    <span className="text-primary text-xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                  </summary>
+                  <p className="mt-3 text-gray-600 leading-relaxed">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════
+            AREAS + NEARBY TOWNS + GUIDES
+        ══════════════════════════════════════════════ */}
+        <section className="pb-16 md:pb-20">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 grid lg:grid-cols-3 gap-5">
+            <div className="bg-white rounded-2xl border border-slate-200 p-6">
+              <h2 className="text-lg font-bold text-gray-900">Areas we cover around {location.name}</h2>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {location.areas.map((a) => (
+                  <span key={a} className="px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-sm text-gray-700">{a}</span>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl border border-slate-200 p-6">
+              <h2 className="text-lg font-bold text-gray-900">Nearby towns we serve</h2>
+              <ul className="mt-3 divide-y divide-slate-100">
+                {location.nearby.map((slug) => (
+                  <li key={slug}>
+                    <Link href={`/service-areas/${slug}`} className="flex justify-between items-center py-2.5 text-gray-700 hover:text-primary">
+                      <span>Solar in {NAMES[slug]}</span>
+                      <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl border border-slate-200 p-6">
+              <h2 className="text-lg font-bold text-gray-900">Helpful guides</h2>
+              <ul className="mt-3 divide-y divide-slate-100">
+                {[
+                  isPY
+                    ? ['Solar cost in Puducherry 2026', '/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide']
+                    : ['₹1 lakh solar subsidy in Tamil Nadu', '/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry'],
+                  ['How to compare solar quotations', '/blog/2026-10-17-how-to-compare-solar-quotations-checklist'],
+                  ['Solar installation timeline', '/blog/2026-10-17-solar-installation-timeline-booking-to-net-meter'],
+                  ['Solar savings calculator', '/calc'],
+                ].map(([label, href]) => (
+                  <li key={href}>
+                    <Link href={href} className="flex justify-between items-center py-2.5 text-gray-700 hover:text-primary">
+                      <span>{label}</span>
+                      <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 

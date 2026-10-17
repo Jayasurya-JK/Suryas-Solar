@@ -26,6 +26,8 @@ const serviceAreaPages = [
     { url: '/service-areas/puducherry', changefreq: 'monthly', priority: 0.85 },
     { url: '/service-areas/panruti', changefreq: 'monthly', priority: 0.8 },
     { url: '/service-areas/neyveli', changefreq: 'monthly', priority: 0.8 },
+    { url: '/service-areas/chidambaram', changefreq: 'monthly', priority: 0.8 },
+    { url: '/service-areas/villupuram', changefreq: 'monthly', priority: 0.8 },
 ];
 
 const systemPages = [

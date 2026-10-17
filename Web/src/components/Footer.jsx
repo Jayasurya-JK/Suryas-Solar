@@ -56,8 +56,8 @@ export default function Footer() {
     { name: 'Puducherry (Pondicherry)', href: '/service-areas/puducherry' },
     { name: 'Neyveli Township', href: '/service-areas/neyveli' },
     { name: 'Panruti', href: '/service-areas/panruti' },
-    { name: 'Chidambaram' },
-    { name: 'Villupuram' },
+    { name: 'Chidambaram', href: '/service-areas/chidambaram' },
+    { name: 'Villupuram', href: '/service-areas/villupuram' },
   ]
 
   const socialLinks = [
