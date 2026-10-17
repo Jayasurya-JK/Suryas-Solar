@@ -24,11 +24,12 @@ Use these values verbatim. If a task needs a fact that is not here, ASK the owne
 | Also served (no page yet) | Chidambaram, Nellikuppam, Villupuram region |
 
 ## Stats and proof
-- Official PM Surya Ghar portal (vendor page, Oct 2026): **registered vendor for Cuddalore district**, **122 installations, 420 kWp, rating 5/5 from 149 ratings**. Contact on portal: Jayakumar P. Portal lists "Brand name: EXIDE SUNDAY SOLAR SOLUTIONS" - relationship not yet confirmed by owner; do not publish that brand name until confirmed.
+- Official PM Surya Ghar portal (vendor page, Oct 2026): **registered vendor for Cuddalore district**, **122 installations, 420 kWp, rating 5/5 from 149 ratings**. Contact on portal: Jayakumar P. Portal lists "Brand name: EXIDE SUNDAY SOLAR SOLUTIONS".
+- **Official partners (owner-confirmed 17 Oct 2026): TATA Power Solar and Exide (Exide Sunday Solar Solutions).** 10+ years experience is accurate.
 - Site copy uses "100+ homes, 400+ kW" (still true) and "120+ homes, 420 kW" (homepage meta). 25-year panel warranty.
 - Google Business Profile: 5.0 from 45 reviews.
 
-## Prices (from `src/pages/systems/*.jsx` - the current published numbers)
+## Typical market prices (from `src/pages/systems/*.jsx` - market averages, NOT our quotes)
 | System | Before subsidy | After PM Surya Ghar | Bill it suits |
 |---|---|---|---|
 | 3kW on-grid | ₹1,80,000 - ₹2,00,000 | ~₹1,10,000 | ₹1,500 - ₹3,500/month |
@@ -50,7 +51,7 @@ Generation rule of thumb used on site: 1kW ≈ 4-5 units/day in Tamil Nadu (3kW 
 
 **Owner's strategy (Oct 2026):** use subsidy urgency (central scheme ends Mar 2027, TN top-up capped) to drive walk-ins and bookings.
 
-**Price inconsistency to resolve with owner:** 3kW post says ₹1.27-1.89 lakh and 11-14 units/day; 3kW page says ₹1.8-2.0 lakh and 12-15 units/day. Site pages after both subsidies: 3kW ~₹88,000, 5kW ~₹2,18,000.
+**Prices on the site are MARKET AVERAGES, not Surya's Solar quotes (owner, 17 Oct 2026).** Always word them as "typical market price" and push to "free site visit for your exact written quote". Never write "our price is ...". Site after-subsidy figures: 3kW ~₹88,000, 5kW ~₹2,18,000 (market average minus ₹1 lakh).
 
 ## Differentiators the site already claims
 "Engineering first": 3 earthing pits, UV-rated DC cables, 80-micron hot-dip galvanized structures (rust-proof for coastal Cuddalore), Tier-1 ALMM panels, TNEB net-meter and PED (Puducherry) paperwork handled.

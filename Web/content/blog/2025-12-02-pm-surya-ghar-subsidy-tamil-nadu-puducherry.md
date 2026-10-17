@@ -68,7 +68,7 @@ Both subsidies stop growing at 3kW. A 5kW system still gets ₹1 lakh in total; 
 
 ### What does a 3kW system cost after ₹1 lakh subsidy?
 
-Our typical 3kW on-grid price in Cuddalore is **₹1,80,000 - ₹2,00,000** before subsidy (final price depends on roof, structure height and panel brand). After the full ₹1 lakh comes back to your account, your **real cost is roughly ₹80,000 - ₹1,00,000** for a system that makes about **12-15 units a day** for 25 years. See the [3kW solar system with subsidy](/systems/3kw-solar-system-with-subsidy) page for the full breakdown.
+The typical market price of a 3kW on-grid system in Tamil Nadu is around **₹1,80,000 - ₹2,00,000** before subsidy (it depends on roof, structure height and panel brand). After the full ₹1 lakh comes back to your account, the **real cost is roughly ₹80,000 - ₹1,00,000** for a system that makes about **12-15 units a day** for 25 years. For your exact price, book a free site visit and we will give you a written quote. See the [3kW solar system with subsidy](/systems/3kw-solar-system-with-subsidy) page for the full breakdown.
 
 <!-- COMPONENT: SOLAR_CALCULATOR -->
 
@@ -126,7 +126,7 @@ Surya's Solar is a **registered vendor on the official PM Surya Ghar portal** fo
 *   **420 kWp** total installed capacity
 *   **5/5 rating from 149 customer ratings**
 
-Plus a **5.0 rating from 45 Google reviews**. We handle registration, documents, installation, TNEB liaison and subsidy follow-up from our office in Kondur, Cuddalore, and serve Cuddalore, Panruti, Neyveli, Chidambaram and Puducherry.
+We are an **official partner of TATA Power Solar and Exide**, with 10+ years in solar and a **5.0 rating from 45 Google reviews**. We handle registration, documents, installation, TNEB liaison and subsidy follow-up from our office in Kondur, Cuddalore, and serve Cuddalore, Panruti, Neyveli, Chidambaram and Puducherry.
 
 **Puducherry homes:** the ₹22,000 top-up is a Tamil Nadu scheme, so it does not apply in Puducherry. You still get the central subsidy of up to ₹78,000 through PED. See our [Puducherry solar cost guide](/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide).
 

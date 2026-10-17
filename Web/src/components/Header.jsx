@@ -71,6 +71,23 @@ export default function Header() {
       ════════════════════════════════════════════════ */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
 
+        {/* ── Subsidy campaign banner (fixed height h-9; matching spacer below the header) ── */}
+        <Link
+          href="/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry"
+          className="block h-9 bg-primary-900 text-white hover:bg-primary-800 transition-colors"
+        >
+          <div className="max-w-7xl mx-auto h-full px-4 flex items-center justify-center gap-2 text-[0.78rem] sm:text-sm font-medium whitespace-nowrap overflow-hidden">
+            <span className="hidden sm:inline">
+              Get up to <strong className="text-yellow-300">₹1 lakh solar subsidy</strong> (₹78,000 + ₹22,000 TN top-up) - limited to the first 1 lakh Tamil Nadu homes.
+            </span>
+            <span className="sm:hidden">
+              <strong className="text-yellow-300">₹1 lakh solar subsidy</strong> - limited homes
+            </span>
+            <span className="font-bold text-yellow-300 underline underline-offset-2">
+              <span className="hidden sm:inline">Check eligibility</span><span className="sm:hidden">Check</span> &rarr;
+            </span>
+          </div>
+        </Link>
 
         {/* ── Main nav bar ── */}
 
@@ -192,6 +209,9 @@ export default function Header() {
           </div>
         </div>
       </header>
+
+      {/* Spacer equal to the banner height so the fixed banner never covers page content */}
+      <div className="h-9" aria-hidden="true" />
 
       {/* ════════════════════════════════════════════════
           MOBILE DRAWER

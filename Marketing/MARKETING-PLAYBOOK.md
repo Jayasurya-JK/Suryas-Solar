@@ -101,9 +101,13 @@ Owner generates images with Gemini (Nano Banana) / ChatGPT from prompts Claude w
 - Paid ads budget
 - Anything deleted or any change to domain/DNS/hosting
 
-## 10. Open questions for the owner
+## 10. Owner answers (17 Oct 2026)
 
-1. What is "EXIDE SUNDAY SOLAR SOLUTIONS" shown as brand name on the portal - your registered company/brand? Can we mention it?
-2. Confirm 3kW price range (site shows both ₹1.27-1.89 lakh and ₹1.8-2.0 lakh).
-3. Can you share 3-5 real installations (photos, town, kW, EB bill before/after) for case studies?
-4. Are the "TATA Power Solaroof partner" and "10+ years experience" claims on the About page accurate?
+- Official partners: **TATA Power Solar** and **Exide** (portal brand "Exide Sunday Solar Solutions"). 10+ years experience: accurate. -> Use "Official TATA Power Solar & Exide partner" as a proof point.
+- Prices on the site are **market averages**, not our quotes. Always say "typical market price" and offer a free written quote.
+- Installation photos: 9 in the homepage gallery (`public/images/1.webp` - `9.webp`). For case studies we still need per job: town, kW, month, EB bill before/after.
+- Site-wide ₹1 lakh banner: built, shown to owner on localhost for approval.
+
+## 11. Open questions for the owner
+
+1. For 3-5 gallery photos: town, system size, month installed, and EB bill before/after (even approximate).
