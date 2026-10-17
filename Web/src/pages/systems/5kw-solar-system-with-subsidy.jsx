@@ -57,21 +57,40 @@ const TvIcon = () => (
 
 const SYSTEM = {
   kw: '5kW',
-  kwhPerDay: '20–25',
+  kwhPerDay: '20-25',
   recommended: '3BHK Home',
   subsidyAmount: '₹78,000',
-  priceFrom: '₹3,00,000 – ₹3,30,000',
+  priceFrom: '₹3,00,000 - ₹3,30,000',
   priceAfterSubsidy: '~₹2,18,000',
-  billRange: '₹4,000 – ₹7,000',
+  billRange: '₹7,000 - ₹11,000',
   appliances: [
     { name: '1.5 Ton ACs', qty: 'Up to 2 (8 hrs)', Icon: AcIcon },
     { name: 'Refrigerator 500L', qty: '1 unit (24 hrs)', Icon: FridgeIcon },
     { name: 'Water Heater / Geyser', qty: '1 unit (2 hrs)', Icon: HeaterIcon },
-    { name: 'Lights & Fans', qty: '10–15 units', Icon: LightIcon },
+    { name: 'Lights & Fans', qty: '10-15 units', Icon: LightIcon },
     { name: 'TV & Computer', qty: '8+ hrs daily', Icon: TvIcon },
   ],
   whatsapp: "Hi, I want the exact quotation for a 5kW Solar System."
 }
+
+const FAQS = [
+    {
+      q: 'Can a 5kW system run two 1.5 ton ACs simultaneously?',
+      a: 'Yes - a 5kW system generates 20-25 units per day, which comfortably powers two 5-Star Inverter ACs running 8 hours each, plus your full household load of lights, fans, fridge, and TV. We recommend Inverter ACs for solar use due to their soft-start and variable compressor technology.'
+    },
+    {
+      q: 'How is the ₹1 lakh subsidy processed?',
+      a: 'Our team handles all documentation and TNEB coordination. After installation and the net meter, the ₹78,000 PM Surya Ghar subsidy is usually credited to your bank account in about 30 days, and the ₹22,000 Tamil Nadu top-up is paid separately by TEDA for eligible homes. You do not need to visit any government office.'
+    },
+    {
+      q: 'What is the payback period for a 5kW system?',
+      a: 'With current TNEB tariffs in Tamil Nadu and the PM Surya Ghar subsidy applied, the typical payback period is 3.5-4 years. After that, you generate free electricity for 21+ more years.'
+    },
+    {
+      q: 'What panel brands does Surya\'s Solar use?',
+      a: 'We supply ALMM-listed, Tier-1 panels from TATA Power, Adani Solar, and Waaree - all BIS certified and required for the PM Surya Ghar subsidy. We do not use unverified brands.'
+    },
+  ]
 
 export default function FiveKwPage({ settings }) {
   return (
@@ -84,6 +103,36 @@ export default function FiveKwPage({ settings }) {
         <meta property="og:description" content="5kW solar price in Tamil Nadu with up to ₹1 lakh subsidy (₹78,000 PM Surya Ghar + ₹22,000 TN top-up). 20-25 units a day, runs two ACs." />
         <meta property="og:image" content="https://www.suryassolar.com/images/5kw-solar-system-cost-tamil-nadu-2026.webp" />
         <meta property="og:url" content="https://www.suryassolar.com/systems/5kw-solar-system-with-subsidy" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Service',
+                name: '5kW Rooftop Solar System Installation',
+                serviceType: 'Rooftop solar installation',
+                url: 'https://www.suryassolar.com/systems/5kw-solar-system-with-subsidy',
+                provider: { '@type': 'LocalBusiness', '@id': 'https://www.suryassolar.com/#business', name: "Surya's Solar" },
+                areaServed: ['Cuddalore', 'Puducherry', 'Panruti', 'Neyveli', 'Chidambaram', 'Villupuram'].map((n) => ({ '@type': 'Place', name: n })),
+                offers: { '@type': 'AggregateOffer', priceCurrency: 'INR', lowPrice: 300000, highPrice: 330000, description: 'Market-average installed price before subsidy, October 2026' },
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: FAQS.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.suryassolar.com/' },
+                  { '@type': 'ListItem', position: 2, name: '5kW Solar System', item: 'https://www.suryassolar.com/systems/5kw-solar-system-with-subsidy' },
+                ],
+              },
+            ]),
+          }}
+        />
       </Head>
 
       <Header settings={settings} />
@@ -143,7 +192,7 @@ export default function FiveKwPage({ settings }) {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-gray-100 overflow-hidden">
               {[
-                { val: <CountUp end={25} prefix="20–" duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'Units Generated / Day', Icon: BoltIcon, color: 'text-blue-600' },
+                { val: <CountUp end={25} prefix="20-" duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'Units Generated / Day', Icon: BoltIcon, color: 'text-blue-600' },
                 { val: <CountUp end={25} suffix=" Years" duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'Panel Performance Warranty', Icon: ShieldIcon, color: 'text-green-600' },
                 { val: <CountUp end={78000} prefix="₹" separator="," duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'Govt Subsidy Available', Icon: RupeeIcon, color: 'text-indigo-600' },
                 { val: <CountUp end={4} prefix="< " suffix=" Years" duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'Return on Investment', Icon: TrendIcon, color: 'text-orange-500' },
@@ -244,24 +293,7 @@ export default function FiveKwPage({ settings }) {
               <h2 className="mt-3 text-4xl font-playfair font-bold text-gray-900">Common Questions</h2>
             </div>
             <div className="space-y-3">
-              {[
-                {
-                  q: 'Can a 5kW system run two 1.5 ton ACs simultaneously?',
-                  a: 'Yes - a 5kW system generates 20–25 units per day, which comfortably powers two 5-Star Inverter ACs running 8 hours each, plus your full household load of lights, fans, fridge, and TV. We recommend Inverter ACs for solar use due to their soft-start and variable compressor technology.'
-                },
-                {
-                  q: 'How is the ₹1 lakh subsidy processed?',
-                  a: 'Our team handles all documentation and TNEB coordination. After installation and the net meter, the ₹78,000 PM Surya Ghar subsidy is usually credited to your bank account in about 30 days, and the ₹22,000 Tamil Nadu top-up is paid separately by TEDA for eligible homes. You do not need to visit any government office.'
-                },
-                {
-                  q: 'What is the payback period for a 5kW system?',
-                  a: 'With current TNEB tariffs in Tamil Nadu and the PM Surya Ghar subsidy applied, the typical payback period is 3.5–4 years. After that, you generate free electricity for 21+ more years.'
-                },
-                {
-                  q: 'What panel brands does Surya\'s Solar use?',
-                  a: 'We supply ALMM-listed, Tier-1 panels from TATA Power, Adani Solar, and Waaree - all BIS certified and required for the PM Surya Ghar subsidy. We do not use unverified brands.'
-                },
-              ].map((faq, i) => (
+              {FAQS.map((faq, i) => (
                 <details key={i} className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                   <summary className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-[0.95rem] list-none select-none">
                     <span>{faq.q}</span>

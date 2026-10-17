@@ -57,21 +57,36 @@ const WashIcon = () => (
 
 const SYSTEM = {
   kw: '3kW',
-  kwhPerDay: '12–15',
+  kwhPerDay: '12-15',
   recommended: '2BHK Home',
   subsidyAmount: '₹78,000',
-  priceFrom: '₹1,80,000 – ₹2,00,000',
+  priceFrom: '₹1,80,000 - ₹2,00,000',
   priceAfterSubsidy: '~₹88,000',
-  billRange: '₹1,500 – ₹3,500',
+  billRange: '₹3,000 - ₹6,000',
   appliances: [
-    { name: '1.5 Ton AC', qty: '1 unit (6–8 hrs)', Icon: AcIcon },
+    { name: '1.5 Ton AC', qty: '1 unit (6-8 hrs)', Icon: AcIcon },
     { name: 'Refrigerator 250L', qty: '1 unit (24 hrs)', Icon: FridgeIcon },
     { name: 'TV & Computer', qty: '6+ hrs daily', Icon: TvIcon },
-    { name: 'Lights & Fans', qty: '5–10 units', Icon: LightIcon },
+    { name: 'Lights & Fans', qty: '5-10 units', Icon: LightIcon },
     { name: 'Washing Machine', qty: '1 cycle / day', Icon: WashIcon },
   ],
   whatsapp: "Hi, I want the exact quotation for a 3kW Solar System."
 }
+
+const FAQS = [
+    {
+      q: 'Why does a 3kW system get the maximum ₹1 lakh subsidy?',
+      a: 'Under PM Surya Ghar Muft Bijli Yojana, the Government provides ₹30,000/kW for the first 2kW and ₹18,000/kW for the 3rd kW = ₹78,000. Eligible Tamil Nadu homes also get the ₹22,000 state top-up (G.O. 102) for 3kW and above, so the total is up to ₹1,00,000. Installing 4kW or 5kW does NOT increase the subsidy - so 3kW gives the best subsidy-per-rupee value.'
+    },
+    {
+      q: 'Can a 3kW system make my TNEB bill zero?',
+      a: 'Yes - if your monthly consumption is around 300-400 units, a 3kW system generating 12-15 units/day will exceed your daily consumption. Your bill reduces to only the fixed charges (typically ₹120-₹180 for a residential connection).'
+    },
+    {
+      q: 'How long does the full installation take?',
+      a: 'After signing the contract and subsidy documentation, our team completes physical installation in 1-2 days. The TNEB net meter upgrade takes 30-45 additional days, after which the system is fully operational and earning export credits.'
+    },
+  ]
 
 export default function ThreeKwPage({ settings }) {
   return (
@@ -84,6 +99,36 @@ export default function ThreeKwPage({ settings }) {
         <meta property="og:description" content="3kW solar price in Tamil Nadu with up to ₹1 lakh subsidy (₹78,000 PM Surya Ghar + ₹22,000 TN top-up). 12-15 units a day. Perfect for 2BHK homes." />
         <meta property="og:image" content="https://www.suryassolar.com/images/3kw-solar-system-price-india-2026.webp" />
         <meta property="og:url" content="https://www.suryassolar.com/systems/3kw-solar-system-with-subsidy" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Service',
+                name: '3kW Rooftop Solar System Installation',
+                serviceType: 'Rooftop solar installation',
+                url: 'https://www.suryassolar.com/systems/3kw-solar-system-with-subsidy',
+                provider: { '@type': 'LocalBusiness', '@id': 'https://www.suryassolar.com/#business', name: "Surya's Solar" },
+                areaServed: ['Cuddalore', 'Puducherry', 'Panruti', 'Neyveli', 'Chidambaram', 'Villupuram'].map((n) => ({ '@type': 'Place', name: n })),
+                offers: { '@type': 'AggregateOffer', priceCurrency: 'INR', lowPrice: 180000, highPrice: 210000, description: 'Market-average installed price before subsidy, October 2026' },
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: FAQS.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.suryassolar.com/' },
+                  { '@type': 'ListItem', position: 2, name: '3kW Solar System', item: 'https://www.suryassolar.com/systems/3kw-solar-system-with-subsidy' },
+                ],
+              },
+            ]),
+          }}
+        />
       </Head>
 
       <Header settings={settings} />
@@ -141,7 +186,7 @@ export default function ThreeKwPage({ settings }) {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-gray-100 overflow-hidden">
               {[
-                { val: <CountUp end={15} prefix="12–" duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'Units Generated / Day', Icon: BoltIcon, color: 'text-blue-600' },
+                { val: <CountUp end={15} prefix="12-" duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'Units Generated / Day', Icon: BoltIcon, color: 'text-blue-600' },
                 { val: <CountUp end={25} suffix=" Years" duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'Panel Performance Warranty', Icon: ShieldIcon, color: 'text-green-600' },
                 { val: <CountUp end={78000} prefix="₹" separator="," duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'Max Govt Subsidy', Icon: RupeeIcon, color: 'text-indigo-600' },
                 { val: <CountUp end={3} prefix="< " suffix=" Years" duration={2.5} enableScrollSpy scrollSpyOnce />, sub: 'Return on Investment', Icon: TrendIcon, color: 'text-orange-500' },
@@ -242,20 +287,7 @@ export default function ThreeKwPage({ settings }) {
               <h2 className="mt-3 text-4xl font-playfair font-bold text-gray-900">Common Questions</h2>
             </div>
             <div className="space-y-3">
-              {[
-                {
-                  q: 'Why does a 3kW system get the maximum ₹1 lakh subsidy?',
-                  a: 'Under PM Surya Ghar Muft Bijli Yojana, the Government provides ₹30,000/kW for the first 2kW and ₹18,000/kW for the 3rd kW = ₹78,000. Eligible Tamil Nadu homes also get the ₹22,000 state top-up (G.O. 102) for 3kW and above, so the total is up to ₹1,00,000. Installing 4kW or 5kW does NOT increase the subsidy - so 3kW gives the best subsidy-per-rupee value.'
-                },
-                {
-                  q: 'Can a 3kW system make my TNEB bill zero?',
-                  a: 'Yes - if your monthly consumption is around 300–400 units, a 3kW system generating 12–15 units/day will exceed your daily consumption. Your bill reduces to only the fixed charges (typically ₹120–₹180 for a residential connection).'
-                },
-                {
-                  q: 'How long does the full installation take?',
-                  a: 'After signing the contract and subsidy documentation, our team completes physical installation in 1–2 days. The TNEB net meter upgrade takes 30–45 additional days, after which the system is fully operational and earning export credits.'
-                },
-              ].map((faq, i) => (
+              {FAQS.map((faq, i) => (
                 <details key={i} className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                   <summary className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-[0.95rem] list-none select-none">
                     <span>{faq.q}</span>
