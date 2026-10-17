@@ -13,6 +13,13 @@ tags:
   - Solar Backup
   - Lithium Battery Cost
 updated: '2026-04-26'
+faqs:
+  - question: 'Can I convert my on-grid system to hybrid later?'
+    answer: 'Yes. The panels and structure stay the same; you replace or add an inverter that supports batteries and add a battery bank. Planning the wiring for a backup board at the start makes the upgrade cheaper later.'
+  - question: 'Does a hybrid system still get the PM Surya Ghar subsidy?'
+    answer: 'A grid-connected hybrid system is reported as eligible for the solar part, as long as it has a net meter and DCR panels. The battery itself is not subsidised.'
+  - question: 'Which is better for a home with short, rare power cuts?'
+    answer: 'On-grid. It costs less and pays back faster, and a small existing UPS can cover short cuts. Hybrid makes sense when cuts are long or frequent, or voltage is unstable.'
 ---
 Here is a shocking fact for many first-time solar buyers in Cuddalore:
 **A standard On-Grid Solar System shuts down during a power cut.**

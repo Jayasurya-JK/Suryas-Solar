@@ -13,6 +13,13 @@ tags:
   - Choosing Solar Installer
   - DCR Panel Verification
 updated: '2026-04-26'
+faqs:
+  - question: 'How can I check if a solar company is genuine?'
+    answer: 'Look for the company on the official PM Surya Ghar portal vendor list for your district, visit their office, ask for recent customer contacts and read Google reviews with photos.'
+  - question: 'Is it safe to pay the full amount in advance?'
+    answer: 'No. A fair schedule is a moderate advance, the main payment when material is delivered, and the balance after installation and testing.'
+  - question: 'What should a genuine solar quotation include?'
+    answer: 'The brand and model of panels and inverter, DCR status, structure material and height, cable brand, number of earthing pits, warranties, timeline and what fees are included.'
 ---
 "Sir, your quote is ₹1.9 Lakhs. But 'XYZ Solar' offered me ₹1.6 Lakhs. Why are you expensive?"
 

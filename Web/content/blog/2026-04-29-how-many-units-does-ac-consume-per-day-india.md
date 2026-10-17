@@ -193,6 +193,8 @@ And if you want to run that AC absolutely guilt-free all summer long? It's time 
 
 ---
 
+**Plan solar for your AC:** see [can a 1.5 ton AC run on solar](/blog/2026-04-25-can-1-5-ton-ac-run-on-solar-power-tamil-nadu), [3kW vs 5kW for AC homes](/blog/2025-12-03-3kw-vs-5kw-solar-system-comparison), size it with the [solar savings calculator](/calc), and check your [₹1 lakh subsidy eligibility](/subsidy-eligibility).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

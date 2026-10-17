@@ -13,6 +13,15 @@ tags:
   - Solar For Luxury Villas
   - Burst Mode Technology
 updated: '2026-04-26'
+faqs:
+  - question: 'Are micro-inverters worth it for a small 3kW home?'
+    answer: 'Only if the roof has heavy or changing shade or panels face different directions. On a clear, shade-free terrace, a good string inverter gives better value.'
+  - question: 'Do micro-inverters work during power cuts?'
+    answer: 'Standard grid-tied micro-inverters shut down during a power cut, like other on-grid inverters, unless the system includes a battery and backup equipment.'
+  - question: 'Can I monitor each panel with micro-inverters?'
+    answer: 'Yes. Panel-level monitoring is a key benefit: you can see if a single panel is shaded, dirty or faulty.'
+  - question: 'How long do micro-inverters last?'
+    answer: 'Quality micro-inverters usually carry long warranties, often far longer than string inverters. Check the warranty years and who handles claims locally before buying.'
 ---
 If you are building a premium villa in Pondicherry (White Town) or a bungalow in Manjakuppam, you prioritize **Safety** and **Aesthetics** above all else.
 Standard String Inverters (from brands like Growatt, Solis, or GoodWe) are great workhorses, but they have one "ugly" truth:

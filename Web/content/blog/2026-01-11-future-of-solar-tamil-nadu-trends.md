@@ -13,6 +13,13 @@ tags:
   - Smart Grid Tamil Nadu
   - Vehicle to Home
 updated: '2026-04-26'
+faqs:
+  - question: 'Should I wait for better solar technology before installing?'
+    answer: 'Usually not. Panel efficiency improves slowly, while the up to ₹1 lakh subsidy is time-bound and every month of waiting is a month of full EB bills.'
+  - question: 'Will net metering rules change in Tamil Nadu?'
+    answer: 'Rules can change over time. Systems installed under an existing agreement usually continue on the terms they were approved under; check the current rules when you apply.'
+  - question: 'Can I add an EV charger to my solar system later?'
+    answer: 'Yes. If you plan an EV, size the system a little larger or leave roof space and inverter capacity for adding panels later.'
 ---
 We have covered the *now*-the 2026 subsidies, the banking rules, the trusted brands.
 But solar is an asset you buy for 25 years. It is important to know where the industry is heading.

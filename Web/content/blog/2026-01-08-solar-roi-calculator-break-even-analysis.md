@@ -13,6 +13,15 @@ tags:
   - Cuddalore Solar Returns
   - Net Metering Savings
 updated: '2026-04-26'
+faqs:
+  - question: 'What is a good payback period for home solar in Tamil Nadu?'
+    answer: 'With the up to ₹1 lakh subsidy, homes with ACs and bills above about ₹4,000 every two months typically pay back in about 3-4.5 years. Smaller bills take longer, around 5-6 years.'
+  - question: 'Do rising electricity tariffs make solar pay back faster?'
+    answer: 'Yes. Every tariff increase raises the value of each unit your panels produce, so the actual payback is usually a little shorter than a calculation using today''s rates.'
+  - question: 'What costs should I include after installation?'
+    answer: 'Panel cleaning (mostly your time and water), an occasional service visit, and usually one inverter replacement during the 25-year life. Include these in your long-term savings estimate.'
+  - question: 'Is a solar loan worth it if I cannot pay upfront?'
+    answer: 'Often yes. For many AC homes the monthly EMI is close to the bill saving, so cash flow stays similar while you build an asset. Compare the total interest before you sign.'
 ---
 When you put ₹1 Lakh in a Fixed Deposit, you get 7% interest (taxable).
 When you put ₹1 Lakh in Gold, you maybe get 10% appreciation (volatile).

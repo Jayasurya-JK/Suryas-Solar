@@ -12,6 +12,15 @@ tags:
   - Solar Safety Standards
   - Earthing Pit Resistance
 updated: '2026-04-26'
+faqs:
+  - question: 'How many earthing pits does a home solar system need?'
+    answer: 'Good practice is three separate pits: one for the DC side, one for the AC side and one for the lightning arrester, each tested for low resistance.'
+  - question: 'What is chemical earthing?'
+    answer: 'An earthing electrode packed with a conductive compound that keeps resistance low through dry seasons and needs less maintenance than traditional salt-and-charcoal pits.'
+  - question: 'Is a lightning arrester necessary for rooftop solar?'
+    answer: 'Yes, for most terraces. It gives lightning a safe path to ground and protects the panels, inverter and home wiring, especially in open coastal areas.'
+  - question: 'How often should solar earthing be tested?'
+    answer: 'Once a year, ideally before the monsoon. The installer measures earth resistance and checks that connections are tight and free of corrosion.'
 ---
 "Sir, the other quoter said 1 earthing pit is enough. Why are you quoting for 3?"
 

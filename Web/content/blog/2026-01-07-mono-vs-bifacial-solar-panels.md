@@ -15,6 +15,15 @@ tags:
   - High Efficiency Panels
   - Glass Glass Panels
 updated: '2026-04-26'
+faqs:
+  - question: 'Do bifacial panels need a special structure?'
+    answer: 'They work best on a raised structure (about 1 metre or more) over a light-coloured roof, so reflected light reaches the back. On a low structure close to a dark roof, the rear side adds very little.'
+  - question: 'Are bifacial panels eligible for the PM Surya Ghar subsidy?'
+    answer: 'Yes, if the exact model is DCR (Indian-made cells) and on the approved list. Check the DCR certificate and model number before you buy.'
+  - question: 'How much more power do bifacial panels really give?'
+    answer: 'In good conditions, typically about 5-15% more units than the same-size monofacial panel. The gain depends on roof colour, structure height and shading, so it varies from home to home.'
+  - question: 'Do bifacial panels cost more?'
+    answer: 'Usually a little more per watt than standard monofacial panels of the same brand, plus a slightly taller structure. The extra cost pays off mainly on raised structures over white roofs.'
 ---
 Walk into any solar showroom in 2026, and you will hear a buzzword: **"Bifacial."**
 

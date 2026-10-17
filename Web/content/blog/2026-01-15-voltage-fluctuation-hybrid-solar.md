@@ -13,6 +13,13 @@ tags:
   - Deye Hybrid Inverter
   - Voltas Solar AC
 updated: '2026-04-26'
+faqs:
+  - question: 'Why does my on-grid inverter switch off during the day?'
+    answer: 'Most often because the grid voltage goes above or below the inverter''s allowed range. The inverter disconnects for safety and reconnects when voltage returns to normal.'
+  - question: 'Can inverter settings fix voltage trips?'
+    answer: 'Sometimes. An installer can set the allowed voltage window within permitted limits. If the grid is consistently out of range, a TNEB voltage complaint or a hybrid system may be needed.'
+  - question: 'Will a hybrid inverter protect my appliances?'
+    answer: 'A hybrid inverter supplies backed-up loads from solar and battery when the grid is unstable, which protects those appliances from low-voltage swings.'
 ---
 Solar power is great, but it has a specific weakness that few installers talk about: **The Grid Reference.**
 

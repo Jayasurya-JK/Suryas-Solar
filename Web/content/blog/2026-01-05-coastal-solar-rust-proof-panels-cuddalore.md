@@ -13,6 +13,13 @@ tags:
   - Pondicherry Solar maintenance
   - Galvanized Solar Structure
 updated: '2026-04-26'
+faqs:
+  - question: 'How close to the sea is a "coastal" solar installation?'
+    answer: 'As a working rule, homes within about 5 km of the sea in Cuddalore and Puducherry get enough salt mist to need coastal-grade structures and fasteners. Within 1-2 km, salt deposits on panels and frames are heavy, so material choice matters most.'
+  - question: 'Does salt air reduce solar panel output?'
+    answer: 'A salt film on the glass blocks some sunlight, so output drops until it is washed off. Rinsing with plain water every 2-4 weeks near the coast restores output. The bigger long-term risk is corrosion of the structure and connectors, not the panel glass.'
+  - question: 'Is hot-dip galvanized steel enough near the beach?'
+    answer: 'For most coastal homes, yes, when combined with stainless steel nuts and bolts and no mixed metals. Cut ends and drilled holes should be treated with zinc-rich paint, and the structure checked once a year.'
 ---
 Cuddalore and Pondicherry are blessed with abundant sun, but they come with a hidden, silent enemy: **Salt Mist.**
 

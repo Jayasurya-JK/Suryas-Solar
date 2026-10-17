@@ -12,6 +12,11 @@ tags:
   - Real Estate Trends Tamil Nadu
   - Pondicherry Villa Solar
 updated: '2026-04-26'
+faqs:
+  - question: 'What documents should I give a buyer with a solar home?'
+    answer: 'The installation invoice with panel serial numbers, warranty cards, the net meter agreement, recent bills showing the savings, and the installer''s service contact.'
+  - question: 'Can the solar system and subsidy be transferred to a new owner?'
+    answer: 'The system stays with the house. The EB connection and net meter agreement are transferred through the name-change process; the subsidy already paid is not affected.'
 ---
 In Cuddalore, when you buy a house, you traditionally check the water quality, the road width, and the build quality (Pillars vs Load Bearing). You check if the area floods during monsoon. You check the distance to schools.
 

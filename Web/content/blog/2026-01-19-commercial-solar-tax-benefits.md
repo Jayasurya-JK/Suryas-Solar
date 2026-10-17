@@ -12,6 +12,15 @@ tags:
   - Section 32 Income Tax
   - Solar Depreciation Rate 2026
 updated: '2026-04-26'
+faqs:
+  - question: 'Can a proprietorship or partnership claim accelerated depreciation?'
+    answer: 'Businesses that pay income tax and own the solar plant as a business asset can generally claim depreciation. Confirm the treatment with your chartered accountant.'
+  - question: 'Do businesses get PM Surya Ghar subsidy?'
+    answer: 'No. PM Surya Ghar is for residential connections. Businesses instead benefit from depreciation, lower bills and daytime self-use.'
+  - question: 'What size solar system suits a small shop?'
+    answer: 'Divide your average daily units by about 4-5 to get a rough kW size. Many small shops need 3-10kW.'
+  - question: 'Can a business use non-DCR panels?'
+    answer: 'Yes. Businesses that do not take PM Surya Ghar subsidy can use ALMM-listed non-DCR panels, which usually cost less per watt.'
 ---
 If you run a profitable business-whether it’s a **Textile Mill in Coimbatore**, a **Hotel in Puducherry**, or a **Cashew Factory in Panruti**-you face two major drains on your cash flow:
 1.  **Electricity Bills:** Rising at 5% per year.

@@ -14,6 +14,13 @@ tags:
   - DG Sync Solar
   - CT Coil Installation
 updated: '2026-04-26'
+faqs:
+  - question: 'Is a zero export device legal before the net meter?'
+    answer: 'A zero export setup prevents power flowing into the grid, which is the purpose before the net meter is installed. Use it as advised by your installer and follow the current TNEB rules.'
+  - question: 'Will I lose units with a zero export device?'
+    answer: 'Yes, any solar output above your home''s use at that moment is curtailed instead of exported. It is a temporary arrangement until the net meter is fixed.'
+  - question: 'Do I still need a net meter if I have a zero export device?'
+    answer: 'Yes, for the full benefit and for the PM Surya Ghar subsidy. The subsidy process requires the net meter and commissioning.'
 ---
 You paid ₹2 Lakhs for a Solar System. Installation is done. The panels are shining on the roof.
 But the TNEB Junior Engineer says: *"Sir, no Net Meters in stock. Wait 1 month."* or *"Sir, the local Transformer is overloaded, we cannot approve export yet."*

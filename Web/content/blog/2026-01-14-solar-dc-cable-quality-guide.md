@@ -13,6 +13,13 @@ tags:
   - UV Protected Solar Cable
   - MC4 Connector Quality
 updated: '2026-04-26'
+faqs:
+  - question: 'Can ordinary house wire be used for solar panels?'
+    answer: 'No. Solar DC cables are designed for continuous sun, heat and DC voltage. Ordinary PVC house wire degrades in UV and heat and becomes a fire risk.'
+  - question: 'What size DC cable is used for a 3kW system?'
+    answer: 'Usually 4 sq mm solar DC cable for typical home string lengths. Longer runs may need 6 sq mm to keep voltage drop low; your installer should calculate it.'
+  - question: 'Why are MC4 connectors important?'
+    answer: 'Loose or mismatched connectors heat up and are a common cause of solar faults. Use matching, properly crimped connectors from the same make.'
 ---
 Solar Panels generate **DC (Direct Current)**.
 The grid in your house is **AC (Alternating Current)**.

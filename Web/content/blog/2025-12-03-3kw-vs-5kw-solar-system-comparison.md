@@ -160,6 +160,8 @@ Think ahead before you buy. Solar is a 25-year investment.
 
 ---
 
+**Next steps:** compare full prices on the [3kW system page](/systems/3kw-solar-system-with-subsidy) and [5kW system page](/systems/5kw-solar-system-with-subsidy), see [5kW units per day](/blog/2026-10-17-5kw-solar-panel-units-per-day-month-tamil-nadu), run your bill through the [solar savings calculator](/calc), or check your [₹1 lakh subsidy eligibility](/subsidy-eligibility).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

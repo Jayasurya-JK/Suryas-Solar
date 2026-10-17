@@ -13,6 +13,13 @@ tags:
   - Cuddalore Electricity Bill
   - Electricity Tariff 2026
 updated: '2026-04-26'
+faqs:
+  - question: 'What are import and export units on my TNEB bill?'
+    answer: 'Import is the electricity you took from the grid; export is the extra solar electricity you sent to the grid. Under net metering, you are billed mainly on the difference.'
+  - question: 'Why do I still pay a bill after installing solar?'
+    answer: 'Fixed charges apply regardless of solar, and in months when you use more than you export you pay for the extra units. Many solar homes pay close to the fixed charge only.'
+  - question: 'What happens to extra units I export?'
+    answer: 'Under net metering, excess units are credited against your consumption as per the current rules for your connection. Check your bill for the export and net figures.'
 ---
 Congratulations! You installed solar. The green light is blinking.
 But then the first bi-monthly bill arrives, and it looks complicated.

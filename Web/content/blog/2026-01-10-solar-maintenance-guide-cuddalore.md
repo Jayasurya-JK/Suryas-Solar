@@ -12,6 +12,13 @@ tags:
   - Cleaning Tools
   - Inverter Error Codes
 updated: '2026-04-26'
+faqs:
+  - question: 'How often should I clean solar panels in Cuddalore?'
+    answer: 'Every 2-4 weeks in the dry season is a good habit, more often near the coast or dusty roads. Clean early in the morning or evening with plain water and a soft brush.'
+  - question: 'Can I use a pressure washer on solar panels?'
+    answer: 'No. High pressure can damage the seals and the anti-reflective coating and may void the warranty. Use a garden hose and a soft brush.'
+  - question: 'Do solar panels need an annual service?'
+    answer: 'A yearly check of the structure bolts, earthing, cable connections and inverter readings is recommended, especially before the October-December monsoon.'
 ---
 "Sir, are these panels 'Self-Cleaning'?"
 

@@ -2,8 +2,7 @@
 title: '3kW Solar: How Many Units Per Day, Price & Payback (TN 2026)'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
-excerpt: >-
-  A 3kW solar system makes about 11-14 units a day (330-420 a month) in Tamil Nadu and gets up to ₹1 lakh subsidy (₹78,000 + ₹22,000 TN). Price, units and payback explained.
+excerpt: 'A 3kW solar system makes about 12-15 units a day in Tamil Nadu and gets up to ₹1 lakh subsidy. Price after subsidy, units, roof space and payback.'
 featuredImage: /images/3kw-solar-system-price-india-2026.webp
 category: Cost & Savings
 tags:

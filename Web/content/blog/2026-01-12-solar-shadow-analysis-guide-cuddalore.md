@@ -13,6 +13,13 @@ tags:
   - Cuddalore Solar Design
   - Solar Pathfinder
 updated: '2026-04-26'
+faqs:
+  - question: 'How much does shade reduce solar output?'
+    answer: 'Shade on even part of one panel can pull down the whole string, so a small shadow can cause a much bigger loss. Good layout and string design keep shaded panels separate.'
+  - question: 'Do coconut trees need to be cut for solar?'
+    answer: 'Not always. Raising the structure, moving panels to the sunniest part of the roof, or trimming a few fronds is often enough. A shadow analysis shows what is really needed.'
+  - question: 'Are winter shadows different from summer shadows?'
+    answer: 'Yes. In December and January the sun is lower in the southern sky, so shadows are longer. A good design checks shade across the whole year, not just on the survey day.'
 ---
 "Sir, I have a big overhead water tank. Can we put panels next to it?"
 "Sir, my neighbor has a huge coconut tree. Will it affect generation?"
