@@ -28,7 +28,7 @@ In **2026**, here are the **7 Dirty Tricks** unreliable installers use to lower 
 The **[PM Surya Ghar](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)** subsidy strictly demands **DCR (Domestic Content Requirement)** panels-i.e., Indian cells and Indian modules.
 *   **The Scam:** Unethical vendors buy cheaper imported/Chinese panels (which are 20% cheaper) and paste a fake "DCR" sticker on the back.
 *   **The Result:** During the TNEB inspection, the AE scans the barcode. If it fails the ALMM (Approved List of Models and Manufacturers) database check, **Subsidy is Rejected.**
-*   **The Loss:** You lose ₹78,000 subsidy to save ₹10,000 upfront.
+*   **The Loss:** You lose up to ₹1 lakh subsidy to save ₹10,000 upfront.
 *   **Our Fix:** We provide the **Original Factory Datasheet** and Flash Report matching the standard panel serial numbers. You can verify it on the manufacturer's website before installation.
 
 ## 2. The "Paint Job" Structure (Fake Galvanizing)

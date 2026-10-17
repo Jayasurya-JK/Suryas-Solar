@@ -17,7 +17,7 @@ updated: '2026-04-26'
 
 This is, without a doubt, the single most frequent question we receive at our Cuddalore office. And in **2026**, the answer is more important than ever because electricity consumption patterns are changing. Families now have larger refrigerators, more gadgets, and often, an Electric Scooter.
 
-A 3kW system is the "Goldilocks" size-it hits the maximum [subsidy](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026) cap (₹78,000) and fits on most rooftops. But does it actually cover your bill?
+A 3kW system is the "Goldilocks" size-it hits the maximum [subsidy](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026) cap (up to ₹1 lakh with the Tamil Nadu top-up) and fits on most rooftops. But does it actually cover your bill?
 
 In this deep-dive guide, we move beyond guesswork. We will calculate the math, physics, and economics of running a modern Tamil Nadu 3BHK household on 3kW of solar power.
 

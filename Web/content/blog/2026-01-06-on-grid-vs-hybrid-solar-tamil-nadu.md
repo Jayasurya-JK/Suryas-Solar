@@ -38,7 +38,7 @@ It syncs with the TNEB grid.
 ### The Pros:
 1.  **Lowest Cost:** No batteries means no recurring replacement cost.
 2.  **Zero [Maintenance](/blog/2026-01-10-solar-maintenance-guide-cuddalore):** Fit it and forget it (just cleaning).
-3.  **Highest Subsidy:** Full eligibility for [PM Surya Ghar](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026) (₹78,000).
+3.  **Highest Subsidy:** Full eligibility for [PM Surya Ghar](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026) (up to ₹1 lakh for eligible Tamil Nadu homes).
 
 ### The Cons:
 *   **Zero Backup:** When TNEB fails, you sit in the dark (unless you have a separate home inverter).
@@ -101,7 +101,7 @@ Solar + Huge Battery Bank. No TNEB wire enters your house.
 | :--- | :--- | :--- |
 | **System Cost (3kW)** | ₹1.80 Lakhs | ₹3.50 Lakhs |
 | **TNEB Backup** | No (Shuts Down) | Yes (Runs Load) |
-| **Solar Subsidy** | Yes **Eligible (₹78,000)** | Yes Eligible (On Panel/Inverter part only) |
+| **Solar Subsidy** | Yes **Eligible (up to ₹1 lakh)** | Yes Eligible (On Panel/Inverter part only) |
 | **Battery Tech** | N/A | Lithium Ferro Phosphate (LFP) |
 | **ROI Period** | **3 - 4 Years** | **6 - 7 Years** |
 | **Maintenance** | Low (Cleaning) | Medium (BMS Check) |

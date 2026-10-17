@@ -37,9 +37,9 @@ export default function AboutPage() {
 
     const partners = [
         { name: 'TATA Power Solaroof', logo: '/images/tata-solar-power.webp', logoWebP: '/images/tata-solar-power.webp', type: 'Official Partner' },
-        { name: 'Premier Energies', logo: '/images/premier-energies.webp', logoWebP: '/images/premier-energies.webp', type: 'Solar Partner' },
-        { name: 'Waaree', logo: '/images/waaree.webp', logoWebP: '/images/waaree.webp', type: 'Solar Partner' },
-        { name: 'Adani Solar', logo: '/images/adani-power-.webp', logoWebP: '/images/adani-power-.webp', type: 'Solar Partner' }
+        { name: 'Premier Energies', logo: '/images/premier-energies.webp', logoWebP: '/images/premier-energies.webp', type: 'Panel Brand' },
+        { name: 'Waaree', logo: '/images/waaree.webp', logoWebP: '/images/waaree.webp', type: 'Panel Brand' },
+        { name: 'Adani Solar', logo: '/images/adani-power-.webp', logoWebP: '/images/adani-power-.webp', type: 'Panel Brand' }
     ]
 
     const whyChooseUs = [
@@ -76,8 +76,8 @@ export default function AboutPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 8.25H9m6 3H9m3 6l-3-3h1.5a3 3 0 100-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
             ),
-            title: 'PM Surya Ghar Official Vendor',
-            description: 'Authorized vendor for government subsidy schemes'
+            title: 'Registered PM Surya Ghar Vendor',
+            description: 'Registered on the official portal; we handle the full subsidy paperwork'
         },
         {
             icon: (
@@ -85,8 +85,8 @@ export default function AboutPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
             ),
-            title: '400+ kW Installations',
-            description: 'Successfully installed over 400 kW across 100+ happy homes'
+            title: '420 kWp Installed',
+            description: '122 PM Surya Ghar installations across Cuddalore district'
         },
         {
             icon: (
@@ -95,17 +95,31 @@ export default function AboutPage() {
                 </svg>
             ),
             title: 'Trusted Brand Partners',
-            description: 'Partnered with TATA, Premier, Waaree, and Adani for quality products'
+            description: 'Official partner of TATA Power Solar and Exide; DCR panels from leading Indian makers'
         }
     ]
+
+    const faqs = [
+        { q: "Is Surya's Solar the same as Surya Solar or other \"Surya\" brands?", a: "No. Surya's Solar is an independent rooftop solar installer based in Kondur, Cuddalore. We are not connected to other companies or panel brands with \"Surya\" in their name. We are also not the government scheme \"PM Surya Ghar\"; we are a registered vendor that installs systems under it." },
+        { q: "Is Surya's Solar a registered PM Surya Ghar vendor?", a: "Yes. Surya's Solar is registered on the official PM Surya Ghar portal, with 122 installations and about 420 kWp installed in Cuddalore district." },
+        { q: "Where is Surya's Solar located?", a: "No.33, Sri Gokul Enterprises Building, Nellikuppam Main Rd, Chavadi, Kondur, Cuddalore - 607006. We are open Monday to Sunday, 9 AM to 8 PM." },
+        { q: "Which areas do you serve?", a: "Cuddalore, Puducherry, Panruti, Neyveli, Chidambaram, Villupuram, Nellikuppam, Vadalur and nearby towns." },
+        { q: "Which brands do you install?", a: "We are an official partner of TATA Power Solar and Exide. For subsidy homes we use DCR panels and show you the datasheets of the exact models before you decide." },
+        { q: "Do you install solar for shops and businesses?", a: "Yes. We design on-grid and hybrid systems for shops, clinics, offices and schools as well as homes." },
+    ]
+    const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    }
 
     return (
         <>
             <Head>
-                <title>About Us - Surya's Solar | Cuddalore’s trusted residential solar expert</title>
+                <title>About Surya's Solar | Rooftop Solar Installer in Cuddalore</title>
                 <meta
                     name="description"
-                    content="10+ Years Experience & 400+ kW Installed. We are Cuddalore's authorized solar experts. Partners with Tata Power, Waaree & Adani. See our completed projects."
+                    content="Surya's Solar is a rooftop solar installer in Kondur, Cuddalore: 10+ years in solar, 122 PM Surya Ghar installations, official TATA Power Solar and Exide partner."
                 />
                 <meta name="keywords" content="solar company Cuddalore, TATA solar partner, PM Surya Ghar vendor, residential solar expert" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -116,15 +130,16 @@ export default function AboutPage() {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.suryassolar.com/about" />
                 <meta property="og:title" content="About Surya's Solar - Cuddalore’s trusted residential solar expert" />
-                <meta property="og:description" content="10+ years of experience, 400+ kW installations, Official TATA Power Solaroof Partner" />
-                <meta property="og:image" content="https://www.suryassolar.com/images/og-home.webp" />
+                <meta property="og:description" content="10+ years in solar, 122 PM Surya Ghar installations, official TATA Power Solar and Exide partner." />
+                <meta property="og:image" content="https://www.suryassolar.com/images/Banner_1_desktop.webp" />
 
                 {/* Twitter */}
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://www.suryassolar.com/about" />
                 <meta property="twitter:title" content="About Surya's Solar" />
                 <meta property="twitter:description" content="Cuddalore's most trusted solar company with 10+ years of experience" />
-                <meta property="twitter:image" content="https://www.suryassolar.com/images/og-home.webp" />
+                <meta property="twitter:image" content="https://www.suryassolar.com/images/Banner_1_desktop.webp" />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             </Head>
 
             <Header />
@@ -148,16 +163,16 @@ export default function AboutPage() {
                             </p>
                             <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-base max-w-lg md:max-w-none mx-auto">
                                 <div className="bg-white/10 backdrop-blur-sm px-3 py-2 md:px-6 md:py-3 rounded-full border border-white/20">
-                                    ⭐ 10+ Years
+                                    10+ Years in Solar
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm px-3 py-2 md:px-6 md:py-3 rounded-full border border-white/20">
-                                    🏆 TATA Partner
+                                    TATA &amp; Exide Partner
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm px-3 py-2 md:px-6 md:py-3 rounded-full border border-white/20">
-                                    ⚡ 400+ kW Installed
+                                    420 kWp Installed
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm px-3 py-2 md:px-6 md:py-3 rounded-full border border-white/20">
-                                    🏠 100+ Homes
+                                    122 PM Surya Ghar Installs
                                 </div>
                             </div>
                         </div>
@@ -176,10 +191,10 @@ export default function AboutPage() {
                                     Since our inception over a decade ago, <strong>Surya's Solar</strong> has been at the forefront of the solar revolution in Cuddalore. We started with a simple mission: to make clean, affordable solar energy accessible to every home in our community.
                                 </p>
                                 <p className="text-sm md:text-lg mb-4 md:mb-6">
-                                    Today, we're proud to be <strong>Cuddalore’s trusted residential solar expert</strong>, having successfully installed over <strong>400 kW of solar capacity</strong> across <strong>100+ happy homes</strong>. Our journey from a small local installer to an <strong>Official Partner of TATA Power Solaroof</strong> and an <strong>Official Vendor of PM Surya Ghar Muft Bijli Yojana</strong> reflects our commitment to excellence and customer satisfaction.
+                                    Today, we're proud to be <strong>Cuddalore’s trusted residential solar expert</strong>, with <strong>122 installations</strong> and about <strong>420 kWp</strong> installed under the PM Surya Ghar scheme in Cuddalore district. Our journey from a small local installer to an <strong>official partner of TATA Power Solar and Exide</strong> and a <strong>registered vendor on the PM Surya Ghar portal</strong> reflects our commitment to quality and customer satisfaction.
                                 </p>
                                 <p className="text-sm md:text-lg">
-                                    What sets us apart is our <strong>specialized expertise in residential rooftop solar installations</strong>. We don't just install solar panels – we partner with homeowners to create customized energy solutions that maximize savings, minimize environmental impact, and provide energy independence for decades to come.
+                                    What sets us apart is our <strong>specialized expertise in residential rooftop solar installations</strong>. We don't just install solar panels - we partner with homeowners to create customized energy solutions that maximize savings, minimize environmental impact, and provide energy independence for decades to come.
                                 </p>
                             </div>
                         </div>
@@ -362,12 +377,12 @@ export default function AboutPage() {
                                 Ready to Go Solar?
                             </h2>
                             <p className="text-base md:text-xl mb-8 md:mb-12 text-blue-100">
-                                Join 100+ happy homeowners who've made the switch to clean energy
+                                Join the families across Cuddalore district who have already switched to solar
                             </p>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12">
                                 <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/20">
-                                    <div className="text-2xl md:text-3xl mb-2 md:mb-3">📍</div>
+                                    <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 rounded-full bg-white/15 flex items-center justify-center"><svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
                                     <h3 className="font-bold mb-2 text-sm md:text-base">Visit Us</h3>
                                     <a
                                         href="https://www.google.com/maps/search/?api=1&query=Suryas+Solar+Cuddalore"
@@ -382,7 +397,7 @@ export default function AboutPage() {
                                 </div>
 
                                 <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/20">
-                                    <div className="text-2xl md:text-3xl mb-2 md:mb-3">📧</div>
+                                    <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 rounded-full bg-white/15 flex items-center justify-center"><svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
                                     <h3 className="font-bold mb-2 text-sm md:text-base">Email Us</h3>
                                     <a
                                         href="mailto:suryassolarenergy@gmail.com"
@@ -393,7 +408,7 @@ export default function AboutPage() {
                                 </div>
 
                                 <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/20">
-                                    <div className="text-2xl md:text-3xl mb-2 md:mb-3">📞</div>
+                                    <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 rounded-full bg-white/15 flex items-center justify-center"><svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg></div>
                                     <h3 className="font-bold mb-2 text-sm md:text-base">Call Us</h3>
                                     <p className="text-xs md:text-sm text-blue-100">
                                         <a href="tel:+917904369094" className="hover:text-white transition-colors">+91 7904369094</a><br />
@@ -412,17 +427,25 @@ export default function AboutPage() {
                     </div>
                 </section>
                 
-                {/* SEO Text Block to increase Text-to-HTML ratio */}
-                <section className="bg-white py-16 border-t border-gray-100">
-                    <div className="container-custom max-w-5xl mx-auto text-center md:text-left">
-                        <h2 className="text-2xl md:text-3xl font-playfair font-bold text-gray-900 mb-6">Empowering Tamil Nadu with Sustainable Solar Energy</h2>
-                        <div className="text-gray-600 space-y-4 text-sm md:text-base leading-relaxed">
-                            <p>
-                                At Surya's Solar, our core mission is to accelerate Tamil Nadu's transition to sustainable, independent energy. We understand the local challenges of rising TNEB electricity tariffs, frequent voltage fluctuations, and the unique weather conditions of coastal districts like Puducherry and Cuddalore. That is why our solar installations strictly utilize Tier-1, ALMM-approved solar panels-including Monocrystalline, N-Type TopCon, and Bifacial variants-paired with robust, rust-proof mounting structures designed specifically for coastal resilience.
-                            </p>
-                            <p>
-                                Unlike aggregators, we are a locally rooted company. Our dedicated in-house engineers manage every technical aspect: from conducting thorough rooftop shadow analyses and precision load calculations, to navigating the complex documentation required for PM Surya Ghar Muft Bijli Yojana subsidies and TNEB net-metering. Our commitment doesn't end at installation; we provide comprehensive long-term solar maintenance, panel cleaning services, and proactive generation monitoring to ensure your solar investment yields maximum ROI for the next 25 years.
-                            </p>
+                {/* About FAQ (brand clarity + facts) */}
+                <section className="bg-white py-16 md:py-20 border-t border-gray-100">
+                    <div className="max-w-4xl mx-auto px-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-3">
+                            About Surya&apos;s Solar: <span className="text-primary">FAQs</span>
+                        </h2>
+                        <p className="text-center text-gray-600 mb-8">
+                            We are a locally rooted rooftop solar company. Our own engineers handle shadow analysis, load calculation, coastal-grade structures, TNEB or PED net metering and the PM Surya Ghar subsidy paperwork, and we stay on call for service after installation.
+                        </p>
+                        <div className="space-y-3">
+                            {faqs.map((f) => (
+                                <details key={f.q} className="group bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                                    <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between gap-4">
+                                        {f.q}
+                                        <span className="text-primary text-xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                                    </summary>
+                                    <p className="mt-3 text-gray-600 leading-relaxed">{f.a}</p>
+                                </details>
+                            ))}
                         </div>
                     </div>
                 </section>

@@ -87,25 +87,25 @@ When budgeting for solar, keep these potential extra costs in mind so there are 
 
 The Central Government’s **PM Surya Ghar: Muft Bijli Yojana** has made solar incredibly affordable. The subsidy is credited directly to your bank account after installation.
 
-**Current Subsidy Rates (2025):**
+**Current Subsidy Rates (2026, eligible Tamil Nadu homes):**
 
-| System Capacity | Central Subsidy Amount (₹) |
-| :--- | :--- |
-| **1 kW** | ₹30,000 |
-| **2 kW** | ₹60,000 |
-| **3 kW & Above** | **₹78,000 (Max)** |
+| System Capacity | Central (PM Surya Ghar) | TN top-up (G.O. 102) | Total |
+| :--- | :--- | :--- | :--- |
+| **1 kW** | ₹30,000 | ₹5,000 | ₹35,000 |
+| **2 kW** | ₹60,000 | ₹10,000 | ₹70,000 |
+| **3 kW & Above** | ₹78,000 | ₹22,000 | **₹1,00,000 (Max)** |
 
 **Example Calculation (3kW System):**
 *   **Total System Cost:** ₹1,80,000
-*   **Less Subsidy:** - ₹78,000
-*   **Net Cost to You:** **₹1,02,000**
+*   **Less Subsidy:** - up to ₹1,00,000 (₹78,000 + ₹22,000 TN top-up)
+*   **Net Cost to You:** **about ₹80,000**
 
 **How to Claim:**
 1.  Register on the PM Surya Ghar portal.
 2.  Choose a registered vendor (like **Surya’s Solar**).
 3.  Install the system and net meter.
 4.  Upload commissioning reports.
-5.  Receive subsidy in your bank account within 30 days.
+5.  Receive the central subsidy in your bank account (usually about 30 days); the TN top-up is paid separately by TEDA.
 
 ---
 

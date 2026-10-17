@@ -120,7 +120,7 @@ function getResult(a) {
     notes.push('Applications made before 5 Aug 2026 get the central subsidy, but not the ₹22,000 Tamil Nadu top-up.')
   }
   if (a.state === 'py') {
-    notes.push('The ₹22,000 top-up is a Tamil Nadu scheme, so Puducherry homes get the central subsidy only.')
+    notes.push('The ₹22,000 top-up is a Tamil Nadu scheme and does not apply in Puducherry. Puducherry has reported its own state top-up (about ₹9,000-10,000 per kW); we confirm the current amount with PED.')
   }
   if (a.state === 'other') {
     notes.push('The central subsidy applies across India. We install in Cuddalore district and Puducherry, so pick a registered vendor near you.')

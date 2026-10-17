@@ -60,12 +60,12 @@ Thanks to the subsidy, the cost difference is less than you might expect.
 
 ### 3kW Cost (After Subsidy)
 *   **Approx:** ₹90,000 - ₹1,20,000
-*   **Subsidy Benefit:** Receives the maximum subsidy of **₹78,000**.
+*   **Subsidy Benefit:** Receives the maximum subsidy of up to **₹1 lakh** (₹78,000 central + ₹22,000 TN top-up for eligible homes).
 *   **Verdict:** Extremely affordable. The subsidy covers nearly 40% of the cost.
 
 ### 5kW Cost (After Subsidy)
 *   **Approx:** ₹1,40,000 - ₹1,90,000
-*   **Subsidy Benefit:** The subsidy is capped at **₹78,000** (same as 3kW).
+*   **Subsidy Benefit:** The subsidy is capped at **₹1 lakh** (same as 3kW).
 *   **Verdict:** You pay the full difference for the extra 2kW. However, the cost per watt is lower for larger systems due to economies of scale.
 
 **Insight:** While a 5kW system costs more upfront, it generates almost **double the power**, offering a better long-term ROI for larger families.

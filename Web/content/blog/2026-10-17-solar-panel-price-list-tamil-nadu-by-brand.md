@@ -85,7 +85,7 @@ Higher-wattage panels cost a little more each but **less per watt**, need fewer 
 | 5kW | ₹3.0 - 3.3 lakh | ₹1,00,000 | ₹2.0 - 2.3 lakh | 20 - 25 |
 | 10kW | ₹5 - 6.5 lakh | ₹1,00,000 (home) | ₹4 - 5.5 lakh | 40 - 50 |
 
-*Puducherry homes get the central subsidy only (up to ₹78,000), so the net cost is about ₹22,000 higher for 3kW and above. See [solar cost in Puducherry](/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide).*
+*Puducherry homes get the central subsidy (up to ₹78,000) instead of the TN top-up; Puducherry has reported its own state top-up, so confirm the current amount. See [solar cost in Puducherry](/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide).*
 
 Size-by-size guides: [1kW](/blog/2026-10-17-1kw-solar-panel-how-many-units-per-day), [2kW](/blog/2026-10-17-2kw-solar-system-units-per-day-price-subsidy), [3kW system page](/systems/3kw-solar-system-with-subsidy), [5kW system page](/systems/5kw-solar-system-with-subsidy), [10kW](/blog/2026-10-17-10kw-solar-system-price-units-tamil-nadu).
 

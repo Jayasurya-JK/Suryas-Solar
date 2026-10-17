@@ -1,5 +1,5 @@
 // Service-area town pages. Content reviewed Oct 2026.
-// region: 'TN' (TNEB + ₹22,000 state top-up) or 'PY' (Puducherry Electricity Department, central subsidy only).
+// region: 'TN' (TNEB + ₹22,000 state top-up) or 'PY' (Puducherry Electricity Department; ₹78,000 central + reported PY state top-up, unconfirmed).
 // Never add install counts or customer stories here unless the owner provides real numbers.
 
 export const locationsData = {
@@ -49,7 +49,7 @@ export const locationsData = {
     heroSubtitle: 'Rooftop solar for Puducherry homes with the PM Surya Ghar subsidy of up to ₹78,000 and the Electricity Department (PED) net meter process handled for you.',
     distance: 'We are based in Kondur, Cuddalore, about 25 km from Puducherry town.',
     intro: [
-      'Puducherry homes can get the central PM Surya Ghar subsidy of up to ₹78,000 for a 3kW or larger rooftop system. The extra ₹22,000 top-up is a Tamil Nadu scheme, so it does not apply here, which makes good design and a fair price even more important.',
+      'Puducherry homes can get the central PM Surya Ghar subsidy of up to ₹78,000 for a 3kW or larger rooftop system. The extra ₹22,000 top-up is a Tamil Nadu scheme, so it does not apply here. Puducherry has also reported its own additional state subsidy for homes (reports mention about ₹9,000-10,000 per kW, up to about ₹30,000); we confirm the current amount with the Electricity Department at your site visit.',
       'Your power comes from the Electricity Department, Government of Puducherry (PED), and solar net metering follows the Joint Electricity Regulatory Commission (JERC) regulations. The forms, inspection and office are different from TNEB, so it helps to work with an installer who has done PED applications before. We handle the application, documents and follow-up.',
       'Puducherry is a coastal town that has faced strong cyclones such as Thane (2011), Nivar (2020) and Fengal (2024). Salt air and wind are the two things that decide how long a rooftop system lasts here. We use hot-dip galvanized structures, stainless steel fasteners and wind-load checked layouts as standard.',
     ],
@@ -65,7 +65,7 @@ export const locationsData = {
     ],
     areas: ['Lawspet', 'Muthialpet', 'Reddiarpalayam', 'Saram', 'Mudaliarpet', 'Ariyankuppam', 'Villianur', 'Kalapet', 'Bahour', 'Thavalakuppam'],
     faqs: [
-      { q: 'How much subsidy do Puducherry homes get for rooftop solar?', a: 'Up to ₹78,000 from the central PM Surya Ghar scheme for 3kW and above (₹30,000 per kW for the first 2kW and ₹18,000 for the third kW). The ₹22,000 Tamil Nadu top-up does not apply in Puducherry.' },
+      { q: 'How much subsidy do Puducherry homes get for rooftop solar?', a: 'Up to ₹78,000 from the central PM Surya Ghar scheme for 3kW and above (₹30,000 per kW for the first 2kW and ₹18,000 for the third kW). The ₹22,000 Tamil Nadu top-up does not apply in Puducherry. Puducherry has also reported its own additional state subsidy for homes (reports mention about ₹9,000-10,000 per kW, up to about ₹30,000); we confirm the current amount with the Electricity Department at your site visit.' },
       { q: 'What does a 3kW solar system cost in Puducherry?', a: 'About ₹1.8 to 2.1 lakh installed for an on-grid DCR system (2026 market range). After the ₹78,000 central subsidy, the net cost is about ₹1 to 1.3 lakh.' },
       { q: 'Who approves solar net metering in Puducherry?', a: 'The Electricity Department, Government of Puducherry (PED), under JERC net metering regulations. Your installer files the application, PED inspects the system and fixes the net meter.' },
       { q: 'Is solar worth it in Puducherry if tariffs are lower?', a: 'For homes with ACs and bills above about ₹2,000 every two months, yes, usually with a payback of roughly 4-6 years after subsidy. For very small bills, a small system or waiting may be smarter; we tell you honestly at the site visit.' },

@@ -136,7 +136,7 @@ The very same scorching sun that causes your AC to work overtime is exactly what
 
 If your total summer consumption was 1,000 units, the solar system subtracts 900 units. TNEB will only bill you for the remaining 100 units-which fall into the "Free" slab! Your massive ₹10,000 summer bill instantly becomes zero.
 
-Furthermore, with the introduction of the **PM Surya Ghar Subsidy**, homeowners can receive a massive ₹78,000 direct subsidy to install a 3kW system, making the Return on Investment (ROI) incredibly fast (usually under 4 years).
+Furthermore, with the introduction of the **PM Surya Ghar Subsidy**, eligible Tamil Nadu homeowners can receive up to ₹1 lakh in subsidy (₹78,000 PM Surya Ghar + ₹22,000 TN top-up) to install a 3kW system, making the Return on Investment (ROI) incredibly fast (usually under 4 years).
 
 ---
 
@@ -151,13 +151,13 @@ To offset high summer consumption:
 ### Financial Breakdown: The Summer Solar ROI
 *   **Average Summer Bill (Without Solar):** ₹6,000 - ₹8,000 bi-monthly
 *   **Annual Summer Cost:** ₹36,000 - ₹48,000
-*   **3kW Solar System Cost:** ₹1,80,000 (After ₹78,000 subsidy = ₹1,02,000 net)
+*   **3kW Solar System Cost:** ₹1,80,000 (After up to ₹1 lakh subsidy = about ₹80,000 net)
 *   **Monthly Savings:** ₹3,000 - ₹4,000 (From free AC and appliances)
 *   **Payback Period:** 2.5 - 3.5 years
 *   **25-Year Lifespan Savings:** ₹4,50,000+ (Tax-free)
 
 ### Subsidy and Loan Options (2026)
-- **PM Surya Ghar:** ₹78,000 direct subsidy for 3kW systems
+- **Subsidy:** ₹78,000 PM Surya Ghar + ₹22,000 TN top-up for eligible 3kW+ homes
 - **Bank Loans:** 8-9% interest, EMI as low as ₹2,200/month
 - **Green Finance:** Additional tax benefits and faster approvals
 

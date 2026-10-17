@@ -195,12 +195,12 @@ You owe TNEB absolutely nothing for electricity usage. Furthermore, those 150 su
 ### Financial Breakdown: The Tariff Escape Plan
 *   **Current High Bill Example:** ₹4,250 for 750 units
 *   **3kW Solar System Cost:** ₹1,80,000
-*   **PM Surya Ghar Subsidy:** ₹78,000
-*   **Net Investment:** ₹1,02,000
+*   **Subsidy:** up to ₹1,00,000 (₹78,000 PM Surya Ghar + ₹22,000 TN top-up)
+*   **Net Investment:** about ₹80,000
 *   **New Bill (After Solar):** ₹150 fixed charges only
-*   **Monthly Savings:** ₹4,100
-*   **Payback Period:** 2.5 years
-*   **20-Year Savings:** ₹9,84,000 (After payback)
+*   **Savings:** about ₹4,100 every two months (about ₹24,600 a year)
+*   **Payback Period:** about 3.3 years
+*   **20-Year Savings:** about ₹4 lakh after payback
 
 ### Advanced Financial Modeling
 - **Escalating Tariff Protection:** Solar locks in current rates vs TNEB's annual increases
@@ -215,7 +215,7 @@ You owe TNEB absolutely nothing for electricity usage. Furthermore, those 150 su
 
 Understanding TNEB tariff calculation empowers you to stop guessing and start planning. By identifying exactly which high-penalty slab your household falls into, you can determine exactly how much money you are losing to the grid every two months.
 
-With the massive financial incentives offered under the central government's **PM Surya Ghar Subsidy scheme** (up to ₹78,000 direct subsidy), investing in a rooftop solar system is mathematically the smartest, highest-yielding financial decision a homeowner in Tamil Nadu can make to defeat the telescopic tariff trap permanently.
+With the massive financial incentives offered under the central government's **PM Surya Ghar Subsidy scheme** (up to ₹1 lakh with the Tamil Nadu top-up), investing in a rooftop solar system is mathematically the smartest, highest-yielding financial decision a homeowner in Tamil Nadu can make to defeat the telescopic tariff trap permanently.
 
 *Are you tired of doing the math on massive EB bills? [Contact the engineering team at Surya's Solar today](/contact) for a free roof assessment. We will analyze your past EB bills and design a custom solar plant that permanently drops your net consumption into the Free Slab.*
 

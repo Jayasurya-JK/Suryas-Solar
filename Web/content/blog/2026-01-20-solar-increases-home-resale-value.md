@@ -139,7 +139,7 @@ If you are planning to sell your house in 3-5 years, installing solar NOW is a b
 ## Related Articles
 
 - **[Calculate Your Solar ROI](/blog/2026-01-08-solar-roi-calculator-break-even-analysis)** - Understand the complete financial breakdown
-- **[PM Surya Ghar Subsidy Guide](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)** - Get up to ₹78,000 subsidy before selling
+- **[PM Surya Ghar Subsidy Guide](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)** - Get up to ₹1 lakh subsidy before selling
 - **[Understanding Your TNEB Bill](/blog/2026-01-17-understanding-tneb-solar-bill)** - Show buyers the actual savings
 
 <!-- COMPONENT: CONTACT_CTA -->

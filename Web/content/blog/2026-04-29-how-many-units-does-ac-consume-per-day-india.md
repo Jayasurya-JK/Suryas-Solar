@@ -154,7 +154,7 @@ This means a single 3kW solar plant generates enough free energy to:
 3. Completely power 4 ceiling fans, all your LED lights, your TV, and your washing machine.
 4. Reduce your massive summer utility bill down to essentially **Zero.**
 
-With the massive financial incentives offered under the central government's **PM Surya Ghar Subsidy scheme** (up to ₹78,000 direct subsidy for a 3kW plant), investing in a rooftop solar system is no longer just for environmentalists. It is the smartest financial decision a homeowner running an AC can make, typically paying for itself entirely in less than 4 years.
+With the massive financial incentives offered under the central government's **PM Surya Ghar Subsidy scheme** (up to ₹78,000 for a 3kW plant, plus a ₹22,000 Tamil Nadu top-up for eligible homes), investing in a rooftop solar system is no longer just for environmentalists. It is the smartest financial decision a homeowner running an AC can make, typically paying for itself entirely in less than 4 years.
 
 ---
 
@@ -169,15 +169,14 @@ With the massive financial incentives offered under the central government's **P
 *   **AC Monthly Cost:** ₹1,500 - ₹2,500 (8 hours/day)
 *   **Annual AC Electricity:** ₹18,000 - ₹30,000
 *   **3kW Solar System:** ₹1,80,000
-*   **Subsidy:** ₹78,000
-*   **Net Cost:** ₹1,02,000
-*   **Payback from AC Savings:** 3.4 - 5.7 years
+*   **Subsidy:** up to ₹1,00,000 (eligible Tamil Nadu home)
+*   **Net Cost:** about ₹80,000
+*   **Payback from AC Savings:** about 3 - 4.5 years
 *   **Total 25-Year Savings:** ₹3,00,000+
 
 ### Advanced AC Integration
 - **Hybrid System for Backup:** Adds ₹50,000-₹80,000 for battery
 - **Smart Inverter Features:** Time-of-use optimization for AC
-- **Maintenance Savings:** Solar reduces AC wear by 30%
 
 > **Engineering Tip:** Solar doesn't just power your AC; it eliminates the utility's summer penalty rates entirely.
 

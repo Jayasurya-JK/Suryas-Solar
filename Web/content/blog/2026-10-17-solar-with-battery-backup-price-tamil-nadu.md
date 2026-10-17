@@ -75,6 +75,17 @@ The difference between on-grid and hybrid comes from three parts: the **hybrid i
 
 Lithium looks expensive, but because you can use more of its capacity and it lasts about twice as long, the **10-year cost is often lower** for homes that use the battery every day. Tubular batteries make sense when cuts are rare and budget is tight.
 
+### Battery price by size (2026 market range)
+
+| Battery | Stores (usable) | Approx. price | Notes |
+| :--- | :--- | :--- | :--- |
+| 150Ah 12V solar tubular | about 0.9 kWh | ₹13,000 - ₹18,000 | Common for small backup; 2-4 needed for a hybrid bank |
+| 200Ah 12V solar tubular | about 1.2 kWh | ₹17,000 - ₹23,000 | Longer backup per battery |
+| 5kWh lithium (LFP) pack | about 4.5 kWh | ₹1.1 - 1.6 lakh | Wall or rack mounted, no maintenance |
+| 10kWh lithium (LFP) pack | about 9 kWh | ₹2 - 3 lakh | Larger homes, longer cuts |
+
+*Usable energy assumes about 50% depth of discharge for tubular and about 90% for lithium. Prices vary by brand, warranty and voltage; confirm in a written quote.*
+
 ### 2. Battery size (kWh)
 Battery capacity is measured in **kWh (units)**. A 5kWh battery stores about 5 units. If your essential load is 600 watts, that is roughly 7-8 hours of backup on a lithium battery.
 

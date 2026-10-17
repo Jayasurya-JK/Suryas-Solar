@@ -3,7 +3,7 @@ title: '3kW Solar: How Many Units Per Day, Price & Payback (TN 2026)'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-
-  A 3kW solar system makes about 11-14 units a day (330-420 a month) in Tamil Nadu and gets the full ₹78,000 PM Surya Ghar subsidy. Price, units and payback explained.
+  A 3kW solar system makes about 11-14 units a day (330-420 a month) in Tamil Nadu and gets up to ₹1 lakh subsidy (₹78,000 + ₹22,000 TN). Price, units and payback explained.
 featuredImage: /images/3kw-solar-system-price-india-2026.webp
 category: Cost & Savings
 tags:
@@ -116,16 +116,16 @@ The following prices are for a quality (not budget, not premium) 3kW On-Grid ins
 
 ## 5. The PM Surya Ghar Subsidy Impact on a 3kW System
 
-For a 3kW system, the central government's PM Surya Ghar scheme provides the maximum available subsidy:
+For a 3kW system, the central PM Surya Ghar scheme provides ₹78,000, and eligible Tamil Nadu homes get a further ₹22,000 state top-up:
 
-**₹78,000 direct bank transfer** to your account within 30 to 90 days of commissioning.
+**Up to ₹1,00,000 in total**, paid to your bank account after commissioning.
 
 This means your effective net investment for a 3kW system is:
-*   Gross Installation Cost: ₹1,75,000 (average)
-*   Minus Subsidy: ₹78,000
-*   **Net Cost to You: ₹97,000**
+*   Gross Installation Cost: ₹1,80,000 - ₹2,10,000 (market range)
+*   Minus Subsidy: up to ₹1,00,000
+*   **Net Cost to You: about ₹80,000 - ₹1,10,000**
 
-For under ₹1 Lakh, you get a 25-year electricity-bill-eliminating asset on your roof. There is no bank FD or mutual fund that can guarantee this kind of financial return with zero risk.
+For under ₹1 Lakh, you get a 25-year electricity-bill-eliminating asset on your roof. For most homes with an AC, few safe investments match that return.
 
 ---
 
@@ -174,7 +174,7 @@ Not all solar panels are created equal. For a 3kW system in Tamil Nadu's harsh c
 ## 8. Common Mistakes to Avoid When Buying a 3kW System
 
 1. **Do not buy based on price alone.** The cheapest quote almost always uses inferior components that will underperform within 5 years.
-2. **Always verify MNRE empanelment.** If the vendor is not empanelled under PM Surya Ghar, you will not receive the ₹78,000 subsidy-even if you paid the full price.
+2. **Always verify MNRE empanelment.** If the vendor is not empanelled under PM Surya Ghar, you will not receive the subsidy, even if you paid the full price.
 3. **Insist on a written warranty document.** Verbal warranties mean nothing. Get the panel and inverter warranty in writing.
 4. **Demand a site survey before finalizing.** Any legitimate vendor will do a roof measurement and shade analysis before quoting. If someone quotes you over the phone without seeing your roof, be cautious.
 
@@ -190,10 +190,10 @@ Not all solar panels are created equal. For a 3kW system in Tamil Nadu's harsh c
 
 ### Financial Breakdown: 3kW ROI Blueprint
 *   **System Cost:** ₹1,80,000
-*   **PM Surya Ghar Subsidy:** ₹78,000
-*   **Net Investment:** ₹1,02,000
+*   **Subsidy:** up to ₹1,00,000 (eligible Tamil Nadu home)
+*   **Net Investment:** about ₹80,000
 *   **Annual Savings:** ₹24,000 - ₹30,000
-*   **Payback Period:** 3.4 - 4.3 years
+*   **Payback Period:** about 3 - 4.5 years
 *   **25-Year Savings:** ₹4,00,000 - ₹5,00,000
 
 ### Advanced 3kW Strategies

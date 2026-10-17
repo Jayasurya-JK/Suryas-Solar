@@ -216,7 +216,7 @@ export default function LocationPage({ location, settings }) {
               <p className="text-sm font-bold text-gray-900 mb-4">{location.name} at a glance</p>
               <dl className="divide-y divide-slate-200 text-sm">
                 {[
-                  ['Max subsidy', isPY ? 'Up to ₹78,000 (central)' : 'Up to ₹1,00,000 (₹78,000 + ₹22,000 TN)'],
+                  ['Max subsidy', isPY ? '₹78,000 central + reported PY top-up' : 'Up to ₹1,00,000 (₹78,000 + ₹22,000 TN)'],
                   ['Net meter by', isPY ? 'Electricity Department, Puducherry (PED)' : 'TNEB / TNPDCL'],
                   ['3kW makes', '12 - 15 units a day'],
                   ['3kW price', isPY ? '₹1 - 1.3 lakh after subsidy' : '₹80,000 - ₹1,10,000 after subsidy'],
@@ -288,7 +288,7 @@ export default function LocationPage({ location, settings }) {
             </div>
             <p className="mt-3 text-sm text-gray-500">
               {isPY
-                ? 'Puducherry homes get the central PM Surya Ghar subsidy only; the ₹22,000 Tamil Nadu top-up does not apply.'
+                ? 'Puducherry homes get the central PM Surya Ghar subsidy (up to ₹78,000); the ₹22,000 Tamil Nadu top-up does not apply. Puducherry has also reported its own additional state subsidy for homes (reports mention about ₹9,000-10,000 per kW, up to about ₹30,000); we confirm the current amount with the Electricity Department at your site visit.'
                 : 'TN top-up applies to eligible domestic consumers registered on PM Surya Ghar from 5 Aug 2026, reportedly limited to the first 1 lakh homes.'}{' '}
               Full price list: <Link href="/blog/2026-10-17-solar-panel-price-list-tamil-nadu-by-brand" className="text-primary font-medium hover:underline">solar panel price list 2026</Link>.
             </p>

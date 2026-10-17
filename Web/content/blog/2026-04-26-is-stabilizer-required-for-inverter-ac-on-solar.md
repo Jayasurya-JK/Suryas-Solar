@@ -138,12 +138,12 @@ When integrating stabilizers with solar inverters:
 - **Sizing Rule:** Stabilizer capacity should be 2.5x the AC's running watts (e.g., 4kVA for 1.5-ton AC).
 
 ### The Complete Solar AC Setup Cost Breakdown (2026)
-*   **3kW On-Grid Solar System:** ₹1,80,000 (After ₹78,000 subsidy)
+*   **3kW On-Grid Solar System:** about ₹80,000 - ₹1,10,000 (after up to ₹1 lakh subsidy)
 *   **Premium 1.5-Ton Inverter AC:** ₹45,000
 *   **Dedicated AC Stabilizer:** ₹2,500
-*   **Total Investment:** ₹2,27,500
+*   **Total Investment:** about ₹1,30,000 - ₹1,60,000
 *   **Annual Electricity Savings:** ₹25,000+ (From free AC usage)
-*   **Payback Period:** 9 years (But AC lasts 10+ years, solar 25+ years)
+*   **Payback Period:** about 5-6 years (the AC lasts 10+ years, solar 25+ years)
 
 > **Engineering Verdict:** The stabilizer is not an optional accessory; it is a mandatory component for long-term reliability. The ₹2,500 investment protects a ₹45,000 AC and ensures your solar investment delivers maximum ROI without unexpected breakdowns.
 

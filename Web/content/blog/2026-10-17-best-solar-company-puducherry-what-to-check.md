@@ -23,8 +23,9 @@ faqs:
   - question: How much subsidy do Puducherry homes get for solar?
     answer: >-
       Puducherry homes get the central PM Surya Ghar subsidy of up to ₹78,000
-      for 3kW and above. The extra ₹22,000 Tamil Nadu top-up does not apply in
-      Puducherry because it is a Tamil Nadu state scheme.
+      for 3kW and above. The ₹22,000 Tamil Nadu top-up does not apply, but
+      Puducherry has reported its own state top-up (about ₹9,000-10,000 per kW,
+      up to about ₹30,000); we confirm the current amount with PED.
   - question: What is the price of a 3kW solar system in Puducherry?
     answer: >-
       About ₹1.8 to 2.1 lakh installed for an on-grid DCR system (market range,
@@ -42,7 +43,7 @@ faqs:
 ---
 **Short answer:** the best solar company in Puducherry is one that is **registered on the PM Surya Ghar portal**, has **done net meters with the Puducherry Electricity Department (PED)**, uses **hot-dip galvanized structures for the salty coastal air**, installs **DCR panels** so you get the **₹78,000 central subsidy**, and has a **service team close enough to visit within a day or two**. Below are 9 checks you can use with any company, including us.
 
-> *Puducherry note: the ₹22,000 Tamil Nadu top-up does not apply in Puducherry. Homes here get the central subsidy only, up to ₹78,000. Rules as of October 2026.*
+> *Puducherry note: the ₹22,000 Tamil Nadu top-up does not apply in Puducherry. Homes here get the central subsidy of up to ₹78,000. Puducherry has also reported its own additional state subsidy for homes (reports mention about ₹9,000-10,000 per kW, up to about ₹30,000); we confirm the current amount with the Electricity Department at your site visit. Rules as of October 2026.*
 
 ---
 
