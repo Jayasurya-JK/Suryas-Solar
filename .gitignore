@@ -1,2 +1,8 @@
 # Local Search Console exports — do not commit
 Google_performance_report/aug_19_2026_console reports/
+
+# Playwright MCP browser snapshots/logs
+.playwright-mcp/
+
+# Oct 2026 Search Console CSV exports (plan .md stays tracked)
+Google_performance_report/oct_17_2026_console/*/

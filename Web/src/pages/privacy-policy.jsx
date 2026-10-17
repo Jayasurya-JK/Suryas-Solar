@@ -9,6 +9,7 @@ export default function PrivacyPolicy() {
             <Head>
                 <title>Privacy Policy - Surya's Solar</title>
                 <meta name="description" content="Your privacy matters. Learn how Surya's Solar protects your data during free consultations and subsidy applications. We never sell your info." />
+                <link rel="canonical" href="https://www.suryassolar.com/privacy-policy" />
 
             </Head>
 
@@ -62,8 +63,8 @@ export default function PrivacyPolicy() {
                                 </p>
                                 <div className="mt-4 bg-gray-50 p-4 rounded-lg border border-gray-200">
                                     <p><strong>Surya's Solar</strong></p>
-                                    <p>No.33, Nellikuppam Main Rd, Kondur</p>
-                                    <p>Cuddalore - 607002</p>
+                                    <p>No.33, Sri Gokul Enterprises Building, Nellikuppam Main Rd, Chavadi, Kondur</p>
+                                    <p>Cuddalore - 607006</p>
                                     <p>Email: suryassolarenergy@gmail.com</p>
                                     <p>Phone: +91 7904369094</p>
                                 </div>

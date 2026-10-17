@@ -266,7 +266,7 @@ export default function ContactPage() {
                                         <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                                     </summary>
                                     <p className="mt-3 text-gray-600 text-sm md:text-base leading-relaxed">
-                                        Our office in Kondur, Cuddalore is open <strong>Monday to Saturday, 9:00 AM to 6:00 PM</strong>. However, our WhatsApp support is available 24/7 for urgent queries.
+                                        Our office in Kondur, Cuddalore is open <strong>all 7 days, Monday to Sunday, 9:00 AM to 8:00 PM</strong>. Our WhatsApp support is available 24/7 for urgent queries.
                                     </p>
                                 </details>
 

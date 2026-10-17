@@ -2,7 +2,12 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "suryassolar.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "suryassolar.com"
+        }
+      ],
       "destination": "https://www.suryassolar.com/:path*",
       "permanent": true
     },
@@ -14,6 +19,36 @@
     {
       "source": "/blog/2025-12-11-solar-myths-vs-facts-tamil-nadu",
       "destination": "/blog/2025-12-04-solar-myths-vs-facts-tamil-nadu",
+      "permanent": true
+    },
+    {
+      "source": "/blog/20-mono-vs-bifacial-solar-panels",
+      "destination": "/blog/2026-01-07-mono-vs-bifacial-solar-panels",
+      "permanent": true
+    },
+    {
+      "source": "/blog/20-26-01-07-mono-vs-bifacial-solar-panels",
+      "destination": "/blog/2026-01-07-mono-vs-bifacial-solar-panels",
+      "permanent": true
+    },
+    {
+      "source": "/blog/20-mono-vs-bifacial-solar-panels-is-the-extra-cost-worth-it",
+      "destination": "/blog/2026-01-07-mono-vs-bifacial-solar-panels",
+      "permanent": true
+    },
+    {
+      "source": "/blog/20-vs-bifacial-solar-panels-is-the-extra-cost-worth-it-in-2026",
+      "destination": "/blog/2026-01-07-mono-vs-bifacial-solar-panels",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2025-12-01-best-solar-panel-brands-tamil-nud-puducherry",
+      "destination": "/blog/2025-12-01-best-solar-panel-brands-tamil-nadu-puducherry",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2025-12-01-best-solar-panel-brands-tamil-puducherry",
+      "destination": "/blog/2025-12-01-best-solar-panel-brands-tamil-nadu-puducherry",
       "permanent": true
     }
   ]

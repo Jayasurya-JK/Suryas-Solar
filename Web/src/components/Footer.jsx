@@ -40,21 +40,24 @@ export default function Footer() {
     { name: 'Blogs', href: '/blog' },
   ]
 
+  // Site-wide links so Google can reach every money page from any page
   const services = [
-    'Residential Solar',
-    'Commercial Solar',
-    'Solar Maintenance',
-    'Government Subsidy',
-    'Net Metering',
+    { name: '3kW Solar System', href: '/systems/3kw-solar-system-with-subsidy' },
+    { name: '5kW Solar System', href: '/systems/5kw-solar-system-with-subsidy' },
+    { name: 'Solar Panel Cost 2026', href: '/blog/2026-05-04-solar-panel-cost-tamil-nadu-2026-price-subsidy-savings' },
+    { name: 'PM Surya Ghar Subsidy', href: '/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026' },
+    { name: 'TNEB Net Metering', href: '/blog/2026-01-04-how-to-get-tneb-net-meter-cuddalore-2026' },
+    { name: 'Commercial Solar', href: '/blog/2026-01-19-commercial-solar-tax-benefits' },
+    { name: 'Solar Maintenance', href: '/blog/2026-01-10-solar-maintenance-guide-cuddalore' },
   ]
 
   const areasServed = [
-    'Cuddalore',
-    'Puducherry (Pondicherry)',
-    'Neyveli Township',
-    'Panruti',
-    'Chidambaram',
-    'Villupuram',
+    { name: 'Cuddalore', href: '/service-areas/cuddalore' },
+    { name: 'Puducherry (Pondicherry)', href: '/service-areas/puducherry' },
+    { name: 'Neyveli Township', href: '/service-areas/neyveli' },
+    { name: 'Panruti', href: '/service-areas/panruti' },
+    { name: 'Chidambaram' },
+    { name: 'Villupuram' },
   ]
 
   const socialLinks = [
@@ -147,8 +150,13 @@ export default function Footer() {
           <FooterSection title="Our Services">
             <ul className="space-y-2">
               {services.map((service) => (
-                <li key={service} className="text-sm py-1 md:py-0">
-                  {service}
+                <li key={service.href}>
+                  <Link
+                    href={service.href}
+                    className="text-sm hover:text-primary transition-colors block py-1 md:py-0"
+                  >
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -158,8 +166,17 @@ export default function Footer() {
           <FooterSection title="Areas Served">
             <ul className="space-y-2">
               {areasServed.map((area) => (
-                <li key={area} className="text-sm py-1 md:py-0">
-                  {area}
+                <li key={area.name}>
+                  {area.href ? (
+                    <Link
+                      href={area.href}
+                      className="text-sm hover:text-primary transition-colors block py-1 md:py-0"
+                    >
+                      Solar in {area.name}
+                    </Link>
+                  ) : (
+                    <span className="text-sm block py-1 md:py-0">{area.name}</span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -207,7 +224,7 @@ export default function Footer() {
                 <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Mon - Sat: 9:00 AM - 6:00 PM<br />Sunday: Closed</span>
+                <span>Open all 7 days<br />Mon - Sun: 9:00 AM - 8:00 PM</span>
               </li>
             </ul>
           </FooterSection>

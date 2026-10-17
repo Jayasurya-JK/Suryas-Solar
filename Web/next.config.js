@@ -18,6 +18,15 @@ const nextConfig = {
         destination: '/blog/2025-12-04-solar-myths-vs-facts-tamil-nadu',
         permanent: true,
       },
+      // Mistyped URLs seen in Search Console (Oct 2026)
+      ...[
+        ['/blog/20-mono-vs-bifacial-solar-panels', '/blog/2026-01-07-mono-vs-bifacial-solar-panels'],
+        ['/blog/20-26-01-07-mono-vs-bifacial-solar-panels', '/blog/2026-01-07-mono-vs-bifacial-solar-panels'],
+        ['/blog/20-mono-vs-bifacial-solar-panels-is-the-extra-cost-worth-it', '/blog/2026-01-07-mono-vs-bifacial-solar-panels'],
+        ['/blog/20-vs-bifacial-solar-panels-is-the-extra-cost-worth-it-in-2026', '/blog/2026-01-07-mono-vs-bifacial-solar-panels'],
+        ['/blog/2025-12-01-best-solar-panel-brands-tamil-nud-puducherry', '/blog/2025-12-01-best-solar-panel-brands-tamil-nadu-puducherry'],
+        ['/blog/2025-12-01-best-solar-panel-brands-tamil-puducherry', '/blog/2025-12-01-best-solar-panel-brands-tamil-nadu-puducherry'],
+      ].map(([source, destination]) => ({ source, destination, permanent: true })),
     ]
   },
   async headers() {

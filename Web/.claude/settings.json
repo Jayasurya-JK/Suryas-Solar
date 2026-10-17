@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build)",
+      "Bash(npm run lint)",
+      "Bash(npm run dev)",
+      "Bash(npm.cmd run build)",
+      "Bash(npm.cmd run lint)",
+      "Bash(node scripts/generate-sitemap.js)",
+      "Bash(node .claude/skills/*)",
+      "Bash(bash .claude/skills/*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(curl -sI *)",
+      "Bash(curl -s *)",
+      "Bash(nslookup *)",
+      "WebFetch(domain:www.suryassolar.com)",
+      "WebFetch(domain:suryassolar.com)"
+    ],
+    "ask": [
+      "Bash(git push*)"
+    ]
+  }
+}

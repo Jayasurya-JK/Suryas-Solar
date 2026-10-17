@@ -4,6 +4,11 @@ const matter = require('gray-matter');
 
 const SITE_URL = 'https://www.suryassolar.com';
 
+// Bump this date whenever you meaningfully edit the landing pages (about, contact,
+// service areas, systems...). A real date tells Google when to recrawl; stamping
+// "today" on every build teaches Google to ignore lastmod.
+const LANDING_PAGES_UPDATED = '2026-10-17';
+
 // Static pages
 const staticPages = [
     { url: '/', changefreq: 'weekly', priority: 1.0 },
@@ -52,10 +57,12 @@ function generateSitemap() {
                         const fileContents = fs.readFileSync(filePath, 'utf8');
                         const { data } = matter(fileContents);
 
+                        // Real last-modified date: `updated` if set, else publish `date`
                         let dateStr = today;
-                        if (data.date) {
+                        const lastChanged = data.updated || data.date;
+                        if (lastChanged) {
                             try {
-                                dateStr = new Date(data.date).toISOString().split('T')[0];
+                                dateStr = new Date(lastChanged).toISOString().split('T')[0];
                             } catch (e) {
                                 console.warn(`Invalid date for ${slug}, using today.`);
                             }
@@ -72,11 +79,13 @@ function generateSitemap() {
         console.error('Error reading blog posts:', error);
     }
 
+    const latestPostDate = blogPosts.map(p => p.date).sort().pop() || LANDING_PAGES_UPDATED;
+
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${landingPages.map(page => `  <url>
     <loc>${SITE_URL}${page.url}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${page.url === '/' || page.url === '/blog' ? latestPostDate : LANDING_PAGES_UPDATED}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`).join('\n')}

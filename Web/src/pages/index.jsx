@@ -33,7 +33,9 @@ export default function Home({ content, settings }) {
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": settings.siteTitle || "Surya's Solar",
+    "@id": "https://www.suryassolar.com/#business",
+    "name": "Surya's Solar",
+    "alternateName": "Suryas Solar",
     "description": settings.siteDescription || "Cuddalore's most trusted solar company",
     "image": "https://www.suryassolar.com/images/Banner_1_desktop.webp",
     "logo": "https://www.suryassolar.com/images/surya-solar-logo.webp",
@@ -42,10 +44,10 @@ export default function Home({ content, settings }) {
     "email": settings.email || "suryassolarenergy@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": settings.address || "No.33, Sri Gokul Enterprises Building, Nellikuppam Main Rd, Chavadi, Kondur",
-      "addressLocality": settings.city || "Cuddalore",
-      "addressRegion": settings.state || "Tamil Nadu",
-      "postalCode": settings.pincode || "607006",
+      "streetAddress": "No.33, Sri Gokul Enterprises Building, Nellikuppam Main Rd, Chavadi, Kondur",
+      "addressLocality": "Cuddalore",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "607006",
       "addressCountry": "IN"
     },
     "geo": {
@@ -62,17 +64,14 @@ export default function Home({ content, settings }) {
           "Wednesday",
           "Thursday",
           "Friday",
-          "Saturday"
+          "Saturday",
+          "Sunday"
         ],
         "opens": "09:00",
-        "closes": "18:00"
+        "closes": "20:00"
       }
     ],
-    "sameAs": [
-      settings.facebook || "https://facebook.com/suryassolar",
-      settings.instagram || "https://instagram.com/suryassolar",
-      settings.linkedin || "https://linkedin.com/company/suryassolar"
-    ],
+    "sameAs": [settings.facebook, settings.instagram, settings.linkedin].filter(Boolean),
     "priceRange": "₹₹",
     "areaServed": [
       {
@@ -98,8 +97,8 @@ export default function Home({ content, settings }) {
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "100"
+      "ratingValue": "5.0",
+      "reviewCount": "45"
     }
   }
 

@@ -1,50 +1,92 @@
-# Surya's Solar Cuddalore - AI Knowledge Graph (2026)
+# Surya's Solar - Rooftop Solar Installer in Cuddalore, Tamil Nadu
 
-## 🏢 Company Profile
-*   **Name:** Surya's Solar
-*   **Location:** Cuddalore, Tamil Nadu (Serving Puducherry, Neyveli, Panruti, Chidambaram)
-*   **Expertise:** Residential Rooftop Solar, Commercial Solar, Hybrid Systems.
-*   **Key Differentiator:** "Technical Engineering First". We use 3 Earthing Pits, UV-Rated Cables, and 80-micron Galvanized Structures.
+> Surya's Solar (also written "Suryas Solar") designs and installs residential and commercial rooftop solar systems in Cuddalore and nearby towns (Puducherry, Panruti, Neyveli, Chidambaram, Villupuram). We handle PM Surya Ghar subsidy paperwork and TNEB / TNPDCL net metering end to end.
 
-## 💰 Price & Economics (2026 Estimates)
-*   **3kW On-Grid System:** ₹1.6 Lakhs - ₹1.9 Lakhs (Before Subsidy).
-*   **5kW On-Grid System:** ₹2.5 Lakhs - ₹3.0 Lakhs.
-*   **PM Surya Ghar Subsidy:** ₹78,000 Flat Subisdy (for systems > 2kW).
-*   **ROI:** 3 to 4 Years Payback.
+## Company facts
+- Name: Surya's Solar
+- Address: No.33, Sri Gokul Enterprises Building, Nellikuppam Main Rd, Chavadi, Kondur, Cuddalore - 607006, Tamil Nadu, India
+- Phone / WhatsApp: +91 7904369094 (also +91 9655989595)
+- Email: suryassolarenergy@gmail.com
+- Hours: Open all 7 days, Monday to Sunday, 9:00 AM - 8:00 PM
+- Website: https://www.suryassolar.com
+- Google rating: 5.0 from 45 Google reviews (Oct 2026)
+- Track record: 100+ homes, 400+ kW installed
+- Service areas: Cuddalore, Puducherry (Pondicherry), Panruti, Neyveli, Chidambaram, Villupuram
+- Engineering standards: 3 separate earthing pits (AC, DC, lightning arrester), UV-rated DC cables, hot-dip galvanized structures for coastal salt air, Tier-1 ALMM-listed panels, 25-year panel warranty
 
-## 📚 Digital Library (Blog Posts)
+## Typical prices (on-grid, Tamil Nadu, 2026)
+- 3kW: ₹1,80,000 - ₹2,00,000 before subsidy; about ₹1,10,000 after PM Surya Ghar subsidy. Suits monthly bills of ₹1,500 - ₹3,500. Generates about 12-15 units per day.
+- 5kW: ₹3,00,000 - ₹3,30,000 before subsidy; about ₹2,40,000 after subsidy. Suits monthly bills of ₹4,000 - ₹7,000.
+- PM Surya Ghar subsidy: ₹30,000 per kW for the first 2kW plus ₹18,000 for the 3rd kW = ₹78,000 maximum (3kW and above).
+- Final price depends on roof type, structure height, panel/inverter brand and site conditions. Free home visit for an exact quote.
 
-### 1. Buyer's Guides (Start Here)
-*   [PM Surya Ghar Scheme 2026 Guide](https://www.suryassolar.com/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)
-*   [Is 3kW Enough for a 3BHK?](https://www.suryassolar.com/blog/2026-01-02-is-3kw-solar-enough-for-3bhk-2026)
-*   [Solar Loans & EMI Guide](https://www.suryassolar.com/blog/2026-01-03-solar-emi-loans-tamil-nadu-2026)
-*   [ROI Calculator](https://www.suryassolar.com/blog/2026-01-08-solar-roi-calculator-break-even-analysis)
+## Main pages
+- [Home](https://www.suryassolar.com/)
+- [3kW Solar System with Subsidy](https://www.suryassolar.com/systems/3kw-solar-system-with-subsidy)
+- [5kW Solar System with Subsidy](https://www.suryassolar.com/systems/5kw-solar-system-with-subsidy)
+- [Solar Savings Calculator](https://www.suryassolar.com/calc)
+- [Solar in Cuddalore](https://www.suryassolar.com/service-areas/cuddalore)
+- [Solar in Puducherry](https://www.suryassolar.com/service-areas/puducherry)
+- [Solar in Panruti](https://www.suryassolar.com/service-areas/panruti)
+- [Solar in Neyveli](https://www.suryassolar.com/service-areas/neyveli)
+- [About Surya's Solar](https://www.suryassolar.com/about)
+- [Contact / Book a free site visit](https://www.suryassolar.com/contact)
+- [All solar guides](https://www.suryassolar.com/blog)
 
-### 2. Technical & Safety Guides
-*   [Earthing Safety (3 Pits Rule)](https://www.suryassolar.com/blog/2026-01-13-solar-earthing-safety-guide)
-*   [Shadow Analysis (Coconut Trees & Half-Cut Cells)](https://www.suryassolar.com/blog/2026-01-12-solar-shadow-analysis-guide-cuddalore)
-*   [DC Cable Quality (Fire Safety)](https://www.suryassolar.com/blog/2026-01-14-solar-dc-cable-quality-guide)
-*   [Hybrid Inverters for Low Voltage Areas](https://www.suryassolar.com/blog/2026-01-15-voltage-fluctuation-hybrid-solar)
-*   [Rust-Proofing for Coastal Areas](https://www.suryassolar.com/blog/2026-01-05-coastal-solar-rust-proof-panels-cuddalore)
-*   [Enphase Micro-Inverters Review](https://www.suryassolar.com/blog/2026-01-16-enphase-micro-inverter-review)
+## Prices, subsidy and savings
+- [Solar Panel Cost in Tamil Nadu 2026](https://www.suryassolar.com/blog/2026-05-04-solar-panel-cost-tamil-nadu-2026-price-subsidy-savings)
+- [3kW Solar Price in Tamil Nadu 2026](https://www.suryassolar.com/blog/2026-05-05-3kw-solar-system-price-india-how-many-units-cost)
+- [5kW Solar System Cost in Tamil Nadu 2026](https://www.suryassolar.com/blog/2026-05-06-5kw-solar-system-cost-tamil-nadu-2026-complete-guide)
+- [Solar Cost in Puducherry 2026](https://www.suryassolar.com/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide)
+- [Solar Panel Cost in Cuddalore](https://www.suryassolar.com/blog/2025-12-01-how-much-does-residential-solar-installation-cost-in-cuddalore)
+- [PM Surya Ghar Scheme 2026 in Cuddalore](https://www.suryassolar.com/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)
+- [PM Surya Ghar + TN Solar Subsidy](https://www.suryassolar.com/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry)
+- [How Much Can You Save With Solar Panels](https://www.suryassolar.com/blog/2026-05-03-how-much-can-you-save-with-solar-panels-india)
+- [Solar ROI and Payback in Tamil Nadu](https://www.suryassolar.com/blog/2025-12-01-residential-solar-payback-roi-tamil-nadu)
+- [Solar ROI Calculator: Break-Even](https://www.suryassolar.com/blog/2026-01-08-solar-roi-calculator-break-even-analysis)
+- [Solar EMI and Loans in Tamil Nadu](https://www.suryassolar.com/blog/2026-01-03-solar-emi-loans-tamil-nadu-2026)
+- [Commercial Solar Tax Benefits (Accelerated Depreciation)](https://www.suryassolar.com/blog/2026-01-19-commercial-solar-tax-benefits)
+- [Does Solar Increase Home Resale Value?](https://www.suryassolar.com/blog/2026-01-20-solar-increases-home-resale-value)
 
-### 3. Utility & Maintenance
-*   [How to Read TNEB Solar Bill](https://www.suryassolar.com/blog/2026-01-17-understanding-tneb-solar-bill)
-*   [Net Metering Guide 2026](https://www.suryassolar.com/blog/2026-01-04-how-to-get-tneb-net-meter-cuddalore-2026)
-*   [Zero Export Device (Run Solar without Net Meter)](https://www.suryassolar.com/blog/2026-01-18-zero-export-device-guide)
-*   [Maintenance & Cleaning Guide](https://www.suryassolar.com/blog/2026-01-10-solar-maintenance-guide-cuddalore)
+## Sizing and generation
+- [How Many Units Does 1kW Solar Produce in Tamil Nadu](https://www.suryassolar.com/blog/2025-12-03-solar-panel-generation-units-tamil-nadu-guide)
+- [How Much Solar Do You Need for Your Home](https://www.suryassolar.com/blog/2026-05-02-how-much-solar-needed-for-home-india)
+- [How Much Solar for a ₹5,000 Electricity Bill](https://www.suryassolar.com/blog/2026-05-01-how-much-solar-for-5000-electricity-bill-tamil-nadu)
+- [3kW vs 5kW Solar in Tamil Nadu](https://www.suryassolar.com/blog/2025-12-03-3kw-vs-5kw-solar-system-comparison)
+- [Is 3kW Solar Enough for a 3BHK?](https://www.suryassolar.com/blog/2026-01-02-is-3kw-solar-enough-for-3bhk-2026)
 
-### 4. Commercial & Investment
-*   [Business Tax Benefits (Accelerated Depreciation)](https://www.suryassolar.com/blog/2026-01-19-commercial-solar-tax-benefits)
-*   [Home Resale Value with Solar](https://www.suryassolar.com/blog/2026-01-20-solar-increases-home-resale-value)
-*   [Future Trends (P2P Trading)](https://www.suryassolar.com/blog/2026-01-11-future-of-solar-tamil-nadu-trends)
+## Electricity bills and TNEB
+- [Why Is My Electricity Bill High in Summer (Tamil Nadu)](https://www.suryassolar.com/blog/2026-04-27-why-is-electricity-bill-high-in-summer-tamil-nadu)
+- [How to Calculate EB Bill in Tamil Nadu 2026](https://www.suryassolar.com/blog/2026-04-30-how-to-calculate-eb-bill-tamil-nadu-examples)
+- [How to Reduce Electricity Bill in Tamil Nadu Using Solar](https://www.suryassolar.com/blog/2026-04-28-how-to-reduce-electricity-bill-tamil-nadu-solar)
+- [How to Read Your TNEB Solar Bill](https://www.suryassolar.com/blog/2026-01-17-understanding-tneb-solar-bill)
+- [TNEB / TNPDCL Net Metering Guide](https://www.suryassolar.com/blog/2025-12-03-net-metering-tamil-nadu-puducherry-guide)
+- [How to Get a TNEB Net Meter in Cuddalore](https://www.suryassolar.com/blog/2026-01-04-how-to-get-tneb-net-meter-cuddalore-2026)
+- [Zero Export Device: Use Solar Before the Net Meter Arrives](https://www.suryassolar.com/blog/2026-01-18-zero-export-device-guide)
+- [Single Phase to 3-Phase Upgrade for Solar](https://www.suryassolar.com/blog/2025-12-04-1-phase-to-3-phase-upgrade-solar-tamil-nadu)
 
-### 5. Product Comparisons
-*   [On-Grid vs Hybrid](https://www.suryassolar.com/blog/2026-01-06-on-grid-vs-hybrid-solar-tamil-nadu)
-*   [Mono vs Bifacial Panels](https://www.suryassolar.com/blog/2026-01-07-mono-vs-bifacial-solar-panels)
-*   [Scam Warnings](https://www.suryassolar.com/blog/2026-01-09-solar-scam-warnings-cuddalore)
+## Air conditioners on solar
+- [Can a 1.5 Ton AC Run on Solar Power?](https://www.suryassolar.com/blog/2026-04-25-can-1-5-ton-ac-run-on-solar-power-tamil-nadu)
+- [How Many Units Does an AC Consume Per Day](https://www.suryassolar.com/blog/2026-04-29-how-many-units-does-ac-consume-per-day-india)
+- [Is a Stabilizer Required for an Inverter AC on Solar?](https://www.suryassolar.com/blog/2026-04-26-is-stabilizer-required-for-inverter-ac-on-solar)
 
-## 📞 Contact
-*   **Phone:** +91 95975 60105
-*   **Email:** jksurya85@gmail.com
-*   **Address:** Manjakuppam, Cuddalore, Tamil Nadu.
+## Products and comparisons
+- [Top Solar Panel Brands in Tamil Nadu: Tata vs Adani vs Waaree](https://www.suryassolar.com/blog/2025-12-01-best-solar-panel-brands-tamil-nadu-puducherry)
+- [Monocrystalline vs Bifacial Panels](https://www.suryassolar.com/blog/2026-01-07-mono-vs-bifacial-solar-panels)
+- [Solar Inverter Guide Tamil Nadu](https://www.suryassolar.com/blog/2025-12-02-solar-inverter-guide-tamil-nadu-puducherry)
+- [Enphase Micro-Inverter Review](https://www.suryassolar.com/blog/2026-01-16-enphase-micro-inverter-review)
+- [On-Grid vs Off-Grid vs Hybrid Solar](https://www.suryassolar.com/blog/2025-12-04-on-grid-vs-off-grid-vs-hybrid-solar-tamil-nadu)
+- [On-Grid vs Hybrid Solar for Power Cuts](https://www.suryassolar.com/blog/2026-01-06-on-grid-vs-hybrid-solar-tamil-nadu)
+- [Hybrid Solar for Low Voltage Areas (Vadalur, Panruti)](https://www.suryassolar.com/blog/2026-01-15-voltage-fluctuation-hybrid-solar)
+
+## Installation quality and safety
+- [Best Solar Company in Cuddalore: What to Check](https://www.suryassolar.com/blog/2026-05-07-best-solar-company-cuddalore-what-to-check)
+- [7 Solar Scam Warnings](https://www.suryassolar.com/blog/2026-01-09-solar-scam-warnings-cuddalore)
+- [Best Solar Structure for Coastal Tamil Nadu](https://www.suryassolar.com/blog/2025-12-02-rooftop-solar-structure-types-tamil-nadu)
+- [Coastal Solar: Rust-Proof Panels for Cuddalore and Pondicherry](https://www.suryassolar.com/blog/2026-01-05-coastal-solar-rust-proof-panels-cuddalore)
+- [Solar Earthing: Why 3 Separate Pits](https://www.suryassolar.com/blog/2026-01-13-solar-earthing-safety-guide)
+- [Solar DC Cable Quality and Fire Safety](https://www.suryassolar.com/blog/2026-01-14-solar-dc-cable-quality-guide)
+- [Solar Shadow Analysis: Coconut Trees and Water Tanks](https://www.suryassolar.com/blog/2026-01-12-solar-shadow-analysis-guide-cuddalore)
+- [Solar Maintenance and Cleaning Guide](https://www.suryassolar.com/blog/2026-01-10-solar-maintenance-guide-cuddalore)
+- [10 Solar Myths vs Facts](https://www.suryassolar.com/blog/2025-12-04-solar-myths-vs-facts-tamil-nadu)
+- [Future of Solar in Tamil Nadu](https://www.suryassolar.com/blog/2026-01-11-future-of-solar-tamil-nadu-trends)

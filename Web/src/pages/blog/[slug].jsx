@@ -113,7 +113,7 @@ function ShareButtons({ title, isFooter = false }) {
   )
 }
 
-export default function BlogPost({ post, settings }) {
+export default function BlogPost({ post, settings, relatedPosts }) {
   if (!post || !post.title) {
     return <div>Loading...</div>;
   }
@@ -415,6 +415,45 @@ export default function BlogPost({ post, settings }) {
                   </div>
                 )}
 
+                {/* Related guides + previous/next posts */}
+                {relatedPosts && (
+                  <nav aria-label="Related solar guides" className="mt-6 pt-6 sm:mt-12 sm:pt-8 border-t border-gray-100">
+                    {relatedPosts.related.length > 0 && (
+                      <>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4">Related Solar Guides</h2>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                          {relatedPosts.related.map((item) => (
+                            <li key={item.slug}>
+                              <Link
+                                href={`/blog/${item.slug}`}
+                                className="block h-full rounded-xl border border-gray-100 bg-gray-50 p-4 hover:border-solar-orange hover:bg-orange-50 transition-colors"
+                              >
+                                {item.category && (
+                                  <span className="block text-xs font-semibold uppercase tracking-wider text-solar-orange mb-1">{item.category}</span>
+                                )}
+                                <span className="text-sm font-semibold text-gray-900 leading-snug">{item.title}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                    <div className="flex flex-col sm:flex-row justify-between gap-3 text-sm">
+                      {relatedPosts.older ? (
+                        <Link href={`/blog/${relatedPosts.older.slug}`} className="text-gray-600 hover:text-solar-orange sm:max-w-[48%]">
+                          <span className="block text-xs uppercase tracking-wider text-gray-400">Previous guide</span>
+                          {relatedPosts.older.title}
+                        </Link>
+                      ) : <span />}
+                      {relatedPosts.newer && (
+                        <Link href={`/blog/${relatedPosts.newer.slug}`} className="text-gray-600 hover:text-solar-orange sm:text-right sm:max-w-[48%]">
+                          <span className="block text-xs uppercase tracking-wider text-gray-400">Next guide</span>
+                          {relatedPosts.newer.title}
+                        </Link>
+                      )}
+                    </div>
+                  </nav>
+                )}
 
               </div>
             </div>
@@ -509,9 +548,38 @@ export async function getStaticPaths() {
   }
 }
 
+// Pick related posts by shared category/tags, plus chronological neighbours so
+// every post is linked from at least two other posts (helps Google crawl them all).
+function getRelatedPosts(slug) {
+  const all = getAllBlogPosts() // newest first
+  const index = all.findIndex((p) => p.slug === slug)
+  const current = all[index]
+  const tags = new Set((current.tags || []).map((t) => String(t).toLowerCase()))
+  const toLink = (p) => ({ slug: p.slug, title: p.title, category: p.category || null })
+
+  const related = all
+    .filter((p) => p.slug !== slug)
+    .map((p) => ({
+      p,
+      score: (p.category && p.category === current.category ? 3 : 0) +
+        (p.tags || []).filter((t) => tags.has(String(t).toLowerCase())).length,
+    }))
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 6)
+    .map((x) => toLink(x.p))
+
+  return {
+    related,
+    newer: index > 0 ? toLink(all[index - 1]) : null,
+    older: index < all.length - 1 ? toLink(all[index + 1]) : null,
+  }
+}
+
 export async function getStaticProps({ params }) {
   const post = getBlogPost(params.slug)
   const settings = getSiteSettings()
+  const relatedPosts = getRelatedPosts(params.slug)
   const serializeDate = (value) => {
     if (!value) return null
     const date = new Date(value)
@@ -528,6 +596,7 @@ export async function getStaticProps({ params }) {
     props: {
       post: serializedPost,
       settings,
+      relatedPosts,
     },
   }
 }

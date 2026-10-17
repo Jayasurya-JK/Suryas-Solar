@@ -44,8 +44,8 @@ export function getSiteSettings() {
     return {
       siteTitle: "Surya's Solar",
       siteDescription: "Leading residential solar installation",
-      phone: "+919876543210",
-      email: "info@suryassolar.com"
+      phone: "+917904369094",
+      email: "suryassolarenergy@gmail.com"
     }
   }
 }
