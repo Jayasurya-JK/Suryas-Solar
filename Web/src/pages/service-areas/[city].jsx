@@ -4,6 +4,7 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import WhyChoose from '../../components/WhyChoose'
 import BookingForm from '../../components/BookingForm'
+import SubsidyEligibilityChecker from '../../components/SubsidyEligibilityChecker'
 import WhatsAppFloat from '../../components/WhatsAppFloat'
 import CountUp from 'react-countup'
 import { getAllLocations, getLocationData } from '../../lib/locationsData'
@@ -102,13 +103,13 @@ export default function LocationPage({ location, settings }) {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="#booking"
+                  href="#eligibility"
                   className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-solar-orange hover:bg-solar-orange-600 text-white font-bold text-base shadow-[0_8px_30px_rgba(255,95,21,0.4)] hover:shadow-[0_12px_40px_rgba(255,95,21,0.5)] transform hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  Free Site Visit in {location.name}
+                  {location.name === 'Puducherry' ? 'Check My ₹78,000 Subsidy' : 'Check My ₹1 Lakh Subsidy'}
                 </a>
                 <a
                   href="tel:+917904369094"
@@ -259,7 +260,11 @@ export default function LocationPage({ location, settings }) {
               <h2 className="mt-3 text-4xl md:text-5xl font-playfair font-bold text-gray-900">
                 Choose Your Solar System
               </h2>
-              <p className="text-gray-500 mt-3 text-base max-w-lg mx-auto">Both qualify for the PM Surya Ghar ₹78,000 subsidy</p>
+              <p className="text-gray-500 mt-3 text-base max-w-lg mx-auto">
+                {location.name === 'Puducherry'
+                  ? 'Both qualify for the PM Surya Ghar subsidy of up to ₹78,000'
+                  : 'Both qualify for up to ₹1 lakh subsidy (₹78,000 PM Surya Ghar + ₹22,000 TN top-up)'}
+              </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -328,6 +333,26 @@ export default function LocationPage({ location, settings }) {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════
+            SUBSIDY ELIGIBILITY CHECKER (town pre-filled)
+        ══════════════════════════════════════════════ */}
+        <section id="eligibility" className="py-20 bg-gradient-to-b from-blue-50 to-white scroll-mt-32">
+          <div className="max-w-2xl mx-auto px-4">
+            <div className="text-center mb-8">
+              <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Free 30-second check</span>
+              <h2 className="mt-3 text-3xl md:text-4xl font-playfair font-bold text-gray-900">
+                Solar Subsidy Eligibility in {location.name}
+              </h2>
+              <p className="text-gray-500 mt-3 text-base">
+                {location.name === 'Puducherry'
+                  ? 'Answer 5 quick questions to see if your Puducherry home gets up to ₹78,000 PM Surya Ghar subsidy.'
+                  : `Answer 5 quick questions to see if your ${location.name} home gets up to ₹1 lakh. The ₹22,000 TN top-up is limited to the first 1 lakh homes.`}
+              </p>
+            </div>
+            <SubsidyEligibilityChecker town={location.name} source={`Town page: ${location.name}`} />
           </div>
         </section>
 

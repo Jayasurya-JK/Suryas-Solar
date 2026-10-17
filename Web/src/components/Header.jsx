@@ -73,7 +73,7 @@ export default function Header() {
 
         {/* ── Subsidy campaign banner (fixed height h-9; matching spacer below the header) ── */}
         <Link
-          href="/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry"
+          href="/subsidy-eligibility"
           className="block h-9 bg-primary-900 text-white hover:bg-primary-800 transition-colors"
         >
           <div className="max-w-7xl mx-auto h-full px-4 flex items-center justify-center gap-2 text-[0.78rem] sm:text-sm font-medium whitespace-nowrap overflow-hidden">

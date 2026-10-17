@@ -37,7 +37,7 @@ Marketing + lead-gen website for Surya's Solar, a residential/commercial rooftop
 - `../Marketing/MARKETING-PLAYBOOK.md` - positioning, the ₹1 lakh subsidy campaign, content calendar, KPIs, owner decisions. Read it before any marketing/content work; keep it updated.
 
 ## Skills for this project
-`suryas-business-facts` (facts), `solar-content-writer` (what to write + how + image prompts), `new-blog-post` (publish mechanics), `new-landing-page` (town/system pages), `seo-health-check` (indexing + Search Console), `ship-site` (deploy).
+`suryas-business-facts` (facts), `solar-content-writer` (what to write + how + image prompts), `new-blog-post` (publish mechanics), `new-landing-page` (town/system pages), `seo-health-check` (indexing + Search Console), `ship-site` (deploy), `suryas-ui-design` (UI/UX rules - load before any page or component work).
 
 ## Rules for working on this site
 
