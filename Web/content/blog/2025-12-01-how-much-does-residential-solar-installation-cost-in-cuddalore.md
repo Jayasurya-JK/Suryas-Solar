@@ -1,9 +1,7 @@
 ---
-title: Solar Panel Cost in Cuddalore (2025) - 1kW to 5kW Price List
+title: 'Solar Panel Cost in Cuddalore 2026: 1kW to 5kW Price List'
 date: '2025-12-01'
-excerpt: >-
-  Get the latest 2025 solar price list for Cuddalore. Breakdown of 1kW, 3kW, 5kW
-  costs after PM Surya Ghar subsidy. Calculate your savings now.
+excerpt: 'Solar panel cost in Cuddalore for 2026: 1kW, 2kW, 3kW and 5kW prices, the up to ₹1 lakh subsidy, net cost after subsidy and payback for local homes.'
 featuredImage: /images/uploads/7.webp
 category: Solar Guides
 author: Surya's Solar Team

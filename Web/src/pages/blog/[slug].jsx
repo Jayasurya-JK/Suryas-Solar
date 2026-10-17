@@ -327,10 +327,10 @@ export default function BlogPost({ post, settings, relatedPosts }) {
                         <div key={index} className="my-8 sm:my-12 not-prose bg-orange-50 p-4 sm:p-8 rounded-xl sm:rounded-2xl border border-orange-100 text-center shadow-sm">
                           <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2">Check Your Subsidy Eligibility</h3>
                           <p className="text-sm sm:text-base text-gray-600 mb-4 max-w-2xl mx-auto">
-                            Find out if you are eligible for the PM Surya Ghar Muft Bijli Yojana subsidy scheme.
+                            See in 30 seconds if your home gets up to ₹1 lakh (₹78,000 PM Surya Ghar + ₹22,000 Tamil Nadu top-up).
                           </p>
                           <Link
-                            href="/#booking"
+                            href="/subsidy-eligibility"
                             className="inline-flex items-center justify-center bg-solar-orange text-white px-6 py-3 rounded-xl font-bold text-sm sm:text-lg hover:bg-orange-600 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                           >
                             Check Eligibility Now
