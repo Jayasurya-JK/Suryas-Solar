@@ -1,10 +1,7 @@
 ---
-title: 'How to Read Your TNEB Solar Bill: Understanding Import vs. Export Units'
+title: 'How to Read Your TNEB Solar Bill: Import vs Export Units'
 date: '2026-01-17'
-excerpt: >-
-  Got your first solar bill and confused by terms like 'Import', 'Export', and
-  'Banked Units'? We decode the new TNEB Digital Net Meter bill format so you
-  never overpay. Includes 2026 Tariff explanations.
+excerpt: 'Confused by import, export and banked units on your TNEB solar bill? A simple guide to reading your net meter bill so you know exactly what you pay.'
 featuredImage: /images/understanding-tneb-solar-bill.webp
 category: Cost & Savings
 author: Surya's Solar Team

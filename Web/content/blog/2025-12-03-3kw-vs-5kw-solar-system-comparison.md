@@ -1,5 +1,5 @@
 ---
-title: 3kW vs 5kW Solar in Tamil Nadu 2026 - Which Size Fits Your Bill
+title: '3kW vs 5kW Solar: Which Size Fits Your EB Bill? (TN 2026)'
 date: '2025-12-03'
 excerpt: >-
   Confused between 3kW and 5kW? Compare generation, cost, and AC running

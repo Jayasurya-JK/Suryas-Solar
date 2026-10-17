@@ -1,11 +1,7 @@
 ---
-title: 'Solar EMI & Loans in 2026: The Complete Financial Guide for Tamil Nadu'
+title: 'Solar EMI & Loans in Tamil Nadu 2026: Banks, Rates, Tips'
 date: '2026-01-03'
-excerpt: >-
-  Don't pay upfront. Learn how to finance your solar system in 2026. Compare
-  deep-dive interest rates from SBI, Canara, and Union Bank. We illustrate how
-  swapping your electricity bill for a Solar EMI creates positive cash flow from
-  Day 1.
+excerpt: 'Finance rooftop solar in 2026: compare SBI, Canara and Union Bank solar loans, interest rates and EMIs, and how an EMI compares with your current EB bill.'
 featuredImage: /images/solar-emi-loans-tamil-nadu-2026.webp
 category: Cost & Savings
 author: Surya's Solar Team

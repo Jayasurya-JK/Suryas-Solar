@@ -1,9 +1,8 @@
 ---
-title: Best Solar Company in Cuddalore 2026 - What to Check Before You Book
+title: 'Best Solar Company in Cuddalore: What to Check (2026)'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
-excerpt: >-
-  Looking for reliable solar installers in Cuddalore? Learn the essential factors to check before hiring a solar company, ensuring a safe and high-quality installation.
+excerpt: 'Choosing a solar company in Cuddalore? Check portal registration, DCR panels, coastal structure, earthing, warranty and local service before you book.'
 featuredImage: /images/best-solar-company-cuddalore-2026.webp
 category: Solar Guides
 tags:

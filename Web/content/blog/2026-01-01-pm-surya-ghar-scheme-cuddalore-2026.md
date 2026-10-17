@@ -1,10 +1,7 @@
 ---
-title: 'PM Surya Ghar Scheme 2026: The Ultimate Guide to Solar Subsidy in Cuddalore'
+title: 'PM Surya Ghar Scheme in Cuddalore 2026: Apply & Get Subsidy'
 date: '2026-01-01'
-excerpt: >-
-  Comprehensive 2026 Guide: How to claim up to ₹78,000 subsidy for rooftop solar
-  in Cuddalore. We cover the new eligibility rules, step-by-step National Portal
-  application, TNEB net metering process, and common rejection reasons.
+excerpt: 'How to apply for PM Surya Ghar in Cuddalore in 2026: eligibility, up to ₹1 lakh subsidy (₹78,000 + ₹22,000 TN), portal steps, TNEB net meter and tips.'
 featuredImage: /images/pm-surya-ghar-scheme-cuddalore-2026.webp
 category: Subsidy & Schemes
 author: Surya's Solar Team

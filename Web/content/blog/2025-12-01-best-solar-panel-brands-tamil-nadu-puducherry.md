@@ -1,9 +1,7 @@
 ---
-title: 'Best Solar Panel Brands in TN: Tata vs Adani vs Waaree vs Premier'
+title: 'Best Solar Panel Brands in Tamil Nadu 2026: Top 5 Compared'
 date: '2025-12-01'
-excerpt: >-
-  Best solar panels for Tamil Nadu homes (2025). Compare Tata, Adani, Waaree &
-  more. Price, efficiency, and warranty guide for Cuddalore & Puducherry.
+excerpt: 'Best solar panel brands for Tamil Nadu homes in 2026: Tata, Adani, Waaree, Premier and Exide compared on price, efficiency, DCR subsidy and warranty.'
 featuredImage: /images/Blog 3.webp
 category: Solar Guides
 author: Surya's Solar Team

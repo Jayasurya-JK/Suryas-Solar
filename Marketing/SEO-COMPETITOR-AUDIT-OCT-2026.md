@@ -14,7 +14,7 @@ Data used: live Google results and Google Maps (searched from your area), Google
 | Puducherry | **Losing** | Not in top 10 search, not on Maps; competitors have 140-200 reviews |
 | Neyveli, Panruti, Chidambaram, Villupuram | **Missing** | No page and no Maps presence; competition here is **weak** (13-40 reviews) - easy wins |
 | Website content | **Strong** | 73 guides; ranks top 10 for big "units", "EB slab" and subsidy searches |
-| Website speed (mobile) | **Poor** | Main content takes 8-10 seconds on a phone; Google wants under 2.5 |
+| Website speed (mobile) | **OK, can improve** | Measured on a slow 4G phone: main content in 2.3s (Cuddalore page) to 3.1s (home); target under 2.5s |
 | Town pages | **Too thin** | About 580 words vs competitors' 1,500-2,700 |
 | Brand name | **Confused** | "surya solar" gets 1,198 searches, you sit at position ~10 (other "Surya" brands) |
 | Online directories | **Weak** | Justdial and IndiaMART appear in the top 10 for every local search |
@@ -97,7 +97,7 @@ Already strong (keep and refresh): units per day (1kW/2kW/3kW/5kW), EB slab rate
 
 | # | Problem | Pages | Impact | Fix (by Claude) |
 |---|---|---|---|---|
-| 1 | **Slow on mobile**: main content appears in 8.2s (home) and 10.2s (Cuddalore page); target is under 2.5s. Causes: oversized images, unused JavaScript, chart library loaded on every page | Home, town pages, blog | High - rankings and enquiries | Compress/resize images, use Next.js image optimisation, load the calculator chart only when needed |
+| 1 | **Speed can improve**: real slow-4G test shows main content at 3.1s (home) and 2.3s (Cuddalore page); target under 2.5s. (Lighthouse simulation said 8-10s, but direct measurement is far better.) Causes: 9 gallery photos loaded upfront, all banner slides loaded, unused JavaScript | Home | Medium | Gallery photos now lazy-load (done 17 Oct); next: lighter banner slides |
 | 2 | **Thin town pages** (about 580 words) | 4 town pages | High - local rankings | Rewrite each to 1,500+ words with local detail, FAQ and schema |
 | 3 | **Titles too long** (Google cuts after ~60 characters) | about 30 older posts | Medium - clicks | Shorten titles, keyword first |
 | 4 | **Meta descriptions too long** (over 165 characters) | about 25 older posts | Medium - clicks | Rewrite to 140-160 characters |

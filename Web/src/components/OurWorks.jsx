@@ -64,7 +64,9 @@ export default function OurWorks() {
                                     <div className="relative h-64 md:h-80 rounded-xl overflow-hidden group">
                                         <img
                                             src={img}
-                                            alt={`Solar Installation Project ${index + 1}`}
+                                            alt={`Rooftop solar installation by Surya's Solar in Cuddalore district - project ${index + 1}`}
+                                            loading="lazy"
+                                            decoding="async"
                                             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">

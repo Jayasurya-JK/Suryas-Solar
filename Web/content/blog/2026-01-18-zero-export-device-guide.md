@@ -1,10 +1,7 @@
 ---
-title: 'Zero Export Device (ZED): How to Use Solar Before TNEB Net Meter Arrives'
+title: 'Zero Export Device: Use Solar Before Your Net Meter Arrives'
 date: '2026-01-18'
-excerpt: >-
-  TNEB Net Meter approval can take 30-60 days. Don't let your investment sit
-  idle. A Zero Export Device (ZED) lets you run your solar plant legally from
-  Day 1. Detailed guide on CT Coils, DG Sync, and Installation.
+excerpt: 'Waiting weeks for a TNEB net meter? How a zero export device lets you use solar for your own load from day one, how it works, and installation tips.'
 featuredImage: /images/zero-export-device-guide.webp
 category: Technical Guides
 author: Surya's Solar Team

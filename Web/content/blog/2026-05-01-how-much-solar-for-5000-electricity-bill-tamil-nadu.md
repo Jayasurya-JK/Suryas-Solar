@@ -2,8 +2,7 @@
 title: 'How Much Solar for a ₹5,000 Electricity Bill?'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
-excerpt: >-
-  Paying 5,000 rupees for electricity in Tamil Nadu? Find out the exact solar system size you need to wipe out your bill and how much you can save with PM Surya Ghar subsidies.
+excerpt: 'Paying ₹5,000 every two months to TNEB? Find the solar size you need (usually 3-4kW), the cost after the ₹1 lakh subsidy and how much you will save.'
 featuredImage: /images/how-much-solar-for-5000-electricity-bill-tamil-nadu.webp
 category: Electricity Bill & Savings
 tags:

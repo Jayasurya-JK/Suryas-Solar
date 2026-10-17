@@ -1,5 +1,5 @@
 ---
-title: '10 Solar Myths Busted: Can Solar Really Run an AC? (2025 Facts)'
+title: '10 Solar Myths Busted: Can Solar Really Run an AC? (2026)'
 date: '2025-12-04'
 excerpt: >-
   Debunking common solar myths in Tamil Nadu. Learn the truth about running ACs

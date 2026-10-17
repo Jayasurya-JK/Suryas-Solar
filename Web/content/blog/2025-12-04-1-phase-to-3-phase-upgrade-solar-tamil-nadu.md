@@ -1,9 +1,7 @@
 ---
-title: Single Phase to 3-Phase Upgrade for Solar in Tamil Nadu - Cost & Rules
+title: 'Single Phase to 3 Phase for Solar: TNEB Rules & Cost (2026)'
 date: '2025-12-04'
-excerpt: >-
-  Do you need 3-phase for 3kW solar? Understand TNEB rules, upgrade costs, and
-  procedure for converting single phase to three phase service.
+excerpt: 'Do you need 3-phase for solar? TNEB rules by system size, upgrade cost, documents and the step-by-step process to convert single phase to three phase.'
 featuredImage: /images/1-Phase to 3-Phase Upgrade.webp
 category: Solar Guides
 author: Surya's Solar Team

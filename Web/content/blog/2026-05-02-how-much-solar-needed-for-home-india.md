@@ -1,7 +1,5 @@
 ---
-title: >-
-  How Much Solar Do You Need for Your Home in India? (2026 Complete Sizing
-  Guide)
+title: 'How Much Solar Do I Need for My Home? (Sizing Guide 2026)'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-

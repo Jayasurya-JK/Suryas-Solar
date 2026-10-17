@@ -1,11 +1,7 @@
 ---
-title: 'Real Estate 2026: Does a Solar System Increase Home Resale Value in Cuddalore?'
+title: 'Does Solar Increase Home Resale Value in Cuddalore?'
 date: '2026-01-20'
-excerpt: >-
-  Selling your house in the future? A Pre-Installed Solar System is a massive
-  asset. Market trends in Manjakuppam and Pondicherry show that 'Zero Bill'
-  homes sell 6% faster and for a higher price. Read our detailed investment
-  analysis.
+excerpt: 'Does a rooftop solar system help when you sell your house? How buyers value lower EB bills, what to hand over at sale, and points to check in Cuddalore.'
 featuredImage: /images/solar-increases-home-resale-value.webp
 category: Cost & Savings
 author: Surya's Solar Team

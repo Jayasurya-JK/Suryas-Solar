@@ -1,10 +1,7 @@
 ---
-title: 'Future of Solar in Tamil Nadu: TANGEDCO''s 2026 Goals & What it Means for You'
+title: 'Future of Solar in Tamil Nadu: Trends to 2030'
 date: '2026-01-11'
-excerpt: >-
-  Solar is evolving. From Peer-to-Peer Trading to Virtual Net Metering and EV
-  integration. We look at the roadmap for solar energy in Cuddalore and Tamil
-  Nadu up to 2030.
+excerpt: 'Where solar in Tamil Nadu is heading: virtual net metering, EV charging, batteries and grid changes up to 2030, and what it means for homeowners today.'
 featuredImage: /images/future-of-solar-tamil-nadu-trends.webp
 category: Solar Guides
 author: Surya's Solar Team

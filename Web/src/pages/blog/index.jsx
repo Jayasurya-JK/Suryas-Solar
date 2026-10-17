@@ -10,9 +10,14 @@ export default function BlogIndex({ posts, settings }) {
   return (
     <>
       <Head>
-        <title>Solar Blog 2026: TN EB Bill, Subsidy and Price Guides | Surya's Solar</title>
-        <meta name="description" content="Tamil Nadu solar guides: 200-unit free EB rules, PM Surya Ghar subsidy, 3kW vs 5kW cost, and Cuddalore–Puducherry install tips." />
+        <title>Solar Guides Tamil Nadu 2026: Subsidy, Price & EB Bill</title>
+        <meta name="description" content="Tamil Nadu solar guides from our engineers: ₹1 lakh subsidy, panel prices, units per day, TNEB slab rates, brand comparisons and Cuddalore install tips." />
         <link rel="canonical" href="https://www.suryassolar.com/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.suryassolar.com/blog" />
+        <meta property="og:title" content="Solar Guides for Tamil Nadu Homes - Surya's Solar" />
+        <meta property="og:description" content="Subsidy, prices, units per day, EB bills and brand comparisons, explained simply by our engineers." />
+        <meta property="og:image" content="https://www.suryassolar.com/images/Banner_1_desktop.webp" />
       </Head>
       <Header settings={settings} />
 

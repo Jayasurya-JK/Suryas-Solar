@@ -1,10 +1,7 @@
 ---
-title: 'Solar Maintenance Guide 2026: How to Clean Panels & Maintain Efficiency'
+title: 'Solar Panel Cleaning & Maintenance Guide (Cuddalore 2026)'
 date: '2026-01-10'
-excerpt: >-
-  Solar panels are low maintenance, not 'Zero' maintenance. Learn the golden
-  rules of cleaning solar panels in Cuddalore's dusty climate to prevent 15-20%
-  generation loss. A complete guide to tools, safety, and schedules.
+excerpt: 'How often to clean solar panels in dusty, coastal Cuddalore, safe tools and water, a monthly checklist and the maintenance mistakes that cut generation.'
 featuredImage: /images/solar-maintenance-guide-cuddalore.webp
 category: Solar Guides
 author: Surya's Solar Team

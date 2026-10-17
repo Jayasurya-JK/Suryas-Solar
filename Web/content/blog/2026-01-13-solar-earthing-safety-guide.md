@@ -1,10 +1,7 @@
 ---
-title: 'Solar Earthing Guide: Why You Need 3 Separate Pits (AC, DC, LA)'
+title: 'Solar Earthing Guide: Why You Need 3 Separate Pits'
 date: '2026-01-13'
-excerpt: >-
-  Solar safety is not just about panels; it's about grounding. Many cheap
-  installers cut costs by using only 1 earthing pit. Learn why 'Chemical
-  Earthing' and 3 separate pits are mandatory for safety in Cuddalore.
+excerpt: 'Why rooftop solar needs separate earthing pits for DC, AC and the lightning arrester, chemical earthing explained, and the safety shortcuts to avoid.'
 featuredImage: /images/solar-earthing-safety-guide.webp
 category: Technical Guides
 author: Surya's Solar Team

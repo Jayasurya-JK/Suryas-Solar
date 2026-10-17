@@ -1,9 +1,7 @@
 ---
-title: Solar ROI & Payback Calculator Tamil Nadu (2025) - Real Case Studies
+title: 'Solar ROI & Payback in Tamil Nadu (2026 Examples)'
 date: '2025-12-01'
-excerpt: >-
-  Is solar worth it in Tamil Nadu? See real ROI case studies from Cuddalore.
-  Learn how a 3kW system pays for itself in just 3 years. 2025 Data.
+excerpt: 'Is solar worth it in Tamil Nadu? Payback examples for 2kW, 3kW and 5kW homes after the ₹1 lakh subsidy, using TNEB slab rates. Most AC homes: 3-5 years.'
 featuredImage: /images/Blog 2.webp
 category: Solar Guides
 author: Surya's Solar Team

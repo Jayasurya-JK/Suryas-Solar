@@ -81,7 +81,8 @@ export default function FiveKwPage({ settings }) {
         <meta name="description" content="5kW rooftop solar in Tamil Nadu: 20-25 units/day, runs two ACs, and gets the full ₹1 lakh subsidy (₹78,000 + ₹22,000 TN top-up). Free site visit in Cuddalore." />
         <link rel="canonical" href="https://www.suryassolar.com/systems/5kw-solar-system-with-subsidy" />
         <meta property="og:title" content="5kW Solar Panel System Price in Tamil Nadu (With Subsidy)" />
-        <meta property="og:description" content="Get the complete breakdown of a 5kW solar system price in Tamil Nadu. Claim the ₹78,000 PM Surya Ghar Subsidy." />
+        <meta property="og:description" content="5kW solar price in Tamil Nadu with up to ₹1 lakh subsidy (₹78,000 PM Surya Ghar + ₹22,000 TN top-up). 20-25 units a day, runs two ACs." />
+        <meta property="og:image" content="https://www.suryassolar.com/images/5kw-solar-system-cost-tamil-nadu-2026.webp" />
         <meta property="og:url" content="https://www.suryassolar.com/systems/5kw-solar-system-with-subsidy" />
       </Head>
 
@@ -118,7 +119,7 @@ export default function FiveKwPage({ settings }) {
 
               <p className="text-blue-100/90 text-lg leading-relaxed mb-10 max-w-xl">
                 Eliminate up to <strong className="text-white">₹6,000/month</strong> from your TNEB electricity bill. Exact pricing after the{' '}
-                <strong className="text-yellow-300">₹78,000 PM Surya Ghar subsidy</strong> - calculated for your home.
+                <strong className="text-yellow-300">up to ₹1 lakh subsidy</strong> (₹78,000 PM Surya Ghar + ₹22,000 TN top-up) - calculated for your home.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -249,8 +250,8 @@ export default function FiveKwPage({ settings }) {
                   a: 'Yes - a 5kW system generates 20–25 units per day, which comfortably powers two 5-Star Inverter ACs running 8 hours each, plus your full household load of lights, fans, fridge, and TV. We recommend Inverter ACs for solar use due to their soft-start and variable compressor technology.'
                 },
                 {
-                  q: 'How is the ₹78,000 PM Surya Ghar subsidy processed?',
-                  a: 'Our team handles all documentation and DISCOM coordination. After installation and net-meter upgrade, the subsidy amount is credited directly to your bank account within 30–60 days. You do not need to visit any government office.'
+                  q: 'How is the ₹1 lakh subsidy processed?',
+                  a: 'Our team handles all documentation and TNEB coordination. After installation and the net meter, the ₹78,000 PM Surya Ghar subsidy is usually credited to your bank account in about 30 days, and the ₹22,000 Tamil Nadu top-up is paid separately by TEDA for eligible homes. You do not need to visit any government office.'
                 },
                 {
                   q: 'What is the payback period for a 5kW system?',

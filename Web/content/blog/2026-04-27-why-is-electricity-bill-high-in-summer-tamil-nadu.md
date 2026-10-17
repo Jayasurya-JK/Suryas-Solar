@@ -1,9 +1,8 @@
 ---
-title: Why Is My Electricity Bill So High in Summer? (Tamil Nadu 2026 Guide)
+title: 'Why Is My EB Bill So High in Summer? (Tamil Nadu 2026)'
 date: '2026-04-26'
 author: Surya's Solar Technical Team
-excerpt: >-
-  Shocked by your high summer TNEB bill? Discover the hidden reasons behind summer tariff spikes in Tamil Nadu and effective strategies to keep your electricity costs down.
+excerpt: 'Why Tamil Nadu EB bills jump in summer: AC hours, the 500-unit slab cliff and old appliances, with simple fixes that bring the bill back down.'
 featuredImage: /images/why-is-electricity-bill-high-in-summer-tamil-nadu.webp
 category: Electricity Bill & Savings
 tags:

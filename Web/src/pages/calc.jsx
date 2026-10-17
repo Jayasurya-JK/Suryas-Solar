@@ -14,6 +14,11 @@ export default function CalcPage() {
           content="Free solar savings calculator for Tamil Nadu 2026. Enter your EB bill to get system size, yearly savings and payback after the ₹1 lakh subsidy, using TNEB slabs."
         />
         <link rel="canonical" href="https://www.suryassolar.com/calc" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.suryassolar.com/calc" />
+        <meta property="og:title" content="Solar Savings Calculator - Tamil Nadu 2026" />
+        <meta property="og:description" content="Enter your EB bill and see the solar size you need, yearly savings and payback after the ₹1 lakh subsidy." />
+        <meta property="og:image" content="https://www.suryassolar.com/images/solar-roi-calculator-break-even-analysis.webp" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       </Head>

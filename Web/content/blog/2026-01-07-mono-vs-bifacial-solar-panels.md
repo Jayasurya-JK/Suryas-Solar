@@ -1,5 +1,5 @@
 ---
-title: 'Bifacial vs Monocrystalline Solar Panels: Which Is Better? (2026)'
+title: 'Bifacial vs Monocrystalline Solar Panels: Which Is Better?'
 date: '2026-01-07'
 excerpt: >-
   Bifacial wins on white terraces and elevated structures (about 15% more

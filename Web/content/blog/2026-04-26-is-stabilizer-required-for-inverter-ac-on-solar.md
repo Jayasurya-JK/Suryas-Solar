@@ -1,7 +1,5 @@
 ---
-title: >-
-  Do You Need a Stabilizer for an Inverter AC on Solar Power? (2026 Ultimate
-  Guide)
+title: 'Do You Need a Stabilizer for an Inverter AC on Solar?'
 date: '2026-04-26'
 author: Surya's Solar Technical Team
 excerpt: >-

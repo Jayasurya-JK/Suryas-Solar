@@ -1,11 +1,7 @@
 ---
-title: '7 Solar Scam Warnings for 2026: Don''t Get Cheated by Cheap Quotes'
+title: '7 Solar Scam Warnings: Do Not Get Cheated by Cheap Quotes'
 date: '2026-01-09'
-excerpt: >-
-  Did someone quote you ₹20,000 less? Be careful. In Cuddalore's booming solar
-  market, fly-by-night operators are cutting corners. Learn how to spot fake DCR
-  panels, rusted structures, and hidden warranty exclusions to save your
-  investment.
+excerpt: 'A quote ₹20,000 cheaper can cost you the full subsidy. How to spot fake DCR panels, weak structures, missing earthing and hidden warranty exclusions.'
 featuredImage: /images/solar-scam-warnings-cuddalore.webp
 category: Solar Guides
 author: Surya's Solar Team

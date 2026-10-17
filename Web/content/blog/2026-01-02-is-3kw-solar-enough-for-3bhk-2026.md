@@ -1,10 +1,7 @@
 ---
-title: Is 3kW Solar Enough for a 3BHK House in 2026? (Real TNEB Bill Analysis)
+title: 'Is 3kW Solar Enough for a 3BHK House? (TNEB Bill Analysis)'
 date: '2026-01-02'
-excerpt: >-
-  The definitive 2026 analysis: Can a 3kW solar system truly run a 3BHK home
-  with ACs? We break down the load calculation, TNEB slab rates, and generation
-  data for Cuddalore to give you a clear 'Yes' or 'No'.
+excerpt: 'Can 3kW solar run a 3BHK home with ACs? Load calculation, TNEB slab math and Cuddalore generation data to decide between 3kW and 5kW for your bill.'
 featuredImage: /images/is-3kw-solar-enough-for-3bhk-2026.webp
 category: Solar Guides
 author: Surya's Solar Team

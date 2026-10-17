@@ -1,10 +1,7 @@
 ---
-title: Accelerated Depreciation Benefits for Solar Explained (2026 Tax Guide)
+title: 'Solar Accelerated Depreciation: 40% Tax Benefit Explained'
 date: '2026-01-19'
-excerpt: >-
-  Running a business? Learn exactly how Accelerated Depreciation benefits for
-  solar (Section 32) allow you to write off 40% of your Solar Plant value in
-  Year 1. A comprehensive guide with ROI tables and tax strategies.
+excerpt: 'How businesses claim 40% accelerated depreciation on rooftop solar under the Income Tax Act, with a worked example and tax-saving table. Confirm with your CA.'
 featuredImage: /images/commercial-solar-tax-benefits.webp
 category: Cost & Savings
 author: Surya's Solar Team

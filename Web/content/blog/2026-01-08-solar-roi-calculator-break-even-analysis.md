@@ -1,11 +1,7 @@
 ---
-title: 'Solar ROI Calculator 2026: When Will You Break Even? (3 Years or 5 Years?)'
+title: 'Solar Break-Even Calculator 2026: When Will Solar Pay Back?'
 date: '2026-01-08'
-excerpt: >-
-  Stop guessing the savings. We present a detailed, audited Financial Model for
-  a standard Cuddalore home. See how inflation, TNEB rate hikes, and subsidy
-  allow you to recover your full investment in just 3.2 years, followed by 2
-  million rupees in lifetime savings.
+excerpt: 'When does rooftop solar pay for itself? A step-by-step break-even model for a Cuddalore home with the ₹1 lakh subsidy, TNEB slabs and 25 years of savings.'
 featuredImage: /images/solar-roi-calculator-break-even-analysis.webp
 category: Cost & Savings
 author: Surya's Solar Team

@@ -1,10 +1,7 @@
 ---
-title: 'Solar Shadow Analysis: Can I Install Panels Near Coconut Trees or Water Tanks?'
+title: 'Solar Shadow Analysis: Coconut Trees, Water Tanks & Shade'
 date: '2026-01-12'
-excerpt: >-
-  Shadow is the enemy of solar. But did you know that a shadow on just ONE panel
-  can kill the power of the entire system? Learn about 2026 Half-Cut Cell
-  technology and how we deal with Cuddalore's coconut tree problem.
+excerpt: 'Can you install solar near coconut trees or water tanks? How shade on one panel affects the whole string, half-cut cells, and layout fixes for Cuddalore homes.'
 featuredImage: /images/solar-shadow-analysis-guide-cuddalore.webp
 category: Technical Guides
 author: Surya's Solar Team

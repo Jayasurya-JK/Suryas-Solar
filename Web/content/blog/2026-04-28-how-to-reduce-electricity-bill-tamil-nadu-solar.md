@@ -1,9 +1,8 @@
 ---
-title: How to Reduce Your Electricity Bill in Tamil Nadu Using Solar Panels (2026)
+title: 'How to Reduce Your Electricity Bill in Tamil Nadu (2026)'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
-excerpt: >-
-  Struggling with high TNEB bills? Discover practical, proven ways to significantly reduce your electricity costs in Tamil Nadu, from energy-efficient habits to smart solar investments.
+excerpt: 'Practical ways to cut your TNEB bill in 2026: AC settings, appliances, staying under 500 units, and how rooftop solar with the ₹1 lakh subsidy helps.'
 featuredImage: /images/how-to-reduce-electricity-bill-tamil-nadu-solar.webp
 category: Electricity Bill & Savings
 tags:

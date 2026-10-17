@@ -81,7 +81,8 @@ export default function ThreeKwPage({ settings }) {
         <meta name="description" content="3kW rooftop solar in Cuddalore and Tamil Nadu: ₹78,000 PM Surya Ghar + ₹22,000 TN top-up = ₹1 lakh subsidy. 12-15 units/day. Registered vendor. Free site visit." />
         <link rel="canonical" href="https://www.suryassolar.com/systems/3kw-solar-system-with-subsidy" />
         <meta property="og:title" content="3kW Solar Panel System Price in Tamil Nadu (With Subsidy)" />
-        <meta property="og:description" content="Get the complete breakdown of a 3kW solar system price in Tamil Nadu. Claim the ₹78,000 PM Surya Ghar Subsidy. Perfect for 2BHK homes." />
+        <meta property="og:description" content="3kW solar price in Tamil Nadu with up to ₹1 lakh subsidy (₹78,000 PM Surya Ghar + ₹22,000 TN top-up). 12-15 units a day. Perfect for 2BHK homes." />
+        <meta property="og:image" content="https://www.suryassolar.com/images/3kw-solar-system-price-india-2026.webp" />
         <meta property="og:url" content="https://www.suryassolar.com/systems/3kw-solar-system-with-subsidy" />
       </Head>
 
@@ -116,7 +117,7 @@ export default function ThreeKwPage({ settings }) {
 
               <p className="text-blue-100/90 text-lg leading-relaxed mb-10 max-w-xl">
                 Wipe out up to <strong className="text-white">₹3,500/month</strong> from your TNEB bill. A 3kW system gets the{' '}
-                <strong className="text-yellow-300">highest possible PM Surya Ghar subsidy of ₹78,000</strong> - the smartest value choice.
+                <strong className="text-yellow-300">maximum subsidy of up to ₹1 lakh</strong> (₹78,000 PM Surya Ghar + ₹22,000 TN top-up) - the smartest value choice.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -243,8 +244,8 @@ export default function ThreeKwPage({ settings }) {
             <div className="space-y-3">
               {[
                 {
-                  q: 'Why does a 3kW system get the maximum ₹78,000 subsidy?',
-                  a: 'Under PM Surya Ghar Muft Bijli Yojana, the Government provides ₹30,000/kW for the first 2kW and ₹18,000/kW for the 3rd kW = ₹78,000 total. This is the maximum slab. Installing 4kW or 5kW does NOT increase the subsidy - so 3kW gives the best subsidy-per-rupee value.'
+                  q: 'Why does a 3kW system get the maximum ₹1 lakh subsidy?',
+                  a: 'Under PM Surya Ghar Muft Bijli Yojana, the Government provides ₹30,000/kW for the first 2kW and ₹18,000/kW for the 3rd kW = ₹78,000. Eligible Tamil Nadu homes also get the ₹22,000 state top-up (G.O. 102) for 3kW and above, so the total is up to ₹1,00,000. Installing 4kW or 5kW does NOT increase the subsidy - so 3kW gives the best subsidy-per-rupee value.'
                 },
                 {
                   q: 'Can a 3kW system make my TNEB bill zero?',

@@ -10,6 +10,7 @@ export default function PrivacyPolicy() {
                 <title>Privacy Policy - Surya's Solar</title>
                 <meta name="description" content="Your privacy matters. Learn how Surya's Solar protects your data during free consultations and subsidy applications. We never sell your info." />
                 <link rel="canonical" href="https://www.suryassolar.com/privacy-policy" />
+                <meta property="og:image" content="https://www.suryassolar.com/images/Banner_1_desktop.webp" />
 
             </Head>
 

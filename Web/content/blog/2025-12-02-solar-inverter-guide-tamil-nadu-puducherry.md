@@ -1,9 +1,7 @@
 ---
-title: 'Solar Inverter Price List Tamil Nadu (2025) - Microtek, Luminous, Solis'
+title: 'Solar Inverter Price List Tamil Nadu 2026 (On-Grid & Hybrid)'
 date: '2025-12-02'
-excerpt: >-
-  On-grid vs Hybrid inverters - which is best for Cuddalore? Compare 2025 prices
-  of top inverter brands like Solis, Growatt & Luminous.
+excerpt: 'Solar inverter prices in Tamil Nadu for 2026: on-grid vs hybrid, 3kW and 5kW price ranges for Growatt, Solis, Luminous and more, and how to choose.'
 featuredImage: /images/Blog 5.webp
 category: Solar Guides
 author: Surya's Solar Team

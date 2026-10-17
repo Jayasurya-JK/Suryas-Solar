@@ -1,9 +1,8 @@
 ---
-title: Solar Panel Cost in Tamil Nadu 2026
+title: 'Solar Panel Cost in Tamil Nadu 2026: Price After Subsidy'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
-excerpt: >-
-  Planning a solar installation in 2026? Get the complete breakdown of solar panel costs in Tamil Nadu, including current prices, available subsidies, and expected savings.
+excerpt: 'Solar panel cost in Tamil Nadu 2026: 1kW to 5kW prices, the ₹1 lakh subsidy (₹78,000 + ₹22,000 TN top-up), net cost and expected savings.'
 featuredImage: /images/solar-panel-cost-tamil-nadu-2026.webp
 category: Cost & Savings
 tags:

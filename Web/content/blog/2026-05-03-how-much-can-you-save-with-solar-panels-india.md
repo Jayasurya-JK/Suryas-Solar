@@ -1,9 +1,8 @@
 ---
-title: 'How Much Can You Save With Solar Panels in India? (Real Numbers, 2026)'
+title: 'How Much Can You Save With Solar Panels? (Real Numbers)'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
-excerpt: >-
-  Curious about the financial benefits of solar? Discover the real savings, ROI, and long-term financial advantages of installing solar panels for your home in India.
+excerpt: 'Real solar savings for Indian homes in 2026: yearly savings by bill size, payback after subsidy, and 25-year savings, with Tamil Nadu slab examples.'
 featuredImage: /images/how-much-can-you-save-with-solar-panels-india.webp
 category: Cost & Savings
 tags:

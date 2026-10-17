@@ -1,11 +1,7 @@
 ---
-title: 'Enphase Micro-Inverters: Is the ''AC Module'' Worth the Extra Cost?'
+title: 'Enphase Micro-Inverter Review: Worth the Extra Cost?'
 date: '2026-01-16'
-excerpt: >-
-  Building a premium home in Pondicherry? Don't ruin it with high-voltage DC
-  cables. Learn why Enphase Micro-Inverters are the safest, most efficient, and
-  most premium solar choice in 2026. A detailed comparison with String
-  Inverters.
+excerpt: 'Enphase micro-inverters vs string inverters for Indian homes: safety, shade performance, monitoring and cost, and when the premium price is worth it.'
 featuredImage: /images/enphase-micro-inverter-review.webp
 category: Products & Comparisons
 author: Surya's Solar Team

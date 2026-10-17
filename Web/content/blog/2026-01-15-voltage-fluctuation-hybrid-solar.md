@@ -1,12 +1,7 @@
 ---
-title: >-
-  Low Voltage Problems in Vadalur & Panruti? Why Hybrid Solar is Better than
-  On-Grid
+title: 'Low Voltage in Vadalur & Panruti? Why Hybrid Solar Helps'
 date: '2026-01-15'
-excerpt: >-
-  Living in a rural area with frequent voltage fluctuations? A standard On-Grid
-  inverter might refuse to work during the day. Learn how a Hybrid Inverter acts
-  as a massive stabilizer for your home (Active Voltage Regulation).
+excerpt: 'Frequent voltage fluctuation can stop an on-grid inverter. How a hybrid inverter keeps power steady in rural Cuddalore areas like Vadalur and Panruti.'
 featuredImage: /images/voltage-fluctuation-hybrid-solar.webp
 category: Technical Guides
 author: Surya's Solar Team

@@ -1,11 +1,7 @@
 ---
-title: 'Coastal Solar Guide: Best Rust-Proof Panels for Cuddalore & Pondicherry (2026)'
+title: 'Rust-Proof Solar for Coastal Homes: Cuddalore & Puducherry'
 date: '2026-01-05'
-excerpt: >-
-  Living near the sea? Salt air can destroy standard solar panels in 3 years. We
-  present the definitive 2026 guide to IEC 61701 Level 6 certification, Hot-Dip
-  Galvanized structures, and how to protect your investment in Cuddalore's
-  saline climate.
+excerpt: 'Living near the sea? How salt mist damages solar systems, what IEC 61701 salt-mist rating means, and why hot-dip galvanized structures matter in Cuddalore.'
 featuredImage: /images/coastal-solar-rust-proof-panels-cuddalore.webp
 category: Technical Guides
 author: Surya's Solar Team

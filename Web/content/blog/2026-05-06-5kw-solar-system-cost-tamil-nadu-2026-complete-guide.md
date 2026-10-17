@@ -1,9 +1,8 @@
 ---
-title: 5kW Solar System Cost in Tamil Nadu 2026 (Complete Price Guide)
+title: '5kW Solar System Cost in Tamil Nadu 2026 (Price Guide)'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
-excerpt: >-
-  Need a larger solar setup? Dive into our complete 2026 guide on 5kW solar systems in Tamil Nadu, covering pricing, power generation, and how to maximize your government subsidy.
+excerpt: '5kW solar system cost in Tamil Nadu 2026: about ₹3-3.3 lakh before subsidy, ₹2-2.3 lakh after ₹1 lakh. Units per day, roof space and who needs 5kW.'
 featuredImage: /images/5kw-solar-system-cost-tamil-nadu-2026.webp
 category: Cost & Savings
 tags:

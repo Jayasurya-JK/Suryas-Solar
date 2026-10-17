@@ -1,9 +1,7 @@
 ---
-title: 'Best Solar Structure for Coastal Tamil Nadu: GI vs Hot-Dip Galvanized'
+title: 'Solar Structure for Coastal Homes: GI vs Hot-Dip Galvanized'
 date: '2025-12-02'
-excerpt: >-
-  Don't let your solar structure rust! Compare GI vs Hot-Dip Galvanized
-  structures for Cuddalore & Puducherry. Essential guide for coastal homes.
+excerpt: 'Salt air rusts ordinary GI solar structures. Compare GI vs hot-dip galvanized structures, heights and costs for coastal homes in Cuddalore and Puducherry.'
 featuredImage: /images/Rooftop Structure Types.webp
 category: Solar Guides
 author: Surya's Solar Team

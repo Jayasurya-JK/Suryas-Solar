@@ -1,10 +1,7 @@
 ---
-title: How to Get TNEB Net Meter in Cuddalore (2026 Process & Timeline)
+title: 'How to Get a TNEB Net Meter in Cuddalore (2026 Steps)'
 date: '2026-01-04'
-excerpt: >-
-  Struggling with TNEB paperwork? We decode the 2026 Net Metering process in
-  Cuddalore. Learn the exact documents needed, official fees, AE inspection
-  checklist, and how to track your application online.
+excerpt: 'TNEB net meter process in Cuddalore for 2026: documents, fees, inspection checklist, typical timeline and how to track your application online.'
 featuredImage: /images/how-to-get-tneb-net-meter-cuddalore-2026.webp
 category: Solar Guides
 author: Surya's Solar Team

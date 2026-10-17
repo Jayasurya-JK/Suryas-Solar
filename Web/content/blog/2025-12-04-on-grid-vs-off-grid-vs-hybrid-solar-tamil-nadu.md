@@ -1,9 +1,7 @@
 ---
-title: On-Grid vs Hybrid Solar - Which is Best for Tamil Nadu? (2025 Price)
+title: 'On-Grid vs Off-Grid vs Hybrid Solar: Which Is Best? (TN 2026)'
 date: '2025-12-04'
-excerpt: >-
-  On-Grid vs Off-Grid vs Hybrid: Side-by-side comparison for Tamil Nadu homes.
-  Price, battery backup, and subsidy eligibility explained.
+excerpt: 'On-grid vs off-grid vs hybrid solar for Tamil Nadu homes: price, battery backup, subsidy eligibility and which type suits your power cuts and EB bill.'
 featuredImage: /images/On-Grid vs Off-Grid vs Hybrid.webp
 category: Solar Guides
 author: Surya's Solar Team

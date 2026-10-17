@@ -1,11 +1,7 @@
 ---
-title: 'Solar Wire Quality: Why We Use Polycab/Siechem DC Cables (Fire Safety)'
+title: 'Solar DC Cable Guide: Why Cable Quality Prevents Fires'
 date: '2026-01-14'
-excerpt: >-
-  Solar cables face 25 years of harsh UV sun and rain. Using cheap AC wires
-  instead of specialized DC cables is the #1 cause of solar fires in India.
-  Learn why 'Tinned Copper', 'XLPO Insulation', and UV Protection are
-  non-negotiable for Cuddalore's climate.
+excerpt: 'Solar cables face 25 years of sun and rain. Why solar-grade DC cable with tinned copper, XLPO insulation and UV protection matters for fire safety.'
 featuredImage: /images/solar-dc-cable-quality-guide.webp
 category: Technical Guides
 author: Surya's Solar Team

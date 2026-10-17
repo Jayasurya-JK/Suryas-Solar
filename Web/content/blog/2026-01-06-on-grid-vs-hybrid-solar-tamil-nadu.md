@@ -1,10 +1,7 @@
 ---
-title: 'On-Grid vs. Hybrid Solar: Which is Best for Tamil Nadu Power Cuts in 2026?'
+title: 'On-Grid vs Hybrid Solar for Power Cuts in Tamil Nadu (2026)'
 date: '2026-01-06'
-excerpt: >-
-  Power cuts are annoying, but is a Hybrid Solar (Battery) system worth the
-  extra ₹1.5 Lakhs? We compare On-Grid, Off-Grid, and Hybrid systems for 2026.
-  Includes a detailed 'Cost vs Benefit' analysis for Cuddalore homeowners.
+excerpt: 'Is a hybrid solar system with battery worth the extra cost for Tamil Nadu power cuts? Cost vs benefit of on-grid and hybrid systems for Cuddalore homes.'
 featuredImage: /images/on-grid-vs-hybrid-solar-tamil-nadu.webp
 category: Technical Guides
 author: Surya's Solar Team
