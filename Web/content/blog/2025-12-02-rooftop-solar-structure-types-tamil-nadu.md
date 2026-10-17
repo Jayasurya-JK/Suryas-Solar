@@ -155,7 +155,7 @@ We don't compromise on the bones of your system.
 *   **Proper Grounding:** Every structure is earthed to protect against lightning strikes.
 *   **Wind-Load:** We calculate the wind load for your specific location before installation.
 *   **Wire Routing:** Cables are routed neatly through UV-protected conduits, not left hanging loose.
-*   **Guarantee:** We offer a **20-year structural safety guarantee**.
+*   **Written warranty:** Structure and workmanship warranty terms are written into every quotation.
 
 
 ## Related Solar Guides

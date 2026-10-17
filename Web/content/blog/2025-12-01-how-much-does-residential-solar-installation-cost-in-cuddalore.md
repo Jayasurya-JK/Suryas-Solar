@@ -122,12 +122,12 @@ Is solar a good investment? Let’s look at the numbers for a typical **3kW Syst
 
 After 3 years, your electricity is **effectively free** for the remaining 22+ years of the system's life. This is a better return than fixed deposits, gold, or even real estate in many cases.
 
-### Real-Life Scenario: Mr. Kumar from Panruti
-Mr. Kumar installed a 5kW system for his 3-bedroom home.
+### Worked Example: A 5kW System for a 3-Bedroom Home
+*Illustrative numbers, not a specific customer.* A 3-bedroom home running 2 ACs installs a 5kW system.
 *   **Previous Bill:** ₹4,500 / month (running 2 ACs).
 *   **Current Bill:** ₹150 / month (fixed charges).
 *   **Annual Savings:** ₹52,000.
-*   **Payback Achieved:** In just 3.2 years.
+*   **Expected payback:** about 3-4 years after the subsidy.
 
 ---
 

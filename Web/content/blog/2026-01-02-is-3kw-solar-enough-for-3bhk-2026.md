@@ -134,7 +134,7 @@ Here is the Surya's Solar decision matrix for 2026:
 
 Estimation is good, but measurement is better. Every house is unique. A shadow from a neighbor's water tank or an old inefficient refrigerator can change the math.
 
-At **Surya's Solar**, we offer a precise **Site Feasibility Audit**. We check your sanctioned load, measure your roof shadow patterns, and look at your actual appliance list to give you a "Generation Guarantee".
+At **Surya's Solar**, we offer a precise **Site Feasibility Audit**. We check your sanctioned load, measure your roof shadow patterns, and look at your actual appliance list to give you a written generation estimate.
 
 **Don't guess with your investment.**
 

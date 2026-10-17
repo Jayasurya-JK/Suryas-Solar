@@ -47,9 +47,9 @@ Most smart buyers will happily pay ₹3 Lakhs extra for House B. Why?
 
 ---
 
-## 2. Case Study: The Manjakuppam Villa
+## 2. Worked Example: A 2,400 sq ft House
 
-Let's look at a theoretical (but realistic) example based on market trends in Cuddalore.
+*A hypothetical example to show the math, not a real sale.*
 
 **Property:** 2400 sq.ft Independent House.
 **Solar System:** 5kW On-Grid (Installed 3 years ago).
@@ -57,7 +57,6 @@ Let's look at a theoretical (but realistic) example based on market trends in Cu
 
 **The Sale:**
 When the owner listed the house, they explicitly marketed it as a **"Zero-Electricity Bill Home"**.
-*   **Result:** They received 5 inquiries in the first week.
 *   **Comparable Sales:** Non-solar homes in the street were selling for ₹90 Lakhs.
 *   **Final Sale Price:** ₹94.5 Lakhs.
 

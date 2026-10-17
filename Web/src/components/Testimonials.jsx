@@ -54,7 +54,10 @@ export default function Testimonials() {
             What Our Customers Say
           </h2>
           <p className="text-lg text-gray-600">
-            Join 100+ happy families powering their homes with solar
+            Rated 5.0 from 45 Google reviews.{' '}
+            <a href="https://maps.google.com/?cid=11101727010292054099" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">
+              Read them on Google
+            </a>
           </p>
         </div>
 

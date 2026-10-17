@@ -86,16 +86,18 @@ Apart from Income Tax, you also save on GST.
 
 ---
 
-## 4. Case Study: A Matriculation School in Neyveli
+## 4. Worked Example: A School
 
-**Client Profile:** A school with 800 students. High daytime load (Fans, Smartboards, ACs in Staff Room).
+*Illustrative scenario, not a specific customer.*
+
+**Profile:** A school with about 800 students. High daytime load (Fans, Smartboards, ACs in Staff Room).
 **Challenge:** Monthly Bill was ₹45,000.
 **Solution:** 25kW Solar On-Grid System.
 
-**Results:**
-1.  **Bill:** Reduced to ₹2,000 (Fixed charges only).
-2.  **Tax:** The school trust utilized the 40% depreciation to offset profits from other ventures.
-3.  **Educational Value:** The school uses the solar plant as a "Physics Lab" to teach students about renewable energy.
+**Expected results:**
+1.  **Bill:** Most of the daytime units covered by solar; the exact saving depends on the tariff and holidays.
+2.  **Tax:** If the trust or business pays tax, 40% depreciation can offset profits (confirm with your auditor).
+3.  **Educational Value:** The plant can double as a "Physics Lab" to teach students about renewable energy.
 
 ---
 

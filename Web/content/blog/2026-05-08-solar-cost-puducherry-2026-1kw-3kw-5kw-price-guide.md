@@ -123,9 +123,11 @@ The central government's **PM Surya Ghar Muft Bijli Yojana** applies to Puducher
 
 ---
 
-## 5. Real ROI Case Studies: Puducherry Households
+## 5. Worked ROI Examples for Puducherry Homes
 
-### Case Study A: A 2 BHK Apartment in White Town, Puducherry (2kW System)
+*Illustrative calculations for typical homes, not specific customers.*
+
+### Example A: 2 BHK, No AC (2kW System)
 *   **Profile:** Working couple, no AC, fridge + fans + LED lights + washing machine
 *   **Bi-monthly consumption:** ~280 units
 *   **Bi-monthly bill:** ~₹900
@@ -137,7 +139,7 @@ The central government's **PM Surya Ghar Muft Bijli Yojana** applies to Puducher
 
 > **Honest Advice:** If your current bi-monthly bill is below ₹1,500, the financial ROI of solar is weak. Solar makes maximum financial sense when your bill is high.
 
-### Case Study B: A 3 BHK Home in Lawspet, Puducherry (3kW System)
+### Example B: 3 BHK With One AC (3kW System)
 *   **Profile:** Family of four, one 1.5-ton AC, standard appliances
 *   **Bi-monthly consumption:** ~680 units
 *   **Bi-monthly bill:** ~₹4,200
@@ -147,7 +149,7 @@ The central government's **PM Surya Ghar Muft Bijli Yojana** applies to Puducher
 *   **Annual savings:** ~₹24,600
 *   **Payback period:** 4.5 years
 
-### Case Study C: A Large Villa in Ariyankuppam, Puducherry (5kW System)
+### Example C: Large Home With Two ACs (5kW System)
 *   **Profile:** Extended family, two ACs, large home
 *   **Bi-monthly consumption:** ~1,050 units
 *   **Bi-monthly bill:** ~₹8,800

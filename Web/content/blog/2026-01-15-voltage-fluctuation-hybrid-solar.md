@@ -83,18 +83,20 @@ It effectively acts like a 5kVA Servo Stabilizer for your entire house.
 ---
 
 
-## 4. Case Study: Mr. Ramachandran, Panruti
+## 4. Worked Example: A Farmhouse With Weak Grid Voltage
 
-**The Situation:** Mr. Ramachandran owns a farmhouse near a Jackfruit orchard.
-**The Problem:** He installed a 5kW On-Grid system from a Chennai vendor. It never worked between 10 AM and 3 PM. He was frustrated.
-**The Fix:** We retrofitted a **Deye 5kW Hybrid Inverter** and a **5kWh Lithium Battery**.
+*Illustrative scenario, not a specific customer.*
+
+**The Situation:** A farmhouse at the end of a long rural line installs a 5kW on-grid system.
+**The Problem:** It keeps shutting down between 10 AM and 3 PM because the grid voltage is outside the inverter's limits.
+**The Fix:** Replace the on-grid inverter with a **5kW hybrid inverter** and a **5kWh lithium battery**.
 
 **The New Performance:**
 *   **Morning (7 AM - 9 AM):** Grid is 210V. Solar exports to Grid. battery charges.
 *   **Peak (10 AM - 3 PM):** Grid drops to 160V.
     *   Inverter switches to "Hybrid Mode".
     *   It stops exporting (because grid is too weak).
-    *   It powers his 1.5 Ton AC and Farm Motor using Solar + Battery.
+    *   It powers the 1.5 Ton AC and farm motor using Solar + Battery.
     *   Grid consumption is near zero.
 *   **Evening (6 PM):** Grid is 180V. Battery powers the lights.
 

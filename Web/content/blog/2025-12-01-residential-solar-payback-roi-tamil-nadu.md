@@ -17,7 +17,7 @@ In 2025, more households in Tamil Nadu - especially in **Cuddalore, Panruti, Ney
 
 One of the most common questions our team at **Surya’s Solar** receives is: *What is the payback period?*
 
-This blog breaks down real ROI numbers, TN-specific generation data, and true case studies from homeowners to show you exactly why solar is the best investment you can make for your home this year.
+This blog breaks down ROI numbers, TN-specific generation data, and worked examples for typical homes to show you exactly why solar is the best investment you can make for your home this year.
 
 ---
 
@@ -82,31 +82,31 @@ This consistent generation is why **Tamil Nadu rooftop solar cost** recovery is 
 
 ---
 
-## Real Home Case Studies
+## Worked Examples by System Size
 
-See how real homeowners in your area are saving.
+*Illustrative calculations for typical homes, not specific customers. Your numbers depend on your bill and roof.*
 
-### Case Study 1: 3 kW System - Cuddalore
+### Example 1: 3 kW System, 2BHK with 1 AC
 *   **Before Solar Bill:** ₹3,200 / month
 *   **After Solar Bill:** ₹180 / month (Fixed charges only)
 *   **Annual Savings:** ₹36,240
 *   **Payback Period:** 3.8 Years
 *   **ROI (20 Years):** 700%+
 
-### Case Study 2: 5 kW System - Panruti
+### Example 2: 5 kW System, Large Home with 3 ACs
 *   **Before Solar Bill:** ₹6,800 / month
 *   **After Solar Bill:** ₹250 / month
 *   **Annual Savings:** ₹78,600
 *   **Payback Period:** 3.2 Years
 *   **Impact:** Powers 3 ACs and a large joint family home.
 
-### Case Study 3: 2 kW System - Neyveli
+### Example 3: 2 kW System, Small Home
 *   **Before Solar Bill:** ₹1,900 / month
 *   **After Solar Bill:** ₹100 - ₹120 / month
 *   **Annual Savings:** ₹21,000+
 *   **Payback Period:** 3.5 Years
 
-These case studies prove that whether you are in **Cuddalore, Panruti, or Neyveli**, solar delivers massive returns.
+Whether you are in **Cuddalore, Panruti, or Neyveli**, the bigger your bill, the faster solar pays back. Run your own numbers with the [solar savings calculator](/calc).
 
 ---
 

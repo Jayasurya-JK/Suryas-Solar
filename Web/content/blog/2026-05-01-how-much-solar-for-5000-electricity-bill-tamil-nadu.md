@@ -117,9 +117,9 @@ This is why you do not need batteries. The TNEB grid itself acts as your free st
 
 ---
 
-## 5. Real-World Case Study: A 3 BHK Home in Cuddalore
+## 5. Worked Example: A 3 BHK Home
 
-Let us look at a real-world style example. A family in Cuddalore runs:
+*Illustrative numbers, not a specific customer.* A family runs:
 *   One 1.5-ton 5-star inverter AC (8 hours/night) = ~5 units/night
 *   Fridge (24/7) = ~2.5 units/day
 *   3 fans (10 hours/day) = ~1 unit/day
@@ -136,7 +136,7 @@ Before solar, their TNEB bill crossed the 500-unit cliff and was consistently ar
 *   **New bi-monthly TNEB bill: ₹100 to ₹150 (fixed meter charges only).**
 *   **Annual savings: approximately ₹22,200 per year.**
 
-With a 3kW system priced at around ₹1,80,000 and a PM Surya Ghar subsidy of ₹78,000, the net cost to the family was ₹1,02,000. Payback period: **under 5 years.** After that, 20+ years of free electricity.
+With a 3kW system priced at around ₹1,80,000 and up to ₹1,00,000 subsidy (₹78,000 PM Surya Ghar + ₹22,000 TN top-up for eligible homes), the net cost is about ₹80,000. Payback period: **about 3.5-4 years.** After that, 20+ years of free electricity.
 
 ---
 

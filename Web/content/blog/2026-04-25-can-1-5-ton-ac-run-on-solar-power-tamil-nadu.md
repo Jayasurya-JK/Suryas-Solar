@@ -149,17 +149,17 @@ To extract the absolute maximum value out of your solar investment while keeping
 
 ## 6. Financial Breakdown: The ROI of Solar Air Conditioning
 
-Let's look at a real-world case study of a 3 BHK home in Cuddalore that installed a 5kW On-Grid system to support two 1.5-ton ACs.
+Here is a worked example (illustrative numbers) of a 3 BHK home with a 5kW On-Grid system supporting two 1.5-ton ACs.
 
 *   **Average Bi-monthly TNEB Bill Before Solar:** ₹8,500 (Heavily penalized in the high slabs).
 *   **Annual Electricity Cost:** ₹51,000.
 *   **Cost of a Premium 5kW On-Grid System:** Approximately ₹2,80,000.
-*   **PM Surya Ghar Subsidy Received:** ₹78,000.
-*   **Net Cost to Customer:** ₹2,02,000.
+*   **Subsidy (eligible TN home):** up to ₹1,00,000 (₹78,000 PM Surya Ghar + ₹22,000 TN top-up).
+*   **Net Cost:** about ₹1,80,000.
 *   **New Bi-monthly TNEB Bill After Solar:** ₹0 to ₹150 (Fixed charges only).
-*   **Payback Period:** ₹2,02,000 / ₹51,000 = **3.9 Years.**
+*   **Payback Period:** ₹1,80,000 / ₹51,000 = **about 3.5 Years.**
 
-After roughly 4 years, the system has completely paid for itself. Because Tier-1 solar panels have a 25-year performance warranty, the homeowner will enjoy **21 years of completely free air conditioning.** This represents a guaranteed, tax-free return on investment that outperforms almost any mutual fund or fixed deposit available in India.
+After roughly 4 years, the system has completely paid for itself. Because Tier-1 solar panels have a 25-year performance warranty, the homeowner will enjoy **21 years of completely free air conditioning.** For most AC homes, that return compares very well with a fixed deposit.
 
 ---
 
