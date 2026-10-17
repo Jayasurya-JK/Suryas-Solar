@@ -10,9 +10,9 @@
  * - Side-by-side bill comparison chart
  * 
  * TUNABLE CONSTANTS (edit these to adjust calculations):
- * - TARIFF: Average electricity rate (₹ per kWh) - adjust for your region
+ * - SLABS_UPTO_500 / SLABS_ABOVE_500: TNEB domestic bi-monthly slab rates - update when tariffs change
  * - ANNUAL_GEN_PER_KW: Solar generation per kW per year (kWh/kW/year) - adjust for sunlight
- * - COST_PER_WATT_INTERNAL: System installation cost (₹/Watt) - adjust for market rates
+ * - SYSTEM_PRICE_POINTS: market-average installed prices by kW - update with the blog price list
  * - SOLAR_RESIDUAL_FACTOR: Remaining bill after solar (0.05 = 5% leftover) - adjust for grid dependency
  * - BILLS_PER_YEAR: Number of billing cycles per year (6 for bi-monthly)
  * - SYSTEM_LIFETIME_YEARS: Expected system lifespan for lifetime savings calculation
@@ -71,14 +71,61 @@ const formatIndianNumber = (num) => {
 // ==================== CONSTANTS ====================
 // These can be easily adjusted for different markets or assumptions
 
+// Last reviewed: Oct 2026. Keep in sync with the blog price/slab posts and the suryas-business-facts skill.
 const BILLS_PER_YEAR = 6;                  // Bi-monthly billing cycle
-const TARIFF = 7.8;                        // ₹ per kWh (blended rate)
-const ANNUAL_GEN_PER_KW = 1400;            // kWh per kW per year (average solar generation)
-const COST_PER_WATT_INTERNAL = 42.5;       // ₹/W system cost (used internally for ROI/payback)
+const FIXED_CHARGE = 100;                  // ₹ approx. fixed charge per bi-monthly bill (excluded from units)
+const ANNUAL_GEN_PER_KW = 1500;            // kWh per kW per year in Tamil Nadu (about 4.1 units/day)
 const SYSTEM_LIFETIME_YEARS = 25;          // Expected system lifespan in years
-const SOLAR_RESIDUAL_FACTOR = 0.05;        // 5% leftover bill after solar installation
-const INPUT_MIN = 2000;                    // Minimum bi-monthly bill (₹2000 = ~2.5kW system)
+const SOLAR_RESIDUAL_FACTOR = 0.05;        // Leftover bill after solar (seasonal shortfall, fixed charges)
+const SOLAR_RESIDUAL_MIN = 150;            // ₹ minimum bi-monthly bill with solar
+const INPUT_MIN = 2000;                    // Minimum bi-monthly bill (₹2000 = ~2kW system)
 const INPUT_MAX = 30000;                    // Maximum bi-monthly bill (₹)
+
+// TNEB domestic bi-monthly slabs (approx., same figures as the blog's slab guide).
+// [units at end of slab, ₹ per unit in slab]
+const SLABS_UPTO_500 = [[200, 0], [400, 4.5], [500, 6]];
+const SLABS_ABOVE_500 = [[100, 0], [400, 4.5], [500, 6], [600, 8], [800, 9], [1000, 10], [Infinity, 11]];
+
+// Market-average installed price of an on-grid DCR system (₹), midpoints of the blog price list.
+const SYSTEM_PRICE_POINTS = [[1, 75000], [2, 137500], [3, 195000], [5, 315000], [10, 575000]];
+const PRICE_PER_KW_ABOVE_10 = 57500;
+
+/** Convert a bi-monthly bill (₹) into bi-monthly units using the slab tables. */
+const billToUnits = (bill) => {
+  const energyCharge = Math.max(0, bill - FIXED_CHARGE);
+  const walk = (slabs) => {
+    let prevUnits = 0;
+    let spent = 0;
+    for (const [upto, rate] of slabs) {
+      const slabCost = rate === 0 ? 0 : (upto - prevUnits) * rate;
+      if (rate > 0 && spent + slabCost >= energyCharge) return prevUnits + (energyCharge - spent) / rate;
+      spent += slabCost;
+      prevUnits = upto;
+    }
+    return prevUnits;
+  };
+  const low = walk(SLABS_UPTO_500);
+  // Up to ₹1,500 of energy charges fits inside the 500-unit regime; above that, the above-500 table applies.
+  return energyCharge <= 1500 ? low : Math.max(500, walk(SLABS_ABOVE_500));
+};
+
+/** Installed price (₹) for a system size, interpolated from market-average price points. */
+const systemPrice = (kw) => {
+  if (kw >= 10) return 575000 + (kw - 10) * PRICE_PER_KW_ABOVE_10;
+  for (let i = 1; i < SYSTEM_PRICE_POINTS.length; i++) {
+    const [k1, p1] = SYSTEM_PRICE_POINTS[i - 1];
+    const [k2, p2] = SYSTEM_PRICE_POINTS[i];
+    if (kw <= k2) return p1 + ((Math.max(kw, k1) - k1) / (k2 - k1)) * (p2 - p1);
+  }
+  return SYSTEM_PRICE_POINTS[SYSTEM_PRICE_POINTS.length - 1][1];
+};
+
+/** PM Surya Ghar central subsidy + Tamil Nadu G.O. 102 top-up for an eligible TN home. */
+const subsidyFor = (kw) => {
+  const central = Math.min(kw, 2) * 30000 + Math.max(0, Math.min(kw, 3) - 2) * 18000;
+  const tnTopUp = kw >= 3 ? 22000 : kw >= 2 ? 10000 : kw >= 1 ? 5000 : 0;
+  return Math.round(central + tnTopUp);
+};
 
 export default function SolarCalculator({ showBreakdown = false, headingLevel = 'h2' }) {
   const router = useRouter();
@@ -121,7 +168,7 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
       });
       setIsCalculated(true);
       if (bill > 0 && bill < INPUT_MIN) {
-        setValidationError(`Minimum bill amount is ₹${formatIndianNumber(INPUT_MIN)} (approx. 2.5 kW system). We specialize in 3 kW and above installations.`);
+        setValidationError(`Minimum bill amount is ₹${formatIndianNumber(INPUT_MIN)} (about a 2 kW system). We specialize in 2 kW and above installations.`);
       }
       return;
     }
@@ -129,35 +176,35 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
     // FORMULA 1: Annual electricity bill
     const annualBill = bill * BILLS_PER_YEAR;
 
-    // FORMULA 2: Annual electricity consumption in kWh
-    const annualKwh = annualBill / TARIFF;
+    // FORMULA 2: Annual electricity consumption in units, using TNEB slab rates
+    const bimonthlyUnits = billToUnits(bill);
+    const annualKwh = bimonthlyUnits * BILLS_PER_YEAR;
 
     // FORMULA 3: Recommended solar system size (kW) - rounded to 1 decimal
-    const recommendedKw = Math.round((annualKwh / ANNUAL_GEN_PER_KW) * 10) / 10;
+    const recommendedKw = Math.max(1, Math.round((annualKwh / ANNUAL_GEN_PER_KW) * 10) / 10);
 
-    // FORMULA 4: System capacity in Watts (internal use only)
-    const systemWatts_internal = Math.round(recommendedKw * 1000);
+    // FORMULA 4-5: Market-average system price, subsidy and net cost (internal - NOT shown in UI)
+    const systemCost_internal = systemPrice(recommendedKw);
+    const subsidy_internal = subsidyFor(recommendedKw);
+    const netCost_internal = systemCost_internal - subsidy_internal;
 
-    // FORMULA 5: System cost (internal use only - NOT shown in UI)
-    const systemCost_internal = systemWatts_internal * COST_PER_WATT_INTERNAL;
+    // FORMULA 6: Solar bi-monthly bill (small leftover) and annual savings
+    const solarBimonthlyBill = Math.min(bill, Math.max(SOLAR_RESIDUAL_MIN, Math.round(bill * SOLAR_RESIDUAL_FACTOR)));
+    const annualSavings = (bill - solarBimonthlyBill) * BILLS_PER_YEAR;
+    const billReductionPercent = Math.round(((bill - solarBimonthlyBill) / bill) * 100);
 
-    // FORMULA 6: Annual savings (assume full offset for marketing)
-    const annualSavings = annualBill;
+    // FORMULA 7: Lifetime savings over system lifespan, after paying for the system
+    const lifetimeSavings = annualSavings * SYSTEM_LIFETIME_YEARS - netCost_internal;
 
-    // FORMULA 7: Lifetime savings over system lifespan
-    const lifetimeSavings = annualSavings * SYSTEM_LIFETIME_YEARS;
-
-    // FORMULA 8: Payback period in years (internal calculation - rounded to 1 decimal)
-    const paybackYears_internal = Math.round((systemCost_internal / annualSavings) * 10) / 10;
+    // FORMULA 8: Payback period in years after subsidy (rounded to 1 decimal)
+    const paybackYears_internal = Math.round((netCost_internal / annualSavings) * 10) / 10;
 
     // FORMULA 9: Return on Investment percentage per annum (internal - rounded to 1 decimal)
-    const roiPercent_internal = Math.round(((annualSavings / systemCost_internal) * 100) * 10) / 10;
-
-    // FORMULA 10: Solar bi-monthly bill (5% of original)
-    const solarBimonthlyBill = Math.round(bill * SOLAR_RESIDUAL_FACTOR);
+    const roiPercent_internal = Math.round(((annualSavings / netCost_internal) * 100) * 10) / 10;
 
     setCalculatedData({
       annualBill,
+      annualKwh: Math.round(annualKwh),
       annualSavings,
       lifetimeSavings,
       recommendedKw,
@@ -165,6 +212,7 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
       roiPercent_internal,
       regularBill: bill,
       solarBimonthlyBill,
+      billReductionPercent,
     });
     setIsCalculated(true);
   }, []);
@@ -397,7 +445,7 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
             )}
             {!validationError && (
               <p id="billHelp" className="text-[10px] sm:text-sm text-slate-500 mt-2 sm:mt-3 text-center">
-                Enter amount between ₹{formatIndianNumber(INPUT_MIN)} and ₹{formatIndianNumber(INPUT_MAX)} • We specialize in 3 kW+ systems
+                Enter amount between ₹{formatIndianNumber(INPUT_MIN)} and ₹{formatIndianNumber(INPUT_MAX)} • We specialize in 2 kW+ systems
               </p>
             )}
           </div>
@@ -458,7 +506,7 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
                   <p className="text-lg sm:text-2xl font-bold text-slate-900 tracking-tight mb-0.5 sm:mb-1">
                     ₹{formatIndianNumber(calculatedData.lifetimeSavings)}
                   </p>
-                  <p className="text-slate-500 text-[10px] sm:text-xs">Total savings over 25 years</p>
+                  <p className="text-slate-500 text-[10px] sm:text-xs">Over 25 years, after system cost</p>
                 </div>
               </div>
             </div>
@@ -546,7 +594,7 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
 
                   <div className="relative bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-emerald-300 overflow-hidden">
                     <div className="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-sm">
-                      95% OFF
+                      {calculatedData.billReductionPercent}% OFF
                     </div>
                     <p className="text-[10px] sm:text-sm text-emerald-700 font-semibold mb-1">With Solar</p>
                     <p className="text-base sm:text-xl font-black text-emerald-900">
@@ -565,7 +613,7 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                 </svg>
                 <span>
-                  <strong>Note:</strong> Calculations are based on current electricity tariff of ₹7.8/unit and average Tamil Nadu sunlight conditions. Actual system cost and detailed pricing will be provided during your free consultation based on your specific requirements.
+                  <strong>Note:</strong> Estimates use TNEB domestic slab rates, about 1,500 units per kW per year of Tamil Nadu sunshine, market-average system prices (Oct 2026) and the up to ₹1 lakh subsidy for eligible Tamil Nadu homes (Puducherry: up to ₹78,000). Your exact price comes in a written quote after a free site visit.
                 </span>
               </p>
             </div>
@@ -603,7 +651,9 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
                       <div className="flex-1">
                         <p className="font-semibold text-slate-900 text-xs sm:text-sm mb-1">Energy Consumption Calculation</p>
                         <p className="text-[10px] sm:text-sm text-slate-600">
-                          Annual usage: <span className="font-semibold text-slate-900">₹{formatIndianNumber(calculatedData.annualBill)} ÷ ₹7.8/unit = {formatIndianNumber(Math.round(calculatedData.annualBill / TARIFF))} units/year</span>
+                          Annual usage: <span className="font-semibold text-slate-900">about {formatIndianNumber(calculatedData.annualKwh)} units/year</span>
+                          <br />
+                          <span className="text-[10px] text-slate-500">Worked out from your bill using TNEB bi-monthly slab rates (free units, then ₹4.50 to ₹11 per unit)</span>
                         </p>
                       </div>
                     </div>
@@ -618,7 +668,7 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
                         <p className="text-[10px] sm:text-sm text-slate-600">
                           System size: <span className="font-semibold text-slate-900">{calculatedData.recommendedKw} kW</span>
                           <br />
-                          <span className="text-[10px] text-slate-500">Based on 1400 units generation per kW annually in Tamil Nadu</span>
+                          <span className="text-[10px] text-slate-500">Based on about 1,500 units generation per kW annually in Tamil Nadu</span>
                         </p>
                       </div>
                     </div>
@@ -633,9 +683,9 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
                         <p className="text-[10px] sm:text-sm text-slate-600">
                           Annual savings: <span className="font-semibold text-emerald-600">₹{formatIndianNumber(calculatedData.annualSavings)}/year</span>
                           <br />
-                          25-year savings: <span className="font-semibold text-emerald-600">₹{formatIndianNumber(calculatedData.lifetimeSavings)}</span>
+                          25-year savings: <span className="font-semibold text-emerald-600">₹{formatIndianNumber(calculatedData.lifetimeSavings)}</span> (after paying for the system)
                           <br />
-                          <span className="text-[10px] text-slate-500">Solar reduces your bill by 95% - You only pay ₹{formatIndianNumber(calculatedData.solarBimonthlyBill)} bi-monthly!</span>
+                          <span className="text-[10px] text-slate-500">Solar cuts your bill by about {calculatedData.billReductionPercent}% - you pay around ₹{formatIndianNumber(calculatedData.solarBimonthlyBill)} bi-monthly.</span>
                         </p>
                       </div>
                     </div>
@@ -650,7 +700,7 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
                         <p className="text-[10px] sm:text-sm text-slate-600">
                           <span className="font-semibold text-violet-600">{calculatedData.paybackYears_internal} years</span> to recover your investment
                           <br />
-                          <span className="text-[10px] text-slate-500">This is the time it takes for your electricity savings to equal your initial solar investment. After this period, you enjoy free electricity!</span>
+                          <span className="text-[10px] text-slate-500">Time for your bill savings to repay the system cost after the subsidy (market-average price). After this, the savings are yours.</span>
                         </p>
                       </div>
                     </div>

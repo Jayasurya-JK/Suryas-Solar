@@ -14,6 +14,37 @@ import Footer from '../components/Footer'
 import WhatsAppFloat from '../components/WhatsAppFloat'
 import { getHomeContent, getSiteSettings } from '../lib/content'
 
+const GUIDES = [
+  { tag: 'Subsidy', title: '₹1 Lakh Solar Subsidy in Tamil Nadu', text: '₹78,000 PM Surya Ghar + ₹22,000 TN top-up: who gets it and how to apply.', href: '/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry', image: '/images/Blog 4.webp' },
+  { tag: 'Prices', title: 'Solar Panel Price List 2026', text: 'Per-watt rates by brand and 1kW to 10kW system prices after subsidy.', href: '/blog/2026-10-17-solar-panel-price-list-tamil-nadu-by-brand', image: '/images/solar-panel-cost-tamil-nadu-2026.webp' },
+  { tag: 'Sizing', title: '3kW vs 5kW: Which Size Fits Your Bill?', text: 'Units per day, ACs supported and the right size for your EB bill.', href: '/blog/2025-12-03-3kw-vs-5kw-solar-system-comparison', image: '/images/3kW vs 5kW Comparison.webp' },
+  { tag: 'Savings', title: 'Solar Payback After ₹1 Lakh Subsidy', text: 'How many years until solar pays for itself, by bill size.', href: '/blog/2026-10-17-solar-payback-after-1-lakh-subsidy-tamil-nadu', image: '/images/solar-roi-calculator-break-even-analysis.webp' },
+  { tag: 'EB Bill', title: 'TNEB Slab Rates & EB Bill Calculation', text: 'Why your bill jumps after 500 units, with worked examples.', href: '/blog/2026-04-30-how-to-calculate-eb-bill-tamil-nadu-examples', image: '/images/how-to-calculate-eb-bill-tamil-nadu-examples.webp' },
+  { tag: 'Buying Tips', title: 'How to Compare Solar Quotations', text: 'A 12-point checklist so a cheap quote does not cost you the subsidy.', href: '/blog/2026-10-17-how-to-compare-solar-quotations-checklist', image: '/images/solar-scam-warnings-cuddalore.webp' },
+]
+
+const QUICK_LINKS = [
+  { label: 'Solar savings calculator', href: '/calc' },
+  { label: 'Subsidy eligibility check', href: '/subsidy-eligibility' },
+  { label: '3kW system', href: '/systems/3kw-solar-system-with-subsidy' },
+  { label: '5kW system', href: '/systems/5kw-solar-system-with-subsidy' },
+  { label: 'All solar guides', href: '/blog' },
+]
+
+const TOWNS = [
+  { label: 'Cuddalore', href: '/service-areas/cuddalore' },
+  { label: 'Puducherry', href: '/service-areas/puducherry' },
+  { label: 'Panruti', href: '/service-areas/panruti' },
+  { label: 'Neyveli', href: '/service-areas/neyveli' },
+]
+
+const ABOUT_POINTS = [
+  'Registered PM Surya Ghar vendor',
+  'Official TATA Power Solar & Exide partner',
+  'Full subsidy and TNEB paperwork',
+  'Coastal-grade structures, 3-pit earthing',
+]
+
 export default function Home({ content, settings }) {
   useEffect(() => {
     // Handle hash navigation on load
@@ -165,46 +196,157 @@ export default function Home({ content, settings }) {
         <WhyChoose />
         <Testimonials testimonials={content.testimonials} />
 
-        <section className="bg-slate-50 py-12 md:py-16 border-t border-gray-100">
-          <div className="container-custom max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center md:text-left">Solar guides, prices, and service areas</h2>
-            <p className="text-gray-600 mb-8 text-sm md:text-base">
-              Start with these pages if you are comparing a 3kW or 5kW rooftop system, checking PM Surya Ghar subsidy, or booking an install in Cuddalore, Puducherry, Panruti, or Neyveli.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm md:text-base">
-              <a className="text-primary font-semibold hover:underline" href="/systems/3kw-solar-system-with-subsidy">3kW solar price in Tamil Nadu (after subsidy)</a>
-              <a className="text-primary font-semibold hover:underline" href="/systems/5kw-solar-system-with-subsidy">5kW solar system with subsidy</a>
-              <a className="text-primary font-semibold hover:underline" href="/service-areas/cuddalore">Solar installation in Cuddalore</a>
-              <a className="text-primary font-semibold hover:underline" href="/service-areas/puducherry">Solar installation in Puducherry</a>
-              <a className="text-primary font-semibold hover:underline" href="/service-areas/panruti">Solar installation in Panruti</a>
-              <a className="text-primary font-semibold hover:underline" href="/service-areas/neyveli">Solar installation in Neyveli</a>
-              <a className="text-primary font-semibold hover:underline" href="/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry">PM Surya Ghar subsidy 2026 (TN + Puducherry)</a>
-              <a className="text-primary font-semibold hover:underline" href="/blog/2026-04-30-how-to-calculate-eb-bill-tamil-nadu-examples">How to calculate your TN EB bill (200 free units)</a>
-              <a className="text-primary font-semibold hover:underline" href="/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide">Solar cost in Puducherry 2026</a>
-              <a className="text-primary font-semibold hover:underline" href="/blog/2025-12-03-3kw-vs-5kw-solar-system-comparison">3kW vs 5kW: which size for your home</a>
-              <a className="text-primary font-semibold hover:underline" href="/calc">Solar savings calculator</a>
-              <a className="text-primary font-semibold hover:underline" href="/blog">All solar blog guides</a>
+        {/* Guides: photo cards (swipe on mobile, 3 columns on desktop) */}
+        <section className="py-16 md:py-24 bg-slate-50 border-t border-gray-100">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
+              <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 font-semibold text-sm rounded-full mb-4">
+                Learn Before You Buy
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
+                Solar <span className="text-primary">Guides</span> &amp; Prices
+              </h2>
+              <p className="text-slate-600 text-lg">Honest answers from our engineers to the questions Tamil Nadu homeowners ask most.</p>
+            </div>
+
+            <div className="flex lg:grid lg:grid-cols-3 gap-5 no-scrollbar overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-4 -mx-4 px-4 lg:mx-0 lg:px-0">
+              {GUIDES.map((g) => (
+                <a
+                  key={g.href}
+                  href={g.href}
+                  className="group snap-start flex-shrink-0 w-[80%] sm:w-[45%] lg:w-auto bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                    <img
+                      src={encodeURI(g.image)}
+                      alt={g.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <span className="inline-block mb-2 px-2.5 py-0.5 rounded-full bg-primary-50 text-primary text-xs font-bold">{g.tag}</span>
+                    <h3 className="font-bold text-slate-900 text-lg leading-snug group-hover:text-primary transition-colors">{g.title}</h3>
+                    <p className="mt-2 text-sm text-slate-600 leading-relaxed">{g.text}</p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                      Read guide
+                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {QUICK_LINKS.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="px-5 py-2.5 rounded-full bg-white border border-slate-200 text-sm font-semibold text-slate-700 hover:border-primary hover:text-primary shadow-sm transition-colors"
+                >
+                  {l.label}
+                </a>
+              ))}
             </div>
           </div>
         </section>
-        
-        {/* SEO Text Block to increase Text-to-HTML ratio */}
-        <section className="bg-white py-16 border-t border-gray-100">
-          <div className="container-custom max-w-5xl mx-auto text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-playfair font-bold text-gray-900 mb-6">Your Trusted Solar Installation Partner in Tamil Nadu</h2>
-            <div className="text-gray-600 space-y-4 text-sm md:text-base leading-relaxed">
-              <p>
-                Surya's Solar is the premier provider of residential and commercial solar energy systems across Tamil Nadu and Puducherry. 
-                Based in Cuddalore, we specialize in designing and installing high-efficiency On-Grid, Off-Grid, and Hybrid solar power plants 
-                tailored specifically for the regional climate. Our certified engineering team manages the entire process end-to-end: from precise 
-                3kW to 10kW load calculations and structural shadow analysis, to complete TNEB net-metering liaisoning and PM Surya Ghar Muft Bijli Yojana subsidy processing.
+
+        {/* About: real install photo + short story + proof */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container-custom grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="relative">
+              <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+                <img src="/images/2.webp" alt="Rooftop solar installation by Surya's Solar in Cuddalore" loading="lazy" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute -bottom-6 right-4 sm:right-8 bg-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-4">
+                <div>
+                  <p className="text-3xl font-black text-primary leading-none">122</p>
+                  <p className="text-xs text-slate-500 mt-1">PM Surya Ghar<br />installations</p>
+                </div>
+                <div className="w-px h-10 bg-slate-200" />
+                <div>
+                  <p className="text-3xl font-black text-primary leading-none">5.0</p>
+                  <p className="text-xs text-slate-500 mt-1">45 Google<br />reviews</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-6 lg:pt-0">
+              <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 font-semibold text-sm rounded-full mb-4">
+                About Us
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+                Rooftop Solar Installer in <span className="text-primary">Cuddalore</span>
+              </h2>
+              <p className="mt-4 text-slate-600 text-lg leading-relaxed">
+                For 10+ years, Surya&apos;s Solar has designed and installed on-grid and hybrid rooftop solar for homes, shops and offices across Cuddalore district and Puducherry, from our office in Kondur.
               </p>
-              <p>
-                We are fiercely committed to helping local homeowners and large-scale businesses completely eliminate their electricity bills while significantly 
-                increasing their property value through clean, renewable energy. Whether you are actively comparing N-Type TopCon vs Bifacial solar panels, 
-                calculating your long-term solar ROI, or seeking professional post-installation maintenance and generation tracking, Surya's Solar delivers 
-                uncompromised engineering quality, transparent pricing, and robust 25-year performance warranties.
+              <p className="mt-3 text-slate-600 leading-relaxed">
+                We handle every step: sizing from your EB bills, shadow analysis, coastal-grade structures, TNEB net meter and the full ₹1 lakh subsidy paperwork. After installation, we stay on call for service.
               </p>
+              <div className="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                {ABOUT_POINTS.map((p) => (
+                  <div key={p} className="flex gap-3 items-center">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <span className="text-sm font-semibold text-slate-800">{p}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Service areas: dark band with town chips + subsidy CTA */}
+        <section className="pb-16 md:pb-24 bg-white">
+          <div className="container-custom">
+            <div className="relative overflow-hidden rounded-3xl px-6 py-10 md:px-12 md:py-14 text-white" style={{ background: 'linear-gradient(135deg, #0f2e6e 0%, #1542a7 55%, #1e62d4 100%)' }}>
+              <div className="absolute -top-20 -right-20 w-72 h-72 bg-white/5 rounded-full pointer-events-none" />
+              <div className="absolute -bottom-24 -left-16 w-64 h-64 bg-white/5 rounded-full pointer-events-none" />
+              <div className="relative grid lg:grid-cols-[1.2fr_1fr] gap-8 items-center">
+                <div>
+                  <h2 className="text-2xl md:text-4xl font-bold leading-tight">
+                    Serving Cuddalore District &amp; <span className="text-yellow-300">Puducherry</span>
+                  </h2>
+                  <p className="mt-3 text-blue-100 max-w-xl">
+                    Free home visits all 7 days, 9 AM to 8 PM. Pick your town to see local details and check your subsidy in 30 seconds.
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-2.5">
+                    {TOWNS.map((t) => (
+                      <a
+                        key={t.href}
+                        href={t.href}
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-semibold hover:bg-white hover:text-primary transition-colors"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        {t.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-white/10 border border-white/15 rounded-2xl p-6 backdrop-blur-sm">
+                  <p className="text-sm text-blue-100">Up to</p>
+                  <p className="text-4xl md:text-5xl font-black text-yellow-300">₹1,00,000</p>
+                  <p className="text-sm text-blue-100 mt-1">solar subsidy for eligible Tamil Nadu homes</p>
+                  <a
+                    href="/subsidy-eligibility"
+                    className="mt-5 flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-solar-orange hover:bg-solar-orange-600 text-white font-bold shadow-lg transition-colors"
+                  >
+                    Check My Eligibility
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>

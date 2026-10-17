@@ -81,7 +81,7 @@ You must have roof rights.
 ### 4. The "DCR" Mandate
 This is critical. To get the subsidy, your solar panels **MUST** be "Made in India" using Indian solar cells. These are called **DCR (Domestic Content Requirement)** modules.
 *   If you install imported components (even high-end foreign brands), you forfeit the subsidy.
-*   At **Surya's Solar**, we only stock ALMM-approved DCR modules (like Tata Power, Adani, Wikree, Premier) for residential projects to guarantee your eligibility.
+*   At **Surya's Solar**, we only stock ALMM-approved DCR modules (like Tata Power, Adani, Waaree, Premier) for residential projects to guarantee your eligibility.
 
 ---
 

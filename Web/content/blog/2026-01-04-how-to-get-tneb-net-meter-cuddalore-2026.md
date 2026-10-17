@@ -124,7 +124,7 @@ Why do Cuddalore residents choose us? Because we don't just dump panels on your 
 
 *   **We know the AEs:** We operate in Cuddalore, Panruti, and Vadalur daily. We know exactly what the Section Officer at Manjakuppam or the AE at Neyveli requires.
 *   **Paperwork Included:** Our quotation includes the entire TNEB Liaisoning fee. You don't have to visit the EB office even once.
-*   **Guarantee:** We guarantee Net Meter commissioning within **45 days**, or we pay your electricity bill penalty for the delay.
+*   **Follow-up until done:** We track your application with the section office and update you at every stage until the net meter is fixed.
 
 **Stop fearing the paperwork. Let us handle the TNEB while you handle the savings.**
 

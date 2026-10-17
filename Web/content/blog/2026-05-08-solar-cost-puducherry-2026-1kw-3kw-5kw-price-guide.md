@@ -30,7 +30,7 @@ faqs:
 ---
 Puducherry is a unique market for rooftop solar power in India. As a Union Territory, it operates under a slightly different regulatory framework than its neighbouring Tamil Nadu districts, yet it enjoys the same exceptional solar irradiation levels that make the broader coastal southeast India region one of the best in the country for solar power generation.
 
-If you are a homeowner or small business owner in Puducherry (covering Puducherry district, Karaikal, Mahe, or Yanam), and you are researching the cost of installing solar panels in 2026, this guide is specifically designed for you. We cover everything: accurate pricing for 1kW to 5kW systems, subsidy eligibility in Puducherry, the key difference between PPCL and TNEB connections, and the real financial return you can expect.
+If you are a homeowner or small business owner in Puducherry (covering Puducherry district, Karaikal, Mahe, or Yanam), and you are researching the cost of installing solar panels in 2026, this guide is specifically designed for you. We cover everything: accurate pricing for 1kW to 5kW systems, subsidy eligibility in Puducherry, how the Puducherry Electricity Department (PED) net meter process works, and the real financial return you can expect.
 
 ---
 
@@ -42,7 +42,7 @@ Before diving into costs, it is important to understand why solar power is parti
 Puducherry receives approximately **5.0 to 5.4 Peak Sun Hours (PSH) per day** averaged across the year. This is among the highest in all of India and is comparable to the best solar zones in Rajasthan. This means your solar panels in Puducherry will consistently generate more power per installed kilowatt than in most other Indian states.
 
 **Electricity Tariffs:**
-Residents in Puducherry who are connected to the Puducherry Power Corporation Limited (PPCL) grid pay tariffs that are broadly similar to TNEB's structure, with tiered slabs that punish high-consumption households. Homeowners with air conditioners, water heaters, and large refrigerators regularly encounter bi-monthly bills of ₹3,000 to ₹8,000.
+Residents in Puducherry pay Electricity Department tariffs that are broadly similar to TNEB's structure, with tiered slabs that punish high-consumption households. Homeowners with air conditioners, water heaters, and large refrigerators regularly encounter bi-monthly bills of ₹3,000 to ₹8,000.
 
 **The Combination:**
 High solar potential + High electricity tariffs = Extremely fast solar payback periods. In Puducherry, a well-installed 3kW system can pay for itself in as little as **3.5 to 4.5 years**-one of the fastest solar ROIs in all of India.
@@ -53,20 +53,17 @@ High solar potential + High electricity tariffs = Extremely fast solar payback p
 
 This is a critical distinction that many homeowners in Puducherry are unaware of.
 
-**PPCL (Puducherry Power Corporation Limited):**
-Most residential homes within the Puducherry city limits and the Union Territory are connected to PPCL. The net metering application for solar goes through PPCL, and the billing and credits are managed by PPCL.
-
-**TNEB (Tamil Nadu Electricity Board):**
-Some areas in the Puducherry Union Territory-particularly in villages and semi-rural zones bordering Tamil Nadu-may actually be supplied by TNEB rather than PPCL. It is important to check your electricity bill carefully. Your utility provider is clearly printed on the bill.
+**Electricity Department, Puducherry (PED):**
+Homes in the Puducherry Union Territory get their power from the Electricity Department, Government of Puducherry. Your solar net meter application, inspection and billing credits go through PED, under the net metering regulations of the Joint Electricity Regulatory Commission (JERC).
 
 **Why Does It Matter for Solar?**
-The net meter application process, required documentation, and processing timelines differ between PPCL and TNEB. An experienced local solar installer in Puducherry will know exactly which set of documents and which office to approach for your specific connection. Always confirm that your installer has experience with your specific utility provider.
+The forms, approval steps and office you deal with in Puducherry are different from TNEB in Tamil Nadu, and the extra ₹22,000 Tamil Nadu top-up does not apply here. Check the consumer number and office printed on your bill, and choose an installer who has completed PED net meter applications before.
 
 ---
 
 ## 3. Solar System Pricing in Puducherry (2026)
 
-The following prices are for fully installed, quality (not budget, not premium) solar systems in Puducherry. They include panels, inverter, mounting structure, all cabling, installation labor, and net meter application support through the relevant authority (PPCL or TNEB).
+The following prices are for fully installed, quality (not budget, not premium) solar systems in Puducherry. They include panels, inverter, mounting structure, all cabling, installation labor, and net meter application support through the Electricity Department, Puducherry (PED).
 
 > **Note:** These are pre-subsidy prices. See Section 4 for subsidy deductions.
 
@@ -148,7 +145,7 @@ The central government's **PM Surya Ghar Muft Bijli Yojana** applies to Puducher
 *   **New bi-monthly bill:** ₹100 (fixed charges only)
 *   **Net investment:** ₹1,09,500
 *   **Annual savings:** ~₹24,600
-*   **Payback period:** 4.5 years ✅
+*   **Payback period:** 4.5 years
 
 ### Case Study C: A Large Villa in Ariyankuppam, Puducherry (5kW System)
 *   **Profile:** Extended family, two ACs, large home
@@ -158,7 +155,7 @@ The central government's **PM Surya Ghar Muft Bijli Yojana** applies to Puducher
 *   **New bi-monthly bill:** ₹300 (mostly fixed charges; small seasonal shortfall)
 *   **Net investment:** ₹1,97,000
 *   **Annual savings:** ~₹50,400
-*   **Payback period:** 3.9 years ✅✅
+*   **Payback period:** 3.9 years
 
 ---
 
@@ -179,14 +176,14 @@ Puducherry's proximity to the coast means salt-laden air. As with Cuddalore, alw
 
 When choosing a solar company in Puducherry, apply the same rigorous checklist as you would anywhere:
 
-1. ✅ Verify PM Surya Ghar empanelment certificate
-2. ✅ Demand a physical site survey before any final quote
-3. ✅ Insist on a fully itemized, component-wise quotation with specific brand names
-4. ✅ Confirm written 25-year panel performance warranty and 5-year inverter warranty
-5. ✅ Verify experience with **both PPCL and TNEB** net meter applications in Puducherry
-6. ✅ Ask specifically about coastal-grade mounting structure materials
-7. ✅ Confirm the availability of post-installation maintenance service (AMC)
-8. ✅ Ask for local Puducherry customer references
+1. Verify PM Surya Ghar empanelment certificate
+2. Demand a physical site survey before any final quote
+3. Insist on a fully itemized, component-wise quotation with specific brand names
+4. Confirm written 25-year panel performance warranty and 5-year inverter warranty
+5. Verify experience with **PED (Electricity Department, Puducherry)** net meter applications
+6. Ask specifically about coastal-grade mounting structure materials
+7. Confirm the availability of post-installation maintenance service (AMC)
+8. Ask for local Puducherry customer references
 
 ---
 
@@ -196,7 +193,7 @@ When choosing a solar company in Puducherry, apply the same rigorous checklist a
 - **Solar Irradiation:** 5.5-6.0 kWh/m²/day (excellent)
 - **Wind Load:** Zone IV compliance mandatory
 - **Corrosion Protection:** Marine-grade materials required
-- **Net Metering:** PPCL for Puducherry, TNEB for surrounding areas
+- **Net Metering:** Electricity Department, Puducherry (PED)
 
 ### Financial Breakdown: Puducherry Solar ROI
 *   **Average Puducherry Bill:** ₹3,500 - ₹5,000 bi-monthly
@@ -222,7 +219,7 @@ Among all the cities and towns in southeast India, Puducherry stands out as havi
 
 For a standard 3 BHK home in Puducherry with a bi-monthly bill above ₹3,500, a 3kW On-Grid solar system with a net investment of approximately ₹1,10,000 (post-subsidy) and a payback period of under 5 years is a genuinely life-changing financial decision.
 
-*Are you ready to put Puducherry's powerful sun to work for your family? [Contact the engineering team at Surya's Solar today](/contact) for a free, zero-obligation site assessment. We have extensive experience with both PPCL and TNEB net meter applications throughout the Puducherry Union Territory.*
+*Are you ready to put Puducherry's powerful sun to work for your family? [Contact the engineering team at Surya's Solar today](/contact) for a free, zero-obligation site assessment. We handle the PED net meter application and the central subsidy paperwork for you.*
 
 
 

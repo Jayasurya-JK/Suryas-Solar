@@ -35,6 +35,14 @@
     animation: fadeIn 0.5s ease-in-out;
   }
 
+  /* Swipe rows without a visible scrollbar */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Eligibility checker celebration popup */
   @keyframes popIn {
     0% { opacity: 0; transform: scale(0.85); }
