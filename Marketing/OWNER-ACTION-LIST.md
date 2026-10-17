@@ -2,7 +2,7 @@
 
 Things only you can do. Claude handles everything else (website, SEO, writing, Search Console).
 Tick each box when done and tell Claude, or just do it - Claude checks the results in Search Console.
-Last updated: 17 Oct 2026.
+Last updated: 17 Oct 2026 (images moved to IMAGE-PROMPTS.md).
 
 ---
 
@@ -35,44 +35,7 @@ Last updated: 17 Oct 2026.
 
 ## D. Images to generate (Gemini Nano Banana or ChatGPT)
 
-How: copy a prompt, generate, pick the best, save as **PNG or JPG** into `Web/public/images/` with the exact filename shown (any extension), and tell Claude. Claude converts to webp and swaps it in. Size: 16:9 (1200 x 675 or larger).
-
-Rules: no text inside images, no other brands' logos, never pretend it is a real customer's house.
-
-**1. `one-lakh-solar-subsidy-tamil-nadu`** (₹1 lakh subsidy page)
-> Photorealistic 16:9 photo, natural daylight, a smiling Tamil family (parents and a child) standing on the flat white-painted concrete terrace of a typical Tamil Nadu house next to newly installed blue rooftop solar panels on a raised galvanized steel structure, coconut trees and clear blue sky behind, the father holding a phone and a folder of documents. Realistic proportions, everyday Indian clothing, no logos, no watermark, no text. 35mm lens, eye level, sharp focus.
-
-**2. `1kw-solar-units-per-day`** (1kW units post)
-> Photorealistic 16:9 close-up of a small rooftop solar setup with two large solar panels on a galvanized frame on a Tamil Nadu terrace at midday, a wall-mounted string inverter in the shade nearby with a small glowing display (no readable text), coconut trees and blue sky in the background. No logos, no text, no watermark. Sharp focus, natural light.
-
-**3. `5kw-solar-units-per-day`** (5kW units post)
-> Photorealistic 16:9 wide shot of a larger rooftop solar array (about nine panels in two rows) on a raised hot-dip galvanized structure over a white terrace of a two-storey South Indian house, late-morning sun, an outdoor split-AC unit visible on the wall below, coconut palms around. No logos, no text, no watermark.
-
-**4. `premier-vs-adani-solar-panel`** (comparison post)
-> Photorealistic 16:9 photo of two modern black monocrystalline solar panels standing upright side by side in a clean solar warehouse, one slightly different cell pattern than the other, a technician in a plain grey shirt measuring with a tape, soft daylight from large windows. No brand logos, no labels, no text, no watermark.
-
-**5. `premier-vs-waaree-solar-panel`** (comparison post)
-> Photorealistic 16:9 close-up of the corner of a glass-to-glass bifacial solar panel showing the transparent back and cells, mounted on a galvanized steel rail on a sunny coastal rooftop, light sea haze in the far background. No logos, no text, no watermark. Macro detail, sharp focus.
-
-**6. `pm-surya-ghar-last-date-2027`** (deadline post)
-> Photorealistic 16:9 photo of an Indian homeowner at a home table reviewing papers and a smartphone, a wall calendar visible but blurred (no readable dates), a window showing rooftop solar panels on a neighbouring terrace in warm afternoon light. No logos, no text, no watermark.
-
-**7. `solar-panels-monsoon-cyclone-cuddalore`** (monsoon post)
-> Photorealistic 16:9 photo of rooftop solar panels on a sturdy galvanized structure on a Tamil Nadu terrace under dramatic dark monsoon clouds, wet panel surface reflecting the sky, palm trees bending slightly in the wind, a lightning arrester rod visible above the panels. No people, no logos, no text, no watermark.
-
-**8. `2kw-solar-units-per-day`** (2kW post)
-> Photorealistic 16:9 photo of four modern solar panels on a compact raised galvanized frame on the terrace of a small Tamil Nadu house, a young couple looking at a phone app beside it, coconut trees and bright morning sky. No logos, no text, no watermark.
-
-**9. `solar-cloudy-days-tamil-nadu`** (cloudy days post)
-> Photorealistic 16:9 photo of rooftop solar panels under a partly cloudy sky with sunlight breaking through the clouds onto the panels, a Tamil Nadu town skyline with palm trees in the background, soft diffuse light. No logos, no text, no watermark.
-
-**10. `average-electricity-bill-tamil-nadu`** (average bill post)
-> Photorealistic 16:9 top-down photo of a kitchen table with a generic electricity bill (no readable text), a calculator, reading glasses and a cup of filter coffee in a steel tumbler, warm morning light. No logos, no readable text, no watermark.
-
-**11. `solar-terms-in-tamil`** (Tamil glossary)
-> Clean flat-style 16:9 illustration showing three simple house icons: one connected to an electricity pole (on-grid), one with a battery and no pole (off-grid), one with both (hybrid), each with solar panels on the roof, soft blue and orange palette, white background. No text, no logos.
-
-(Tata review uses the existing Tata image - no new image needed.)
+All image prompts (28, one per post, priority-ordered) are in **`Marketing/IMAGE-PROMPTS.md`**, with filenames, alt text and how-to steps. Start with the ones marked **A**. Ready-to-post GBP updates for the 10 newest posts are at the end of that file.
 
 ## E. Ready-to-post GBP updates (one per week)
 

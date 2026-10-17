@@ -119,7 +119,16 @@ cost in Tamil Nadu, 3kW price, 5kW cost, Puducherry cost (central only), ROI/pay
 | 15 | published | 2026-10-17 | /blog/2026-10-17-best-on-grid-solar-inverter-india | | | grouped brands, not a fake ranking |
 | 16 | published | 2026-10-17 | /blog/2026-10-17-why-eb-bill-high-chennai-causes-fixes | | | states service area honestly |
 | 17 | published | 2026-10-17 | /blog/2026-10-17-waaree-vs-adani-vs-tata-solar-panel-comparison | | | |
-| 18, 24, 30 | waiting | | | | | case studies need owner bill numbers |
-| 19-29 | planned | | | | | #29 dropped (rooftop only) - replace with a rooftop topic |
+| 18, 24, 30 | waiting | | | | | case studies need owner bill numbers + real photos (27 of 30 live) |
+| 19 | published | 2026-10-17 | /blog/2026-10-17-solar-with-battery-backup-price-tamil-nadu | | | placeholder image; prompt in IMAGE-PROMPTS.md; lithium vs tubular, subsidy on solar part only |
+| 20 | published | 2026-10-17 | /blog/2026-10-17-solar-panel-price-list-tamil-nadu-by-brand | | | placeholder image; prompt in IMAGE-PROMPTS.md; market ranges, consistent with size posts |
+| 21 | published | 2026-10-17 | /blog/2026-10-17-solar-for-apartments-tamil-nadu-rwa-subsidy | | | placeholder image; prompt in IMAGE-PROMPTS.md; ₹18,000/kW RWA, 3kW per house, 500kW cap |
+| 22 | published | 2026-10-17 | /blog/2026-10-17-solar-installation-timeline-booking-to-net-meter | | | placeholder image; prompt in IMAGE-PROMPTS.md; 6-10 weeks, matches deadline post |
+| 23 | published | 2026-10-17 | /blog/2026-10-17-best-solar-company-puducherry-what-to-check | | | placeholder image; prompt in IMAGE-PROMPTS.md; central subsidy only (no TN top-up) |
+| 25 | published | 2026-10-17 | /blog/2026-10-17-pm-surya-ghar-application-rejected-reasons-fixes | | | placeholder image; prompt in IMAGE-PROMPTS.md |
+| 26 | published | 2026-10-17 | /blog/2026-10-17-solar-for-shops-small-business-cuddalore | | | placeholder image; prompt in IMAGE-PROMPTS.md; 40% AD; commercial metering rules flagged as "we confirm" |
+| 27 | published | 2026-10-17 | /blog/2026-10-17-solar-panel-warranty-explained-25-years | | | placeholder image; prompt in IMAGE-PROMPTS.md |
+| 28 | published | 2026-10-17 | /blog/2026-10-17-how-to-compare-solar-quotations-checklist | | | placeholder image; prompt in IMAGE-PROMPTS.md; reframed from "choose installer" to avoid cannibalising best-company post |
+| 29 | published | 2026-10-17 | /blog/2026-10-17-how-much-roof-space-for-solar-panels-sq-ft | | | placeholder image; prompt in IMAGE-PROMPTS.md; replaces farm-house topic (rooftop only) |
 
 **Refresh queue:** 15 Jan-2026 posts are under the 1,000-word minimum (check_posts.js warnings) - expand with real follow-up sections during Sprints 3-5.
