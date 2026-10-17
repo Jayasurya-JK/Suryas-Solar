@@ -120,6 +120,42 @@ At 650 units a month, a 5kW system can cut a high summer bill of **₹5,000 - �
 
 Full comparison: [3kW vs 5kW solar in Tamil Nadu](/blog/2025-12-03-3kw-vs-5kw-solar-system-comparison). For every size from 1kW up, see the [solar units per day table](/blog/2025-12-03-solar-panel-generation-units-tamil-nadu-guide).
 
+---
+
+## How to Check Your 5kW System Is Performing
+
+Most inverters today come with a mobile app or a display showing **"Today's generation"** and **"Total generation"**. Check it once a week:
+
+*   **On a clear sunny day** a healthy 5kW system should show **about 22-27 units** by evening.
+*   **On a cloudy monsoon day** 12-19 units is normal.
+*   **Monthly total** should land roughly in the season range from the table above.
+
+If a clear day gives **under 18 units**, something is wrong. Compare a few sunny days before you worry, then look at the reasons below.
+
+---
+
+## 6 Reasons a 5kW System Gives Fewer Units
+
+1.  **Dust and salt on panels.** On the Cuddalore coast a thin salty film can cut output by 5-15%. A plain-water wash every 2-4 weeks fixes it. See [solar maintenance guide](/blog/2026-01-10-solar-maintenance-guide-cuddalore).
+2.  **New shade.** A coconut tree that grew, a neighbour's new floor or a water tank can shade one panel and pull down the whole string. Read [solar shadow analysis](/blog/2026-01-12-solar-shadow-analysis-guide-cuddalore).
+3.  **Grid voltage trips.** In areas with high grid voltage, on-grid inverters switch off for safety during peak sun, losing your best hours. A [hybrid system](/blog/2026-01-15-voltage-fluctuation-hybrid-solar) or a TNEB complaint can solve it.
+4.  **Low panel tilt or wrong direction.** Panels should face south with about a 10-15° tilt in Tamil Nadu. Flat-laid panels collect dust and lose output.
+5.  **Undersized or overheating inverter.** A 5kW array needs an inverter sized and ventilated correctly; a hot inverter cuts power ("derating").
+6.  **Loose or poor DC connections.** Cheap connectors corrode in coastal air and add losses (and fire risk). Read [DC cable quality](/blog/2026-01-14-solar-dc-cable-quality-guide).
+
+---
+
+## On-Grid or Hybrid for a 5kW Home?
+
+| | On-grid 5kW | Hybrid 5kW (with battery) |
+| :--- | :--- | :--- |
+| Works during power cut | No (shuts down for safety) | Yes, runs selected loads |
+| Typical extra cost | - | ₹1.5 - 3 lakh more for lithium batteries |
+| Subsidy | Eligible | Grid-connected hybrid reported eligible; battery not subsidised |
+| Best for | Lowest bill, fastest payback | Areas with frequent cuts, home offices |
+
+For most Cuddalore homes **on-grid gives the best return**. Choose hybrid only if power cuts really disrupt your life. Compare in detail: [on-grid vs hybrid solar in Tamil Nadu](/blog/2026-01-06-on-grid-vs-hybrid-solar-tamil-nadu).
+
 <!-- COMPONENT: SOLAR_CALCULATOR -->
 
 <!-- COMPONENT: FAQ_SECTION -->

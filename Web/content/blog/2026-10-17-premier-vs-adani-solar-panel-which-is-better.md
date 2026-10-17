@@ -116,6 +116,32 @@ Typical installed price for a 3kW DCR system in Tamil Nadu is about **₹1.8 - 2
 
 Comparing more brands? Read [Premier vs Waaree](/blog/2026-10-17-premier-vs-waaree-solar-panel-which-is-better) and our [best solar panel brands in Tamil Nadu](/blog/2025-12-01-best-solar-panel-brands-tamil-nadu-puducherry) guide.
 
+---
+
+## TOPCon vs Mono PERC vs Bifacial: Which Type From Either Brand?
+
+| Type | Efficiency | Heat loss | Best for |
+| :--- | :--- | :--- | :--- |
+| Mono PERC | about 20.5 - 21.5% | Higher (about -0.35%/°C) | Lowest price, good roofs |
+| **TOPCon (n-type)** | about 22 - 23% | Lower (about -0.30%/°C) | **Most Tamil Nadu homes today** |
+| Bifacial (TOPCon) | front 22%+, plus rear gain | Lower | Elevated structures over white terraces |
+
+Both Premier and Adani sell all three types. On a raised structure over a white-painted terrace, a bifacial TOPCon panel can add a noticeable rear-side gain.
+
+---
+
+## 7 Questions to Ask Before You Buy Any Panel Brand
+
+1.  What is the **exact model number**, and is it **DCR**? Can I see the DCR certificate?
+2.  Is it **TOPCon or Mono PERC**? What is the wattage per panel?
+3.  What are the **product warranty** and **performance warranty** years, and the guaranteed output at year 25?
+4.  Who handles **warranty claims**, and do you have an office near me?
+5.  Will the **serial numbers** be on my invoice?
+6.  What **structure** (hot-dip galvanized?) and **earthing** (how many pits?) are included?
+7.  What **inverter** brand and warranty come with it?
+
+An installer who answers all seven clearly, in writing, is usually one you can trust.
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

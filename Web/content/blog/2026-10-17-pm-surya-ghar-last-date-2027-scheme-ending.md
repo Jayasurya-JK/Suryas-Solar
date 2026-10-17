@@ -111,6 +111,45 @@ With central + state together, a 3kW home can get **₹1,00,000** back. Full rul
 
 Surya's Solar is a **registered vendor on the official PM Surya Ghar portal** with **122 installations under the scheme** and a **5/5 rating from 149 ratings** on the portal. We handle registration, installation, TNEB liaison and subsidy follow-up. Local process details: [PM Surya Ghar in Cuddalore](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026).
 
+---
+
+## Three Scenarios After March 2027
+
+Nobody outside the government knows the final decision. Here is how each possibility affects you:
+
+| Scenario | What it means for you |
+| :--- | :--- |
+| **Scheme ends on 31 March 2027** | Only systems commissioned (and claims filed) in time get ₹78,000. Late starters get nothing from the central scheme. |
+| **Short extension (reported 3-4 months)** | More time, but subsidy rates and rules could change, and the rush continues. |
+| **Successor scheme** | New rules, possibly a different subsidy amount. Past schemes have often reduced per-kW support over time. |
+
+In every scenario, **a home that is commissioned before March 2027 is safe**. That is the only option without risk.
+
+---
+
+## 6 Mistakes That Delay Subsidy Near Deadlines
+
+1.  **Name mismatch** between Aadhaar, EB bill and bank account. Fix this first; it is the most common delay.
+2.  **Bank account not Aadhaar-seeded** for direct transfers. Ask your bank to link it.
+3.  **Choosing an unregistered installer.** Only vendors registered on the PM Surya Ghar portal can be selected, and only their installations get the subsidy.
+4.  **Non-DCR panels.** The panels must be DCR (made with Indian cells). Check the model on the invoice. See [Premier vs Adani](/blog/2026-10-17-premier-vs-adani-solar-panel-which-is-better) for how to verify.
+5.  **Sanctioned load too low.** If your system size is larger than your sanctioned load, TNEB may ask you to increase it first, which adds weeks.
+6.  **Waiting for the net meter without following up.** Inspection and meter fixing are the slowest steps; your installer should track them for you.
+
+---
+
+## Puducherry Homes
+
+The central PM Surya Ghar scheme (up to ₹78,000) works the same way in Puducherry through PED, with the same 31 March 2027 approval period. The ₹22,000 top-up is a Tamil Nadu scheme and does not apply there. See [solar cost in Puducherry](/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide).
+
+---
+
+## How Much Does Waiting Cost You?
+
+Every month without solar is another full EB bill. For a home paying **₹3,000 a month**, waiting from October to March costs about **₹15,000** in bills, plus the risk of missing the **₹1 lakh** subsidy entirely. Check your numbers with our calculator:
+
+<!-- COMPONENT: SOLAR_CALCULATOR -->
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

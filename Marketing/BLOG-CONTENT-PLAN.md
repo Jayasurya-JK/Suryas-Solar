@@ -108,4 +108,12 @@ cost in Tamil Nadu, 3kW price, 5kW cost, Puducherry cost (central only), ROI/pay
 | 4 | published | 2026-10-17 | /blog/2026-10-17-5kw-solar-panel-units-per-day-month-tamil-nadu | | | photo 3 |
 | 5 | published | 2026-10-17 | /blog/2026-10-17-solar-panels-rain-cyclone-cuddalore-monsoon-guide | | | photo 5 |
 | 6 | published | 2026-10-17 | /blog/2026-10-17-premier-vs-waaree-solar-panel-which-is-better | | | photo 1 |
-| 7-30 | planned | | | | | #29 dropped (owner: rooftop only) - replace with another rooftop topic |
+| 7 | published | 2026-10-17 | /blog/2026-10-17-2kw-solar-system-units-per-day-price-subsidy | | | photo 4 |
+| 8 | published | 2026-10-17 | /blog/2026-10-17-does-solar-work-on-cloudy-days-tamil-nadu | | | photo 8 |
+| 9 | published | 2026-10-17 | /blog/2026-10-17-tata-power-solar-panel-price-review-tamil-nadu | | | partner disclosure included |
+| 10 | waiting | | | | | needs owner: which Exide products we install |
+| 11 | published | 2026-10-17 | /blog/2026-10-17-average-electricity-bill-tamil-nadu-by-home-size | | | slab rates = site's existing figures |
+| 12 | published | 2026-10-17 | /blog/2026-10-17-solar-terms-in-tamil-on-grid-off-grid-meaning | | | owner to check Tamil wording |
+| 13-30 | planned | | | | | #29 dropped (owner: rooftop only) - replace with a rooftop topic |
+
+**Refresh queue:** 15 Jan-2026 posts are under the 1,000-word minimum (check_posts.js warnings) - expand with real follow-up sections during Sprints 3-5.

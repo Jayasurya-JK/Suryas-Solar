@@ -30,7 +30,7 @@ Load first: `suryas-business-facts` skill (facts) and `../Marketing/MARKETING-PL
 7. Subsidy hook where relevant: link the flagship `/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry`.
 8. Internal links (3-6): money page + /calc + /systems/3kw or 5kw + /service-areas/<town> + /contact.
 9. `faqs:` frontmatter (4-6 real questions), `<!-- COMPONENT: FAQ_SECTION -->`, then `<!-- COMPONENT: CONTACT_CTA -->`.
-10. Length: as long as needed to fully answer (usually 1,200-2,000 words); cut filler.
+10. Length: minimum **1,000 words of real text** (body + FAQ, as counted by check_posts.js) for any blog post, 1,300-2,000 for money/comparison/subsidy posts (see `seo-specialist` skill section 2). Reach it with real follow-up questions (how to check, mistakes, what to ask, scenarios), never filler. Score every post with the `seo-specialist` checklist before publishing.
 
 ## 4. Local SEO patterns
 - Town pages / town posts: name the town in title, H1, first sentence, one H2, image alt and meta description. Mention real local details (coastal salt, soil, coconut-tree shade, TNEB section office, typical roof types, distance from Kondur office). Ask the owner for real installs in that town.

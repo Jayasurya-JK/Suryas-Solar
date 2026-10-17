@@ -222,6 +222,8 @@ With the massive financial incentives offered under the central government's **P
 
 ---
 
+**Is your bill normal?** Compare it with the [average electricity bill in Tamil Nadu by home size](/blog/2026-10-17-average-electricity-bill-tamil-nadu-by-home-size).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

@@ -185,6 +185,8 @@ For the next step, compare your estimated savings with our [Solar Savings Calcul
 ## Detailed Guides by System Size
 
 *   [1kW solar: how many units per day](/blog/2026-10-17-1kw-solar-panel-how-many-units-per-day)
+*   [2kW solar: units per day, price and subsidy](/blog/2026-10-17-2kw-solar-system-units-per-day-price-subsidy)
+*   [Does solar work on cloudy days?](/blog/2026-10-17-does-solar-work-on-cloudy-days-tamil-nadu)
 *   [3kW solar: units per day, price and payback](/blog/2026-05-05-3kw-solar-system-price-india-how-many-units-cost)
 *   [5kW solar: units per day and month](/blog/2026-10-17-5kw-solar-panel-units-per-day-month-tamil-nadu)
 *   [Solar output in rain and cyclones](/blog/2026-10-17-solar-panels-rain-cyclone-cuddalore-monsoon-guide)

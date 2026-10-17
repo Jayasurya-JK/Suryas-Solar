@@ -180,6 +180,8 @@ If AC usage is driving your bill, compare your monthly units in the [Solar Savin
 
 ---
 
+**Compare your bill:** see the [average electricity bill in Tamil Nadu by home size](/blog/2026-10-17-average-electricity-bill-tamil-nadu-by-home-size).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

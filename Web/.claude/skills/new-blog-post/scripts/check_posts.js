@@ -58,6 +58,10 @@ for (const file of files) {
     const ok = STATIC_ROUTES.has(link) || (link.startsWith('/blog/') && slugs.has(link.slice(6)))
     if (!ok) (redirects.includes(link) ? warn : err)(`internal link ${redirects.includes(link) ? 'goes through a redirect' : 'is broken'}: ${link}`)
   }
+  // Real words on the page: body text + rendered FAQ (tables' pipes and markup excluded)
+  const faqText = Array.isArray(data.faqs) ? data.faqs.map((q) => `${q.question} ${q.answer}`).join(' ') : ''
+  const words = `${content.replace(/<!--[\s\S]*?-->/g, ' ')} ${faqText}`.split(/\s+/).filter((w) => /[A-Za-z0-9₹஀-௿]/.test(w)).length
+  if (words < 1000) warn(`only ${words} words of text on page (site minimum 1,000; see seo-specialist skill)`)
   const internal = (content.match(/\]\(\/|href="\//g) || []).length
   if (internal < 3) warn(`only ${internal} internal links (aim 3-6)`)
 }

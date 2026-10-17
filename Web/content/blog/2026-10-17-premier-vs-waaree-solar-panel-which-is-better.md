@@ -105,6 +105,44 @@ Both brands sell in roughly the same band, **₹22-29 per watt** for modules in 
 
 Also see: [Premier vs Adani](/blog/2026-10-17-premier-vs-adani-solar-panel-which-is-better), [best solar panel brands in Tamil Nadu](/blog/2025-12-01-best-solar-panel-brands-tamil-nadu-puducherry), and [how many units a 1kW panel makes](/blog/2026-10-17-1kw-solar-panel-how-many-units-per-day).
 
+---
+
+## How to Verify a DCR Panel Yourself
+
+Fake or mixed-up "DCR" panels are the fastest way to lose the ₹1 lakh subsidy. Check these before installation:
+
+1.  **Panel label:** each panel has a sticker with the model number, wattage and serial number. Note the model.
+2.  **Datasheet:** the model on the label must match the datasheet and the DCR certificate your installer gives you.
+3.  **Invoice:** the invoice should list the **serial numbers** of every panel. The portal upload uses these.
+4.  **Approved list:** the model should appear on the current government-approved (ALMM/DCR) list.
+5.  **Price sense-check:** if a "DCR" quote is far below the market, ask why. DCR panels cost noticeably more than non-DCR.
+
+---
+
+## Glass-to-Glass vs Backsheet Panels (for Coastal Homes)
+
+| | Glass-to-glass (dual glass) | Glass + backsheet |
+| :--- | :--- | :--- |
+| Back side | Toughened glass | Polymer sheet |
+| Moisture and salt resistance | Better | Good, but can age faster near the sea |
+| Weight | Heavier | Lighter |
+| Usually bifacial | Yes | No |
+| Best for | Within 2-3 km of the sea, elevated structures | Inland homes, budget builds |
+
+In Cuddalore, Puducherry and other coastal towns we prefer **glass-to-glass TOPCon** where the budget allows.
+
+---
+
+## Which Is Better for the Cuddalore Coast?
+
+Salt air, humidity and summer heat stress panels more than inland weather does. In this climate:
+
+*   **Reliability data matters.** Independent tests like PVEL's damp-heat and thermal-cycling results are the closest thing to coastal life in a lab. This favours models with published Top Performer results.
+*   **The structure matters even more.** Rust on cheap structures and clamps fails long before good panels do. Insist on **hot-dip galvanized** steel and stainless fasteners.
+*   **Cleaning matters.** Salt film can cost 5-15% output; wash panels with plain water every few weeks.
+
+So for a coastal home, a **Waaree glass-to-glass TOPCon** model is a strong default, and a **Premier DCR TOPCon** model is a good value alternative, both installed on a properly galvanized structure.
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

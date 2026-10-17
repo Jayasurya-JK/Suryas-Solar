@@ -112,6 +112,34 @@ Do these (or ask your installer to) before October:
 
 ---
 
+## Does Rain Cause Short Circuits? (IP Ratings Explained)
+
+A properly installed system is built to sit in the rain for 25 years. What keeps water out:
+
+| Part | Rating to look for | Meaning |
+| :--- | :--- | :--- |
+| Panel junction box | IP67 / IP68 | Dust-tight, survives temporary immersion |
+| DC connectors (MC4 type) | IP67 or better, same brand both halves | Mismatched connectors leak and corrode |
+| DC and AC distribution boxes | IP65 | Protected against rain jets |
+| Inverter | IP65 (outdoor) or indoor placement | Rain-safe |
+
+Problems come from **mismatched connectors, open cable entries and boxes mounted facing the rain**, not from rain itself. This is workmanship, which is why the installer matters more than the brand.
+
+---
+
+## 6 Questions to Ask Before You Buy Solar This Monsoon
+
+1.  What **structure** do you use: hot-dip galvanized or pre-galvanized? What is the zinc thickness?
+2.  How is the structure **anchored** to my roof, and will my roof waterproofing stay intact?
+3.  How many **earthing pits**, and is there a **lightning arrester**?
+4.  Where will the **inverter** be placed, and is it protected from rain and flooding?
+5.  Are the **DC connectors** the same brand on both sides, and what is their IP rating?
+6.  Do you offer a **pre-monsoon check** after installation?
+
+If an installer gets vague on any of these, look elsewhere. See [7 solar scam warnings](/blog/2026-01-09-solar-scam-warnings-cuddalore).
+
+---
+
 ## Is Monsoon a Bad Time to Install Solar?
 
 No. Installation takes only **1-3 days** and can be planned between rain spells. Starting now also means your system is ready for the high-output summer, and you stay ahead of the **PM Surya Ghar deadline (31 March 2027)** for the **₹1 lakh subsidy**. Read: [PM Surya Ghar last date 2027](/blog/2026-10-17-pm-surya-ghar-last-date-2027-scheme-ending).

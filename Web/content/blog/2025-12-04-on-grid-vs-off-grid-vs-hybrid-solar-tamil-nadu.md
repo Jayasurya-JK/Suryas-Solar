@@ -182,6 +182,8 @@ For a price-specific estimate, compare your monthly units with our [Solar Saving
 
 ---
 
+**தமிழில் படிக்க:** every solar term explained in Tamil - [solar terms in Tamil: on-grid, off-grid, net meter meaning](/blog/2026-10-17-solar-terms-in-tamil-on-grid-off-grid-meaning).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---
