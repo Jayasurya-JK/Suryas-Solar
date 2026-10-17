@@ -72,7 +72,7 @@ If you want the full **₹1 lakh subsidy** (₹78,000 + ₹22,000), the safe pla
 
 ## Why Waiting Until February Is Risky
 
-Here is the typical timeline for a home in Cuddalore district:
+Here is the typical timeline for a home in [Cuddalore](/service-areas/cuddalore) district:
 
 | Step | Typical time |
 | :--- | :--- |
@@ -140,7 +140,7 @@ In every scenario, **a home that is commissioned before March 2027 is safe**. Th
 
 ## Puducherry Homes
 
-The central PM Surya Ghar scheme (up to ₹78,000) works the same way in Puducherry through PED, with the same 31 March 2027 approval period. The ₹22,000 top-up is a Tamil Nadu scheme and does not apply there. See [solar cost in Puducherry](/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide).
+The central PM Surya Ghar scheme (up to ₹78,000) works the same way in [Puducherry](/service-areas/puducherry) through PED, with the same 31 March 2027 approval period. The ₹22,000 top-up is a Tamil Nadu scheme and does not apply there. See [solar cost in Puducherry](/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide).
 
 ---
 

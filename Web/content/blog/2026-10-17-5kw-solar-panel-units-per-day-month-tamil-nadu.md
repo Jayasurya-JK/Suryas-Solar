@@ -88,7 +88,7 @@ This is why 5kW is the usual choice for **3BHK and 4BHK homes, two-AC families, 
 
 *   **Panels:** about nine panels of 550-580 watts (older designs used 15-16 panels of 330 watts).
 *   **Shade-free roof area:** about **350 to 500 square feet**.
-*   **Structure:** on Cuddalore's coast we use a raised **hot-dip galvanized** structure that keeps panels cooler (more units) and lets you use the terrace below. See [best solar structure for coastal Tamil Nadu](/blog/2025-12-02-rooftop-solar-structure-types-tamil-nadu).
+*   **Structure:** on [Cuddalore](/service-areas/cuddalore)'s coast we use a raised **hot-dip galvanized** structure that keeps panels cooler (more units) and lets you use the terrace below. See [best solar structure for coastal Tamil Nadu](/blog/2025-12-02-rooftop-solar-structure-types-tamil-nadu).
 *   **Connection:** a 5kW system usually works on single phase, but if your house load is high TNEB may suggest three phase. Read [single phase to 3-phase upgrade](/blog/2025-12-04-1-phase-to-3-phase-upgrade-solar-tamil-nadu).
 
 ---

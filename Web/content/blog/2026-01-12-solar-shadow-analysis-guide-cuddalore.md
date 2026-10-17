@@ -24,7 +24,7 @@ faqs:
 "Sir, I have a big overhead water tank. Can we put panels next to it?"
 "Sir, my neighbor has a huge coconut tree. Will it affect generation?"
 
-In Cuddalore, open, empty roofs are rare. We almost always have to deal with obstacles-staircase rooms, water tanks, dish antennas, or the neighbor's 3-story building.
+In [Cuddalore](/service-areas/cuddalore), open, empty roofs are rare. We almost always have to deal with obstacles-staircase rooms, water tanks, dish antennas, or the neighbor's 3-story building.
 Understanding **Shadow** is the difference between a system that generates 15 units/day and one that generates 5 units/day.
 
 Here is the deep science of why shadow is dangerous-and how we fix it in 2026 using advanced Half-Cut Cell technology.

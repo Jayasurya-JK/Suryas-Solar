@@ -151,6 +151,6 @@ Read [how to choose the best solar company in Puducherry](/blog/2026-10-17-best-
 
 ## Apply With a Registered Vendor
 
-Surya's Solar is a registered PM Surya Ghar vendor about 25 km from Puducherry in Kondur, Cuddalore. We handle the portal application, PED net meter and subsidy follow-up, and confirm the current Puducherry top-up before you pay. See our [Puducherry service page](/service-areas/puducherry) or call or WhatsApp **+91 7904369094**.
+Surya's Solar is a registered PM Surya Ghar vendor about 25 km from Puducherry in Kondur, [Cuddalore](/service-areas/cuddalore). We handle the portal application, PED net meter and subsidy follow-up, and confirm the current Puducherry top-up before you pay. See our [Puducherry service page](/service-areas/puducherry) or call or WhatsApp **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

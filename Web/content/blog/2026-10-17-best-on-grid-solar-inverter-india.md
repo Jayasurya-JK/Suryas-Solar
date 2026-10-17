@@ -70,7 +70,7 @@ faqs:
 5.  **Efficiency above 97%.** Every good brand meets this; do not pay extra for 0.2%.
 6.  **App and Wi-Fi monitoring.** Lets you see daily units and spot problems early.
 7.  **Warranty.** 5 years minimum; 7-10 years (or extendable) is better.
-8.  **Local service.** Who replaces it in Cuddalore within days, not weeks? This matters more than anything above.
+8.  **Local service.** Who replaces it in [Cuddalore](/service-areas/cuddalore) within days, not weeks? This matters more than anything above.
 
 ---
 

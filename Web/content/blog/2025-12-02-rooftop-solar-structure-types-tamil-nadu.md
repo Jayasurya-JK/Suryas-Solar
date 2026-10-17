@@ -110,7 +110,7 @@ Your location plays a big role in this decision. Here is our expert recommendati
 
 ### Chennai (Wind + Humidity)
 **Recommendation:** **HDGI or RCC**
-*   **Reason:** Similar to Puducherry, the combination of wind and humidity demands a robust, rust-proof structure.
+*   **Reason:** Similar to [Puducherry](/service-areas/puducherry), the combination of wind and humidity demands a robust, rust-proof structure.
 
 ---
 

@@ -21,7 +21,7 @@ faqs:
   - question: 'Is hot-dip galvanized steel enough near the beach?'
     answer: 'For most coastal homes, yes, when combined with stainless steel nuts and bolts and no mixed metals. Cut ends and drilled holes should be treated with zinc-rich paint, and the structure checked once a year.'
 ---
-Cuddalore and Pondicherry are blessed with abundant sun, but they come with a hidden, silent enemy: **Salt Mist.**
+[Cuddalore](/service-areas/cuddalore) and Pondicherry are blessed with abundant sun, but they come with a hidden, silent enemy: **Salt Mist.**
 
 If you live within 10km of the Bay of Bengal (Silver Beach, Devanampattinam, Pondy White Town, or even up to Chidambaram), the air carries microscopic salt particles.
 *   **The Effect:** Standard iron rusts in months. Aluminium pits. Cheap plastics crack.

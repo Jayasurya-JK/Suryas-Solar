@@ -31,7 +31,7 @@ Salesmen will tell you it generates 30% more power. They will say it works at ni
 
 But as a Cuddalore homeowner, you care about one thing: **Is it worth the extra money?**
 
-At Surya's Solar, we believe in data, not hype. We have installed both standard **Mono-PERC** and premium **Bifacial (TOPCon)** panels across Neyveli and Panruti. Here is the comprehensive comparison guide to help you decide.
+At Surya's Solar, we believe in data, not hype. We have installed both standard **Mono-PERC** and premium **Bifacial (TOPCon)** panels across [Neyveli](/service-areas/neyveli) and [Panruti](/service-areas/panruti). Here is the comprehensive comparison guide to help you decide.
 
 ---
 

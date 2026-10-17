@@ -41,7 +41,7 @@ faqs:
       run selected loads during outages, you need a hybrid inverter with
       suitable battery backup and proper load segregation.
 ---
-With Tamil Nadu’s sweltering summers pushing temperatures well past 40°C in cities like Cuddalore, Puducherry, Panruti, and Neyveli, running an air conditioner has irrevocably shifted from a luxury to an absolute necessity for health and comfort. However, as the Tamil Nadu Electricity Board (TNEB) tariffs continue to rise-especially if you cross the dreaded 500-unit bimonthly slab-many homeowners are turning to renewable energy to escape crushing utility bills.
+With Tamil Nadu’s sweltering summers pushing temperatures well past 40°C in cities like Cuddalore, Puducherry, [Panruti](/service-areas/panruti), and [Neyveli](/service-areas/neyveli), running an air conditioner has irrevocably shifted from a luxury to an absolute necessity for health and comfort. However, as the Tamil Nadu Electricity Board (TNEB) tariffs continue to rise-especially if you cross the dreaded 500-unit bimonthly slab-many homeowners are turning to renewable energy to escape crushing utility bills.
 
 At Surya's Solar, the single most common question our engineers receive during site visits is: **"Can a 1.5-ton AC run directly on solar power without tripping the system?"**
 

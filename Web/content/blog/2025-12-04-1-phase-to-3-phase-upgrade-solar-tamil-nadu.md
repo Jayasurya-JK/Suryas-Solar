@@ -83,7 +83,7 @@ The cost is not fixed and varies depending on your local EB office, the distance
 *   **Load Upgrade Deposit:** You must pay a deposit (CCD) for increasing the sanctioned load (e.g., from 2kW to 5kW). This is refundable/adjustable.
 *   **New DB Box:** If your old fuse box is outdated (wooden board with ceramic fuses), you will need to install a modern MCB distribution box for safety.
 
-*Note: Charges in Puducherry (PED) may differ slightly but follow a similar structure.*
+*Note: Charges in [Puducherry](/service-areas/puducherry) (PED) may differ slightly but follow a similar structure.*
 
 ---
 

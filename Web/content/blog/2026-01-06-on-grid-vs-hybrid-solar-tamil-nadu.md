@@ -21,7 +21,7 @@ faqs:
   - question: 'Which is better for a home with short, rare power cuts?'
     answer: 'On-grid. It costs less and pays back faster, and a small existing UPS can cover short cuts. Hybrid makes sense when cuts are long or frequent, or voltage is unstable.'
 ---
-Here is a shocking fact for many first-time solar buyers in Cuddalore:
+Here is a shocking fact for many first-time solar buyers in [Cuddalore](/service-areas/cuddalore):
 **A standard On-Grid Solar System shuts down during a power cut.**
 
 Yes, even if the sun is blazing at 12 PM, if the TNEB grid fails, your On-Grid Inverter turns off immediately. This is a mandatory safety feature called **"Anti-Islanding"** to protect the linemen working to fix the grid. If your system kept pumping power, it could electrocute a worker on the pole.

@@ -15,7 +15,7 @@ updated: '2026-04-26'
 ---
 "Sir, I have a standard 3BHK house-3 bedrooms, a hall, a kitchen. We have two ACs, a fridge, and a washing machine. Is a 3kW system enough, or will I regret not buying 5kW?"
 
-This is, without a doubt, the single most frequent question we receive at our Cuddalore office. And in **2026**, the answer is more important than ever because electricity consumption patterns are changing. Families now have larger refrigerators, more gadgets, and often, an Electric Scooter.
+This is, without a doubt, the single most frequent question we receive at our [Cuddalore](/service-areas/cuddalore) office. And in **2026**, the answer is more important than ever because electricity consumption patterns are changing. Families now have larger refrigerators, more gadgets, and often, an Electric Scooter.
 
 A 3kW system is the "Goldilocks" size-it hits the maximum [subsidy](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026) cap (up to ₹1 lakh with the Tamil Nadu top-up) and fits on most rooftops. But does it actually cover your bill?
 

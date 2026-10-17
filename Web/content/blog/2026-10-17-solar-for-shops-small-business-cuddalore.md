@@ -135,6 +135,6 @@ Most businesses choose **on-grid**: lowest cost and fastest payback. Add a **bat
 
 ## Free Business Solar Assessment
 
-Send us your last 12 months of EB bills on WhatsApp and we will size the system, estimate payback with the tax benefit, and visit your premises for free. Serving Cuddalore, Panruti, Neyveli, Chidambaram and Puducherry from our office in Kondur. Official partner of TATA Power Solar and Exide. Call or WhatsApp **+91 7904369094** or book on the [contact page](/contact).
+Send us your last 12 months of EB bills on WhatsApp and we will size the system, estimate payback with the tax benefit, and visit your premises for free. Serving Cuddalore, [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), Chidambaram and Puducherry from our office in Kondur. Official partner of TATA Power Solar and Exide. Call or WhatsApp **+91 7904369094** or book on the [contact page](/contact).
 
 <!-- COMPONENT: CONTACT_CTA -->

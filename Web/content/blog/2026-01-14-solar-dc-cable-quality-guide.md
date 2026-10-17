@@ -63,7 +63,7 @@ It is **"Tinned Copper"** (Pure Electrolytic Copper coated with a thin layer of 
 
 ### Why Tinning?
 *   **Oxidation:** Bare copper reacts with oxygen. Over time, it turns green (Copper Oxide). This green layer is an insulator. It increases resistance at the joints. High Resistance = Heat = Fire.
-*   **Galvanic Corrosion:** In Cuddalore's coastal air (salty humidity), bare copper corrodes 5x faster. Tin is non-reactive. It creates a shield.
+*   **Galvanic Corrosion:** In [Cuddalore](/service-areas/cuddalore)'s coastal air (salty humidity), bare copper corrodes 5x faster. Tin is non-reactive. It creates a shield.
 *   **Standard:** As per **EN 50618** (Global Solar Cable Standard), solar cable MUST be tinned copper.
 
 If your installer brings a "Red" copper wire for the DC side, stop the work immediately.

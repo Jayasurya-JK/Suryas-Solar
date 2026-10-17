@@ -30,7 +30,7 @@ EARTHING is the silent guardian of your solar plant. It protects:
 2.  **The Inverter** from voltage surges.
 3.  **The House** from lightning strikes.
 
-In Cuddalore, where thunder and lightning are common during the Northeast Monsoon (October - December), compromising on Earthing is dangerous.
+In [Cuddalore](/service-areas/cuddalore), where thunder and lightning are common during the Northeast Monsoon (October - December), compromising on Earthing is dangerous.
 A single lightning strike can fry your Inverter, TV, Fridge, and Wi-Fi router in 0.1 seconds if the earthing path is not separate.
 
 Here is the **Gold Standard** of Solar Earthing that complies with IS 3043 and IEC 62561 standards.

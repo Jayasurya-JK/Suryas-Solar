@@ -142,6 +142,6 @@ For most large homes and businesses, **on-grid** gives the best return. A **hybr
 
 ## Plan a 10kW System With Us
 
-Surya's Solar designs large home and commercial systems across Cuddalore, Panruti, Neyveli, Chidambaram and Puducherry, from structure design to TNEB approvals. Official partner of TATA Power Solar and Exide, registered PM Surya Ghar vendor. Call or WhatsApp **+91 7904369094**.
+Surya's Solar designs large home and commercial systems across Cuddalore, [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), Chidambaram and Puducherry, from structure design to TNEB approvals. Official partner of TATA Power Solar and Exide, registered PM Surya Ghar vendor. Call or WhatsApp **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

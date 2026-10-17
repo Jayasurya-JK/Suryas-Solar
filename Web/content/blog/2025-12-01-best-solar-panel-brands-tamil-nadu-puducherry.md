@@ -181,6 +181,6 @@ For the next step, compare your estimated savings with our [Solar Savings Calcul
 
 ## Need Help Choosing the Right Solar Panel?
 
-Book a free rooftop assessment with **Surya’s Solar** - we serve all areas of Tamil Nadu and Puducherry including Cuddalore, Panruti, Neyveli, Chidambaram and Pondicherry. We help you select the perfect brand for your specific roof and budget.
+Book a free rooftop assessment with **Surya’s Solar** - we serve Cuddalore district and Puducherry, including Cuddalore, [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), Chidambaram and Pondicherry. We help you select the perfect brand for your specific roof and budget.
 
 <!-- COMPONENT: CONTACT_CTA -->

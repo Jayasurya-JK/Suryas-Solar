@@ -143,6 +143,6 @@ The exact saving depends on the common connection's tariff category; we calculat
 
 ## Talk to Us Before Your Next Association Meeting
 
-We visit, survey the terrace, prepare a simple proposal your committee can present, and handle the RWA application, TNEB approvals and subsidy. Serving Cuddalore, Puducherry, Neyveli, Panruti and nearby towns. Registered PM Surya Ghar vendor. Call or WhatsApp **+91 7904369094**.
+We visit, survey the terrace, prepare a simple proposal your committee can present, and handle the RWA application, TNEB approvals and subsidy. Serving Cuddalore, Puducherry, [Neyveli](/service-areas/neyveli), [Panruti](/service-areas/panruti) and nearby towns. Registered PM Surya Ghar vendor. Call or WhatsApp **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

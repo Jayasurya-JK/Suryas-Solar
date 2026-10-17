@@ -90,7 +90,7 @@ Lithium looks expensive, but because you can use more of its capacity and it las
 Battery capacity is measured in **kWh (units)**. A 5kWh battery stores about 5 units. If your essential load is 600 watts, that is roughly 7-8 hours of backup on a lithium battery.
 
 ### 3. Inverter type
-A hybrid inverter manages solar, battery and grid together. Good hybrids also handle **voltage fluctuation**, which is common in parts of Panruti and rural Cuddalore. See [voltage fluctuation and hybrid solar](/blog/2026-01-15-voltage-fluctuation-hybrid-solar).
+A hybrid inverter manages solar, battery and grid together. Good hybrids also handle **voltage fluctuation**, which is common in parts of [Panruti](/service-areas/panruti) and rural [Cuddalore](/service-areas/cuddalore). See [voltage fluctuation and hybrid solar](/blog/2026-01-15-voltage-fluctuation-hybrid-solar).
 
 ---
 

@@ -189,7 +189,7 @@ To summarize, before you sign any solar installation contract in Cuddalore, veri
 7. ✅ AMC service availability post-installation
 8. ✅ Local Cuddalore customer references
 
-*At Surya's Solar, we are proud to tick every single box on this list. We are a PM Surya Ghar empanelled vendor with an established track record in Cuddalore, Panruti, Neyveli, and Puducherry. [Contact us today](/contact) for a free site assessment - no obligation, no pressure.*
+*At Surya's Solar, we are proud to tick every single box on this list. We are a PM Surya Ghar empanelled vendor with an established track record in Cuddalore, [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), and Puducherry. [Contact us today](/contact) for a free site assessment - no obligation, no pressure.*
 
 
 

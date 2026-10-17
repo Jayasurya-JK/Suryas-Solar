@@ -23,7 +23,7 @@ faqs:
 ---
 Solar power is great, but it has a specific weakness that few installers talk about: **The Grid Reference.**
 
-A huge problem plagues homeowners in the rural belts of Cuddalore District-specifically **Vadalur, Panruti, Neyveli Outskirts, and Kurinjipadi**.
+A huge problem plagues homeowners in the rural belts of [Cuddalore](/service-areas/cuddalore) District-specifically **Vadalur, Panruti, Neyveli Outskirts, and Kurinjipadi**.
 The scenario is always the same:
 **"Sir, it is sunny outside, but my Solar Inverter is showing 'Grid Fault' / 'Grid Under Voltage'. I am not generating any power!"**
 
@@ -37,7 +37,7 @@ Standard On-Grid Inverters (Growatt, Solis, GoodWe, etc.) are programmed to foll
 They are designed to operate only when the Grid Voltage is "Healthy".
 
 *   **Healthy Range:** 180V to 260V.
-*   **The Rural Reality:** In Panruti, electricity is heavily used for Agriculture. Every morning at 9:00 AM, hundreds of farmers switch on their 5HP submersible pumps.
+*   **The Rural Reality:** In [Panruti](/service-areas/panruti), electricity is heavily used for Agriculture. Every morning at 9:00 AM, hundreds of farmers switch on their 5HP submersible pumps.
 *   **The Drop:** The transformer gets overloaded. The voltage at your home drops to **160V or even 150V**.
 *   **The Failure:** The Solar Inverter detects 160V. It tries to sync, fails, and displays **"AC V Low"**. It shuts down to protect its internal circuits.
 *   **The Irony:** You have blazing sun. You have paid lakhs for panels. But you generate **Zero Power** from 9 AM to 4 PM (the peak sun hours) because the TNEB voltage is too low.

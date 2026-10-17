@@ -122,7 +122,7 @@ Here is an estimated price range for different inverter types in our market. Not
 
 ## Calculate Your Solar Cost & Ideal Inverter Size
 
-Use our Solar Calculator to know the correct panel size, inverter capacity, and estimated monthly savings based on your TN or Puducherry location.
+Use our Solar Calculator to know the correct panel size, inverter capacity, and estimated monthly savings based on your TN or [Puducherry](/service-areas/puducherry) location.
 
 <!-- COMPONENT: SOLAR_CALCULATOR -->
 
@@ -152,7 +152,7 @@ We take pride in our engineering quality. A great inverter is useless if install
 *   **Placement:** Inverters are placed in well-ventilated, shaded areas (usually near the distribution board) to prevent overheating and ensure longevity.
 *   **Safety:** We install ACDB (AC Distribution Box) and DCDB (DC Distribution Box) with proper MCBs and SPDs.
 *   **Net-Metering:** We handle the full liaisoning with TNEB/PED to get your net meter installed and activated.
-*   **Support:** Our team covers the entire Cuddalore-Puducherry corridor for fast service.
+*   **Support:** Our team covers the entire [Cuddalore](/service-areas/cuddalore)-Puducherry corridor for fast service.
 
 
 ## Related Solar Guides

@@ -42,7 +42,7 @@ The most common question we get is: *"How many units will a 1kW, 3kW, or 5kW sys
 
 ## Quick Answer Table (Solar Generation in TN)
 
-Here is a snapshot of what you can expect from different system sizes in Tamil Nadu. These numbers are based on real-world data from our installations in Cuddalore and surrounding districts.
+Here is a snapshot of what you can expect from different system sizes in Tamil Nadu. These are typical figures for homes in [Cuddalore](/service-areas/cuddalore) and surrounding districts.
 
 | System Size | Daily Units (Avg) | Monthly Units (Avg) | Yearly Units (Avg) | Ideal Bill Range |
 | :--- | :--- | :--- | :--- | :--- |
@@ -180,7 +180,7 @@ For the next step, compare your estimated savings with our [Solar Savings Calcul
 
 ## Need Help Choosing the Right Solar System Size?
 
-**Surya’s Solar** provides free rooftop assessment across Tamil Nadu & Puducherry to calculate your generation and savings accurately. We use advanced software to predict your exact output.
+**Surya’s Solar** provides free rooftop assessment across Cuddalore district & [Puducherry](/service-areas/puducherry) to calculate your generation and savings accurately. We use advanced software to predict your exact output.
 
 ## Detailed Guides by System Size
 

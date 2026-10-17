@@ -129,7 +129,7 @@ Puducherry has strong sunshine, so a 3kW system typically makes **12-15 units a 
 ## Why Puducherry Families Call Surya's Solar
 
 We are based in **Kondur, Cuddalore, about 25 km from Puducherry town**, and we serve Puducherry homes with the same team that installs across Cuddalore district.
-*   **Registered PM Surya Ghar vendor** with **122 installations** in Cuddalore district (portal data).
+*   **Registered PM Surya Ghar vendor** with **122 installations** in [Cuddalore](/service-areas/cuddalore) district (portal data).
 *   **Official partner of TATA Power Solar and Exide**, 10+ years in solar.
 *   **5.0 rating from 45 Google reviews.**
 *   Coastal-grade hot-dip galvanized structures and three earthing pits as standard.

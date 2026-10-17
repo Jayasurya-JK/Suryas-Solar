@@ -148,6 +148,6 @@ If you only want the **lowest EB bill and fastest payback**, a plain **on-grid**
 
 ## Get an Exide Solar System Designed for Your Home
 
-As an **official Exide and TATA Power Solar partner** and a **registered PM Surya Ghar vendor (122 installations)**, Surya's Solar designs on-grid and hybrid systems for Cuddalore, Panruti, Neyveli, Chidambaram and Puducherry. Call or WhatsApp **+91 7904369094**, open all 7 days.
+As an **official Exide and TATA Power Solar partner** and a **registered PM Surya Ghar vendor (122 installations)**, Surya's Solar designs on-grid and hybrid systems for Cuddalore, [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), Chidambaram and Puducherry. Call or WhatsApp **+91 7904369094**, open all 7 days.
 
 <!-- COMPONENT: CONTACT_CTA -->

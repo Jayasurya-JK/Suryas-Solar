@@ -28,7 +28,7 @@ faqs:
       Yes. Coastal areas should prioritize corrosion-resistant structures,
       quality fasteners, and good cable routing.
 ---
-Puducherry is a unique market for rooftop solar power in India. As a Union Territory, it operates under a slightly different regulatory framework than its neighbouring Tamil Nadu districts, yet it enjoys the same exceptional solar irradiation levels that make the broader coastal southeast India region one of the best in the country for solar power generation.
+[Puducherry](/service-areas/puducherry) is a unique market for rooftop solar power in India. As a Union Territory, it operates under a slightly different regulatory framework than its neighbouring Tamil Nadu districts, yet it enjoys the same exceptional solar irradiation levels that make the broader coastal southeast India region one of the best in the country for solar power generation.
 
 If you are a homeowner or small business owner in Puducherry (covering Puducherry district, Karaikal, Mahe, or Yanam), and you are researching the cost of installing solar panels in 2026, this guide is specifically designed for you. We cover everything: accurate pricing for 1kW to 5kW systems, subsidy eligibility in Puducherry, how the Puducherry Electricity Department (PED) net meter process works, and the real financial return you can expect.
 
@@ -170,7 +170,7 @@ If your property falls within Puducherry's designated Heritage Zone (primarily t
 Like coastal Tamil Nadu, Puducherry is directly exposed to Bay of Bengal cyclones (particularly in the October-December northeast monsoon season). Your mounting structure must comply with IS 875 wind load standards for Wind Zone IV. Always ask for the wind load calculation and structural certificate from your installer.
 
 **Salt Air Corrosion:**
-Puducherry's proximity to the coast means salt-laden air. As with Cuddalore, always insist on Hot-Dip Galvanized steel or marine-grade aluminum mounting structures. Painted mild steel will rust and fail within 3 to 5 years.
+Puducherry's proximity to the coast means salt-laden air. As with [Cuddalore](/service-areas/cuddalore), always insist on Hot-Dip Galvanized steel or marine-grade aluminum mounting structures. Painted mild steel will rust and fail within 3 to 5 years.
 
 ---
 

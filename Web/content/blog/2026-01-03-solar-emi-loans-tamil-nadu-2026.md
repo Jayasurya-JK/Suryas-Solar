@@ -16,7 +16,7 @@ updated: '2026-04-26'
 ---
 It is 2026. Solar panels are no longer a luxury "nice-to-have" gadget for the wealthy. They are a standard home utility, just like your water connection or internet.
 
-Yet, one barrier remains for many families in Cuddalore: **The Upfront Cost.**
+Yet, one barrier remains for many families in [Cuddalore](/service-areas/cuddalore): **The Upfront Cost.**
 A high-quality 3kW system costs between ₹1.8L to ₹2.1L. Even with the ₹78,000 subsidy, finding the balance ₹1.2 Lakhs in cash can be difficult.
 
 **Here is the secret:** You don't need cash.

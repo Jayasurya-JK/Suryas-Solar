@@ -26,7 +26,7 @@ faqs:
       If your monthly average bill is above Rs. 2,000, it is worth checking 3kW
       to 5kW solar sizing and subsidy eligibility.
 ---
-Every year between April and July, millions of residents across Tamil Nadu-from Cuddalore and Puducherry to Chennai and Coimbatore-open their bi-monthly TNEB (Tamil Nadu Generation and Distribution Corporation) SMS or app notification and experience severe sticker shock. 
+Every year between April and July, millions of residents across Tamil Nadu-from [Cuddalore](/service-areas/cuddalore) and [Puducherry](/service-areas/puducherry) to Chennai and Coimbatore-open their bi-monthly TNEB (Tamil Nadu Generation and Distribution Corporation) SMS or app notification and experience severe sticker shock. 
 
 *"Current bill high why?"* is one of the most frequently asked questions in local community groups during peak summer. It is not uncommon for a household that pays ₹1,500 in December to suddenly receive a ₹6,000 to ₹8,000 electricity bill in May. 
 

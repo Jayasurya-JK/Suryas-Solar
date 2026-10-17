@@ -41,7 +41,7 @@ faqs:
       Rain removes loose dust but often leaves a thin film of salt and dirt on the
       coast. A gentle wash with plain water after the monsoon restores output.
 ---
-**Short answer:** **yes, solar panels work in the rainy season**, just at lower output: roughly **30-60% of a sunny day** depending on cloud cover. And **yes, a well-built system survives cyclones**. In coastal Cuddalore and Puducherry the weak point is almost never the panel; it is the **structure, the anchoring and the earthing**. Here is what every homeowner should know before the northeast monsoon.
+**Short answer:** **yes, solar panels work in the rainy season**, just at lower output: roughly **30-60% of a sunny day** depending on cloud cover. And **yes, a well-built system survives cyclones**. In coastal Cuddalore and [Puducherry](/service-areas/puducherry) the weak point is almost never the panel; it is the **structure, the anchoring and the earthing**. Here is what every homeowner should know before the northeast monsoon.
 
 ---
 

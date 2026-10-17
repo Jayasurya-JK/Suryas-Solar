@@ -40,7 +40,7 @@ When buying a brand new, premium Inverter Air Conditioner, the appliance showroo
 
 This marketing claim is highly appealing. Nobody wants to spend an extra ₹2,500 and drill more holes in their pristine living room walls for a bulky metal box. 
 
-But when you connect that same state-of-the-art Air Conditioner to a rooftop solar system in Tamil Nadu-especially in areas notorious for severe grid fluctuations like Panruti, Neyveli, rural Cuddalore, or the industrial outskirts of Puducherry-the engineering rules of the game change completely. 
+But when you connect that same state-of-the-art Air Conditioner to a rooftop solar system in Tamil Nadu-especially in areas notorious for severe grid fluctuations like [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), rural Cuddalore, or the industrial outskirts of Puducherry-the engineering rules of the game change completely. 
 
 Do you actually need an external voltage stabilizer for your highly advanced Inverter AC when running on a solar power plant? Does connecting a stabilizer to a solar inverter cause "double regulation" conflicts? 
 

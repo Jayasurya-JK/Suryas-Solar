@@ -29,7 +29,7 @@ faqs:
 ---
 When your bi-monthly TNEB electricity bill consistently exceeds ₹5,000-perhaps because you run two air conditioners, have a large 4 BHK home, or operate a small business from home-a 3kW solar system is simply not going to be enough. You need a larger, more powerful installation.
 
-The 5kW solar system is the natural next step, and it is the most popular choice among large households, high-consumption families, and small commercial establishments across Tamil Nadu, including Cuddalore, Puducherry, Villupuram, and Chidambaram.
+The 5kW solar system is the natural next step, and it is the most popular choice among large households, high-consumption families, and small commercial establishments across Tamil Nadu, including Cuddalore, Puducherry, [Villupuram](/service-areas/villupuram), and [Chidambaram](/service-areas/chidambaram).
 
 In this definitive 2026 guide, we provide a complete, honest, engineering-grade breakdown of what a 5kW solar system costs in Tamil Nadu, how many units it generates, what it can and cannot power, and the precise financial return you can expect over 25 years.
 

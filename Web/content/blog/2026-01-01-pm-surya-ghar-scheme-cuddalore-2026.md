@@ -15,7 +15,7 @@ updated: '2026-10-17'
 ---
 > **October 2026 update:** Tamil Nadu has added a **₹22,000 state top-up** (G.O. 102) on top of the ₹78,000 PM Surya Ghar subsidy, so Cuddalore homes installing 3kW or more can now get **up to ₹1 lakh**. It applies to registrations from 5 August 2026 and is reported to be limited to the first 1 lakh homes. Full rules: [₹1 lakh solar subsidy in Tamil Nadu](/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry).
 
-Welcome to **2026**. If you are a homeowner in Cuddalore, Neyveli, or Pondicherry, you have likely heard about the massive push for solar energy. But amidst the headlines, there is often confusion. Is the electricity really free? Is the subsidy amount guaranteed? How long does the TNEB process actually take?
+Welcome to **2026**. If you are a homeowner in [Cuddalore](/service-areas/cuddalore), [Neyveli](/service-areas/neyveli), or Pondicherry, you have likely heard about the massive push for solar energy. But amidst the headlines, there is often confusion. Is the electricity really free? Is the subsidy amount guaranteed? How long does the TNEB process actually take?
 
 The **PM Surya Ghar: Muft Bijli Yojana** has evolved into one of the most successful green energy initiatives in India. For residents of Tamil Nadu, specifically in high-solar-yield districts like Cuddalore, this scheme is not just an environmental choice-it is a financial no-brainer.
 

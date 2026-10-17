@@ -63,7 +63,7 @@ faqs:
 | 8. Subsidy credit (central) | Government via bank | about 30 days |
 | **Total** | | **about 6 - 10 weeks** |
 
-*Typical ranges as of October 2026 in Cuddalore district. Section offices differ, and queues get longer near scheme deadlines.*
+*Typical ranges as of October 2026 in [Cuddalore](/service-areas/cuddalore) district. Section offices differ, and queues get longer near scheme deadlines.*
 
 ---
 

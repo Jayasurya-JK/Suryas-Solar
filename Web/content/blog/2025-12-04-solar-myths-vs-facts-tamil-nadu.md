@@ -27,7 +27,7 @@ This article is designed to:
 *   **Clear Confusion:** Separate fact from fiction using 2025 technology standards.
 *   **Remove Fear:** Address common concerns about roof damage, maintenance, and safety.
 *   **Empower Decisions:** Help you make the right choice for your home without hesitation.
-*   **Local Focus:** Provide clarity specifically for TN and Puducherry residents, addressing local climate challenges.
+*   **Local Focus:** Provide clarity specifically for TN and [Puducherry](/service-areas/puducherry) residents, addressing local climate challenges.
 
 ---
 
@@ -140,7 +140,7 @@ Why do these myths persist?
 We believe in honesty. We don't sell you a system; we sell you a solution.
 
 *   **MNRE-Approved:** We follow all government standards and use only approved components (DCR panels).
-*   **Experience:** 100+ successful installations in the Cuddalore-Puducherry region.
+*   **Experience:** 100+ successful installations in the [Cuddalore](/service-areas/cuddalore)-Puducherry region.
 *   **Accuracy:** We give realistic generation predictions, not false promises of "zero bills" if your usage is high.
 *   **Full Service:** From rooftop assessment to subsidy release, we are with you every step of the way.
 

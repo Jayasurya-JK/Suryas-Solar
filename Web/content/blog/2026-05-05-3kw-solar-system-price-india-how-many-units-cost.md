@@ -130,7 +130,7 @@ For under ₹1 Lakh, you get a 25-year electricity-bill-eliminating asset on you
 
 ## 6. Payback Period and 25-Year ROI
 
-Let us run the real numbers for a household in Cuddalore:
+Let us run the real numbers for a household in [Cuddalore](/service-areas/cuddalore):
 
 **Current Situation:**
 *   Bi-monthly TNEB bill: ₹4,200 (consuming ~700 units, stuck in the ₹9/unit slab)

@@ -27,7 +27,7 @@ faqs:
       Yes. Solar reduces imported units, which can help keep consumption away
       from the most expensive slab levels.
 ---
-For millions of residents across Tamil Nadu-from Chennai and Puducherry to Cuddalore and Coimbatore-the arrival of the bi-monthly TNEB / TNPDCL electricity bill is often a moment of confusion. 
+For millions of residents across Tamil Nadu-from Chennai and [Puducherry](/service-areas/puducherry) to [Cuddalore](/service-areas/cuddalore) and Coimbatore-the arrival of the bi-monthly TNEB / TNPDCL electricity bill is often a moment of confusion. 
 
 You look at the total "Units Consumed" and you look at the "Total Amount Due." But how did 650 units turn into a massive ₹4,300 bill? Why did your neighbor, who consumed 450 units, only pay a fraction of that?
 

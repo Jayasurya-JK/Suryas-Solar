@@ -47,7 +47,7 @@ In Cuddalore, the process from "Application" to "First Solar Bill" takes **21 to
 The journey begins on the **TANGEDCO** or **[PM Surya Ghar](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)** portal.
 *   **The Check:** Your local AE (Assistant Engineer) receives the application. They check the **Distribution Transformer (DT)** capacity on your street.
 *   **The Rule:** The total solar capacity on a transformer generally shouldn't exceed 30% to 50% of the DT capacity.
-*   **Cuddalore Status:** Most residential areas in Cuddalore town (Manjakuppam, Thirupapuliyur) and Neyveli still have plenty of DT capacity available in 2026. Feasibility is usually auto-approved in 48 hours.
+*   **Cuddalore Status:** Most residential areas in Cuddalore town (Manjakuppam, Thirupapuliyur) and [Neyveli](/service-areas/neyveli) still have plenty of DT capacity available in 2026. Feasibility is usually auto-approved in 48 hours.
 
 ### Stage 2: Safety Letter & Installation (Days 6-15)
 Once feasibility is approved, TNEB issues a "Safety Letter". This is your green light to install the solar plant.
@@ -119,7 +119,7 @@ If your status is pending for >15 days, it is usually one of these 3 reasons. We
 
 Why do Cuddalore residents choose us? Because we don't just dump panels on your roof; we handle the bureaucracy.
 
-*   **We know the AEs:** We operate in Cuddalore, Panruti, and Vadalur daily. We know exactly what the Section Officer at Manjakuppam or the AE at Neyveli requires.
+*   **We know the AEs:** We operate in Cuddalore, [Panruti](/service-areas/panruti), and Vadalur daily. We know exactly what the Section Officer at Manjakuppam or the AE at Neyveli requires.
 *   **Paperwork Included:** Our quotation includes the entire TNEB Liaisoning fee. You don't have to visit the EB office even once.
 *   **Follow-up until done:** We track your application with the section office and update you at every stage until the net meter is fixed.
 

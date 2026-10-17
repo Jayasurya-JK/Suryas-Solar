@@ -153,7 +153,7 @@ As a general rule:
 *   A **3kW system** (9 to 10 panels) needs approximately **270 to 300 sq. ft.** (roughly the size of a standard 2-car parking area on your terrace).
 *   A **5kW system** (15 to 17 panels) needs approximately **450 to 510 sq. ft.**
 
-If your available shadow-free terrace is smaller than required, you can compensate slightly by using higher-wattage panels (e.g., 545W or 600W Tier-1 panels instead of standard 400W panels). This is a common engineering solution for space-constrained rooftops in dense urban areas like Cuddalore town and Puducherry city limits.
+If your available shadow-free terrace is smaller than required, you can compensate slightly by using higher-wattage panels (e.g., 545W or 600W Tier-1 panels instead of standard 400W panels). This is a common engineering solution for space-constrained rooftops in dense urban areas like [Cuddalore](/service-areas/cuddalore) town and [Puducherry](/service-areas/puducherry) city limits.
 
 ---
 

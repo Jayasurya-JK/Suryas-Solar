@@ -153,6 +153,6 @@ Panels and a standard structure add about **15-20 kg per square metre**, which a
 
 ## Free Roof Survey and Layout
 
-We measure your terrace, check shade across the seasons and give you a panel layout drawing with the maximum size your roof can take. Serving Cuddalore, Panruti, Neyveli, Chidambaram and Puducherry. Call or WhatsApp **+91 7904369094**.
+We measure your terrace, check shade across the seasons and give you a panel layout drawing with the maximum size your roof can take. Serving Cuddalore, [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), Chidambaram and Puducherry. Call or WhatsApp **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

@@ -23,7 +23,7 @@ faqs:
 "Sir, are these panels 'Self-Cleaning'?"
 
 We hear this question often. The honest answer is: **No.**
-While occasional rain helps, it rarely cleans the sticky dust layer that forms in Cuddalore's humid, coastal climate. The salt in the air mixes with dust to form a grime layer that feels almost like cement.
+While occasional rain helps, it rarely cleans the sticky dust layer that forms in [Cuddalore](/service-areas/cuddalore)'s humid, coastal climate. The salt in the air mixes with dust to form a grime layer that feels almost like cement.
 
 In **2026**, the biggest reason for "Low Generation" complaints isn't faulty inverters or bad wiring-it is simply **Dust.**
 

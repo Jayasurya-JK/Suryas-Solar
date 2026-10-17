@@ -126,7 +126,7 @@ Surya's Solar is a **registered vendor on the official PM Surya Ghar portal** fo
 *   **420 kWp** total installed capacity
 *   **5/5 rating from 149 customer ratings**
 
-We are an **official partner of TATA Power Solar and Exide**, with 10+ years in solar and a **5.0 rating from 45 Google reviews**. We handle registration, documents, installation, TNEB liaison and subsidy follow-up from our office in Kondur, Cuddalore, and serve Cuddalore, Panruti, Neyveli, Chidambaram and Puducherry.
+We are an **official partner of TATA Power Solar and Exide**, with 10+ years in solar and a **5.0 rating from 45 Google reviews**. We handle registration, documents, installation, TNEB liaison and subsidy follow-up from our office in Kondur, Cuddalore, and serve Cuddalore, [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), Chidambaram and Puducherry.
 
 **Puducherry homes:** the ₹22,000 top-up is a Tamil Nadu scheme, so it does not apply in Puducherry. You still get the central subsidy of up to ₹78,000. Puducherry has also reported its own additional state subsidy for homes (reports mention about ₹9,000-10,000 per kW, up to about ₹30,000); we confirm the current amount with the Electricity Department at your site visit. See our [Puducherry solar cost guide](/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide).
 

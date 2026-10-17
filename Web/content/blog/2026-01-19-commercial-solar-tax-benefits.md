@@ -47,7 +47,7 @@ It allows you to book a massive "Loss" (Expense) in the very first year of purch
 
 ## 2. The [ROI](/blog/2026-01-08-solar-roi-calculator-break-even-analysis) Calculation: How Efficiency Meets Tax Savings
 
-Let's simulate a standard business case for a Cuddalore factory.
+Let's simulate a standard business case for a [Cuddalore](/service-areas/cuddalore) factory.
 
 **The Scenario:**
 *   **System Size:** 20kW On-Grid Solar Plant.

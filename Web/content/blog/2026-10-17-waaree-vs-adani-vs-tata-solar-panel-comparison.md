@@ -61,7 +61,7 @@ faqs:
 
 ## 1. Reliability: Who Has the Proof?
 
-For a 25-year product, **independent testing** is the best evidence. Waaree's TOPCon modules were named a **Kiwa PVEL Top Performer** in 2026 for the fifth consecutive year; PVEL stress-tests panels for damp heat, thermal cycling and mechanical load, which is close to Cuddalore's coastal reality. Adani and Tata are also large, established makers; ask for the test reports of the specific model you are offered.
+For a 25-year product, **independent testing** is the best evidence. Waaree's TOPCon modules were named a **Kiwa PVEL Top Performer** in 2026 for the fifth consecutive year; PVEL stress-tests panels for damp heat, thermal cycling and mechanical load, which is close to [Cuddalore](/service-areas/cuddalore)'s coastal reality. Adani and Tata are also large, established makers; ask for the test reports of the specific model you are offered.
 
 ---
 

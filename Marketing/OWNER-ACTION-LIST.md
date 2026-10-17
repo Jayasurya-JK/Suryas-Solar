@@ -8,6 +8,10 @@ Last updated: 17 Oct 2026 (images moved to IMAGE-PROMPTS.md).
 
 ## A. This week (high impact, about 1 hour total)
 
+- [ ] **One-tap review link (2 min):** Google Business Profile > "Ask for reviews" > copy the link (looks like g.page/r/.../review) and send it to Claude. Claude puts it behind suryassolar.com/review so customers land straight on the review form.
+- [ ] **Delete your own review** ("Jayasurya J") on the profile - owners must not review their own business.
+- [ ] **Justdial + IndiaMART**: create or claim free listings with exactly the same name, address and phone as the website.
+
 - [ ] **Google Business Profile hours**: set Monday to Sunday, 9 AM - 8 PM (all 7 days).
 - [ ] **Google Business Profile name**: change "Suryas Solar" to **Surya's Solar** (exactly like the website). Google may ask to re-verify; that is normal.
 - [ ] **Website link on GBP**: `https://www.suryassolar.com`
@@ -21,8 +25,8 @@ Last updated: 17 Oct 2026 (images moved to IMAGE-PROMPTS.md).
 
 - [ ] Post **1 GBP update** (Claude writes one for every new blog post; copy from the list in section E).
 - [ ] Upload **3-5 real photos** to GBP (installs, team, office). No customer house numbers or street names.
-- [ ] **Ask 2-3 happy customers for a Google review.** Send them this on WhatsApp:
-  > Thank you for choosing Surya's Solar! If you are happy with your solar system, please give us a quick Google review - it helps other families in Cuddalore: [your GBP review link]
+- [ ] **Ask 5 happy customers a week for a Google review** (target 100 reviews by 31 Dec 2026). Send them this on WhatsApp, and print suryassolar.com/review as a QR code on your handover sheet:
+  > Thank you for choosing Surya's Solar! If you are happy with your solar system, please give us a quick Google review - it helps other families in Cuddalore: https://www.suryassolar.com/review
 - [ ] **Reply to every review** within 2 days (mention the service, e.g. "Thank you for trusting us with your 3kW rooftop system!").
 
 ## C. When you have time (data only you have)

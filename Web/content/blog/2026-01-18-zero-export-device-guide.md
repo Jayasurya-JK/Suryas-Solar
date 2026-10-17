@@ -88,7 +88,7 @@ The heart of the ZED is the **Current Transformer (CT)**.
 
 ## 4. Advanced Feature: Diesel Generator (DG) Synchronization
 
-This is critical for Factories and Hospitals in Cuddalore.
+This is critical for Factories and Hospitals in [Cuddalore](/service-areas/cuddalore).
 
 **The Problem:**
 You have a 50kVA Diesel Generator running during a power cut. It is consuming 10 Liters/hour.

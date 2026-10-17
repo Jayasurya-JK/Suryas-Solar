@@ -168,6 +168,6 @@ Think ahead before you buy. Solar is a 25-year investment.
 
 ## Need Help Choosing Between 3kW & 5kW?
 
-**Surya’s Solar** offers free home assessment to suggest the right system size based on your electricity bill, usage, and roof space. We serve Cuddalore, Panruti, Neyveli, and Puducherry.
+**Surya’s Solar** offers free home assessment to suggest the right system size based on your electricity bill, usage, and roof space. We serve Cuddalore, [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), and Puducherry.
 
 <!-- COMPONENT: CONTACT_CTA -->

@@ -24,7 +24,7 @@ faqs:
 "Sir, your quote is ₹1.9 Lakhs. But 'XYZ Solar' offered me ₹1.6 Lakhs. Why are you expensive?"
 
 We welcome this question. It gives us a chance to save a customer from a disaster.
-In Cuddalore, the solar market is booming. And where there is money, there are shortcuts. A "Cheap Quote" is never magic; it’s usually a compromise on safety, compliance, or longevity.
+In [Cuddalore](/service-areas/cuddalore), the solar market is booming. And where there is money, there are shortcuts. A "Cheap Quote" is never magic; it’s usually a compromise on safety, compliance, or longevity.
 
 Solar is a 25-year product. If the installer cheats you today, you will pay for it for decades.
 In **2026**, here are the **7 Dirty Tricks** unreliable installers use to lower their price-and why you will pay double for it later.

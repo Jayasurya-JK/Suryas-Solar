@@ -99,7 +99,7 @@ Not covered (typical):
 The inverter is the part most likely to fail in 25 years. A good inverter lasts **10-12 years**, so plan for **one replacement**. Check:
 *   Warranty length and whether an **extension** is available
 *   Is the warranty **replacement or repair**?
-*   Does a **local service partner** exist in Cuddalore, or must it be shipped?
+*   Does a **local service partner** exist in [Cuddalore](/service-areas/cuddalore), or must it be shipped?
 
 More: [best on-grid solar inverter in India](/blog/2026-10-17-best-on-grid-solar-inverter-india).
 

@@ -165,6 +165,6 @@ For a price-specific estimate, compare your monthly units with our [Solar Saving
 
 ## Ready to Switch to Solar?
 
-Stop paying high electricity bills today. Get a free rooftop assessment and a detailed quote for your home in Cuddalore, Panruti, or Neyveli.
+Stop paying high electricity bills today. Get a free rooftop assessment and a detailed quote for your home in Cuddalore, [Panruti](/service-areas/panruti), or [Neyveli](/service-areas/neyveli).
 
 <!-- COMPONENT: CONTACT_CTA -->

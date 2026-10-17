@@ -51,7 +51,7 @@ This is the most popular and cost-effective system for homes in cities and towns
 4.  **Billing:** You only pay for the net difference (Import - Export).
 
 ### Best For
-*   **Tamil Nadu Cities:** Cuddalore, Panruti, Neyveli, Chidambaram.
+*   **Tamil Nadu Cities:** Cuddalore, [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), Chidambaram.
 *   **Stable Power:** Homes that rarely face power cuts (less than 1-2 hours a week).
 *   **Savings:** People whose primary goal is to **reduce their electricity bill to zero**.
 

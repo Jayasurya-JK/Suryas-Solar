@@ -52,7 +52,7 @@ faqs:
 | Per TNEB bill (2 months) | 480 - 600 units |
 | **Per year** | **2,800 - 3,300 units** |
 
-**The math:** `2 kW × 5.2 peak sun hours × 0.78 performance ratio ≈ 8.1 units` on an average day, and close to 11 on bright summer days. Coastal Cuddalore homes sit in the middle of the range; drier Panruti and Neyveli do slightly better.
+**The math:** `2 kW × 5.2 peak sun hours × 0.78 performance ratio ≈ 8.1 units` on an average day, and close to 11 on bright summer days. Coastal Cuddalore homes sit in the middle of the range; drier [Panruti](/service-areas/panruti) and [Neyveli](/service-areas/neyveli) do slightly better.
 
 ---
 

@@ -146,6 +146,6 @@ A simple fix for top-floor flats and independent houses is **heat-reflective (wh
 
 ## Have Family in Cuddalore or Puducherry?
 
-We offer free bill checks and site visits across Cuddalore district and Puducherry, open all 7 days. WhatsApp a bill photo to **+91 7904369094**.
+We offer free bill checks and site visits across [Cuddalore](/service-areas/cuddalore) district and [Puducherry](/service-areas/puducherry), open all 7 days. WhatsApp a bill photo to **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

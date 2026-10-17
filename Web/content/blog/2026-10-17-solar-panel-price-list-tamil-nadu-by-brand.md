@@ -85,7 +85,7 @@ Higher-wattage panels cost a little more each but **less per watt**, need fewer 
 | 5kW | ₹3.0 - 3.3 lakh | ₹1,00,000 | ₹2.0 - 2.3 lakh | 20 - 25 |
 | 10kW | ₹5 - 6.5 lakh | ₹1,00,000 (home) | ₹4 - 5.5 lakh | 40 - 50 |
 
-*Puducherry homes get the central subsidy (up to ₹78,000) instead of the TN top-up; Puducherry has reported its own state top-up, so confirm the current amount. See [solar cost in Puducherry](/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide).*
+*[Puducherry](/service-areas/puducherry) homes get the central subsidy (up to ₹78,000) instead of the TN top-up; Puducherry has reported its own state top-up, so confirm the current amount. See [solar cost in Puducherry](/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide).*
 
 Size-by-size guides: [1kW](/blog/2026-10-17-1kw-solar-panel-how-many-units-per-day), [2kW](/blog/2026-10-17-2kw-solar-system-units-per-day-price-subsidy), [3kW system page](/systems/3kw-solar-system-with-subsidy), [5kW system page](/systems/5kw-solar-system-with-subsidy), [10kW](/blog/2026-10-17-10kw-solar-system-price-units-tamil-nadu).
 
@@ -101,7 +101,7 @@ Size-by-size guides: [1kW](/blog/2026-10-17-1kw-solar-panel-how-many-units-per-d
 | Cables, DCDB/ACDB, earthing, lightning arrester | about 8 - 12% | Copper DC cable, 3 separate earth pits |
 | Installation, net meter, paperwork | about 5 - 10% | Who handles TNEB and subsidy follow-up |
 
-This is why two quotes with "the same panels" can differ by ₹30,000 or more. A cheap quote usually saves on the **structure, cables or earthing**, which are exactly the parts that fail in Cuddalore's salty, windy climate. Read [best solar structure for coastal Tamil Nadu](/blog/2025-12-02-rooftop-solar-structure-types-tamil-nadu) and [solar earthing guide](/blog/2026-01-13-solar-earthing-safety-guide).
+This is why two quotes with "the same panels" can differ by ₹30,000 or more. A cheap quote usually saves on the **structure, cables or earthing**, which are exactly the parts that fail in [Cuddalore](/service-areas/cuddalore)'s salty, windy climate. Read [best solar structure for coastal Tamil Nadu](/blog/2025-12-02-rooftop-solar-structure-types-tamil-nadu) and [solar earthing guide](/blog/2026-01-13-solar-earthing-safety-guide).
 
 ---
 

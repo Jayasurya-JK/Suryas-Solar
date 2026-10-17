@@ -63,7 +63,7 @@ faqs:
 Size is not everything, but for a 25-year product it matters:
 
 *   **Bigger makers** have more service partners, more stock of DCR models and are more likely to be around for warranty claims in 2045.
-*   **Waaree's PVEL Top Performer** listing is valuable because it is **independent testing**, not marketing. PVEL stress-tests panels with heat, humidity and load cycles, which is close to what Cuddalore's coastal climate does.
+*   **Waaree's PVEL Top Performer** listing is valuable because it is **independent testing**, not marketing. PVEL stress-tests panels with heat, humidity and load cycles, which is close to what [Cuddalore](/service-areas/cuddalore)'s coastal climate does.
 *   **Premier's strength** is making its **own cells**, which helps with DCR supply and quality control, and its newer large-format DCR TOPCon modules.
 
 ---
@@ -129,7 +129,7 @@ Fake or mixed-up "DCR" panels are the fastest way to lose the ₹1 lakh subsidy.
 | Usually bifacial | Yes | No |
 | Best for | Within 2-3 km of the sea, elevated structures | Inland homes, budget builds |
 
-In Cuddalore, Puducherry and other coastal towns we prefer **glass-to-glass TOPCon** where the budget allows.
+In Cuddalore, [Puducherry](/service-areas/puducherry) and other coastal towns we prefer **glass-to-glass TOPCon** where the budget allows.
 
 ---
 

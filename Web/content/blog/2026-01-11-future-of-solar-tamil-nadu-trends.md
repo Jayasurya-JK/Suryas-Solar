@@ -26,7 +26,7 @@ But solar is an asset you buy for 25 years. It is important to know where the in
 
 In **2026**, the energy landscape in Tamil Nadu is shifting faster than ever before. TANGEDCO (Tamil Nadu Generation and Distribution Corporation) is transforming from a traditional electricity provider into a **Smart Grid Manager**.
 
-For a homeowner in Cuddalore, these changes aren't just "news"-they are opportunities to monetize your roof even further.
+For a homeowner in [Cuddalore](/service-areas/cuddalore), these changes aren't just "news"-they are opportunities to monetize your roof even further.
 
 Here are the Top 5 Trends shaping the future of solar in our state between now and 2030.
 
@@ -36,7 +36,7 @@ Here are the Top 5 Trends shaping the future of solar in our state between now a
 Currently, you can only use solar power where you generate it.
 **The Future (2027):** You can generate power on one roof and use it on another.
 
-*   **The Scenario:** You live in an apartment in Chennai where you have no roof rights. But you own a large ancestral house in Cuddalore or a plot in Panruti.
+*   **The Scenario:** You live in an apartment in Chennai where you have no roof rights. But you own a large ancestral house in Cuddalore or a plot in [Panruti](/service-areas/panruti).
 *   **The Solution:** You install a 10kW solar plant on your Cuddalore roof. TNEB credits the generation against your *Chennai* consumed units.
 *   **Status:** This is already approved for Government buildings. It is expected to open for residential users by 2027-28.
 *   **Impact:** Your roof becomes a real estate asset that generates revenue.

@@ -149,6 +149,6 @@ If your area has frequent cuts, read [on-grid vs hybrid solar for Tamil Nadu](/b
 
 ## Plan Your System With Real Local Numbers
 
-We size every system using year-round Cuddalore and Puducherry generation, cloudy months included, so your savings estimate is realistic. With the **₹1 lakh subsidy** available for a limited time, now is a good time to check. Call or WhatsApp **+91 7904369094**.
+We size every system using year-round [Cuddalore](/service-areas/cuddalore) and [Puducherry](/service-areas/puducherry) generation, cloudy months included, so your savings estimate is realistic. With the **₹1 lakh subsidy** available for a limited time, now is a good time to check. Call or WhatsApp **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

@@ -18,7 +18,7 @@ faqs:
   - question: 'Can the solar system and subsidy be transferred to a new owner?'
     answer: 'The system stays with the house. The EB connection and net meter agreement are transferred through the name-change process; the subsidy already paid is not affected.'
 ---
-In Cuddalore, when you buy a house, you traditionally check the water quality, the road width, and the build quality (Pillars vs Load Bearing). You check if the area floods during monsoon. You check the distance to schools.
+In [Cuddalore](/service-areas/cuddalore), when you buy a house, you traditionally check the water quality, the road width, and the build quality (Pillars vs Load Bearing). You check if the area floods during monsoon. You check the distance to schools.
 
 But in **2026**, buyers are asking a new, critical question that nobody asked 5 years ago:
 **"What is the monthly electricity bill?"**

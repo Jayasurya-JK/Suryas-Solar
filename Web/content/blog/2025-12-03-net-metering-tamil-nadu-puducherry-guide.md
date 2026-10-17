@@ -62,7 +62,7 @@ If you export *more* than you import (e.g., Export 600, Import 500), the extra 1
 
 In **Puducherry**, the Electricity Department (PED) manages the grid. The core principle is the same, but there are local advantages.
 
-*   **Faster Processing:** Approvals in Puducherry are generally faster than in TN, often completed within 2-3 weeks.
+*   **Different office:** Approvals in [Puducherry](/service-areas/puducherry) go through the Electricity Department (PED), and timelines vary by workload.
 *   **High Generation:** Coastal houses in **Pondicherry** receive intense sunlight, leading to higher export units.
 *   **Inverter Rules:** PED is supportive of hybrid inverters, which is great for residents who want battery backup during occasional power cuts.
 

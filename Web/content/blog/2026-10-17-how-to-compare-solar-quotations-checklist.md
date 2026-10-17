@@ -90,7 +90,7 @@ For the **₹1 lakh subsidy**, panels must be **DCR**. Ask for the DCR certifica
 BIS-registered, a known brand with **local service**, 5-10 year warranty. See [best on-grid solar inverter](/blog/2026-10-17-best-on-grid-solar-inverter-india).
 
 ### 5. Structure material and height
-In Cuddalore's coastal air, **hot-dip galvanized** steel lasts; plain GI or painted MS rusts. A raised structure keeps your terrace usable. See [best solar structure for coastal Tamil Nadu](/blog/2025-12-02-rooftop-solar-structure-types-tamil-nadu).
+In [Cuddalore](/service-areas/cuddalore)'s coastal air, **hot-dip galvanized** steel lasts; plain GI or painted MS rusts. A raised structure keeps your terrace usable. See [best solar structure for coastal Tamil Nadu](/blog/2025-12-02-rooftop-solar-structure-types-tamil-nadu).
 
 ### 6. DC cable brand and size
 Solar-grade copper DC cable from a known brand. Cheap cable heats and is a fire risk. See [solar wire quality](/blog/2026-01-14-solar-dc-cable-quality-guide).

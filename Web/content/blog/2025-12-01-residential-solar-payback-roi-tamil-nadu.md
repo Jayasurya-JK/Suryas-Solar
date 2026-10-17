@@ -117,7 +117,7 @@ Several factors influence how quickly you get your money back:
 1.  **Panel Technology:** **Mono PERC** and **N-Type TOPCon** panels cost slightly more but generate more power in low light, improving ROI.
 2.  **Inverter Type:** High-efficiency inverters (like Growatt or Enphase) ensure less energy loss.
 3.  **Rooftop Shadow:** Even a small shadow can drop generation significantly. A proper site survey is crucial.
-4.  **Location:** Coastal areas like Cuddalore have high irradiation but need corrosion-resistant structures.
+4.  **Location:** Coastal areas like [Cuddalore](/service-areas/cuddalore) have high irradiation but need corrosion-resistant structures.
 5.  **Tariff Category:** Higher electricity slabs mean higher savings per unit.
 6.  **Installation Quality:** Poor wiring can lead to 10-15% generation loss. At **Surya's Solar**, we follow strict IEC standards.
 

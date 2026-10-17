@@ -130,7 +130,7 @@ Why these matter: [earthing guide](/blog/2026-01-13-solar-earthing-safety-guide)
 *   **Choose hybrid (ஹைப்ரிட்)** if power cuts happen often and you need fans, lights, Wi-Fi or a fridge to keep running. Costs more because of the battery. *அடிக்கடி மின்வெட்டு உள்ள பகுதிகளுக்கு ஏற்றது.*
 *   **Choose off-grid (ஆஃப்-கிரிட்)** only where there is **no EB connection at all**, such as a remote farm shed. No subsidy, and batteries need replacing every few years. *மின் இணைப்பு இல்லாத இடங்களுக்கு மட்டும்.*
 
-**Example:** a 2BHK home in Cuddalore with a ₹2,500 monthly bill and occasional cuts is best served by a **3kW on-grid** system, with a small home UPS for lights during cuts.
+**Example:** a 2BHK home in [Cuddalore](/service-areas/cuddalore) with a ₹2,500 monthly bill and occasional cuts is best served by a **3kW on-grid** system, with a small home UPS for lights during cuts.
 
 ---
 

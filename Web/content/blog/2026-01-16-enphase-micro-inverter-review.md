@@ -53,7 +53,7 @@ In an **Enphase System**, every single panel gets its own tiny inverter (Micro-i
 
 ### A. The "Zero Fire Risk" Guarantee
 Since there is no High Voltage DC, the risk of DC Arc Fires is effectively **Zero**.
-Cuddalore has old wooden heritage homes (Madras Terrace). A fire on the roof would be catastrophic. Enphase is the only responsible choice for such buildings.
+[Cuddalore](/service-areas/cuddalore) has old wooden heritage homes (Madras Terrace). A fire on the roof would be catastrophic. Enphase is the only responsible choice for such buildings.
 
 ### B. [Shadow](/blog/2026-01-12-solar-shadow-analysis-guide-cuddalore) Management (The "Chimney" Problem)
 Rooftops are not empty fields. They have Water Tanks, Chimneys, AC Outdoor Units, and Parapet Walls.
