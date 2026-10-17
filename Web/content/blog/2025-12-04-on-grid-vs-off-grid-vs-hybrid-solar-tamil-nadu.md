@@ -5,7 +5,7 @@ excerpt: >-
   On-Grid vs Off-Grid vs Hybrid: Side-by-side comparison for Tamil Nadu homes.
   Price, battery backup, and subsidy eligibility explained.
 featuredImage: /images/On-Grid vs Off-Grid vs Hybrid.webp
-category: Solar Guide
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - On-Grid Solar
@@ -83,7 +83,7 @@ This system gives you total independence from the electricity board. It is essen
 
 ### Pros & Cons
 *   **✔ Advantages:** Works 24/7, total energy independence, power always available.
-*   **✖ Disadvantages:** Most expensive due to batteries. Batteries need replacement every 5–8 years (Lead-Acid) or 10-15 years (Lithium). No income from net-metering.
+*   **✖ Disadvantages:** Most expensive due to batteries. Batteries need replacement every 5-8 years (Lead-Acid) or 10-15 years (Lithium). No income from net-metering.
 
 ---
 

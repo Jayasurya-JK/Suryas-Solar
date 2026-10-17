@@ -5,7 +5,7 @@ author: Surya's Solar Technical Team
 excerpt: >-
   Shocked by your high summer TNEB bill? Discover the hidden reasons behind summer tariff spikes in Tamil Nadu and effective strategies to keep your electricity costs down.
 featuredImage: /images/why-is-electricity-bill-high-in-summer-tamil-nadu.webp
-category: Electricity Bill
+category: Electricity Bill & Savings
 tags:
   - Electricity Bill
   - Energy Saving
@@ -50,7 +50,7 @@ Electricity is billed bi-monthly (once every two months). Let's look at the stan
 
 If your bi-monthly consumption stays strictly under 500 units, you keep the extra free slab. The moment your household consumes **501 units**, you lose the extra 100 free units *and* you fall off the high-slab cliff.
 
-There was **no TNEB tariff hike announced for 2026**. High July–August bills were widely reported as usage spikes and meter/reading issues (TNPDCL ordered reinspections), not a new unit rate. 
+There was **no TNEB tariff hike announced for 2026**. High July-August bills were widely reported as usage spikes and meter/reading issues (TNPDCL ordered reinspections), not a new unit rate. 
 
 Once you cross 500 units, the subsidy heavily drops, and the pricing structure completely shifts:
 

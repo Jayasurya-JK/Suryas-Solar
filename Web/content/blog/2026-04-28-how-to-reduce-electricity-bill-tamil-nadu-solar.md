@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Struggling with high TNEB bills? Discover practical, proven ways to significantly reduce your electricity costs in Tamil Nadu, from energy-efficient habits to smart solar investments.
 featuredImage: /images/how-to-reduce-electricity-bill-tamil-nadu-solar.webp
-category: Energy Saving
+category: Electricity Bill & Savings
 tags:
   - Electricity Bill
   - Energy Saving

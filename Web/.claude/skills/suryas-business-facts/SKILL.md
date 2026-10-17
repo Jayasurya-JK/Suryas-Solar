@@ -23,8 +23,10 @@ Use these values verbatim. If a task needs a fact that is not here, ASK the owne
 | Service areas (have pages) | Cuddalore, Puducherry, Panruti, Neyveli |
 | Also served (no page yet) | Chidambaram, Nellikuppam, Villupuram region |
 
-## Stats (homepage `content/pages/home.md`)
-- 400+ kW installed, 100+ homes, 25-year panel warranty.
+## Stats and proof
+- Official PM Surya Ghar portal (vendor page, Oct 2026): **registered vendor for Cuddalore district**, **122 installations, 420 kWp, rating 5/5 from 149 ratings**. Contact on portal: Jayakumar P. Portal lists "Brand name: EXIDE SUNDAY SOLAR SOLUTIONS" - relationship not yet confirmed by owner; do not publish that brand name until confirmed.
+- Site copy uses "100+ homes, 400+ kW" (still true) and "120+ homes, 420 kW" (homepage meta). 25-year panel warranty.
+- Google Business Profile: 5.0 from 45 reviews.
 
 ## Prices (from `src/pages/systems/*.jsx` - the current published numbers)
 | System | Before subsidy | After PM Surya Ghar | Bill it suits |
@@ -34,10 +36,21 @@ Use these values verbatim. If a task needs a fact that is not here, ASK the owne
 
 Generation rule of thumb used on site: 1kW ≈ 4-5 units/day in Tamil Nadu (3kW ≈ 12-15 units/day).
 
-## PM Surya Ghar Muft Bijli Yojana (residential)
-- ₹30,000/kW for the first 2kW + ₹18,000 for the 3rd kW = **₹78,000 maximum** (3kW and above).
-- 1kW = ₹30,000, 2kW = ₹60,000, 3kW+ = ₹78,000. Going above 3kW does not increase the subsidy.
-- Subsidy rules change - when writing a dated "2026" claim, say "as of <month year>" and ask the owner if unsure.
+## Subsidy (residential) - the #1 marketing hook in 2026
+**Central PM Surya Ghar Muft Bijli Yojana:** ₹30,000/kW for the first 2kW + ₹18,000 for the 3rd kW = **₹78,000 max** (3kW+). Approved till FY 2026-27 (31 March 2027). Outlay ₹75,021 crore; ~60 lakh households covered by Oct 2026 vs 1 crore target.
+
+**Tamil Nadu state top-up - G.O. (Ms) No. 102, Energy Dept, 19 Sep 2026** (announced in TN Budget, 5 Aug 2026):
+| Size | Central | TN top-up | Total |
+|---|---|---|---|
+| 1kW | ₹30,000 | ₹5,000 | ₹35,000 |
+| 2kW | ₹60,000 | ₹10,000 | ₹70,000 |
+| 3kW+ | ₹78,000 | ₹22,000 | **₹1,00,000** |
+- Domestic (Tariff 1A) TANGEDCO connections only; registration on PM Surya Ghar portal **on/after 5 Aug 2026** (no backdating); grid-connected (hybrid reported OK, off-grid not); empanelled vendor only; reported cap: **first 1,00,000 applicants / ₹50 crore**. Paid by TEDA via DBT after commissioning. **Not applicable in Puducherry** (central only there).
+- Sources are installer blogs + news briefs, not the G.O. text itself. Always write "as of <month year>" and "reported" for the cap; ask the owner if any detail changes.
+
+**Owner's strategy (Oct 2026):** use subsidy urgency (central scheme ends Mar 2027, TN top-up capped) to drive walk-ins and bookings.
+
+**Price inconsistency to resolve with owner:** 3kW post says ₹1.27-1.89 lakh and 11-14 units/day; 3kW page says ₹1.8-2.0 lakh and 12-15 units/day. Site pages after both subsidies: 3kW ~₹88,000, 5kW ~₹2,18,000.
 
 ## Differentiators the site already claims
 "Engineering first": 3 earthing pits, UV-rated DC cables, 80-micron hot-dip galvanized structures (rust-proof for coastal Cuddalore), Tier-1 ALMM panels, TNEB net-meter and PED (Puducherry) paperwork handled.

@@ -34,6 +34,10 @@ Marketing + lead-gen website for Surya's Solar, a residential/commercial rooftop
 - `content/blog/*.md` - blog posts (slug = filename). `content/pages/home.md` - homepage hero/stats/testimonials. `content/settings/general.md` - site title, phone, email, address.
 - `public/sitemap.xml` (generated), `public/robots.txt`, `public/llms.txt` (hand-written AI-crawler summary - keep in sync with business facts and new posts).
 - `../Google_performance_report/` - Search Console / Semrush CSV exports and SEO notes.
+- `../Marketing/MARKETING-PLAYBOOK.md` - positioning, the ₹1 lakh subsidy campaign, content calendar, KPIs, owner decisions. Read it before any marketing/content work; keep it updated.
+
+## Skills for this project
+`suryas-business-facts` (facts), `solar-content-writer` (what to write + how + image prompts), `new-blog-post` (publish mechanics), `new-landing-page` (town/system pages), `seo-health-check` (indexing + Search Console), `ship-site` (deploy).
 
 ## Rules for working on this site
 

@@ -59,7 +59,7 @@ Traditional ACs have a simple, brute-force compressor. It turns on at 100% speed
 
 Because of this advanced internal power circuitry, the PCB is designed to handle a specific range of voltage fluctuations without instantly breaking. Typically, major AC brands (like Daikin, LG, Voltas, and Blue Star) advertise a "safe working voltage range" of **145V to 290V**.
 
-If the incoming AC voltage from the TNEB grid (or your synchronized solar inverter) stays perfectly within this wide 145V–290V window, the AC’s internal circuitry regulates the power itself, and the compressor continues to run smoothly. 
+If the incoming AC voltage from the TNEB grid (or your synchronized solar inverter) stays perfectly within this wide 145V-290V window, the AC’s internal circuitry regulates the power itself, and the compressor continues to run smoothly. 
 
 **However, there are three massive engineering problems with relying solely on this internal protection:**
 

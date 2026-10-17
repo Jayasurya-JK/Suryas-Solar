@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Planning a solar installation in 2026? Get the complete breakdown of solar panel costs in Tamil Nadu, including current prices, available subsidies, and expected savings.
 featuredImage: /images/solar-panel-cost-tamil-nadu-2026.webp
-category: Solar Finance
+category: Cost & Savings
 tags:
   - Solar Cost
   - Solar Price
@@ -45,7 +45,7 @@ This is the most critical long-term investment. Solar panels directly determine 
 Panel types available in Tamil Nadu:
 *   **Budget Tier (Locally assembled, Indian B-grade cells):** ₹18 to ₹22 per Watt
 *   **Mid-Range (Tier-2 brands, genuine A-grade cells):** ₹22 to ₹28 per Watt
-*   **Premium Tier-1 (Waaree, Adani, Tata, Premier Energies – genuine Tier-1 cells):** ₹28 to ₹38 per Watt
+*   **Premium Tier-1 (Waaree, Adani, Tata, Premier Energies - genuine Tier-1 cells):** ₹28 to ₹38 per Watt
 
 At Surya's Solar, we exclusively use Tier-1 manufacturer panels. The performance warranty guarantee means that after 25 years, your panels will still produce at least 80% of their original rated output.
 
@@ -80,11 +80,11 @@ The following prices represent complete, fully installed systems using quality (
 
 | System Size | Components | Installed Price (Pre-Subsidy) | Daily Generation |
 | :--- | :--- | :--- | :--- |
-| **1kW** | 3 × 330W panels, 1kW inverter | ₹70,000 – ₹85,000 | 4 – 5 Units |
-| **2kW** | 6 × 335W panels, 2kW inverter | ₹1,20,000 – ₹1,45,000 | 8 – 10 Units |
-| **3kW** | 9 × 335W panels, 3kW inverter | ₹1,65,000 – ₹2,00,000 | 12 – 15 Units |
-| **5kW** | 15 × 335W panels, 5kW inverter | ₹2,50,000 – ₹3,10,000 | 20 – 25 Units |
-| **10kW** | 25 × 400W panels, 10kW inverter | ₹4,50,000 – ₹5,50,000 | 40 – 50 Units |
+| **1kW** | 3 × 330W panels, 1kW inverter | ₹70,000 - ₹85,000 | 4 - 5 Units |
+| **2kW** | 6 × 335W panels, 2kW inverter | ₹1,20,000 - ₹1,45,000 | 8 - 10 Units |
+| **3kW** | 9 × 335W panels, 3kW inverter | ₹1,65,000 - ₹2,00,000 | 12 - 15 Units |
+| **5kW** | 15 × 335W panels, 5kW inverter | ₹2,50,000 - ₹3,10,000 | 20 - 25 Units |
+| **10kW** | 25 × 400W panels, 10kW inverter | ₹4,50,000 - ₹5,50,000 | 40 - 50 Units |
 
 *Note: Prices vary based on exact panel brand, inverter make, roof type (RCC vs. tiled), cable run length, and additional earthing requirements.*
 

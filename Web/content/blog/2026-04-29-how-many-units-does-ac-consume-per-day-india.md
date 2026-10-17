@@ -5,7 +5,7 @@ author: Surya's Solar Technical Team
 excerpt: >-
   Wondering how much electricity your AC really uses? Get clear calculations on daily unit consumption for 1-ton and 1.5-ton ACs to better manage your energy bills.
 featuredImage: /images/how-many-units-does-ac-consume-per-day-india.webp
-category: Appliances
+category: Electricity Bill & Savings
 tags:
   - Appliances
   - System Sizing

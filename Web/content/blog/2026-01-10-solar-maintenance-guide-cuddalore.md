@@ -6,7 +6,7 @@ excerpt: >-
   rules of cleaning solar panels in Cuddalore's dusty climate to prevent 15-20%
   generation loss. A complete guide to tools, safety, and schedules.
 featuredImage: /images/solar-maintenance-guide-cuddalore.webp
-category: Service & Care
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - Solar Panel Cleaning

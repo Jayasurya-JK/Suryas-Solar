@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Ready to switch to solar in Puducherry? Check out our detailed 2026 price guide covering 1kW, 3kW, and 5kW systems, subsidies, and local installation costs.
 featuredImage: /images/solar-cost-puducherry-2026.webp
-category: Solar Finance
+category: Cost & Savings
 tags:
   - Solar Cost
   - Puducherry
@@ -168,7 +168,7 @@ The central government's **PM Surya Ghar Muft Bijli Yojana** applies to Puducher
 If your property falls within Puducherry's designated Heritage Zone (primarily the French Quarter / White Town area), you may face local civic body restrictions on installing rooftop structures. Always check with the Puducherry municipality or your local civic authority before commissioning an installation in the heritage zone. A reputable local installer will be aware of these restrictions.
 
 **Cyclone Risk:**
-Like coastal Tamil Nadu, Puducherry is directly exposed to Bay of Bengal cyclones (particularly in the October–December northeast monsoon season). Your mounting structure must comply with IS 875 wind load standards for Wind Zone IV. Always ask for the wind load calculation and structural certificate from your installer.
+Like coastal Tamil Nadu, Puducherry is directly exposed to Bay of Bengal cyclones (particularly in the October-December northeast monsoon season). Your mounting structure must comply with IS 875 wind load standards for Wind Zone IV. Always ask for the wind load calculation and structural certificate from your installer.
 
 **Salt Air Corrosion:**
 Puducherry's proximity to the coast means salt-laden air. As with Cuddalore, always insist on Hot-Dip Galvanized steel or marine-grade aluminum mounting structures. Painted mild steel will rust and fail within 3 to 5 years.

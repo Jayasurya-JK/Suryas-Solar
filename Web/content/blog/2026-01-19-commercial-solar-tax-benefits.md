@@ -6,7 +6,7 @@ excerpt: >-
   solar (Section 32) allow you to write off 40% of your Solar Plant value in
   Year 1. A comprehensive guide with ROI tables and tax strategies.
 featuredImage: /images/commercial-solar-tax-benefits.webp
-category: Commercial Solar
+category: Cost & Savings
 author: Surya's Solar Team
 tags:
   - Accelerated Depreciation Solar

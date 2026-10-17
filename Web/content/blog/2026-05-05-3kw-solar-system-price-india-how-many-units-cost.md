@@ -1,11 +1,11 @@
 ---
-title: 3kW Solar Price in Tamil Nadu 2026 (Units, Cost, Payback)
+title: '3kW Solar: How Many Units Per Day, Price & Payback (TN 2026)'
 date: '2026-04-26'
 author: Surya's Solar Engineering Team
 excerpt: >-
-  Is a 3kW solar system right for you? Explore the total cost, daily unit generation, and payback period for India's most popular residential solar setup.
+  A 3kW solar system makes about 11-14 units a day (330-420 a month) in Tamil Nadu and gets the full ₹78,000 PM Surya Ghar subsidy. Price, units and payback explained.
 featuredImage: /images/3kw-solar-system-price-india-2026.webp
-category: Solar Finance
+category: Cost & Savings
 tags:
   - 3kW Solar
   - Solar Cost
@@ -100,15 +100,15 @@ The following prices are for a quality (not budget, not premium) 3kW On-Grid ins
 
 | Component | Specification | Price Range |
 | :--- | :--- | :--- |
-| **Solar Panels (9 × 335W)** | Tier-1 Monocrystalline PERC | ₹75,000 – ₹1,05,000 |
-| **Solar Inverter (3kW)** | Quality brand (Growatt, Solis, Havells) | ₹18,000 – ₹30,000 |
-| **Mounting Structure** | Hot-Dip Galvanized (coastal areas) | ₹12,000 – ₹18,000 |
-| **DC Cables & MC4 Connectors** | 4mm² & 6mm² solar-grade UV-rated | ₹4,000 – ₹6,000 |
-| **DCDB + ACDB + Earthing Kit** | ISI-rated, SPD protection | ₹5,000 – ₹8,000 |
-| **AC Cables & Net Meter Wiring** | 6mm² copper armored | ₹3,000 – ₹5,000 |
-| **Installation Labor & Transport** | 2 to 3 days, professional team | ₹8,000 – ₹12,000 |
-| **TNEB Net Meter Application** | Liaison, documentation support | ₹2,000 – ₹5,000 |
-| **Total Installed Price** | | **₹1,27,000 – ₹1,89,000** |
+| **Solar Panels (9 × 335W)** | Tier-1 Monocrystalline PERC | ₹75,000 - ₹1,05,000 |
+| **Solar Inverter (3kW)** | Quality brand (Growatt, Solis, Havells) | ₹18,000 - ₹30,000 |
+| **Mounting Structure** | Hot-Dip Galvanized (coastal areas) | ₹12,000 - ₹18,000 |
+| **DC Cables & MC4 Connectors** | 4mm² & 6mm² solar-grade UV-rated | ₹4,000 - ₹6,000 |
+| **DCDB + ACDB + Earthing Kit** | ISI-rated, SPD protection | ₹5,000 - ₹8,000 |
+| **AC Cables & Net Meter Wiring** | 6mm² copper armored | ₹3,000 - ₹5,000 |
+| **Installation Labor & Transport** | 2 to 3 days, professional team | ₹8,000 - ₹12,000 |
+| **TNEB Net Meter Application** | Liaison, documentation support | ₹2,000 - ₹5,000 |
+| **Total Installed Price** | | **₹1,27,000 - ₹1,89,000** |
 
 **Average Market Price in Tamil Nadu (2026): ₹1,60,000 to ₹1,90,000.**
 

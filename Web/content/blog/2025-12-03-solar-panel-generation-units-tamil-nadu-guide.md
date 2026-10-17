@@ -1,11 +1,11 @@
 ---
-title: 'Solar Generation Guide: How Many Units Does 1kW Produce in Tamil Nadu?'
+title: 'Solar Units Per Day: 1kW, 2kW, 3kW, 5kW in Tamil Nadu (Table)'
 date: '2025-12-03'
 excerpt: >-
-  Exact daily & monthly generation charts for 1kW, 2kW, 3kW, 5kW solar systems
-  in Tamil Nadu. Check if solar can cover your household consumption.
+  1kW solar makes 4-5 units a day in Tamil Nadu. See daily, monthly and yearly
+  units for 1kW, 2kW, 3kW and 5kW systems, town by town, in one simple table.
 featuredImage: /images/Solar Generation Units Guide.webp
-category: Solar Guide
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - Solar Generation
@@ -46,10 +46,10 @@ Here is a snapshot of what you can expect from different system sizes in Tamil N
 
 | System Size | Daily Units (Avg) | Monthly Units (Avg) | Yearly Units (Avg) | Ideal Bill Range |
 | :--- | :--- | :--- | :--- | :--- |
-| **1 kW** | 4 – 5 units | 120 – 150 units | 1,400 – 1,650 units | < ₹1,000 |
-| **2 kW** | 8 – 10 units | 240 – 300 units | 2,800 – 3,300 units | ₹1,000 – ₹1,800 |
-| **3 kW** | 12 – 14 units | 360 – 420 units | 4,200 – 5,000 units | ₹1,500 – ₹2,500 |
-| **5 kW** | 20 – 22 units | 600 – 660 units | 7,200 – 8,000 units | ₹2,500 – ₹4,500 |
+| **1 kW** | 4 - 5 units | 120 - 150 units | 1,400 - 1,650 units | < ₹1,000 |
+| **2 kW** | 8 - 10 units | 240 - 300 units | 2,800 - 3,300 units | ₹1,000 - ₹1,800 |
+| **3 kW** | 12 - 14 units | 360 - 420 units | 4,200 - 5,000 units | ₹1,500 - ₹2,500 |
+| **5 kW** | 20 - 22 units | 600 - 660 units | 7,200 - 8,000 units | ₹2,500 - ₹4,500 |
 
 ---
 
@@ -60,7 +60,7 @@ Our state is geographically positioned for peak solar performance. We are close 
 *   **Strong Sunlight:** We receive **300+ sunny days** a year. Even during the monsoon, the diffuse light is often enough to generate 30-40% of peak capacity.
 *   **High Irradiation:** The South Indian belt has high solar intensity (approx 5-6 kWh/m²/day).
 *   **Dry Heat Advantage:** Areas like **Panruti and Neyveli** have dry heat, which is better for generation than humid heat. Solar panels lose efficiency as they get hotter, but dry air helps dissipate heat better than humid air.
-*   **Optimal Angles:** Most rooftops in TN allow for an ideal **10–15° south-facing tilt**, which captures the maximum sunlight throughout the day.
+*   **Optimal Angles:** Most rooftops in TN allow for an ideal **10-15° south-facing tilt**, which captures the maximum sunlight throughout the day.
 
 ---
 
@@ -68,33 +68,33 @@ Our state is geographically positioned for peak solar performance. We are close 
 
 Let's dive deeper into each capacity to help you understand which one fits your needs.
 
-### 1 kW Solar System – How Many Units?
-*   **Daily:** 4–5 units
-*   **Monthly:** 120–150 units
-*   **Yearly:** 1,400–1,650 units
+### 1 kW Solar System - How Many Units?
+*   **Daily:** 4-5 units
+*   **Monthly:** 120-150 units
+*   **Yearly:** 1,400-1,650 units
 *   **What it runs:** LED lights, ceiling fans, a TV, and mobile charging. It cannot run an AC or heavy motor.
 *   **Best For:** Small homes with bills below ₹1,000. It's a good entry-level system but offers limited savings.
 
-### 2 kW Solar System – How Many Units?
-*   **Daily:** 8–10 units
-*   **Monthly:** 240–300 units
-*   **Yearly:** 2,800–3,300 units
+### 2 kW Solar System - How Many Units?
+*   **Daily:** 8-10 units
+*   **Monthly:** 240-300 units
+*   **Yearly:** 2,800-3,300 units
 *   **What it runs:** All of the above + a refrigerator and a washing machine (during the day).
-*   **Best For:** Families of 2-3 members with bills around ₹1,000–₹1,800. It covers the base load of a typical middle-class home.
+*   **Best For:** Families of 2-3 members with bills around ₹1,000-₹1,800. It covers the base load of a typical middle-class home.
 
-### 3 kW Solar System – How Many Units? (Most Popular)
-*   **Daily:** 12–14 units
-*   **Monthly:** 360–420 units
-*   **Yearly:** 4,200–5,000 units
+### 3 kW Solar System - How Many Units? (Most Popular)
+*   **Daily:** 12-14 units
+*   **Monthly:** 360-420 units
+*   **Yearly:** 4,200-5,000 units
 *   **What it runs:** All of the above + a 1.5-ton AC (for 4-5 hours) + a water pump (0.5 HP).
-*   **Best For:** The standard choice for a 2BHK home with a family of 4. Fits bills of ₹1,500–₹2,500. It provides the perfect balance of cost and savings.
+*   **Best For:** The standard choice for a 2BHK home with a family of 4. Fits bills of ₹1,500-₹2,500. It provides the perfect balance of cost and savings.
 
-### 5 kW Solar System – How Many Units? (Best Value)
-*   **Daily:** 20–22 units
-*   **Monthly:** 600–660 units
-*   **Yearly:** 7,200–8,000 units
+### 5 kW Solar System - How Many Units? (Best Value)
+*   **Daily:** 20-22 units
+*   **Monthly:** 600-660 units
+*   **Yearly:** 7,200-8,000 units
 *   **What it runs:** Multiple ACs, geysers, heavy motors, and all household appliances.
-*   **Best For:** Large families with bills of ₹2,500–₹4,000. It offers the best ROI because you export a lot of power to the grid, building up credit for rainy days.
+*   **Best For:** Large families with bills of ₹2,500-₹4,000. It offers the best ROI because you export a lot of power to the grid, building up credit for rainy days.
 
 ---
 
@@ -104,11 +104,11 @@ Not all sunshine is equal. Here's how generation varies across our service regio
 
 | Region | Daily Units/kW | Reason |
 | :--- | :--- | :--- |
-| **Panruti / Neyveli** | 4.8 – 5.2 | Dry heat + clear skies boost efficiency. These are the best generation zones. |
-| **Cuddalore** | 4.5 – 4.8 | Coastal humidity and moderate dust slightly reduce output compared to inland areas. |
-| **Puducherry** | 4.3 – 4.7 | High humidity and salt mist affect performance slightly. Regular cleaning is needed here. |
-| **Chennai** | 4.0 – 4.6 | Urban pollution and humidity can lower generation. |
-| **Coimbatore** | 4.4 – 4.8 | Balanced weather provides consistent output throughout the year. |
+| **Panruti / Neyveli** | 4.8 - 5.2 | Dry heat + clear skies boost efficiency. These are the best generation zones. |
+| **Cuddalore** | 4.5 - 4.8 | Coastal humidity and moderate dust slightly reduce output compared to inland areas. |
+| **Puducherry** | 4.3 - 4.7 | High humidity and salt mist affect performance slightly. Regular cleaning is needed here. |
+| **Chennai** | 4.0 - 4.6 | Urban pollution and humidity can lower generation. |
+| **Coimbatore** | 4.4 - 4.8 | Balanced weather provides consistent output throughout the year. |
 
 ---
 
@@ -116,9 +116,9 @@ Not all sunshine is equal. Here's how generation varies across our service regio
 
 Solar generation isn't constant. It follows a curve throughout the year.
 
-*   **Summer (Mar–Jun):** Peak generation. You will see the highest numbers on your net meter. However, extreme heat (above 40°C) can slightly reduce panel voltage.
-*   **Monsoon (Jul–Sep):** Cloudy days will cause a dip. Generation might drop to 40-60% on heavy rain days. But remember, rain also cleans your panels!
-*   **Winter (Oct–Feb):** This is the "Goldilocks" zone. Clear skies and cooler temperatures often lead to very stable and highly efficient generation.
+*   **Summer (Mar-Jun):** Peak generation. You will see the highest numbers on your net meter. However, extreme heat (above 40°C) can slightly reduce panel voltage.
+*   **Monsoon (Jul-Sep):** Cloudy days will cause a dip. Generation might drop to 40-60% on heavy rain days. But remember, rain also cleans your panels!
+*   **Winter (Oct-Feb):** This is the "Goldilocks" zone. Clear skies and cooler temperatures often lead to very stable and highly efficient generation.
 
 ---
 

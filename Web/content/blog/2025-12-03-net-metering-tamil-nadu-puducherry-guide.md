@@ -1,11 +1,11 @@
 ---
-title: TNEB / TNPDCL Net Metering Guide 2026 — Zero-Bill Homes
+title: TNEB / TNPDCL Net Metering Guide 2026 - Zero-Bill Homes
 date: '2025-12-03'
 excerpt: >-
   Complete guide to TNEB & Puducherry Net Metering. Learn how to export excess
   power, earn credits, and reduce your electricity bill to zero.
 featuredImage: /images/Net-Metering Guide.webp
-category: Solar Guide
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - Net Metering
@@ -168,7 +168,7 @@ Let's see the real math for two typical scenarios.
 | **Approval Time** | Medium (2-4 weeks) | Faster (1-3 weeks) |
 | **Meter Type** | Bi-directional / Smart | Bi-directional |
 | **Meter Cost** | Higher | Lower |
-| **Ideal For** | 1–10 kW | 1–5 kW |
+| **Ideal For** | 1-10 kW | 1-5 kW |
 | **Climate Impact** | Heat + Dust | Coastal salt + wind |
 
 ---

@@ -7,7 +7,7 @@ excerpt: >-
   panels, rusted structures, and hidden warranty exclusions to save your
   investment.
 featuredImage: /images/solar-scam-warnings-cuddalore.webp
-category: Buyer Awareness
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - Solar Scams India

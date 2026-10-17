@@ -102,6 +102,10 @@ Primary money pages:
 - `solar for electricity bill`: use `/blog/2026-05-01-how-much-solar-for-5000-electricity-bill-tamil-nadu`
 - `home solar sizing`: use `/blog/2026-05-02-how-much-solar-needed-for-home-india`
 - `solar savings and ROI`: use `/blog/2026-05-03-how-much-can-you-save-with-solar-panels-india`
+- `solar subsidy Tamil Nadu / ₹1 lakh / PM Surya Ghar + TN top-up`: use `/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry` (flagship of the 2026-27 subsidy campaign)
+- `PM Surya Ghar Cuddalore (local process)`: use `/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026`
+- `solar units per day (1kW/2kW/3kW/5kW)`: use `/blog/2025-12-03-solar-panel-generation-units-tamil-nadu-guide`
+- `TNEB slab rates / EB bill calculation`: use `/blog/2026-04-30-how-to-calculate-eb-bill-tamil-nadu-examples`
 
 Supporting posts should link back to the relevant primary money page instead of repeating the same title intent.
 

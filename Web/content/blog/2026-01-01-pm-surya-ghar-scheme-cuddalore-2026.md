@@ -6,7 +6,7 @@ excerpt: >-
   in Cuddalore. We cover the new eligibility rules, step-by-step National Portal
   application, TNEB net metering process, and common rejection reasons.
 featuredImage: /images/pm-surya-ghar-scheme-cuddalore-2026.webp
-category: Government Schemes
+category: Subsidy & Schemes
 author: Surya's Solar Team
 tags:
   - PM Surya Ghar 2026
@@ -14,13 +14,15 @@ tags:
   - Cuddalore Solar Application
   - TNEB Net Meter Rules
   - Free Electricity Scheme
-updated: '2026-04-26'
+updated: '2026-10-17'
 ---
+> **October 2026 update:** Tamil Nadu has added a **₹22,000 state top-up** (G.O. 102) on top of the ₹78,000 PM Surya Ghar subsidy, so Cuddalore homes installing 3kW or more can now get **up to ₹1 lakh**. It applies to registrations from 5 August 2026 and is reported to be limited to the first 1 lakh homes. Full rules: [₹1 lakh solar subsidy in Tamil Nadu](/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry).
+
 Welcome to **2026**. If you are a homeowner in Cuddalore, Neyveli, or Pondicherry, you have likely heard about the massive push for solar energy. But amidst the headlines, there is often confusion. Is the electricity really free? Is the subsidy amount guaranteed? How long does the TNEB process actually take?
 
 The **PM Surya Ghar: Muft Bijli Yojana** has evolved into one of the most successful green energy initiatives in India. For residents of Tamil Nadu, specifically in high-solar-yield districts like Cuddalore, this scheme is not just an environmental choice-it is a financial no-brainer.
 
-At **Surya's Solar**, we have successfully guided hundreds of local families through this process. We’ve seen the approvals, the inspections, and most importantly, the subsidy credits hitting bank accounts. 
+At **Surya's Solar**, a registered vendor on the official PM Surya Ghar portal with 122 installations under the scheme, we have guided over a hundred local families through this process. We’ve seen the approvals, the inspections, and most importantly, the subsidy credits hitting bank accounts. 
 
 In this exhaustive 2026 guide, we will walk you through every single detail of the scheme, ensuring your application is approved on the first try.
 

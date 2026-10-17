@@ -61,7 +61,7 @@ const SYSTEM = {
   recommended: '2BHK Home',
   subsidyAmount: '₹78,000',
   priceFrom: '₹1,80,000 – ₹2,00,000',
-  priceAfterSubsidy: '~₹1,10,000',
+  priceAfterSubsidy: '~₹88,000',
   billRange: '₹1,500 – ₹3,500',
   appliances: [
     { name: '1.5 Ton AC', qty: '1 unit (6–8 hrs)', Icon: AcIcon },
@@ -77,8 +77,8 @@ export default function ThreeKwPage({ settings }) {
   return (
     <>
       <Head>
-        <title>3kW Solar Price in Tamil Nadu 2026 (Net After Subsidy)</title>
-        <meta name="description" content="3kW rooftop solar in Tamil Nadu: typical net cost after PM Surya Ghar (₹78,000) plus announced state top-up. 12–15 units/day. Free Cuddalore site visit." />
+        <title>3kW Solar With ₹1 Lakh Subsidy in Tamil Nadu (2026 Price)</title>
+        <meta name="description" content="3kW rooftop solar in Cuddalore and Tamil Nadu: ₹78,000 PM Surya Ghar + ₹22,000 TN top-up = ₹1 lakh subsidy. 12-15 units/day. Registered vendor. Free site visit." />
         <link rel="canonical" href="https://www.suryassolar.com/systems/3kw-solar-system-with-subsidy" />
         <meta property="og:title" content="3kW Solar Panel System Price in Tamil Nadu (With Subsidy)" />
         <meta property="og:description" content="Get the complete breakdown of a 3kW solar system price in Tamil Nadu. Claim the ₹78,000 PM Surya Ghar Subsidy. Perfect for 2BHK homes." />
@@ -209,12 +209,19 @@ export default function ThreeKwPage({ settings }) {
                         </div>
                         <span className="text-green-400 font-bold text-base">−{SYSTEM.subsidyAmount}</span>
                       </div>
+                      <div className="flex items-center justify-between pb-5 border-b border-white/10">
+                        <div>
+                          <div className="inline-block bg-green-500/20 text-green-300 text-xs px-2 py-0.5 rounded font-bold mb-1">MINUS</div>
+                          <div className="text-white font-semibold">Tamil Nadu Top-up (G.O. 102)*</div>
+                        </div>
+                        <span className="text-green-400 font-bold text-base">−₹22,000</span>
+                      </div>
                       <div className="flex items-center justify-between pt-2">
                         <div className="text-white font-semibold text-lg">You Pay</div>
                         <span className="text-yellow-300 font-black text-4xl">{SYSTEM.priceAfterSubsidy}</span>
                       </div>
                     </div>
-                    <p className="text-white/40 text-xs mb-6">*A 3kW system qualifies for the MAXIMUM subsidy slab. 4kW or 5kW does NOT increase your subsidy.</p>
+                    <p className="text-white/40 text-xs mb-6">*A 3kW system qualifies for the MAXIMUM subsidy slab. 4kW or 5kW does NOT increase your subsidy. *TN top-up: residential homes registered on PM Surya Ghar from 5 Aug 2026, first 1 lakh applicants. You pay the full price first; both subsidies are credited to your bank.</p>
                     <a href="#booking" className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-base transition-all">
                       Get Exact Quote for My Home
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

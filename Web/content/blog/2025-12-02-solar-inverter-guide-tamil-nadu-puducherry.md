@@ -2,10 +2,10 @@
 title: 'Solar Inverter Price List Tamil Nadu (2025) - Microtek, Luminous, Solis'
 date: '2025-12-02'
 excerpt: >-
-  On-grid vs Hybrid inverters – which is best for Cuddalore? Compare 2025 prices
+  On-grid vs Hybrid inverters - which is best for Cuddalore? Compare 2025 prices
   of top inverter brands like Solis, Growatt & Luminous.
 featuredImage: /images/Blog 5.webp
-category: Solar Guide
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - Solar Inverter
@@ -43,7 +43,7 @@ Understanding the types helps you choose the right one for your home. The choice
 ### a) On-Grid (Grid-Tied) Inverter
 This is the most common type for residential rooftop systems in Tamil Nadu.
 *   **How it works:** It syncs with the TNEB grid. Your home uses solar power first, and any excess is exported to the grid via a net meter.
-*   **Pros:** Highest efficiency (97–99%), lower cost, no battery maintenance.
+*   **Pros:** Highest efficiency (97-99%), lower cost, no battery maintenance.
 *   **Cons:** It shuts down during a power cut (safety requirement).
 *   **Best For:** Homes in **Cuddalore, Neyveli, and Panruti** with stable grid power who want to reduce electricity bills to zero.
 
@@ -75,9 +75,9 @@ We have selected the top 6 brands that perform exceptionally well in our region.
 
 ### 1. Solis Inverters
 One of the most trusted on-grid inverter brands globally.
-*   **Why we like it:** Solis offers excellent MPPT efficiency (97%–98%) and is built to withstand the heat of Tamil Nadu.
+*   **Why we like it:** Solis offers excellent MPPT efficiency (97%-98%) and is built to withstand the heat of Tamil Nadu.
 *   **Reliability:** Very low failure rate.
-*   **Ideal For:** 1–10 kW home systems in **Cuddalore and Panruti**.
+*   **Ideal For:** 1-10 kW home systems in **Cuddalore and Panruti**.
 
 ### 2. SolaX Inverters
 A leading brand in the hybrid inverter space.
@@ -115,10 +115,10 @@ Here is an estimated price range for different inverter types in our market. Not
 
 | Inverter Type | Capacity | Price Range (2025) | Best Use |
 | :--- | :--- | :--- | :--- |
-| **On-Grid** | 3 kW | ₹20,000 – ₹40,000 | Homes without battery |
-| **Hybrid** | 3 kW | ₹40,000 – ₹75,000 | Backup + grid outage areas |
-| **Off-Grid** | 2–3 kVA | ₹25,000 – ₹45,000 | No grid / rural |
-| **Microinverters** | Per panel | ₹12,000 – ₹17,000 | Premium homes |
+| **On-Grid** | 3 kW | ₹20,000 - ₹40,000 | Homes without battery |
+| **Hybrid** | 3 kW | ₹40,000 - ₹75,000 | Backup + grid outage areas |
+| **Off-Grid** | 2-3 kVA | ₹25,000 - ₹45,000 | No grid / rural |
+| **Microinverters** | Per panel | ₹12,000 - ₹17,000 | Premium homes |
 
 ---
 

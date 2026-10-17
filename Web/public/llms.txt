@@ -18,6 +18,8 @@
 - 3kW: ₹1,80,000 - ₹2,00,000 before subsidy; about ₹1,10,000 after PM Surya Ghar subsidy. Suits monthly bills of ₹1,500 - ₹3,500. Generates about 12-15 units per day.
 - 5kW: ₹3,00,000 - ₹3,30,000 before subsidy; about ₹2,40,000 after subsidy. Suits monthly bills of ₹4,000 - ₹7,000.
 - PM Surya Ghar subsidy: ₹30,000 per kW for the first 2kW plus ₹18,000 for the 3rd kW = ₹78,000 maximum (3kW and above).
+- Tamil Nadu state top-up (G.O. 102, Sept 2026): ₹5,000 (1kW), ₹10,000 (2kW), ₹22,000 (3kW+), so a Tamil Nadu home can get up to ₹1,00,000 in total. Residential connections registered on PM Surya Ghar from 5 Aug 2026; reported limit of the first 1 lakh homes. Not applicable in Puducherry.
+- Surya's Solar is a registered vendor on the official PM Surya Ghar portal: 122 installations, 420 kWp, rated 5/5 from 149 ratings (Oct 2026).
 - Final price depends on roof type, structure height, panel/inverter brand and site conditions. Free home visit for an exact quote.
 
 ## Main pages
@@ -40,7 +42,7 @@
 - [Solar Cost in Puducherry 2026](https://www.suryassolar.com/blog/2026-05-08-solar-cost-puducherry-2026-1kw-3kw-5kw-price-guide)
 - [Solar Panel Cost in Cuddalore](https://www.suryassolar.com/blog/2025-12-01-how-much-does-residential-solar-installation-cost-in-cuddalore)
 - [PM Surya Ghar Scheme 2026 in Cuddalore](https://www.suryassolar.com/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026)
-- [PM Surya Ghar + TN Solar Subsidy](https://www.suryassolar.com/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry)
+- [₹1 Lakh Solar Subsidy in Tamil Nadu (₹78,000 + ₹22,000)](https://www.suryassolar.com/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry)
 - [How Much Can You Save With Solar Panels](https://www.suryassolar.com/blog/2026-05-03-how-much-can-you-save-with-solar-panels-india)
 - [Solar ROI and Payback in Tamil Nadu](https://www.suryassolar.com/blog/2025-12-01-residential-solar-payback-roi-tamil-nadu)
 - [Solar ROI Calculator: Break-Even](https://www.suryassolar.com/blog/2026-01-08-solar-roi-calculator-break-even-analysis)

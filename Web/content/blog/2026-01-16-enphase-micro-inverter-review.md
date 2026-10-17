@@ -7,7 +7,7 @@ excerpt: >-
   most premium solar choice in 2026. A detailed comparison with String
   Inverters.
 featuredImage: /images/enphase-micro-inverter-review.webp
-category: Product Reviews
+category: Products & Comparisons
 author: Surya's Solar Team
 tags:
   - Enphase vs String Inverter

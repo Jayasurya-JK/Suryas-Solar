@@ -44,12 +44,12 @@ The most reliable and accurate data source for sizing your solar system is not a
 Pull out your last 4 to 6 bi-monthly bills (covering a full year). Find the "Units Consumed" figure on each bill. This gives you a complete picture of your seasonal consumption pattern. 
 
 For example, a household might consume:
-*   **Jan–Feb:** 380 units (mild winter, no AC)
-*   **Mar–Apr:** 550 units (warming up, AC starting)
-*   **May–Jun:** 900 units (peak summer, AC running all night)
-*   **Jul–Aug:** 700 units (hot and humid, moderate AC)
-*   **Sep–Oct:** 500 units (post-monsoon)
-*   **Nov–Dec:** 350 units (cool, fans only)
+*   **Jan-Feb:** 380 units (mild winter, no AC)
+*   **Mar-Apr:** 550 units (warming up, AC starting)
+*   **May-Jun:** 900 units (peak summer, AC running all night)
+*   **Jul-Aug:** 700 units (hot and humid, moderate AC)
+*   **Sep-Oct:** 500 units (post-monsoon)
+*   **Nov-Dec:** 350 units (cool, fans only)
 *   **Annual Total: ~3,380 units**
 
 Now calculate your average bi-monthly consumption: 3,380 ÷ 6 = **563 units per bi-monthly cycle.**
@@ -98,10 +98,10 @@ For those who prefer a direct reference, our engineering team has compiled the f
 
 | Monthly EB Bill (Approx.) | Bi-Monthly Units | Recommended System | Daily Generation | Annual Savings |
 | :--- | :--- | :--- | :--- | :--- |
-| ₹500 – ₹1,000 | 150 – 250 Units | 1kW On-Grid | ~4-5 Units | ₹5,000 – ₹8,000 |
-| ₹1,500 – ₹2,500 | 350 – 450 Units | 2kW On-Grid | ~9-10 Units | ₹12,000 – ₹18,000 |
-| ₹3,000 – ₹5,000 | 550 – 750 Units | **3kW On-Grid** | ~13-15 Units | ₹22,000 – ₹30,000 |
-| ₹5,000 – ₹8,000 | 800 – 1,100 Units | **5kW On-Grid** | ~20-25 Units | ₹35,000 – ₹50,000 |
+| ₹500 - ₹1,000 | 150 - 250 Units | 1kW On-Grid | ~4-5 Units | ₹5,000 - ₹8,000 |
+| ₹1,500 - ₹2,500 | 350 - 450 Units | 2kW On-Grid | ~9-10 Units | ₹12,000 - ₹18,000 |
+| ₹3,000 - ₹5,000 | 550 - 750 Units | **3kW On-Grid** | ~13-15 Units | ₹22,000 - ₹30,000 |
+| ₹5,000 - ₹8,000 | 800 - 1,100 Units | **5kW On-Grid** | ~20-25 Units | ₹35,000 - ₹50,000 |
 | ₹8,000+ | 1,100+ Units | 7.5kW or 10kW | ~35-50 Units | ₹60,000+ |
 
 ---

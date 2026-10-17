@@ -6,7 +6,7 @@ excerpt: >-
   'Banked Units'? We decode the new TNEB Digital Net Meter bill format so you
   never overpay. Includes 2026 Tariff explanations.
 featuredImage: /images/understanding-tneb-solar-bill.webp
-category: Solar Finance
+category: Cost & Savings
 author: Surya's Solar Team
 tags:
   - TNEB Solar Bill Explained

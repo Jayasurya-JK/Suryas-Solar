@@ -7,7 +7,7 @@ excerpt: >-
   swapping your electricity bill for a Solar EMI creates positive cash flow from
   Day 1.
 featuredImage: /images/solar-emi-loans-tamil-nadu-2026.webp
-category: Solar Finance
+category: Cost & Savings
 author: Surya's Solar Team
 tags:
   - Solar Loan Tamil Nadu

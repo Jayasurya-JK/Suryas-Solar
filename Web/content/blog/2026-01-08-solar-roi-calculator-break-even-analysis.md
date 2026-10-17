@@ -7,7 +7,7 @@ excerpt: >-
   allow you to recover your full investment in just 3.2 years, followed by 2
   million rupees in lifetime savings.
 featuredImage: /images/solar-roi-calculator-break-even-analysis.webp
-category: Solar Finance
+category: Cost & Savings
 author: Surya's Solar Team
 tags:
   - Solar ROI Tamil Nadu

@@ -6,7 +6,7 @@ excerpt: >-
   with ACs? We break down the load calculation, TNEB slab rates, and generation
   data for Cuddalore to give you a clear 'Yes' or 'No'.
 featuredImage: /images/is-3kw-solar-enough-for-3bhk-2026.webp
-category: Solar Education
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - 3kW Solar System

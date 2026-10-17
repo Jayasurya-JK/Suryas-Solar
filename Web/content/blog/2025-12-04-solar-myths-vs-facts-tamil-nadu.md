@@ -5,7 +5,7 @@ excerpt: >-
   Debunking common solar myths in Tamil Nadu. Learn the truth about running ACs
   on solar, ongoing maintenance, and 'Zero Bill' promises.
 featuredImage: /images/Solar Myths vs Facts.webp
-category: Solar Guide
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - Solar Myths
@@ -37,12 +37,12 @@ Let's tackle the biggest misunderstandings head-on.
 
 ### MYTH 1: Solar works only when sunlight is very strong
 **FACT:** Solar panels work on light intensity (photons), not just heat. Even in cloudy weather, modern panels generate power.
-*   **The Reality:** In Tamil Nadu, you can achieve 4–5 units/kW even during cloudy seasons. While generation drops during heavy rain, diffuse light still produces energy.
+*   **The Reality:** In Tamil Nadu, you can achieve 4-5 units/kW even during cloudy seasons. While generation drops during heavy rain, diffuse light still produces energy.
 *   **Tech Update:** Modern **Mono PERC** and **Bifacial** panels are designed to capture low-light energy efficiently, making them perfect for early mornings and late evenings.
 
 ### MYTH 2: Solar makes “Zero Bill” for everyone
 **FACT:** A "Zero Bill" is possible but not guaranteed for everyone. It depends entirely on your system size versus your consumption.
-*   **The Reality:** A 3kW–5kW system can eliminate bills for many homes, but if you run 3 ACs all night on a 3kW system, you will still have a bill.
+*   **The Reality:** A 3kW-5kW system can eliminate bills for many homes, but if you run 3 ACs all night on a 3kW system, you will still have a bill.
 *   **The Math:** Net-metering calculates the difference between import and export. If you export more than you import, your bill is zero (plus fixed charges). If you consume more, you pay the difference.
 
 ### MYTH 3: Solar panels damage the roof
@@ -58,18 +58,18 @@ Let's tackle the biggest misunderstandings head-on.
 ### MYTH 5: Solar cannot run AC
 **FACT:** Solar absolutely CAN run ACs. This is the biggest myth of all!
 *   **3kW System:** Can run one 1.5-ton AC comfortably for 4-5 hours during the day.
-*   **5kW System:** Can run 1–2 ACs easily during the day along with other loads.
+*   **5kW System:** Can run 1-2 ACs easily during the day along with other loads.
 *   **Hybrid Inverters:** Can even run ACs during power cuts if the battery bank is sufficient (though this drains batteries quickly).
 
 ### MYTH 6: Solar panels need cleaning every day
-**FACT:** You only need to clean panels **2–3 times a month** to maintain efficiency.
+**FACT:** You only need to clean panels **2-3 times a month** to maintain efficiency.
 *   **The Reality:** In summer, dust builds up faster, requiring cleaning every 10 days. During the monsoon, the rain does the job for you!
 *   **Why it matters:** A layer of dust can reduce output by 15-20%, so periodic cleaning is important, but daily scrubbing is unnecessary.
 
 ### MYTH 7: Poly panels are cheaper and enough for homes
 **FACT:** Polycrystalline technology (blue panels) is outdated.
 *   **The Reality:** While cheaper upfront, they are less efficient, degrade faster, and require more roof space.
-*   **Recommendation:** **Mono PERC and TOPCon** panels (black panels) offer 20–22% efficiency, better low-light performance, and a much better ROI over 25 years. The slight price difference is worth it for the extra generation.
+*   **Recommendation:** **Mono PERC and TOPCon** panels (black panels) offer 20-22% efficiency, better low-light performance, and a much better ROI over 25 years. The slight price difference is worth it for the extra generation.
 
 ### MYTH 8: Solar battery is compulsory
 **FACT:** Batteries are **optional**.
@@ -78,14 +78,14 @@ Let's tackle the biggest misunderstandings head-on.
 
 ### MYTH 9: Net-metering installation is very hard
 **FACT:** While the government process involves paperwork, it is not "hard" for the customer because the vendor does it.
-*   **The Reality:** **Surya’s Solar** handles the entire TNEB/PED approval process for you. It typically takes 2–4 weeks depending on the region. You just need to provide documents; we handle the liaisoning.
+*   **The Reality:** **Surya’s Solar** handles the entire TNEB/PED approval process for you. It typically takes 2-4 weeks depending on the region. You just need to provide documents; we handle the liaisoning.
 
 ### MYTH 10: Solar is too expensive
 **FACT:** Solar is more affordable than ever, especially with the **PM Surya Ghar Subsidy**.
 *   **1kW:** ~₹40,000 (after subsidy)
 *   **2kW:** ~₹80,000 (after subsidy)
 *   **3kW:** ~₹1.1 Lakh (after subsidy)
-*   **ROI:** With a payback period of just 3–5 years and a lifespan of 25 years, it is one of the best financial investments you can make-better than a fixed deposit!
+*   **ROI:** With a payback period of just 3-5 years and a lifespan of 25 years, it is one of the best financial investments you can make-better than a fixed deposit!
 
 ---
 
@@ -93,9 +93,9 @@ Let's tackle the biggest misunderstandings head-on.
 
 | Myth | Reality |
 | :--- | :--- |
-| **Solar can’t run AC** | 5kW system runs 1–2 ACs easily |
+| **Solar can’t run AC** | 5kW system runs 1-2 ACs easily |
 | **Solar damages roof** | MNRE structures protect roofs; no drilling options available |
-| **Needs daily cleaning** | Only 2–3 times/month is sufficient |
+| **Needs daily cleaning** | Only 2-3 times/month is sufficient |
 | **Works only in summer** | Works all year round, even in cloudy weather |
 | **Battery required** | Optional; On-grid systems work without batteries |
 | **Hard net-metering** | Simple process; installer handles approvals |

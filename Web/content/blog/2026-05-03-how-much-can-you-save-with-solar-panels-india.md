@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Curious about the financial benefits of solar? Discover the real savings, ROI, and long-term financial advantages of installing solar panels for your home in India.
 featuredImage: /images/how-much-can-you-save-with-solar-panels-india.webp
-category: Solar Finance
+category: Cost & Savings
 tags:
   - Solar Savings
   - ROI

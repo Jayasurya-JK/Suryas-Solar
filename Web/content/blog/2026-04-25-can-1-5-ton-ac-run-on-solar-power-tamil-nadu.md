@@ -1,11 +1,11 @@
 ---
-title: Can a 1.5 Ton AC Run on Solar Power in Tamil Nadu? (2026 Ultimate Guide)
+title: 'Can a 1.5 Ton AC Run on Solar? Yes - Here Is the kW You Need'
 date: '2026-04-25'
 author: Surya's Solar Engineering Team
 excerpt: >-
-  Can a 1.5-ton AC run on solar power in Tamil Nadu? Learn exactly how many solar panels you need, the best system type, and how to eliminate your summer cooling bills.
+  Yes. A 3kW on-grid system (12-15 units a day) covers a 1.5 ton inverter AC plus home load in Tamil Nadu. For power cuts you need a 5kW hybrid. Full math inside.
 featuredImage: /images/can-1-5-ton-ac-run-on-solar-power-tamil-nadu.webp
-category: Appliances
+category: Electricity Bill & Savings
 tags:
   - Appliances
   - System Sizing

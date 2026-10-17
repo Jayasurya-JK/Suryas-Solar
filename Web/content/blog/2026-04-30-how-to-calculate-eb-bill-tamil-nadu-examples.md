@@ -1,11 +1,11 @@
 ---
-title: 'TN EB Bill 2026: 200 Free Units vs the 500-Unit Cliff'
+title: 'TNEB Slab Rates 2026 & EB Bill Calculation (With Examples)'
 date: '2026-04-26'
 author: Surya's Solar Technical Team
 excerpt: >-
-  Confused by TNEB slab rates? Learn how to calculate your Tamil Nadu electricity bill easily with clear examples, helping you track and reduce your monthly expenses.
+  TNEB domestic slab rates for 2026, the new 200 free units rule and the 500-unit cliff, with worked EB bill examples so you can check your own TNPDCL bill.
 featuredImage: /images/how-to-calculate-eb-bill-tamil-nadu-examples.webp
-category: Electricity Bill
+category: Electricity Bill & Savings
 tags:
   - Electricity Bill
   - Energy Saving
@@ -31,7 +31,7 @@ For millions of residents across Tamil Nadu-from Chennai and Puducherry to Cudda
 
 You look at the total "Units Consumed" and you look at the "Total Amount Due." But how did 650 units turn into a massive ₹4,300 bill? Why did your neighbor, who consumed 450 units, only pay a fraction of that?
 
-**2026 policy update (from 10 May 2026):** domestic consumers whose *bi-monthly* use is **500 units or less** now get **200 units free** (earlier this was 100). If you cross **500 units**, the free benefit stays **100 units**. Energy Minister C.T.R. Nirmalkumar also said there is **no CPI tariff hike this year**—so a sudden July bill spike is usually more AC use or a meter/reading issue, not a secret rate increase. Always match the numbers on your actual TNPDCL bill.
+**2026 policy update (from 10 May 2026):** domestic consumers whose *bi-monthly* use is **500 units or less** now get **200 units free** (earlier this was 100). If you cross **500 units**, the free benefit stays **100 units**. Energy Minister C.T.R. Nirmalkumar also said there is **no CPI tariff hike this year** - so a sudden July bill spike is usually more AC use or a meter/reading issue, not a secret rate increase. Always match the numbers on your actual TNPDCL bill.
 
 The math never seems to add up if you try to multiply your units by a single, flat rate. This is because TNEB does not use a flat rate; it uses a highly complex "Telescopic Tariff Slab" system. 
 
@@ -57,7 +57,7 @@ Here are the official TNEB domestic tariff slabs (approximate rates as of recent
 *   **401 to 500 Units:** ₹6.00 per unit
 
 ### Scenario B: If total consumption crosses 500 Units (501 Units and above):
-*   **0 to 100 Units:** ₹0.00 (Free — the extra 100 free units do **not** apply above 500)
+*   **0 to 100 Units:** ₹0.00 (Free - the extra 100 free units do **not** apply above 500)
 *   **101 to 400 Units:** ₹4.50 per unit *(Subsidy heavily reduced)*
 *   **401 to 500 Units:** ₹6.00 per unit
 *   **501 to 600 Units:** ₹8.00 per unit

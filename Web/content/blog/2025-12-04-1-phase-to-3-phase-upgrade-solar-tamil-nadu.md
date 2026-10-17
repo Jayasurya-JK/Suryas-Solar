@@ -5,7 +5,7 @@ excerpt: >-
   Do you need 3-phase for 3kW solar? Understand TNEB rules, upgrade costs, and
   procedure for converting single phase to three phase service.
 featuredImage: /images/1-Phase to 3-Phase Upgrade.webp
-category: Solar Guide
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - 3-Phase Upgrade
@@ -39,7 +39,7 @@ Here is a quick reference to see if you need an upgrade based on your solar syst
 
 Let's break down the requirements based on system size and TNEB regulations.
 
-### 1 kW – 2 kW Systems
+### 1 kW - 2 kW Systems
 *   **Verdict:** Works perfectly on single-phase.
 *   **Why:** The load is small enough for standard wiring to handle. The current generated (approx 4-9 Amps) is well within the safety limits of a single-phase line.
 *   **Action:** No upgrade needed. You can proceed with installation immediately.
@@ -75,7 +75,7 @@ It's not just about rules; it's about performance, safety, and grid stability.
 
 The cost is not fixed and varies depending on your local EB office, the distance from the pole, and the wiring work required inside your home.
 
-### Typical Cost Range: **₹8,000 – ₹18,000**
+### Typical Cost Range: **₹8,000 - ₹18,000**
 
 ### Breakdown of Costs:
 *   **Application Fee:** Paid to TNEB/PED (approx ₹1,000 - ₹2,000).
@@ -113,7 +113,7 @@ Understanding this helps you plan your home's energy future.
 *   **Limitations:** Cannot run multiple heavy loads simultaneously without tripping the MCB.
 
 ### Three-Phase Can Support:
-*   **Solar:** 3kW – 10kW+ systems.
+*   **Solar:** 3kW - 10kW+ systems.
 *   **Appliances:** Multiple ACs (1.5 ton+), geysers, large motors (2 HP+), induction stoves.
 *   **Benefits:** Multi-floor buildings can have separate phases for each floor.
 *   **Future:** Essential for **EV charging stations** (7kW chargers require 3-phase).

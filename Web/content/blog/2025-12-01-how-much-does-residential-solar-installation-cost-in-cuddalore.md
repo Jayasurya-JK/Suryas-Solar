@@ -5,7 +5,7 @@ excerpt: >-
   Get the latest 2025 solar price list for Cuddalore. Breakdown of 1kW, 3kW, 5kW
   costs after PM Surya Ghar subsidy. Calculate your savings now.
 featuredImage: /images/uploads/7.webp
-category: Solar Guide
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - Solar Cost
@@ -30,12 +30,12 @@ Here is the estimated price list for **On-Grid Solar Systems** in the Cuddalore 
 
 | System Capacity | Approx. Price Range (₹) | Avg. Units Generated / Day | Suitable For |
 | :--- | :--- | :--- | :--- |
-| **1 kW** | ₹60,000 – ₹75,000 | 4 – 5 Units | Small Home (Lights & Fans) |
-| **2 kW** | ₹1,10,000 – ₹1,30,000 | 8 – 10 Units | 2 BHK (Fridge, TV, Lights) |
-| **3 kW** | ₹1,60,000 – ₹1,90,000 | 12 – 15 Units | 3 BHK + 1 AC (Most Popular) |
-| **5 kW** | ₹2,60,000 – ₹3,00,000 | 20 – 25 Units | Large Home + 2-3 ACs |
-| **8 kW** | ₹4,20,000 – ₹4,80,000 | 32 – 40 Units | Villas / Large Power Needs |
-| **10 kW** | ₹5,20,000 – ₹6,00,000 | 40 – 50 Units | Commercial / Joint Families |
+| **1 kW** | ₹60,000 - ₹75,000 | 4 - 5 Units | Small Home (Lights & Fans) |
+| **2 kW** | ₹1,10,000 - ₹1,30,000 | 8 - 10 Units | 2 BHK (Fridge, TV, Lights) |
+| **3 kW** | ₹1,60,000 - ₹1,90,000 | 12 - 15 Units | 3 BHK + 1 AC (Most Popular) |
+| **5 kW** | ₹2,60,000 - ₹3,00,000 | 20 - 25 Units | Large Home + 2-3 ACs |
+| **8 kW** | ₹4,20,000 - ₹4,80,000 | 32 - 40 Units | Villas / Large Power Needs |
+| **10 kW** | ₹5,20,000 - ₹6,00,000 | 40 - 50 Units | Commercial / Joint Families |
 
 > **Note:** These prices are indicative for standard installations. Prices may vary based on panel technology (Mono PERC vs. Bifacial) and structure height.
 
@@ -78,8 +78,8 @@ Safety is non-negotiable.
 
 When budgeting for solar, keep these potential extra costs in mind so there are no surprises.
 
-*   **Net Metering Charges:** You need to pay TNEB (or PED in Puducherry) for the bi-directional meter and testing fees. This is usually **₹3,000 – ₹5,000**.
-*   **Structure Elevation:** If you want the panels raised (to use the roof space underneath for a terrace garden or drying clothes), the steel requirement increases, adding **₹15,000 – ₹25,000** to the cost.
+*   **Net Metering Charges:** You need to pay TNEB (or PED in Puducherry) for the bi-directional meter and testing fees. This is usually **₹3,000 - ₹5,000**.
+*   **Structure Elevation:** If you want the panels raised (to use the roof space underneath for a terrace garden or drying clothes), the steel requirement increases, adding **₹15,000 - ₹25,000** to the cost.
 *   **Cable Length:** Standard quotes include ~30 meters of cable. If your inverter is far from the panels or the main distribution board, extra cabling is charged per meter.
 *   **Old Wiring Upgrade:** If your home has very old wiring or an outdated fuse box, we may recommend upgrading it to a modern MCB box for safety before connecting the solar system.
 
@@ -116,8 +116,8 @@ The Central Government’s **PM Surya Ghar: Muft Bijli Yojana** has made solar i
 Is solar a good investment? Let’s look at the numbers for a typical **3kW System** in Tamil Nadu.
 
 *   **Net Cost (after subsidy):** ₹1,02,000 (approx)
-*   **Monthly Bill Savings:** ₹2,500 – ₹3,000
-*   **Annual Savings:** ₹30,000 – ₹36,000
+*   **Monthly Bill Savings:** ₹2,500 - ₹3,000
+*   **Annual Savings:** ₹30,000 - ₹36,000
 *   **Payback Period:** **~3 Years**
 
 After 3 years, your electricity is **effectively free** for the remaining 22+ years of the system's life. This is a better return than fixed deposits, gold, or even real estate in many cases.

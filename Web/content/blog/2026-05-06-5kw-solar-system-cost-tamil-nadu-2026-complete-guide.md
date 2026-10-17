@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Need a larger solar setup? Dive into our complete 2026 guide on 5kW solar systems in Tamil Nadu, covering pricing, power generation, and how to maximize your government subsidy.
 featuredImage: /images/5kw-solar-system-cost-tamil-nadu-2026.webp
-category: Solar Finance
+category: Cost & Savings
 tags:
   - 5kW Solar
   - Solar Cost
@@ -64,7 +64,7 @@ Using the same engineering formula as our 3kW guide, let us calculate the expect
 *   Tamil Nadu PSH (summer peak): 5.2 hours/day
 *   Performance Ratio (clean panels, summer): 0.82
 
-**Peak Generation (April–June):** 5 × 5.2 × 0.82 = **21.32 units/day**
+**Peak Generation (April-June):** 5 × 5.2 × 0.82 = **21.32 units/day**
 
 **Practical Answer: A well-installed 5kW On-Grid system in Tamil Nadu generates approximately 18 to 22 units per day**, or approximately 540 to 660 units per month, or 6,480 to 7,920 units per year.
 
@@ -98,15 +98,15 @@ The following pricing represents quality (not budget, not premium) installations
 
 | Component | Specification | Price Range |
 | :--- | :--- | :--- |
-| **Solar Panels (15 × 335W)** | Tier-1 Mono PERC, 25-year performance warranty | ₹1,20,000 – ₹1,70,000 |
-| **Solar Inverter (5kW)** | Quality brand: Growatt, Solis, Deye, Havells | ₹30,000 – ₹50,000 |
-| **Mounting Structure** | Hot-Dip Galvanized Steel (coastal) | ₹18,000 – ₹28,000 |
-| **DC Cables & MC4 Connectors** | 4mm² & 6mm² solar-grade UV-rated | ₹6,000 – ₹10,000 |
-| **DCDB + ACDB + SPD + Earthing** | ISI-rated components | ₹8,000 – ₹12,000 |
-| **AC Cables + Net Meter Wiring** | 6mm² copper armored | ₹4,000 – ₹7,000 |
-| **Installation Labor & Transport** | Professional team, 3 to 4 days | ₹12,000 – ₹18,000 |
-| **TNEB Net Meter Application** | Liaison and documentation | ₹3,000 – ₹5,000 |
-| **Total Installed Price** | | **₹2,01,000 – ₹3,00,000** |
+| **Solar Panels (15 × 335W)** | Tier-1 Mono PERC, 25-year performance warranty | ₹1,20,000 - ₹1,70,000 |
+| **Solar Inverter (5kW)** | Quality brand: Growatt, Solis, Deye, Havells | ₹30,000 - ₹50,000 |
+| **Mounting Structure** | Hot-Dip Galvanized Steel (coastal) | ₹18,000 - ₹28,000 |
+| **DC Cables & MC4 Connectors** | 4mm² & 6mm² solar-grade UV-rated | ₹6,000 - ₹10,000 |
+| **DCDB + ACDB + SPD + Earthing** | ISI-rated components | ₹8,000 - ₹12,000 |
+| **AC Cables + Net Meter Wiring** | 6mm² copper armored | ₹4,000 - ₹7,000 |
+| **Installation Labor & Transport** | Professional team, 3 to 4 days | ₹12,000 - ₹18,000 |
+| **TNEB Net Meter Application** | Liaison and documentation | ₹3,000 - ₹5,000 |
+| **Total Installed Price** | | **₹2,01,000 - ₹3,00,000** |
 
 **Average Market Price in Tamil Nadu (2026): ₹2,40,000 to ₹2,75,000** for a quality 5kW On-Grid system with Tier-1 panels.
 

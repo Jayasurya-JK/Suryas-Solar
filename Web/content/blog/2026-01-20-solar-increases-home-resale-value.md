@@ -7,7 +7,7 @@ excerpt: >-
   homes sell 6% faster and for a higher price. Read our detailed investment
   analysis.
 featuredImage: /images/solar-increases-home-resale-value.webp
-category: Solar Finance
+category: Cost & Savings
 author: Surya's Solar Team
 tags:
   - Solar House Value India

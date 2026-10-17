@@ -6,7 +6,7 @@ excerpt: >-
   integration. We look at the roadmap for solar energy in Cuddalore and Tamil
   Nadu up to 2030.
 featuredImage: /images/future-of-solar-tamil-nadu-trends.webp
-category: Industry News
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - Solar Future Trends

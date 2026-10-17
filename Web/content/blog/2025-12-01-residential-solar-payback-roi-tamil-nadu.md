@@ -5,7 +5,7 @@ excerpt: >-
   Is solar worth it in Tamil Nadu? See real ROI case studies from Cuddalore.
   Learn how a 3kW system pays for itself in just 3 years. 2025 Data.
 featuredImage: /images/Blog 2.webp
-category: Solar Guide
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - Solar ROI
@@ -15,7 +15,7 @@ tags:
   - Electricity Savings
 updated: '2026-04-26'
 ---
-In 2025, more households in Tamil Nadu - especially in **Cuddalore, Panruti, Neyveli, and Chidambaram** - are choosing rooftop solar to cut their electricity bills and secure long-term energy savings. With electricity tariffs in Tamil Nadu hovering between ₹7–₹9 per unit for many consumers, the shift to solar is no longer just a luxury; it's a smart financial decision.
+In 2025, more households in Tamil Nadu - especially in **Cuddalore, Panruti, Neyveli, and Chidambaram** - are choosing rooftop solar to cut their electricity bills and secure long-term energy savings. With electricity tariffs in Tamil Nadu hovering between ₹7-₹9 per unit for many consumers, the shift to solar is no longer just a luxury; it's a smart financial decision.
 
 One of the most common questions our team at **Surya’s Solar** receives is: *What is the payback period?*
 
@@ -52,8 +52,8 @@ Here is a detailed breakdown of the estimated costs, savings, and payback period
 
 **TN-Specific Insights:**
 *   **Sunlight:** Tamil Nadu enjoys 300+ sunny days a year.
-*   **Generation:** A 1 kW system generates roughly 110–140 units/month.
-*   **Tariffs:** With rates between ₹7–₹9/unit, the savings are substantial.
+*   **Generation:** A 1 kW system generates roughly 110-140 units/month.
+*   **Tariffs:** With rates between ₹7-₹9/unit, the savings are substantial.
 *   **Sweet Spot:** The **3kW system** offers the fastest payback due to the maximum subsidy cap of ₹78,000.
 
 ---
@@ -88,23 +88,23 @@ This consistent generation is why **Tamil Nadu rooftop solar cost** recovery is 
 
 See how real homeowners in your area are saving.
 
-### Case Study 1: 3 kW System – Cuddalore
+### Case Study 1: 3 kW System - Cuddalore
 *   **Before Solar Bill:** ₹3,200 / month
 *   **After Solar Bill:** ₹180 / month (Fixed charges only)
 *   **Annual Savings:** ₹36,240
 *   **Payback Period:** 3.8 Years
 *   **ROI (20 Years):** 700%+
 
-### Case Study 2: 5 kW System – Panruti
+### Case Study 2: 5 kW System - Panruti
 *   **Before Solar Bill:** ₹6,800 / month
 *   **After Solar Bill:** ₹250 / month
 *   **Annual Savings:** ₹78,600
 *   **Payback Period:** 3.2 Years
 *   **Impact:** Powers 3 ACs and a large joint family home.
 
-### Case Study 3: 2 kW System – Neyveli
+### Case Study 3: 2 kW System - Neyveli
 *   **Before Solar Bill:** ₹1,900 / month
-*   **After Solar Bill:** ₹100 – ₹120 / month
+*   **After Solar Bill:** ₹100 - ₹120 / month
 *   **Annual Savings:** ₹21,000+
 *   **Payback Period:** 3.5 Years
 
@@ -146,14 +146,14 @@ Without subsidy, a 3kW system might take 5-6 years to pay back. With the **₹78
 
 ---
 
-## Long-Term ROI – 10, 15, 20, 25-Year Outlook
+## Long-Term ROI - 10, 15, 20, 25-Year Outlook
 
 Solar is a long-term asset, not a short-term expense.
 
 *   **25-Year Panel Life:** Tier-1 panels are warrantied for 25 years.
-*   **Minimal Degradation:** Modern panels degrade only 0.5–0.7% per year.
-*   **Rising Tariffs:** Electricity prices rise by 3–5% annually. Your savings actually *increase* over time.
-*   **Total ROI:** Over 20 years, a typical system can deliver returns of **700–900%**, far outperforming fixed deposits or gold.
+*   **Minimal Degradation:** Modern panels degrade only 0.5-0.7% per year.
+*   **Rising Tariffs:** Electricity prices rise by 3-5% annually. Your savings actually *increase* over time.
+*   **Total ROI:** Over 20 years, a typical system can deliver returns of **700-900%**, far outperforming fixed deposits or gold.
 
 ---
 

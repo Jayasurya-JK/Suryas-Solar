@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Paying 5,000 rupees for electricity in Tamil Nadu? Find out the exact solar system size you need to wipe out your bill and how much you can save with PM Surya Ghar subsidies.
 featuredImage: /images/how-much-solar-for-5000-electricity-bill-tamil-nadu.webp
-category: Energy Saving
+category: Electricity Bill & Savings
 tags:
   - Solar Sizing
   - Electricity Bill
@@ -35,7 +35,7 @@ But here is the good news: a high electricity bill actually tells us precisely h
 
 ---
 
-## 1. First: Understanding What a ₹3,000–₹5,000 Bill Actually Means
+## 1. First: Understanding What a ₹3,000-₹5,000 Bill Actually Means
 
 Before we can size a solar system, we must understand what consumption level a ₹3,000 to ₹5,000 bill represents. We covered the TNEB telescopic tariff slabs in detail in our earlier guide, but here is a quick reference for our calculations.
 
@@ -86,14 +86,14 @@ If your bill falls between ₹3,000 and ₹5,000, you are almost certainly looki
 *   Your bi-monthly consumption is consistently under 700 units (bill under ₹4,000)
 *   You run only one 1.5-ton Air Conditioner
 *   You do not plan to add more ACs in the next 5 years
-*   You have limited roof space (a 3kW system needs roughly 250–300 sq. ft.)
+*   You have limited roof space (a 3kW system needs roughly 250-300 sq. ft.)
 
-A 3kW system generates approximately **12 to 15 units per day**, producing 720 to 900 units over a 60-day billing cycle. This is more than enough to offset a 600–700 unit bi-monthly consumption.
+A 3kW system generates approximately **12 to 15 units per day**, producing 720 to 900 units over a 60-day billing cycle. This is more than enough to offset a 600-700 unit bi-monthly consumption.
 
 ### Choose a 5kW System If:
-*   Your bi-monthly consumption is between 700 and 1,000 units (bill ₹4,000–₹7,000)
+*   Your bi-monthly consumption is between 700 and 1,000 units (bill ₹4,000-₹7,000)
 *   You currently run two ACs, or plan to add a second AC within 3 years
-*   You have adequate roof space (a 5kW system needs roughly 450–500 sq. ft.)
+*   You have adequate roof space (a 5kW system needs roughly 450-500 sq. ft.)
 *   You want a larger buffer to ensure your net bill stays at zero even during peak summer
 
 A 5kW system generates approximately **20 to 25 units per day**, producing 1,200 to 1,500 units over a 60-day cycle. This comfortably crushes even a heavily AC-loaded 1,000-unit bi-monthly bill.
@@ -159,7 +159,7 @@ This subsidy is deposited directly into your bank account within 30 to 90 days o
 We believe in giving you the full, unvarnished truth.
 
 *   **Solar cannot give you backup during TNEB power cuts.** If you want to run your AC during a power cut, you need a significantly more expensive Hybrid system with batteries. On-Grid systems mandatorily shut down when the grid fails (Anti-Islanding safety law).
-*   **Solar generation varies seasonally.** Your panels will generate maximum power in April–June (peak summer) and less power in July–September (monsoon). Your net-metering account will bank large surpluses in summer to cover the deficit in monsoon months.
+*   **Solar generation varies seasonally.** Your panels will generate maximum power in April-June (peak summer) and less power in July-September (monsoon). Your net-metering account will bank large surpluses in summer to cover the deficit in monsoon months.
 *   **Shading is the enemy of solar.** If even one panel has 20% shade, it can reduce the output of your entire string by a significant amount. A proper site survey is mandatory before installation.
 
 ---
@@ -189,7 +189,7 @@ We believe in giving you the full, unvarnished truth.
 
 ---
 
-## Conclusion: Your ₹3,000–₹5,000 Bill Has a Clear Mathematical Answer
+## Conclusion: Your ₹3,000-₹5,000 Bill Has a Clear Mathematical Answer
 
 The answer is a **3kW On-Grid Solar System**, and it is genuinely the best financial investment available to a middle-class household in Tamil Nadu today.
 

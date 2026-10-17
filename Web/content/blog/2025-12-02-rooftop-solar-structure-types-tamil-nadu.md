@@ -5,7 +5,7 @@ excerpt: >-
   Don't let your solar structure rust! Compare GI vs Hot-Dip Galvanized
   structures for Cuddalore & Puducherry. Essential guide for coastal homes.
 featuredImage: /images/Rooftop Structure Types.webp
-category: Solar Guide
+category: Solar Guides
 author: Surya's Solar Team
 tags:
   - Solar Structure
@@ -29,7 +29,7 @@ Your solar system is an investment for 25 years. The structure must last just as
 
 ### 1. Tamil Nadu Climate Challenges
 *   **High Heat:** Structures expand and contract with temperature changes. Poor quality metal can warp, causing stress on the glass panels.
-*   **Strong Winds:** Especially during the monsoon season (October–December), wind speeds in districts like **Cuddalore** can exceed 100 km/h. A sturdy structure is non-negotiable.
+*   **Strong Winds:** Especially during the monsoon season (October-December), wind speeds in districts like **Cuddalore** can exceed 100 km/h. A sturdy structure is non-negotiable.
 *   **Dust Buildup:** Proper tilt is needed for self-cleaning during rains.
 
 ### 2. Puducherry Climate Challenges
@@ -47,13 +47,13 @@ Here is a breakdown of the most common mounting systems available in 2025.
 This is the most commonly used structure for budget-friendly installations in inland areas.
 *   **Features:** Made of iron coated with a layer of zinc (typically 20-40 microns).
 *   **Pros:** Low cost, good strength, easily available.
-*   **Cons:** Not ideal for coastal regions; moderate rusting can start after 5–7 years if the coating is thin.
+*   **Cons:** Not ideal for coastal regions; moderate rusting can start after 5-7 years if the coating is thin.
 *   **Best For:** Homes in **Panruti, Neyveli**, and interior Tamil Nadu where salt corrosion is not a major issue.
 
 ### B) Hot-Dip Galvanized Structure (HDGI)
 The gold standard for durability, especially in coastal areas.
-*   **Features:** The iron is dipped in molten zinc, creating a thick (80–120 micron) protective layer that bonds chemically with the steel.
-*   **Pros:** Excellent anti-rust properties, strong durability (15–25 years), and high wind resistance. It essentially "heals" minor scratches.
+*   **Features:** The iron is dipped in molten zinc, creating a thick (80-120 micron) protective layer that bonds chemically with the steel.
+*   **Pros:** Excellent anti-rust properties, strong durability (15-25 years), and high wind resistance. It essentially "heals" minor scratches.
 *   **Cons:** Higher price (about 10-15% more than GI), heavier structure.
 *   **Best For:** **Cuddalore, Puducherry**, and any home within 10km of the sea.
 
@@ -79,8 +79,8 @@ Compare the key features to find the right fit for your home.
 
 | Structure Type | Best For | Corrosion Resistance | Lifespan | Cost Level | Suitable Regions |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **GI** | Budget installs | Medium | 10–12 yrs | Low | Panruti, Neyveli |
-| **Hot-Dip GI** | Coastal areas | High | 15–25 yrs | Medium | Cuddalore, Puducherry |
+| **GI** | Budget installs | Medium | 10-12 yrs | Low | Panruti, Neyveli |
+| **Hot-Dip GI** | Coastal areas | High | 15-25 yrs | Medium | Cuddalore, Puducherry |
 | **RCC Pedestal** | Large rooftops | Very High | 20+ yrs | High | All TN & Pondy |
 | **Rail-Less** | Aesthetic installs | Medium-High | 15 yrs | Medium-High | Metal roofs |
 
@@ -121,7 +121,7 @@ Your location plays a big role in this decision. Here is our expert recommendati
 Safety is non-negotiable. A solar system is a large sail; if not secured properly, it can fly off during a storm.
 
 *   **Coastal Zones:** Require stronger foundations to withstand high wind speeds. We design for **180 km/h** wind loads in coastal belts.
-*   **BIS Standards:** Structures must withstand 150–180 km/h winds as per IS 875 standards.
+*   **BIS Standards:** Structures must withstand 150-180 km/h winds as per IS 875 standards.
 *   **Compliance:** Hot-dip structures comply with MNRE specs for safety.
 *   **Commercial:** RCC is best for large commercial rooftops to ensure stability without puncturing the roof membrane.
 
@@ -131,20 +131,20 @@ Safety is non-negotiable. A solar system is a large sail; if not secured properl
 
 You can choose the height of your solar structure based on your needs.
 
-### 1. Low-Height (100–300mm)
+### 1. Low-Height (100-300mm)
 *   **Design:** Panels sit close to the roof.
 *   **Pros:** Best for wind resistance (less drag), cheaper.
 *   **Cons:** Harder to clean under the panels.
 
-### 2. Standard Height (500–1000mm)
+### 2. Standard Height (500-1000mm)
 *   **Design:** The most common choice.
 *   **Pros:** Allows for air circulation (cooling the panels) and easy cleaning.
 *   **Cons:** Standard cost.
 
-### 3. Elevated Structure (2–3 meters / High Rise)
+### 3. Elevated Structure (2-3 meters / High Rise)
 *   **Design:** Raises the panels high enough to walk under.
 *   **Pros:** You reclaim your roof space! You can use the area underneath for drying clothes, a terrace garden, or even a small party area.
-*   **Cons:** Significantly more expensive (approx. ₹15,000 – ₹25,000 extra per kW) due to extra steel, heavy pillars, and wind bracing requirements.
+*   **Cons:** Significantly more expensive (approx. ₹15,000 - ₹25,000 extra per kW) due to extra steel, heavy pillars, and wind bracing requirements.
 
 ---
 
