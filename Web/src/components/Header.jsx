@@ -14,7 +14,6 @@ export default function Header() {
   }, [])
 
   const navLinks = [
-    { name: 'Home', href: '/' },
     {
       name: 'Locations',
       isDropdown: true,
@@ -33,7 +32,6 @@ export default function Header() {
       items: [
         { name: '5kW System - Best Seller', href: '/systems/5kw-solar-system-with-subsidy' },
         { name: '3kW System', href: '/systems/3kw-solar-system-with-subsidy' },
-        { name: '₹1 Lakh Subsidy Check', href: '/subsidy-eligibility' },
       ],
     },
     {
@@ -44,7 +42,15 @@ export default function Header() {
         { name: 'Apartments & RWA', href: '/apartment-solar' },
       ],
     },
-    { name: 'Calculator', href: '/calc' },
+    {
+      name: 'Calculators',
+      isDropdown: true,
+      items: [
+        { name: 'Solar Savings Calculator', href: '/calc' },
+        { name: 'EB Bill Calculator', href: '/eb-bill-calculator' },
+        { name: '₹1 Lakh Subsidy Checker', href: '/subsidy-eligibility' },
+      ],
+    },
     { name: 'About', href: '/about' },
     { name: 'Blog', href: '/blog' },
   ]
@@ -69,7 +75,6 @@ export default function Header() {
       items: [
         { name: '5kW System - Best Seller', href: '/systems/5kw-solar-system-with-subsidy' },
         { name: '3kW System', href: '/systems/3kw-solar-system-with-subsidy' },
-        { name: '₹1 Lakh Subsidy Check', href: '/subsidy-eligibility' },
       ],
     },
     {
@@ -80,7 +85,15 @@ export default function Header() {
         { name: 'Apartments & RWA', href: '/apartment-solar' },
       ],
     },
-    { name: 'Calculator', href: '/calc' },
+    {
+      name: 'Calculators',
+      isDropdown: true,
+      items: [
+        { name: 'Solar Savings Calculator', href: '/calc' },
+        { name: 'EB Bill Calculator', href: '/eb-bill-calculator' },
+        { name: '₹1 Lakh Subsidy Checker', href: '/subsidy-eligibility' },
+      ],
+    },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '/blog' },
@@ -91,7 +104,7 @@ export default function Header() {
       {/* ════════════════════════════════════════════════
           HEADER WRAPPER — fixed, 2-row on desktop
       ════════════════════════════════════════════════ */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 bg-primary-900 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`} style={{ paddingTop: 'env(safe-area-inset-top)' }}>
 
         {/* ── Subsidy campaign banner (fixed height h-9; matching spacer below the header) ── */}
         <Link
@@ -99,14 +112,14 @@ export default function Header() {
           className="block h-9 bg-primary-900 text-white hover:bg-primary-800 transition-colors"
         >
           <div className="max-w-7xl mx-auto h-full px-4 flex items-center justify-center gap-2 text-[0.78rem] sm:text-sm font-medium whitespace-nowrap overflow-hidden">
-            <span className="hidden sm:inline">
+            <span className="hidden lg:inline">
               Get up to <strong className="text-yellow-300">₹1 lakh solar subsidy</strong> (₹78,000 + ₹22,000 TN top-up) - limited to the first 1 lakh Tamil Nadu homes.
             </span>
-            <span className="sm:hidden">
+            <span className="lg:hidden">
               <strong className="text-yellow-300">₹1 lakh solar subsidy</strong> - limited homes
             </span>
             <span className="font-bold text-yellow-300 underline underline-offset-2">
-              <span className="hidden sm:inline">Check eligibility</span><span className="sm:hidden">Check</span> &rarr;
+              <span className="hidden lg:inline">Check eligibility</span><span className="lg:hidden">Check</span> &rarr;
             </span>
           </div>
         </Link>
@@ -118,8 +131,8 @@ export default function Header() {
             <div className="flex items-center justify-between gap-4">
 
               {/* Logo */}
-              <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-                <div className="relative w-12 h-12 flex-shrink-0 overflow-hidden">
+              <Link href="/" className="flex items-center gap-2 min-[360px]:gap-3 group flex-shrink-0">
+                <div className="relative w-10 h-10 min-[360px]:w-12 min-[360px]:h-12 flex-shrink-0 overflow-hidden">
                   <picture>
                     <source srcSet="/images/surya-solar-logo.webp" type="image/webp" />
                     <img
@@ -131,13 +144,13 @@ export default function Header() {
                   </picture>
                 </div>
                 <div>
-                  <div className="font-playfair font-bold text-xl leading-tight text-accent">Surya's Solar</div>
-                  <div className="text-[0.6rem] font-bold text-primary uppercase tracking-[0.18em] leading-tight">Clean Energy Solutions</div>
+                  <div className="font-playfair font-bold text-lg min-[360px]:text-xl leading-tight text-accent">Surya's Solar</div>
+                  <div className="text-[0.55rem] min-[360px]:text-[0.6rem] font-bold text-primary uppercase tracking-[0.12em] min-[360px]:tracking-[0.18em] leading-tight">Clean Energy Solutions</div>
                 </div>
               </Link>
 
               {/* Desktop Nav */}
-              <nav className="hidden lg:flex items-center gap-1 flex-1 justify-center">
+              <nav className="hidden xl:flex items-center gap-0 xl:gap-1 flex-1 justify-center">
                 {navLinks.map((item) => {
                   if (item.isDropdown) {
                     return (
@@ -147,7 +160,7 @@ export default function Header() {
                         onMouseEnter={() => setOpenDropdown(item.name)}
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
-                        <button className={`flex items-center gap-1.5 px-4 py-2.5 text-[0.92rem] font-semibold rounded-lg transition-all whitespace-nowrap ${
+                        <button className={`flex items-center gap-1.5 px-2.5 xl:px-4 py-2.5 text-[0.9rem] xl:text-[0.92rem] font-semibold rounded-lg transition-all whitespace-nowrap ${
                           openDropdown === item.name
                             ? 'text-primary bg-primary-50'
                             : 'text-gray-700 hover:text-primary hover:bg-gray-50'
@@ -182,7 +195,7 @@ export default function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="px-4 py-2.5 text-[0.92rem] font-semibold text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all whitespace-nowrap"
+                      className="px-2.5 xl:px-4 py-2.5 text-[0.9rem] xl:text-[0.92rem] font-semibold text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all whitespace-nowrap"
                     >
                       {item.name}
                     </Link>
@@ -191,7 +204,7 @@ export default function Header() {
               </nav>
 
               {/* Desktop CTA */}
-              <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+              <div className="hidden xl:flex items-center gap-3 flex-shrink-0">
                 <Link
                   href="/contact"
                   className="px-4 py-2.5 text-[0.9rem] font-semibold text-gray-700 hover:text-primary border border-gray-200 hover:border-primary rounded-xl transition-all whitespace-nowrap"
@@ -207,7 +220,7 @@ export default function Header() {
               </div>
 
               {/* Mobile controls */}
-              <div className="flex lg:hidden items-center gap-2">
+              <div className="flex xl:hidden items-center gap-2">
                 <a href="tel:+917904369094" className="p-2 text-primary hover:bg-primary-50 rounded-full transition-colors">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -238,13 +251,13 @@ export default function Header() {
       {/* ════════════════════════════════════════════════
           MOBILE DRAWER
       ════════════════════════════════════════════════ */}
-      <div className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${isMobileMenuOpen ? 'visible' : 'invisible'}`}>
+      <div className={`fixed inset-0 z-40 xl:hidden transition-all duration-300 ${isMobileMenuOpen ? 'visible' : 'invisible'}`}>
         <div
           className={`fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
           onClick={() => setIsMobileMenuOpen(false)}
         />
 
-        <div className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-[340px] bg-white flex flex-col shadow-2xl transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-[340px] bg-white flex flex-col shadow-2xl transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
           
           {/* Drawer header */}
           <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-primary-900 to-primary">

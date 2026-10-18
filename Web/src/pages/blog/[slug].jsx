@@ -514,7 +514,7 @@ export default function BlogPost({ post, settings, relatedPosts }) {
       <WhatsAppFloat message={`Hi! I read your guide "${post.title}" and want to know more about solar for my home.`} />
 
       {/* Mobile Share Footer */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-50 md:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 pt-4 z-50 md:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]" style={{ paddingBottom: 'calc(1rem + env(safe-area-inset-bottom))' }}>
         <div className="flex flex-col items-center gap-3">
           <p className="text-sm font-semibold text-gray-900">Share this article</p>
           <ShareButtons title={post.title} isFooter={true} />

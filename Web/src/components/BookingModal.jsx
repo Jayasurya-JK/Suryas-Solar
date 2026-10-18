@@ -55,7 +55,7 @@ export default function BookingModal() {
       onClick={() => setOpen(false)}
     >
       <div
-        className="relative w-full sm:max-w-lg max-h-[92vh] overflow-y-auto bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl animate-[popIn_0.3s_ease-out]"
+        className="relative w-full sm:max-w-lg max-h-[92vh] overflow-y-auto bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl animate-[popIn_0.3s_ease-out] pb-[env(safe-area-inset-bottom)] sm:pb-0"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="sticky top-0 z-10 bg-gradient-to-br from-primary-900 via-primary-700 to-primary px-6 pt-6 pb-5 text-white">

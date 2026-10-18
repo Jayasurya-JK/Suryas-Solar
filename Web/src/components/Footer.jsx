@@ -89,7 +89,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 text-gray-300 pb-24 md:pb-0">
+    <footer className="bg-gray-900 text-gray-300 pb-[calc(6rem+env(safe-area-inset-bottom))] md:pb-0">
       <div className="container-custom py-8 md:py-12">
         <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-5 md:gap-12">
 

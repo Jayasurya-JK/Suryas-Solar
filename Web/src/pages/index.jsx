@@ -139,7 +139,6 @@ export default function Home({ content, settings }) {
         <title>{settings.siteTitle || "Surya's Solar - Cuddalore’s trusted residential solar expert"}</title>
         <meta name="description" content={settings.siteDescription || "Rooftop solar in Cuddalore: 100+ homes, 400+ kW installed. PM Surya Ghar subsidy + free home visit. TATA partner. Book today."} />
         <meta name="keywords" content={settings.siteKeywords || "solar panel Cuddalore, residential solar, rooftop solar"} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <link rel="canonical" href="https://www.suryassolar.com/" />
 

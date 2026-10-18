@@ -159,7 +159,7 @@ export default function CommercialSolarPage() {
                 {/* Cost + tax */}
                 <section className="bg-slate-50 py-12 lg:py-16">
                     <div className="container-custom grid lg:grid-cols-2 gap-8 lg:gap-14 items-start">
-                        <div>
+                        <div className="min-w-0">
                             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900">What it costs (2026)</h2>
                             <p className="mt-2 text-slate-600">Market ranges for on-grid commercial systems, not our quote. Bigger systems cost less per kW.</p>
                             <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">

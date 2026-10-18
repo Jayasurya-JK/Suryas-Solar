@@ -11,7 +11,7 @@ export default function WhatsAppFloat({ phoneNumber = "917904369094", message = 
   return (
     <>
       {/* Mobile Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg px-3 py-3 sm:px-6 sm:py-4 md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg px-3 pt-3 sm:px-6 sm:pt-4 md:hidden" style={{ paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom))' }}>
         <div className="flex items-center gap-2">
           {/* Book Button - Left Side */}
           <button

@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <meta name="google-site-verification" content="255DK9iGvCPS82OfNdCcaBPwlSzihp9_sXGriHuOAPY" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#F97316" />
+        <meta name="theme-color" content="#041b52" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

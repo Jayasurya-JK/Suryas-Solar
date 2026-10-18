@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
   return (
     <div className={`${playfair.variable} font-sans`}>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </Head>
       {/* Google Analytics */}
       <Script
