@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   A 5kW solar system makes about 20-25 units a day in Tamil Nadu (600-750 a
   month). Units by season, what it can run (2 ACs), roof space and ₹1 lakh subsidy.
-featuredImage: /images/3.webp
+featuredImage: /images/5kw-solar-units-per-day.webp
 category: Solar Guides
 tags:
   - 5kW Solar

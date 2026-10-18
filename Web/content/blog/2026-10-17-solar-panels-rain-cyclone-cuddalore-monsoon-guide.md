@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Do solar panels work in the rainy season, and will they survive a cyclone in
   Cuddalore? Output in monsoon, wind-proof structures, lightning safety, checklist.
-featuredImage: /images/5.webp
+featuredImage: /images/solar-panels-monsoon-cyclone-cuddalore.webp
 category: Technical Guides
 tags:
   - Monsoon

@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   DCR solar panel meaning, why the PM Surya Ghar subsidy needs it, DCR vs non-DCR
   price, ALMM explained, and 6 ways to check your panels are genuine DCR.
-featuredImage: /images/Blog 3.webp
+featuredImage: /images/dcr-solar-panel-check.webp
 category: Products & Comparisons
 tags:
   - DCR Solar Panel

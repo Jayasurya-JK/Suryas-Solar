@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   How to check if a solar company is a registered PM Surya Ghar vendor in Tamil
   Nadu, where to find the vendor list, and what to verify before paying advance.
-featuredImage: /images/best-solar-company-cuddalore-2026.webp
+featuredImage: /images/solar-vendor-list-check.webp
 category: Subsidy & Schemes
 tags:
   - Solar Vendor List

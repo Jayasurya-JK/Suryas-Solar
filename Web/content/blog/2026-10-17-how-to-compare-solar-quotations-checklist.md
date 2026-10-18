@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   Got 3 solar quotes with different prices? Compare them line by line with this
   12-point checklist: DCR panels, structure, cables, earthing, warranty, subsidy.
-featuredImage: /images/solar-scam-warnings-cuddalore.webp
+featuredImage: /images/compare-solar-quotations.webp
 category: Solar Guides
 tags:
   - Solar Quotation

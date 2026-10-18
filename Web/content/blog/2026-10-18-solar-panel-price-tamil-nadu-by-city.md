@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   Solar panel price in Chennai, Coimbatore, Madurai, Trichy, Salem, Erode, Vellore,
   Tirunelveli and Cuddalore for 2026, why prices vary and the ₹1 lakh subsidy.
-featuredImage: /images/solar-panel-cost-tamil-nadu-2026.webp
+featuredImage: /images/solar-price-by-city-tamil-nadu.webp
 category: Cost & Savings
 tags:
   - Solar Panel Price

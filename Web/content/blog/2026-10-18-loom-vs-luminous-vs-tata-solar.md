@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Loom Solar vs Luminous vs Tata Power Solar for Tamil Nadu homes: what each brand
   is known for, DCR for subsidy, service, price and which to choose.
-featuredImage: /images/tata-solar-power.webp
+featuredImage: /images/loom-luminous-tata-solar.webp
 category: Products & Comparisons
 tags:
   - Loom Solar

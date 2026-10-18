@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Best on-grid solar inverters for Indian homes in 2026: Growatt, Solis, Sungrow,
   Havells, Fronius, SMA and more. Features, warranty, BIS rules and how to choose.
-featuredImage: /images/voltage-fluctuation-hybrid-solar.webp
+featuredImage: /images/best-on-grid-solar-inverter.webp
 category: Technical Guides
 tags:
   - Solar Inverter

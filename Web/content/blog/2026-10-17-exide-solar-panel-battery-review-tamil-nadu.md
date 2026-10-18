@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Exide solar panels, solar batteries and inverters reviewed for Tamil Nadu homes:
   warranty, when you need a battery, DCR for subsidy, and who should choose Exide.
-featuredImage: /images/7.webp
+featuredImage: /images/exide-solar-panel-battery.webp
 category: Products & Comparisons
 tags:
   - Exide Solar

@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   A 3kW solar system with battery backup costs about ₹2.6-3.2 lakh in Tamil Nadu
   (2026). Lithium vs tubular, backup hours, and how the ₹1 lakh subsidy applies.
-featuredImage: /images/on-grid-vs-hybrid-solar-tamil-nadu.webp
+featuredImage: /images/solar-battery-backup-price.webp
 category: Cost & Savings
 tags:
   - Solar Battery

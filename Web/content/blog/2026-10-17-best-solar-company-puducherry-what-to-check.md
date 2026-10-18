@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   Choosing a solar company in Puducherry? 9 checks before you book: PM Surya Ghar
   registration, PED net meter experience, coastal structure, warranty and service.
-featuredImage: /images/solar-cost-puducherry-2026.webp
+featuredImage: /images/best-solar-company-puducherry.webp
 category: Solar Guides
 tags:
   - Puducherry

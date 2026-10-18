@@ -93,7 +93,10 @@ export function getBlogPost(slug) {
     const { data, content } = matter(fileContents)
 
     // Convert markdown to HTML
+    // Wrap tables so wide ones scroll inside their own box on phones
     const htmlContent = marked(content)
+      .replace(/<table>/g, '<div class="table-wrap"><table>')
+      .replace(/<\/table>/g, '</table></div>')
 
     return {
       slug,

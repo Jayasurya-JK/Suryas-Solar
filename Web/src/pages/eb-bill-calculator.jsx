@@ -83,7 +83,7 @@ export default function EbBillCalculatorPage() {
         <meta property="og:url" content={PAGE_URL} />
         <meta property="og:title" content="TNEB EB Bill Calculator 2026 - Tamil Nadu" />
         <meta property="og:description" content="Calculate your bi-monthly TNEB bill with 2026 domestic slab rates, in seconds." />
-        <meta property="og:image" content="https://www.suryassolar.com/images/how-to-calculate-eb-bill-tamil-nadu-examples.webp" />
+        <meta property="og:image" content="https://www.suryassolar.com/images/eb-bill-calculator.webp" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([appSchema, faqSchema]) }} />
       </Head>
 

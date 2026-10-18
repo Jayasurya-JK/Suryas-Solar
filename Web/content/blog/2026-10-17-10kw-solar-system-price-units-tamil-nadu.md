@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   A 10kW solar system makes about 40-50 units a day in Tamil Nadu and costs about
   ₹5-6.5 lakh. Who needs 10kW, subsidy rules for homes vs businesses, roof space.
-featuredImage: /images/installation-expert.webp
+featuredImage: /images/10kw-solar-system.webp
 category: Cost & Savings
 tags:
   - 10kW Solar

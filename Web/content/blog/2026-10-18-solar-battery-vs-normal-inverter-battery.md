@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Solar battery vs normal inverter battery explained: C10 vs C20 rating, daily
   cycling, life, price and when you can (and cannot) use a normal battery.
-featuredImage: /images/voltage-fluctuation-hybrid-solar.webp
+featuredImage: /images/solar-battery-vs-inverter-battery.webp
 category: Technical Guides
 tags:
   - Solar Battery

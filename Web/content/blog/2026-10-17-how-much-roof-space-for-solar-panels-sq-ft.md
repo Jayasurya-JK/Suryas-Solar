@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   A 3kW solar system needs about 250-300 sq ft of shade-free roof in Tamil Nadu.
   Space table for 1kW to 10kW, panel sizes, and tips for small or shaded terraces.
-featuredImage: /images/10.webp
+featuredImage: /images/roof-space-for-solar.webp
 category: Technical Guides
 tags:
   - Roof Space

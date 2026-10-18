@@ -60,9 +60,9 @@ You cannot simply stop using your water pump, and in a Tamil Nadu summer, turnin
 
 To understand how to defeat the EB bill, you must understand how the enemy operates. TNEB uses a heavily penalized slab system. 
 
-When you consume under 500 units bi-monthly, the government heavily subsidizes your power:
-*   0 - 100 Units: Free
-*   101 - 400 Units: ₹4.50
+When you consume 500 units or less bi-monthly, the government heavily subsidizes your power (2026 rates, from 10 May 2026):
+*   0 - 200 Units: Free
+*   201 - 400 Units: ₹4.50
 *   401 - 500 Units: ₹6.00
 
 However, the exact moment you consume **501 units**, the subsidy is stripped away. Your entire bill is recalculated at a brutal penalty rate. Suddenly, you are paying ₹8.00, ₹9.00, and up to ₹11.00 per unit for the electricity you consume. 
@@ -100,7 +100,7 @@ At the end of the two-month billing cycle, the TNEB assessor arrives to calculat
 
 If you imported 800 units at night, but your solar system exported 750 units during the day, your Net Billed Units for the entire two months is just **50 units**. 
 
-Because 50 units falls entirely into the "0 - 100 Units Free" slab, your electricity bill is exactly **₹0.** (You only pay a nominal fixed meter charge of around ₹100).
+Because 50 units falls entirely within the 200 free units (for homes at 500 units or less), your electricity bill is exactly **₹0.** (You only pay a nominal fixed meter charge of around ₹100).
 
 You completely bypassed the telescopic tariff penalty. You ran your ACs every night. And your bill vanished.
 

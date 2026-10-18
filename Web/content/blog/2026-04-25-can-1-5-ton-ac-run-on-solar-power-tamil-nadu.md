@@ -83,6 +83,8 @@ Modern inverter ACs feature a Variable Frequency Drive (VFD) that controls the s
 
 To understand why solar is so crucial, you must understand the TNEB billing slabs. In Tamil Nadu, electricity is billed bi-monthly (every two months). The tariff structure is heavily tiered to penalize high consumption.
 
+From 10 May 2026, homes using **500 units or less** get the first **200 units free**, then ₹4.50 (201-400) and ₹6.00 (401-500). Cross **500 units** and only **100 units** stay free, with these rates:
+
 *   **0 - 100 Units:** Free
 *   **101 - 400 Units:** ₹4.50 per unit
 *   **401 - 500 Units:** ₹6.00 per unit

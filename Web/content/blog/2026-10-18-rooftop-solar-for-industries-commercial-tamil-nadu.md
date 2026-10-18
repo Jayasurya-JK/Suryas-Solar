@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Rooftop solar for factories, warehouses, hospitals and offices in Tamil Nadu:
   sizes, 2026 cost per kW, CAPEX vs OPEX, 40% depreciation, sheet roofs, payback.
-featuredImage: /images/commercial-solar-tax-benefits.webp
+featuredImage: /images/rooftop-solar-industries-commercial.webp
 category: Cost & Savings
 tags:
   - Commercial Solar

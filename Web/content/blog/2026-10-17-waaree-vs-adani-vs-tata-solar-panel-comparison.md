@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Waaree vs Adani vs Tata solar panels compared for Tamil Nadu homes: scale,
   reliability tests, TOPCon efficiency, DCR for subsidy, warranty, price, verdict.
-featuredImage: /images/waaree.webp
+featuredImage: /images/waaree-vs-adani-vs-tata.webp
 category: Products & Comparisons
 tags:
   - Waaree

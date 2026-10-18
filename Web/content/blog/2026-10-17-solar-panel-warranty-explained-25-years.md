@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Solar panel warranty explained: product vs performance warranty, what 25-30
   years really covers, inverter and workmanship warranty, and how to claim in TN.
-featuredImage: /images/mono-vs-bifacial-solar-panels.webp
+featuredImage: /images/solar-panel-warranty.webp
 category: Technical Guides
 tags:
   - Solar Warranty

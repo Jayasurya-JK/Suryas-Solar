@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Rooftop solar for shops, clinics, offices and schools in Cuddalore: sizes,
   2026 prices, payback, 40% accelerated depreciation and what TNEB requires.
-featuredImage: /images/commercial-solar-tax-benefits.webp
+featuredImage: /images/solar-for-shops-small-business.webp
 category: Cost & Savings
 tags:
   - Commercial Solar

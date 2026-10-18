@@ -302,18 +302,7 @@ export default function BlogPost({ post, settings, relatedPosts }) {
                     prose-ol:list-decimal prose-ol:pl-6 prose-ol:mb-6
                     prose-blockquote:border-l-4 prose-blockquote:border-solar-orange prose-blockquote:bg-orange-50 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:italic prose-blockquote:text-gray-800
                     prose-img:rounded-xl prose-img:shadow-md prose-img:my-8 prose-img:w-full prose-img:h-auto prose-img:object-contain prose-img:mx-auto
-                    prose-table:w-full prose-table:border-collapse prose-table:my-8 prose-table:rounded-xl prose-table:overflow-hidden prose-table:shadow-sm prose-table:border prose-table:border-gray-200
-                    prose-thead:bg-blue-50 prose-thead:border-b prose-thead:border-blue-100
-                    prose-th:text-blue-900 prose-th:font-bold prose-th:p-4 prose-th:text-left prose-th:text-sm sm:prose-th:text-base
-                    prose-td:p-4 prose-td:border-b prose-td:border-gray-100 prose-td:text-gray-700 prose-td:text-sm sm:prose-td:text-base
-                    prose-tr:hover:bg-gray-50 transition-colors
-                    [&_table]:block [&_table]:overflow-x-auto [&_table]:whitespace-nowrap sm:[&_table]:table sm:[&_table]:whitespace-normal
-                    [&_table]:-mx-4 [&_table]:w-[calc(100%+2rem)] [&_table]:max-w-[calc(100%+2rem)] [&_table]:rounded-none sm:[&_table]:mx-0 sm:[&_table]:w-full sm:[&_table]:max-w-none sm:[&_table]:rounded-xl
-                    [&_thead]:bg-blue-50 [&_thead]:border-b [&_thead]:border-blue-100
-                    [&_th]:px-4 [&_th]:py-3 [&_th]:text-left [&_th]:text-xs [&_th]:font-bold [&_th]:text-blue-900 [&_th]:uppercase [&_th]:tracking-wider
-                    [&_td]:px-4 [&_td]:py-4 [&_td]:text-sm [&_td]:text-gray-600 [&_td]:border-b [&_td]:border-gray-100
-                    [&_th:first-child]:sticky [&_th:first-child]:left-0 [&_th:first-child]:z-10 [&_th:first-child]:bg-blue-50
-                    [&_td:first-child]:sticky [&_td:first-child]:left-0 [&_td:first-child]:z-10 [&_td:first-child]:bg-white [&_td:first-child]:shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]">
+                    blog-tables">
 
                   {post.content.split(/<!--\s*COMPONENT:\s*(\w+)\s*-->/).map((part, index) => {
                     if (part === 'SOLAR_CALCULATOR') {

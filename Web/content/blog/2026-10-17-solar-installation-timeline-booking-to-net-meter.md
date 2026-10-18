@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   How long does rooftop solar take in Tamil Nadu? About 6-10 weeks from site
   visit to subsidy credit. Every step, what causes delays and how to avoid them.
-featuredImage: /images/how-to-get-tneb-net-meter-cuddalore-2026.webp
+featuredImage: /images/solar-installation-timeline.webp
 category: Solar Guides
 tags:
   - Installation Timeline

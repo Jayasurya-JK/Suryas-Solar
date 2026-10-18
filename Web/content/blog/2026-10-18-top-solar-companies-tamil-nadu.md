@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   Leading solar panel makers and brands for Tamil Nadu homes in 2026, which have
   factories in the state, and how to choose the right local installer.
-featuredImage: /images/Blog 3.webp
+featuredImage: /images/top-solar-companies-tamil-nadu.webp
 category: Products & Comparisons
 tags:
   - Solar Companies Tamil Nadu

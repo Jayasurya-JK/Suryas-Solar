@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   Tamil Nadu solar net metering in 2026 explained: how TNPDCL net metering works,
   capacity limits, import vs export units, leftover units and the process.
-featuredImage: /images/Net-Metering Guide.webp
+featuredImage: /images/tamil-nadu-net-metering-policy.webp
 category: Subsidy & Schemes
 tags:
   - Net Metering

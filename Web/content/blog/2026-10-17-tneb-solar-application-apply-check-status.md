@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   How to apply for rooftop solar with TNEB (TNPDCL) in 2026 on the PM Surya Ghar
   portal or the TN Solar Rooftop Portal, documents, and how to check your status.
-featuredImage: /images/understanding-tneb-solar-bill.webp
+featuredImage: /images/tneb-solar-application-status.webp
 category: Subsidy & Schemes
 tags:
   - TNEB Solar Application

@@ -113,7 +113,7 @@ export default function SubsidyEligibilityPage() {
           property="og:description"
           content="6 quick questions. Find out if your home gets up to ₹1 lakh solar subsidy and what system size suits your EB bill."
         />
-        <meta property="og:image" content="https://www.suryassolar.com/images/form-picture.webp" />
+        <meta property="og:image" content="https://www.suryassolar.com/images/subsidy-eligibility-checker.webp" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
 

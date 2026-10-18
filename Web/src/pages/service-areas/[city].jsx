@@ -18,6 +18,7 @@ const PRICE_ROWS = [
   { kw: '5kW', price: '₹3.0 - 3.3 lakh', subsidyTN: '₹1,00,000', subsidyPY: '₹78,000', netTN: '₹2.0 - 2.3 lakh', netPY: '₹2.2 - 2.5 lakh', units: '20 - 25' },
 ]
 import { getSiteSettings } from '../../lib/content'
+import ProcessSteps from '../../components/ProcessSteps'
 
 export default function LocationPage({ location, settings }) {
   if (!location) return null
@@ -262,7 +263,7 @@ export default function LocationPage({ location, settings }) {
             </h2>
             <p className="mt-2 text-gray-600">On-grid systems with DCR panels. Market averages as of October 2026, not our quotes; your exact price comes after a free site visit.</p>
             <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
-              <table className="w-full text-left text-sm md:text-base bg-white">
+              <table className="w-full text-left text-sm md:text-base bg-white whitespace-nowrap">
                 <thead className="bg-slate-50 text-gray-700">
                   <tr>
                     <th className="px-4 py-3 font-semibold">System</th>
@@ -476,31 +477,17 @@ export default function LocationPage({ location, settings }) {
         {/* ══════════════════════════════════════════════
             PROCESS STEPS
         ══════════════════════════════════════════════ */}
-        <section className="py-16 md:py-20 bg-slate-50">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <div className="text-center max-w-2xl mx-auto mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                How Solar Works in <span className="text-primary">{location.name}</span>
-              </h2>
-              <p className="mt-3 text-gray-600">From first call to subsidy in your bank, about 6-10 weeks. We handle the paperwork at every step.</p>
-            </div>
-            <ol className="grid md:grid-cols-5 gap-4">
-              {[
-                ['Free site visit', 'Roof, shade and bill check; written quote within days.'],
-                ['Portal registration', 'We help you apply on the PM Surya Ghar portal with your EB consumer number.'],
-                [isPY ? 'PED approval' : 'TNEB approval', isPY ? 'Electricity Department, Puducherry reviews feasibility.' : 'Your TNEB section office checks feasibility and sanctioned load.'],
-                ['Installation', '1-3 days on site: structure, panels, inverter, earthing.'],
-                ['Net meter + subsidy', isPY ? 'PED inspects and fixes the net meter; central subsidy follows.' : 'TNEB fixes the net meter; subsidy is credited to your bank.'],
-              ].map(([t, d], i) => (
-                <li key={t} className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
-                  <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">{i + 1}</span>
-                  <h3 className="mt-3 font-bold text-gray-900">{t}</h3>
-                  <p className="mt-1 text-sm text-gray-600 leading-relaxed">{d}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
+        <ProcessSteps
+          title={<>How solar works in <span className="text-primary">{location.name}</span></>}
+          subtitle="From first call to subsidy in your bank. We handle the paperwork at every step."
+          steps={[
+            { title: 'Free site visit', text: 'Roof, shade and bill check, then a written quote.' },
+            { title: 'Portal registration', text: 'We apply on the PM Surya Ghar portal with your EB consumer number.' },
+            { title: isPY ? 'PED approval' : 'TNEB approval', text: isPY ? 'Electricity Department, Puducherry checks feasibility.' : 'Your TNEB section office checks feasibility and load.' },
+            { title: 'Installation', text: '1-3 days: structure, panels, inverter, earthing.' },
+            { title: 'Net meter and subsidy', text: isPY ? 'PED fixes the net meter; central subsidy follows.' : 'TNEB fixes the net meter; subsidy is credited to your bank.' },
+          ]}
+        />
 
         {/* ══════════════════════════════════════════════
             FAQ

@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   PM Surya Ghar is approved till 31 March 2027 and Tamil Nadu's ₹22,000 top-up is
   limited. What the deadline means, extension news, and when to apply to be safe.
-featuredImage: /images/9.webp
+featuredImage: /images/pm-surya-ghar-last-date-2027.webp
 category: Subsidy & Schemes
 tags:
   - PM Surya Ghar

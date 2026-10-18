@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   Apartments in Tamil Nadu can get ₹18,000 per kW PM Surya Ghar subsidy for
   common-area solar through the RWA. Eligibility, the 3kW-per-house rule, steps.
-featuredImage: /images/pm-surya-ghar-scheme-cuddalore-2026.webp
+featuredImage: /images/apartment-rooftop-solar-rwa.webp
 category: Subsidy & Schemes
 tags:
   - Apartment Solar

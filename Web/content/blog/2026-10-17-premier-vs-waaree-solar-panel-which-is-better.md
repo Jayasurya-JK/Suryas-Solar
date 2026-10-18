@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Premier vs Waaree solar panels for Tamil Nadu homes: scale, PVEL reliability,
   TOPCon efficiency, DCR for subsidy, warranty and price. Clear, honest verdict.
-featuredImage: /images/1.webp
+featuredImage: /images/premier-vs-waaree-solar-panel.webp
 category: Products & Comparisons
 tags:
   - Premier Energies

@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   A 1kW solar system makes 4-5 units a day in Tamil Nadu (120-150 a month). See
   units by season and town, the math behind it, and when 1kW is actually enough.
-featuredImage: /images/2.webp
+featuredImage: /images/1kw-solar-units-per-day.webp
 category: Solar Guides
 tags:
   - 1kW Solar

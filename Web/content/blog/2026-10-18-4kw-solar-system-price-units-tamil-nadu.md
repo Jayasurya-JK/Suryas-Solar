@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   A 4kW solar system makes about 16-20 units a day in Tamil Nadu and costs about
   ₹2.4-2.7 lakh, or ₹1.4-1.7 lakh after the ₹1 lakh subsidy. Who needs 4kW.
-featuredImage: /images/3kW vs 5kW Comparison.webp
+featuredImage: /images/4kw-solar-system-tamil-nadu.webp
 category: Cost & Savings
 tags:
   - 4kW Solar

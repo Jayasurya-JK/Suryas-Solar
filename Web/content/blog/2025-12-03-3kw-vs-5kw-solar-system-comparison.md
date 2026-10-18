@@ -4,7 +4,7 @@ date: '2025-12-03'
 excerpt: >-
   Confused between 3kW and 5kW? Compare generation, cost, and AC running
   capacity. Find the perfect solar system size for your TNEB bill.
-featuredImage: /images/3kW vs 5kW Comparison.webp
+featuredImage: /images/3kw-vs-5kw-solar.webp
 category: Solar Guides
 author: Surya's Solar Team
 tags:

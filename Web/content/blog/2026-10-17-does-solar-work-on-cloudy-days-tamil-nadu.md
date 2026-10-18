@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Yes - solar panels still produce 10-60% of normal output on cloudy days in
   Tamil Nadu. Real numbers by cloud type, yearly impact, and how to size for it.
-featuredImage: /images/8.webp
+featuredImage: /images/solar-cloudy-days-tamil-nadu.webp
 category: Solar Guides
 tags:
   - Cloudy Days

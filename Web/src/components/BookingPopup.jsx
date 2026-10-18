@@ -12,15 +12,17 @@ export default function BookingPopup() {
             return
         }
 
-        let timer
-        if (!isVisible) {
-            timer = setTimeout(() => {
-                setIsVisible(true)
-            }, 60000) // Show after 60 seconds
-        }
+        // Show once per visit, 20 seconds in
+        try {
+            if (sessionStorage.getItem('consultPopupShown')) return
+        } catch (e) {}
+        const timer = setTimeout(() => {
+            setIsVisible(true)
+            try { sessionStorage.setItem('consultPopupShown', '1') } catch (e) {}
+        }, 20000)
 
         return () => clearTimeout(timer)
-    }, [isVisible, router.pathname])
+    }, [router.pathname])
 
     const handleClose = () => {
         setIsVisible(false)
@@ -46,7 +48,7 @@ export default function BookingPopup() {
 
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Free Solar Consultation</h3>
                     <p className="text-gray-600 text-sm mb-6">
-                        Get a customized solar proposal for your home. Save up to 90% on electricity bills!
+                        Get a custom solar plan for your home and help with the up to ₹1 lakh subsidy. Free home visit.
                     </p>
 
                     <button

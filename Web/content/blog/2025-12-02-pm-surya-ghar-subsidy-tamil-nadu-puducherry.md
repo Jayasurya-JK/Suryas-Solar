@@ -5,7 +5,7 @@ updated: '2026-10-17'
 excerpt: >-
   Tamil Nadu homes can now get up to ₹1 lakh for rooftop solar: ₹78,000 PM Surya
   Ghar + ₹22,000 state top-up (G.O. 102). Who qualifies, how to apply, deadlines.
-featuredImage: /images/Blog 4.webp
+featuredImage: /images/one-lakh-solar-subsidy-tamil-nadu.webp
 category: Subsidy & Schemes
 author: Surya's Solar Team
 tags:

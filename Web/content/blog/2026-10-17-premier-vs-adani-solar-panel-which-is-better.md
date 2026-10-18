@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   Premier vs Adani solar panels compared for Tamil Nadu homes: TOPCon efficiency,
   DCR for subsidy, warranty, price per watt and heat performance. Honest verdict.
-featuredImage: /images/6.webp
+featuredImage: /images/premier-vs-adani-solar-panel.webp
 category: Products & Comparisons
 tags:
   - Premier Energies

@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   Puducherry solar subsidy 2026: ₹78,000 central PM Surya Ghar subsidy, the
   reported state top-up, eligibility, PED net metering and how to apply.
-featuredImage: /images/solar-cost-puducherry-2026.webp
+featuredImage: /images/puducherry-solar-subsidy-2026.webp
 category: Subsidy & Schemes
 tags:
   - Puducherry Solar Subsidy

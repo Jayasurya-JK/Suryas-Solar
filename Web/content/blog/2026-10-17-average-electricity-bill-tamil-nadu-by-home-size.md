@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   What is a normal EB bill in Tamil Nadu? Typical bimonthly units and bills for
   1BHK, 2BHK, 3BHK and AC homes in 2026, with the 200 free units rule explained.
-featuredImage: /images/why-is-electricity-bill-high-in-summer-tamil-nadu.webp
+featuredImage: /images/average-electricity-bill-tamil-nadu.webp
 category: Electricity Bill & Savings
 tags:
   - EB Bill

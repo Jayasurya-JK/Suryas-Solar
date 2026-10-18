@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   High EB bill in Chennai? Humidity-driven AC use, the 500-unit slab cliff,
   estimated readings and old appliances explained, with fixes that cut the bill.
-featuredImage: /images/how-to-reduce-electricity-bill-tamil-nadu-solar.webp
+featuredImage: /images/eb-bill-high-chennai.webp
 category: Electricity Bill & Savings
 tags:
   - EB Bill

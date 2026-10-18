@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   PM Surya Ghar application rejected or stuck? The 8 most common reasons (name
   mismatch, sanctioned load, non-DCR panels) and exactly how to fix each one.
-featuredImage: /images/pm-surya-ghar-scheme-cuddalore-2026.webp
+featuredImage: /images/pm-surya-ghar-application-rejected.webp
 category: Subsidy & Schemes
 tags:
   - PM Surya Ghar

@@ -5,7 +5,7 @@ author: Surya's Solar Team
 excerpt: >-
   Solar panel price list for Tamil Nadu 2026: per-watt rates for Tata, Adani,
   Waaree, Premier and Exide, plus 1kW to 10kW system prices after the ₹1 lakh subsidy.
-featuredImage: /images/solar-panel-cost-tamil-nadu-2026.webp
+featuredImage: /images/solar-panel-price-list-tamil-nadu.webp
 category: Cost & Savings
 tags:
   - Solar Panel Price

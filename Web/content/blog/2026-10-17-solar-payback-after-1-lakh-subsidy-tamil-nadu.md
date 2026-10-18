@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   With the ₹1 lakh subsidy, rooftop solar pays back in about 2.5-5 years for Tamil
   Nadu homes with AC-level bills. Real slab-based math by bill size, honestly.
-featuredImage: /images/solar-roi-calculator-break-even-analysis.webp
+featuredImage: /images/solar-payback-after-subsidy.webp
 category: Cost & Savings
 tags:
   - Solar Payback

@@ -5,7 +5,7 @@ author: Surya's Solar Engineering Team
 excerpt: >-
   A 2kW solar system makes 8-10 units a day (240-300 a month) in Tamil Nadu and
   gets ₹70,000 subsidy. Price, what it runs, and when 3kW is the smarter buy.
-featuredImage: /images/4.webp
+featuredImage: /images/2kw-solar-units-per-day.webp
 category: Solar Guides
 tags:
   - 2kW Solar
