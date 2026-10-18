@@ -1,269 +1,495 @@
-# Image Prompts - All Blog Posts (v4, 18 Oct 2026)
+# Image Prompts - All Blog Posts (v5, 18 Oct 2026)
 
-**Style: matches the blog cards** - bold headline in the image, a Tamil Nadu rooftop scene, and 2-3 badges with the key number (like "TNEB NET METER GUIDE", "40% TAX DEPRECIATION"). 40 prompts, one per post or page. Until you replace them, posts show an existing photo, so nothing is broken.
+**Style:** same as our best existing covers (TNEB Net Meter Guide, 40% Tax Depreciation, Solar Cost in Puducherry): a realistic scene where **the information is built into the picture** - labels on the panels, a process strip, a glass card, a comparison - with a clean headline and a subtitle using "•".
 
-## How to use (3 steps)
+**Done (4):** ₹1 Lakh Solar Subsidy, Subsidy Checker, EB Bill Calculator, Solar Panel Price List - already on the website.
 
-1. In Gemini, set **Aspect ratio = 16:9** and the **Pro / High** model.
-2. Copy **only the text inside the grey box** and paste it.
-3. Generate 2-4 times, pick the best, and save it in `Web/public/images/` with the **Save as** name. Tell Claude "images added".
+**Below: 36 prompts**, one per post. Posts keep their current photo until you replace it, so nothing breaks.
 
-## Check before you save (important)
+## How to use
 
-- **Spelling:** read every word in the image. AI sometimes misspells; regenerate if any word is wrong.
-- **Numbers:** they must match the prompt exactly (₹1 lakh, ₹78,000, ₹22,000 and so on). Wrong numbers on the site hurt trust.
-- **No brand logos** and no fake company names in the image.
-- If the text is wrong after 3 tries, add: *"Make the text larger and simpler, exactly: <headline>"*.
+1. Gemini: choose the **Pro / Thinking** image model and **16:9**.
+2. Copy **only the text inside the grey box** and paste it. These prompts are long on purpose - the detail is what makes the scene look like our best covers.
+3. Generate 2-3 times and pick the best.
+4. **Check every word and number** in the image against the prompt. If something is misspelt, reply in the same chat: *"Fix the text, it must read exactly: <the correct text>"*.
+5. Download, rename to the **Save as** name, and send them to Claude (or put them in your Downloads folder and say "images ready").
 
 **Priority:** A = do first (money pages), B = next.
 
 ---
 
-### 1. ₹1 Lakh Solar Subsidy Tamil Nadu (flagship) (A)
-Save as: `one-lakh-solar-subsidy-tamil-nadu`
-```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "₹1 LAKH SOLAR SUBSIDY". Subtitle: "Tamil Nadu 2026". Badges: "₹78,000 PM Surya Ghar", "+ ₹22,000 TN Top-up", "First 1 Lakh Homes". Scene: a happy Tamil family on the white terrace of their two-storey home beside new blue-black solar panels on a raised galvanized structure, a large golden rupee coin icon floating beside them. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
-```
-
-### 2. Subsidy Eligibility Checker page (A)
-Save as: `subsidy-eligibility-checker`
-```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "CHECK YOUR ₹1 LAKH SUBSIDY". Subtitle: "30 Seconds - Free". Badges: "6 Quick Questions", "Instant Result". Scene: a smartphone in a hand showing a simple checklist with green ticks (no readable words) in front of a Tamil Nadu home with rooftop solar panels. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
-```
-
-### 3. TNEB EB Bill Calculator page (A)
-Save as: `eb-bill-calculator`
-```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "TNEB EB BILL CALCULATOR". Subtitle: "2026 Slab Rates". Badges: "200 Free Units", "500-Unit Jump", "Free Tool". Scene: an electricity bill and a calculator on a wooden table with a smartphone, rooftop solar panels visible through a window. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
-```
-
-### 4. Solar Panel Price List Tamil Nadu 2026 (A)
-Save as: `solar-panel-price-list-tamil-nadu`
-```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR PANEL PRICE LIST 2026". Subtitle: "By Brand and System Size". Badges: "₹22-29 per Watt (DCR)", "3kW: ₹80K-1.1L after subsidy". Scene: a neat row of large black solar panels on display stands on a sunny terrace with a price-tag icon. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
-```
-
-### 5. Solar With Battery Backup: Price (A)
+### 1. Solar With Battery Backup: Price (A)
 Save as: `solar-battery-backup-price`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR WITH BATTERY BACKUP". Subtitle: "Price in Tamil Nadu 2026". Badges: "3kW Hybrid: ₹2.6-3.2 Lakh", "Power During Cuts". Scene: a warm living room at night with lights and fan on during a power cut, a white hybrid inverter and slim home battery on the wall, rooftop solar panels outside. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Solar With Battery Backup: Price".
+
+SCENE: evening inside a warm, modern Tamil Nadu living room during a power cut. The street outside the window is dark (neighbouring houses have no lights), but this home is glowing: ceiling lights on, ceiling fan spinning, TV on. A happy family of three (father, mother in a cotton saree, school-age daughter) relaxes on the sofa. On the right wall, mounted neatly at shoulder height: a slim white hybrid solar inverter with a small glowing display, and below it a slim white lithium home battery with a green charge light. Thin neat conduit runs up from them. Through a large window at the back, the silhouette of rooftop solar panels on the terrace against a deep blue dusk sky.
+INFORMATION IN THE SCENE: a soft glowing line traces from the battery to the lights and fan, showing power flowing. A small frosted-glass label near the battery reads "Backup ON".
+TEXT: headline at the top centre in large white bold letters with a soft dark shadow: "SOLAR WITH BATTERY BACKUP". Subtitle under it in warm yellow: "Price Guide • Tamil Nadu 2026". One rounded frosted-glass card at the bottom left: "3kW Hybrid: ₹2.6-3.2 Lakh".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 6. 1kW Solar Panel: Units Per Day (A)
+### 2. 1kW Solar Panel: Units Per Day (A)
 Save as: `1kw-solar-units-per-day`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "1kW SOLAR: UNITS PER DAY". Subtitle: "Tamil Nadu Guide". Badges: "4-5 Units a Day", "120-150 a Month". Scene: two large solar panels on a compact galvanized frame on a small Tamil Nadu terrace at noon with a glowing sun icon. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "1kW Solar Panel: Units Per Day".
+
+SCENE: a small, neat single-storey Tamil Nadu home seen from a slight drone angle at bright midday. On its flat white terrace, exactly two large solar panels sit on a compact galvanized frame, tilted south. A bright sun in the upper right sends soft rays onto the panels. Coconut palms and a few neighbouring terraces around.
+INFORMATION IN THE SCENE: a glowing thin line rises from the panels into a clean frosted-glass panel floating beside the house, showing a simple rising sun-curve graph through the day (morning low, noon high, evening low) with no numbers on the axes.
+TEXT: headline at the top in large dark navy bold letters on the clear sky: "1kW SOLAR: UNITS PER DAY". Subtitle under it in medium grey: "Tamil Nadu Guide • 2026". Two small white rounded labels pinned near the panels: "4-5 Units a Day" and "120-150 Units a Month".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 7. 2kW Solar System: Units, Price, Worth It (A)
+### 3. 2kW Solar System: Units, Price, Worth It (A)
 Save as: `2kw-solar-units-per-day`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "2kW SOLAR SYSTEM". Subtitle: "Units, Price and Subsidy". Badges: "8-10 Units a Day", "₹70,000 Subsidy". Scene: four solar panels on a raised galvanized frame on a small Tamil Nadu house terrace in morning sun. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "2kW Solar System: Units, Price, Worth It".
+
+SCENE: a compact two-storey white Tamil Nadu house with a terracotta-tiled sit-out, morning golden light. On the terrace, four solar panels in one neat row on a raised galvanized structure. A middle-aged couple stands on the terrace beside the panels, the husband pointing at them, the wife holding a printed electricity bill and smiling.
+INFORMATION IN THE SCENE: above the panel row, a small white rounded label "2kW". A frosted-glass card floats to the right of the house with three tidy rows, each with a simple line icon.
+TEXT: headline at the top centre in large dark navy bold letters: "2kW SOLAR SYSTEM". Subtitle under it: "Units • Price • Is It Worth It?". Inside the frosted card, three rows: "8-10 Units a Day", "₹70,000 Subsidy", "Small Families".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 8. 3kW vs 5kW Solar comparison (A)
+### 4. 3kW vs 5kW Solar comparison (A)
 Save as: `3kw-vs-5kw-solar`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "3kW vs 5kW SOLAR". Subtitle: "Which Size Fits Your Bill?". Badges: "3kW: 12-15 Units/Day", "5kW: 20-25 Units/Day". Scene: two Tamil Nadu homes side by side, the left with a smaller solar array and the right with a larger array, a VS badge between them. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "3kW vs 5kW Solar comparison".
+
+SCENE: a wide shot of two modern Tamil Nadu homes standing side by side on the same street under a clear blue sky, palms between them. Left home: a smaller two-storey house with six solar panels on its terrace and one AC outdoor unit on the wall. Right home: a larger two-storey house with ten solar panels on a raised structure and two AC outdoor units on the wall. Same daylight, same camera height, symmetric composition.
+INFORMATION IN THE SCENE: a thin glowing vertical divider line between the two homes with a round white "VS" badge in the middle. Above each array, a white rounded label: "3kW" on the left array, "5kW" on the right array. Under each home, a small frosted-glass card.
+TEXT: headline at the top centre in large dark navy bold letters: "3kW vs 5kW SOLAR". Subtitle: "Which Size Fits Your EB Bill?". Left card: "12-15 Units a Day". Right card: "20-25 Units a Day".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 9. 4kW Solar System Guide (A)
+### 5. 4kW Solar System Guide (A)
 Save as: `4kw-solar-system-tamil-nadu`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "4kW SOLAR SYSTEM". Subtitle: "Price, Units and Is It Enough?". Badges: "16-20 Units a Day", "₹1.4-1.7 Lakh after subsidy". Scene: a modern two-storey Tamil Nadu home with eight solar panels in two rows on a raised structure and two AC outdoor units on the wall. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "4kW Solar System Guide".
+
+SCENE: a modern two-storey Tamil Nadu home with a clean white facade and wooden window frames, three-quarter view from the street at late morning. On the terrace, eight solar panels in two neat rows on a raised galvanized structure, with a water tank behind. Two AC outdoor units on the side wall. A small garden with plantain and hibiscus at the front gate.
+INFORMATION IN THE SCENE: a white rounded label "4kW" floating above the panel rows. A thin glowing line runs from the panels down to the house and to a frosted-glass card at the right.
+TEXT: headline at the top in large dark navy bold letters: "4kW SOLAR SYSTEM". Subtitle: "Price • Units • Is It Enough?". Frosted card with two rows: "16-20 Units a Day" and "₹1.4-1.7 Lakh after subsidy".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 10. 5kW Solar Panel: Units Per Day (A)
+### 6. 5kW Solar Panel: Units Per Day (A)
 Save as: `5kw-solar-units-per-day`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "5kW SOLAR: UNITS PER DAY". Subtitle: "Runs 2 ACs". Badges: "20-25 Units a Day", "Up to ₹1 Lakh Subsidy". Scene: a large terrace with nine solar panels on a raised galvanized structure over a two-storey South Indian home at golden hour. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "5kW Solar Panel: Units Per Day".
+
+SCENE: golden-hour drone view of a large South Indian two-storey home with a wide terrace. Nine solar panels in three rows on a raised galvanized structure, long soft shadows. Inside, through a glass balcony door, a living room with a split AC running. Coconut palms glowing in warm light.
+INFORMATION IN THE SCENE: a glowing curved arrow from the sun to the panels, then from the panels into the house. A white rounded label "5kW" above the panels.
+TEXT: headline at the top centre in large white bold letters with a soft dark shadow: "5kW SOLAR: UNITS PER DAY". Subtitle in warm yellow: "Runs 2 ACs • Tamil Nadu 2026". Two rounded frosted-glass labels at the bottom left: "20-25 Units a Day" and "Up to ₹1 Lakh Subsidy".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 11. 10kW Solar System (B)
+### 7. 10kW Solar System (B)
 Save as: `10kw-solar-system`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "10kW SOLAR SYSTEM". Subtitle: "For Large Homes and Businesses". Badges: "40-50 Units a Day", "₹5-6.5 Lakh". Scene: a big flat roof with about eighteen solar panels in three long rows, drone view, golden hour. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "10kW Solar System".
+
+SCENE: golden-hour drone view of a large flat roof of a big Tamil Nadu home or small commercial building. About eighteen solar panels in three long straight rows on a raised galvanized structure, perfectly aligned. Neat cable trays, walkway between rows. Palms and town rooftops in the background.
+INFORMATION IN THE SCENE: a white rounded label "10kW" over the middle row. On the left, a clean frosted-glass card with two rows and simple line icons.
+TEXT: headline at the top in large white bold letters with a soft dark shadow: "10kW SOLAR SYSTEM". Subtitle in warm yellow: "Large Homes • Shops • Small Businesses". Card rows: "40-50 Units a Day" and "₹5-6.5 Lakh".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 12. Solar Payback After ₹1 Lakh Subsidy (A)
+### 8. Solar Payback After ₹1 Lakh Subsidy (A)
 Save as: `solar-payback-after-subsidy`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR PAYBACK". Subtitle: "After ₹1 Lakh Subsidy". Badges: "AC Homes: 3-4.5 Years", "25 Years of Savings". Scene: a rising bar chart of golden coins growing beside a Tamil Nadu home with rooftop solar panels. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Solar Payback After ₹1 Lakh Subsidy".
+
+SCENE: a bright Tamil Nadu home with rooftop solar panels on the right half of the image, late morning. In the foreground on a wooden table: a calculator, a folded electricity bill and a small stack of rupee coins.
+INFORMATION IN THE SCENE: rising from the coins on the left, a clean 3D bar chart made of stacked golden rupee coins, each bar taller than the last, with a smooth upward arrow over them ending at the house. Under the bars, a thin timeline with small ticks but no numbers.
+TEXT: headline at the top in large dark navy bold letters: "SOLAR PAYBACK". Subtitle under it: "After ₹1 Lakh Subsidy • Tamil Nadu". Two rounded white labels near the chart: "AC Homes: 3-4.5 Years" and "25 Years of Savings".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 13. PM Surya Ghar Last Date 2027 (A)
+### 9. PM Surya Ghar Last Date 2027 (A)
 Save as: `pm-surya-ghar-last-date-2027`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "PM SURYA GHAR LAST DATE". Subtitle: "Approved till 31 March 2027". Badges: "Apply Early", "Process: 6-10 Weeks". Scene: a calendar icon with a clock beside a Tamil Nadu home with new rooftop solar panels. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "PM Surya Ghar Last Date 2027".
+
+SCENE: a cheerful Tamil Nadu home with new rooftop solar panels, bright clear morning. In the foreground left, a large realistic desk calendar page standing upright on a table with a red circle drawn around one date, and a classic round alarm clock beside it.
+INFORMATION IN THE SCENE: a thin timeline ribbon runs from the calendar towards the house with four small step icons along it (document, inspection, panel, meter) and no words on the steps.
+TEXT: headline at the top in large dark navy bold letters: "PM SURYA GHAR LAST DATE". Subtitle: "Scheme Approved till 31 March 2027". On the calendar page, large: "31 MAR 2027". A rounded white label near the timeline: "Process Takes 6-10 Weeks".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 14. PM Surya Ghar Application Rejected (A)
+### 10. PM Surya Ghar Application Rejected (A)
 Save as: `pm-surya-ghar-application-rejected`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "APPLICATION REJECTED?". Subtitle: "8 Reasons and Fixes". Badges: "Name Mismatch", "Low Sanctioned Load", "Pending Dues". Scene: a document with a red cross turning into a document with a green tick, beside a Tamil Nadu home with rooftop solar. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "PM Surya Ghar Application Rejected".
+
+SCENE: a home office corner in a Tamil Nadu house, soft daylight from a window that shows rooftop solar panels outside. On the desk, two printed application sheets side by side with no readable text: the left one has a large red cross stamp, the right one a large green tick stamp. A curved arrow goes from left to right between them. A pen and a phone on the desk.
+INFORMATION IN THE SCENE: to the right, a clean frosted-glass card listing three common problems, each with a small amber warning icon.
+TEXT: headline at the top in large dark navy bold letters: "APPLICATION REJECTED?". Subtitle: "8 Common Reasons • How to Fix Them". Card rows: "Name Mismatch", "Low Sanctioned Load", "Pending EB Dues".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 15. TNEB Solar Application: Apply and Check Status (A)
+### 11. TNEB Solar Application: Apply and Check Status (A)
 Save as: `tneb-solar-application-status`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "TNEB SOLAR APPLICATION". Subtitle: "How to Apply and Check Status". Badges: "Step-by-Step", "6-10 Weeks". Scene: a laptop and smartphone showing a progress tracker with steps (no readable words) on a desk, rooftop solar visible through a window. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "TNEB Solar Application: Apply and Check Status".
+
+SCENE: a clean desk near a bright window; a laptop and a smartphone sit side by side. Outside the window, a Tamil Nadu terrace with solar panels and palms. A hand holds the phone.
+INFORMATION IN THE SCENE: across the lower part of the image, a wide white rounded strip (like a process bar) with five connected steps, each a simple line icon in a circle joined by thin blue arrows: 1 document, 2 magnifying glass, 3 solar panel, 4 meter, 5 rupee coin. The first three circles are filled blue (done), the last two are outlined (pending).
+TEXT: headline at the top in large dark navy bold letters: "TNEB SOLAR APPLICATION". Subtitle: "How to Apply • Check Status • Timeline". Under the five steps, small labels: "Apply", "Inspection", "Install", "Net Meter", "Subsidy".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 16. Puducherry Solar Subsidy 2026 (A)
+### 12. Puducherry Solar Subsidy 2026 (A)
 Save as: `puducherry-solar-subsidy-2026`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "PUDUCHERRY SOLAR SUBSIDY". Subtitle: "2026 Guide". Badges: "₹78,000 Central Subsidy", "PED Net Meter". Scene: a colourful Puducherry-style home with yellow walls and white shutters, solar panels on the flat roof, palm trees and sea haze. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Puducherry Solar Subsidy 2026".
+
+SCENE: a charming Puducherry street with French-colonial style homes: mustard-yellow walls, white shutters, bougainvillea over the gate. The nearest home has neat solar panels on its flat roof on a raised galvanized structure. A glimpse of the sea and light haze at the end of the street, a few palms, clear sky.
+INFORMATION IN THE SCENE: a white rounded label above the panels with a small rupee icon. A clean frosted-glass card at the bottom right.
+TEXT: headline at the top in large dark navy bold letters: "PUDUCHERRY SOLAR SUBSIDY". Subtitle: "2026 Guide • PED Net Meter • Process". Label above the panels: "₹78,000 Central Subsidy". Card: "Apply on PM Surya Ghar Portal".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 17. Best Solar Company in Puducherry (A)
+### 13. Best Solar Company in Puducherry (A)
 Save as: `best-solar-company-puducherry`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "BEST SOLAR COMPANY PUDUCHERRY". Subtitle: "9 Checks Before You Book". Badges: "Registered Vendor", "Coastal-Grade Structure". Scene: a Puducherry heritage street with a home carrying rooftop solar panels and a checklist icon with green ticks. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Best Solar Company in Puducherry".
+
+SCENE: a Puducherry heritage-style home with pastel walls and white shutters, solar panels on the roof. On the terrace, an Indian solar technician in a plain blue uniform and white helmet tightens a bolt on the galvanized structure while a homeowner watches. Sea breeze, palms, soft morning light.
+INFORMATION IN THE SCENE: on the left, a clean white clipboard-style card with four rows, each starting with a green tick circle.
+TEXT: headline at the top in large dark navy bold letters: "BEST SOLAR COMPANY IN PUDUCHERRY". Subtitle: "9 Checks Before You Book". Checklist rows: "Registered Vendor", "Coastal-Grade Structure", "DCR Panels", "Written Warranty".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 18. DCR Solar Panel: Meaning and How to Check (A)
+### 14. DCR Solar Panel: Meaning and How to Check (A)
 Save as: `dcr-solar-panel-check`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "DCR SOLAR PANEL". Subtitle: "Meaning and How to Check". Badges: "Made-in-India Cells", "Needed for Subsidy". Scene: the back of a solar panel with a magnifying glass over a blank label and a green shield tick icon. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "DCR Solar Panel: Meaning and How to Check".
+
+SCENE: close-up on a Tamil Nadu terrace: one solar panel is tilted so we see its back side with a white product label sticker (text on the sticker is blurred and unreadable). A hand holds a large magnifying glass over the label. Behind, a row of installed panels and palms out of focus.
+INFORMATION IN THE SCENE: a soft green shield icon with a tick floats next to the magnifying glass. A small Indian flag colour ribbon (saffron, white, green, no text) wraps one corner of a frosted card.
+TEXT: headline at the top in large dark navy bold letters: "DCR SOLAR PANEL". Subtitle: "Meaning • How to Check • Why It Matters". Frosted card: "Made-in-India Cells" and "Needed for Subsidy".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 19. Solar Panel Price by City in Tamil Nadu (A)
+### 15. Solar Panel Price by City in Tamil Nadu (A)
 Save as: `solar-price-by-city-tamil-nadu`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR PRICE BY CITY". Subtitle: "Tamil Nadu 2026". Badges: "3kW: ₹1.8-2.2 Lakh", "Same Subsidy Statewide". Scene: a stylised map of Tamil Nadu with location pins over a city skyline with rooftop solar panels. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Solar Panel Price by City in Tamil Nadu".
+
+SCENE: a clean, slightly tilted 3D map of Tamil Nadu in soft white and light blue, floating above a sunny residential terrace with solar panels. Small house-shaped pins with tiny solar panels on them stand on the map at Chennai, Coimbatore, Madurai, Trichy, Salem and Cuddalore positions. Soft shadows, bright sky.
+INFORMATION IN THE SCENE: thin glowing lines connect the pins. One clean frosted card at the bottom.
+TEXT: headline at the top in large dark navy bold letters: "SOLAR PRICE BY CITY". Subtitle: "Tamil Nadu 2026 • 3kW Prices". Small labels next to the pins: "Chennai", "Coimbatore", "Madurai", "Trichy", "Salem", "Cuddalore". Frosted card: "3kW: ₹1.8-2.2 Lakh • Same Subsidy Statewide".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 20. Rooftop Solar for Industries and Commercial (A)
+### 16. Rooftop Solar for Industries and Commercial (A)
 Save as: `rooftop-solar-industries-commercial`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR FOR INDUSTRIES". Subtitle: "Factories, Warehouses, Offices". Badges: "40% Tax Depreciation", "Payback 3-5 Years". Scene: a large factory roof covered in rows of solar panels, drone view, trucks and palm trees around. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Rooftop Solar for Industries and Commercial".
+
+SCENE: a large modern factory and warehouse in an industrial estate in Tamil Nadu, seen from a high three-quarter drone angle at late afternoon. The whole metal roof is covered with long, perfectly aligned rows of solar panels. Trucks at the loading bay, palms along the boundary wall. In the foreground right, an office desk with a laptop showing an upward chart and a calculator.
+INFORMATION IN THE SCENE: a frosted-glass card floats over the middle of the image with a rising bar chart and a few gold rupee symbols around it, similar to a premium finance infographic.
+TEXT: inside the glass card, large: "SOLAR FOR INDUSTRIES". Below it: "Factories • Warehouses • Offices". Two small white rounded labels under the card: "40% Tax Depreciation" and "Payback 3-5 Years".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 21. Premier vs Adani Solar Panel (A)
+### 17. Premier vs Adani Solar Panel (A)
 Save as: `premier-vs-adani-solar-panel`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "PREMIER vs ADANI". Subtitle: "Which Solar Panel Is Better?". Badges: "TOPCon vs TOPCon", "DCR for Subsidy". Scene: two black solar panels standing side by side on a sunny terrace with a VS badge between them. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Premier vs Adani Solar Panel".
+
+SCENE: a clean, bright rooftop showroom-style setting on a Tamil Nadu terrace: two large black solar panels stand upright on matching display stands, side by side, identical lighting, soft shadows. Palms and blue sky behind. The panels have NO logos and no text.
+INFORMATION IN THE SCENE: a round white "VS" badge between the panels. Under each panel, a small frosted-glass card with three short rows of simple icons (lightning bolt, shield, rupee) and no numbers.
+TEXT: headline at the top in large dark navy bold letters: "PREMIER vs ADANI". Subtitle: "Which Solar Panel Is Better?". A single wide rounded white label at the bottom centre: "Efficiency • Warranty • DCR Subsidy".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 22. Premier vs Waaree Solar Panel (A)
+### 18. Premier vs Waaree Solar Panel (A)
 Save as: `premier-vs-waaree-solar-panel`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "PREMIER vs WAAREE". Subtitle: "Which Solar Panel Is Better?". Badges: "Efficiency", "Warranty", "Price". Scene: two solar panels, one glass-glass bifacial, side by side on a coastal rooftop with a VS badge. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Premier vs Waaree Solar Panel".
+
+SCENE: a coastal Tamil Nadu terrace with a sea view in the far background. Two solar panels on display stands side by side: the left a standard black monocrystalline panel, the right a glass-glass bifacial panel where light passes through the gaps between cells and reflects off the white terrace floor. No logos or text on the panels.
+INFORMATION IN THE SCENE: a round white "VS" badge between them. Small glowing arrows under the bifacial panel show reflected light reaching its back side.
+TEXT: headline at the top in large dark navy bold letters: "PREMIER vs WAAREE". Subtitle: "Which Solar Panel Is Better?". A rounded white label at the bottom centre: "Efficiency • Warranty • Price".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 23. Waaree vs Adani vs Tata Solar Panel (A)
+### 19. Waaree vs Adani vs Tata Solar Panel (A)
 Save as: `waaree-vs-adani-vs-tata`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "WAAREE vs ADANI vs TATA". Subtitle: "Solar Panel Comparison 2026". Badges: "All DCR TOPCon", "Within 1% Efficiency". Scene: three black solar panels on stands side by side on a sunny Tamil Nadu terrace. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Waaree vs Adani vs Tata Solar Panel".
+
+SCENE: three identical-size black solar panels standing on display stands in a row on a sunny Tamil Nadu terrace, evenly spaced, even lighting, palms and clear sky behind. No logos or text on the panels.
+INFORMATION IN THE SCENE: under each panel, a matching small frosted-glass card with three simple icons (lightning bolt, shield, rupee). Thin glowing lines connect the three cards to show they are being compared.
+TEXT: headline at the top in large dark navy bold letters: "WAAREE vs ADANI vs TATA". Subtitle: "Solar Panel Comparison 2026". A rounded white label at the bottom centre: "All DCR TOPCon • Within 1% Efficiency".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 24. Loom vs Luminous vs Tata Solar (B)
+### 20. Loom vs Luminous vs Tata Solar (B)
 Save as: `loom-luminous-tata-solar`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "LOOM vs LUMINOUS vs TATA". Subtitle: "Which Is Better for Your Home?". Badges: "Panels", "Inverters", "Batteries". Scene: a solar panel, a white solar inverter and a home battery displayed side by side on a terrace. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Loom vs Luminous vs Tata Solar".
+
+SCENE: a clean, bright utility area on a Tamil Nadu terrace. Three products displayed side by side on a low white platform: on the left a black solar panel on a stand, in the middle a white wall-mounted solar inverter on a small display board, on the right a slim white home battery. No logos or text on any product. Soft daylight, palms in the background.
+INFORMATION IN THE SCENE: above each product, a small round icon (sun, lightning, battery). Thin glowing lines link the three.
+TEXT: headline at the top in large dark navy bold letters: "LOOM vs LUMINOUS vs TATA". Subtitle: "Which Is Better for Your Home?". Small labels under the products: "Panels", "Inverters", "Batteries".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 25. Top Solar Companies in Tamil Nadu (B)
+### 21. Top Solar Companies in Tamil Nadu (B)
 Save as: `top-solar-companies-tamil-nadu`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "TOP SOLAR COMPANIES". Subtitle: "Tamil Nadu 2026". Badges: "Brands", "How to Choose an Installer". Scene: a modern solar panel factory line with rows of new panels and a Tamil Nadu map pin icon. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Top Solar Companies in Tamil Nadu".
+
+SCENE: split composition. Left half: inside a modern, clean solar module factory in Tamil Nadu, long rows of new black panels on a bright production line, workers in light uniforms and caps in the distance. Right half: a sunny residential terrace where an installer team of two fixes panels onto a galvanized structure. A soft light-blue gradient blends the two halves.
+INFORMATION IN THE SCENE: a small 3D Tamil Nadu map pin icon at the centre seam. A clean white card at the bottom with two rows and icons (factory icon, house-with-panel icon).
+TEXT: headline at the top in large dark navy bold letters: "TOP SOLAR COMPANIES". Subtitle: "Tamil Nadu 2026". Card rows: "Panel Brands" and "How to Choose an Installer".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 26. Average Electricity Bill in Tamil Nadu (A)
+### 22. Average Electricity Bill in Tamil Nadu (A)
 Save as: `average-electricity-bill-tamil-nadu`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "AVERAGE EB BILL IN TAMIL NADU". Subtitle: "By Home Size - 2026". Badges: "1BHK", "2BHK", "3BHK". Scene: three Tamil Nadu homes of increasing size with small bill icons above each. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Average Electricity Bill in Tamil Nadu".
+
+SCENE: three Tamil Nadu homes side by side on one street, growing in size from left to right: a small single-storey house, a medium two-storey house, a large two-storey house with two AC outdoor units. Bright afternoon, palms, clean road.
+INFORMATION IN THE SCENE: above each home, a small floating paper electricity bill icon, getting bigger from left to right, with a thin rising arrow across all three. No numbers on the bills.
+TEXT: headline at the top in large dark navy bold letters: "AVERAGE EB BILL IN TAMIL NADU". Subtitle: "By Home Size • 2026". White rounded labels under each home: "1BHK", "2BHK", "3BHK".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 27. Why Is My EB Bill High in Chennai? (B)
+### 23. Why Is My EB Bill High in Chennai? (B)
 Save as: `eb-bill-high-chennai`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "WHY IS MY EB BILL HIGH?". Subtitle: "Chennai: 9 Causes and Fixes". Badges: "AC Hours", "500-Unit Jump". Scene: a Chennai apartment living room with a split AC running and a rising bill graph icon. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Why Is My EB Bill High in Chennai?".
+
+SCENE: a modern Chennai apartment living room on a hot afternoon, bright light through the balcony with a hazy city skyline and apartment towers outside. A split AC on the wall is running. A worried man in his thirties sits on the sofa looking at a printed electricity bill.
+INFORMATION IN THE SCENE: a clean frosted-glass panel floats beside him with a rising red line graph and a small upward arrow. A few small icons around it: AC, fridge, water heater.
+TEXT: headline at the top in large dark navy bold letters: "WHY IS MY EB BILL HIGH?". Subtitle: "Chennai • 9 Causes and Fixes". Two rounded white labels: "AC Hours" and "500-Unit Jump".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 28. Tamil Nadu Solar Net Metering Policy (B)
+### 24. Tamil Nadu Solar Net Metering Policy (B)
 Save as: `tamil-nadu-net-metering-policy`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "NET METERING POLICY". Subtitle: "Tamil Nadu 2026". Badges: "Import vs Export", "Bi-directional Meter". Scene: a bi-directional electricity meter on a house wall with two arrows showing power going to the grid and back, rooftop solar above. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Tamil Nadu Solar Net Metering Policy".
+
+SCENE: a clean white Tamil Nadu home with rooftop solar panels, an electricity pole and wires at the left edge. On the front wall, a close-up of a modern white bi-directional electricity meter with a small glowing display (no readable brand). Bright, soft daylight, very similar in feel to a premium guide cover.
+INFORMATION IN THE SCENE: two curved glowing arrows: an orange arrow from the panels through the meter to the pole (export), and a blue arrow from the pole back into the house (import). A wide white rounded strip at the bottom with three icons joined by arrows.
+TEXT: headline at the top in large dark navy bold letters: "NET METERING POLICY". Subtitle: "Tamil Nadu 2026 • How It Works". Arrow labels: "Export" on the orange arrow and "Import" on the blue arrow. Bottom strip labels: "Solar", "Net Meter", "Grid".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 29. TNPDCL Solar Vendor List: How to Check (B)
+### 25. TNPDCL Solar Vendor List: How to Check (B)
 Save as: `solar-vendor-list-check`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR VENDOR LIST". Subtitle: "How to Check Your Installer". Badges: "Registered Vendor", "Avoid Losing Subsidy". Scene: a checklist clipboard with green ticks and a handshake icon in front of a home with rooftop solar. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "TNPDCL Solar Vendor List: How to Check".
+
+SCENE: a homeowner couple at a dining table in a bright Tamil Nadu home, looking at a laptop together. Through the window behind them, a terrace with solar panels. A cup of filter coffee in a steel tumbler on the table.
+INFORMATION IN THE SCENE: a large clean clipboard-style card floats on the right with three rows, each with a green tick circle, and a small handshake icon at the top of the card.
+TEXT: headline at the top in large dark navy bold letters: "SOLAR VENDOR LIST". Subtitle: "How to Check Your Installer". Card rows: "Registered Vendor", "Local Office", "Written Warranty".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 30. Solar Battery vs Normal Inverter Battery (B)
+### 26. Solar Battery vs Normal Inverter Battery (B)
 Save as: `solar-battery-vs-inverter-battery`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR vs NORMAL BATTERY". Subtitle: "Which Should You Buy?". Badges: "C10 vs C20", "Lithium vs Tubular". Scene: a tall tubular battery and a slim white lithium battery side by side with a VS badge, hybrid inverter above. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Solar Battery vs Normal Inverter Battery".
+
+SCENE: a clean, bright utility room in a Tamil Nadu home with light grey walls. On the left floor, a tall traditional tubular inverter battery (dark body, no brand text). On the right, a slim white wall-mounted lithium battery. Above the middle, a white hybrid inverter on the wall. Soft daylight from a small window.
+INFORMATION IN THE SCENE: a round white "VS" badge between the two batteries. A small frosted card under each battery with simple icons (battery level, clock, lightning) and no numbers.
+TEXT: headline at the top in large dark navy bold letters: "SOLAR vs NORMAL BATTERY". Subtitle: "Which Should You Buy?". Two rounded white labels at the bottom: "C10 vs C20" and "Lithium vs Tubular".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 31. Solar Installation Timeline (B)
+### 27. Solar Installation Timeline (B)
 Save as: `solar-installation-timeline`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR INSTALLATION TIMELINE". Subtitle: "Booking to Net Meter". Badges: "Install: 1-3 Days", "Total: 6-10 Weeks". Scene: technicians installing panels on a terrace with a horizontal timeline of five step icons. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Solar Installation Timeline".
+
+SCENE: a bright Tamil Nadu terrace where two Indian technicians in plain blue uniforms and white helmets lift a solar panel onto a galvanized structure, morning sun, palms behind. The house below is white with a terracotta sit-out.
+INFORMATION IN THE SCENE: across the lower third, a wide white rounded strip with five step icons in circles joined by blue arrows: document, house with magnifying glass, solar panel, meter, rupee coin. Very similar to a premium guide cover with a process strip.
+TEXT: headline at the top in large dark navy bold letters: "SOLAR INSTALLATION TIMELINE". Subtitle: "Booking to Net Meter". Step labels under the icons: "Book", "Site Visit", "Install", "Net Meter", "Subsidy". Two small white labels above the strip: "Install: 1-3 Days" and "Total: 6-10 Weeks".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 32. How to Compare Solar Quotations (B)
+### 28. How to Compare Solar Quotations (B)
 Save as: `compare-solar-quotations`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "COMPARE SOLAR QUOTES". Subtitle: "12-Point Checklist". Badges: "DCR Panels", "Structure", "Earthing". Scene: three quotation sheets (unreadable) side by side with a magnifying glass and green tick icons. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "How to Compare Solar Quotations".
+
+SCENE: top-down view of a wooden table in a Tamil Nadu home: three printed solar quotation sheets laid side by side (text on them is blurred and unreadable), a magnifying glass over the middle one, a pen, a calculator, a steel tumbler of coffee. Soft window light from the top left.
+INFORMATION IN THE SCENE: small green tick circles and one amber warning circle float over parts of the sheets, as if being checked.
+TEXT: headline at the top in large dark navy bold letters on a soft white area: "COMPARE SOLAR QUOTES". Subtitle: "12-Point Checklist". Three rounded white labels along the bottom: "DCR Panels", "Structure", "Earthing".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 33. Solar for Apartments: RWA Subsidy (B)
+### 29. Solar for Apartments: RWA Subsidy (B)
 Save as: `apartment-rooftop-solar-rwa`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR FOR APARTMENTS". Subtitle: "RWA Subsidy Guide". Badges: "₹18,000 per kW", "Common Areas". Scene: a four-storey apartment terrace with long rows of solar panels, drone view. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Solar for Apartments: RWA Subsidy".
+
+SCENE: drone view of a four-storey apartment building in a Tamil Nadu city, clean cream facade with balconies. On the large common terrace, long rows of solar panels on a raised galvanized structure, a lift room and water tanks to one side. Morning light, palms and other buildings around.
+INFORMATION IN THE SCENE: thin glowing lines run from the panels down to small icons beside the building: a lift, a water pump, a light bulb.
+TEXT: headline at the top in large dark navy bold letters: "SOLAR FOR APARTMENTS". Subtitle: "RWA Subsidy Guide • Common Areas". Two rounded white labels: "₹18,000 per kW" and "Lifts • Pumps • Lights".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 34. Solar for Shops and Small Businesses (B)
+### 30. Solar for Shops and Small Businesses (B)
 Save as: `solar-for-shops-small-business`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR FOR SHOPS". Subtitle: "Small Businesses in Cuddalore". Badges: "Daytime Savings", "40% Depreciation". Scene: a two-storey commercial building with shops below and solar panels on the roof. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Solar for Shops and Small Businesses".
+
+SCENE: a busy, clean two-storey commercial building on a Tamil Nadu town main road in daylight: shops with open shutters on the ground floor (a pharmacy, a small textile shop, a clinic; no readable shop names), an office above, solar panels on a raised structure on the roof. A two-wheeler parked in front, palms at the corner.
+INFORMATION IN THE SCENE: a frosted-glass card floating at the right with a small rising bar chart and a sun icon.
+TEXT: headline at the top in large dark navy bold letters: "SOLAR FOR SHOPS". Subtitle: "Small Businesses • Clinics • Offices". Card rows: "Daytime Savings" and "40% Tax Depreciation".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 35. How Much Roof Space for Solar? (B)
+### 31. How Much Roof Space for Solar? (B)
 Save as: `roof-space-for-solar`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "HOW MUCH ROOF SPACE?". Subtitle: "1kW to 10kW Guide". Badges: "3kW: 250-300 sq ft", "80-100 sq ft per kW". Scene: a top-down terrace with solar panels and a measuring tape outline. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "How Much Roof Space for Solar?".
+
+SCENE: a straight top-down drone view of a white Tamil Nadu terrace with a water tank and a staircase room. Six solar panels in two rows occupy part of the terrace.
+INFORMATION IN THE SCENE: a dashed blue measuring outline drawn around the panel area with small dimension arrows on two sides (no numbers on the arrows), like an architect's plan overlaid on a photo. A small compass icon pointing south in one corner.
+TEXT: headline at the top in large dark navy bold letters on a clean white band: "HOW MUCH ROOF SPACE?". Subtitle: "1kW to 10kW Guide". Two rounded white labels: "3kW: 250-300 sq ft" and "80-100 sq ft per kW".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 36. Solar Panel Warranty Explained (B)
+### 32. Solar Panel Warranty Explained (B)
 Save as: `solar-panel-warranty`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR PANEL WARRANTY". Subtitle: "What 25 Years Covers". Badges: "Product", "Performance", "Workmanship". Scene: a solar panel with a large shield icon and the number 25 in a badge. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Solar Panel Warranty Explained".
+
+SCENE: a close, slightly low-angle view of a solar panel on a galvanized structure on a sunny Tamil Nadu terrace, palms and blue sky behind.
+INFORMATION IN THE SCENE: a large, glossy 3D shield emblem in deep blue with a gold rim floats in front of the panel, with a big "25" inside it. Three smaller round icons orbit around it: a panel icon, a graph icon, a wrench icon.
+TEXT: headline at the top in large dark navy bold letters: "SOLAR PANEL WARRANTY". Subtitle: "What 25 Years Really Covers". Inside the shield: "25". Small labels next to the three icons: "Product", "Performance", "Workmanship".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 37. Does Solar Work on Cloudy Days? (B)
+### 33. Does Solar Work on Cloudy Days? (B)
 Save as: `solar-cloudy-days-tamil-nadu`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR ON CLOUDY DAYS". Subtitle: "Tamil Nadu Reality". Badges: "Still Generates", "Monsoon Tips". Scene: rooftop solar panels under partly cloudy sky with sunbeams breaking through. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Does Solar Work on Cloudy Days?".
+
+SCENE: a white Tamil Nadu home with rooftop solar panels under a dramatic partly cloudy monsoon sky; bright sunbeams break through a gap in the clouds and fall on the panels. Wet terrace floor reflecting the sky, palms moving gently.
+INFORMATION IN THE SCENE: a small frosted-glass card with a cloud-and-sun icon and a simple bar chart showing a shorter bar for a cloudy day and a taller bar for a sunny day (no numbers).
+TEXT: headline at the top in large white bold letters with a soft dark shadow: "SOLAR ON CLOUDY DAYS". Subtitle in warm yellow: "Tamil Nadu Reality • Monsoon Tips". Two rounded white labels: "Still Generates" and "Monsoon Output Tips".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 38. Solar Panels in Rain and Cyclones (B)
+### 34. Solar Panels in Rain and Cyclones (B)
 Save as: `solar-panels-monsoon-cyclone-cuddalore`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR IN RAIN AND CYCLONES". Subtitle: "Monsoon Safety Guide". Badges: "Strong Structure", "3 Earthing Pits". Scene: rooftop solar panels on a sturdy galvanized structure under dark monsoon clouds with palm trees bending. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Solar Panels in Rain and Cyclones".
+
+SCENE: a coastal Tamil Nadu home with a sturdy rooftop solar system on a strong hot-dip galvanized structure with diagonal bracing, under dark cyclone clouds, light rain, palms bending in strong wind. The structure looks solid and safe.
+INFORMATION IN THE SCENE: small glowing callout circles highlight three parts of the system: the anchor bolts at the base, the diagonal brace, and a copper earthing rod going into the ground beside the house, each with a thin leader line to a label.
+TEXT: headline at the top in large white bold letters with a soft dark shadow: "SOLAR IN RAIN AND CYCLONES". Subtitle in warm yellow: "Monsoon Safety Guide". Callout labels: "Strong Bolts", "Bracing", "3 Earthing Pits".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 39. Exide Solar Panel and Battery Review (B)
+### 35. Exide Solar Panel and Battery Review (B)
 Save as: `exide-solar-panel-battery`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR PANEL AND BATTERY". Subtitle: "Review and Price 2026". Badges: "Panels", "Batteries", "Hybrid Systems". Scene: a hybrid inverter and battery bank in a utility room with rooftop solar panels visible outside. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Exide Solar Panel and Battery Review".
+
+SCENE: a clean, well-lit utility room in a Tamil Nadu home: a white hybrid inverter on the wall, a neat battery bank on a steel rack below it, tidy cabling in conduits. Through an open door, the terrace with solar panels in bright sunlight. No logos or text on any equipment.
+INFORMATION IN THE SCENE: a glowing line runs from the panels outside through the inverter to the batteries. Three small round icons near the equipment (sun, inverter, battery).
+TEXT: headline at the top in large dark navy bold letters: "SOLAR PANEL AND BATTERY". Subtitle: "Review and Price 2026". Small labels next to the icons: "Panels", "Batteries", "Hybrid Systems".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
-### 40. Best On-Grid Solar Inverter (B)
+### 36. Best On-Grid Solar Inverter (B)
 Save as: `best-on-grid-solar-inverter`
 ```
-A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "BEST ON-GRID INVERTER". Subtitle: "How to Choose - 2026". Badges: "BIS Certified", "Dual MPPT", "Local Service". Scene: a white on-grid solar inverter on a shaded wall with neat conduits going up to the terrace. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+Create a 16:9 landscape blog cover image (1600x900) for a Tamil Nadu solar company's article "Best On-Grid Solar Inverter".
+
+SCENE: a close view of a modern white on-grid solar inverter mounted on a shaded, clean exterior wall of a Tamil Nadu home, with a small glowing display and neat grey conduits running up to the terrace. A small sunshade above the inverter. Soft daylight, plants nearby. No logos or text on the inverter.
+INFORMATION IN THE SCENE: three small round icons float to the right of the inverter, each joined by a thin line: a certificate badge, a split-arrow icon, a map-pin icon.
+TEXT: headline at the top in large dark navy bold letters: "BEST ON-GRID INVERTER". Subtitle: "How to Choose • 2026". Labels next to the icons: "BIS Certified", "Dual MPPT", "Local Service".
+
+STYLE: photorealistic, high-end 3D architectural render look, like a premium real-estate brochure. Soft natural daylight, gentle depth of field, clean and uncluttered composition with clear empty sky or wall space behind the headline. True South Indian setting: white and cream concrete homes, terracotta tile accents, coconut palms, clear blue sky. Any solar panels are modern black monocrystalline panels with thin silver frames on a raised hot-dip galvanized steel structure.
+TEXT RULES: use only the exact text given above, spelled exactly, in a clean bold geometric sans-serif (like Montserrat). Keep text crisp and readable at small size. Use the Indian rupee symbol exactly as written. Write "kW" with a capital K and W only (never "KW"). No other words, numbers, logos, brand names, company names, signboards or watermarks anywhere in the image. No border or frame.
 ```
 
 ---
 
 ## Case studies
-For the 3 case-study posts, send **real photos of your installations** (no house numbers or street names visible) plus the customer numbers. We will not use AI images for case studies.
-
+For the 3 case-study posts, send **real photos of your installations** (no house numbers or street names visible) plus the customer numbers. No AI images for case studies.
 
 ## Ready-to-post GBP updates (one per week)
 
