@@ -94,7 +94,7 @@ export default function TrustMap({ className = 'bg-white' }) {
                 <div className="text-center max-w-3xl mx-auto">
                     <span className="inline-flex items-center gap-2 rounded-full bg-green-50 border border-green-200 px-3.5 py-1.5 text-sm font-bold text-green-800">
                         <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.6-4.02A11.96 11.96 0 0112 2.94a11.96 11.96 0 01-8.6 3.04A12 12 0 003 9c0 5.6 3.83 10.3 9 11.62 5.17-1.33 9-6.03 9-11.62 0-1.04-.13-2.05-.38-3.02z" /></svg>
-                        <span className="sm:hidden">Trusted by local families</span>
+                        <span className="sm:hidden">Trusted by families</span>
                         <span className="hidden sm:inline">Trusted by families across Cuddalore &amp; Puducherry</span>
                     </span>
                     <h2 className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
