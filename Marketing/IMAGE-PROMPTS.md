@@ -265,6 +265,8 @@ A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "BEST
 For the 3 case-study posts, send **real photos of your installations** (no house numbers or street names visible) plus the customer numbers. We will not use AI images for case studies.
 
 
+## Ready-to-post GBP updates (one per week)
+
 1. **Battery backup**: "Power cuts at home? Solar with battery backup costs about ₹2.6-3.2 lakh for 3kW in Tamil Nadu, and the solar part still gets subsidy. We explain lithium vs tubular on our blog. Call 7904369094."
 2. **Price list**: "Solar panel price list 2026: DCR panels from Tata, Adani, Waaree, Premier and Exide cost about ₹22-29 per watt. A 3kW system is about ₹80,000-1,10,000 after the ₹1 lakh subsidy. Full table on our blog."
 3. **Apartments**: "Live in an apartment? Your association can get ₹18,000 per kW subsidy for common-area solar (lifts, pumps, lights). Ask us for a free terrace survey before your next RWA meeting."
