@@ -35,6 +35,7 @@ export default function Footer() {
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'Solar Calculator', href: '/calc' },
+    { name: 'EB Bill Calculator', href: '/eb-bill-calculator' },
     { name: 'About Us', href: '/about' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'Blogs', href: '/blog' },

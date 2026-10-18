@@ -14,6 +14,7 @@ const staticPages = [
     { url: '/', changefreq: 'weekly', priority: 1.0 },
     { url: '/about', changefreq: 'monthly', priority: 0.9 },
     { url: '/calc', changefreq: 'monthly', priority: 0.8 },
+    { url: '/eb-bill-calculator', changefreq: 'monthly', priority: 0.85 },
     { url: '/subsidy-eligibility', changefreq: 'monthly', priority: 0.9 },
     { url: '/contact', changefreq: 'monthly', priority: 0.8 },
     { url: '/blog', changefreq: 'weekly', priority: 0.7 },

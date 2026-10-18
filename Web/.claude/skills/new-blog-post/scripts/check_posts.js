@@ -8,7 +8,7 @@ const matter = require('gray-matter')
 const BLOG = path.join('content', 'blog')
 const REQUIRED = ['title', 'date', 'author', 'excerpt', 'featuredImage', 'category', 'tags']
 const STATIC_ROUTES = new Set([
-  '/', '/about', '/calc', '/subsidy-eligibility', '/contact', '/blog', '/privacy-policy', '/terms-conditions',
+  '/', '/about', '/calc', '/subsidy-eligibility', '/eb-bill-calculator', '/contact', '/blog', '/privacy-policy', '/terms-conditions',
   '/systems/3kw-solar-system-with-subsidy', '/systems/5kw-solar-system-with-subsidy',
 ])
 const cities = fs.readFileSync(path.join('src', 'lib', 'locationsData.js'), 'utf8')

@@ -29,6 +29,8 @@ faqs:
 ---
 For millions of residents across Tamil Nadu-from Chennai and [Puducherry](/service-areas/puducherry) to [Cuddalore](/service-areas/cuddalore) and Coimbatore-the arrival of the bi-monthly TNEB / TNPDCL electricity bill is often a moment of confusion. 
 
+> **Quick check:** skip the maths and use our free [TNEB EB bill calculator](/eb-bill-calculator) - enter your units or meter readings and see the slab-by-slab bill instantly.
+
 You look at the total "Units Consumed" and you look at the "Total Amount Due." But how did 650 units turn into a massive ₹4,300 bill? Why did your neighbor, who consumed 450 units, only pay a fraction of that?
 
 **2026 policy update (from 10 May 2026):** domestic consumers whose *bi-monthly* use is **500 units or less** now get **200 units free** (earlier this was 100). If you cross **500 units**, the free benefit stays **100 units**. Energy Minister C.T.R. Nirmalkumar also said there is **no CPI tariff hike this year** - so a sudden July bill spike is usually more AC use or a meter/reading issue, not a secret rate increase. Always match the numbers on your actual TNPDCL bill.

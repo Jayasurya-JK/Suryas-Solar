@@ -19,7 +19,7 @@ const slides = [
     imageMobile: '/images/Banner_3_mobile.webp',
     imageMobileWebP: '/images/Banner_3_mobile.webp',
     headline: 'Go Solar with PM Surya Ghar Subsidy + Easy EMI Support',
-    subhead: 'We handle all paperwork, approvals, and installation—zero hassle for your family.',
+    subhead: 'We handle all paperwork, approvals, and installation - zero hassle for your family.',
     primaryCTA: { text: 'Book Free Home Visit', href: '#booking' },
     secondaryCTA: { text: 'Get a Quote', href: '#booking' },
   },

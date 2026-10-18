@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import Header from '../components/Header'
 import HeroCarousel from '../components/HeroCarousel'
 import StatsStrip from '../components/StatsStrip'
-import BookingForm from '../components/BookingForm'
+import BookingTeaser from '../components/BookingTeaser'
 import TimelineSteps from '../components/TimelineSteps'
 import Partners from '../components/Partners'
 import SolarCalculator from '../components/SolarCalculator'
@@ -186,7 +186,7 @@ export default function Home({ content, settings }) {
       <main>
         <HeroCarousel slides={content.heroSlides} />
         <StatsStrip stats={content.stats} />
-        <BookingForm />
+        <BookingTeaser />
         <OurWorks />
         <TimelineSteps steps={content.timelineSteps} />
         <Partners partners={content.partners} />

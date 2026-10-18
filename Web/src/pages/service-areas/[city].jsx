@@ -90,7 +90,7 @@ export default function LocationPage({ location, settings }) {
           <div className="absolute top-1/4 left-1/3 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-accent/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-28 pb-20">
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-28 pb-24 md:pb-28">
             <div className="max-w-2xl">
 
               {/* Breadcrumb */}
@@ -159,7 +159,7 @@ export default function LocationPage({ location, settings }) {
           </div>
 
           {/* Bottom fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent z-0 pointer-events-none" />
         </section>
 
         {/* ══════════════════════════════════════════════

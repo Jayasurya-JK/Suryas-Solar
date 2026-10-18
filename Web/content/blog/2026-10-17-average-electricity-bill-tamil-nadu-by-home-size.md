@@ -39,6 +39,8 @@ faqs:
 ---
 **Short answer:** a typical **2BHK home in Tamil Nadu with one AC** pays roughly **₹900-1,500 per two-month bill** in the cooler months and **₹2,500-4,250 in summer**. Homes **without an AC** that stay under **500 units** (per two months) often pay only **a few hundred rupees**, thanks to the **200 free units** introduced in May 2026. The real jump happens **above 500 units**, where bills can double. Here are typical numbers by home size.
 
+> **Calculate yours:** enter your two-month units in the free [TNEB EB bill calculator](/eb-bill-calculator) to see your exact slab breakdown.
+
 > *Bills are bimonthly. Slab rates below are approximate (the same figures used in our [TNEB slab rates guide](/blog/2026-04-30-how-to-calculate-eb-bill-tamil-nadu-examples)); always confirm with your own TNPDCL bill.*
 
 ---
