@@ -149,3 +149,19 @@ Already strong (keep and refresh): units per day (1kW/2kW/3kW/5kW), EB slab rate
 6. **Local details for town pages**: 2-3 real facts per town (for example, number of installs in Neyveli, a typical roof type, common TNEB section office issue).
 
 **How we measure (check again on 17 Nov 2026):** Google reviews count, Maps position for the 5 town searches, Search Console clicks (now about 160 per 3 months), eligibility checker leads per week.
+
+---
+
+## 8. Progress log
+
+**17 Oct 2026 (done by Claude, all live):**
+- Town pages rebuilt (about 1,350 words each, local intro, price table, process, FAQ schema) for Cuddalore, Puducherry, Panruti, Neyveli; new pages for Chidambaram and Villupuram. Fake per-town schema addresses and "50+ homes" removed.
+- 11 older posts refreshed to the ₹1 lakh subsidy; 38 titles/descriptions shortened; 16 posts given post-specific FAQs; all 75 posts pass checks (0 errors, 0 warnings).
+- New posts: Puducherry solar subsidy 2026; TNEB solar application and status; plus 10 Sprint 4-5 posts.
+- Invented case studies relabelled as worked examples; invented guarantees removed; homepage testimonials replaced with real Google review quotes.
+- About page: correct facts (122 installs, 420 kWp, TATA Power Solar + Exide), brand FAQ for "surya solar" confusion.
+- 3kW and 5kW pages: Service + FAQ + breadcrumb schema; bill ranges aligned with the corrected calculator.
+- 160+ new internal links from guides to town pages; review short link suryassolar.com/review.
+- Sitemap resubmitted (89 pages read same day).
+
+**Open questions for owner:** Puducherry state top-up (reported about ₹9,000-10,000 per kW, unconfirmed); official one-tap review link from GBP.
