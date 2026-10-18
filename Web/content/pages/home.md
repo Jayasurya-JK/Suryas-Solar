@@ -56,7 +56,7 @@ timelineSteps:
     icon: "check"
   - stepNumber: 4
     title: "High-Quality Installation in 24 Hours"
-    description: "Professional installation with premium components completed in just one day."
+    description: "Professional installation with premium components, usually completed in 1-3 days."
     icon: "settings"
   - stepNumber: 5
     title: "Connection to the Grid"
