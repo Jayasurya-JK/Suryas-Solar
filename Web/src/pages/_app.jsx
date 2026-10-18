@@ -4,6 +4,7 @@ import { Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import '../styles/globals.css'
 import BookingPopup from '../components/BookingPopup'
+import BookingModal from '../components/BookingModal'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -34,6 +35,7 @@ export default function App({ Component, pageProps }) {
 
       <Component {...pageProps} />
       <BookingPopup />
+      <BookingModal />
       <Analytics />
     </div>
   )

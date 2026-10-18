@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { openBooking } from './BookingModal'
 
 export default function BookingPopup() {
     const [isVisible, setIsVisible] = useState(false)
@@ -51,7 +52,7 @@ export default function BookingPopup() {
                     <button
                         onClick={() => {
                             handleClose()
-                            router.push('/#booking')
+                            openBooking()
                         }}
                         className="block w-full bg-solar-orange text-white text-center px-6 py-3 rounded-xl font-bold hover:bg-orange-600 transition-all shadow-md hover:shadow-lg"
                     >

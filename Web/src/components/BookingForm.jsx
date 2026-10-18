@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-export default function BookingForm() {
+// variant="section": full homepage section with image. variant="modal": just the form, used by BookingModal.
+export default function BookingForm({ variant = 'section', onDone }) {
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
@@ -75,6 +76,7 @@ export default function BookingForm() {
 
       if (!response.ok) throw new Error('Network response was not ok')
 
+      if (typeof window !== 'undefined' && window.gtag) window.gtag('event', 'generate_lead', { form_name: variant === 'modal' ? 'booking_modal' : 'booking_section' })
       setShowSuccess(true)
       setFormData({
         name: '',
@@ -89,6 +91,167 @@ export default function BookingForm() {
     } finally {
       setIsSubmitting(false)
     }
+  }
+
+  const idp = variant === 'modal' ? 'bm-' : ''
+  const formEl = (
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4"
+    >
+
+      <div className="space-y-4">
+        {/* Name */}
+        <div>
+          <label htmlFor={`${idp}name`} className="block text-sm font-medium text-gray-700 mb-1">
+            Name <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id={`${idp}name`}
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            autoComplete="name"
+            className={`w-full px-4 py-2.5 rounded-lg border ${errors.name ? 'border-red-500' : 'border-gray-300'
+              } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+            placeholder="Enter your name"
+          />
+          {errors.name && (
+            <p className="mt-1 text-sm text-red-500" role="alert">{errors.name}</p>
+          )}
+        </div>
+
+        {/* Mobile */}
+        <div>
+          <label htmlFor={`${idp}mobile`} className="block text-sm font-medium text-gray-700 mb-1">
+            Mobile <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="tel"
+            id={`${idp}mobile`}
+            name="mobile"
+            value={formData.mobile}
+            onChange={handleChange}
+            autoComplete="tel"
+            className={`w-full px-4 py-2.5 rounded-lg border ${errors.mobile ? 'border-red-500' : 'border-gray-300'
+              } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+            placeholder="Enter your mobile number"
+            maxLength="10"
+          />
+          {errors.mobile && (
+            <p className="mt-1 text-sm text-red-500" role="alert">{errors.mobile}</p>
+          )}
+        </div>
+
+        {/* Address */}
+        <div>
+          <label htmlFor={`${idp}address`} className="block text-sm font-medium text-gray-700 mb-1">
+            Address <span className="text-red-500">*</span>
+          </label>
+          <textarea
+            id={`${idp}address`}
+            name="address"
+            value={formData.address}
+            onChange={handleChange}
+            autoComplete="street-address"
+            rows="3"
+            className={`w-full px-4 py-2.5 rounded-lg border ${errors.address ? 'border-red-500' : 'border-gray-300'
+              } focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none`}
+            placeholder="Enter your full address"
+          />
+          {errors.address && (
+            <p className="mt-1 text-sm text-red-500" role="alert">{errors.address}</p>
+          )}
+        </div>
+
+        {/* Electricity Bill */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            What is your Monthly Electricity Bill? <span className="text-red-500">*</span>
+          </label>
+          <div className="flex flex-col sm:flex-row gap-3">
+            {[
+              { value: 'below-2000', label: 'Less than 2000' },
+              { value: '2000-5000', label: '2000 to 5000' },
+              { value: 'above-5000', label: 'Above 5000' },
+            ].map((option) => (
+              <label
+                key={option.value}
+                className={`flex-1 px-4 py-2.5 rounded-lg border-2 cursor-pointer transition-all text-center ${formData.electricityBill === option.value
+                  ? 'border-primary bg-primary/5 text-primary font-medium'
+                  : 'border-gray-200 hover:border-gray-300'
+                  }`}
+              >
+                <input
+                  type="radio"
+                  name="electricityBill"
+                  value={option.value}
+                  checked={formData.electricityBill === option.value}
+                  onChange={handleChange}
+                  className="sr-only"
+                />
+                {option.label}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Consent */}
+        <div>
+          <label className="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="consent"
+              checked={formData.consent}
+              onChange={handleChange}
+              className={`mt-1 w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary ${errors.consent ? 'border-red-500' : ''
+                }`}
+            />
+            <span className="text-sm text-gray-600">
+              I agree to be contacted by Surya's Solar regarding my inquiry <span className="text-red-500">*</span>
+            </span>
+          </label>
+          {errors.consent && (
+            <p className="mt-1 text-sm text-red-500" role="alert">{errors.consent}</p>
+          )}
+        </div>
+
+        {/* Submit Error */}
+        {errors.submit && (
+          <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+            <p className="text-sm text-red-600">{errors.submit}</p>
+          </div>
+        )}
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {isSubmitting ? 'Submitting...' : 'Schedule Free Home Visit'}
+        </button>
+      </div>
+    </form>
+  )
+
+  if (variant === 'modal') {
+    if (showSuccess) {
+      return (
+        <div className="text-center py-6">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Booking Received!</h3>
+          <p className="text-gray-600 mb-6">Thank you for choosing Surya&apos;s Solar. Our team will call you soon to fix your free home visit (open Mon-Sun, 9 AM - 8 PM).</p>
+          <button type="button" onClick={() => { setShowSuccess(false); onDone && onDone() }} className="btn-primary">Close</button>
+        </div>
+      )
+    }
+    return formEl
   }
 
   return (
@@ -129,145 +292,7 @@ export default function BookingForm() {
 
             {/* Right: Form */}
             <div className="card">
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-4"
-              >
-
-                <div className="space-y-4">
-                  {/* Name */}
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      autoComplete="name"
-                      className={`w-full px-4 py-2.5 rounded-lg border ${errors.name ? 'border-red-500' : 'border-gray-300'
-                        } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
-                      placeholder="Enter your name"
-                    />
-                    {errors.name && (
-                      <p className="mt-1 text-sm text-red-500" role="alert">{errors.name}</p>
-                    )}
-                  </div>
-
-                  {/* Mobile */}
-                  <div>
-                    <label htmlFor="mobile" className="block text-sm font-medium text-gray-700 mb-1">
-                      Mobile <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      id="mobile"
-                      name="mobile"
-                      value={formData.mobile}
-                      onChange={handleChange}
-                      autoComplete="tel"
-                      className={`w-full px-4 py-2.5 rounded-lg border ${errors.mobile ? 'border-red-500' : 'border-gray-300'
-                        } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
-                      placeholder="Enter your mobile number"
-                      maxLength="10"
-                    />
-                    {errors.mobile && (
-                      <p className="mt-1 text-sm text-red-500" role="alert">{errors.mobile}</p>
-                    )}
-                  </div>
-
-                  {/* Address */}
-                  <div>
-                    <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
-                      Address <span className="text-red-500">*</span>
-                    </label>
-                    <textarea
-                      id="address"
-                      name="address"
-                      value={formData.address}
-                      onChange={handleChange}
-                      autoComplete="street-address"
-                      rows="3"
-                      className={`w-full px-4 py-2.5 rounded-lg border ${errors.address ? 'border-red-500' : 'border-gray-300'
-                        } focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none`}
-                      placeholder="Enter your full address"
-                    />
-                    {errors.address && (
-                      <p className="mt-1 text-sm text-red-500" role="alert">{errors.address}</p>
-                    )}
-                  </div>
-
-                  {/* Electricity Bill */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      What is your Monthly Electricity Bill? <span className="text-red-500">*</span>
-                    </label>
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      {[
-                        { value: 'below-2000', label: 'Less than 2000' },
-                        { value: '2000-5000', label: '2000 to 5000' },
-                        { value: 'above-5000', label: 'Above 5000' },
-                      ].map((option) => (
-                        <label
-                          key={option.value}
-                          className={`flex-1 px-4 py-2.5 rounded-lg border-2 cursor-pointer transition-all text-center ${formData.electricityBill === option.value
-                            ? 'border-primary bg-primary/5 text-primary font-medium'
-                            : 'border-gray-200 hover:border-gray-300'
-                            }`}
-                        >
-                          <input
-                            type="radio"
-                            name="electricityBill"
-                            value={option.value}
-                            checked={formData.electricityBill === option.value}
-                            onChange={handleChange}
-                            className="sr-only"
-                          />
-                          {option.label}
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Consent */}
-                  <div>
-                    <label className="flex items-start gap-3 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        name="consent"
-                        checked={formData.consent}
-                        onChange={handleChange}
-                        className={`mt-1 w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary ${errors.consent ? 'border-red-500' : ''
-                          }`}
-                      />
-                      <span className="text-sm text-gray-600">
-                        I agree to be contacted by Surya's Solar regarding my inquiry <span className="text-red-500">*</span>
-                      </span>
-                    </label>
-                    {errors.consent && (
-                      <p className="mt-1 text-sm text-red-500" role="alert">{errors.consent}</p>
-                    )}
-                  </div>
-
-                  {/* Submit Error */}
-                  {errors.submit && (
-                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                      <p className="text-sm text-red-600">{errors.submit}</p>
-                    </div>
-                  )}
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? 'Submitting...' : 'Schedule Free Home Visit'}
-                  </button>
-                </div>
-              </form>
+              {formEl}
             </div>
           </div>
         </div>

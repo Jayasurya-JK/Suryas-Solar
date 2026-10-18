@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import WhyChoose from '../../components/WhyChoose'
-import BookingForm from '../../components/BookingForm'
 import WhatsAppFloat from '../../components/WhatsAppFloat'
 import { getSiteSettings } from '../../lib/content'
 import CountUp from 'react-countup'
@@ -305,7 +304,6 @@ export default function ThreeKwPage({ settings }) {
         </section>
 
         <WhyChoose />
-        <BookingForm />
       </main>
 
       <Footer settings={settings} />

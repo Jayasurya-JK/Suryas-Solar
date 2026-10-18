@@ -3,6 +3,7 @@ import { getAllBlogPosts, getBlogPost, getSiteSettings } from '../../lib/content
 import { getFaqsForPost } from '../../lib/blogFaqs'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import WhatsAppFloat from '../../components/WhatsAppFloat'
 
 import SolarCalculator from '../../components/SolarCalculator'
 import Link from 'next/link'
@@ -521,6 +522,7 @@ export default function BlogPost({ post, settings, relatedPosts }) {
       </article>
 
       <Footer settings={settings} />
+      <WhatsAppFloat message={`Hi! I read your guide "${post.title}" and want to know more about solar for my home.`} />
 
       {/* Mobile Share Footer */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-50 md:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">

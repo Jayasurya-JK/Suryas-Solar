@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import WhyChoose from '../../components/WhyChoose'
-import BookingForm from '../../components/BookingForm'
 import SubsidyEligibilityChecker from '../../components/SubsidyEligibilityChecker'
 import WhatsAppFloat from '../../components/WhatsAppFloat'
 import CountUp from 'react-countup'
@@ -578,7 +577,6 @@ export default function LocationPage({ location, settings }) {
             WHY CHOOSE + BOOKING (reusable components)
         ══════════════════════════════════════════════ */}
         <WhyChoose />
-        <BookingForm />
 
       </main>
 

@@ -186,9 +186,7 @@ export default function Home({ content, settings }) {
       <main>
         <HeroCarousel slides={content.heroSlides} />
         <StatsStrip stats={content.stats} />
-        <section id="booking">
-          <BookingForm />
-        </section>
+        <BookingForm />
         <OurWorks />
         <TimelineSteps steps={content.timelineSteps} />
         <Partners partners={content.partners} />

@@ -1,19 +1,11 @@
-import { useRouter } from 'next/router'
+import { openBooking } from './BookingModal'
 
 export default function WhatsAppFloat({ phoneNumber = "917904369094", message = "Hi! I'm interested in solar installation for my home." }) {
-  const router = useRouter()
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
   const scrollToBooking = (e) => {
     e.preventDefault()
-    if (router.pathname !== '/') {
-      router.push('/#booking')
-      return
-    }
-    const bookingSection = document.getElementById('booking')
-    if (bookingSection) {
-      bookingSection.scrollIntoView({ behavior: 'smooth' })
-    }
+    openBooking()
   }
 
   return (
