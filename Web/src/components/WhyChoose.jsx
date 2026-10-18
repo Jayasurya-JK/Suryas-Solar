@@ -1,13 +1,6 @@
 import { openBooking } from './BookingModal'
 
-const FEATURES = [
-  { title: 'End-to-end subsidy support', text: 'PM Surya Ghar Yojana documentation, portal updates and DISCOM approvals, plus the full subsidy and TNEB paperwork, made hassle-free.', tone: 'bg-primary-50 text-primary', d: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
-  { title: 'Official TATA Power Solar & Exide partner', text: 'Official TATA Power Solaroof partner, with Exide for batteries and systems.', tone: 'bg-amber-50 text-amber-600', d: 'M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.8 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z' },
-  { title: 'High-efficiency Tier-1 panels', text: 'Premium panels from TATA / Adani / Waaree for higher lifetime output.', tone: 'bg-green-50 text-green-600', d: 'M3 10h18M3 14h18m-9-4v8m-7-8v8m14-8v8M3 6a2 2 0 012-2h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6z' },
-  { title: 'Strong, coastal-grade mounting', text: 'High-strength structures built for harsh coastal weather, with 3-pit earthing for safety.', tone: 'bg-orange-50 text-orange-600', d: 'M13 10V3L4 14h7v7l9-11h-7z' },
-  { title: 'Certified installation team', text: 'Our own trained engineers handle sizing, shadow analysis and installation.', tone: 'bg-violet-50 text-violet-600', d: 'M17 20h5v-2a3 3 0 00-5.36-1.86M17 20H7m10 0v-2c0-.66-.13-1.28-.36-1.86M7 20H2v-2a3 3 0 015.36-1.86M7 20v-2c0-.66.13-1.28.36-1.86m0 0a5 5 0 019.28 0M15 7a3 3 0 11-6 0 3 3 0 016 0z' },
-  { title: 'Best-in-class after-sales service', text: 'After installation we stay on call for cleaning, checks and service.', tone: 'bg-sky-50 text-sky-600', d: 'M18.36 5.64a9 9 0 11-12.73 0M12 2v10' },
-]
+const FACTS = ['10+ years', 'Office in Kondur', 'On-grid & hybrid', 'Registered PM Surya Ghar vendor']
 
 const BANKS = [
   { name: 'SBI', src: '/images/SBI.webp' },
@@ -17,6 +10,29 @@ const BANKS = [
   { name: 'Bank of Maharashtra', src: '/images/bank-of-maharastra.webp' },
   { name: 'Indian Overseas Bank', src: '/images/indian-overseas-bank.webp' },
 ]
+
+const JOURNEY = [
+  { step: 'Survey', title: 'Certified team visits', text: 'EB-bill sizing and a shadow check on your roof.' },
+  { step: 'Design', title: 'Tier-1 panels, trusted brands', text: 'TATA · Adani · Waaree panels. Official TATA Power Solar (Solaroof) & Exide partner.' },
+  { step: 'Build', title: 'Coastal-grade mounting', text: 'Weather-proof structure with 3-pit earthing.' },
+  { step: 'Paperwork', title: '₹1 lakh subsidy, done for you', text: 'PM Surya Ghar · TNEB net meter · DISCOM approvals.' },
+  { step: 'Forever', title: 'After-sales service', text: 'We stay on call after installation.' },
+]
+
+function Journey() {
+  return (
+    <ol className="relative mt-7 ml-4 border-l-2 border-transparent [border-image:linear-gradient(to_bottom,#facc15,#2563eb)_1] space-y-6">
+      {JOURNEY.map((j, i) => (
+        <li key={j.step} className="relative pl-7">
+          <span className="absolute -left-[15px] top-0.5 w-7 h-7 rounded-full bg-white ring-4 ring-amber-100 border-2 border-amber-400 text-[11px] font-black text-amber-600 flex items-center justify-center">{i + 1}</span>
+          <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-amber-600">{j.step}</span>
+          <h3 className="mt-0.5 text-lg font-bold text-slate-900 leading-snug">{j.title}</h3>
+          <p className="mt-0.5 text-sm text-slate-500 leading-relaxed">{j.text}</p>
+        </li>
+      ))}
+    </ol>
+  )
+}
 
 export default function WhyChoose() {
   return (
@@ -60,28 +76,21 @@ export default function WhyChoose() {
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
               Rooftop Solar Installer in <span className="text-primary">Cuddalore</span>
             </h2>
-            <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed">
-              For 10+ years, Surya&apos;s Solar has designed and installed on-grid and hybrid rooftop solar for homes, shops and offices across Cuddalore district and Puducherry, from our office in Kondur. We are a registered PM Surya Ghar vendor.
+            <p className="mt-3 text-slate-600 text-base sm:text-lg leading-relaxed">
+              Rooftop solar for homes, shops and offices across Cuddalore district and Puducherry, from sizing to subsidy.
             </p>
-            <p className="mt-3 text-slate-600 leading-relaxed">
-              We handle every step: sizing from your EB bills, shadow analysis, coastal-grade structures, TNEB net meter and the full ₹1 lakh subsidy paperwork. After installation, we stay on call for service.
-            </p>
-
-            <ul className="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-4">
-              {FEATURES.map((f) => (
-                <li key={f.title} className="flex gap-3">
-                  <span className={`w-10 h-10 shrink-0 rounded-xl flex items-center justify-center ${f.tone}`}>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d={f.d} /></svg>
-                  </span>
-                  <div>
-                    <h3 className="font-bold text-slate-900 leading-snug">{f.title}</h3>
-                    <p className="mt-0.5 text-sm text-slate-600 leading-relaxed">{f.text}</p>
-                  </div>
-                </li>
+            <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-sm font-medium text-slate-600">
+              {FACTS.map((f) => (
+                <span key={f} className="inline-flex items-center gap-1.5">
+                  <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  {f}
+                </span>
               ))}
-            </ul>
+            </p>
 
-            <button type="button" onClick={openBooking} className="btn-primary mt-7 text-base">
+            <Journey />
+
+            <button type="button" onClick={openBooking} className="btn-primary mt-6 w-full sm:w-auto text-base">
               Book a FREE solar consultation at home
             </button>
           </div>
