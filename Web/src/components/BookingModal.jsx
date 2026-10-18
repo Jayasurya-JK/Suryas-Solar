@@ -18,14 +18,16 @@ export default function BookingModal() {
       const href = a.getAttribute('href')
       if (href === '#booking' || href === '/#booking') {
         e.preventDefault()
+        e.stopPropagation()
         setOpen(true)
       }
     }
     window.addEventListener('open-booking', show)
-    document.addEventListener('click', onClick)
+    // capture phase: runs before Next.js <Link> can navigate
+    document.addEventListener('click', onClick, true)
     return () => {
       window.removeEventListener('open-booking', show)
-      document.removeEventListener('click', onClick)
+      document.removeEventListener('click', onClick, true)
     }
   }, [])
 
