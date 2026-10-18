@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import SectionHeading from './SectionHeading'
 
 export default function OurWorks() {
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -24,25 +25,15 @@ export default function OurWorks() {
     }, [cardsToShow])
 
     return (
-        <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-gradient-to-b from-white to-slate-50 overflow-hidden relative">
+        <section className="py-14 md:py-20 bg-white overflow-hidden relative">
             {/* Decorative background */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
-                <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-50 rounded-full blur-3xl opacity-50"></div>
+                
+                
             </div>
 
             <div className="container-custom relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                    <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 font-semibold text-sm rounded-full mb-4">
-                        Project Gallery
-                    </div>
-                    <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
-                        Our Recent <span className="text-primary">Installations</span>
-                    </h2>
-                    <p className="text-slate-600 text-lg">
-                        Witness the quality and precision of our solar installations across Cuddalore.
-                    </p>
-                </div>
+                <SectionHeading className="mb-10 md:mb-12" eyebrow="Project gallery" title={<>Our Recent <span className="text-primary">Installations</span></>} subtitle="The quality and precision of our rooftop solar installations across Cuddalore." />
 
                 <div className="relative max-w-6xl mx-auto">
                     {/* Carousel Container */}

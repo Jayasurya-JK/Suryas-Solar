@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
+import { openBooking } from './BookingModal'
 
 const steps = [
   {
     id: 1,
     title: 'Free Home Visit',
+    short: 'Roof, shade and EB bill check.',
     description: 'Our solar expert will visit your home and assess your rooftop for installation.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -14,6 +16,7 @@ const steps = [
   {
     id: 2,
     title: 'Personalized Quote',
+    short: 'Written, itemised proposal.',
     description: 'Based on your energy requirements, our team will create a custom proposal for you.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,6 +27,7 @@ const steps = [
   {
     id: 3,
     title: 'Govt Paperwork & Subsidy Assistance',
+    short: 'PM Surya Ghar and EB approvals, done for you.',
     description: 'We handle all paperwork for you and help for a smooth coordination with the local EB office.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,6 +38,7 @@ const steps = [
   {
     id: 4,
     title: 'High-Quality Installation',
+    short: 'Premium components, usually 1-3 days.',
     description: 'Professional installation with premium components, usually completed in 1-3 days.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,6 +50,7 @@ const steps = [
   {
     id: 5,
     title: 'Connection to the Grid',
+    short: 'EB fixes the net meter, system goes live.',
     description: 'Seamless integration with the electricity board for net metering and grid connectivity.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,6 +61,7 @@ const steps = [
   {
     id: 6,
     title: 'Redeem Your Subsidy',
+    short: 'We help you claim it to your bank.',
     description: 'System activated! Start saving on bills and we help you claim your subsidy amount.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,141 +72,76 @@ const steps = [
 ]
 
 export default function TimelineSteps() {
-  const [visibleSteps, setVisibleSteps] = useState(new Set())
-  const observerRef = useRef(null)
+  const listRef = useRef(null)
+  const [progress, setProgress] = useState(0)
 
+  // Fill the line as the list scrolls through the middle of the screen
   useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleSteps((prev) => new Set([...prev, entry.target.dataset.step]))
-          }
-        })
-      },
-      { threshold: 0.2, rootMargin: '0px 0px -100px 0px' }
-    )
-
-    const stepElements = document.querySelectorAll('[data-step]')
-    stepElements.forEach((el) => observerRef.current.observe(el))
-
+    const onScroll = () => {
+      const el = listRef.current
+      if (!el) return
+      const r = el.getBoundingClientRect()
+      const mid = window.innerHeight * 0.6
+      const p = (mid - r.top) / r.height
+      setProgress(Math.max(0, Math.min(1, p)))
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
     return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect()
-      }
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
     }
   }, [])
 
+  const reached = (i) => progress >= (i + 0.35) / steps.length
+  const active = steps.reduce((acc, _, i) => (reached(i) ? i : acc), -1)
+
   return (
-    <section className="py-10 md:py-14 relative overflow-hidden bg-gradient-to-b from-blue-50/30 to-white">
-      <div className="container-custom relative z-10">
-        <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Get Solar Installed in 6 Easy Steps
+    <section className="py-14 md:py-20 bg-slate-50">
+      <div className="container-custom grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-20">
+        {/* Left: heading stays in view on desktop */}
+        <div className="lg:sticky lg:top-40 lg:self-start">
+          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-amber-600">
+            <span className="w-6 h-px bg-amber-500" />How it works
+          </span>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+            Solar installed in <span className="text-primary">6 easy steps</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We provide end-to-end support from design, installation, maintenance along with complete subsidy paperwork.
+          <p className="mt-4 text-slate-600 md:text-lg max-w-md">
+            End-to-end support: design, installation and maintenance, with the complete subsidy paperwork.
           </p>
-        </div>
-
-        <div className="relative">
-          {/* Central Timeline Line (Desktop) */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-blue-200 hidden md:block" />
-
-          {/* Left Timeline Line (Mobile) */}
-          <div className="absolute left-6 top-0 bottom-0 w-1 bg-blue-200 md:hidden" />
-
-          <div className="space-y-12 md:space-y-0">
-            {steps.map((step, index) => (
-              <div
-                key={step.id}
-                data-step={step.id}
-                className={`relative flex flex-col md:flex-row items-center justify-center transition-all duration-700 transform ${visibleSteps.has(step.id.toString())
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-16'
-                  } ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-              >
-
-                {/* Mobile: Number Circle & Connector */}
-                <div className="absolute left-6 -translate-x-1/2 top-8 md:hidden flex items-center z-10">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-blue-800 text-white font-bold flex items-center justify-center border-4 border-white shadow-lg">
-                    {step.id}
-                  </div>
-                  <div className="w-8 h-0.5 bg-blue-200 absolute left-full top-1/2 -translate-y-1/2" />
-                </div>
-
-                {/* Desktop: Center Column (Number Circle) */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden md:flex">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-blue-800 text-white text-xl font-bold flex items-center justify-center border-4 border-white shadow-lg">
-                    {step.id}
-                  </div>
-                </div>
-
-                {/* Content Side */}
-                <div className={`w-full md:w-1/2 flex items-center ${index % 2 === 0 ? 'md:pr-16 pl-20 justify-end' : 'md:pl-16 pl-20 justify-start'
-                  }`}>
-
-                  {/* Wrapper for Card + Connector Line */}
-                  <div className={`relative flex items-center w-full ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-
-                    {/* The Card */}
-                    <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-blue-50 relative group w-full z-10">
-                      {/* Floating Icons around the box */}
-                      <div className="absolute -top-3 -right-3 animate-float-slow">
-                        {/* Sun Icon */}
-                        <svg className="w-8 h-8 text-orange-400 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                      </div>
-                      <div className="absolute -bottom-2 -left-2 animate-float-medium">
-                        <div className="w-4 h-4 rounded-full bg-blue-200 opacity-60" />
-                      </div>
-                      <div className="absolute top-1/2 -right-4 animate-float-fast hidden md:block">
-                        <svg className="w-5 h-5 text-blue-300 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
-
-                      {/* Subtle Top Right Glow */}
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full opacity-50 transition-opacity group-hover:opacity-100 -z-10" />
-
-                      <div className="relative z-10">
-                        <div className="flex items-start gap-4">
-                          <div className="flex-shrink-0 w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center">
-                            {step.icon}
-                          </div>
-                          <div>
-                            <h3 className="text-xl font-bold text-primary mb-2">
-                              {step.title}
-                            </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed">
-                              {step.description}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* The Connector Line (Physically attached to card wrapper) */}
-                    <div className={`hidden md:block h-0.5 bg-blue-200 absolute top-1/2 -translate-y-1/2 ${index % 2 === 0 ? '-right-16 w-16' : '-left-16 w-16'
-                      }`} />
-                  </div>
-                </div>
-
-                {/* Empty Side for Desktop Layout Balance */}
-                <div className="w-full md:w-1/2 hidden md:block" />
-              </div>
-            ))}
+          <div className="mt-6 hidden lg:flex items-center gap-4">
+            <button type="button" onClick={openBooking} className="btn-primary text-base">Start Your Solar Journey Today</button>
+            <span className="text-sm text-slate-500">Usually 6-10 weeks, end to end</span>
           </div>
         </div>
 
-        <div className="text-center mt-16">
-          <a href="#booking" className="btn-primary inline-flex items-center gap-2 shadow-lg shadow-blue-200/50">
-            Start Your Solar Journey Today
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+        {/* Right: scroll-driven stepper */}
+        <ol ref={listRef} className="relative">
+          <span className="absolute left-[19px] top-3 bottom-3 w-[2px] bg-slate-200 rounded-full" aria-hidden="true" />
+          <span className="absolute left-[19px] top-3 w-[2px] rounded-full bg-gradient-to-b from-amber-400 via-primary to-primary transition-[height] duration-150 ease-out" style={{ height: `calc(${progress * 100}% - 12px)` }} aria-hidden="true" />
+          {steps.map((step, i) => {
+            const on = reached(i)
+            return (
+              <li key={step.id} className="relative flex gap-5 pb-8 last:pb-0">
+                <span className={`relative z-10 w-10 h-10 shrink-0 rounded-full flex items-center justify-center transition-all duration-500 ${on ? 'bg-primary text-white shadow-lg shadow-blue-500/30 scale-100' : 'bg-white text-slate-400 ring-2 ring-slate-200 scale-90'} ${i === active ? 'animate-[sunGlow_2.8s_ease-in-out_infinite] motion-reduce:animate-none' : ''}`}>
+                  <span className="[&_svg]:w-5 [&_svg]:h-5">{step.icon}</span>
+                  {on && i !== active && <span className="absolute inset-0 rounded-full ring-4 ring-primary/15" />}
+                </span>
+                <div className={`pt-1 transition-all duration-500 ${on ? 'opacity-100 translate-x-0' : 'opacity-50 translate-x-1'}`}>
+                  <span className={`text-[11px] font-bold tracking-[0.18em] ${on ? 'text-amber-600' : 'text-slate-400'}`}>STEP {String(step.id).padStart(2, '0')}</span>
+                  <h3 className="mt-0.5 text-lg md:text-xl font-bold text-slate-900 leading-snug">{step.title}</h3>
+                  <p className="mt-1 text-sm md:hidden text-slate-500">{step.short}</p>
+                  <p className="mt-1 hidden md:block text-slate-500 leading-relaxed">{step.description}</p>
+                </div>
+              </li>
+            )
+          })}
+        </ol>
+
+        <div className="lg:hidden">
+          <button type="button" onClick={openBooking} className="btn-primary w-full text-base">Start Your Solar Journey Today</button>
         </div>
       </div>
     </section>

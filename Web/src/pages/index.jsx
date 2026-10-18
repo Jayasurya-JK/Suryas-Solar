@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import Header from '../components/Header'
 import HeroCarousel from '../components/HeroCarousel'
 import TrustMap from '../components/TrustMap'
-import BookingTeaser from '../components/BookingTeaser'
 import TimelineSteps from '../components/TimelineSteps'
 import Partners from '../components/Partners'
 import SolarCalculator from '../components/SolarCalculator'
@@ -13,6 +12,7 @@ import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
 import WhatsAppFloat from '../components/WhatsAppFloat'
 import { getHomeContent, getSiteSettings } from '../lib/content'
+import SectionHeading from '../components/SectionHeading'
 
 const GUIDES = [
   { tag: 'Subsidy', title: '₹1 Lakh Solar Subsidy in Tamil Nadu', text: '₹78,000 PM Surya Ghar + ₹22,000 TN top-up: who gets it and how to apply.', href: '/blog/2025-12-02-pm-surya-ghar-subsidy-tamil-nadu-puducherry', image: '/images/Blog 4.webp' },
@@ -182,27 +182,18 @@ export default function Home({ content, settings }) {
             <span className="text-yellow-300 font-bold text-base md:text-2xl">Cuddalore’s</span> trusted residential solar expert
           </h2>
         </div>
-        <TrustMap className="bg-gradient-to-b from-white to-slate-50" />
-        <BookingTeaser />
+        <TrustMap className="bg-white" />
         <OurWorks />
         <TimelineSteps steps={content.timelineSteps} />
         <Partners partners={content.partners} />
-        <SolarCalculator />
         <WhyChoose />
+        <SolarCalculator />
         <Testimonials testimonials={content.testimonials} />
 
         {/* Guides: photo cards (swipe on mobile, 3 columns on desktop) */}
-        <section className="py-16 md:py-24 bg-slate-50 border-t border-gray-100">
+        <section className="py-14 md:py-20 bg-white">
           <div className="container-custom">
-            <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
-              <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 font-semibold text-sm rounded-full mb-4">
-                Learn Before You Buy
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
-                Solar <span className="text-primary">Guides</span> &amp; Prices
-              </h2>
-              <p className="text-slate-600 text-lg">Honest answers from our engineers to the questions Tamil Nadu homeowners ask most.</p>
-            </div>
+            <SectionHeading className="mb-10 md:mb-12" eyebrow="Learn before you buy" title={<>Solar <span className="text-primary">Guides</span> &amp; Prices</>} subtitle="Honest answers from our engineers to the questions Tamil Nadu homeowners ask most." />
 
             <div className="flex lg:grid lg:grid-cols-3 gap-5 no-scrollbar overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-4 -mx-4 px-4 lg:mx-0 lg:px-0">
               {GUIDES.map((g) => (
@@ -249,7 +240,7 @@ export default function Home({ content, settings }) {
         </section>
 
         {/* Service areas: dark band with town chips + subsidy CTA */}
-        <section className="pb-16 md:pb-24 bg-white">
+        <section className="py-14 md:py-20 bg-slate-50">
           <div className="container-custom">
             <div className="relative overflow-hidden rounded-3xl px-6 py-10 md:px-12 md:py-14 text-white" style={{ background: 'linear-gradient(135deg, #0f2e6e 0%, #1542a7 55%, #1e62d4 100%)' }}>
               <div className="absolute -top-20 -right-20 w-72 h-72 bg-white/5 rounded-full pointer-events-none" />

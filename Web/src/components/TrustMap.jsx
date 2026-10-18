@@ -99,10 +99,10 @@ export default function TrustMap({ className = 'bg-white' }) {
     }, [])
 
     const stats = [
-        { icon: 'rupee', tone: 'bg-amber-50 text-amber-600', value: lakh(INSTALLS.subsidyDisbursedRs), decimals: 1, prefix: '₹', suffix: ' lakh', label: 'Subsidy received by our customers' },
-        { icon: 'bolt', tone: 'bg-green-50 text-green-600', value: lakh(yearlyUnits), decimals: 1, suffix: ' lakh', label: 'Units of clean power a year' },
-        { icon: 'leaf', tone: 'bg-green-50 text-green-600', value: co2Tonnes, prefix: '~', suffix: ' tonnes', label: 'CO2 avoided every year' },
-        { icon: 'bank', tone: 'bg-primary-50 text-primary', value: Math.floor(INSTALLS.loanFamilies / 50) * 50, suffix: '+', label: 'Local families used easy bank loans' },
+        { icon: 'rupee', color: 'text-amber-500', value: lakh(INSTALLS.subsidyDisbursedRs), decimals: 1, prefix: '₹', suffix: ' lakh', label: 'Subsidy received by our customers' },
+        { icon: 'bolt', color: 'text-green-600', value: lakh(yearlyUnits), decimals: 1, suffix: ' lakh', label: 'Units of clean power a year' },
+        { icon: 'leaf', color: 'text-green-600', value: co2Tonnes, prefix: '~', suffix: ' tonnes', label: 'CO2 avoided every year' },
+        { icon: 'bank', color: 'text-primary', value: Math.floor(INSTALLS.loanFamilies / 50) * 50, suffix: '+', label: 'Local families used easy bank loans' },
     ]
 
     return (
@@ -196,18 +196,21 @@ export default function TrustMap({ className = 'bg-white' }) {
 
                     {/* Numbers */}
                     <div className="space-y-3 lg:space-y-4">
-                        <div className="grid grid-cols-2 gap-3">
-                            {stats.map((s) => (
-                                <div key={s.label} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                                    <span className={`w-9 h-9 rounded-xl flex items-center justify-center ${s.tone}`}>
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d={ICONS[s.icon]} /></svg>
-                                    </span>
-                                    <div className="mt-2.5 text-xl sm:text-2xl font-black text-slate-900 whitespace-nowrap">
-                                        <Count end={s.value} decimals={s.decimals || 0} prefix={s.prefix || ''} suffix={s.suffix || ''} />
+                        <div>
+                            <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-600">Our impact so far</p>
+                            <dl className="mt-4 grid grid-cols-2 border-t border-slate-200">
+                                {stats.map((s, i) => (
+                                    <div key={s.label} className={`py-5 ${i % 2 === 0 ? 'pr-4 border-r border-slate-200' : 'pl-5'} ${i < 2 ? 'border-b border-slate-200' : ''}`}>
+                                        <dt className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 leading-snug">
+                                            <svg className={`w-4 h-4 shrink-0 ${s.color}`} fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d={ICONS[s.icon]} /></svg>
+                                            {s.label}
+                                        </dt>
+                                        <dd className="mt-1.5 text-2xl sm:text-3xl font-black tracking-tight text-slate-900 whitespace-nowrap">
+                                            {`${s.prefix || ''}${s.value.toFixed(s.decimals || 0)}${s.suffix || ''}`}
+                                        </dd>
                                     </div>
-                                    <div className="mt-0.5 text-xs sm:text-sm text-slate-500 leading-snug">{s.label}</div>
-                                </div>
-                            ))}
+                                ))}
+                            </dl>
                         </div>
                     </div>
                 </div>

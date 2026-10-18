@@ -1,60 +1,47 @@
-const partners = [
-  { name: 'Tata Power Solar', logo: '/images/tata-solar-power.webp', logoWebP: '/images/tata-solar-power.webp', alt: 'Tata Power Solar - Authorized Dealer', tagline: 'Authorized Dealer', highlight: true },
-  { name: 'Premier Energies', logo: '/images/premier-energies.webp', logoWebP: '/images/premier-energies.webp', alt: 'Premier Energies - Certified Partner', tagline: 'Solar Partner', highlight: false },
-  { name: 'Waaree Energies', logo: '/images/waaree.webp', logoWebP: '/images/waaree.webp', alt: 'Waaree Energies - Official Partner', tagline: 'Solar Partner', highlight: false },
-  { name: 'Adani Solar', logo: '/images/adani-power-.webp', logoWebP: '/images/adani-power-.webp', alt: 'Adani Solar - Official Partner', tagline: 'Solar Partner', highlight: false },
+import SectionHeading from './SectionHeading'
+
+// Brands we work with. No partnership labels on the page.
+const BRANDS = [
+  { name: 'Tata Power Solaroof', logo: '/images/tata-logo.webp' },
+  { name: 'Exide Industries', logo: '/images/exide-logo.svg' },
+  { name: 'Premier Energies', logo: '/images/premier-energies.webp' },
+  { name: 'Waaree Energies', logo: '/images/waaree-logo.webp' },
+  { name: 'Adani Solar', logo: '/images/adani-logo.webp' },
+  { name: 'Loom Solar', logo: '/images/loom-logo.webp' },
 ]
+
+// Compact logo row for use inside another section
+export function BrandRow() {
+  return (
+    <div>
+      <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-600">Brands we install</p>
+      <ul className="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-2">
+        {BRANDS.map((b) => (
+          <li key={b.name} className="flex items-center justify-center h-14 rounded-xl bg-white ring-1 ring-slate-200/70 px-2">
+            <img src={b.logo} alt={b.name} loading="lazy" className="max-h-8 w-full object-contain" />
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
 
 export default function Partners() {
   return (
-    <section className="py-8 md:py-12 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-14 md:py-20 bg-white">
       <div className="container-custom">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-            Official Partners & <span className="text-primary">Trusted Brands</span>
-          </h2>
-          <p className="text-gray-600 text-sm md:text-base">
-            We work with India's leading solar manufacturers
-          </p>
-        </div>
+        <SectionHeading eyebrow="Brands we install" title={<>Trusted <span className="text-primary">Brands</span> We Work With</>} subtitle="India's leading solar and battery manufacturers" />
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {partners.map((partner) => (
-            <div
-              key={partner.name}
-              className="group bg-white rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100"
+        <ul className="mt-8 md:mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-5 max-w-6xl mx-auto">
+          {BRANDS.map((b) => (
+            <li
+              key={b.name}
+              className={`group flex items-center justify-center h-24 md:h-32 rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.12)] px-5 md:px-7 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-12px_rgba(15,75,214,0.25)] transition-all duration-300`}
             >
-              <div className="mb-4 h-24 md:h-32 lg:h-36 w-full flex items-center justify-center">
-                <picture>
-                  <source srcSet={partner.logoWebP} type="image/webp" />
-                  <img
-                    src={partner.logo}
-                    alt={partner.alt}
-                    className="max-w-full max-h-full object-contain transition-all duration-300"
-                    loading="lazy"
-                    onError={(e) => { e.target.style.display = 'none' }}
-                  />
-                </picture>
-              </div>
-              <div className="text-center mt-2">
-                {partner.highlight ? (
-                  <div className="inline-flex items-center gap-1.5 md:gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-full shadow-lg">
-                    <svg className="w-3 h-3 md:w-4 md:h-4 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <p className="text-xs md:text-sm font-bold text-white tracking-wide whitespace-nowrap">
-                      {partner.tagline}
-                    </p>
-                  </div>
-                ) : (
-                  <p className="text-xs md:text-sm font-medium text-gray-500">
-                    {partner.tagline}
-                  </p>
-                )}
-              </div>
-            </div>
+              <img src={b.logo} alt={b.name} loading="lazy" className="max-h-12 md:max-h-14 w-full max-w-[150px] object-contain" />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )

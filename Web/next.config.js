@@ -8,6 +8,8 @@ const nextConfig = {
   // Next.js host redirects previously looped with Cloudflare "Flexible" SSL.
   async redirects() {
     return [
+      // Short link for QR codes and WhatsApp: opens the Google review form directly
+      { source: '/review', destination: 'https://g.page/r/CVM40XnlQRGaEBM/review', permanent: false },
       {
         source: '/blog/2025-12-07-rooftop-solar-structure-types-tamil-nadu',
         destination: '/blog/2025-12-02-rooftop-solar-structure-types-tamil-nadu',

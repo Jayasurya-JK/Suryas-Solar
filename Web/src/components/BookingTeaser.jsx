@@ -5,7 +5,7 @@ const POINTS = ['Free roof and bill check', 'Written itemised quote', 'Subsidy p
 
 export default function BookingTeaser() {
   return (
-    <section id="booking" className="py-8 md:py-12 bg-gray-50">
+    <section id="booking" className="py-14 md:py-20 bg-slate-50">
       <div className="container-custom">
         <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden grid md:grid-cols-[1fr_1.2fr]">
           <div className="relative h-44 md:h-auto">

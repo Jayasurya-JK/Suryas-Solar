@@ -38,6 +38,7 @@ import {
   Legend,
 } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import SectionHeading from './SectionHeading'
 
 // Register Chart.js components
 ChartJS.register(
@@ -377,17 +378,10 @@ export default function SolarCalculator({ showBreakdown = false, headingLevel = 
 
   // ==================== RENDER ====================
   return (
-    <div className="w-full bg-gradient-to-br from-slate-50 via-white to-slate-50">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-12">
+    <div className="w-full bg-slate-50">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-14 md:py-20">
         {/* Header Section */}
-        <div className="text-center mb-4 sm:mb-8">
-          <HeadingTag className="text-xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 tracking-tight leading-tight">
-            Solar Savings Calculator Tamil Nadu
-          </HeadingTag>
-          <p className="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Calculate your potential savings with precision
-          </p>
-        </div>
+        <SectionHeading as={HeadingTag} className="mb-6 sm:mb-8" eyebrow="Free calculator" title={<>Solar Savings Calculator <span className="text-primary">Tamil Nadu</span></>} subtitle="Enter your EB bill to see the system size, savings and payback." />
 
         {/* Input Section - Compact Design */}
         <div className="max-w-xl mx-auto mb-5 sm:mb-8">

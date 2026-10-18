@@ -10,7 +10,7 @@ Last updated: 17 Oct 2026 (images moved to IMAGE-PROMPTS.md).
 
 - [ ] **Google Analytics (2 min):** the website reports to Analytics ID G-5C79VEBNMK, which is under a different Google login than jksurya16@gmail.com. Either (a) open that Analytics property > Admin > Property access management > add jksurya16@gmail.com as Editor and tell Claude, or (b) open Admin > Events and switch on "Mark as key event" for **generate_lead** (it appears after the first enquiry). Then every booking and eligibility enquiry is counted as a lead.
 - [ ] **Weekly posts:** copy this week's Google post, video script and WhatsApp status from `Marketing/WEEKLY-CONTENT.md`.
-- [ ] **One-tap review link (2 min):** Google Business Profile > "Ask for reviews" > copy the link (looks like g.page/r/.../review) and send it to Claude. Claude puts it behind suryassolar.com/review so customers land straight on the review form.
+- [x] **One-tap review link:** done 18 Oct 2026. suryassolar.com/review now opens the Google review form directly (g.page/r/CVM40XnlQRGaEBM/review). Print it as a QR code on the handover sheet.
 - [ ] **Delete your own review** ("Jayasurya J") on the profile - owners must not review their own business.
 - [ ] **Justdial + IndiaMART**: create or claim free listings with exactly the same name, address and phone as the website.
 

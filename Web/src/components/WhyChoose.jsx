@@ -1,6 +1,28 @@
 import { openBooking } from './BookingModal'
 
-const FACTS = ['10+ years', 'Office in Kondur', 'On-grid & hybrid', 'Registered PM Surya Ghar vendor']
+// Annotated rooftop: each marker points at a real part of one of our installations.
+const PINS = [
+  { n: 1, x: 47, y: 38, short: 'Tier-1 panels', label: 'Tier-1 DCR panels', text: 'TATA, Adani or Waaree modules that qualify for the subsidy', lx: 22, zone: 'top' },
+  { n: 2, x: 80, y: 33, short: 'Tilted to sun', label: 'Tilted to the sun', text: 'Angle set for Cuddalore sunlight', lx: 80, zone: 'top' },
+  { n: 3, x: 54.5, y: 73, short: 'Galvanized steel', label: 'Galvanized steel', text: 'Hot-dip galvanized structure that resists coastal rust', lx: 50, zone: 'bottom' },
+  { n: 4, x: 30, y: 62, short: 'Raised frame', label: 'Raised off the roof', text: 'Room to clean, no water pooling under the panels', lx: 15, zone: 'bottom' },
+  { n: 5, x: 72, y: 80, short: 'Anchored base', label: 'Anchored footing', text: 'Concrete pedestals built for cyclone winds', lx: 85, zone: 'bottom' },
+]
+
+// Diagram geometry in one unit system (width 100) so lines stay true at every screen size.
+const PHOTO_H = 46.17 // photo is 1200 x 554
+const TOP = 15 // label strip above the photo
+const BOTTOM = 17 // label strip below the photo
+const TOTAL_H = TOP + PHOTO_H + BOTTOM
+const pinY = (y) => TOP + (y / 100) * PHOTO_H
+const labelY = (zone) => (zone === 'top' ? TOP / 2 : TOP + PHOTO_H + BOTTOM / 2)
+const pct = (v) => `${(v / TOTAL_H) * 100}%`
+
+const REASONS = [
+  { title: 'Official TATA & Exide partner', d: 'M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.8 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z' },
+  { title: 'Subsidy and net meter paperwork, done for you', d: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { title: 'We stay on call after installation', d: 'M18.36 5.64a9 9 0 11-12.73 0M12 2v10' },
+]
 
 const BANKS = [
   { name: 'SBI', src: '/images/SBI.webp' },
@@ -11,128 +33,125 @@ const BANKS = [
   { name: 'Indian Overseas Bank', src: '/images/indian-overseas-bank.webp' },
 ]
 
-const JOURNEY = [
-  { step: 'Survey', title: 'Certified team visits', text: 'EB-bill sizing and a shadow check on your roof.' },
-  { step: 'Design', title: 'Tier-1 panels, trusted brands', text: 'TATA · Adani · Waaree panels. Official TATA Power Solar (Solaroof) & Exide partner.' },
-  { step: 'Build', title: 'Coastal-grade mounting', text: 'Weather-proof structure with 3-pit earthing.' },
-  { step: 'Paperwork', title: '₹1 lakh subsidy, done for you', text: 'PM Surya Ghar · TNEB net meter · DISCOM approvals.' },
-  { step: 'Forever', title: 'After-sales service', text: 'We stay on call after installation.' },
-]
-
-function Journey() {
-  return (
-    <ol className="relative mt-7 ml-4 border-l-2 border-transparent [border-image:linear-gradient(to_bottom,#facc15,#2563eb)_1] space-y-6">
-      {JOURNEY.map((j, i) => (
-        <li key={j.step} className="relative pl-7">
-          <span className="absolute -left-[15px] top-0.5 w-7 h-7 rounded-full bg-white ring-4 ring-amber-100 border-2 border-amber-400 text-[11px] font-black text-amber-600 flex items-center justify-center">{i + 1}</span>
-          <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-amber-600">{j.step}</span>
-          <h3 className="mt-0.5 text-lg font-bold text-slate-900 leading-snug">{j.title}</h3>
-          <p className="mt-0.5 text-sm text-slate-500 leading-relaxed">{j.text}</p>
-        </li>
-      ))}
-    </ol>
-  )
-}
-
 export default function WhyChoose() {
   return (
-    <section className="py-14 lg:py-20 bg-gradient-to-b from-slate-50 to-white">
-      <div className="container-custom">
-        {/* Story + photos */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          <div className="relative pb-10 sm:pb-12">
-            <div className="relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5] max-h-[560px] w-full rounded-3xl overflow-hidden shadow-xl">
-              <img src="/images/installation-expert.webp" alt="Surya's Solar installation expert in Cuddalore" width="864" height="1081" loading="lazy" className="w-full h-full object-cover object-top" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent" />
-              <span className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-bold text-slate-900 shadow">
-                <span className="w-2 h-2 rounded-full bg-green-500" />10+ Years Experience
-              </span>
-              <div className="absolute bottom-0 left-0 right-0 p-5 pb-16 sm:p-6 sm:pb-16 sm:pr-48">
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Trusted Rooftop Solar Partner</h3>
-                <p className="mt-1 text-sm text-slate-200 leading-relaxed">With over a decade of expertise, we are trusted by satisfied residential and commercial customers.</p>
-              </div>
-            </div>
-            <div className="hidden sm:block absolute -bottom-2 -right-2 lg:-right-6 w-44 lg:w-52 aspect-[4/3] rounded-2xl overflow-hidden border-4 border-white shadow-xl">
-              <img src="/images/2.webp" alt="Rooftop solar installation by Surya's Solar in Cuddalore" loading="lazy" className="w-full h-full object-cover" />
-            </div>
-            <div className="absolute bottom-0 left-4 sm:left-6 flex items-center gap-4 rounded-2xl bg-white px-5 py-3.5 shadow-xl">
-              <div>
-                <p className="text-2xl sm:text-3xl font-black text-primary leading-none">150+</p>
-                <p className="mt-1 text-[11px] sm:text-xs text-slate-500 leading-tight">PM Surya Ghar<br />installations</p>
-              </div>
-              <span className="w-px h-10 bg-slate-200" />
-              <div>
-                <p className="text-2xl sm:text-3xl font-black text-primary leading-none">5.0<span className="text-amber-400 text-xl"> ★</span></p>
-                <p className="mt-1 text-[11px] sm:text-xs text-slate-500 leading-tight">45 Google<br />reviews</p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-primary bg-primary-100 rounded-full px-3 py-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-              Why Choose Surya&apos;s Solar
-            </span>
-            <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
-              Rooftop Solar Installer in <span className="text-primary">Cuddalore</span>
-            </h2>
-            <p className="mt-3 text-slate-600 text-base sm:text-lg leading-relaxed">
-              Rooftop solar for homes, shops and offices across Cuddalore district and Puducherry, from sizing to subsidy.
-            </p>
-            <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-sm font-medium text-slate-600">
-              {FACTS.map((f) => (
-                <span key={f} className="inline-flex items-center gap-1.5">
-                  <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                  {f}
-                </span>
-              ))}
-            </p>
-
-            <Journey />
-
-            <button type="button" onClick={openBooking} className="btn-primary mt-6 w-full sm:w-auto text-base">
-              Book a FREE solar consultation at home
-            </button>
-          </div>
+    <section className="relative overflow-hidden bg-white py-14 md:py-20">
+      <div className="relative container-custom">
+        <div className="text-center max-w-3xl mx-auto">
+          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-amber-600">
+            <span className="w-6 h-px bg-amber-500" />Why choose Surya&apos;s Solar<span className="w-6 h-px bg-amber-500" />
+          </span>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">Rooftop Solar Installer in Cuddalore</h2>
+          <p className="mt-3 text-slate-600 md:text-lg">Don&apos;t take our word for it. Here is what goes into every system we build.</p>
         </div>
 
-        {/* Financing */}
-        <div className="mt-14 lg:mt-20 rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden grid lg:grid-cols-[1.1fr_1fr]">
-          <div className="p-6 sm:p-10">
-            <span className="inline-flex items-center gap-2 rounded-full bg-green-50 border border-green-200 px-3 py-1 text-xs font-bold text-green-800">
-              <svg className="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.83-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z" /></svg>
-              Government Approved · PM Surya Ghar loans
-            </span>
-            <h3 className="mt-4 text-2xl sm:text-3xl font-extrabold text-slate-900">Solar Subsidy + Easy Financing</h3>
-            <p className="mt-2 text-slate-600 leading-relaxed">
-              Interest from <strong className="text-slate-900">6.75%</strong> with up to <strong className="text-slate-900">10 years</strong> financing. <strong className="text-slate-900">PM Surya Ghar Yojana</strong> support included. 100+ local families have already used bank loans with us.
-            </p>
-            <div className="mt-6 grid grid-cols-3 divide-x divide-slate-200 rounded-2xl bg-slate-50 border border-slate-200 text-center">
-              {[['6.75%*', 'Starting rate'], ['10 Years', 'Flexible tenure'], ['100%', 'Support']].map(([v, l]) => (
-                <div key={l} className="px-2 py-3.5">
-                  <div className="text-lg sm:text-2xl font-black text-primary">{v}</div>
-                  <div className="text-xs sm:text-sm text-slate-500">{l}</div>
-                </div>
-              ))}
+        {/* Proof diagram: markers on the photo, lines out to labels */}
+        <figure className="mt-6 md:mt-8 max-w-5xl mx-auto">
+          <div className="relative w-full" style={{ aspectRatio: `100 / ${TOTAL_H}` }}>
+            <div className="absolute inset-x-0 overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl ring-1 ring-slate-200" style={{ top: pct(TOP), height: pct(PHOTO_H) }}>
+              <img src="/images/installs/raised-structure.webp" alt="Rooftop solar installed by Surya's Solar on a raised galvanized structure" loading="lazy" className="block w-full h-full object-cover" />
             </div>
-            <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
-              <button type="button" onClick={openBooking} className="inline-flex items-center justify-center gap-2 rounded-full bg-solar-orange px-6 py-3.5 font-bold text-white shadow-lg hover:bg-orange-600 transition-colors">
-                Apply for Solar Loan
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-              </button>
-              <span className="text-xs text-slate-400">*T&amp;C apply. Rates subject to bank approval.</span>
-            </div>
+
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox={`0 0 100 ${TOTAL_H}`} preserveAspectRatio="none" aria-hidden="true">
+              {PINS.map((p) => {
+                const y1 = pinY(p.y)
+                const y2 = p.zone === 'top' ? labelY('top') + 2.4 : labelY('bottom') - 2.4
+                return (
+                  <g key={p.n}>
+                    <line x1={p.x} y1={y1} x2={p.lx} y2={y2} stroke="white" strokeWidth="4" strokeLinecap="round" vectorEffect="non-scaling-stroke" opacity="0.9" />
+                    <line x1={p.x} y1={y1} x2={p.lx} y2={y2} stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+                  </g>
+                )
+              })}
+            </svg>
+
+            {PINS.map((p) => (
+              <span key={`pin-${p.n}`} className="absolute -translate-x-1/2 -translate-y-1/2 flex w-5 h-5 sm:w-6 sm:h-6" style={{ left: `${p.x}%`, top: pct(pinY(p.y)) }}>
+                <span className="absolute inset-0 rounded-full bg-amber-300/60 animate-ping motion-reduce:animate-none" style={{ animationDuration: '2.6s' }} />
+                <span className="relative w-full h-full rounded-full bg-amber-400 ring-2 ring-white shadow" />
+              </span>
+            ))}
+
+            {PINS.map((p) => (
+              <span key={`label-${p.n}`} className="absolute -translate-x-1/2 -translate-y-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-white px-2 py-1 sm:px-3 sm:py-1.5 shadow-md ring-1 ring-amber-200 text-[10px] sm:text-sm font-bold text-slate-900" style={{ left: `${p.lx}%`, top: pct(labelY(p.zone)) }}>
+                <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-amber-400 text-[9px] sm:text-[11px] font-black flex items-center justify-center">{p.n}</span>
+                <span className="sm:hidden">{p.short}</span>
+                <span className="hidden sm:inline">{p.label}</span>
+              </span>
+            ))}
           </div>
-          <div className="bg-slate-50 border-t lg:border-t-0 lg:border-l border-slate-200 p-6 sm:p-10 flex flex-col justify-center">
-            <p className="text-sm font-bold text-slate-900">Trusted banking partners</p>
-            <div className="mt-4 grid grid-cols-3 gap-3">
-              {BANKS.map((b) => (
-                <div key={b.name} className="rounded-2xl bg-white border border-slate-200 p-3 flex flex-col items-center justify-center text-center shadow-sm">
-                  <img src={b.src} alt={b.name} loading="lazy" className="h-10 sm:h-12 w-auto max-w-full object-contain" />
-                  <span className="mt-2 text-[11px] sm:text-xs font-semibold text-slate-600 leading-tight">{b.name}</span>
-                </div>
-              ))}
+          <figcaption className="mt-1 text-xs text-slate-500 text-center">One of our installations in Cuddalore. Every system is built this way.</figcaption>
+        </figure>
+
+        {/* What each marker means */}
+        <ol className="mt-8 max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-5">
+          {PINS.map((p) => (
+            <li key={p.n} className="flex gap-3">
+              <span className="w-7 h-7 shrink-0 rounded-full bg-amber-400 text-xs font-black text-slate-900 flex items-center justify-center">{p.n}</span>
+              <div>
+                <div className="font-bold text-slate-900 leading-snug">{p.label}</div>
+                <p className="mt-0.5 text-sm text-slate-500 leading-snug">{p.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        {/* Beyond the roof */}
+        <ul className="mt-10 max-w-5xl mx-auto flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-x-8 gap-y-3 border-t border-slate-200 pt-8">
+          {REASONS.map((r) => (
+            <li key={r.title} className="flex items-center gap-2.5">
+              <svg className="w-5 h-5 shrink-0 text-primary" fill="none" stroke="currentColor" strokeWidth={1.9} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d={r.d} /></svg>
+              <span className="font-semibold text-slate-800">{r.title}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Subsidy + financing */}
+        <div className="mt-12 rounded-3xl bg-slate-50 ring-1 ring-slate-200 text-slate-900 p-6 sm:p-8 lg:p-10 grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center">
+          <div>
+            <p className="inline-flex items-center gap-2 text-sm font-semibold text-green-700">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.4} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.6-4.02A11.96 11.96 0 0112 2.94a11.96 11.96 0 01-8.6 3.04A12 12 0 003 9c0 5.6 3.83 10.3 9 11.62 5.17-1.33 9-6.03 9-11.62 0-1.04-.13-2.05-.38-3.02z" /></svg>
+              Government-approved PM Surya Ghar loans
+            </p>
+            <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold leading-tight">Solar subsidy and easy financing</h3>
+            <dl className="mt-6 grid grid-cols-3 gap-4">
+              <div>
+                <dt className="sr-only">Subsidy</dt>
+                <dd className="text-2xl sm:text-4xl font-black text-primary leading-none">₹1 lakh</dd>
+                <dd className="mt-1.5 text-xs sm:text-sm text-slate-500">subsidy, paperwork done for you</dd>
+              </div>
+              <div>
+                <dt className="sr-only">Interest</dt>
+                <dd className="text-2xl sm:text-4xl font-black text-primary leading-none">6.75%*</dd>
+                <dd className="mt-1.5 text-xs sm:text-sm text-slate-500">interest from</dd>
+              </div>
+              <div>
+                <dt className="sr-only">Tenure</dt>
+                <dd className="text-2xl sm:text-4xl font-black text-primary leading-none">10 yrs</dd>
+                <dd className="mt-1.5 text-xs sm:text-sm text-slate-500">flexible tenure</dd>
+              </div>
+            </dl>
+            <p className="mt-5 text-sm text-slate-600">100% loan support from our team. 100+ local families have already used bank loans with us.</p>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <button type="button" onClick={openBooking} className="inline-flex items-center justify-center rounded-full bg-solar-orange px-6 py-3.5 font-bold text-white shadow-lg hover:bg-orange-600 transition-colors">
+                Book a free consultation
+              </button>
+              <button type="button" onClick={openBooking} className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3.5 font-semibold text-slate-800 hover:border-primary hover:text-primary transition-colors">
+                Apply for a solar loan
+              </button>
             </div>
+            <p className="mt-3 text-xs text-slate-400">*T&amp;C apply. Rates subject to bank approval.</p>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-slate-700">Our banking partners</p>
+            <ul className="mt-4 grid grid-cols-3 gap-3">
+              {BANKS.map((b) => (
+                <li key={b.name} className="flex flex-col items-center justify-center rounded-2xl bg-white ring-1 ring-slate-200 px-2 py-3 text-center">
+                  <img src={b.src} alt={b.name} loading="lazy" className="h-10 w-full object-contain" />
+                  <span className="mt-1.5 text-[11px] sm:text-xs font-medium text-slate-500 leading-tight">{b.name}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
