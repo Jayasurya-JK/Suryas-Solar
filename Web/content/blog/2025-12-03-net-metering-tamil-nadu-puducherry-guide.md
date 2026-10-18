@@ -190,6 +190,8 @@ If AC usage is driving your bill, compare your monthly units in the [Solar Savin
 
 ---
 
+**Policy details:** read the full [Tamil Nadu solar net metering policy 2026](/blog/2026-10-18-tamil-nadu-solar-net-metering-policy).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

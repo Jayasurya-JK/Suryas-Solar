@@ -148,6 +148,8 @@ Whatever brand you choose, your system's 25-year life depends on:
 *   **Quality DC cables** and matched connectors ([DC cable guide](/blog/2026-01-14-solar-dc-cable-quality-guide))
 *   **Correct tilt, no shade**, and a properly sized inverter
 
+**Comparing other brands?** Read [Loom vs Luminous vs Tata solar](/blog/2026-10-18-loom-vs-luminous-vs-tata-solar).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

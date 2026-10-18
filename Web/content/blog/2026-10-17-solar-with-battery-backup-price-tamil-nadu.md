@@ -164,6 +164,8 @@ The battery does not save much extra money because TNEB net metering already cre
 
 Exide makes solar panels, inverters and batteries, so a **one-brand hybrid system** keeps warranty claims simple. We are an official Exide partner, and we also explain other good options during the site visit. Read our [Exide solar panel and battery review](/blog/2026-10-17-exide-solar-panel-battery-review-tamil-nadu).
 
+**Already have a home UPS?** See [solar battery vs normal inverter battery](/blog/2026-10-18-solar-battery-vs-normal-inverter-battery).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

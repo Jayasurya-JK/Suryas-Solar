@@ -133,6 +133,8 @@ Watch out for these traps: [7 solar scam warnings](/blog/2026-01-09-solar-scam-w
 
 Yes, for most Tamil Nadu homes paying over ₹1,500 a month. A 3kW system saves about ₹25,000-30,000 a year for an AC home, so after the ₹1 lakh subsidy it pays back in roughly **3 to 4.5 years** and then gives 20+ years of low bills. Run your numbers with the [solar savings calculator](/calc) or check your subsidy with the [eligibility checker](/subsidy-eligibility).
 
+**By city:** see [solar panel price by city in Tamil Nadu](/blog/2026-10-18-solar-panel-price-tamil-nadu-by-city). **Subsidy rule:** only [DCR panels](/blog/2026-10-18-dcr-solar-panel-meaning-how-to-check) qualify.
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

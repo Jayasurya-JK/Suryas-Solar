@@ -144,6 +144,8 @@ We are an **official partner of TATA Power Solar and Exide**, with 10+ years in 
 
 **Is it worth it for your bill?** See [solar payback after the ₹1 lakh subsidy](/blog/2026-10-17-solar-payback-after-1-lakh-subsidy-tamil-nadu).
 
+**Before you pay any advance:** check that your installer is on the [registered vendor list](/blog/2026-10-18-tnpdcl-solar-vendor-list-how-to-check) and that your panels are [genuine DCR](/blog/2026-10-18-dcr-solar-panel-meaning-how-to-check).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---
