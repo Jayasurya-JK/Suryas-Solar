@@ -101,6 +101,23 @@
   }
 }
 
+/* Trust map: pins drop in when the map scrolls into view */
+.tm-pin {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+.tm-play .tm-pin {
+  animation: tmPinDrop 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.25) both;
+}
+@keyframes tmPinDrop {
+  from { opacity: 0; transform: translateY(-18px) scale(0.6); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tm-pin, .tm-play .tm-pin { opacity: 1; animation: none; }
+}
+
 /* Blog tables: wrap text on phones; wide tables scroll inside their own box */
 .blog-tables .table-wrap {
   margin: 2rem 0;

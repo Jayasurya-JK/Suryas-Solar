@@ -140,6 +140,6 @@ See [7 solar scam warnings](/blog/2026-01-09-solar-scam-warnings-cuddalore).
 
 ## Compare Datasheets With an Engineer
 
-During a free site visit we put Waaree, Adani and Tata datasheets side by side, confirm DCR status and give you a written quote. Registered PM Surya Ghar vendor (122 installations), official TATA Power Solar and Exide partner. Call or WhatsApp **+91 7904369094**.
+During a free site visit we put Waaree, Adani and Tata datasheets side by side, confirm DCR status and give you a written quote. Registered PM Surya Ghar vendor (150+ installations), official TATA Power Solar and Exide partner. Call or WhatsApp **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

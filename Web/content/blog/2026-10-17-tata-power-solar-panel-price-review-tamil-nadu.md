@@ -156,6 +156,6 @@ Whatever brand you choose, your system's 25-year life depends on:
 
 ## Get a Tata Power Solar Quote in Cuddalore
 
-As an **official TATA Power Solar partner** and a **registered PM Surya Ghar vendor (122 installations)**, Surya's Solar handles design, genuine DCR panels, installation, TNEB net meter and your full subsidy claim. Call or WhatsApp **+91 7904369094**, open all 7 days.
+As an **official TATA Power Solar partner** and a **registered PM Surya Ghar vendor (150+ installations)**, Surya's Solar handles design, genuine DCR panels, installation, TNEB net meter and your full subsidy claim. Call or WhatsApp **+91 7904369094**, open all 7 days.
 
 <!-- COMPONENT: CONTACT_CTA -->

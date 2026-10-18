@@ -18,10 +18,10 @@ Last updated: 17 Oct 2026 (images moved to IMAGE-PROMPTS.md).
 - [ ] **Google Business Profile name**: change "Suryas Solar" to **Surya's Solar** (exactly like the website). Google may ask to re-verify; that is normal.
 - [ ] **Website link on GBP**: `https://www.suryassolar.com`
 - [ ] **GBP description**: paste this (750 characters max):
-  > Surya's Solar is a rooftop solar installer in Kondur, Cuddalore, and a registered vendor on the official PM Surya Ghar portal with 122 installations. Official partner of TATA Power Solar and Exide, with 10+ years in solar. We design on-grid and hybrid systems for homes and businesses across Cuddalore, Panruti, Neyveli, Chidambaram, Villupuram and Puducherry, and handle the full ₹1 lakh subsidy (₹78,000 PM Surya Ghar + ₹22,000 Tamil Nadu top-up), TNEB net meter and paperwork. Coastal-grade hot-dip galvanized structures, 3 earthing pits, 25-year panel warranty. Open all 7 days. Free home visit.
+  > Surya's Solar is a rooftop solar installer in Kondur, Cuddalore, and a registered vendor on the official PM Surya Ghar portal with 150+ installations. Official partner of TATA Power Solar and Exide, with 10+ years in solar. We design on-grid and hybrid systems for homes and businesses across Cuddalore, Panruti, Neyveli, Chidambaram, Villupuram and Puducherry, and handle the full ₹1 lakh subsidy (₹78,000 PM Surya Ghar + ₹22,000 Tamil Nadu top-up), TNEB net meter and paperwork. Coastal-grade hot-dip galvanized structures, 3 earthing pits, 25-year panel warranty. Open all 7 days. Free home visit.
 - [ ] **GBP services**: add "Residential rooftop solar", "Commercial rooftop solar", "PM Surya Ghar subsidy assistance", "Solar net metering", "Solar maintenance".
 - [ ] **First GBP Offer post** (ready text):
-  > Get up to ₹1 LAKH back on rooftop solar! ₹78,000 PM Surya Ghar + ₹22,000 Tamil Nadu top-up for 3kW+ homes. The TN top-up is limited to the first 1 lakh homes. Surya's Solar is a registered PM Surya Ghar vendor with 122 installations. Free home visit, open 7 days 9 AM - 8 PM. Call/WhatsApp 7904369094.
+  > Get up to ₹1 LAKH back on rooftop solar! ₹78,000 PM Surya Ghar + ₹22,000 Tamil Nadu top-up for 3kW+ homes. The TN top-up is limited to the first 1 lakh homes. Surya's Solar is a registered PM Surya Ghar vendor with 150+ installations. Free home visit, open 7 days 9 AM - 8 PM. Call/WhatsApp 7904369094.
 
 ## B. Every week (15 minutes)
 
@@ -51,4 +51,4 @@ All image prompts (36 left, detailed Gemini prompts in the style of our best cov
 4. **Monsoon**: "Cyclone season tip: a solar system fails at the structure, not the panel. Check bolts, earthing and inverter placement before the rains. Free pre-monsoon advice: 7904369094."
 6. **Average bill**: "Is your EB bill normal? A 2BHK with one AC typically pays ₹900-1,500 per two months in cool months and ₹2,500-4,250 in summer. Compare yours on our blog, or WhatsApp us your bill for a free check: 7904369094."
 7. **Tamil terms**: "On-grid, off-grid, net meter - what do they mean? Every solar word explained in Tamil on our blog. தமிழில் விளக்கம் வேண்டுமா? Call 7904369094."
-5. **Deadline**: "PM Surya Ghar is approved till 31 March 2027. Installation takes 6-10 weeks end to end. Start now to get your ₹1 lakh subsidy safely. Registered vendor, 122 installations."
+5. **Deadline**: "PM Surya Ghar is approved till 31 March 2027. Installation takes 6-10 weeks end to end. Start now to get your ₹1 lakh subsidy safely. Registered vendor, 150+ installations."

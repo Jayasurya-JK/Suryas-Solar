@@ -149,6 +149,6 @@ So for a coastal home, a **Waaree glass-to-glass TOPCon** model is a strong defa
 
 ## Need Help Choosing?
 
-Surya's Solar is an **official partner of TATA Power Solar and Exide** and a registered PM Surya Ghar vendor with **122 installations** under the scheme. During a free site visit we compare panel datasheets, DCR proof and warranties with you. Call or WhatsApp **+91 7904369094**.
+Surya's Solar is an **official partner of TATA Power Solar and Exide** and a registered PM Surya Ghar vendor with **150+ installations** under the scheme. During a free site visit we compare panel datasheets, DCR proof and warranties with you. Call or WhatsApp **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

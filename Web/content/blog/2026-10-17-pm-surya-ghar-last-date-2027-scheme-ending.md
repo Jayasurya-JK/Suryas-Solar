@@ -109,7 +109,7 @@ With central + state together, a 3kW home can get **₹1,00,000** back. Full rul
 3.  **Book a site visit with a registered vendor.** Only installations by vendors registered on the PM Surya Ghar portal get the subsidy.
 4.  **Keep documents ready:** Aadhaar, latest EB bill, bank passbook, property tax receipt.
 
-Surya's Solar is a **registered vendor on the official PM Surya Ghar portal** with **122 installations under the scheme** and a **5/5 rating from 149 ratings** on the portal. We handle registration, installation, TNEB liaison and subsidy follow-up. Local process details: [PM Surya Ghar in Cuddalore](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026).
+Surya's Solar is a **registered vendor on the official PM Surya Ghar portal** with **150+ installations under the scheme** and a **5/5 rating from 149 ratings** on the portal. We handle registration, installation, TNEB liaison and subsidy follow-up. Local process details: [PM Surya Ghar in Cuddalore](/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026).
 
 ---
 

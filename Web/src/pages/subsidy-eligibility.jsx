@@ -36,7 +36,7 @@ const RULES = [
 ]
 
 const PROOF = [
-  { value: '122', label: 'PM Surya Ghar installs' },
+  { value: '150+', label: 'PM Surya Ghar installs' },
   { value: '5.0', label: '45 Google reviews' },
   { value: '10+', label: 'years in solar' },
 ]

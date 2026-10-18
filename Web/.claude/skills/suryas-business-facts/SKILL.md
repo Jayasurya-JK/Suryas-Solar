@@ -24,9 +24,9 @@ Use these values verbatim. If a task needs a fact that is not here, ASK the owne
 | Also served (no page yet) | Chidambaram, Nellikuppam, Villupuram region |
 
 ## Stats and proof
-- Official PM Surya Ghar portal (vendor page, Oct 2026): **registered vendor for Cuddalore district**, **122 installations, 420 kWp, rating 5/5 from 149 ratings**. Contact on portal: Jayakumar P. Portal lists "Brand name: EXIDE SUNDAY SOLAR SOLUTIONS".
+- **PM Surya Ghar vendor export (18 Oct 2026, owner):** 212 applications, **151 installed homes, 520.5 kWp** (owner rule 18 Oct 2026: on the site always show ROUNDED-DOWN figures, **150+ homes / 500+ kWp**, never the exact count, because it keeps growing; bank loans shown as 100+ local families), 94 homes already paid **₹71.8 lakh subsidy** in total, **112 families used bank loans** via the portal (Union Bank, SBI, Bank of Maharashtra, Canara, Indian Bank...), so "EMI / easy bank loan support" is TRUE. Areas: Cuddalore district 178, Puducherry 25, Villupuram 3, other 6. Site-wide numbers come from `src/data/installs.json` (area totals only; raw export is never stored). Earlier vendor page (Oct 2026): rating 5/5 from 149 ratings. Contact on portal: Jayakumar P. Portal lists "Brand name: EXIDE SUNDAY SOLAR SOLUTIONS".
 - **Official partners (owner-confirmed 17 Oct 2026): TATA Power Solar and Exide (Exide Sunday Solar Solutions).** 10+ years experience is accurate.
-- Site copy uses "100+ homes, 400+ kW" (still true) and "120+ homes, 420 kW" (homepage meta). 25-year panel warranty.
+- Site copy uses "100+ homes, 400+ kW" (still true) and "150+ homes, 500+ kW" (homepage meta). 25-year panel warranty.
 - Google Business Profile: 5.0 from 45 reviews.
 
 ## Typical market prices (from `src/pages/systems/*.jsx` - market averages, NOT our quotes)

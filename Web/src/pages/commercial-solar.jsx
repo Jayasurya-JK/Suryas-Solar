@@ -126,7 +126,7 @@ export default function CommercialSolarPage() {
                                 ))}
                             </ul>
                             <div className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 text-center">
-                                {[['122', 'PM Surya Ghar installs'], ['420 kWp', 'installed so far'], ['10+', 'years in solar']].map(([v, l]) => (
+                                {[['150+', 'PM Surya Ghar installs'], ['500+ kWp', 'installed so far'], ['10+', 'years in solar']].map(([v, l]) => (
                                     <div key={l} className="bg-white px-2 py-4">
                                         <div className="text-xl sm:text-2xl font-black text-primary">{v}</div>
                                         <div className="mt-0.5 text-[11px] sm:text-xs text-slate-500">{l}</div>

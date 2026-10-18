@@ -6,7 +6,7 @@ Method: `competitor-teardown` skill. Pages studied: homepage, /commercial-solar/
 
 | | Kondaas | Surya's Solar |
 |---|---|---|
-| Base | Coimbatore, "since 1995", "2k+ customers" | Kondur, Cuddalore, 10+ years, 122 PM Surya Ghar installs |
+| Base | Coimbatore, "since 1995", "2k+ customers" | Kondur, Cuddalore, 10+ years, 150+ PM Surya Ghar installs |
 | Blog posts | ~257 | 84 |
 | Location pages | 40 (TN, Kerala, AP, Telangana, even Delhi and Jaipur) | 6 real service towns |
 | Case studies | 12 named projects (textile mills 1-2.2 MW, Periyar University 300 kW) | none yet |

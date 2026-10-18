@@ -144,6 +144,6 @@ The central scheme is approved till **31 March 2027**, and the Tamil Nadu top-up
 
 ## We Handle Every Step
 
-From site visit to net meter and subsidy follow-up, our team in Kondur, Cuddalore handles the paperwork and TNEB visits for you. Registered PM Surya Ghar vendor with 122 installations. Open all 7 days, 9 AM to 8 PM. Call or WhatsApp **+91 7904369094**.
+From site visit to net meter and subsidy follow-up, our team in Kondur, Cuddalore handles the paperwork and TNEB visits for you. Registered PM Surya Ghar vendor with 150+ installations. Open all 7 days, 9 AM to 8 PM. Call or WhatsApp **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

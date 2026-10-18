@@ -141,6 +141,6 @@ Yes, for most Tamil Nadu homes paying over ₹1,500 a month. A 3kW system saves 
 
 ## Get an Itemised Quote
 
-We show datasheets for Tata, Adani, Waaree, Premier and Exide side by side, confirm DCR status, and give a written, itemised quote after a free site visit. Registered PM Surya Ghar vendor (122 installations), official TATA Power Solar and Exide partner. Call or WhatsApp **+91 7904369094**.
+We show datasheets for Tata, Adani, Waaree, Premier and Exide side by side, confirm DCR status, and give a written, itemised quote after a free site visit. Registered PM Surya Ghar vendor (150+ installations), official TATA Power Solar and Exide partner. Call or WhatsApp **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

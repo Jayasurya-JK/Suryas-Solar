@@ -144,6 +144,6 @@ A good company answers all eight clearly and puts the important answers in the q
 
 ## A Local Installer for Cuddalore District and Puducherry
 
-Surya's Solar is a registered PM Surya Ghar vendor with 122 installations in Cuddalore district, an office in Kondur, Cuddalore, and official partnerships with TATA Power Solar and Exide. We serve [Cuddalore](/service-areas/cuddalore), [Puducherry](/service-areas/puducherry), [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), [Chidambaram](/service-areas/chidambaram) and [Villupuram](/service-areas/villupuram). Call or WhatsApp **+91 7904369094**.
+Surya's Solar is a registered PM Surya Ghar vendor with 150+ installations in Cuddalore district, an office in Kondur, Cuddalore, and official partnerships with TATA Power Solar and Exide. We serve [Cuddalore](/service-areas/cuddalore), [Puducherry](/service-areas/puducherry), [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), [Chidambaram](/service-areas/chidambaram) and [Villupuram](/service-areas/villupuram). Call or WhatsApp **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

@@ -30,7 +30,7 @@ The owner judges every UI change on localhost before it ships. The bar: **clean,
 
 ## Component patterns (copy these)
 - **Check list:** `flex gap-3` + `w-6 h-6 rounded-full bg-green-100 text-green-600` circle with a check SVG, then bold title + `text-sm text-slate-600` line.
-- **Stat strip (proof):** `grid grid-cols-3 divide-x divide-slate-200 rounded-2xl border bg-white text-center`, big `font-black text-primary` value + `text-xs text-slate-500` label. Facts only: 122 PM Surya Ghar installs, 5.0 from 45 Google reviews, 10+ years (check `suryas-business-facts`).
+- **Stat strip (proof):** `grid grid-cols-3 divide-x divide-slate-200 rounded-2xl border bg-white text-center`, big `font-black text-primary` value + `text-xs text-slate-500` label. Facts only: 150+ PM Surya Ghar installs, 5.0 from 45 Google reviews, 10+ years (check `suryas-business-facts`).
 - **Price/amount cards:** 3 cards, the recommended one filled `bg-primary text-white shadow-lg` with `text-yellow-300` amount.
 - **Notice box:** `bg-amber-50 border-amber-200 rounded-xl p-3` with a clock/info icon on the left.
 - **Badge/pill:** `inline-flex items-center gap-2 text-xs font-bold uppercase text-primary bg-primary-100 rounded-full px-3 py-1`, green dot, items separated by `·`.

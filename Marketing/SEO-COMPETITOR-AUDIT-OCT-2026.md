@@ -159,7 +159,7 @@ Already strong (keep and refresh): units per day (1kW/2kW/3kW/5kW), EB slab rate
 - 11 older posts refreshed to the ₹1 lakh subsidy; 38 titles/descriptions shortened; 16 posts given post-specific FAQs; all 75 posts pass checks (0 errors, 0 warnings).
 - New posts: Puducherry solar subsidy 2026; TNEB solar application and status; plus 10 Sprint 4-5 posts.
 - Invented case studies relabelled as worked examples; invented guarantees removed; homepage testimonials replaced with real Google review quotes.
-- About page: correct facts (122 installs, 420 kWp, TATA Power Solar + Exide), brand FAQ for "surya solar" confusion.
+- About page: correct facts (150+ installs, 500+ kWp, TATA Power Solar + Exide), brand FAQ for "surya solar" confusion.
 - 3kW and 5kW pages: Service + FAQ + breadcrumb schema; bill ranges aligned with the corrected calculator.
 - 160+ new internal links from guides to town pages; review short link suryassolar.com/review.
 - Sitemap resubmitted (89 pages read same day).

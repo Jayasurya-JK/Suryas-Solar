@@ -1,0 +1,130 @@
+{
+  "asOf": "October 2026",
+  "source": "PM Surya Ghar vendor portal export",
+  "homesInstalled": 151,
+  "kwpInstalled": 520.5,
+  "applications": 212,
+  "subsidyDisbursedRs": 7179360,
+  "subsidyPaidHomes": 94,
+  "loanFamilies": 112,
+  "outsideMapApplications": 8,
+  "areas": [
+    {
+      "key": "cuddalore",
+      "name": "Cuddalore Town",
+      "lat": 11.748,
+      "lng": 79.748,
+      "homes": 94,
+      "kwp": 320.3,
+      "applications": 132
+    },
+    {
+      "key": "nathapattu",
+      "name": "Nathapattu",
+      "lat": 11.715,
+      "lng": 79.735,
+      "homes": 16,
+      "kwp": 48.1,
+      "applications": 23
+    },
+    {
+      "key": "puducherry",
+      "name": "Puducherry",
+      "lat": 11.935,
+      "lng": 79.805,
+      "homes": 17,
+      "kwp": 61.6,
+      "applications": 21
+    },
+    {
+      "key": "nellikuppam",
+      "name": "Nellikuppam",
+      "lat": 11.775,
+      "lng": 79.672,
+      "homes": 3,
+      "kwp": 10.9,
+      "applications": 7
+    },
+    {
+      "key": "semmankuppam",
+      "name": "Semmankuppam",
+      "lat": 11.69,
+      "lng": 79.745,
+      "homes": 2,
+      "kwp": 6.5,
+      "applications": 5
+    },
+    {
+      "key": "vadalur",
+      "name": "Vadalur",
+      "lat": 11.555,
+      "lng": 79.553,
+      "homes": 4,
+      "kwp": 17.3,
+      "applications": 4
+    },
+    {
+      "key": "bahour",
+      "name": "Bahour",
+      "lat": 11.805,
+      "lng": 79.745,
+      "homes": 2,
+      "kwp": 7.0,
+      "applications": 2
+    },
+    {
+      "key": "panruti",
+      "name": "Panruti",
+      "lat": 11.776,
+      "lng": 79.553,
+      "homes": 2,
+      "kwp": 7.7,
+      "applications": 2
+    },
+    {
+      "key": "srimushnam",
+      "name": "Srimushnam",
+      "lat": 11.402,
+      "lng": 79.41,
+      "homes": 2,
+      "kwp": 8.7,
+      "applications": 2
+    },
+    {
+      "key": "vridhachalam",
+      "name": "Vridhachalam",
+      "lat": 11.518,
+      "lng": 79.325,
+      "homes": 0,
+      "kwp": 0.0,
+      "applications": 2
+    },
+    {
+      "key": "kandamangalam",
+      "name": "Kandamangalam",
+      "lat": 11.905,
+      "lng": 79.69,
+      "homes": 2,
+      "kwp": 7.0,
+      "applications": 2
+    },
+    {
+      "key": "villupuram",
+      "name": "Villupuram",
+      "lat": 11.94,
+      "lng": 79.49,
+      "homes": 0,
+      "kwp": 0.0,
+      "applications": 1
+    },
+    {
+      "key": "kurinjipadi",
+      "name": "Kurinjipadi",
+      "lat": 11.563,
+      "lng": 79.597,
+      "homes": 0,
+      "kwp": 0.0,
+      "applications": 1
+    }
+  ]
+}

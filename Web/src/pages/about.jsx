@@ -6,13 +6,7 @@ import Footer from '../components/Footer'
 import WhatsAppFloat from '../components/WhatsAppFloat'
 import { openBooking } from '../components/BookingModal'
 import ProcessSteps from '../components/ProcessSteps'
-
-const STATS = [
-    { value: '122', label: 'PM Surya Ghar installs' },
-    { value: '420 kWp', label: 'Solar installed' },
-    { value: '10+', label: 'Years in solar' },
-    { value: '5.0', label: 'Google rating (45 reviews)' },
-]
+import TrustMap from '../components/TrustMap'
 
 const PRINCIPLES = [
     { title: 'Engineering first', text: 'Shadow check and load calculation before we quote, so your system is sized to your EB bill, not to a sales target.' },
@@ -40,7 +34,7 @@ const WORKS = [
 
 const FAQS = [
     { q: "Is Surya's Solar the same as Surya Solar or other \"Surya\" brands?", a: "No. Surya's Solar is an independent rooftop solar installer based in Kondur, Cuddalore. We are not connected to other companies or panel brands with \"Surya\" in their name. We are also not the government scheme \"PM Surya Ghar\"; we are a registered vendor that installs systems under it." },
-    { q: "Is Surya's Solar a registered PM Surya Ghar vendor?", a: "Yes. Surya's Solar is registered on the official PM Surya Ghar portal, with 122 installations and about 420 kWp installed in Cuddalore district." },
+    { q: "Is Surya's Solar a registered PM Surya Ghar vendor?", a: "Yes. Surya's Solar is registered on the official PM Surya Ghar portal, with 150+ installations and 500+ kWp installed in Cuddalore district." },
     { q: "Where is Surya's Solar located?", a: "No.33, Sri Gokul Enterprises Building, Nellikuppam Main Rd, Chavadi, Kondur, Cuddalore - 607006. We are open Monday to Sunday, 9 AM to 8 PM." },
     { q: "Which areas do you serve?", a: "Cuddalore, Puducherry, Panruti, Neyveli, Chidambaram, Villupuram, Nellikuppam, Vadalur and nearby towns." },
     { q: "Which brands do you install?", a: "We are an official partner of TATA Power Solar and Exide. For subsidy homes we use DCR panels and show you the datasheets of the exact models before you decide." },
@@ -68,20 +62,20 @@ export default function AboutPage() {
                 <title>About Surya's Solar | Rooftop Solar Installer in Cuddalore</title>
                 <meta
                     name="description"
-                    content="Surya's Solar is a rooftop solar installer in Kondur, Cuddalore: 10+ years in solar, 122 PM Surya Ghar installations, official TATA Power Solar and Exide partner."
+                    content="Surya's Solar is a rooftop solar installer in Kondur, Cuddalore: 10+ years in solar, 150+ PM Surya Ghar installations, official TATA Power Solar and Exide partner."
                 />
                 <link rel="canonical" href="https://www.suryassolar.com/about" />
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.suryassolar.com/about" />
                 <meta property="og:title" content="About Surya's Solar - Rooftop Solar Installer in Cuddalore" />
-                <meta property="og:description" content="10+ years in solar, 122 PM Surya Ghar installations, official TATA Power Solar and Exide partner." />
+                <meta property="og:description" content="10+ years in solar, 150+ PM Surya Ghar installations, official TATA Power Solar and Exide partner." />
                 <meta property="og:image" content="https://www.suryassolar.com/images/1.webp" />
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://www.suryassolar.com/about" />
                 <meta property="twitter:title" content="About Surya's Solar" />
-                <meta property="twitter:description" content="Rooftop solar installer in Kondur, Cuddalore. 122 PM Surya Ghar installations, 10+ years in solar." />
+                <meta property="twitter:description" content="Rooftop solar installer in Kondur, Cuddalore. 150+ PM Surya Ghar installations, 10+ years in solar." />
                 <meta property="twitter:image" content="https://www.suryassolar.com/images/1.webp" />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             </Head>
@@ -132,17 +126,7 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* Stats */}
-                <section className="container-custom pt-10 lg:pt-12">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 shadow-sm">
-                        {STATS.map((s) => (
-                            <div key={s.label} className="bg-white px-4 py-6 text-center">
-                                <div className="text-2xl sm:text-3xl font-black text-primary">{s.value}</div>
-                                <div className="mt-1 text-xs sm:text-sm text-slate-500">{s.label}</div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
+                <TrustMap />
 
                 {/* Story + principles */}
                 <section className="container-custom py-14 lg:py-20 grid lg:grid-cols-2 gap-10 lg:gap-14">
@@ -153,7 +137,7 @@ export default function AboutPage() {
                                 Surya&apos;s Solar started in Cuddalore with one simple idea: a family should be able to switch to solar without worrying about the paperwork, the quality of the structure, or who to call when something needs attention.
                             </p>
                             <p>
-                                Today we are a <strong className="text-slate-900">registered vendor on the PM Surya Ghar portal</strong> with <strong className="text-slate-900">122 installations and about 420 kWp</strong> in Cuddalore district, and an <strong className="text-slate-900">official partner of TATA Power Solar and Exide</strong>.
+                                Today we are a <strong className="text-slate-900">registered vendor on the PM Surya Ghar portal</strong> with <strong className="text-slate-900">150+ installations and 500+ kWp</strong> in Cuddalore district, and an <strong className="text-slate-900">official partner of TATA Power Solar and Exide</strong>.
                             </p>
                             <p>
                                 Most of our work is residential rooftop solar. We also design on-grid and hybrid systems for shops, clinics, offices and schools.

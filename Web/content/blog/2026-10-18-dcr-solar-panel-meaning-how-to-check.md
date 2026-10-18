@@ -132,6 +132,6 @@ Which to choose: [bifacial vs monocrystalline vs TOPCon](/blog/2026-01-07-mono-v
 
 ## DCR Panels, Documented in Writing
 
-Every subsidy quote from Surya's Solar lists the exact DCR model, and we hand over the DCR certificate and serial numbers with your invoice. Registered PM Surya Ghar vendor (122 installations). Check your eligibility with the [subsidy eligibility checker](/subsidy-eligibility) or call **+91 7904369094**.
+Every subsidy quote from Surya's Solar lists the exact DCR model, and we hand over the DCR certificate and serial numbers with your invoice. Registered PM Surya Ghar vendor (150+ installations). Check your eligibility with the [subsidy eligibility checker](/subsidy-eligibility) or call **+91 7904369094**.
 
 <!-- COMPONENT: CONTACT_CTA -->

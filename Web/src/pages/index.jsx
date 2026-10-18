@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useEffect } from 'react'
 import Header from '../components/Header'
 import HeroCarousel from '../components/HeroCarousel'
-import StatsStrip from '../components/StatsStrip'
+import TrustMap from '../components/TrustMap'
 import BookingTeaser from '../components/BookingTeaser'
 import TimelineSteps from '../components/TimelineSteps'
 import Partners from '../components/Partners'
@@ -184,7 +184,12 @@ export default function Home({ content, settings }) {
       <Header settings={settings} />
       <main>
         <HeroCarousel slides={content.heroSlides} />
-        <StatsStrip stats={content.stats} />
+        <div className="bg-gradient-to-r from-primary to-primary-700 py-3 text-center px-4">
+          <h2 className="text-white font-semibold text-sm md:text-xl tracking-wide">
+            <span className="text-yellow-300 font-bold text-base md:text-2xl">Cuddalore’s</span> trusted residential solar expert
+          </h2>
+        </div>
+        <TrustMap className="bg-gradient-to-b from-white to-slate-50" />
         <BookingTeaser />
         <OurWorks />
         <TimelineSteps steps={content.timelineSteps} />
@@ -259,7 +264,7 @@ export default function Home({ content, settings }) {
               </div>
               <div className="absolute -bottom-6 right-4 sm:right-8 bg-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-4">
                 <div>
-                  <p className="text-3xl font-black text-primary leading-none">122</p>
+                  <p className="text-3xl font-black text-primary leading-none">150+</p>
                   <p className="text-xs text-slate-500 mt-1">PM Surya Ghar<br />installations</p>
                 </div>
                 <div className="w-px h-10 bg-slate-200" />

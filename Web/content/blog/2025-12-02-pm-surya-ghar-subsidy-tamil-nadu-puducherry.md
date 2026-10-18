@@ -122,8 +122,8 @@ The central PM Surya Ghar rules also apply: the bill must be in the applicant's 
 
 Surya's Solar is a **registered vendor on the official PM Surya Ghar portal** for Cuddalore district. On the government portal itself, our record shows:
 
-*   **122 installations** completed under the scheme
-*   **420 kWp** total installed capacity
+*   **150+ installations** completed under the scheme
+*   **500+ kWp** total installed capacity
 *   **5/5 rating from 149 customer ratings**
 
 We are an **official partner of TATA Power Solar and Exide**, with 10+ years in solar and a **5.0 rating from 45 Google reviews**. We handle registration, documents, installation, TNEB liaison and subsidy follow-up from our office in Kondur, Cuddalore, and serve Cuddalore, [Panruti](/service-areas/panruti), [Neyveli](/service-areas/neyveli), Chidambaram and Puducherry.

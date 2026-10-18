@@ -289,7 +289,7 @@ export default function SubsidyEligibilityChecker({ town = '', source = 'Subsidy
                 </div>
                 <div className="mt-4 grid grid-cols-3 divide-x divide-slate-200 rounded-xl border border-slate-200 bg-slate-50 text-center">
                   <div className="px-2 py-3">
-                    <p className="text-xl font-black text-primary">122</p>
+                    <p className="text-xl font-black text-primary">150+</p>
                     <p className="text-[0.7rem] leading-tight text-slate-500 mt-0.5">PM Surya Ghar installs</p>
                   </div>
                   <div className="px-2 py-3">

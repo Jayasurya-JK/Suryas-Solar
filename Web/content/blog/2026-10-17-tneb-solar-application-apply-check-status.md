@@ -151,6 +151,6 @@ Full breakdown: [solar installation timeline: booking to net meter](/blog/2026-1
 
 ## We Apply and Track It for You
 
-As a registered PM Surya Ghar vendor with 122 installations in [Cuddalore](/service-areas/cuddalore) district, we handle the application, documents, TNPDCL follow-up, net meter and subsidy tracking. Stuck application? WhatsApp your application number to **+91 7904369094** for a free check.
+As a registered PM Surya Ghar vendor with 150+ installations in [Cuddalore](/service-areas/cuddalore) district, we handle the application, documents, TNPDCL follow-up, net meter and subsidy tracking. Stuck application? WhatsApp your application number to **+91 7904369094** for a free check.
 
 <!-- COMPONENT: CONTACT_CTA -->

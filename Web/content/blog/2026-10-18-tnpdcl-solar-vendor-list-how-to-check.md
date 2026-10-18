@@ -31,7 +31,7 @@ faqs:
       reviews, structure and earthing standards, and written warranties.
   - question: Is Surya's Solar a registered vendor?
     answer: >-
-      Yes. Surya's Solar is registered on the PM Surya Ghar portal with 122
+      Yes. Surya's Solar is registered on the PM Surya Ghar portal with 150+
       installations in Cuddalore district, and serves Cuddalore district and
       Puducherry.
   - question: Can I change my vendor after applying?
@@ -137,6 +137,6 @@ Fill this in after each site visit; the right choice is usually clear by the end
 
 ## A Registered Vendor in Cuddalore District
 
-Surya's Solar is registered on the PM Surya Ghar portal with 122 installations in Cuddalore district, works from an office in Kondur, Cuddalore, and handles the paperwork end to end. Check your home with the [subsidy eligibility checker](/subsidy-eligibility) or call **+91 7904369094**. Serving [Cuddalore](/service-areas/cuddalore), [Puducherry](/service-areas/puducherry), [Neyveli](/service-areas/neyveli) and nearby towns.
+Surya's Solar is registered on the PM Surya Ghar portal with 150+ installations in Cuddalore district, works from an office in Kondur, Cuddalore, and handles the paperwork end to end. Check your home with the [subsidy eligibility checker](/subsidy-eligibility) or call **+91 7904369094**. Serving [Cuddalore](/service-areas/cuddalore), [Puducherry](/service-areas/puducherry), [Neyveli](/service-areas/neyveli) and nearby towns.
 
 <!-- COMPONENT: CONTACT_CTA -->

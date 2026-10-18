@@ -19,7 +19,7 @@ Welcome to **2026**. If you are a homeowner in [Cuddalore](/service-areas/cuddal
 
 The **PM Surya Ghar: Muft Bijli Yojana** has evolved into one of the most successful green energy initiatives in India. For residents of Tamil Nadu, specifically in high-solar-yield districts like Cuddalore, this scheme is not just an environmental choice-it is a financial no-brainer.
 
-At **Surya's Solar**, a registered vendor on the official PM Surya Ghar portal with 122 installations under the scheme, we have guided over a hundred local families through this process. We’ve seen the approvals, the inspections, and most importantly, the subsidy credits hitting bank accounts. 
+At **Surya's Solar**, a registered vendor on the official PM Surya Ghar portal with 150+ installations under the scheme, we have guided over a hundred local families through this process. We’ve seen the approvals, the inspections, and most importantly, the subsidy credits hitting bank accounts. 
 
 In this exhaustive 2026 guide, we will walk you through every single detail of the scheme, ensuring your application is approved on the first try.
 

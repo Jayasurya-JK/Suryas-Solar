@@ -8,14 +8,14 @@ Facts (phone, prices, subsidy rules) live in `Web/.claude/skills/suryas-business
 
 ## 1. The business in one paragraph
 
-Surya's Solar is a rooftop solar installer based in Kondur, Cuddalore (Tamil Nadu), serving Cuddalore, Panruti, Neyveli, Chidambaram, Villupuram and Puducherry. It is a **registered vendor on the official PM Surya Ghar portal** with **122 installations, 420 kWp and a 5/5 rating from 149 ratings** on that portal, plus **5.0 stars from 45 Google reviews**. Most customers are homeowners with ₹1,500 - ₹7,000 monthly EB bills buying 3kW-5kW on-grid systems with subsidy. The business wins on engineering quality (3 earthing pits, hot-dip galvanized coastal structures, quality DC cable), local presence (open 7 days, 9 AM - 8 PM) and handling the whole subsidy and TNEB process.
+Surya's Solar is a rooftop solar installer based in Kondur, Cuddalore (Tamil Nadu), serving Cuddalore, Panruti, Neyveli, Chidambaram, Villupuram and Puducherry. It is a **registered vendor on the official PM Surya Ghar portal** with **150+ installations, 500+ kWp and a 5/5 rating from 149 ratings** on that portal, plus **5.0 stars from 45 Google reviews**. Most customers are homeowners with ₹1,500 - ₹7,000 monthly EB bills buying 3kW-5kW on-grid systems with subsidy. The business wins on engineering quality (3 earthing pits, hot-dip galvanized coastal structures, quality DC cable), local presence (open 7 days, 9 AM - 8 PM) and handling the whole subsidy and TNEB process.
 
 ## 2. Positioning
 
 **One-line position:** *Cuddalore's trusted, government-registered solar installer - we get you the full ₹1 lakh subsidy and a system engineered for coastal Tamil Nadu.*
 
 Proof points to repeat everywhere (in this order):
-1. Registered PM Surya Ghar vendor - 122 installations on the official portal
+1. Registered PM Surya Ghar vendor - 150+ installations on the official portal
 2. Up to ₹1 lakh subsidy handled end to end (₹78,000 central + ₹22,000 TN)
 3. 5-star rated (portal 149 ratings, Google 45 reviews)
 4. Local office in Kondur, open all 7 days, WhatsApp support
@@ -47,7 +47,7 @@ What we are not: the cheapest quote. Our content should teach buyers *why cheap 
 - Google Business Profile: weekly "Offer" post with the ₹1 lakh message + install photo.
 - WhatsApp: status updates 3x/week; broadcast to past enquiries.
 - Instagram / Facebook: carousel "₹1 lakh subsidy in 5 steps", reels from real installs.
-- Referral: existing 122 customers - "refer a neighbour" (reward decided by owner).
+- Referral: existing 150+ customers - "refer a neighbour" (reward decided by owner).
 
 **Honesty rule:** always say "as of <month year>", "reported cap", and "we confirm eligibility on the portal". Never promise a subsidy we cannot control.
 
