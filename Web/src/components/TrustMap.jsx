@@ -66,12 +66,29 @@ const ICONS = {
     bank: 'M3 10l9-6 9 6M5 10v8m4-8v8m6-8v8m4-8v8M3 21h18',
 }
 
+// Shows the real number in the page HTML (good for Google), then counts up once it scrolls into view
+function Count({ end, decimals = 0, prefix = '', suffix = '', duration = 2 }) {
+    const ref = useRef(null)
+    const [on, setOn] = useState(false)
+    useEffect(() => {
+        const el = ref.current
+        if (!el || typeof IntersectionObserver === 'undefined') return
+        const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setOn(true); io.disconnect() } }, { threshold: 0.4 })
+        io.observe(el)
+        return () => io.disconnect()
+    }, [])
+    return (
+        <span ref={ref}>
+            {on ? <CountUp start={0} end={end} decimals={decimals} prefix={prefix} suffix={suffix} duration={duration} /> : `${prefix}${end.toFixed(decimals)}${suffix}`}
+        </span>
+    )
+}
+
 export default function TrustMap({ className = 'bg-white' }) {
     const ref = useRef(null)
     const [play, setPlay] = useState(false)
     const pins = buildPins()
     const bubbles = INSTALLS.areas.filter((a) => BUBBLES[a.key] && a.homes)
-    const chips = [...INSTALLS.areas].filter((a) => a.homes).sort((a, b) => b.homes - a.homes)
 
     useEffect(() => {
         const el = ref.current
@@ -102,7 +119,32 @@ export default function TrustMap({ className = 'bg-white' }) {
                     </h2>
                 </div>
 
-                <div ref={ref} className="mt-8 lg:mt-12 grid lg:grid-cols-[1.1fr_1fr] gap-6 lg:gap-10 items-start">
+                {/* Headline numbers with real install photos and Google rating */}
+                    <div className="mt-6 lg:mt-8 flex flex-col items-center text-center">
+                        <div className="flex items-end gap-3">
+                            <span className="text-6xl sm:text-7xl font-black leading-none tracking-tight text-primary-900"><Count end={HOMES} duration={2.2} /><span className="text-green-600">+</span></span>
+                            <span className="pb-1.5 text-left text-base sm:text-lg font-bold leading-tight text-slate-700">homes<br />powered</span>
+                        </div>
+                        <div className="mt-4 flex items-center gap-3">
+                            <div className="flex -space-x-3">
+                                {['/images/1.webp', '/images/3.webp', '/images/2.webp', '/images/9.webp', '/images/6.webp'].map((src) => (
+                                    <img key={src} src={src} alt="" loading="lazy" className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-white shadow" />
+                                ))}
+                            </div>
+                            <div className="text-left">
+                                <div className="text-amber-400 text-base leading-none tracking-wide">★★★★★</div>
+                                <div className="mt-1 text-xs sm:text-sm font-semibold text-slate-700">5.0 · 45 Google reviews</div>
+                            </div>
+                        </div>
+                        <div className="mt-4 inline-flex items-center gap-2.5 rounded-full bg-amber-50 border border-amber-200 pl-2 pr-4 py-1.5">
+                            <span className="w-8 h-8 rounded-full bg-amber-400 text-white flex items-center justify-center shadow-sm">
+                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" /></svg>
+                            </span>
+                            <span className="text-sm sm:text-base text-slate-700"><strong className="text-xl sm:text-2xl font-black text-slate-900"><Count end={KWP} suffix="+" duration={2.2} /> kWp</strong> of solar installed</span>
+                        </div>
+                    </div>
+
+                <div ref={ref} className="mt-8 lg:mt-10 grid lg:grid-cols-[1.1fr_1fr] gap-6 lg:gap-10 items-center">
                     {/* Map */}
                     <div>
                         <div className={`relative rounded-2xl border border-slate-200 bg-gradient-to-br from-sky-50 via-white to-blue-50 shadow-sm overflow-hidden ${play ? 'tm-play' : ''}`}>
@@ -150,39 +192,10 @@ export default function TrustMap({ className = 'bg-white' }) {
                             <span className="inline-flex items-center gap-1.5 font-semibold text-slate-700"><span className="w-3 h-3 rounded-full bg-green-600" />Installed and generating</span>
                             <span className="text-xs text-slate-400">Pins show the area, not exact homes</span>
                         </div>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                            {chips.map((a) => (
-                                <span key={a.key} className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs sm:text-sm text-slate-700">
-                                    {a.name}<strong className="text-green-700">{a.homes}</strong>
-                                </span>
-                            ))}
-                        </div>
                     </div>
 
                     {/* Numbers */}
                     <div className="space-y-3 lg:space-y-4">
-                        <div className="rounded-2xl bg-gradient-to-br from-primary-700 to-primary-900 text-white p-6 sm:p-8 shadow-xl">
-                            <div className="inline-flex items-center gap-1.5 rounded-full bg-green-500/20 px-2.5 py-0.5 text-xs font-bold text-green-300">
-                                <span className="w-1.5 h-1.5 rounded-full bg-green-400" /> Installed and generating
-                            </div>
-                            <div className="mt-3 flex items-end gap-3 flex-wrap">
-                                <span className="text-5xl sm:text-6xl font-black leading-none">
-                                    <CountUp end={HOMES} suffix="+" duration={2.2} enableScrollSpy scrollSpyOnce />
-                                </span>
-                                <span className="text-lg sm:text-xl font-bold text-blue-100 pb-1">homes powered</span>
-                            </div>
-                            <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
-                                <div className="rounded-xl bg-white/10 px-3 py-2.5">
-                                    <div className="text-lg font-black text-yellow-300">{KWP}+ kWp</div>
-                                    <div className="text-blue-100">installed</div>
-                                </div>
-                                <div className="rounded-xl bg-white/10 px-3 py-2.5">
-                                    <div className="text-lg font-black text-yellow-300">5.0 ★</div>
-                                    <div className="text-blue-100">Google rating</div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div className="grid grid-cols-2 gap-3">
                             {stats.map((s) => (
                                 <div key={s.label} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -190,7 +203,7 @@ export default function TrustMap({ className = 'bg-white' }) {
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d={ICONS[s.icon]} /></svg>
                                     </span>
                                     <div className="mt-2.5 text-xl sm:text-2xl font-black text-slate-900 whitespace-nowrap">
-                                        <CountUp end={s.value} decimals={s.decimals || 0} prefix={s.prefix || ''} suffix={s.suffix || ''} duration={2} enableScrollSpy scrollSpyOnce />
+                                        <Count end={s.value} decimals={s.decimals || 0} prefix={s.prefix || ''} suffix={s.suffix || ''} />
                                     </div>
                                     <div className="mt-0.5 text-xs sm:text-sm text-slate-500 leading-snug">{s.label}</div>
                                 </div>

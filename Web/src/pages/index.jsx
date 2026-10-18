@@ -38,13 +38,6 @@ const TOWNS = [
   { label: 'Neyveli', href: '/service-areas/neyveli' },
 ]
 
-const ABOUT_POINTS = [
-  'Registered PM Surya Ghar vendor',
-  'Official TATA Power Solar & Exide partner',
-  'Full subsidy and TNEB paperwork',
-  'Coastal-grade structures, 3-pit earthing',
-]
-
 export default function Home({ content, settings }) {
   useEffect(() => {
     // Handle hash navigation on load
@@ -251,55 +244,6 @@ export default function Home({ content, settings }) {
                   {l.label}
                 </a>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* About: real install photo + short story + proof */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container-custom grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
-                <img src="/images/2.webp" alt="Rooftop solar installation by Surya's Solar in Cuddalore" loading="lazy" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute -bottom-6 right-4 sm:right-8 bg-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-4">
-                <div>
-                  <p className="text-3xl font-black text-primary leading-none">150+</p>
-                  <p className="text-xs text-slate-500 mt-1">PM Surya Ghar<br />installations</p>
-                </div>
-                <div className="w-px h-10 bg-slate-200" />
-                <div>
-                  <p className="text-3xl font-black text-primary leading-none">5.0</p>
-                  <p className="text-xs text-slate-500 mt-1">45 Google<br />reviews</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-6 lg:pt-0">
-              <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 font-semibold text-sm rounded-full mb-4">
-                About Us
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
-                Rooftop Solar Installer in <span className="text-primary">Cuddalore</span>
-              </h2>
-              <p className="mt-4 text-slate-600 text-lg leading-relaxed">
-                For 10+ years, Surya&apos;s Solar has designed and installed on-grid and hybrid rooftop solar for homes, shops and offices across Cuddalore district and Puducherry, from our office in Kondur.
-              </p>
-              <p className="mt-3 text-slate-600 leading-relaxed">
-                We handle every step: sizing from your EB bills, shadow analysis, coastal-grade structures, TNEB net meter and the full ₹1 lakh subsidy paperwork. After installation, we stay on call for service.
-              </p>
-              <div className="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-3">
-                {ABOUT_POINTS.map((p) => (
-                  <div key={p} className="flex gap-3 items-center">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </span>
-                    <span className="text-sm font-semibold text-slate-800">{p}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
