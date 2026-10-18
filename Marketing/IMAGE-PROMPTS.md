@@ -1,6 +1,6 @@
-# Image Prompts - All Blog Posts (v2, Oct 2026)
+# Image Prompts - All Blog Posts (v3, 18 Oct 2026)
 
-28 prompts, one per post, for **Gemini (Nano Banana)** or **ChatGPT**. Until you replace them, posts show an existing site photo, so nothing is broken.
+40 prompts, one per post or page, for **Gemini (Nano Banana)** or **ChatGPT**. Until you replace them, posts show an existing site photo, so nothing is broken.
 
 ## How to use (3 steps)
 
@@ -87,6 +87,82 @@ A young Tamil couple in their 30s sitting at a wooden dining table in their brig
 Save as: `roof-space-for-solar`
 ```
 A high-angle drone photograph of the flat, white-painted terrace of a typical two-storey Tamil Nadu house at midday. On the sunny south half, six large solar panels sit in two neat rows on a raised galvanized frame; on the other side, a black overhead water tank and a small staircase room, with clear walking space and a few potted plants around the parapet. A coconut tree casts a soft shadow on one far corner. Neighbouring houses with red tiled roofs and greenery around. Bright, clean, crisp colours, clear geometry. Photorealistic aerial photography, 16:9 landscape. No people. No text, no logos, no watermark.
+```
+
+---
+
+## Part 1B - The 12 newest pages (17-18 Oct)
+
+### 29. Puducherry Solar Subsidy 2026 (A)
+Save as: `puducherry-solar-subsidy-2026`
+```
+A smiling Puducherry couple in their 40s standing at the gate of their colourful two-storey Puducherry home with a white boundary wall and bougainvillea, the husband holding a folder of documents, the wife pointing up at blue-black solar panels on the flat roof. Palm trees and a soft hint of sea haze in the background, warm late-afternoon light, cheerful and confident mood. Photorealistic lifestyle photography, full-frame DSLR, 35mm lens, eye level, shallow depth of field. 16:9 landscape. No text, no signboards, no logos, no watermark.
+```
+
+### 30. TNEB Solar Application: Apply and Check Status (A)
+Save as: `tneb-solar-application-status`
+```
+A Tamil homeowner in his 30s sitting at a wooden desk at home, checking a solar application on a laptop (screen blurred, nothing readable) with a smartphone and an electricity bill (blurred) beside him, a relieved half-smile as if the status just moved forward. A window behind shows rooftop solar panels on a terrace and coconut trees in morning sun. Warm natural light, tidy home office with a potted plant and a steel water bottle. Photorealistic, full-frame DSLR, 35mm lens, shallow depth of field. 16:9 landscape. Nothing readable. No text, no logos, no watermark.
+```
+
+### 31. 4kW Solar System Guide (A)
+Save as: `4kw-solar-system-tamil-nadu`
+```
+A golden-hour photograph of a modern Tamil Nadu home with a flat white terrace carrying eight large blue-black solar panels in two neat rows on a raised hot-dip galvanized structure. Two split-AC outdoor units on the side wall below, a small garden with a banana plant and a coconut tree, a scooter parked in the porch. Warm evening light glowing on the panels, clear sky with soft clouds, premium, inviting mood. Photorealistic architectural photography, full-frame DSLR, 24mm lens. 16:9 landscape. No people needed. No text, no logos, no watermark.
+```
+
+### 32. DCR Solar Panel: Meaning and How to Check (A)
+Save as: `dcr-solar-panel-check`
+```
+A close, premium product-style photograph on a sunny Tamil Nadu terrace: an Indian solar engineer in a light-blue shirt holds a clipboard next to the back of a tilted solar panel, comparing the panel's rear label (completely blank or blurred) with a printed datasheet (blurred). His finger points at the label area. Crisp detail on the panel frame and junction box, coconut palms and blue sky softly blurred behind. Warm golden sunlight, trustworthy, careful mood. Photorealistic, full-frame DSLR, 50mm lens, shallow depth of field. 16:9 landscape. Nothing readable. No text, no logos, no watermark.
+```
+
+### 33. Tamil Nadu Solar Net Metering Policy (B)
+Save as: `tamil-nadu-net-metering-policy`
+```
+A clean, well-lit close-up of a modern bi-directional electricity meter in a grey meter box mounted on the outside wall of a Tamil Nadu house, small display glowing (numbers blurred, unreadable), neat new cables running up towards the terrace. In the softly blurred background, rooftop solar panels and a coconut tree under a bright sky. Warm natural light, crisp detail on the meter. Photorealistic product photography, full-frame DSLR, 50mm lens, shallow depth of field. 16:9 landscape. No readable text or numbers, no logos, no watermark.
+```
+
+### 34. Solar Panel Price by City in Tamil Nadu (A)
+Save as: `solar-price-by-city-tamil-nadu`
+```
+A wide, uplifting aerial photograph of a Tamil Nadu city neighbourhood at golden hour: rows of flat-roofed houses and small apartment blocks, several of them with blue-black rooftop solar panels catching the sun, coconut palms between the houses and a temple gopuram faintly visible on the horizon. Warm evening light, rich natural colours, clear sky. Photorealistic aerial photography, 16:9 landscape. No text, no signboards, no logos, no watermark.
+```
+
+### 35. TNPDCL Solar Vendor List: How to Check (B)
+Save as: `solar-vendor-list-check`
+```
+A Tamil homeowner couple standing in front of a small, tidy solar company office counter in a Tamil Nadu town, shaking hands with a friendly engineer in a light-blue shirt across the counter. A solar panel sample and a framed certificate (blurred) on the wall behind, bright clean interior, potted plant. Warm natural light, trustworthy mood. Photorealistic lifestyle photography, full-frame DSLR, 35mm lens, shallow depth of field. 16:9 landscape. No readable text, no signboards, no logos, no watermark.
+```
+
+### 36. Solar Battery vs Normal Inverter Battery (B)
+Save as: `solar-battery-vs-inverter-battery`
+```
+A clean, well-organised utility corner in a Tamil Nadu home showing two batteries side by side for comparison: on the left a tall tubular inverter battery on a stand, on the right a slim modern white lithium battery unit mounted on the wall, with a white hybrid inverter above. Neat white conduits, a ventilated window with soft daylight, a potted plant. Premium product photography feel, balanced composition, sharp detail. Photorealistic, full-frame DSLR, 35mm lens. 16:9 landscape. No brand names, no labels, no text, no logos, no watermark.
+```
+
+### 37. Loom vs Luminous vs Tata Solar (B)
+Save as: `loom-luminous-tata-solar`
+```
+Three modern solar products displayed side by side on a bright Tamil Nadu terrace: a large black solar panel on a stand, a white wall-mounted solar inverter on a small display board, and a home battery unit, with an Indian engineer in a light-blue shirt explaining them to a homeowner couple who listen attentively. Coconut palms and blue sky behind, warm late-morning sunlight. Clean comparison feel, products sharp, background softly blurred. Photorealistic, full-frame DSLR, 35mm lens. 16:9 landscape. No brand names, no labels, no text, no logos, no watermark.
+```
+
+### 38. Rooftop Solar for Industries and Commercial Buildings (A)
+Save as: `rooftop-solar-industries-commercial`
+```
+A dramatic drone photograph of a large factory or warehouse in a Tamil Nadu industrial estate with a long metal-sheet roof completely covered in neat rows of blue-black solar panels, a second building with a flat RCC roof also fitted with panels, trucks and palm trees around the compound. Golden-hour light, long shadows, strong geometric lines, premium industrial feel. Photorealistic aerial photography, 16:9 landscape. No people. No text, no signboards, no logos, no watermark.
+```
+
+### 39. Top Solar Companies in Tamil Nadu (B)
+Save as: `top-solar-companies-tamil-nadu`
+```
+A bright, modern solar panel factory floor in India: rows of new black solar panels moving along an automated production line, technicians in clean blue uniforms and caps inspecting a panel under bright light, polished floor and large windows. Clean, high-tech, trustworthy mood, soft even lighting, strong perspective lines. Photorealistic industrial photography, full-frame DSLR, 24mm lens. 16:9 landscape. Plain uniforms without logos. No text, no signboards, no logos, no watermark.
+```
+
+### 40. TNEB EB Bill Calculator page (A - used when the link is shared)
+Save as: `eb-bill-calculator`
+```
+A top-down photograph of a wooden table in a Tamil Nadu home: a smartphone showing a simple calculator-style app screen (blurred, unreadable), a printed electricity bill (blurred), a pen, reading glasses and a steel tumbler of filter coffee, with a jasmine string at the edge. A woman's hand taps the phone. Warm morning light, homely and practical mood, shallow depth of field. Photorealistic, full-frame DSLR, 50mm lens. 16:9 landscape. Nothing readable. No text, no logos, no watermark.
 ```
 
 ---
