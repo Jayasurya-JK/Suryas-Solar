@@ -32,7 +32,9 @@ What we are not: the cheapest quote. Our content should teach buyers *why cheap 
 | **Researcher / engineer type** | "3kW how many units", "bifacial vs mono", brand comparisons | Real data, tables, honest verdicts |
 | **AC household** | "can AC run on solar", "5kW for 2 ACs" | kW sizing, 5kW page |
 | **Puducherry homeowner** | "solar cost Puducherry" | Central subsidy (no TN top-up), PED process |
-| **Small business / shop** (later) | "commercial solar tax benefit" | Accelerated depreciation, payback |
+| **Small business / shop** | "commercial solar tax benefit", "solar for shop" | Accelerated depreciation, payback |
+| **Commercial / industrial buyer** (owner goal from 18 Oct 2026) | "commercial solar Cuddalore", "solar for factory/hospital/school" | Named projects with kW and year, cost per kW, 40% depreciation, CAPEX vs OPEX. See `COMPETITOR-KONDAAS.md` plan |
+| **Apartment association / builder** | "solar for apartments", "RWA solar subsidy" | ₹18,000/kW RWA subsidy, common-area savings, one-page summary for the RWA meeting |
 
 ## 4. The 2026-27 campaign: "₹1 Lakh Solar Subsidy - Before It Ends"
 
