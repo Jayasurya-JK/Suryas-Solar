@@ -161,6 +161,8 @@ Commercial solar decisions should be reviewed with both the installer and the ac
 
 ---
 
+**Planning a commercial plant?** Costs per kW and CAPEX vs OPEX: [rooftop solar for industries](/blog/2026-10-18-rooftop-solar-for-industries-commercial-tamil-nadu).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ## Related Articles

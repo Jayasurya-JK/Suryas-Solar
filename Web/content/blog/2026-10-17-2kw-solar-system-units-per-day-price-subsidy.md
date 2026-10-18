@@ -1,5 +1,5 @@
 ---
-title: '2kW Solar System: Units Per Day, Price & Subsidy (TN 2026)'
+title: '2kW Solar System: Units, Price & Is It Worth It? (TN 2026)'
 date: '2026-10-17'
 author: Surya's Solar Engineering Team
 excerpt: >-
@@ -14,6 +14,8 @@ tags:
   - Tamil Nadu
   - Small Homes
 faqs:
+  - question: 'Is a 2kW solar system worth it in Tamil Nadu?'
+    answer: 'Yes for homes with a two-month bill of about ₹2,000-3,500, especially if summer use crosses 500 units, with payback of about 5-6 years after the ₹70,000 subsidy. Below about ₹1,000 the 200 free units already cover most use, and above ₹3,500 a 3kW system usually gives better value.'
   - question: How many units does a 2kW solar system produce per day?
     answer: >-
       About 8 to 10 units a day in Tamil Nadu on average, which is 240 to 300
@@ -134,6 +136,21 @@ See how slabs work in our [TNEB slab rates guide](/blog/2026-04-30-how-to-calcul
 **Tip:** if you choose 2kW now because of budget, ask for a **3kW inverter and space reserved on the structure**. Adding one or two panels later is cheap, though the subsidy applies only to the capacity in your original application.
 
 ---
+
+## Is a 2kW Solar System Worth It?
+
+It depends on your two-month TNEB bill, because the first 200 units are free for homes under 500 units:
+
+| Your two-month bill | Is 2kW worth it? | Typical payback after ₹70,000 subsidy |
+| :--- | :--- | :--- |
+| Below ₹1,000 | Usually **not yet**; the free units already cover most use | 10+ years |
+| ₹1,000 - ₹2,000 | **Borderline**; worth it if you plan an AC or more family members | about 7 - 9 years |
+| ₹2,000 - ₹3,500 | **Yes**, especially if you cross 500 units in summer | about 5 - 6 years |
+| Above ₹3,500 | Consider **3kW** instead: same effort, up to ₹1 lakh subsidy | 3kW pays back faster |
+
+*Estimates using TNEB domestic slabs and market-average prices (October 2026). Check your exact bill in the [TNEB EB bill calculator](/eb-bill-calculator) and your payback in the [solar savings calculator](/calc).*
+
+**Our honest view:** 2kW is a good choice for a small home that regularly crosses 500 units in summer, or a home with limited roof space. If your bill is above ₹3,500 every two months, 3kW usually gives better value because the subsidy jumps to up to ₹1 lakh.
 
 ## Is 2kW Enough for Your Home? Quick Checklist
 

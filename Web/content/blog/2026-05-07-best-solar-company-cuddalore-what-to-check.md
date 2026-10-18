@@ -199,6 +199,8 @@ For a local estimate, check our [Cuddalore solar installation](/service-areas/cu
 
 ---
 
+**Comparing brands statewide?** Read [top solar companies in Tamil Nadu](/blog/2026-10-18-top-solar-companies-tamil-nadu).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---

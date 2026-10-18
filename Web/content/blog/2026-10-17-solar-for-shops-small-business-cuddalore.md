@@ -129,6 +129,8 @@ Most businesses choose **on-grid**: lowest cost and fastest payback. Add a **bat
 *   **Shop terraces** often have hoardings, water tanks and neighbouring buildings; get a [shadow analysis](/blog/2026-01-12-solar-shadow-analysis-guide-cuddalore).
 *   **Cyclone season (Oct-Dec):** design for wind load and do a pre-monsoon check.
 
+**Bigger site?** See [rooftop solar for industries and commercial buildings](/blog/2026-10-18-rooftop-solar-for-industries-commercial-tamil-nadu).
+
 <!-- COMPONENT: FAQ_SECTION -->
 
 ---
