@@ -41,7 +41,7 @@ Last updated: 17 Oct 2026 (images moved to IMAGE-PROMPTS.md).
 
 ## D. Images to generate (Gemini Nano Banana or ChatGPT)
 
-All image prompts (28, one per post, priority-ordered) are in **`Marketing/IMAGE-PROMPTS.md`**, with filenames, alt text and how-to steps. Start with the ones marked **A**. Ready-to-post GBP updates for the 10 newest posts are at the end of that file.
+All image prompts (40, one per post, in the blog-card infographic style) are in **`Marketing/IMAGE-PROMPTS.md`**, with filenames, alt text and how-to steps. Start with the ones marked **A**. Ready-to-post GBP updates for the 10 newest posts are at the end of that file.
 
 ## E. Ready-to-post GBP updates (one per week)
 

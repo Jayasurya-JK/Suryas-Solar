@@ -1,291 +1,269 @@
-# Image Prompts - All Blog Posts (v3, 18 Oct 2026)
+# Image Prompts - All Blog Posts (v4, 18 Oct 2026)
 
-40 prompts, one per post or page, for **Gemini (Nano Banana)** or **ChatGPT**. Until you replace them, posts show an existing site photo, so nothing is broken.
+**Style: matches the blog cards** - bold headline in the image, a Tamil Nadu rooftop scene, and 2-3 badges with the key number (like "TNEB NET METER GUIDE", "40% TAX DEPRECIATION"). 40 prompts, one per post or page. Until you replace them, posts show an existing photo, so nothing is broken.
 
 ## How to use (3 steps)
 
-1. In Gemini, set **Aspect ratio = 16:9** (bottom of the chat box) and the **Pro / High** model if available.
-2. Copy **only the text inside the grey box** and paste it. Do not paste the title or "Save as" line.
-3. Generate 2-4 times, pick the best, download, and save it into `Web/public/images/` with the **Save as** name. Then tell Claude "images added".
+1. In Gemini, set **Aspect ratio = 16:9** and the **Pro / High** model.
+2. Copy **only the text inside the grey box** and paste it.
+3. Generate 2-4 times, pick the best, and save it in `Web/public/images/` with the **Save as** name. Tell Claude "images added".
 
-## What a good result looks like
+## Check before you save (important)
 
-- Looks like a **real magazine photo**, not a 3D render or stock clip-art.
-- **Warm, golden light**, a clear main subject, softly blurred background.
-- A **lived-in Tamil Nadu home**: kolam, brass lamp, plants, furniture, people in everyday clothes.
-- **No text, no logos, no numbers** anywhere in the image.
+- **Spelling:** read every word in the image. AI sometimes misspells; regenerate if any word is wrong.
+- **Numbers:** they must match the prompt exactly (₹1 lakh, ₹78,000, ₹22,000 and so on). Wrong numbers on the site hurt trust.
+- **No brand logos** and no fake company names in the image.
+- If the text is wrong after 3 tries, add: *"Make the text larger and simpler, exactly: <headline>"*.
 
-## If a result looks wrong, add one of these lines and generate again
-
-- Too empty or plain: *"Add more life: furniture, potted plants, a person in the scene, warm decor."*
-- Looks fake or plastic: *"Make it look like an unedited photo from a professional DSLR, natural skin and textures."*
-- Text or logos appeared: *"Remove all text, letters, numbers and logos."*
-- Too dark or grey: *"Brighter, warm golden-hour sunlight, cheerful mood."*
-- Wrong place feel: *"Make it clearly a South Indian / Tamil Nadu home: kolam at the door, coconut trees, terracotta pots."*
-
-**Priority:** A = do first (money pages), B = next, C = when free. Real photos of your own installations are always better than AI. Never present an AI image as a real customer's house.
+**Priority:** A = do first (money pages), B = next.
 
 ---
 
-## Part 1 - The 10 newest posts
-
-### 1. Solar With Battery Backup: Price in Tamil Nadu (A)
-Save as: `solar-battery-backup-price`
-```
-A warm, lived-in Tamil Nadu home during an evening power cut, photographed like a premium home-magazine feature. In a tidy corner of a well-furnished living room, a sleek white hybrid solar inverter is mounted on a pale wall above a slim white home battery unit, with neat hidden wiring. In the foreground a Tamil family of three relaxes on a wooden sofa under a spinning ceiling fan and soft warm LED lights, the child reading, the mother smiling at the father, everyone comfortable while the neighbourhood outside the window is dark at dusk. Teak furniture, a brass lamp, potted money plant, cotton cushions, a framed kolam pattern on the wall. Warm golden indoor light, gentle contrast, shallow depth of field with the inverter and battery in sharp focus. Photorealistic, shot on a full-frame DSLR with a 35mm lens at eye level, natural skin tones. 16:9 landscape. No text, no letters, no numbers, no logos, no watermark.
-```
-
-### 2. Solar Panel Price List Tamil Nadu 2026 (A)
-Save as: `solar-panel-price-list-tamil-nadu`
-```
-A bright, modern solar showroom in a Tamil Nadu town, photographed like a premium brand catalogue. Several large black monocrystalline solar panels stand upright in a neat row on display stands, glass surfaces catching soft window light, with one panel mounted on a short galvanized steel frame. A friendly Indian solar engineer in a crisp light-blue shirt explains a panel to a middle-aged Tamil couple, the husband in a white veshti and shirt, the wife in a cotton saree, both looking interested. Clean polished floor, potted areca palms, large windows with daylight. Warm natural light, soft shadows, shallow depth of field with the panels and people sharp. Photorealistic, full-frame DSLR, 35mm lens, eye level. 16:9 landscape. No text, no labels, no prices, no logos, no watermark.
-```
-
-### 3. Solar for Apartments: RWA Subsidy Guide (B)
-Save as: `apartment-rooftop-solar-rwa`
-```
-A golden-hour drone photograph of a well-kept four-storey residential apartment building in a Tamil Nadu town. On its wide flat terrace, two long, perfectly aligned rows of blue-black solar panels sit on a raised hot-dip galvanized steel structure, with a water tank and lift room neatly to one side. Surrounding streets with coconut trees, red-tiled neighbouring houses and a temple gopuram faint in the distance. Warm evening sunlight with long soft shadows, rich colours, clear sky with light clouds. Photorealistic aerial photography, crisp detail, 16:9 landscape. No people needed. No text, no logos, no watermark.
-```
-
-### 4. Solar Installation Timeline: Booking to Net Meter (B)
-Save as: `solar-installation-timeline`
-```
-Two Indian solar technicians installing a solar panel on the white-painted flat terrace of a Tamil Nadu house on a bright morning, photographed like a documentary feature. One technician in a navy work uniform and white safety helmet lifts the panel into place on a shiny hot-dip galvanized steel structure while the other tightens a clamp with a tool, both focused and professional. Neat cable rolls and a toolbox nearby, half-finished rows of panels in the background, coconut palms swaying, blue sky with soft clouds. Warm directional sunlight, dynamic diagonal composition, shallow depth of field on the hands and panel. Photorealistic, full-frame DSLR, 35mm lens, slightly low angle. 16:9 landscape. Plain uniforms with no logos. No text, no watermark.
-```
-
-### 5. Best Solar Company in Puducherry (A)
-Save as: `best-solar-company-puducherry`
-```
-A charming two-storey heritage house in Puducherry's French quarter style, mustard-yellow walls, white window shutters and a bougainvillea creeper over the gate, photographed in warm late-afternoon light. On its flat roof, a neat array of blue-black solar panels sits on a raised galvanized frame, angled towards the sun. A quiet tree-lined street with a parked bicycle, palm trees and a soft hint of sea haze in the distance. Rich, warm colours, gentle shadows, travel-magazine quality. Photorealistic, full-frame DSLR, 24mm lens from street level, 16:9 landscape. No text, no signboards, no logos, no watermark.
-```
-
-### 6. PM Surya Ghar Application Rejected? Reasons & Fixes (A)
-Save as: `pm-surya-ghar-application-rejected`
-```
-A thoughtful Tamil homeowner in his 40s, wearing a light cotton shirt, sits at a wooden dining table near a sunny window, comparing a printed electricity bill with documents in a folder while checking his smartphone, a calm expression of someone solving a problem. His wife places a steel tumbler of filter coffee beside him and looks at the papers with him. Through the window, rooftop solar panels on the neighbour's terrace and coconut trees. Warm morning light, homely details like a brass lamp and a calendar on the wall (blurred). Shallow depth of field, focus on the man and the papers. Photorealistic, full-frame DSLR, 50mm lens, eye level. 16:9 landscape. All papers and the phone screen blurred, nothing readable. No text, no logos, no watermark.
-```
-
-### 7. Solar for Shops & Small Businesses in Cuddalore (B)
-Save as: `solar-for-shops-small-business`
-```
-A busy, colourful small-town shopping street in Tamil Nadu at mid-morning, photographed like a documentary street scene. In focus, a neat two-storey commercial building with an open textile shop and a pharmacy on the ground floor (no readable signboards), customers browsing, two-wheelers parked in front. On the building's flat roof, a clean row of blue-black solar panels on a raised galvanized steel structure glints in the sun. Coconut tree at the corner, warm bright sunlight, vibrant but natural colours. Photorealistic, full-frame DSLR, 35mm lens from across the street, 16:9 landscape. No readable text, no brand names, no logos, no watermark.
-```
-
-### 8. Solar Panel Warranty Explained (C)
-Save as: `solar-panel-warranty`
-```
-A close, premium product-style photograph on a sunny Tamil Nadu terrace: an Indian solar technician's hands in work gloves holding a digital multimeter probe against the connector of a solar panel's junction box on the back of a tilted panel, the aluminium frame and cables crisp and clean. The background melts into soft blurred coconut palms and blue sky. Warm golden sunlight with gentle rim light on the frame edges. Extremely sharp detail on the junction box and hands, shallow depth of field. Photorealistic macro-style shot, full-frame DSLR, 85mm lens. 16:9 landscape. Any label must be blank or blurred. No readable text, no numbers on the meter, no logos, no watermark.
-```
-
-### 9. How to Compare Solar Quotations (B)
-Save as: `compare-solar-quotations`
-```
-A young Tamil couple in their 30s sitting at a wooden dining table in their bright, tidy home, comparing three printed quotation sheets laid side by side, the wife pointing at one sheet with a pen while the husband nods and uses a calculator. Steel tumblers of filter coffee, a small brass lamp and a potted plant on the table. A large window behind them shows a terrace with solar panels and coconut trees in morning sun. Warm, natural window light, relaxed and confident mood, shallow depth of field. Photorealistic, full-frame DSLR, 35mm lens at table height. 16:9 landscape. All papers blurred and unreadable. No text, no logos, no watermark.
-```
-
-### 10. How Much Roof Space for Solar? (B)
-Save as: `roof-space-for-solar`
-```
-A high-angle drone photograph of the flat, white-painted terrace of a typical two-storey Tamil Nadu house at midday. On the sunny south half, six large solar panels sit in two neat rows on a raised galvanized frame; on the other side, a black overhead water tank and a small staircase room, with clear walking space and a few potted plants around the parapet. A coconut tree casts a soft shadow on one far corner. Neighbouring houses with red tiled roofs and greenery around. Bright, clean, crisp colours, clear geometry. Photorealistic aerial photography, 16:9 landscape. No people. No text, no logos, no watermark.
-```
-
----
-
-## Part 1B - The 12 newest pages (17-18 Oct)
-
-### 29. Puducherry Solar Subsidy 2026 (A)
-Save as: `puducherry-solar-subsidy-2026`
-```
-A smiling Puducherry couple in their 40s standing at the gate of their colourful two-storey Puducherry home with a white boundary wall and bougainvillea, the husband holding a folder of documents, the wife pointing up at blue-black solar panels on the flat roof. Palm trees and a soft hint of sea haze in the background, warm late-afternoon light, cheerful and confident mood. Photorealistic lifestyle photography, full-frame DSLR, 35mm lens, eye level, shallow depth of field. 16:9 landscape. No text, no signboards, no logos, no watermark.
-```
-
-### 30. TNEB Solar Application: Apply and Check Status (A)
-Save as: `tneb-solar-application-status`
-```
-A Tamil homeowner in his 30s sitting at a wooden desk at home, checking a solar application on a laptop (screen blurred, nothing readable) with a smartphone and an electricity bill (blurred) beside him, a relieved half-smile as if the status just moved forward. A window behind shows rooftop solar panels on a terrace and coconut trees in morning sun. Warm natural light, tidy home office with a potted plant and a steel water bottle. Photorealistic, full-frame DSLR, 35mm lens, shallow depth of field. 16:9 landscape. Nothing readable. No text, no logos, no watermark.
-```
-
-### 31. 4kW Solar System Guide (A)
-Save as: `4kw-solar-system-tamil-nadu`
-```
-A golden-hour photograph of a modern Tamil Nadu home with a flat white terrace carrying eight large blue-black solar panels in two neat rows on a raised hot-dip galvanized structure. Two split-AC outdoor units on the side wall below, a small garden with a banana plant and a coconut tree, a scooter parked in the porch. Warm evening light glowing on the panels, clear sky with soft clouds, premium, inviting mood. Photorealistic architectural photography, full-frame DSLR, 24mm lens. 16:9 landscape. No people needed. No text, no logos, no watermark.
-```
-
-### 32. DCR Solar Panel: Meaning and How to Check (A)
-Save as: `dcr-solar-panel-check`
-```
-A close, premium product-style photograph on a sunny Tamil Nadu terrace: an Indian solar engineer in a light-blue shirt holds a clipboard next to the back of a tilted solar panel, comparing the panel's rear label (completely blank or blurred) with a printed datasheet (blurred). His finger points at the label area. Crisp detail on the panel frame and junction box, coconut palms and blue sky softly blurred behind. Warm golden sunlight, trustworthy, careful mood. Photorealistic, full-frame DSLR, 50mm lens, shallow depth of field. 16:9 landscape. Nothing readable. No text, no logos, no watermark.
-```
-
-### 33. Tamil Nadu Solar Net Metering Policy (B)
-Save as: `tamil-nadu-net-metering-policy`
-```
-A clean, well-lit close-up of a modern bi-directional electricity meter in a grey meter box mounted on the outside wall of a Tamil Nadu house, small display glowing (numbers blurred, unreadable), neat new cables running up towards the terrace. In the softly blurred background, rooftop solar panels and a coconut tree under a bright sky. Warm natural light, crisp detail on the meter. Photorealistic product photography, full-frame DSLR, 50mm lens, shallow depth of field. 16:9 landscape. No readable text or numbers, no logos, no watermark.
-```
-
-### 34. Solar Panel Price by City in Tamil Nadu (A)
-Save as: `solar-price-by-city-tamil-nadu`
-```
-A wide, uplifting aerial photograph of a Tamil Nadu city neighbourhood at golden hour: rows of flat-roofed houses and small apartment blocks, several of them with blue-black rooftop solar panels catching the sun, coconut palms between the houses and a temple gopuram faintly visible on the horizon. Warm evening light, rich natural colours, clear sky. Photorealistic aerial photography, 16:9 landscape. No text, no signboards, no logos, no watermark.
-```
-
-### 35. TNPDCL Solar Vendor List: How to Check (B)
-Save as: `solar-vendor-list-check`
-```
-A Tamil homeowner couple standing in front of a small, tidy solar company office counter in a Tamil Nadu town, shaking hands with a friendly engineer in a light-blue shirt across the counter. A solar panel sample and a framed certificate (blurred) on the wall behind, bright clean interior, potted plant. Warm natural light, trustworthy mood. Photorealistic lifestyle photography, full-frame DSLR, 35mm lens, shallow depth of field. 16:9 landscape. No readable text, no signboards, no logos, no watermark.
-```
-
-### 36. Solar Battery vs Normal Inverter Battery (B)
-Save as: `solar-battery-vs-inverter-battery`
-```
-A clean, well-organised utility corner in a Tamil Nadu home showing two batteries side by side for comparison: on the left a tall tubular inverter battery on a stand, on the right a slim modern white lithium battery unit mounted on the wall, with a white hybrid inverter above. Neat white conduits, a ventilated window with soft daylight, a potted plant. Premium product photography feel, balanced composition, sharp detail. Photorealistic, full-frame DSLR, 35mm lens. 16:9 landscape. No brand names, no labels, no text, no logos, no watermark.
-```
-
-### 37. Loom vs Luminous vs Tata Solar (B)
-Save as: `loom-luminous-tata-solar`
-```
-Three modern solar products displayed side by side on a bright Tamil Nadu terrace: a large black solar panel on a stand, a white wall-mounted solar inverter on a small display board, and a home battery unit, with an Indian engineer in a light-blue shirt explaining them to a homeowner couple who listen attentively. Coconut palms and blue sky behind, warm late-morning sunlight. Clean comparison feel, products sharp, background softly blurred. Photorealistic, full-frame DSLR, 35mm lens. 16:9 landscape. No brand names, no labels, no text, no logos, no watermark.
-```
-
-### 38. Rooftop Solar for Industries and Commercial Buildings (A)
-Save as: `rooftop-solar-industries-commercial`
-```
-A dramatic drone photograph of a large factory or warehouse in a Tamil Nadu industrial estate with a long metal-sheet roof completely covered in neat rows of blue-black solar panels, a second building with a flat RCC roof also fitted with panels, trucks and palm trees around the compound. Golden-hour light, long shadows, strong geometric lines, premium industrial feel. Photorealistic aerial photography, 16:9 landscape. No people. No text, no signboards, no logos, no watermark.
-```
-
-### 39. Top Solar Companies in Tamil Nadu (B)
-Save as: `top-solar-companies-tamil-nadu`
-```
-A bright, modern solar panel factory floor in India: rows of new black solar panels moving along an automated production line, technicians in clean blue uniforms and caps inspecting a panel under bright light, polished floor and large windows. Clean, high-tech, trustworthy mood, soft even lighting, strong perspective lines. Photorealistic industrial photography, full-frame DSLR, 24mm lens. 16:9 landscape. Plain uniforms without logos. No text, no signboards, no logos, no watermark.
-```
-
-### 40. TNEB EB Bill Calculator page (A - used when the link is shared)
-Save as: `eb-bill-calculator`
-```
-A top-down photograph of a wooden table in a Tamil Nadu home: a smartphone showing a simple calculator-style app screen (blurred, unreadable), a printed electricity bill (blurred), a pen, reading glasses and a steel tumbler of filter coffee, with a jasmine string at the edge. A woman's hand taps the phone. Warm morning light, homely and practical mood, shallow depth of field. Photorealistic, full-frame DSLR, 50mm lens. 16:9 landscape. Nothing readable. No text, no logos, no watermark.
-```
-
----
-
-## Part 2 - Earlier 2026 posts still using placeholder photos
-
-### 11. ₹1 Lakh Solar Subsidy in Tamil Nadu (A - most important)
+### 1. ₹1 Lakh Solar Subsidy Tamil Nadu (flagship) (A)
 Save as: `one-lakh-solar-subsidy-tamil-nadu`
 ```
-A joyful Tamil family of four (parents, a teenage daughter and a grandmother) standing together on the flat white terrace of their two-storey Tamil Nadu home beside newly installed blue-black solar panels on a raised galvanized structure, the father holding a folder of documents and the mother showing something happy on her phone, everyone smiling naturally. Kolam on the terrace floor near the stairs, terracotta pots with tulsi plant, coconut palms and a clear blue sky. Warm golden-hour sunlight, rich natural colours, joyful celebratory mood. Photorealistic lifestyle photography, full-frame DSLR, 35mm lens at eye level, shallow depth of field. 16:9 landscape. Everyday Indian clothing. No text, no logos, no watermark.
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "₹1 LAKH SOLAR SUBSIDY". Subtitle: "Tamil Nadu 2026". Badges: "₹78,000 PM Surya Ghar", "+ ₹22,000 TN Top-up", "First 1 Lakh Homes". Scene: a happy Tamil family on the white terrace of their two-storey home beside new blue-black solar panels on a raised galvanized structure, a large golden rupee coin icon floating beside them. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
 ```
 
-### 12. 1kW Solar Panel: How Many Units Per Day? (A)
-Save as: `1kw-solar-units-per-day`
-```
-A compact rooftop solar setup of two large black solar panels on a neat galvanized frame on the terrace of a small, cheerful Tamil Nadu house at noon, bright sun reflecting on the glass. Beside the stairs, a small wall-mounted inverter sits in the shade with a soft green status light. A grandmother in a cotton saree waters tulsi plants nearby, coconut trees and blue sky behind. Bright, warm, optimistic light, clean composition with the panels as the hero. Photorealistic, full-frame DSLR, 35mm lens. 16:9 landscape. No readable display, no text, no logos, no watermark.
-```
-
-### 13. 5kW Solar Panel: Units Per Day & Month (A)
-Save as: `5kw-solar-units-per-day`
-```
-A wide, golden-hour photograph of a modern two-storey South Indian house with a spacious terrace carrying nine large blue-black solar panels in two rows on a raised hot-dip galvanized structure. Below, two split-AC outdoor units on the side wall, a car porch with a parked hatchback, a small garden with banana and coconut trees. Warm evening light glowing on the panels, deep blue sky with soft clouds, inviting premium-home mood. Photorealistic architectural photography, full-frame DSLR, 24mm lens, 16:9 landscape. No people needed. No text, no logos, no watermark.
-```
-
-### 14. Premier vs Adani Solar Panel (A)
-Save as: `premier-vs-adani-solar-panel`
-```
-Two large black monocrystalline solar panels standing upright side by side on display stands in a bright, modern solar warehouse, each with a slightly different cell pattern. An Indian engineer in a light-blue shirt holds a measuring tape across one panel while a homeowner in a white shirt compares them closely. Large windows with soft daylight, neatly stacked boxes in the soft-focus background. Clean, premium catalogue style, crisp detail on the cells, shallow depth of field. Photorealistic, full-frame DSLR, 35mm lens. 16:9 landscape. No brand names, no labels, no text, no logos, no watermark.
-```
-
-### 15. Premier vs Waaree Solar Panel (A)
-Save as: `premier-vs-waaree-solar-panel`
-```
-A dramatic close-up of the corner of a glass-to-glass bifacial solar panel mounted on a hot-dip galvanized rail on a coastal Tamil Nadu rooftop, sunlight passing through the transparent back between the cells and casting a soft pattern on the white roof below. In the blurred background, palm trees and a hazy blue sea horizon. Warm golden sunlight, crisp macro detail on the cells and frame, premium product-photography feel. Photorealistic, full-frame DSLR, 85mm lens, shallow depth of field. 16:9 landscape. No text, no logos, no watermark.
-```
-
-### 16. PM Surya Ghar Last Date 2027 (A)
-Save as: `pm-surya-ghar-last-date-2027`
-```
-A Tamil homeowner couple in their 50s sitting at a dining table by a sunny window, the husband in a veshti and shirt reviewing a folder of documents and the wife checking a smartphone, both with a purposeful, decisive expression. A wall calendar hangs in the soft-focus background (pages blurred). Through the window, a neighbour's terrace with shining solar panels and coconut trees in warm afternoon light. Homely details: brass lamp, wooden furniture, potted plants. Warm golden light, shallow depth of field. Photorealistic, full-frame DSLR, 50mm lens, eye level. 16:9 landscape. Nothing readable. No text, no logos, no watermark.
-```
-
-### 17. Solar Panels in Rain & Cyclones: Monsoon Guide (B)
-Save as: `solar-panels-monsoon-cyclone-cuddalore`
-```
-A powerful, cinematic photograph of rooftop solar panels on a sturdy hot-dip galvanized steel structure on a Tamil Nadu terrace during the northeast monsoon. Dark dramatic storm clouds, rain streaks visible against the sky, the wet panel glass reflecting the clouds, coconut palms bending in strong wind, a lightning arrester rod rising above the array. A single beam of light breaking through the clouds onto the panels, suggesting strength and safety. Rich contrast, moody but hopeful. Photorealistic, full-frame DSLR, 24mm lens, 16:9 landscape. No people. No text, no logos, no watermark.
-```
-
-### 18. 2kW Solar System: Units, Price & Subsidy (B)
-Save as: `2kw-solar-units-per-day`
-```
-A cheerful young Tamil couple in their late 20s standing on the terrace of their small, freshly painted Tamil Nadu home beside four new solar panels on a compact raised galvanized frame, the husband pointing at the panels and the wife smiling at a solar monitoring app on her phone. Kolam near the terrace door, potted jasmine, coconut trees and a bright morning sky. Warm sunlight, fresh, hopeful mood. Photorealistic lifestyle photography, full-frame DSLR, 35mm lens, shallow depth of field. 16:9 landscape. Phone screen blurred. No text, no logos, no watermark.
-```
-
-### 19. Does Solar Work on Cloudy Days? (B)
-Save as: `solar-cloudy-days-tamil-nadu`
-```
-Rooftop solar panels on a Tamil Nadu terrace under a dramatic partly cloudy sky, with bright sunbeams breaking through the clouds and lighting the panels while the background stays softly overcast. A small-town skyline with palm trees and a distant temple tower. The light falling on the panels feels hopeful, showing that solar still works on cloudy days. Rich sky detail, natural colours, soft diffused light with a sunlit highlight. Photorealistic landscape photography, full-frame DSLR, 24mm lens, 16:9 landscape. No people. No text, no logos, no watermark.
-```
-
-### 20. Average Electricity Bill in Tamil Nadu (A)
-Save as: `average-electricity-bill-tamil-nadu`
-```
-A cosy morning scene in a Tamil Nadu kitchen-dining area: on a wooden table, a printed electricity bill (completely blurred), a calculator, reading glasses, a steel tumbler and dabarah of frothy filter coffee, and a jasmine string. A woman's hand holds a pen over the bill while she checks the calculator. In the softly blurred background, a split-AC on the wall and a window with sunlight. Warm golden morning light, inviting homely mood, shallow depth of field. Photorealistic, full-frame DSLR, 50mm lens, slightly top-down angle. 16:9 landscape. Nothing readable. No text, no logos, no watermark.
-```
-
-### 21. Solar Terms in Tamil (C)
-Save as: `solar-terms-in-tamil`
-```
-A clean, modern flat-design illustration in 16:9 landscape on a soft cream background. Three small South Indian style houses side by side, each with solar panels on the roof: the first connected by a wire to an electricity pole (on-grid), the second with a battery box and no pole (off-grid), the third with both a pole and a battery box (hybrid). Gentle sun with rays above, small coconut trees between the houses. Friendly, minimal style with a soft blue, orange and green palette, smooth shapes, subtle shadows. No text, no letters, no numbers, no logos.
-```
-
-### 22. Exide Solar Panel & Battery Review (B)
-Save as: `exide-solar-panel-battery`
-```
-A well-organised home utility room in a Tamil Nadu house, photographed like a premium product feature: a white hybrid solar inverter mounted on a light wall, a neat row of tall tubular solar batteries on a sturdy stand below, all wiring tidy in white conduits. Through an open doorway, a sunny terrace with blue-black solar panels and coconut trees. A homeowner in a cotton shirt checks the inverter with a satisfied look. Warm natural light, clean and safe feel, shallow depth of field. Photorealistic, full-frame DSLR, 35mm lens. 16:9 landscape. No brand names, no labels, no text, no logos, no watermark.
-```
-
-### 23. Solar Payback After ₹1 Lakh Subsidy (A)
-Save as: `solar-payback-after-subsidy`
-```
-A relaxed, happy Tamil man in his 50s in a white veshti and shirt sitting on the cool front veranda of his traditional-style Tamil Nadu home in the evening, holding a printed electricity bill (blurred) and smiling with relief, a steel tumbler of coffee beside him. Above the veranda, the terrace edge with solar panels catching the last golden sunlight. Kolam at the doorstep, brass lamp lit, coconut palms silhouetted against an orange sky. Warm golden-hour light, contented mood, shallow depth of field. Photorealistic lifestyle photography, full-frame DSLR, 50mm lens. 16:9 landscape. Nothing readable. No text, no logos, no watermark.
-```
-
-### 24. 10kW Solar System (B)
-Save as: `10kw-solar-system`
-```
-A drone photograph at golden hour of a large flat roof on a spacious modern Tamil Nadu home or small clinic building, with about eighteen blue-black solar panels in three long, perfectly aligned rows on a raised hot-dip galvanized structure. A three-phase inverter box sits in shade on the staircase wall. Surrounding greenery, coconut palms, a quiet residential street. Warm evening light, long soft shadows, crisp geometry, premium architectural feel. Photorealistic aerial photography, 16:9 landscape. No people. No text, no logos, no watermark.
-```
-
-### 25. Best On-Grid Solar Inverter in India (B)
-Save as: `best-on-grid-solar-inverter`
-```
-A sleek white on-grid solar inverter mounted on a shaded, freshly painted exterior wall of a Tamil Nadu house, a small green status light glowing, neat grey conduit pipes running up towards the terrace and a tidy distribution box beside it. Bougainvillea and a potted plant soften the scene, dappled sunlight through a nearby coconut tree. Premium product photography style, crisp detail on the inverter, warm soft light, shallow depth of field. Photorealistic, full-frame DSLR, 50mm lens at eye level. 16:9 landscape. No brand names, no readable display, no text, no logos, no watermark.
-```
-
-### 26. Why Is My EB Bill High in Chennai? (B)
-Save as: `eb-bill-high-chennai`
-```
-A modern Chennai apartment living room on a hot, humid afternoon: a split AC running on the wall, a family member on the sofa fanning herself with a newspaper while the father checks a printed electricity bill (blurred) with a worried look. Large window showing dense city buildings under a hazy, bright sky. Warm, slightly hazy light to show heat, realistic lived-in decor with cushions and plants. Photorealistic lifestyle photography, full-frame DSLR, 35mm lens, shallow depth of field. 16:9 landscape. Nothing readable. No text, no logos, no watermark.
-```
-
-### 27. Waaree vs Adani vs Tata Solar Panel (A)
-Save as: `waaree-vs-adani-vs-tata`
-```
-Three large black solar panels standing side by side on display stands on a sunny Tamil Nadu terrace, each with a slightly different cell layout, an Indian engineer in a light-blue shirt holding a tablet and explaining the differences to a homeowner couple who look attentive. Coconut palms and a clear blue sky behind, warm late-morning sunlight with crisp reflections on the glass. Clean, premium comparison feel, panels sharp, background softly blurred. Photorealistic, full-frame DSLR, 35mm lens at eye level. 16:9 landscape. No brand names, no labels, no text, no logos, no watermark.
-```
-
-### 28. Subsidy Eligibility Checker page (A - used when the link is shared)
+### 2. Subsidy Eligibility Checker page (A)
 Save as: `subsidy-eligibility-checker`
 ```
-A happy Tamil family (parents and a teenage son) sitting close together on a comfortable sofa in their bright living room, all looking at a smartphone held by the mother and reacting with delighted smiles, as if they just received good news. Behind them, a large window shows their terrace with shining solar panels and coconut trees in warm sunlight. Cotton cushions, a brass lamp, potted plants, warm cheerful decor. Warm golden light, joyful mood, shallow depth of field on the faces. Photorealistic lifestyle photography, full-frame DSLR, 35mm lens, eye level. 16:9 landscape. Phone screen not visible. No text, no logos, no watermark.
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "CHECK YOUR ₹1 LAKH SUBSIDY". Subtitle: "30 Seconds - Free". Badges: "6 Quick Questions", "Instant Result". Scene: a smartphone in a hand showing a simple checklist with green ticks (no readable words) in front of a Tamil Nadu home with rooftop solar panels. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 3. TNEB EB Bill Calculator page (A)
+Save as: `eb-bill-calculator`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "TNEB EB BILL CALCULATOR". Subtitle: "2026 Slab Rates". Badges: "200 Free Units", "500-Unit Jump", "Free Tool". Scene: an electricity bill and a calculator on a wooden table with a smartphone, rooftop solar panels visible through a window. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 4. Solar Panel Price List Tamil Nadu 2026 (A)
+Save as: `solar-panel-price-list-tamil-nadu`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR PANEL PRICE LIST 2026". Subtitle: "By Brand and System Size". Badges: "₹22-29 per Watt (DCR)", "3kW: ₹80K-1.1L after subsidy". Scene: a neat row of large black solar panels on display stands on a sunny terrace with a price-tag icon. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 5. Solar With Battery Backup: Price (A)
+Save as: `solar-battery-backup-price`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR WITH BATTERY BACKUP". Subtitle: "Price in Tamil Nadu 2026". Badges: "3kW Hybrid: ₹2.6-3.2 Lakh", "Power During Cuts". Scene: a warm living room at night with lights and fan on during a power cut, a white hybrid inverter and slim home battery on the wall, rooftop solar panels outside. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 6. 1kW Solar Panel: Units Per Day (A)
+Save as: `1kw-solar-units-per-day`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "1kW SOLAR: UNITS PER DAY". Subtitle: "Tamil Nadu Guide". Badges: "4-5 Units a Day", "120-150 a Month". Scene: two large solar panels on a compact galvanized frame on a small Tamil Nadu terrace at noon with a glowing sun icon. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 7. 2kW Solar System: Units, Price, Worth It (A)
+Save as: `2kw-solar-units-per-day`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "2kW SOLAR SYSTEM". Subtitle: "Units, Price and Subsidy". Badges: "8-10 Units a Day", "₹70,000 Subsidy". Scene: four solar panels on a raised galvanized frame on a small Tamil Nadu house terrace in morning sun. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 8. 3kW vs 5kW Solar comparison (A)
+Save as: `3kw-vs-5kw-solar`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "3kW vs 5kW SOLAR". Subtitle: "Which Size Fits Your Bill?". Badges: "3kW: 12-15 Units/Day", "5kW: 20-25 Units/Day". Scene: two Tamil Nadu homes side by side, the left with a smaller solar array and the right with a larger array, a VS badge between them. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 9. 4kW Solar System Guide (A)
+Save as: `4kw-solar-system-tamil-nadu`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "4kW SOLAR SYSTEM". Subtitle: "Price, Units and Is It Enough?". Badges: "16-20 Units a Day", "₹1.4-1.7 Lakh after subsidy". Scene: a modern two-storey Tamil Nadu home with eight solar panels in two rows on a raised structure and two AC outdoor units on the wall. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 10. 5kW Solar Panel: Units Per Day (A)
+Save as: `5kw-solar-units-per-day`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "5kW SOLAR: UNITS PER DAY". Subtitle: "Runs 2 ACs". Badges: "20-25 Units a Day", "Up to ₹1 Lakh Subsidy". Scene: a large terrace with nine solar panels on a raised galvanized structure over a two-storey South Indian home at golden hour. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 11. 10kW Solar System (B)
+Save as: `10kw-solar-system`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "10kW SOLAR SYSTEM". Subtitle: "For Large Homes and Businesses". Badges: "40-50 Units a Day", "₹5-6.5 Lakh". Scene: a big flat roof with about eighteen solar panels in three long rows, drone view, golden hour. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 12. Solar Payback After ₹1 Lakh Subsidy (A)
+Save as: `solar-payback-after-subsidy`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR PAYBACK". Subtitle: "After ₹1 Lakh Subsidy". Badges: "AC Homes: 3-4.5 Years", "25 Years of Savings". Scene: a rising bar chart of golden coins growing beside a Tamil Nadu home with rooftop solar panels. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 13. PM Surya Ghar Last Date 2027 (A)
+Save as: `pm-surya-ghar-last-date-2027`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "PM SURYA GHAR LAST DATE". Subtitle: "Approved till 31 March 2027". Badges: "Apply Early", "Process: 6-10 Weeks". Scene: a calendar icon with a clock beside a Tamil Nadu home with new rooftop solar panels. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 14. PM Surya Ghar Application Rejected (A)
+Save as: `pm-surya-ghar-application-rejected`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "APPLICATION REJECTED?". Subtitle: "8 Reasons and Fixes". Badges: "Name Mismatch", "Low Sanctioned Load", "Pending Dues". Scene: a document with a red cross turning into a document with a green tick, beside a Tamil Nadu home with rooftop solar. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 15. TNEB Solar Application: Apply and Check Status (A)
+Save as: `tneb-solar-application-status`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "TNEB SOLAR APPLICATION". Subtitle: "How to Apply and Check Status". Badges: "Step-by-Step", "6-10 Weeks". Scene: a laptop and smartphone showing a progress tracker with steps (no readable words) on a desk, rooftop solar visible through a window. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 16. Puducherry Solar Subsidy 2026 (A)
+Save as: `puducherry-solar-subsidy-2026`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "PUDUCHERRY SOLAR SUBSIDY". Subtitle: "2026 Guide". Badges: "₹78,000 Central Subsidy", "PED Net Meter". Scene: a colourful Puducherry-style home with yellow walls and white shutters, solar panels on the flat roof, palm trees and sea haze. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 17. Best Solar Company in Puducherry (A)
+Save as: `best-solar-company-puducherry`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "BEST SOLAR COMPANY PUDUCHERRY". Subtitle: "9 Checks Before You Book". Badges: "Registered Vendor", "Coastal-Grade Structure". Scene: a Puducherry heritage street with a home carrying rooftop solar panels and a checklist icon with green ticks. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 18. DCR Solar Panel: Meaning and How to Check (A)
+Save as: `dcr-solar-panel-check`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "DCR SOLAR PANEL". Subtitle: "Meaning and How to Check". Badges: "Made-in-India Cells", "Needed for Subsidy". Scene: the back of a solar panel with a magnifying glass over a blank label and a green shield tick icon. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 19. Solar Panel Price by City in Tamil Nadu (A)
+Save as: `solar-price-by-city-tamil-nadu`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR PRICE BY CITY". Subtitle: "Tamil Nadu 2026". Badges: "3kW: ₹1.8-2.2 Lakh", "Same Subsidy Statewide". Scene: a stylised map of Tamil Nadu with location pins over a city skyline with rooftop solar panels. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 20. Rooftop Solar for Industries and Commercial (A)
+Save as: `rooftop-solar-industries-commercial`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR FOR INDUSTRIES". Subtitle: "Factories, Warehouses, Offices". Badges: "40% Tax Depreciation", "Payback 3-5 Years". Scene: a large factory roof covered in rows of solar panels, drone view, trucks and palm trees around. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 21. Premier vs Adani Solar Panel (A)
+Save as: `premier-vs-adani-solar-panel`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "PREMIER vs ADANI". Subtitle: "Which Solar Panel Is Better?". Badges: "TOPCon vs TOPCon", "DCR for Subsidy". Scene: two black solar panels standing side by side on a sunny terrace with a VS badge between them. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 22. Premier vs Waaree Solar Panel (A)
+Save as: `premier-vs-waaree-solar-panel`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "PREMIER vs WAAREE". Subtitle: "Which Solar Panel Is Better?". Badges: "Efficiency", "Warranty", "Price". Scene: two solar panels, one glass-glass bifacial, side by side on a coastal rooftop with a VS badge. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 23. Waaree vs Adani vs Tata Solar Panel (A)
+Save as: `waaree-vs-adani-vs-tata`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "WAAREE vs ADANI vs TATA". Subtitle: "Solar Panel Comparison 2026". Badges: "All DCR TOPCon", "Within 1% Efficiency". Scene: three black solar panels on stands side by side on a sunny Tamil Nadu terrace. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 24. Loom vs Luminous vs Tata Solar (B)
+Save as: `loom-luminous-tata-solar`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "LOOM vs LUMINOUS vs TATA". Subtitle: "Which Is Better for Your Home?". Badges: "Panels", "Inverters", "Batteries". Scene: a solar panel, a white solar inverter and a home battery displayed side by side on a terrace. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 25. Top Solar Companies in Tamil Nadu (B)
+Save as: `top-solar-companies-tamil-nadu`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "TOP SOLAR COMPANIES". Subtitle: "Tamil Nadu 2026". Badges: "Brands", "How to Choose an Installer". Scene: a modern solar panel factory line with rows of new panels and a Tamil Nadu map pin icon. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 26. Average Electricity Bill in Tamil Nadu (A)
+Save as: `average-electricity-bill-tamil-nadu`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "AVERAGE EB BILL IN TAMIL NADU". Subtitle: "By Home Size - 2026". Badges: "1BHK", "2BHK", "3BHK". Scene: three Tamil Nadu homes of increasing size with small bill icons above each. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 27. Why Is My EB Bill High in Chennai? (B)
+Save as: `eb-bill-high-chennai`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "WHY IS MY EB BILL HIGH?". Subtitle: "Chennai: 9 Causes and Fixes". Badges: "AC Hours", "500-Unit Jump". Scene: a Chennai apartment living room with a split AC running and a rising bill graph icon. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 28. Tamil Nadu Solar Net Metering Policy (B)
+Save as: `tamil-nadu-net-metering-policy`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "NET METERING POLICY". Subtitle: "Tamil Nadu 2026". Badges: "Import vs Export", "Bi-directional Meter". Scene: a bi-directional electricity meter on a house wall with two arrows showing power going to the grid and back, rooftop solar above. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 29. TNPDCL Solar Vendor List: How to Check (B)
+Save as: `solar-vendor-list-check`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR VENDOR LIST". Subtitle: "How to Check Your Installer". Badges: "Registered Vendor", "Avoid Losing Subsidy". Scene: a checklist clipboard with green ticks and a handshake icon in front of a home with rooftop solar. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 30. Solar Battery vs Normal Inverter Battery (B)
+Save as: `solar-battery-vs-inverter-battery`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR vs NORMAL BATTERY". Subtitle: "Which Should You Buy?". Badges: "C10 vs C20", "Lithium vs Tubular". Scene: a tall tubular battery and a slim white lithium battery side by side with a VS badge, hybrid inverter above. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 31. Solar Installation Timeline (B)
+Save as: `solar-installation-timeline`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR INSTALLATION TIMELINE". Subtitle: "Booking to Net Meter". Badges: "Install: 1-3 Days", "Total: 6-10 Weeks". Scene: technicians installing panels on a terrace with a horizontal timeline of five step icons. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 32. How to Compare Solar Quotations (B)
+Save as: `compare-solar-quotations`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "COMPARE SOLAR QUOTES". Subtitle: "12-Point Checklist". Badges: "DCR Panels", "Structure", "Earthing". Scene: three quotation sheets (unreadable) side by side with a magnifying glass and green tick icons. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 33. Solar for Apartments: RWA Subsidy (B)
+Save as: `apartment-rooftop-solar-rwa`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR FOR APARTMENTS". Subtitle: "RWA Subsidy Guide". Badges: "₹18,000 per kW", "Common Areas". Scene: a four-storey apartment terrace with long rows of solar panels, drone view. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 34. Solar for Shops and Small Businesses (B)
+Save as: `solar-for-shops-small-business`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR FOR SHOPS". Subtitle: "Small Businesses in Cuddalore". Badges: "Daytime Savings", "40% Depreciation". Scene: a two-storey commercial building with shops below and solar panels on the roof. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 35. How Much Roof Space for Solar? (B)
+Save as: `roof-space-for-solar`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "HOW MUCH ROOF SPACE?". Subtitle: "1kW to 10kW Guide". Badges: "3kW: 250-300 sq ft", "80-100 sq ft per kW". Scene: a top-down terrace with solar panels and a measuring tape outline. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 36. Solar Panel Warranty Explained (B)
+Save as: `solar-panel-warranty`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR PANEL WARRANTY". Subtitle: "What 25 Years Covers". Badges: "Product", "Performance", "Workmanship". Scene: a solar panel with a large shield icon and the number 25 in a badge. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 37. Does Solar Work on Cloudy Days? (B)
+Save as: `solar-cloudy-days-tamil-nadu`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR ON CLOUDY DAYS". Subtitle: "Tamil Nadu Reality". Badges: "Still Generates", "Monsoon Tips". Scene: rooftop solar panels under partly cloudy sky with sunbeams breaking through. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 38. Solar Panels in Rain and Cyclones (B)
+Save as: `solar-panels-monsoon-cyclone-cuddalore`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR IN RAIN AND CYCLONES". Subtitle: "Monsoon Safety Guide". Badges: "Strong Structure", "3 Earthing Pits". Scene: rooftop solar panels on a sturdy galvanized structure under dark monsoon clouds with palm trees bending. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 39. Exide Solar Panel and Battery Review (B)
+Save as: `exide-solar-panel-battery`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "SOLAR PANEL AND BATTERY". Subtitle: "Review and Price 2026". Badges: "Panels", "Batteries", "Hybrid Systems". Scene: a hybrid inverter and battery bank in a utility room with rooftop solar panels visible outside. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
+```
+
+### 40. Best On-Grid Solar Inverter (B)
+Save as: `best-on-grid-solar-inverter`
+```
+A 16:9 blog thumbnail for a Tamil Nadu solar company. Headline at the top: "BEST ON-GRID INVERTER". Subtitle: "How to Choose - 2026". Badges: "BIS Certified", "Dual MPPT", "Local Service". Scene: a white on-grid solar inverter on a shaded wall with neat conduits going up to the terrace. Style: premium blog thumbnail infographic in 16:9 landscape, photorealistic 3D-render look of a Tamil Nadu scene with coconut palms and bright blue sky, clean modern layout. Big bold white headline with a soft dark shadow across the top, a smaller subtitle under it, and 2-3 rounded white or navy badge labels with icons placed neatly over the scene. Brand colours: deep blue and white with yellow-orange accents. Spell every word exactly as given, use the Indian rupee symbol ₹ exactly as written, no other text, no logos, no brand names, no watermark.
 ```
 
 ---
 
-## Part 3 - Case studies (need your numbers first)
+## Case studies
+For the 3 case-study posts, send **real photos of your installations** (no house numbers or street names visible) plus the customer numbers. We will not use AI images for case studies.
 
-Posts #18, #24 and #30 need **real customer numbers** (no names, no locations): system size (kW), month installed, EB bill before (₹), EB bill after (₹). Example: "3kW, March 2026, ₹3,200 -> ₹380". For these, please send **real photos of your installations** (no house numbers or street names visible). We will not use AI images for case studies.
-
----
-
-## Part 4 - Ready-to-post GBP updates for the 10 new posts
 
 1. **Battery backup**: "Power cuts at home? Solar with battery backup costs about ₹2.6-3.2 lakh for 3kW in Tamil Nadu, and the solar part still gets subsidy. We explain lithium vs tubular on our blog. Call 7904369094."
 2. **Price list**: "Solar panel price list 2026: DCR panels from Tata, Adani, Waaree, Premier and Exide cost about ₹22-29 per watt. A 3kW system is about ₹80,000-1,10,000 after the ₹1 lakh subsidy. Full table on our blog."
