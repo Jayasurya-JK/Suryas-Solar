@@ -16,6 +16,8 @@ const staticPages = [
     { url: '/calc', changefreq: 'monthly', priority: 0.8 },
     { url: '/eb-bill-calculator', changefreq: 'monthly', priority: 0.85 },
     { url: '/subsidy-eligibility', changefreq: 'monthly', priority: 0.9 },
+    { url: '/commercial-solar', changefreq: 'monthly', priority: 0.85 },
+    { url: '/apartment-solar', changefreq: 'monthly', priority: 0.85 },
     { url: '/contact', changefreq: 'monthly', priority: 0.8 },
     { url: '/blog', changefreq: 'weekly', priority: 0.7 },
     { url: '/privacy-policy', changefreq: 'yearly', priority: 0.5 },

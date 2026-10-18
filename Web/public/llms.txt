@@ -30,6 +30,8 @@
 - [Solar Subsidy Eligibility Checker (30-second check)](https://www.suryassolar.com/subsidy-eligibility)
 - [Solar Savings Calculator](https://www.suryassolar.com/calc)
 - [TNEB EB Bill Calculator 2026 (Tamil Nadu slab rates)](https://www.suryassolar.com/eb-bill-calculator)
+- [Commercial Rooftop Solar (shops, hospitals, schools, hotels, mills, factories)](https://www.suryassolar.com/commercial-solar)
+- [Solar for Apartments and RWAs (₹18,000/kW subsidy)](https://www.suryassolar.com/apartment-solar)
 - [Solar in Cuddalore](https://www.suryassolar.com/service-areas/cuddalore)
 - [Solar in Puducherry](https://www.suryassolar.com/service-areas/puducherry)
 - [Solar in Panruti](https://www.suryassolar.com/service-areas/panruti)

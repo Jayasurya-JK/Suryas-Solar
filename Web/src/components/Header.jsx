@@ -28,11 +28,20 @@ export default function Header() {
       ],
     },
     {
-      name: 'Solar Systems',
+      name: 'For Homes',
       isDropdown: true,
       items: [
         { name: '5kW System - Best Seller', href: '/systems/5kw-solar-system-with-subsidy' },
         { name: '3kW System', href: '/systems/3kw-solar-system-with-subsidy' },
+        { name: '₹1 Lakh Subsidy Check', href: '/subsidy-eligibility' },
+      ],
+    },
+    {
+      name: 'For Business',
+      isDropdown: true,
+      items: [
+        { name: 'Commercial Solar', href: '/commercial-solar' },
+        { name: 'Apartments & RWA', href: '/apartment-solar' },
       ],
     },
     { name: 'Calculator', href: '/calc' },
@@ -55,11 +64,20 @@ export default function Header() {
       ],
     },
     {
-      name: 'Solar Systems',
+      name: 'For Homes',
       isDropdown: true,
       items: [
         { name: '5kW System - Best Seller', href: '/systems/5kw-solar-system-with-subsidy' },
         { name: '3kW System', href: '/systems/3kw-solar-system-with-subsidy' },
+        { name: '₹1 Lakh Subsidy Check', href: '/subsidy-eligibility' },
+      ],
+    },
+    {
+      name: 'For Business',
+      isDropdown: true,
+      items: [
+        { name: 'Commercial Solar', href: '/commercial-solar' },
+        { name: 'Apartments & RWA', href: '/apartment-solar' },
       ],
     },
     { name: 'Calculator', href: '/calc' },

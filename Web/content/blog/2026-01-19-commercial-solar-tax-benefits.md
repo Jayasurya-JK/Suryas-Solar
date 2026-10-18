@@ -26,6 +26,8 @@ If you run a profitable business-whether it’s a **Textile Mill in Coimbatore**
 1.  **Electricity Bills:** Rising at 5% per year.
 2.  **Corporate Tax:** Taking away 25% - 30% of your hard-earned profits.
 
+> **Planning solar for your business?** See [commercial rooftop solar in Cuddalore and Puducherry](/commercial-solar).
+
 In 2026, **Commercial Solar** is the unique financial instrument that solves *both* problems simultaneously. It is one of the few assets that pays you back in two currencies: Energy and Tax Shields.
 
 This guide explains specifically how **Section 32 of the Income Tax Act** works for business owners in Tamil Nadu.

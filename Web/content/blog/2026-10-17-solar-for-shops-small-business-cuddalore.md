@@ -42,6 +42,8 @@ faqs:
 ---
 **Short answer:** rooftop solar is one of the best investments for **shops, clinics, offices, schools and small workshops in Cuddalore**. Business hours match solar hours, and commercial tariffs have **no free units**, so each solar unit saves a full-price unit. Small commercial systems cost roughly **₹45,000-60,000 per kW** installed in 2026. There is **no PM Surya Ghar subsidy** for businesses, but you can claim **40% accelerated depreciation**, and payback is often **4-6 years** or faster.
 
+> **Ready to check your shop?** See [commercial rooftop solar](/commercial-solar) and book a free site survey.
+
 > *Prices are market averages as of October 2026, not our quotes. Tax benefits depend on your business structure; confirm with your auditor.*
 
 ---

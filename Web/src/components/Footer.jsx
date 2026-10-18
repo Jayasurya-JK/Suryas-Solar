@@ -48,7 +48,8 @@ export default function Footer() {
     { name: 'Solar Panel Cost 2026', href: '/blog/2026-05-04-solar-panel-cost-tamil-nadu-2026-price-subsidy-savings' },
     { name: 'PM Surya Ghar Subsidy', href: '/blog/2026-01-01-pm-surya-ghar-scheme-cuddalore-2026' },
     { name: 'TNEB Net Metering', href: '/blog/2026-01-04-how-to-get-tneb-net-meter-cuddalore-2026' },
-    { name: 'Commercial Solar', href: '/blog/2026-01-19-commercial-solar-tax-benefits' },
+    { name: 'Commercial Solar', href: '/commercial-solar' },
+    { name: 'Apartment Solar', href: '/apartment-solar' },
     { name: 'Solar Maintenance', href: '/blog/2026-01-10-solar-maintenance-guide-cuddalore' },
   ]
 

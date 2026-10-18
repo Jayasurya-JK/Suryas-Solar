@@ -42,6 +42,8 @@ faqs:
 ---
 **Short answer:** rooftop solar is one of the best investments for **factories, warehouses, hospitals, schools, offices and malls** in Tamil Nadu, because they use most of their power **in the daytime**, exactly when solar produces. In 2026, systems of **20 kW and above** typically cost about **₹40,000-55,000 per kW** installed. Businesses get **no PM Surya Ghar subsidy**, but can claim **40% accelerated depreciation**, and payback is often **3-5 years**. You can **buy the plant (CAPEX)** or **pay per unit with no upfront cost (OPEX)**.
 
+> **Business in Cuddalore or Puducherry?** See our [commercial rooftop solar page](/commercial-solar) and book a free site survey.
+
 > *Market averages as of October 2026, not quotes. Tax and metering rules depend on your tariff and business structure; confirm with your auditor and the current TNERC order.*
 
 ---

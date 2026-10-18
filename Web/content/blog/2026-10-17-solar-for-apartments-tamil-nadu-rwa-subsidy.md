@@ -43,6 +43,8 @@ faqs:
 ---
 **Short answer:** yes, apartments in Tamil Nadu can go solar with a subsidy. Under PM Surya Ghar, a **Resident Welfare Association (RWA) or Group Housing Society (GHS)** gets **₹18,000 per kW** for a rooftop system that runs **common facilities** (lifts, water pumps, corridor and parking lights, EV charging). The subsidy covers up to **500 kW**, calculated at **3 kW per house**. Individual flats usually cannot install their own system unless they have an exclusive roof and their own connection.
 
+> **For your RWA:** estimate the subsidy and book a free terrace survey on our [apartment solar page](/apartment-solar).
+
 > *Rules as reported in the PM Surya Ghar guidelines and consumer manuals, as of October 2026. We confirm the latest rules on the official portal before your association applies.*
 
 ---
