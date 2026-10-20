@@ -9,14 +9,14 @@ Account with access: jksurya16 (Search Console /u/1/), property `sc-domain:surya
 - Indexing requested (11): solar-panel-price-list, 3kw-vs-5kw, solar-cost-puducherry, puducherry-solar-subsidy-2026, waaree-vs-adani-vs-tata, solar-panels-rain-cyclone, solar-installation-timeline, how-much-can-you-save, how-much-solar-needed, how-many-units-does-ac-consume, how-to-reduce-electricity-bill.
 - Quota hit on: 2026-04-26-is-stabilizer-required-for-inverter-ac-on-solar (not on Google, request first tomorrow).
 
+## 20 Oct 2026
+- Reports not refreshed yet (Page indexing still dated 12 Oct). Performance 28 days to 17 Oct: 222 clicks, 16k impressions, CTR 1.4%, avg position 6.4.
+- Already on Google: /service-areas/villupuram, both /systems pages, /contact, /blog, can-1-5-ton-ac post.
+- Town pages were "Discovered - currently not indexed" (never crawled). Indexing requested: cuddalore, puducherry, panruti, neyveli, chidambaram.
+- Indexing requested (posts): is-stabilizer-required, solar-increases-home-resale-value, commercial-solar-tax-benefits, zero-export-device-guide, understanding-tneb-solar-bill, enphase-micro-inverter-review.
+- Quota hit on: 2026-01-15-voltage-fluctuation-hybrid-solar (request first tomorrow).
+
 ## Still to check / request (in order)
-- 2026-04-26-is-stabilizer-required-for-inverter-ac-on-solar
-- 2026-04-25-can-1-5-ton-ac-run-on-solar-power-tamil-nadu
-- 2026-01-20-solar-increases-home-resale-value
-- 2026-01-19-commercial-solar-tax-benefits
-- 2026-01-18-zero-export-device-guide
-- 2026-01-17-understanding-tneb-solar-bill
-- 2026-01-16-enphase-micro-inverter-review
 - 2026-01-15-voltage-fluctuation-hybrid-solar
 - 2026-01-14-solar-dc-cable-quality-guide
 - 2026-01-13-solar-earthing-safety-guide
@@ -41,5 +41,3 @@ Account with access: jksurya16 (Search Console /u/1/), property `sc-domain:surya
 - 2025-12-01-residential-solar-payback-roi-tamil-nadu
 - 2025-12-01-how-much-does-residential-solar-installation-cost-in-cuddalore
 - 2025-12-01-best-solar-panel-brands-tamil-nadu-puducherry
-
-Also check: /contact, /blog, /service-areas/* (6 towns), /systems/3kw..., /systems/5kw...
