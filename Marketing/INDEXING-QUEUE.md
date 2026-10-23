@@ -16,25 +16,15 @@ Account with access: jksurya16 (Search Console /u/1/), property `sc-domain:surya
 - Indexing requested (posts): is-stabilizer-required, solar-increases-home-resale-value, commercial-solar-tax-benefits, zero-export-device-guide, understanding-tneb-solar-bill, enphase-micro-inverter-review.
 - Quota hit on: 2026-01-15-voltage-fluctuation-hybrid-solar (request first tomorrow).
 
+## 23 Oct 2026
+- Page indexing report (data to 16 Oct): 22 indexed, 74 not indexed. Performance last 7 days: 94 clicks, 5.68k impressions, CTR 1.7%, avg position 6.4.
+- 19 Oct requests now indexed (e.g. price list, 3kW vs 5kW).
+- Town pages still "Discovered - currently not indexed". Live pages healthy (200, correct canonical, apex 308 to www). Not re-requested; give Google 1-2 weeks.
+- Already on Google: future-of-solar, mono-vs-bifacial, pm-surya-ghar-scheme-cuddalore, solar-myths-vs-facts, on-grid-vs-off-grid-vs-hybrid, solar-panel-generation-units.
+- Indexing requested (12): voltage-fluctuation, dc-cable, earthing, shadow-analysis, maintenance, scam-warnings, roi-calculator, on-grid-vs-hybrid, coastal-rust-proof, emi-loans, 3kw-for-3bhk, 1-phase-to-3-phase.
+- Quota hit on: 2025-12-03-net-metering-tamil-nadu-puducherry-guide (request first next time).
+
 ## Still to check / request (in order)
-- 2026-01-15-voltage-fluctuation-hybrid-solar
-- 2026-01-14-solar-dc-cable-quality-guide
-- 2026-01-13-solar-earthing-safety-guide
-- 2026-01-12-solar-shadow-analysis-guide-cuddalore
-- 2026-01-11-future-of-solar-tamil-nadu-trends
-- 2026-01-10-solar-maintenance-guide-cuddalore
-- 2026-01-09-solar-scam-warnings-cuddalore
-- 2026-01-08-solar-roi-calculator-break-even-analysis
-- 2026-01-07-mono-vs-bifacial-solar-panels
-- 2026-01-06-on-grid-vs-hybrid-solar-tamil-nadu
-- 2026-01-05-coastal-solar-rust-proof-panels-cuddalore
-- 2026-01-03-solar-emi-loans-tamil-nadu-2026
-- 2026-01-02-is-3kw-solar-enough-for-3bhk-2026
-- 2026-01-01-pm-surya-ghar-scheme-cuddalore-2026
-- 2025-12-04-solar-myths-vs-facts-tamil-nadu
-- 2025-12-04-on-grid-vs-off-grid-vs-hybrid-solar-tamil-nadu
-- 2025-12-04-1-phase-to-3-phase-upgrade-solar-tamil-nadu
-- 2025-12-03-solar-panel-generation-units-tamil-nadu-guide
 - 2025-12-03-net-metering-tamil-nadu-puducherry-guide
 - 2025-12-02-solar-inverter-guide-tamil-nadu-puducherry
 - 2025-12-02-rooftop-solar-structure-types-tamil-nadu
