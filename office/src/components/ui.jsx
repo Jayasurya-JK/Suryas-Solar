@@ -20,17 +20,17 @@ export function Badge({ tone = "slate", children }) {
 }
 
 // Pill button group for 2 to 6 choices (replaces small dropdowns).
-export function Segmented({ value, onChange, options, size = "md", wrap = true }) {
+export function Segmented({ value, onChange, options, size = "md", wrap = true, full = false }) {
   const pad = size === "sm" ? "px-3 py-1.5 text-xs" : "px-3.5 py-2 text-sm";
   return (
-    <div className={`flex gap-1.5 ${wrap ? "flex-wrap" : ""}`} role="radiogroup">
+    <div className={full ? "grid gap-1.5 rounded-2xl bg-slate-200/60 p-1" : `flex gap-1.5 ${wrap ? "flex-wrap" : ""}`} style={full ? { gridTemplateColumns: `repeat(${options.length}, minmax(0, 1fr))` } : undefined} role="radiogroup">
       {options.map((o) => {
         const id = typeof o === "object" ? o.id : o;
         const label = typeof o === "object" ? o.label : o;
         const active = String(value) === String(id);
         return (
           <button type="button" key={id} role="radio" aria-checked={active} onClick={() => onChange(id)}
-            className={`rounded-xl border font-semibold transition ${pad} ${active
+            className={`rounded-xl border font-semibold transition ${pad} ${full ? (active ? "border-white bg-white text-slate-900 shadow-sm" : "border-transparent bg-transparent text-slate-600") : active
               ? "border-primary bg-primary text-white shadow-sm"
               : "border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50"}`}>
             {label}
@@ -81,54 +81,121 @@ export function Field({ label, children, className = "" }) {
   );
 }
 
-export function PageHeader({ title, subtitle, children }) {
+// Page title row. `children` = desktop actions. `fab` = mobile floating button { label, icon, onClick | href }.
+export function PageHeader({ title, subtitle, children, fab, mobileActions }) {
   return (
-    <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-      <div>
-        <h1 className="text-2xl font-extrabold text-slate-900">{title}</h1>
+    <div className="mb-5 flex items-end justify-between gap-3 sm:mb-6">
+      <div className="min-w-0">
+        <h1 className="text-[22px] font-bold tracking-tight text-slate-900 sm:text-[26px]">{title}</h1>
         {subtitle && <p className="mt-1 text-sm text-slate-500">{subtitle}</p>}
       </div>
-      {children && <div className="flex flex-wrap gap-2">{children}</div>}
+      {children && <div className="hidden shrink-0 flex-wrap gap-2 sm:flex">{children}</div>}
+      {mobileActions && <div className="flex shrink-0 gap-1.5 sm:hidden">{mobileActions}</div>}
+      {fab && <Fab {...fab} />}
+    </div>
+  );
+}
+
+export function Fab({ label, icon = "plus", onClick, href }) {
+  const cls = "no-print fixed bottom-[84px] right-4 z-30 flex items-center gap-2 rounded-full bg-accent px-5 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(214,0,111,.35)] active:scale-95 sm:hidden";
+  const inner = <><Icon name={icon} className="h-5 w-5" />{label}</>;
+  return href ? <a href={href} className={cls}>{inner}</a> : <button type="button" onClick={onClick} className={cls}>{inner}</button>;
+}
+
+export function IconButton({ icon, label, onClick, href, tone = "default" }) {
+  const cls = `flex h-10 w-10 items-center justify-center rounded-full border transition ${tone === "wa" ? "border-green-200 bg-green-50 text-green-700 hover:bg-green-100" : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50"}`;
+  return href
+    ? <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className={cls} title={label} aria-label={label} onClick={(e) => e.stopPropagation()}><Icon name={icon} className="h-[18px] w-[18px]" /></a>
+    : <button type="button" className={cls} title={label} aria-label={label} onClick={onClick}><Icon name={icon} className="h-[18px] w-[18px]" /></button>;
+}
+
+// Scrollable filter chips with counts (no visible scrollbar, nothing clipped).
+export function FilterTabs({ tabs, value, onChange }) {
+  return (
+    <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 py-1 sm:mx-0 sm:flex-wrap sm:px-0">
+      {tabs.map((t) => {
+        const active = value === t.id;
+        const warn = t.warn && t.n > 0 && !active;
+        return (
+          <button key={t.id} type="button" onClick={() => onChange(t.id)}
+            className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[13px] font-semibold transition ${active
+              ? "border-slate-900 bg-slate-900 text-white"
+              : warn ? "border-amber-300 bg-amber-50 text-amber-800" : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"}`}>
+            {t.label}
+            {t.n != null && <span className={`rounded-full px-1.5 text-[11px] leading-5 ${active ? "bg-white/20" : warn ? "bg-amber-200/70" : "bg-slate-100 text-slate-500"}`}>{t.n}</span>}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+const AV_TONES = ["bg-primary-50 text-primary", "bg-accent-50 text-accent", "bg-teal-50 text-teal", "bg-amber-50 text-amber-700", "bg-violet-50 text-violet-700"];
+export function Avatar({ name = "", size = "md" }) {
+  const initials = name.trim().split(/\s+/).slice(0, 2).map((w) => w[0]?.toUpperCase()).join("") || "?";
+  const tone = AV_TONES[[...name].reduce((a, c) => a + c.charCodeAt(0), 0) % AV_TONES.length];
+  const dim = size === "sm" ? "h-8 w-8 text-xs" : size === "lg" ? "h-12 w-12 text-base" : "h-10 w-10 text-sm";
+  return <span className={`flex shrink-0 items-center justify-center rounded-full font-bold ${dim} ${tone}`}>{initials}</span>;
+}
+
+export function SearchBox({ value, onChange, placeholder }) {
+  return (
+    <div className="relative">
+      <Icon name="search" className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+      <input className="input h-11 !rounded-full pl-10" placeholder={placeholder} value={value} onChange={(e) => onChange(e.target.value)} />
     </div>
   );
 }
 
 export function Modal({ title, onClose, children, wide = false }) {
   return (
-    <div className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/50 p-4 backdrop-blur-sm sm:items-center">
-      <div className={`card w-full ${wide ? "max-w-3xl" : "max-w-lg"} my-8 shadow-xl`}>
-        <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+    <div className="fixed inset-0 z-[60] flex items-end justify-center bg-slate-900/50 backdrop-blur-sm sm:items-center sm:overflow-y-auto sm:p-4" onClick={onClose}>
+      <div onClick={(e) => e.stopPropagation()}
+        className={`flex max-h-[92vh] w-full flex-col rounded-t-3xl bg-white shadow-2xl sm:my-8 sm:max-h-none sm:rounded-2xl ${wide ? "sm:max-w-3xl" : "sm:max-w-lg"}`}>
+        <div className="mx-auto mt-2.5 h-1.5 w-10 rounded-full bg-slate-200 sm:hidden" />
+        <div className="flex items-center justify-between px-5 pb-3 pt-3 sm:border-b sm:border-slate-100 sm:py-4">
           <h2 className="text-lg font-bold text-slate-900">{title}</h2>
-          <button onClick={onClose} className="rounded-full p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700" aria-label="Close">
+          <button onClick={onClose} className="rounded-full p-1.5 text-slate-500 hover:bg-slate-100 hover:text-slate-800" aria-label="Close">
             <Icon name="x" />
           </button>
         </div>
-        <div className="p-5">{children}</div>
+        <div className="overflow-y-auto px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-1 sm:pt-5">{children}</div>
       </div>
     </div>
   );
 }
 
-export function Empty({ title, text, children }) {
+export function Empty({ title, text, children, icon = "inbox" }) {
   return (
     <div className="card flex flex-col items-center px-6 py-14 text-center">
-      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary-50 text-primary">
-        <Icon name="inbox" />
+      <div className="relative mb-4">
+        <div className="absolute inset-0 scale-150 rounded-full bg-primary-50/60" />
+        <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-primary shadow-sm ring-1 ring-slate-200">
+          <Icon name={icon} className="h-6 w-6" />
+        </div>
       </div>
-      <p className="font-bold text-slate-900">{title}</p>
-      {text && <p className="mt-1 max-w-sm text-sm text-slate-500">{text}</p>}
-      {children && <div className="mt-4">{children}</div>}
+      <p className="text-base font-bold text-slate-900">{title}</p>
+      {text && <p className="mt-1 max-w-sm text-sm leading-relaxed text-slate-500">{text}</p>}
+      {children && <div className="mt-5">{children}</div>}
     </div>
   );
 }
 
-export function Stat({ label, value, hint, tone = "primary" }) {
-  const color = { primary: "text-primary", accent: "text-accent", teal: "text-teal", slate: "text-slate-900" }[tone];
+export function Stat({ label, value, hint, tone = "primary", icon }) {
+  const t = {
+    primary: ["text-primary", "bg-primary-50 text-primary"],
+    accent: ["text-accent", "bg-accent-50 text-accent"],
+    teal: ["text-teal", "bg-teal-50 text-teal"],
+    slate: ["text-slate-900", "bg-slate-100 text-slate-700"],
+  }[tone];
   return (
-    <div className="card p-4">
-      <p className="text-xs font-semibold text-slate-500">{label}</p>
-      <p className={`mt-1 text-2xl font-black ${color}`}>{value}</p>
-      {hint && <p className="mt-0.5 text-xs text-slate-400">{hint}</p>}
+    <div className="card p-4 sm:p-5">
+      <div className="flex items-center justify-between gap-2">
+        <p className="text-[13px] font-semibold text-slate-500">{label}</p>
+        {icon && <span className={`flex h-8 w-8 items-center justify-center rounded-xl ${t[1]}`}><Icon name={icon} className="h-4 w-4" /></span>}
+      </div>
+      <p className={`mt-2 text-2xl font-bold tracking-tight sm:text-[28px] ${t[0]}`}>{value}</p>
+      {hint && <p className="mt-1 text-xs text-slate-500">{hint}</p>}
     </div>
   );
 }
@@ -169,6 +236,12 @@ const PATHS = {
   check: "M4.5 12.75l6 6 9-13.5",
   arrow: "M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3",
   back: "M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18",
+  rupee: "M15 8.25H9m6 3H9m3 6l-3-3h1.5a3 3 0 100-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+  trophy: "M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0",
+  sun: "M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z",
+  chevron: "M8.25 4.5l7.5 7.5-7.5 7.5",
+  dots: "M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z",
+  map: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z",
 };
 
 export function Icon({ name, className = "h-5 w-5" }) {

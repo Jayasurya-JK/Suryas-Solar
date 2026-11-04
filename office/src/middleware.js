@@ -4,6 +4,8 @@ import { createServerClient } from "@supabase/ssr";
 // Refreshes the login session and sends signed-out visitors to /login.
 // Real data protection is done by the database rules (RLS), not here.
 export async function middleware(request) {
+  // Local design preview with sample data (never enabled on Vercel)
+  if (process.env.NEXT_PUBLIC_DEMO === "1") return NextResponse.next();
   let response = NextResponse.next({ request });
 
   const sb = createServerClient(

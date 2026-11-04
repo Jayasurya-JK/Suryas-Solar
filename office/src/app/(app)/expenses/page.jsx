@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
-import { Badge, Empty, Field, Icon, Notice, PageHeader, Segmented, Select, Spinner } from "@/components/ui";
+import { Empty, Field, FilterTabs, Icon, IconButton, Modal, Notice, PageHeader, Segmented, Spinner } from "@/components/ui";
 import { EXPENSE_CATEGORIES, PAY_MODES, dmy, downloadCsv, labelOf, rupees, today } from "@/lib/format";
 
 // Shrink phone photos to ~1600px JPEG before upload (keeps storage small).
@@ -17,6 +17,11 @@ async function compress(file) {
   return new Promise((res) => canvas.toBlob(res, "image/jpeg", 0.72));
 }
 
+const CAT_TONE = {
+  material: "bg-primary-50 text-primary", labour: "bg-violet-50 text-violet-700", transport: "bg-amber-50 text-amber-700",
+  fuel: "bg-red-50 text-red-600", food: "bg-teal-50 text-teal", office: "bg-slate-100 text-slate-700", other: "bg-slate-100 text-slate-700",
+};
+
 const EMPTY = { spent_on: "", amount: "", category: "material", site: "", paid_by: "", payment_mode: "cash", note: "" };
 
 export default function Expenses() {
@@ -29,6 +34,7 @@ export default function Expenses() {
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState(null);
   const [cat, setCat] = useState("all");
+  const [sheet, setSheet] = useState(false);
   const fileRef = useRef(null);
 
   const load = useCallback(async () => {
@@ -65,7 +71,8 @@ export default function Expenses() {
     setF({ ...EMPTY, spent_on: f.spent_on, paid_by: f.paid_by, category: f.category, site: f.site });
     setPhoto(null);
     if (fileRef.current) fileRef.current.value = "";
-    setMsg({ tone: "green", text: "Expense added." });
+    setMsg({ tone: "green", text: "Expense saved." });
+    setSheet(false);
     setTimeout(() => setMsg(null), 2000);
     if (f.spent_on.startsWith(month)) load(); else setMonth(f.spent_on.slice(0, 7));
   };
@@ -98,87 +105,89 @@ export default function Expenses() {
         labelOf(PAY_MODES, r.payment_mode), r.note, who(r.created_by), r.bill_path ? "Yes" : ""]),
     ]);
 
+  const monthLabel = new Date(month + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+
+  const form = (
+    <form onSubmit={add} className="space-y-4">
+      <div className="grid grid-cols-2 gap-3">
+        <Field label="Amount (₹)">
+          <input className="input !text-xl !font-bold" type="number" inputMode="decimal" required placeholder="0" value={f.amount} onChange={set("amount")} />
+        </Field>
+        <Field label="Date"><input className="input" type="date" value={f.spent_on} onChange={set("spent_on")} /></Field>
+      </div>
+      <Field label="Category"><Segmented size="sm" value={f.category} onChange={(v) => setF({ ...f, category: v })} options={EXPENSE_CATEGORIES} /></Field>
+      <Field label="Site or customer"><input className="input" value={f.site} onChange={set("site")} placeholder="e.g. Surya, Cuddalore" /></Field>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <Field label="Paid by"><input className="input" value={f.paid_by} onChange={set("paid_by")} /></Field>
+        <Field label="Paid using"><Segmented size="sm" value={f.payment_mode} onChange={(v) => setF({ ...f, payment_mode: v })} options={PAY_MODES} /></Field>
+      </div>
+      <Field label="Note"><input className="input" value={f.note} onChange={set("note")} placeholder="e.g. 10 m DC cable for the Cuddalore site" /></Field>
+      <label className={`flex cursor-pointer items-center gap-3 rounded-xl border border-dashed p-3 text-sm transition ${photo ? "border-teal bg-teal-50 text-teal" : "border-slate-300 text-slate-600 hover:bg-slate-50"}`}>
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-slate-200"><Icon name={photo ? "check" : "camera"} className="h-5 w-5" /></span>
+        <span className="min-w-0 flex-1"><span className="block font-semibold">{photo ? "Bill photo added" : "Add bill photo"}</span><span className="block truncate text-xs opacity-80">{photo ? photo.name : "Optional · take a photo or choose one"}</span></span>
+        <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={(e) => setPhoto(e.target.files?.[0] || null)} />
+      </label>
+      {msg && <Notice tone={msg.tone}>{msg.text}</Notice>}
+      <button className="btn-primary h-12 w-full text-base" disabled={busy}>{busy ? "Saving..." : "Save expense"}</button>
+    </form>
+  );
+
   return (
     <>
-      <PageHeader title="Expenses" subtitle={isOwner ? "All spending by the team. Staff see only their own entries." : "Add what you spent. No need to post it on WhatsApp."}>
+      <PageHeader title="Expenses" subtitle={isOwner ? "All team spending. Staff see only their own entries." : "Add what you spent. No need to post it on WhatsApp."}
+        fab={{ label: "Add expense", onClick: () => setSheet(true) }}
+        mobileActions={<IconButton icon="download" label="Download Excel" onClick={exportCsv} />}>
         <button className="btn-ghost" onClick={exportCsv}><Icon name="download" className="h-4 w-4" />Excel</button>
       </PageHeader>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,24rem)_minmax(0,1fr)]">
-        <form onSubmit={add} className="card h-fit p-5 lg:sticky lg:top-6">
-          <h2 className="mb-4 font-bold text-slate-900">Add expense</h2>
-          <div className="grid grid-cols-2 gap-3">
-            <Field label="Amount (₹) *"><input className="input text-lg font-bold" type="number" inputMode="decimal" required value={f.amount} onChange={set("amount")} /></Field>
-            <Field label="Date"><input className="input" type="date" value={f.spent_on} onChange={set("spent_on")} /></Field>
-          </div>
-          <div className="mt-3">
-            <span className="label">Category</span>
-            <div className="flex flex-wrap gap-2">
-              {EXPENSE_CATEGORIES.map((c) => (
-                <button type="button" key={c.id} onClick={() => setF({ ...f, category: c.id })}
-                  className={`rounded-xl border px-3 py-1.5 text-xs font-semibold ${f.category === c.id ? "border-primary bg-primary text-white" : "border-slate-200 bg-white text-slate-600"}`}>
-                  {c.label}
-                </button>
-              ))}
-            </div>
-          </div>
-          <div className="mt-3 grid grid-cols-2 gap-3">
-            <Field label="Site / customer" className="col-span-2"><input className="input" value={f.site} onChange={set("site")} placeholder="e.g. Surya, Cuddalore" /></Field>
-            <Field label="Paid by"><input className="input" value={f.paid_by} onChange={set("paid_by")} /></Field>
-            <Field label="Paid using" className="col-span-2">
-              <Segmented size="sm" value={f.payment_mode} onChange={(v) => setF({ ...f, payment_mode: v })} options={PAY_MODES} />
-            </Field>
-            <Field label="Note" className="col-span-2"><input className="input" value={f.note} onChange={set("note")} placeholder="e.g. 10 m DC cable for the Cuddalore site" /></Field>
-          </div>
-          <label className="mt-3 flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-slate-300 p-3 text-sm text-slate-600 hover:bg-slate-50">
-            <Icon name="camera" className="h-6 w-6 text-primary" />
-            <span className="flex-1 truncate">{photo ? photo.name : "Bill photo (optional)"}</span>
-            <input ref={fileRef} type="file" accept="image/*" capture="environment" className="hidden" onChange={(e) => setPhoto(e.target.files?.[0] || null)} />
-          </label>
-          {msg && <div className="mt-3"><Notice tone={msg.tone}>{msg.text}</Notice></div>}
-          <button className="btn-primary mt-4 w-full py-2.5" disabled={busy}>{busy ? "Saving..." : "Add expense"}</button>
-        </form>
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,23rem)_minmax(0,1fr)]">
+        <div className="card hidden h-fit p-5 lg:sticky lg:top-8 lg:block">
+          <h2 className="mb-4 text-base font-bold text-slate-900">Add expense</h2>
+          {form}
+        </div>
 
-        <div>
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
-              <input type="month" className="input !w-auto" value={month} onChange={(e) => setMonth(e.target.value)} />
-              <Select className="w-44" value={cat} onChange={(e) => setCat(e.target.value)}>
-                <option value="all">All categories</option>
-                {EXPENSE_CATEGORIES.map((c) => <option key={c.id} value={c.id}>{c.label}</option>)}
-              </Select>
+        <div className="min-w-0 space-y-4">
+          <div className="card overflow-hidden">
+            <div className="flex items-center justify-between gap-3 bg-gradient-to-br from-slate-900 to-slate-800 p-5 text-white">
+              <div className="min-w-0">
+                <p className="truncate text-xs font-semibold uppercase tracking-wider text-white/60">{cat === "all" ? "Total spent" : labelOf(EXPENSE_CATEGORIES, cat)}<span className="hidden sm:inline"> · {monthLabel}</span></p>
+                <p className="mt-1 text-3xl font-bold tracking-tight">{rupees(total)}</p>
+                <p className="mt-0.5 text-xs text-white/60">{shown.length} entries</p>
+              </div>
+              <input type="month" aria-label="Month" className="h-10 w-40 shrink-0 rounded-full sm:w-44 border border-white/20 bg-white/10 px-3 text-sm font-semibold text-white [color-scheme:dark]" value={month} onChange={(e) => setMonth(e.target.value)} />
             </div>
-            <p className="text-sm text-slate-500">Total <span className="text-lg font-black text-slate-900">{rupees(total)}</span></p>
+            {rows && rows.length > 0 && (
+              <div className="px-4 py-3">
+                <FilterTabs value={cat} onChange={setCat} tabs={[
+                  { id: "all", label: "All" },
+                  ...EXPENSE_CATEGORIES.filter((c) => byCat[c.id]).map((c) => ({ id: c.id, label: `${c.label} ${rupees(byCat[c.id])}` })),
+                ]} />
+              </div>
+            )}
           </div>
-
-          {rows && rows.length > 0 && (
-            <div className="mb-4 flex flex-wrap gap-2">
-              {EXPENSE_CATEGORIES.filter((c) => byCat[c.id]).map((c) => (
-                <span key={c.id} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-600">
-                  {c.label} <b className="text-slate-900">{rupees(byCat[c.id])}</b>
-                </span>
-              ))}
-            </div>
-          )}
 
           {!rows ? <Spinner /> : shown.length === 0 ? (
-            <Empty title="No expenses this month" text="Add the first one using the form." />
+            <Empty icon="wallet" title="No expenses this month" text="Tap Add expense to record what was spent today.">
+              <button className="btn-primary lg:hidden" onClick={() => setSheet(true)}><Icon name="plus" className="h-4 w-4" />Add expense</button>
+            </Empty>
           ) : (
             <div className="card divide-y divide-slate-100">
               {shown.map((r) => (
-                <div key={r.id} className="flex items-start justify-between gap-3 p-4">
-                  <div className="min-w-0">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-base font-black text-slate-900">{rupees(r.amount)}</span>
-                      <Badge tone="blue">{labelOf(EXPENSE_CATEGORIES, r.category)}</Badge>
-                      <span className="text-xs text-slate-500">{dmy(r.spent_on)} · {labelOf(PAY_MODES, r.payment_mode)}</span>
-                    </div>
-                    <p className="mt-1 truncate text-sm text-slate-600">{[r.site, r.note].filter(Boolean).join(" · ") || "No details"}</p>
-                    <p className="text-xs text-slate-400">Paid by {r.paid_by || "?"}{isOwner && who(r.created_by) ? ` · entered by ${who(r.created_by)}` : ""}</p>
+                <div key={r.id} className="flex items-center gap-3 p-4">
+                  <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl text-sm font-bold ${CAT_TONE[r.category] || CAT_TONE.other}`}>
+                    {labelOf(EXPENSE_CATEGORIES, r.category).slice(0, 2)}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate font-semibold text-slate-900">{r.note || labelOf(EXPENSE_CATEGORIES, r.category)}</p>
+                    <p className="truncate text-[13px] text-slate-500">{[r.site, dmy(r.spent_on), labelOf(PAY_MODES, r.payment_mode)].filter(Boolean).join(" · ")}</p>
+                    <p className="truncate text-xs text-slate-400">Paid by {r.paid_by || "?"}{isOwner && who(r.created_by) ? ` · entered by ${who(r.created_by)}` : ""}</p>
                   </div>
-                  <div className="flex shrink-0 gap-1">
-                    {r.bill_path && <button onClick={() => viewBill(r.bill_path)} className="rounded-full p-2 text-slate-500 hover:bg-primary-50 hover:text-primary" title="View bill"><Icon name="camera" className="h-4 w-4" /></button>}
-                    {isOwner && <button onClick={() => remove(r)} className="rounded-full p-2 text-slate-400 hover:bg-red-50 hover:text-red-600" title="Delete"><Icon name="trash" className="h-4 w-4" /></button>}
+                  <div className="flex shrink-0 flex-col items-end gap-1">
+                    <span className="text-[15px] font-bold text-slate-900">{rupees(r.amount)}</span>
+                    <div className="flex gap-0.5">
+                      {r.bill_path && <button onClick={() => viewBill(r.bill_path)} className="rounded-lg p-1.5 text-primary hover:bg-primary-50" title="View bill" aria-label="View bill"><Icon name="camera" className="h-4 w-4" /></button>}
+                      {isOwner && <button onClick={() => remove(r)} className="rounded-lg p-1.5 text-slate-400 hover:bg-red-50 hover:text-red-600" title="Delete" aria-label="Delete"><Icon name="trash" className="h-4 w-4" /></button>}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -186,6 +195,8 @@ export default function Expenses() {
           )}
         </div>
       </div>
+
+      {sheet && <Modal title="Add expense" onClose={() => setSheet(false)}>{form}</Modal>}
     </>
   );
 }

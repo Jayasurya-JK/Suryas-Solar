@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
-import { Badge, Field, Icon, Modal, Notice, PageHeader, Segmented, Spinner, Switch } from "@/components/ui";
+import { Badge, Field, FilterTabs, Icon, Modal, Notice, PageHeader, Segmented, Spinner, Switch } from "@/components/ui";
 import { rupees } from "@/lib/format";
 import { BomRows, LineList, PairList } from "@/components/ListEditors";
 
@@ -400,14 +400,7 @@ export default function Settings() {
   return (
     <>
       <PageHeader title="Settings" subtitle="Company details, quote wording, price packages and who can log in." />
-      <div className="mb-5 flex flex-wrap gap-2">
-        {TABS.map((t) => (
-          <button key={t.id} onClick={() => setTab(t.id)}
-            className={`rounded-full border px-4 py-2 text-sm font-semibold ${tab === t.id ? "border-primary bg-primary text-white" : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"}`}>
-            {t.label}
-          </button>
-        ))}
-      </div>
+      <div className="mb-5"><FilterTabs tabs={TABS} value={tab} onChange={setTab} /></div>
       {tab === "company" && <CompanyTab key={settings.updated_at} settings={settings} reload={reload} />}
       {tab === "wording" && <WordingTab key={settings.updated_at} settings={settings} reload={reload} />}
       {tab === "packages" && <PackagesTab />}

@@ -19,6 +19,7 @@ export default function QuoteEditor() {
   const [dirty, setDirty] = useState(false);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState(null);
+  const [view, setView] = useState("edit");
 
   const load = useCallback(async () => {
     const { data } = await sb.from("quotes").select("*").eq("id", id).maybeSingle();
@@ -67,6 +68,8 @@ export default function QuoteEditor() {
     if (dirty && !(await save())) return;
     const old = document.title;
     document.title = `${q.customer?.name || "Quote"} ${q.system?.kw}kW Quotation ${q.ref_no.replace(/\//g, "-")}`;
+    setView("preview");
+    await new Promise((r) => setTimeout(r, 300));
     window.print();
     document.title = old;
   };
@@ -96,12 +99,12 @@ export default function QuoteEditor() {
           <Icon name="back" className="h-4 w-4" />{q.lead_id ? "Back to lead" : "All quotes"}
         </Link>
         <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <h1 className="text-2xl font-extrabold text-slate-900">{q.ref_no}</h1>
+          <div className="min-w-0">
+            <h1 className="text-[22px] font-bold tracking-tight text-slate-900 sm:text-[26px]">{q.ref_no}</h1>
             <p className="mt-0.5 text-sm text-slate-600">{q.customer?.name} · {rupees(calc.total)} · after subsidy <b className="text-teal">{rupees(calc.net)}</b></p>
             <div className="mt-3"><Segmented size="sm" value={q.status} onChange={(v) => update({ status: v })} options={QUOTE_STATUSES} /></div>
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="hidden flex-wrap items-center gap-2 sm:flex">
             <button className={dirty ? "btn-accent" : "btn-ghost"} onClick={() => save()} disabled={busy || !dirty}>
               {busy ? "Saving..." : dirty ? "Save changes" : <><Icon name="check" className="h-4 w-4" />Saved</>}
             </button>
@@ -110,10 +113,24 @@ export default function QuoteEditor() {
           </div>
         </div>
         {msg && <div className="mb-4"><Notice tone={msg.tone}>{msg.text}</Notice></div>}
+        <div className="mb-4 xl:hidden">
+          <Segmented full value={view} onChange={setView} options={[{ id: "edit", label: "Edit details" }, { id: "preview", label: "Preview quote" }]} />
+        </div>
+      </div>
+
+      {/* phone action bar, sits above the bottom tabs */}
+      <div className="no-print fixed inset-x-0 bottom-[calc(68px+env(safe-area-inset-bottom))] z-20 border-t border-slate-200/80 bg-white/95 px-4 py-2.5 backdrop-blur-md sm:hidden">
+        <div className="grid grid-cols-3 gap-2">
+          <button className={`${dirty ? "btn-accent" : "btn-ghost"} !px-2`} onClick={() => save()} disabled={busy || !dirty}>
+            {busy ? "Saving" : dirty ? "Save" : <><Icon name="check" className="h-4 w-4" />Saved</>}
+          </button>
+          <button className="btn-primary !px-2" onClick={print}><Icon name="print" className="h-4 w-4" />PDF</button>
+          <button className="btn-wa !px-2" onClick={sendWhatsApp}><Icon name="chat" className="h-4 w-4" />Send</button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,26rem)_minmax(0,1fr)]">
-        <div className="no-print min-w-0 space-y-4">
+        <div className={`no-print min-w-0 space-y-4 pb-16 sm:pb-0 ${view === "preview" ? "hidden xl:block" : ""}`}>
           <section className="card p-5">
             <h2 className="mb-3 font-bold text-slate-900">Customer</h2>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -207,7 +224,7 @@ export default function QuoteEditor() {
           {isOwner && <button onClick={remove} className="btn-danger w-full"><Icon name="trash" className="h-4 w-4" />Delete quote</button>}
         </div>
 
-        <div className="min-w-0 xl:sticky xl:top-6 xl:self-start">
+        <div className={`min-w-0 pb-16 sm:pb-0 xl:sticky xl:top-6 xl:self-start ${view === "edit" ? "hidden print:block xl:block" : ""}`}>
           <p className="no-print mb-2 text-xs font-semibold text-slate-500">Preview (this is what the customer gets)</p>
           <QuotePreview quote={q} s={s} brands={brands} signUrl={signUrl} />
         </div>

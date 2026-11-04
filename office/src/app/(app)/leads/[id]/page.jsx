@@ -6,7 +6,7 @@ import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import LeadForm from "@/components/LeadForm";
-import { Badge, Icon, Spinner } from "@/components/ui";
+import { Avatar, Badge, Icon, Segmented, Spinner } from "@/components/ui";
 import { LEAD_SOURCES, LEAD_STATUSES, QUOTE_STATUSES, dmy, labelOf, rupees, waLink } from "@/lib/format";
 
 export default function LeadDetail() {
@@ -55,27 +55,24 @@ export default function LeadDetail() {
       <Link href="/leads" className="mb-4 inline-flex items-center gap-1 text-sm font-semibold text-slate-500 hover:text-primary">
         <Icon name="back" className="h-4 w-4" />All leads
       </Link>
-      <div className="mb-6 flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-extrabold text-slate-900">{lead.name}</h1>
-          <p className="mt-1 text-sm text-slate-500">
-            {labelOf(LEAD_SOURCES, lead.source)} lead · added {dmy(lead.created_at)}
-          </p>
+      <div className="card mb-5 p-5">
+        <div className="flex items-start gap-4">
+          <Avatar name={lead.name} size="lg" />
+          <div className="min-w-0 flex-1">
+            <h1 className="truncate text-[22px] font-bold tracking-tight text-slate-900">{lead.name}</h1>
+            <p className="mt-0.5 text-sm text-slate-500">{[lead.phone, lead.town].filter(Boolean).join(" · ")}</p>
+            <p className="text-xs text-slate-400">{labelOf(LEAD_SOURCES, lead.source)} lead · added {dmy(lead.created_at)}</p>
+          </div>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="mt-4 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap">
           {lead.phone && <a href={`tel:${lead.phone}`} className="btn-ghost"><Icon name="phone" className="h-4 w-4" />Call</a>}
-          {lead.phone && <a href={waLink(lead.phone, `Hello ${lead.name}, this is Surya's Solar, Cuddalore.`)} target="_blank" className="btn-wa"><Icon name="chat" className="h-4 w-4" />WhatsApp</a>}
-          <Link href={`/quotes/new?lead=${lead.id}`} className="btn-accent"><Icon name="doc" className="h-4 w-4" />Make quote</Link>
+          {lead.phone && <a href={waLink(lead.phone, `Hello ${lead.name}, this is Surya's Solar, Cuddalore.`)} target="_blank" rel="noreferrer" className="btn-wa"><Icon name="chat" className="h-4 w-4" />WhatsApp</a>}
+          <Link href={`/quotes/new?lead=${lead.id}`} className={`btn-accent ${lead.phone ? "" : "col-span-3"}`}><Icon name="doc" className="h-4 w-4" />Quote</Link>
         </div>
-      </div>
-
-      <div className="mb-6 flex flex-wrap gap-2">
-        {LEAD_STATUSES.map((s) => (
-          <button key={s.id} onClick={() => setStatus(s.id)}
-            className={`rounded-full border px-3 py-1.5 text-xs font-semibold ${lead.status === s.id ? "border-primary bg-primary text-white" : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"}`}>
-            {s.label}
-          </button>
-        ))}
+        <div className="mt-4 border-t border-slate-100 pt-4">
+          <p className="label">Stage</p>
+          <Segmented size="sm" value={lead.status} onChange={setStatus} options={LEAD_STATUSES} />
+        </div>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
