@@ -3,8 +3,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
-import { Badge, Field, Icon, Modal, Notice, PageHeader, Segmented, Select, Spinner } from "@/components/ui";
+import { Badge, Field, Icon, Modal, Notice, PageHeader, Segmented, Spinner, Switch } from "@/components/ui";
 import { rupees } from "@/lib/format";
+import { BomRows, LineList, PairList } from "@/components/ListEditors";
 
 const TABS = [
   { id: "company", label: "Company" },
@@ -130,22 +131,13 @@ function BrandsTab() {
         ))}
       </div>
       <div className="card flex flex-wrap items-end gap-3 p-5">
-        <Field label="Add a new brand" className="min-w-60 flex-1"><input className="input" value={name} onChange={(e) => setName(e.target.value)} placeholder="Vikram Solar" /></Field>
+        <Field label="Add a new brand" className="min-w-60 flex-1"><input className="input" value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Vikram Solar" /></Field>
         <button className="btn-primary" onClick={add}><Icon name="plus" className="h-4 w-4" />Add brand</button>
       </div>
       {err && <Notice tone="red">{err}</Notice>}
     </div>
   );
 }
-
-// "Label | text" lines <-> [{label, text}]
-const pairsToText = (arr) => (arr || []).map((x) => `${x.label} | ${x.text}`).join("\n");
-const textToPairs = (t) => t.split("\n").map((l) => l.trim()).filter(Boolean).map((l) => {
-  const [label, ...rest] = l.split("|");
-  return { label: label.trim(), text: rest.join("|").trim() };
-});
-const linesToText = (arr) => (arr || []).join("\n");
-const textToLines = (t) => t.split("\n").map((l) => l.trim()).filter(Boolean);
 
 function SaveBar({ onSave, busy, msg }) {
   return (
@@ -216,19 +208,30 @@ function CompanyTab({ settings, reload }) {
   );
 }
 
+function Section({ title, hint, children }) {
+  return (
+    <section className="border-b border-slate-100 py-5 first:pt-0 last:border-0">
+      <h3 className="font-bold text-slate-900">{title}</h3>
+      {hint && <p className="mb-3 mt-0.5 text-sm text-slate-500">{hint}</p>}
+      {children}
+    </section>
+  );
+}
+
 function WordingTab({ settings, reload }) {
   const sb = supabase();
   const d = settings.data;
-  const [warranty, setWarranty] = useState(pairsToText(d.warranty));
-  const [terms, setTerms] = useState(pairsToText(d.terms));
-  const [ours, setOurs] = useState(linesToText(d.our_scope));
-  const [theirs, setTheirs] = useState(linesToText(d.customer_scope));
+  const [warranty, setWarranty] = useState(d.warranty || []);
+  const [terms, setTerms] = useState(d.terms || []);
+  const [ours, setOurs] = useState(d.our_scope || []);
+  const [theirs, setTheirs] = useState(d.customer_scope || []);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState(null);
 
+  const clean = (arr) => arr.filter((x) => (typeof x === "string" ? x.trim() : x.label.trim() || x.text.trim()));
   const save = async () => {
     setBusy(true);
-    const data = { ...d, warranty: textToPairs(warranty), terms: textToPairs(terms), our_scope: textToLines(ours), customer_scope: textToLines(theirs) };
+    const data = { ...d, warranty: clean(warranty), terms: clean(terms), our_scope: clean(ours), customer_scope: clean(theirs) };
     const { error } = await sb.from("app_settings").update({ data }).eq("id", 1);
     setBusy(false);
     setMsg(error ? { tone: "red", text: error.message } : { tone: "green", text: "Saved" });
@@ -237,12 +240,20 @@ function WordingTab({ settings, reload }) {
 
   return (
     <div className="card p-5">
-      <Notice>One item per line. For warranty and terms write <b>Label | text</b>, for example: <b>GST | Included in the above price</b>. Changes apply to every quote, including old ones when reprinted.</Notice>
-      <div className="mt-4 grid gap-4 lg:grid-cols-2">
-        <Field label="Warranty"><textarea className="input min-h-32 font-mono text-xs" value={warranty} onChange={(e) => setWarranty(e.target.value)} /></Field>
-        <Field label="Terms and conditions"><textarea className="input min-h-32 font-mono text-xs" value={terms} onChange={(e) => setTerms(e.target.value)} /></Field>
-        <Field label="Surya's Solar will do"><textarea className="input min-h-40 text-sm" value={ours} onChange={(e) => setOurs(e.target.value)} /></Field>
-        <Field label="Customer will provide"><textarea className="input min-h-40 text-sm" value={theirs} onChange={(e) => setTheirs(e.target.value)} /></Field>
+      <Notice>This wording prints on every quotation. Changes also apply when an older quote is printed again.</Notice>
+      <div className="mt-2">
+        <Section title="Warranty" hint="Shown in the Warranty table.">
+          <PairList items={warranty} onChange={setWarranty} labelPlaceholder="e.g. Solar panels" textPlaceholder="e.g. 12 years product warranty" addLabel="Add warranty line" />
+        </Section>
+        <Section title="Terms and conditions" hint="Validity is added automatically from each quote.">
+          <PairList items={terms} onChange={setTerms} labelPlaceholder="e.g. Payment" textPlaceholder="e.g. 80% advance with order" addLabel="Add term" />
+        </Section>
+        <Section title="Surya's Solar will do">
+          <LineList items={ours} onChange={setOurs} placeholder="e.g. Net-meter application support" addLabel="Add item" />
+        </Section>
+        <Section title="Customer will provide">
+          <LineList items={theirs} onChange={setTheirs} placeholder="e.g. Rs 500 stamp paper" addLabel="Add item" />
+        </Section>
       </div>
       <SaveBar onSave={save} busy={busy} msg={msg} />
     </div>
@@ -253,15 +264,13 @@ const EMPTY_PKG = { name: "", kw: 3, inverter_kw: 3, phase: 1, panel_count: 6, p
 
 function PackageForm({ initial, onDone }) {
   const sb = supabase();
-  const [p, setP] = useState({ ...EMPTY_PKG, ...initial, bomText: (initial.bom || []).map((r) => [r.item, r.make, r.spec, r.qty].join(" | ")).join("\n") });
+  const [p, setP] = useState({ ...EMPTY_PKG, ...initial, bom: initial.bom || [] });
   const [err, setErr] = useState("");
   const set = (k, num) => (e) => setP({ ...p, [k]: num ? Number(e.target.value) : e.target.value });
 
   const save = async () => {
-    const bom = textToLines(p.bomText).map((l) => {
-      const [item = "", make = "", spec = "", qty = ""] = l.split("|").map((x) => x.trim());
-      return { item, make, spec, qty };
-    });
+    if (!p.name.trim()) return setErr("Give the package a name.");
+    const bom = p.bom.filter((r) => r.item.trim());
     const row = { name: p.name, kw: p.kw, inverter_kw: p.inverter_kw, phase: p.phase, panel_count: p.panel_count, panel_watt: p.panel_watt,
       panel_type: p.panel_type, panel_brand: p.panel_brand, inverter_brand: p.inverter_brand, price: p.price, bom, active: p.active, sort: p.sort };
     const { error } = p.id ? await sb.from("packages").update(row).eq("id", p.id) : await sb.from("packages").insert(row);
@@ -277,15 +286,16 @@ function PackageForm({ initial, onDone }) {
       <Field label="Phase"><Segmented size="sm" value={p.phase} onChange={(v) => setP({ ...p, phase: Number(v) })} options={[{ id: 1, label: "Single phase" }, { id: 3, label: "Three phase" }]} /></Field>
       <Field label="Price (₹, GST included)"><input className="input" type="number" value={p.price} onChange={set("price", true)} /></Field>
       <Field label="No. of panels"><input className="input" type="number" value={p.panel_count} onChange={set("panel_count", true)} /></Field>
-      <Field label="Panel watt"><input className="input" value={p.panel_watt} onChange={set("panel_watt")} placeholder="555 to 625" /></Field>
+      <Field label="Panel watt"><input className="input" value={p.panel_watt} onChange={set("panel_watt")} placeholder="e.g. 555 to 625" /></Field>
       <Field label="Panel type" className="sm:col-span-2"><input className="input" value={p.panel_type || ""} onChange={set("panel_type")} /></Field>
       <Field label="Panel brand"><input className="input" value={p.panel_brand || ""} onChange={set("panel_brand")} /></Field>
       <Field label="Inverter brand"><input className="input" value={p.inverter_brand || ""} onChange={set("inverter_brand")} /></Field>
-      <Field label="Other materials: Item | Make | Specification | Qty (one per line)" className="sm:col-span-2">
-        <textarea className="input min-h-40 font-mono text-xs" value={p.bomText} onChange={set("bomText")} />
-      </Field>
-      <Field label="Order in list"><input className="input" type="number" value={p.sort} onChange={set("sort", true)} /></Field>
-      <label className="flex items-center gap-2 self-end pb-2 text-sm font-semibold"><input type="checkbox" checked={p.active} onChange={(e) => setP({ ...p, active: e.target.checked })} />Show when making quotes</label>
+      <div className="sm:col-span-2">
+        <span className="label">Other materials (panels and inverter are added automatically as items 1 and 2)</span>
+        <BomRows rows={p.bom} onChange={(bom) => setP({ ...p, bom })} startNumber={3} />
+      </div>
+      <Field label="Position in list"><input className="input" type="number" value={p.sort} onChange={set("sort", true)} /></Field>
+      <div className="self-end"><Switch checked={p.active} onChange={(v) => setP({ ...p, active: v })} label="Show when making quotes" /></div>
       {err && <div className="sm:col-span-2"><Notice tone="red">{err}</Notice></div>}
       <div className="flex justify-end gap-2 sm:col-span-2"><button className="btn-ghost" onClick={onDone}>Cancel</button><button className="btn-primary" onClick={save}>Save package</button></div>
     </div>
@@ -348,18 +358,26 @@ function TeamTab() {
     load();
     reload();
   };
+  const setName = async (u, full_name) => {
+    const name = full_name.trim();
+    if (!name || name === u.full_name) return;
+    await sb.from("profiles").update({ full_name: name }).eq("id", u.id);
+    load();
+    reload();
+  };
 
   if (!list) return <Spinner />;
   return (
     <div className="card divide-y divide-slate-100">
       <div className="p-5">
-        <Notice>New staff open the app and choose <b>Create an account</b>. They appear here as <b>Waiting</b>. Approve them as Staff. Staff can add leads, quotes and expenses, but cannot see this dashboard, other people&apos;s data or settings.</Notice>
+        <Notice>To add a staff member, create their login in Supabase (Authentication, Add user) or ask them to use <b>Create an account</b> on the login page. They appear here as <b>Waiting</b> until you set them to <b>Staff</b>. Staff can add leads, quotes and expenses, but cannot see the dashboard, settings or other people&apos;s records.</Notice>
       </div>
       {list.map((u) => (
         <div key={u.id} className="flex flex-wrap items-center justify-between gap-3 p-5">
-          <div>
-            <p className="font-semibold text-slate-900">{u.full_name} {u.id === profile.id && <span className="text-xs text-slate-400">(you)</span>}</p>
-            <p className="text-sm text-slate-500">{u.email}</p>
+          <div className="min-w-0 flex-1 sm:max-w-sm">
+            <input className="input font-semibold" defaultValue={u.full_name || ""} placeholder="Full name"
+              onBlur={(e) => setName(u, e.target.value)} onKeyDown={(e) => e.key === "Enter" && e.currentTarget.blur()} aria-label="Full name" />
+            <p className="mt-1 truncate px-1 text-sm text-slate-500">{u.email}{u.id === profile.id && " · you"}</p>
           </div>
           {u.id === profile.id ? <Badge tone="pink">Owner</Badge> : (
             <div className="flex items-center gap-2">

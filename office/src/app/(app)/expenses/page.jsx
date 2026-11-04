@@ -123,12 +123,12 @@ export default function Expenses() {
             </div>
           </div>
           <div className="mt-3 grid grid-cols-2 gap-3">
-            <Field label="Site / customer" className="col-span-2"><input className="input" value={f.site} onChange={set("site")} placeholder="Balaji, Vanniyarpalayam" /></Field>
+            <Field label="Site / customer" className="col-span-2"><input className="input" value={f.site} onChange={set("site")} placeholder="e.g. Surya, Cuddalore" /></Field>
             <Field label="Paid by"><input className="input" value={f.paid_by} onChange={set("paid_by")} /></Field>
             <Field label="Paid using" className="col-span-2">
               <Segmented size="sm" value={f.payment_mode} onChange={(v) => setF({ ...f, payment_mode: v })} options={PAY_MODES} />
             </Field>
-            <Field label="Note" className="col-span-2"><input className="input" value={f.note} onChange={set("note")} placeholder="10 m DC cable, lunch for 3 workers..." /></Field>
+            <Field label="Note" className="col-span-2"><input className="input" value={f.note} onChange={set("note")} placeholder="e.g. 10 m DC cable for the Cuddalore site" /></Field>
           </div>
           <label className="mt-3 flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-slate-300 p-3 text-sm text-slate-600 hover:bg-slate-50">
             <Icon name="camera" className="h-6 w-6 text-primary" />

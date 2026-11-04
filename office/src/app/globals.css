@@ -36,3 +36,6 @@ html, body { background: #f6f7fb; color: #0f172a; }
   html, body { background: #fff; }
   main { padding: 0 !important; margin: 0 !important; max-width: none !important; }
 }
+
+/* text boxes that grow to show the whole sentence (no hidden text on phones) */
+.grow-text { field-sizing: content; min-height: 2.6rem; resize: none; line-height: 1.4; }

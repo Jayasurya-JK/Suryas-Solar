@@ -143,7 +143,7 @@ export function Spinner() {
 
 export function Notice({ tone = "amber", children }) {
   const cls = tone === "red" ? "bg-red-50 border-red-200 text-red-700" : tone === "green" ? "bg-green-50 border-green-200 text-green-800" : "bg-amber-50 border-amber-200 text-amber-800";
-  return <div className={`flex gap-2 rounded-xl border p-3 text-sm ${cls}`}><Icon name="info" className="mt-0.5 h-4 w-4 shrink-0" />{children}</div>;
+  return <div className={`flex gap-2 rounded-xl border p-3 text-sm ${cls}`}><Icon name="info" className="mt-0.5 h-4 w-4 shrink-0" /><div className="min-w-0 flex-1 leading-relaxed">{children}</div></div>;
 }
 
 const PATHS = {

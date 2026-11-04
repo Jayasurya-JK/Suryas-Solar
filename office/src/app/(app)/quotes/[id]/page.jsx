@@ -6,6 +6,7 @@ import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import { QuotePreview } from "@/components/QuoteDocument";
+import { BomRows } from "@/components/ListEditors";
 import { Field, Icon, Notice, Segmented, Spinner, Switch } from "@/components/ui";
 import { QUOTE_STATUSES, calcQuote, inr, rupees, waLink } from "@/lib/format";
 
@@ -43,7 +44,6 @@ export default function QuoteEditor() {
   const setC = (k) => (e) => update({ customer: { ...q.customer, [k]: e.target.value } });
   const setS = (k, num) => (e) => update({ system: { ...q.system, [k]: num ? Number(e.target.value) : e.target.value } });
   const setX = (k, v) => update({ extras: { ...q.extras, [k]: v } });
-  const setRow = (i, k, v) => update({ bom: q.bom.map((r, j) => (j === i ? { ...r, [k]: v } : r)) });
 
   const save = async (extra = {}) => {
     setBusy(true);
@@ -140,7 +140,7 @@ export default function QuoteEditor() {
               <Field label="Roof type"><input className="input" value={sys.roof || ""} onChange={setS("roof")} /></Field>
               <Field label="Panel type" className="sm:col-span-2"><input className="input" value={sys.panel_type || ""} onChange={setS("panel_type")} /></Field>
               <Field label="Panel brand"><input className="input" value={sys.panel_brand || ""} onChange={setS("panel_brand")} /></Field>
-              <Field label="Panel watt (Wp)"><input className="input" value={sys.panel_watt || ""} onChange={setS("panel_watt")} placeholder="580 or 555 to 625" /></Field>
+              <Field label="Panel watt (Wp)"><input className="input" value={sys.panel_watt || ""} onChange={setS("panel_watt")} placeholder="e.g. 580 or 555 to 625" /></Field>
               <Field label="No. of panels"><input className="input" type="number" value={sys.panel_count ?? ""} onChange={setS("panel_count", true)} /></Field>
               <Field label="Inverter brand"><input className="input" value={sys.inverter_brand || ""} onChange={setS("inverter_brand")} /></Field>
             </div>
@@ -200,26 +200,8 @@ export default function QuoteEditor() {
 
           <section className="card p-5">
             <h2 className="mb-1 font-bold text-slate-900">Other materials</h2>
-            <p className="mb-3 text-xs text-slate-500">Rows 1 and 2 (panels and inverter) come from the System section.</p>
-            <div className="space-y-3">
-              {(q.bom || []).map((r, i) => (
-                <div key={i} className="rounded-xl border border-slate-200 p-3">
-                  <div className="mb-2 flex items-center justify-between">
-                    <span className="text-xs font-bold text-slate-400">Row {i + 3}</span>
-                    <button className="text-slate-400 hover:text-red-600" onClick={() => update({ bom: q.bom.filter((_, j) => j !== i) })} title="Remove row"><Icon name="trash" className="h-4 w-4" /></button>
-                  </div>
-                  <div className="grid gap-2 sm:grid-cols-2">
-                    <input className="input" placeholder="Item" value={r.item} onChange={(e) => setRow(i, "item", e.target.value)} />
-                    <input className="input" placeholder="Make" value={r.make} onChange={(e) => setRow(i, "make", e.target.value)} />
-                    <input className="input sm:col-span-2" placeholder="Specification" value={r.spec} onChange={(e) => setRow(i, "spec", e.target.value)} />
-                    <input className="input" placeholder="Qty" value={r.qty} onChange={(e) => setRow(i, "qty", e.target.value)} />
-                  </div>
-                </div>
-              ))}
-              <button className="btn-ghost w-full" onClick={() => update({ bom: [...(q.bom || []), { item: "", make: "", spec: "", qty: "" }] })}>
-                <Icon name="plus" className="h-4 w-4" />Add material row
-              </button>
-            </div>
+            <p className="mb-3 text-xs text-slate-500">Items 1 and 2 (panels and inverter) come from the System section above.</p>
+            <BomRows rows={q.bom || []} onChange={(bom) => update({ bom })} startNumber={3} />
           </section>
 
           {isOwner && <button onClick={remove} className="btn-danger w-full"><Icon name="trash" className="h-4 w-4" />Delete quote</button>}

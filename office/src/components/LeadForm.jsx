@@ -47,7 +47,7 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
       <Field label="Customer name *"><input className="input" required value={f.name} onChange={set("name")} /></Field>
       <Field label="Mobile"><input className="input" inputMode="tel" value={f.phone || ""} onChange={set("phone")} placeholder="10-digit number" /></Field>
       <Field label="Address / area"><input className="input" value={f.address || ""} onChange={set("address")} /></Field>
-      <Field label="Town"><input className="input" value={f.town || ""} onChange={set("town")} placeholder="Cuddalore" /></Field>
+      <Field label="Town"><input className="input" value={f.town || ""} onChange={set("town")} placeholder="e.g. Cuddalore" /></Field>
       <Field label="Where did this lead come from?" className="sm:col-span-2">
         <Segmented size="sm" value={f.source} onChange={(v) => setF({ ...f, source: v })} options={LEAD_SOURCES} />
       </Field>
