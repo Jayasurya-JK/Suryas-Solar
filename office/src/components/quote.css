@@ -1,0 +1,108 @@
+/* Printable quotation, laid out as real A4 sheets (see QuoteDocument.jsx). */
+.qd {
+  --pink: #c2185b; --teal: #0f766e; --ink: #0f172a; --text: #1e293b; --muted: #334155;
+  --line: #cbd5e1; --soft: #eef2f7; --pinksoft: #fdeef5; --tealsoft: #e6f4f1;
+  width: 210mm; background: #fff; color: var(--text);
+  /* same web font on screen and in the PDF, so both look identical */
+  font-family: var(--font-inter), "Segoe UI", Arial, sans-serif; font-size: 9.6pt; line-height: 1.45;
+}
+/* print colour bands, heading bars and tinted boxes even when "Background graphics" is off */
+.qd, .qd * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+/* ---------- letterhead ---------- */
+.qd-head, .qd-foot { padding: 0 15mm; background: #fff; }
+.qd-head .band { height: 3mm; background: linear-gradient(100deg, var(--pink) 0 60%, #179e8f 60% 100%); margin: 0 -15mm 3.5mm; }
+.qd .lh { display: flex; align-items: center; gap: 5mm; padding-bottom: 3mm; position: relative; }
+.qd .lh::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: .35mm; background: var(--line); }
+.qd .lh::before { content: ""; position: absolute; left: 0; bottom: 0; width: 38mm; height: .7mm; background: var(--pink); z-index: 1; }
+.qd .lh .logo { height: 15mm; width: auto; }
+.qd .lh .vendor { border-left: .35mm solid var(--line); padding-left: 5mm; flex: 1; }
+.qd .lh .vendor .v1 { font-size: 9.6pt; font-weight: 700; color: var(--ink); }
+.qd .lh .vendor .v2 { font-size: 8.4pt; color: var(--muted); margin-top: .5mm; }
+.qd .lh .brand { text-align: right; min-width: 32mm; }
+.qd .lh .brand .cap { font-size: 6.8pt; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 1mm; }
+.qd .lh .brand img { height: 10mm; max-width: 42mm; width: auto; object-fit: contain; display: inline-block; }
+.qd .lh .brand .name { font-size: 11pt; font-weight: 700; color: var(--ink); }
+
+.qd-foot .info { border-top: .35mm solid var(--line); padding: 1.6mm 0; display: flex; justify-content: space-between; gap: 4mm; font-size: 8pt; line-height: 1.5; color: var(--muted); }
+.qd-foot .info b { color: var(--ink); font-weight: 700; }
+.qd-foot .band { height: 3mm; background: linear-gradient(100deg, #179e8f 0 40%, var(--pink) 40% 100%); margin: 0 -15mm; }
+
+/* ---------- A4 sheets (same pages on screen and in the PDF) ---------- */
+.qd .sheet { width: 210mm; height: 297mm; background: #fff; display: flex; flex-direction: column; overflow: hidden; position: relative; }
+.qd .sbody { flex: 1; min-height: 0; padding: 1mm 15mm 0; overflow: hidden; }
+.qd .qd-foot { margin-top: auto; }
+.qd .pgno { font-size: 7.5pt; font-weight: 700; letter-spacing: .08em; color: var(--muted); white-space: nowrap; }
+.qd .blk { display: flow-root; }
+.qd .cont { font-size: 8pt; font-weight: 700; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin: 3mm 0 1.5mm; }
+
+/* ---------- first-page title block ---------- */
+.qd .title { display: grid; grid-template-columns: 1fr 82mm; gap: 6mm; align-items: end; margin: 5mm 0 4mm; }
+.qd .title .kicker { font-size: 8.5pt; font-weight: 700; letter-spacing: .3em; color: var(--pink); }
+.qd .title h1 { margin: 1mm 0 0; font-size: 19pt; line-height: 1.15; font-weight: 700; color: var(--ink); }
+.qd .title .subt { margin-top: 1.2mm; font-size: 10pt; color: var(--muted); font-weight: 600; }
+.qd .metabox { border: .35mm solid var(--line); border-radius: 2mm; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+.qd .metabox div { padding: 2mm 3mm; border-bottom: .35mm solid var(--line); }
+.qd .metabox div:nth-child(odd) { border-right: .35mm solid var(--line); }
+.qd .metabox div:nth-last-child(-n+2) { border-bottom: 0; }
+.qd .metabox span { display: block; font-size: 7pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.qd .metabox b { font-size: 10pt; color: var(--ink); white-space: nowrap; }
+
+.qd .parties { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-bottom: 4mm; }
+.qd .pcard { border: .35mm solid var(--line); border-radius: 2mm; padding: 3mm 4mm; }
+.qd .pcard .cap { font-size: 7pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pink); margin-bottom: 1.5mm; }
+.qd .pcard .nm { font-size: 11.5pt; font-weight: 700; color: var(--ink); }
+.qd .pcard .ln { color: var(--text); }
+.qd .pcard.glance { background: var(--soft); border-color: var(--soft); }
+.qd .pcard.glance .cap { color: var(--teal); }
+.qd .kv { display: flex; justify-content: space-between; gap: 3mm; padding: .6mm 0; }
+.qd .kv span { color: var(--muted); }
+.qd .kv b { color: var(--ink); text-align: right; }
+.qd .kv.hl { margin-top: 1mm; padding-top: 1.5mm; border-top: .35mm solid var(--line); }
+.qd .kv.hl b { color: var(--teal); font-size: 12pt; }
+
+/* ---------- body ---------- */
+.qd p { margin: 0 0 2.5mm; color: var(--text); }
+.qd .small { font-size: 8.4pt; color: var(--muted); }
+.qd h4 { margin: 4mm 0 1.6mm; font-size: 10pt; text-transform: uppercase; letter-spacing: .08em; color: var(--ink); font-weight: 700; display: flex; align-items: center; gap: 2.5mm; break-after: avoid; }
+.qd h4::before { content: ""; width: 1.2mm; height: 4.2mm; background: var(--pink); border-radius: .6mm; }
+.qd table.t { width: 100%; border-collapse: collapse; font-size: 9.2pt; line-height: 1.4; color: var(--text); }
+.qd table.t th, .qd table.t td { border: .3mm solid var(--line); padding: 1.15mm 2.4mm; vertical-align: top; text-align: left; }
+.qd table.t th { background: var(--soft); font-weight: 700; color: var(--ink); font-size: 8.6pt; }
+.qd table.t tr { break-inside: avoid; }
+.qd .c { text-align: center !important; }
+.qd .r { text-align: right !important; white-space: nowrap; }
+.qd .lbl { color: var(--muted); font-weight: 700; }
+.qd .nowrap { white-space: nowrap; }
+.qd table.t td b { color: var(--ink); }
+.qd .price td { padding: 1.5mm 2.8mm; }
+.qd .price .opt td { color: var(--muted); }
+.qd .price .tot td { background: var(--pinksoft); font-weight: 700; font-size: 10.5pt; color: var(--pink); }
+.qd .price .subr td { color: var(--teal); font-weight: 700; }
+.qd .price .net td { background: var(--tealsoft); font-weight: 700; font-size: 11.5pt; color: var(--teal); }
+.qd .two { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.qd .box { border: .3mm solid var(--line); border-radius: 2mm; padding: 2.8mm 4mm; font-size: 9.2pt; break-inside: avoid; }
+.qd .box h5 { margin: 0 0 2mm; font-size: 8.6pt; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+.qd .box ol { margin: 0; padding-left: 5mm; list-style: decimal; }
+.qd .box li { margin-bottom: .4mm; }
+.qd .sign { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 3mm; break-inside: avoid; }
+.qd .sign img { height: 15mm; width: auto; display: block; }
+.qd .accept { border-top: .35mm solid var(--ink); padding-top: 1.5mm; min-width: 62mm; text-align: center; font-size: 8.8pt; color: var(--muted); }
+
+/* on screen: QuotePreview scales the sheets to fill its column, with a gap between pages */
+@media screen {
+  .qd-preview { width: 100%; max-width: 100%; overflow: hidden; }
+  .qd-preview .qd { display: flex; flex-direction: column; gap: 6mm; background: transparent; }
+  .qd-preview .sheet { box-shadow: 0 1px 3px rgba(15,23,42,.12), 0 6px 24px rgba(15,23,42,.08); border-radius: 1.5mm; }
+}
+/* hidden copy used only to measure heights for page breaks */
+.qd-measure { position: absolute; left: -10000px; top: 0; visibility: hidden; pointer-events: none; }
+
+@page { size: A4; margin: 0; }
+@media print {
+  .qd-zoom { zoom: 1 !important; }
+  .qd-measure { display: none; }
+  .qd { width: 210mm; }
+  .qd .sheet { break-after: page; height: 296.6mm; }
+  .qd .sheet:last-child { break-after: auto; }
+}
