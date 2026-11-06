@@ -105,10 +105,10 @@ export default function Dashboard() {
       {!k ? <CardsSkeleton /> : (
         <div className="space-y-5">
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
-            <Stat icon="users" label="New leads" value={k.leads} hint={`${k.web} from the website`} />
-            <Stat icon="doc" label="Quotes sent" value={k.quotes} hint={`worth ${rupees(k.quoteValue)}`} tone="accent" />
-            <Stat icon="trophy" label="Orders won" value={k.won} hint={`${rupees(k.wonValue)} · ${inr(k.wonKw)} kWp`} tone="teal" />
-            <Stat icon="wallet" label="Expenses" value={rupees(k.spend)} hint="spent this month" tone="slate" />
+            <Stat href="/leads" icon="users" label="New leads" value={k.leads} hint={`${k.web} from the website`} />
+            <Stat href="/quotes" icon="doc" label="Quotes sent" value={k.quotes} hint={`worth ${rupees(k.quoteValue)}`} tone="accent" />
+            <Stat href="/quotes?status=accepted" icon="trophy" label="Orders won" value={k.won} hint={`${rupees(k.wonValue)} · ${inr(k.wonKw)} kWp`} tone="teal" />
+            <Stat href="/expenses" icon="wallet" label="Expenses" value={rupees(k.spend)} hint="spent this month" tone="slate" />
           </div>
 
           <Panel title="Lead pipeline" action={<span className="text-xs font-semibold text-slate-500">{k.conv}% won</span>}>

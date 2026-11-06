@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import Link from "next/link";
 
 const TONES = {
   blue: "bg-primary-50 text-primary",
@@ -208,23 +209,35 @@ export function Empty({ title, text, children, icon = "inbox" }) {
   );
 }
 
-export function Stat({ label, value, hint, tone = "primary", icon }) {
+export function Stat({ label, value, hint, tone = "primary", icon, href }) {
   const t = {
     primary: ["text-primary", "bg-primary-50 text-primary"],
     accent: ["text-accent", "bg-accent-50 text-accent"],
     teal: ["text-teal", "bg-teal-50 text-teal"],
     slate: ["text-slate-900", "bg-slate-100 text-slate-700"],
   }[tone];
-  return (
-    <div className="card p-4 sm:p-5">
+  const body = (
+    <>
       <div className="flex items-center justify-between gap-2">
         <p className="text-[13px] font-semibold text-slate-500">{label}</p>
         {icon && <span className={`flex h-8 w-8 items-center justify-center rounded-xl ${t[1]}`}><Icon name={icon} className="h-4 w-4" /></span>}
       </div>
       <p className={`mt-2 text-2xl font-bold tracking-tight sm:text-[28px] ${t[0]}`}>{value}</p>
-      {hint && <p className="mt-1 text-xs text-slate-500">{hint}</p>}
-    </div>
+      <div className="mt-1 flex items-end justify-between gap-2">
+        {hint ? <p className="text-xs text-slate-500">{hint}</p> : <span />}
+        {href && <Icon name="chevron" className="h-3.5 w-3.5 shrink-0 text-slate-300" />}
+      </div>
+    </>
   );
+
+  if (href) {
+    return (
+      <Link href={href} className="card block p-4 transition hover:border-primary/40 hover:shadow-md active:scale-[.985] sm:p-5">
+        {body}
+      </Link>
+    );
+  }
+  return <div className="card p-4 sm:p-5">{body}</div>;
 }
 
 export function Spinner() {

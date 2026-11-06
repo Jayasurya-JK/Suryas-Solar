@@ -15,6 +15,12 @@ export default function Quotes() {
   const [status, setStatus] = useState("all");
   const [q, setQ] = useState("");
 
+  // Coming from a dashboard card: /quotes?status=accepted opens already filtered.
+  useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get("status");
+    if (wanted && QUOTE_STATUSES.some((s) => s.id === wanted)) setStatus(wanted);
+  }, []);
+
   useEffect(() => {
     sb.from("quotes").select("id, ref_no, quote_date, customer, system, total, net, status, lead_id")
       .order("created_at", { ascending: false }).limit(1000)
