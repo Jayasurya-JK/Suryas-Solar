@@ -30,7 +30,7 @@ function AccessGate({ profile, kind, onRefresh, onSignOut, checkedAt }) {
   }[kind];
   const asked = (profile?.requested_perms || []).map(permLabel);
   return (
-    <div className="flex min-h-dvh items-center justify-center bg-gradient-to-b from-primary-50 via-primary-50/60 to-white p-4">
+    <div className="flex page-min items-center justify-center bg-gradient-to-b from-primary-50 via-primary-50/60 to-white p-4">
       <div className="card w-full max-w-md p-7 text-center">
         <Image src="/logo.png" alt="Surya's Solar" width={180} height={77} className="mx-auto mb-5 h-auto w-40" />
         <div className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl ${kind === "waiting" ? "bg-amber-50 text-amber-600" : "bg-red-50 text-red-600"}`}>
@@ -145,7 +145,7 @@ export default function AppShell({ children }) {
     router.replace("/login");
   };
 
-  if (state.loading) return <div className="flex min-h-dvh items-center justify-center"><Spinner /></div>;
+  if (state.loading) return <div className="flex page-min items-center justify-center"><Spinner /></div>;
 
   if (!profile) return <AccessGate profile={null} kind="waiting" onRefresh={load} onSignOut={signOut} checkedAt={checkedAt} />;
   if (profile.role === "pending") {

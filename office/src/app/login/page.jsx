@@ -95,7 +95,7 @@ export default function Login() {
   const idLabel = mode === "signin" ? "User ID or email" : useEmail ? "Email" : "Choose a User ID";
 
   return (
-    <div className="flex min-h-dvh items-center justify-center bg-gradient-to-b from-primary-50 via-primary-50/60 to-white p-4">
+    <div className="flex page-min items-center justify-center bg-gradient-to-b from-primary-50 via-primary-50/60 to-white p-4">
       <div className="card w-full max-w-md p-6 shadow-sm sm:p-8">
         <Image src="/logo.png" alt="Surya's Solar" width={200} height={86} className="mx-auto h-auto w-44" priority />
         <p className="mt-2 text-center text-[11px] font-bold uppercase tracking-widest text-slate-500">Office</p>

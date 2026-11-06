@@ -34,6 +34,15 @@ html, body { background: #f4f6fa; color: #0f172a; -webkit-tap-highlight-color: t
 @utility label { @apply mb-1 block text-xs font-semibold text-slate-500; }
 @utility input { @apply block min-h-11 w-full min-w-0 max-w-full appearance-none rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-base text-slate-900 outline-none transition-colors sm:text-sm placeholder:text-slate-400 focus:border-primary focus:ring-4 focus:ring-primary-100; }
 
+/* viewport sizing that degrades cleanly. Kept as plain classes, not @utility, because the
+   minifier collapses the two declarations in one rule and would drop the vh fallback. */
+.page-min { min-height: 100vh; }
+.sheet-max { max-height: 92vh; }
+@supports (height: 100dvh) {
+  .page-min { min-height: 100dvh; }
+  .sheet-max { max-height: 92dvh; }
+}
+
 @layer base {
 /* iPhone Safari draws date and month boxes with its own width and centred text; make them behave like other boxes */
 input[type="date"], input[type="month"], input[type="time"] {

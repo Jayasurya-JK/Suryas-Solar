@@ -149,17 +149,18 @@ export function SearchBox({ value, onChange, placeholder }) {
 
 export function Modal({ title, onClose, children, wide = false }) {
   return (
-    <div className="fixed inset-0 z-[60] flex items-end justify-center bg-slate-900/50 backdrop-blur-sm sm:items-center sm:overflow-y-auto sm:p-4" onClick={onClose}>
+    <div className="fixed inset-0 z-[60] flex items-end justify-center bg-slate-900/50 backdrop-blur-sm sm:items-center sm:p-4" onClick={onClose}>
       <div onClick={(e) => e.stopPropagation()}
-        className={`flex max-h-[92dvh] w-full flex-col rounded-t-3xl bg-white shadow-2xl sm:my-8 sm:max-h-none sm:rounded-2xl ${wide ? "sm:max-w-3xl" : "sm:max-w-lg"}`}>
-        <div className="mx-auto mt-2.5 h-1.5 w-10 rounded-full bg-slate-200 sm:hidden" />
-        <div className="flex items-center justify-between px-5 pb-3 pt-3 sm:border-b sm:border-slate-100 sm:py-4">
+        className={`sheet-max flex w-full flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:my-8 sm:rounded-2xl ${wide ? "sm:max-w-3xl" : "sm:max-w-lg"}`}>
+        <div className="mx-auto mt-2.5 h-1.5 w-10 shrink-0 rounded-full bg-slate-200 sm:hidden" />
+        <div className="flex shrink-0 items-center justify-between px-5 pb-3 pt-3 sm:border-b sm:border-slate-100 sm:py-4">
           <h2 className="text-lg font-bold text-slate-900">{title}</h2>
           <button onClick={onClose} className="rounded-full p-1.5 text-slate-500 hover:bg-slate-100 hover:text-slate-800" aria-label="Close">
             <Icon name="x" />
           </button>
         </div>
-        <div className="overflow-y-auto px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-1 sm:pt-5">{children}</div>
+        {/* min-h-0 lets this box shrink so it scrolls inside the sheet instead of pushing the buttons off-screen */}
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-1 [-webkit-overflow-scrolling:touch] sm:pt-5">{children}</div>
       </div>
     </div>
   );
