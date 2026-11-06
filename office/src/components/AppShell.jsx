@@ -7,6 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { Avatar, Icon, Modal, Spinner } from "@/components/ui";
 import InstallBanner from "@/components/InstallBanner";
+import VersionBar from "@/components/VersionBar";
 import { ago, isOwnerRole, permLabel, roleLabel } from "@/lib/format";
 
 const Ctx = createContext(null);
@@ -65,6 +66,10 @@ export default function AppShell({ children }) {
   const [menu, setMenu] = useState(false);
   const [more, setMore] = useState(false);
   const [checkedAt, setCheckedAt] = useState(null);
+  const [pull, setPull] = useState(0);
+  const [refreshing, setRefreshing] = useState(false);
+  const [pullNote, setPullNote] = useState("");
+  const pullStart = useRef(null);
   const [state, setState] = useState({ loading: true, profile: null, settings: null, team: [], brands: [], signUrl: null, requests: 0 });
 
   const load = useCallback(async () => {
@@ -156,6 +161,38 @@ export default function AppShell({ children }) {
     try { sessionStorage.removeItem("so-login"); } catch {}
     await sb.auth.signOut();
     router.replace("/login");
+  };
+
+  // Pull down at the top of a screen to reload - the gesture people expect from a phone app. Screens with
+  // unsaved edits set window.__soDirty, so a stray pull cannot throw their work away.
+  const PULL_TRIGGER = 56;
+  const onPullStart = (e) => {
+    const el = scrollRef.current;
+    if (!el || el.scrollTop > 0 || e.touches.length !== 1) return;
+    pullStart.current = e.touches[0].clientY;
+  };
+  const onPullMove = (e) => {
+    if (pullStart.current === null) return;
+    const el = scrollRef.current;
+    const dy = e.touches[0].clientY - pullStart.current;
+    if (dy <= 0 || (el && el.scrollTop > 0)) {
+      if (pull !== 0) setPull(0);
+      return;
+    }
+    setPull(Math.min(96, dy * 0.5));
+  };
+  const onPullEnd = () => {
+    const distance = pull;
+    pullStart.current = null;
+    setPull(0);
+    if (distance < PULL_TRIGGER || refreshing) return;
+    if (window.__soDirty) {
+      setPullNote("Save your changes first");
+      setTimeout(() => setPullNote(""), 2500);
+      return;
+    }
+    setRefreshing(true);
+    window.location.reload();
   };
 
   if (state.loading) return <div className="flex page-min items-center justify-center"><Spinner /></div>;
@@ -259,8 +296,17 @@ export default function AppShell({ children }) {
             </div>
           </header>
 
-          <main id="scroll" ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain">
+          <main id="scroll" ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain"
+            onTouchStart={onPullStart} onTouchMove={onPullMove} onTouchEnd={onPullEnd}>
             <div className="mx-auto w-full max-w-7xl px-4 pb-28 pt-5 sm:px-6 sm:pb-10 lg:px-10 lg:pb-12 lg:pt-9">
+              {/* Pull-to-refresh: an installed app has no browser, so no swipe-down reload of its own. */}
+              <div className="flex items-start justify-center overflow-hidden transition-[height] duration-150"
+                style={{ height: refreshing ? 48 : pull }}>
+                {(refreshing || pull > 24) && (
+                  <span className="mt-1 h-6 w-6 animate-spin rounded-full border-2 border-primary/30 border-t-primary" />
+                )}
+              </div>
+              {pullNote && <div className="mb-3 rounded-xl bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-800">{pullNote}</div>}
               <InstallBanner />
               {blocked ? (
                 <div className="card p-8 text-center text-slate-600">You do not have access to this screen. Please ask the owner.</div>
@@ -321,6 +367,7 @@ export default function AppShell({ children }) {
           </div>
         </Modal>
       )}
+      <VersionBar />
     </Ctx.Provider>
   );
 }

@@ -28,6 +28,12 @@ export default function QuoteEditor() {
   const [pdfBusy, setPdfBusy] = useState(false);
   const pdfRef = useRef(null);
 
+  // Lets the app shell know a pull-to-refresh would throw away edits.
+  useEffect(() => {
+    window.__soDirty = dirty;
+    return () => { window.__soDirty = false; };
+  }, [dirty]);
+
   const load = useCallback(async () => {
     const { data } = await sb.from("quotes").select("*").eq("id", id).maybeSingle();
     setQ(data);
