@@ -9,7 +9,8 @@ import { Avatar, Icon, Modal, Spinner } from "@/components/ui";
 import InstallBanner from "@/components/InstallBanner";
 import VersionBar from "@/components/VersionBar";
 import ConfirmHost from "@/components/Confirm";
-import { ago, isOwnerRole, permLabel, roleLabel } from "@/lib/format";
+import { StatusPicker, markAttendance as markAttendanceRow } from "@/components/Attendance";
+import { ago, isOwnerRole, permLabel, roleLabel, today } from "@/lib/format";
 
 const Ctx = createContext(null);
 export const useApp = () => useContext(Ctx);
@@ -19,6 +20,8 @@ const NAV = [
   { href: "/leads", label: "Leads", icon: "users", module: "leads" },
   { href: "/quotes", label: "Quotes", icon: "doc", module: "quotes" },
   { href: "/expenses", label: "Expenses", icon: "wallet", module: "expenses" },
+  // Everyone marks attendance. Staff get it as a tab; the owner and admins find it under More.
+  { href: "/attendance", label: "Attendance", icon: "check", all: true, group: "admin", staffTab: true },
   { href: "/activity", label: "Activity", icon: "clock", activity: true, group: "admin" },
   { href: "/settings", label: "Settings", icon: "cog", owner: true, group: "admin" },
 ];
@@ -70,8 +73,9 @@ export default function AppShell({ children }) {
   const [pull, setPull] = useState(0);
   const [refreshing, setRefreshing] = useState(false);
   const [pullNote, setPullNote] = useState("");
+  const [askAtt, setAskAtt] = useState(false);
   const pullStart = useRef(null);
-  const [state, setState] = useState({ loading: true, profile: null, settings: null, team: [], brands: [], signUrl: null, requests: 0 });
+  const [state, setState] = useState({ loading: true, profile: null, settings: null, team: [], brands: [], signUrl: null, requests: 0, att: null });
 
   const load = useCallback(async () => {
     // getSession reads the cookie and refreshes it if it has expired. It is the only place that refreshes,
@@ -88,6 +92,12 @@ export default function AppShell({ children }) {
       return router.replace("/login");
     }
     const member = profile && (isOwnerRole(profile.role) || profile.role === "staff") && profile.active !== false;
+    // Staff are asked once a day how the day is going, so their mark is known before they start work.
+    let att = null;
+    if (member && profile.role === "staff") {
+      const { data: row } = await sb.from("attendance").select("status").eq("user_id", session.user.id).eq("work_date", today()).maybeSingle();
+      att = row?.status || null;
+    }
     let settings = null, team = [], brands = [], requests = 0, signUrl = null;
     if (member) {
       const [s, t, b] = await Promise.all([
@@ -110,7 +120,7 @@ export default function AppShell({ children }) {
       }
     }
     setCheckedAt(new Date().toISOString());
-    setState({ loading: false, profile, settings, team, brands, signUrl, requests });
+    setState({ loading: false, profile, settings, team, brands, signUrl, requests, att });
   }, [sb, router]);
 
   useEffect(() => { load(); }, [load]);
@@ -156,6 +166,25 @@ export default function AppShell({ children }) {
     setMore(false);
     scrollRef.current?.scrollTo(0, 0);
   }, [path]);
+
+  // Ask a staff member once a day, on opening the app, how the day is going.
+  useEffect(() => {
+    if (state.loading || !member || profile?.role !== "staff" || state.att) return;
+    try { if (localStorage.getItem(`so-att-${today()}`) === "1") return; } catch {}
+    setAskAtt(true);
+  }, [state.loading, state.att, member, profile]);
+
+  const markAtt = async (status) => {
+    const { error } = await markAttendanceRow(sb, profile.id, status, "");
+    if (error) return;
+    setState((s) => ({ ...s, att: status }));
+    setAskAtt(false);
+  };
+
+  const dismissAtt = () => {
+    try { localStorage.setItem(`so-att-${today()}`, "1"); } catch {}
+    setAskAtt(false);
+  };
 
   const signOut = async () => {
     try { await sb.rpc("log_event", { p_action: "logout" }); } catch {}
@@ -204,14 +233,14 @@ export default function AppShell({ children }) {
   }
   if (!member) return <AccessGate profile={profile} kind="off" onRefresh={load} onSignOut={signOut} />;
 
-  const nav = NAV.filter((n) => (n.activity ? canSeeActivity : n.owner ? isOwner : isOwner || can(n.module)));
+  const nav = NAV.filter((n) => (n.activity ? canSeeActivity : n.owner ? isOwner : n.all ? member : isOwner || can(n.module)));
   if (!isOwner && nav.length === 0) return <AccessGate profile={profile} kind="none" onRefresh={load} onSignOut={signOut} />;
 
   const home = isOwner ? "/dashboard" : nav[0].href;
   const hit = NAV.find((n) => path.startsWith(n.href));
   const blocked = hit && !nav.includes(hit);
-  const main = nav.filter((n) => n.group !== "admin");
-  const admin = nav.filter((n) => n.group === "admin");
+  const main = nav.filter((n) => n.group !== "admin" || (n.staffTab && !isOwner));
+  const admin = nav.filter((n) => n.group === "admin" && !(n.staffTab && !isOwner));
   const roleLabelText = roleLabel(profile.role);
   const who = profile.username ? `ID: ${profile.username}` : profile.email;
   const badge = (n) => (n.href === "/settings" && state.requests > 0 ? state.requests : 0);
@@ -366,6 +395,13 @@ export default function AppShell({ children }) {
               <span className="text-[15px] font-semibold text-red-600">Sign out</span>
             </button>
           </div>
+        </Modal>
+      )}
+      {askAtt && (
+        <Modal title="Attendance for today" onClose={dismissAtt}>
+          <p className="text-sm text-slate-600">How is today going? You can change it any time from the Attendance tab.</p>
+          <div className="mt-4"><StatusPicker value={null} onChange={markAtt} /></div>
+          <button className="btn-ghost mt-4 w-full" onClick={dismissAtt}>Not now</button>
         </Modal>
       )}
       <VersionBar />
