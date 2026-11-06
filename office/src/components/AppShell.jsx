@@ -20,7 +20,7 @@ const NAV = [
   { href: "/leads", label: "Leads", icon: "users", module: "leads" },
   { href: "/quotes", label: "Quotes", icon: "doc", module: "quotes" },
   { href: "/expenses", label: "Expenses", icon: "wallet", module: "expenses" },
-  // Everyone marks attendance. Staff get it as a tab; the owner and admins find it under More.
+  // Staff mark their own day; admins open it to fill in a missed day. Staff get it as a tab, owner and admins under More.
   { href: "/attendance", label: "Attendance", icon: "check", all: true, group: "admin", staffTab: true },
   { href: "/activity", label: "Activity", icon: "clock", activity: true, group: "admin" },
   { href: "/settings", label: "Settings", icon: "cog", owner: true, group: "admin" },

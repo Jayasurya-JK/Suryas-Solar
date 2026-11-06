@@ -40,7 +40,9 @@ export function dmy(value) {
 export function addDays(value, days) {
   const d = new Date(value + "T00:00");
   d.setDate(d.getDate() + (Number(days) || 0));
-  return d.toISOString().slice(0, 10);
+  // Format from the local date parts, not toISOString(): the latter converts to UTC and shifts the day
+  // backwards for any timezone ahead of UTC (India is +05:30), so "today + 0" used to come back yesterday.
+  return [d.getFullYear(), String(d.getMonth() + 1).padStart(2, "0"), String(d.getDate()).padStart(2, "0")].join("-");
 }
 
 export function today() {

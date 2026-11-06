@@ -13,9 +13,10 @@ export const attStatus = (id) => ATT_STATUSES.find((s) => s.id === id) || null;
 export const attLabel = (id) => attStatus(id)?.label || "Not marked";
 
 // One row per person per day. Safe to call repeatedly - a second tap just corrects the same day.
-export function markAttendance(sb, userId, status, note) {
+// `date` defaults to today. Staff may only mark today; admins fill in past days (enforced by the database too).
+export function markAttendance(sb, userId, status, note, date) {
   const table = sb.from("attendance");
-  const row = { user_id: userId, work_date: today(), status, note: note?.trim() || null, updated_at: new Date().toISOString() };
+  const row = { user_id: userId, work_date: date || today(), status, note: note?.trim() || null, updated_at: new Date().toISOString() };
   // The sample-data client has no upsert; the real one does.
   if (typeof table.upsert !== "function") return Promise.resolve({ error: null });
   return table.upsert(row, { onConflict: "user_id,work_date" });

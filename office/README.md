@@ -37,7 +37,7 @@ They only add things and replace the access rules - no table, row or file is del
 | `admin-role.sql` | The `admin` role (same powers as the owner) and the guard that protects the owner account |
 | `activity-viewers.sql` | Who exactly may read the activity history (`profiles.sees_activity`), and the final `guard_owner_row` |
 | `profile-and-pin.sql` | Own-name editing and the PIN functions (`set_my_pin`, `reset_member_pin`) |
-| `attendance.sql` | Daily attendance table, its grants and rules |
+| `attendance.sql` | Daily attendance table, its grants and rules (staff mark today only; admins back-fill) |
 
 All four are already applied to the live project (6 Nov 2026). They are repeatable, so they stay here as the
 setup scripts for a fresh project. Run them in that order.
@@ -85,13 +85,16 @@ business Gmail (`STAFF_MAIL` in `src/lib/format.js`), because the domain has no 
 ## Attendance
 
 Staff are asked once a day, when they open the app, to mark **Working**, **Working partially** or **Leave**
-(the answer is stored per person per day in `public.attendance`). They can change it any time from the
-Attendance tab; the ask is remembered per device per day, so it does not nag on every screen.
+(the answer is stored per person per day in `public.attendance`). They can change it any time that day from
+the Attendance tab; the ask is remembered per device per day, so it does not nag on every screen.
 
-The owner and admins are not asked - they find the same screen under **More > Attendance**, where the team's
-marks for today are listed with this month's counts. Admins can correct a missed or wrong mark.
+The owner and admins are never asked and never mark themselves - they find the screen under
+**More > Attendance**, which lists the team's status for today with this month's counts. Tapping a staff
+member opens a day picker for the last seven days, so an admin can fill in a day the staff member forgot or
+correct a wrong tap.
 
-People may only mark **today**, and only for themselves. That is enforced in the database, not just the UI.
+Staff may only mark **today**, and only for themselves - both enforced in the database (`private.is_staff()`
+plus `work_date = current_date`), not just the UI. Back-filling a past day is an admin action.
 
 ## Saving a quote as a PDF
 
