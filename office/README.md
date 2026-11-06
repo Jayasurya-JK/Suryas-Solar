@@ -35,6 +35,19 @@ They only add things and replace the access rules - no table, row or file is del
 | --- | --- |
 | `staff-access-and-activity.sql` | User IDs, per-screen access, owner approval, "last active", and the activity history |
 
+This one is already applied to the live project (6 Nov 2026). It is repeatable, so it stays here as the
+setup script for a fresh project.
+
+### Sign-ups only work if "Confirm email" is off
+
+Staff request access with a User ID, which becomes a hidden address on the business Gmail. If Supabase has
+**Authentication -> Sign In / Providers -> Email -> Confirm email** switched on, sign-up returns no session
+and the person is stuck on "sign-in is not switched on yet". Switch it off, or confirm each account by hand
+in Authentication -> Users.
+
+The business Gmail (`STAFF_MAIL` in `src/lib/format.js`) must be a real inbox, or staff can never reset a
+password.
+
 ## Roles
 
 - **Owner** - sees everything, approves new people, reads the activity history.

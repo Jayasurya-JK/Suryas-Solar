@@ -2,6 +2,9 @@
 -- Run this ONCE in Supabase: SQL Editor -> New query -> paste everything -> Run.
 -- PART 1 only adds things. PART 2 replaces the "who can see what" rules for leads, quotes and expenses.
 -- No table, row or file is deleted.
+--
+-- Already applied to the live project (suryas-office, ref nbpqlokcntvwyhfijjta) on 6 Nov 2026.
+-- Every statement is repeatable, so running it again on a fresh project is safe.
 
 -- =====================================================================
 -- PART 1: add things
