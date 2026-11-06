@@ -1,5 +1,8 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+
 const TONES = {
   blue: "bg-primary-50 text-primary",
   slate: "bg-slate-100 text-slate-600",
@@ -148,8 +151,30 @@ export function SearchBox({ value, onChange, placeholder }) {
 }
 
 export function Modal({ title, onClose, children, wide = false }) {
-  return (
-    <div className="fixed inset-0 z-[60] flex items-end justify-center bg-slate-900/50 backdrop-blur-sm sm:items-center sm:p-4" onClick={onClose}>
+  const [mounted, setMounted] = useState(false);
+  const closeRef = useRef(onClose);
+  closeRef.current = onClose;
+
+  useEffect(() => {
+    setMounted(true);
+    // The page behind must not scroll while a sheet is open, and Esc should close it.
+    const scroller = document.getElementById("scroll");
+    const prev = scroller?.style.overflow;
+    if (scroller) scroller.style.overflow = "hidden";
+    const onKey = (e) => { if (e.key === "Escape") closeRef.current?.(); };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      if (scroller && prev !== undefined) scroller.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, []);
+
+  if (!mounted) return null;
+
+  // Rendered at the document root: inside the scrolling main column, iPhone Safari's
+  // -webkit-overflow-scrolling creates a stacking context that put the tab bar on top of the sheet.
+  return createPortal(
+    <div className="fixed inset-0 z-[60] flex items-end justify-center bg-slate-900/50 backdrop-blur-sm sm:items-center sm:p-4" onClick={onClose} role="dialog" aria-modal="true" aria-label={title}>
       <div onClick={(e) => e.stopPropagation()}
         className={`sheet-max flex w-full flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:my-8 sm:rounded-2xl ${wide ? "sm:max-w-3xl" : "sm:max-w-lg"}`}>
         <div className="mx-auto mt-2.5 h-1.5 w-10 shrink-0 rounded-full bg-slate-200 sm:hidden" />
@@ -162,7 +187,8 @@ export function Modal({ title, onClose, children, wide = false }) {
         {/* min-h-0 lets this box shrink so it scrolls inside the sheet instead of pushing the buttons off-screen */}
         <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-1 [-webkit-overflow-scrolling:touch] sm:pt-5">{children}</div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
