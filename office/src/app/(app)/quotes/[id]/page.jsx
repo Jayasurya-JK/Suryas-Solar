@@ -7,6 +7,7 @@ import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import { QuotePreview } from "@/components/QuoteDocument";
 import { BomRows } from "@/components/ListEditors";
+import { AutoText } from "@/components/Extras";
 import { HistoryPanel } from "@/components/History";
 import { Field, Icon, Notice, Segmented, Spinner, Switch } from "@/components/ui";
 import { QUOTE_STATUSES, calcQuote, inr, rupees, waLink } from "@/lib/format";
@@ -131,8 +132,8 @@ export default function QuoteEditor() {
               <Field label="Address as">
                 <Segmented size="sm" value={q.customer?.sal || "Sir"} onChange={(v) => update({ customer: { ...q.customer, sal: v } })} options={["Sir", "Madam", "Sir/Madam"]} />
               </Field>
-              <Field label="Address / area"><input className="input" value={q.customer?.addr1 || ""} onChange={setC("addr1")} /></Field>
-              <Field label="Town"><input className="input" value={q.customer?.addr2 || ""} onChange={setC("addr2")} /></Field>
+              <Field label="Address / area" className="sm:col-span-2"><AutoText value={q.customer?.addr1 || ""} onChange={setC("addr1")} /></Field>
+              <Field label="Town"><AutoText value={q.customer?.addr2 || ""} onChange={setC("addr2")} /></Field>
               <Field label="Mobile"><input className="input" value={q.customer?.phone || ""} onChange={setC("phone")} /></Field>
               <Field label="Quote date"><input className="input" type="date" value={q.quote_date} onChange={(e) => update({ quote_date: e.target.value })} /></Field>
               <Field label="Valid for (days)"><input className="input" type="number" value={q.valid_days} onChange={(e) => update({ valid_days: e.target.value })} /></Field>
@@ -147,12 +148,12 @@ export default function QuoteEditor() {
               <Field label="Phase">
                 <Segmented size="sm" value={sys.phase} onChange={(v) => update({ system: { ...q.system, phase: Number(v) } })} options={[{ id: 1, label: "Single phase" }, { id: 3, label: "Three phase" }]} />
               </Field>
-              <Field label="Roof type"><input className="input" value={sys.roof || ""} onChange={setS("roof")} /></Field>
-              <Field label="Panel type" className="sm:col-span-2"><input className="input" value={sys.panel_type || ""} onChange={setS("panel_type")} /></Field>
-              <Field label="Panel brand"><input className="input" value={sys.panel_brand || ""} onChange={setS("panel_brand")} /></Field>
+              <Field label="Roof type" className="sm:col-span-2"><AutoText value={sys.roof || ""} onChange={setS("roof")} /></Field>
+              <Field label="Panel type" className="sm:col-span-2"><AutoText value={sys.panel_type || ""} onChange={setS("panel_type")} /></Field>
+              <Field label="Panel brand"><AutoText value={sys.panel_brand || ""} onChange={setS("panel_brand")} /></Field>
               <Field label="Panel watt (Wp)"><input className="input" value={sys.panel_watt || ""} onChange={setS("panel_watt")} placeholder="e.g. 580 or 555 to 625" /></Field>
               <Field label="No. of panels"><input className="input" type="number" value={sys.panel_count ?? ""} onChange={setS("panel_count", true)} /></Field>
-              <Field label="Inverter brand"><input className="input" value={sys.inverter_brand || ""} onChange={setS("inverter_brand")} /></Field>
+              <Field label="Inverter brand"><AutoText value={sys.inverter_brand || ""} onChange={setS("inverter_brand")} /></Field>
             </div>
             <div className="mt-4">
               <span className="label">Panel partner logo (top right of every page)</span>

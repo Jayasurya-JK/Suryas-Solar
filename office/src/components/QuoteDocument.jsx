@@ -325,9 +325,14 @@ export default function QuoteDocument({ quote: q, s = {}, brands = [], signUrl =
       setPages(paginate(blocks, m));
     };
     run();
+    // iPhone Safari can settle fonts and images after the first paint, which makes the first
+    // measurement too tall and produces half-empty pages. Measure again once things are stable.
     document.fonts?.ready.then(run);
+    const late = setTimeout(run, 600);
+    window.addEventListener("load", run);
     const imgs = [...root.querySelectorAll("img")].filter((im) => !im.complete);
     imgs.forEach((im) => im.addEventListener("load", run, { once: true }));
+    return () => { clearTimeout(late); window.removeEventListener("load", run); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(q), JSON.stringify(s), mounted]);
 

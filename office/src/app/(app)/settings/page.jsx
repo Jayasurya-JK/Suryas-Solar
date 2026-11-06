@@ -5,7 +5,7 @@ import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import Link from "next/link";
 import { Avatar, Badge, Field, FilterTabs, Icon, Modal, Notice, PageHeader, Segmented, Spinner, Switch } from "@/components/ui";
-import { ListSkeleton } from "@/components/Extras";
+import { ListSkeleton, AutoText } from "@/components/Extras";
 import { ADMIN_PERM, MODULES, ago, permLabel, rupees } from "@/lib/format";
 import { BomRows, LineList, PairList } from "@/components/ListEditors";
 
@@ -171,40 +171,49 @@ function CompanyTab({ settings, reload }) {
 
   return (
     <div className="card p-5">
-      <div className="grid gap-3 sm:grid-cols-2">
-        <Field label="Header line 1"><input className="input" value={d.header_line1 || ""} onChange={set("header_line1")} /></Field>
-        <Field label="Header line 2"><input className="input" value={d.header_line2 || ""} onChange={set("header_line2")} /></Field>
-        <Field label="Address" className="sm:col-span-2"><input className="input" value={d.address || ""} onChange={set("address")} /></Field>
-        <Field label="Phone 1"><input className="input" value={d.phone1 || ""} onChange={set("phone1")} /></Field>
-        <Field label="Phone 2"><input className="input" value={d.phone2 || ""} onChange={set("phone2")} /></Field>
-        <Field label="Email"><input className="input" value={d.email || ""} onChange={set("email")} /></Field>
-        <Field label="Website"><input className="input" value={d.website || ""} onChange={set("website")} /></Field>
-        <Field label="GSTIN (printed on quotes when filled)"><input className="input" value={d.gstin || ""} onChange={set("gstin")} /></Field>
-        <Field label="Signatory name"><input className="input" value={d.signatory_name || ""} onChange={set("signatory_name")} /></Field>
-        <Field label="Signatory title"><input className="input" value={d.signatory_title || ""} onChange={set("signatory_title")} /></Field>
-      </div>
-      <SignatureUpload settingsData={d} onUploaded={(path) => setD({ ...d, signature_path: path })} reload={reload} />
-      <h3 className="mb-3 mt-6 font-bold text-slate-900">Bank details</h3>
-      <div className="grid gap-3 sm:grid-cols-2">
-        <Field label="Account name"><input className="input" value={d.bank?.account_name || ""} onChange={setBank("account_name")} /></Field>
-        <Field label="Bank"><input className="input" value={d.bank?.bank || ""} onChange={setBank("bank")} /></Field>
-        <Field label="Account number"><input className="input" value={d.bank?.account_no || ""} onChange={setBank("account_no")} /></Field>
-        <Field label="IFSC"><input className="input" value={d.bank?.ifsc || ""} onChange={setBank("ifsc")} /></Field>
-        <Field label="Account type"><input className="input" value={d.bank?.account_type || ""} onChange={setBank("account_type")} /></Field>
-      </div>
-      <h3 className="mb-3 mt-6 font-bold text-slate-900">Optional extras prices (₹)</h3>
-      <div className="grid gap-3 sm:grid-cols-4">
-        <Field label="Structure, low height"><input className="input" type="number" value={d.extras?.struct_low ?? ""} onChange={setEx("struct_low")} /></Field>
-        <Field label="Structure, high height"><input className="input" type="number" value={d.extras?.struct_high ?? ""} onChange={setEx("struct_high")} /></Field>
-        <Field label="Concrete pillars"><input className="input" type="number" value={d.extras?.pillar ?? ""} onChange={setEx("pillar")} /></Field>
-        <Field label="Each floor above G+1"><input className="input" type="number" value={d.extras?.per_floor ?? ""} onChange={setEx("per_floor")} /></Field>
-      </div>
-      <h3 className="mb-3 mt-6 font-bold text-slate-900">Quote numbers</h3>
-      <div className="grid gap-3 sm:grid-cols-3">
-        <Field label="Prefix"><input className="input" value={prefix} onChange={(e) => setPrefix(e.target.value)} /></Field>
-        <Field label="Next number"><input className="input" type="number" value={next} onChange={(e) => setNext(e.target.value)} /></Field>
-        <div className="self-end pb-2 text-sm text-slate-500">Next quote: <b className="text-slate-900">{prefix}/{String(next).padStart(4, "0")}/{String(new Date().getFullYear()).slice(2)}</b></div>
-      </div>
+      <Section title="Letterhead" hint="Printed at the top of every quote. Long lines wrap instead of getting cut off.">
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Field label="Header line 1" className="sm:col-span-2"><AutoText value={d.header_line1 || ""} onChange={set("header_line1")} /></Field>
+          <Field label="Header line 2" className="sm:col-span-2"><AutoText value={d.header_line2 || ""} onChange={set("header_line2")} /></Field>
+          <Field label="Address" className="sm:col-span-2"><AutoText value={d.address || ""} onChange={set("address")} /></Field>
+          <Field label="Phone 1"><input className="input" inputMode="tel" value={d.phone1 || ""} onChange={set("phone1")} /></Field>
+          <Field label="Phone 2"><input className="input" inputMode="tel" value={d.phone2 || ""} onChange={set("phone2")} /></Field>
+          <Field label="Email"><AutoText inputMode="email" autoCapitalize="none" value={d.email || ""} onChange={set("email")} /></Field>
+          <Field label="Website"><AutoText inputMode="url" autoCapitalize="none" value={d.website || ""} onChange={set("website")} /></Field>
+          <Field label="GSTIN (printed on quotes when filled)"><AutoText autoCapitalize="characters" value={d.gstin || ""} onChange={set("gstin")} /></Field>
+        </div>
+      </Section>
+      <Section title="Who signs the quote">
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Field label="Signatory name"><AutoText value={d.signatory_name || ""} onChange={set("signatory_name")} /></Field>
+          <Field label="Signatory title"><AutoText value={d.signatory_title || ""} onChange={set("signatory_title")} /></Field>
+        </div>
+        <SignatureUpload settingsData={d} onUploaded={(path) => setD({ ...d, signature_path: path })} reload={reload} />
+      </Section>
+      <Section title="Bank details" hint="Shown on the quote so customers know where to pay.">
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Field label="Account name"><AutoText value={d.bank?.account_name || ""} onChange={setBank("account_name")} /></Field>
+          <Field label="Bank"><AutoText value={d.bank?.bank || ""} onChange={setBank("bank")} /></Field>
+          <Field label="Account number"><input className="input" inputMode="numeric" autoCapitalize="characters" value={d.bank?.account_no || ""} onChange={setBank("account_no")} /></Field>
+          <Field label="IFSC"><input className="input" autoCapitalize="characters" value={d.bank?.ifsc || ""} onChange={setBank("ifsc")} /></Field>
+          <Field label="Account type"><AutoText value={d.bank?.account_type || ""} onChange={setBank("account_type")} /></Field>
+        </div>
+      </Section>
+      <Section title="Optional extras prices (₹)">
+        <div className="grid gap-3 sm:grid-cols-4">
+          <Field label="Structure, low height"><input className="input" type="number" value={d.extras?.struct_low ?? ""} onChange={setEx("struct_low")} /></Field>
+          <Field label="Structure, high height"><input className="input" type="number" value={d.extras?.struct_high ?? ""} onChange={setEx("struct_high")} /></Field>
+          <Field label="Concrete pillars"><input className="input" type="number" value={d.extras?.pillar ?? ""} onChange={setEx("pillar")} /></Field>
+          <Field label="Each floor above G+1"><input className="input" type="number" value={d.extras?.per_floor ?? ""} onChange={setEx("per_floor")} /></Field>
+        </div>
+      </Section>
+      <Section title="Quote numbers">
+        <div className="grid gap-3 sm:grid-cols-3">
+          <Field label="Prefix"><input className="input" value={prefix} onChange={(e) => setPrefix(e.target.value)} /></Field>
+          <Field label="Next number"><input className="input" type="number" value={next} onChange={(e) => setNext(e.target.value)} /></Field>
+          <div className="self-end pb-2 text-sm text-slate-500">Next quote: <b className="text-slate-900">{prefix}/{String(next).padStart(4, "0")}/{String(new Date().getFullYear()).slice(2)}</b></div>
+        </div>
+      </Section>
       <SaveBar onSave={save} busy={busy} msg={msg} />
     </div>
   );

@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import { Field, Icon, Notice, PageHeader, Segmented, Spinner } from "@/components/ui";
+import { AutoText } from "@/components/Extras";
 import { rupees, today } from "@/lib/format";
 
 function NewQuote() {
@@ -77,8 +78,8 @@ function NewQuote() {
             <Field label="Address as">
               <Segmented size="sm" value={cust.sal} onChange={(v) => setCust({ ...cust, sal: v })} options={["Sir", "Madam", "Sir/Madam"]} />
             </Field>
-            <Field label="Address / area"><input className="input" value={cust.addr1} onChange={set("addr1")} /></Field>
-            <Field label="Town *"><input className="input" required value={cust.addr2} onChange={set("addr2")} placeholder="e.g. Cuddalore" /></Field>
+            <Field label="Address / area" className="sm:col-span-2"><AutoText value={cust.addr1} onChange={set("addr1")} /></Field>
+            <Field label="Town *"><AutoText required value={cust.addr2} onChange={set("addr2")} placeholder="e.g. Cuddalore" /></Field>
             <Field label="Mobile"><input className="input" value={cust.phone} onChange={set("phone")} /></Field>
           </div>
         </div>

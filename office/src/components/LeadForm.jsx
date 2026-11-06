@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useApp } from "@/components/AppShell";
 import { Field, Notice, Segmented } from "@/components/ui";
+import { AutoText } from "@/components/Extras";
 import { LEAD_SOURCES, LEAD_STATUSES, cleanPhone } from "@/lib/format";
 
 export const EMPTY_LEAD = {
@@ -46,8 +47,8 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
     <form onSubmit={submit} className="grid gap-3 sm:grid-cols-2">
       <Field label="Customer name *"><input className="input" required value={f.name} onChange={set("name")} /></Field>
       <Field label="Mobile"><input className="input" inputMode="tel" value={f.phone || ""} onChange={set("phone")} placeholder="10-digit number" /></Field>
-      <Field label="Address / area"><input className="input" value={f.address || ""} onChange={set("address")} /></Field>
-      <Field label="Town"><input className="input" value={f.town || ""} onChange={set("town")} placeholder="e.g. Cuddalore" /></Field>
+      <Field label="Address / area" className="sm:col-span-2"><AutoText value={f.address || ""} onChange={set("address")} /></Field>
+      <Field label="Town"><AutoText value={f.town || ""} onChange={set("town")} placeholder="e.g. Cuddalore" /></Field>
       <Field label="Where did this lead come from?" className="sm:col-span-2">
         <Segmented size="sm" value={f.source} onChange={(v) => setF({ ...f, source: v })} options={LEAD_SOURCES} />
       </Field>
