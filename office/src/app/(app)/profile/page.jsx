@@ -4,6 +4,7 @@ import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import { Avatar, Badge, Notice, PageHeader } from "@/components/ui";
+import { InstallCard } from "@/components/InstallBanner";
 import { dmy, isOwnerRole, permLabel, roleLabel } from "@/lib/format";
 
 const pinProblem = (pin, again) => {
@@ -128,6 +129,8 @@ export default function Profile() {
           </button>
         </div>
       </section>
+
+      <InstallCard />
     </div>
   );
 }
