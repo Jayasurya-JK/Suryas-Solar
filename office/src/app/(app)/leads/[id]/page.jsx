@@ -8,7 +8,7 @@ import { useApp } from "@/components/AppShell";
 import LeadForm from "@/components/LeadForm";
 import { HistoryPanel } from "@/components/History";
 import { Avatar, Badge, Icon, Segmented, Spinner } from "@/components/ui";
-import { LEAD_SOURCES, LEAD_STATUSES, QUOTE_STATUSES, dmy, labelOf, rupees, waLink } from "@/lib/format";
+import { LEAD_SOURCES, LEAD_STATUSES, QUOTE_STATUSES, dmy, labelOf, rupees, sourceLabel, waLink } from "@/lib/format";
 
 export default function LeadDetail() {
   const { id } = useParams();
@@ -62,7 +62,7 @@ export default function LeadDetail() {
           <div className="min-w-0 flex-1">
             <h1 className="truncate text-[22px] font-bold tracking-tight text-slate-900">{lead.name}</h1>
             <p className="mt-0.5 text-sm text-slate-500">{[lead.phone, lead.town].filter(Boolean).join(" · ")}</p>
-            <p className="text-xs text-slate-400">{labelOf(LEAD_SOURCES, lead.source)} lead · added {dmy(lead.created_at)}</p>
+            <p className="text-xs text-slate-400">{sourceLabel(lead)} lead · added {dmy(lead.created_at)}</p>
           </div>
         </div>
         <div className="mt-4 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap">

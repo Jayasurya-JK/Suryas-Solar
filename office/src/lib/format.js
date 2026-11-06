@@ -115,6 +115,10 @@ export const PAY_MODES = [
 
 export const labelOf = (list, id) => list.find((x) => x.id === id)?.label || id || "";
 
+// "Other" gets a free-text answer, so show that instead of the plain word.
+export const sourceLabel = (l) =>
+  l?.source === "other" && l?.source_other ? l.source_other : labelOf(LEAD_SOURCES, l?.source);
+
 // Indian mobile: keep last 10 digits
 export const cleanPhone = (p) => String(p || "").replace(/\D/g, "").slice(-10);
 export const waLink = (phone, text) =>

@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import LeadForm from "@/components/LeadForm";
 import { Avatar, Badge, Empty, FilterTabs, Icon, IconButton, Modal, PageHeader, SearchBox, Spinner } from "@/components/ui";
-import { LEAD_SOURCES, LEAD_STATUSES, dmy, downloadCsv, labelOf, today, waLink } from "@/lib/format";
+import { LEAD_SOURCES, LEAD_STATUSES, dmy, downloadCsv, labelOf, sourceLabel, today, waLink } from "@/lib/format";
 
 const isOpen = (l) => !["won", "lost"].includes(l.status);
 
@@ -72,7 +72,7 @@ export default function Leads() {
   const exportCsv = () =>
     downloadCsv(`leads-${t}.csv`, [
       ["Date", "Name", "Mobile", "Town", "Address", "Source", "Stage", "kW", "EB bill", "Follow-up", "Assigned", "Notes"],
-      ...shown.map((l) => [dmy(l.created_at), l.name, l.phone, l.town, l.address, labelOf(LEAD_SOURCES, l.source),
+      ...shown.map((l) => [dmy(l.created_at), l.name, l.phone, l.town, l.address, sourceLabel(l),
         labelOf(LEAD_STATUSES, l.status), l.kw_interest, l.monthly_bill, dmy(l.next_follow_up),
         team.find((m) => m.id === l.assigned_to)?.full_name || "", l.notes]),
     ]);
@@ -124,7 +124,7 @@ export default function Leads() {
                         </div>
                       </td>
                       <td className="px-4 py-3.5 text-slate-600">{l.town || "-"}</td>
-                      <td className="px-4 py-3.5">{l.source === "website" ? <Badge tone="pink">Website</Badge> : <span className="text-slate-600">{labelOf(LEAD_SOURCES, l.source)}</span>}</td>
+                      <td className="px-4 py-3.5">{l.source === "website" ? <Badge tone="pink">Website</Badge> : <span className="text-slate-600">{sourceLabel(l)}</span>}</td>
                       <td className="px-4 py-3.5"><Badge tone={st?.tone}>{st?.label}</Badge></td>
                       <td className="px-4 py-3.5 text-[13px]"><FollowUp date={isOpen(l) ? l.next_follow_up : null} t={t} /></td>
                       <td className="px-4 py-3.5 text-slate-500">{dmy(l.created_at)}</td>

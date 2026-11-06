@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ListSkeleton, MonthPicker } from "@/components/Extras";
+import { AutoText, ListSkeleton, MonthPicker } from "@/components/Extras";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import { Empty, Field, FilterTabs, Icon, IconButton, Modal, Notice, PageHeader, Segmented, Spinner } from "@/components/ui";
@@ -23,7 +23,7 @@ const CAT_TONE = {
   fuel: "bg-red-50 text-red-600", food: "bg-teal-50 text-teal", office: "bg-slate-100 text-slate-700", other: "bg-slate-100 text-slate-700",
 };
 
-const EMPTY = { spent_on: "", amount: "", category: "material", site: "", paid_by: "", payment_mode: "cash", note: "" };
+const EMPTY = { spent_on: "", amount: "", category: "material", category_other: "", site: "", paid_by: "", payment_mode: "cash", note: "" };
 
 export default function Expenses() {
   const sb = supabase();
@@ -53,6 +53,7 @@ export default function Expenses() {
   const add = async (e) => {
     e.preventDefault();
     if (!(Number(f.amount) > 0)) return setMsg({ tone: "red", text: "Enter the amount." });
+    if (f.category === "other" && !f.category_other.trim()) return setMsg({ tone: "red", text: "Say what the other expense was." });
     setBusy(true);
     setMsg(null);
     let bill_path = null;
@@ -63,13 +64,15 @@ export default function Expenses() {
       if (error) { setBusy(false); return setMsg({ tone: "red", text: "Photo upload failed: " + error.message }); }
     }
     const { error } = await sb.from("expenses").insert({
-      spent_on: f.spent_on, amount: Number(f.amount), category: f.category, site: f.site.trim() || null,
+      spent_on: f.spent_on, amount: Number(f.amount), category: f.category,
+      category_other: f.category === "other" ? f.category_other.trim() || null : null,
+      site: f.site.trim() || null,
       paid_by: f.paid_by.trim() || null, payment_mode: f.payment_mode, note: f.note.trim() || null,
       bill_path, created_by: profile.id,
     });
     setBusy(false);
     if (error) return setMsg({ tone: "red", text: error.message });
-    setF({ ...EMPTY, spent_on: f.spent_on, paid_by: f.paid_by, category: f.category, site: f.site });
+    setF({ ...EMPTY, spent_on: f.spent_on, paid_by: f.paid_by, category: f.category, category_other: f.category === "other" ? f.category_other : "", site: f.site });
     setPhoto(null);
     if (fileRef.current) fileRef.current.value = "";
     setMsg({ tone: "green", text: "Expense saved." });
@@ -103,7 +106,7 @@ export default function Expenses() {
   const exportCsv = () =>
     downloadCsv(`expenses-${month}.csv`, [
       ["Date", "Amount", "Category", "Site / customer", "Paid by", "Mode", "Note", "Entered by", "Bill photo"],
-      ...shown.map((r) => [dmy(r.spent_on), r.amount, labelOf(EXPENSE_CATEGORIES, r.category), r.site, r.paid_by,
+      ...shown.map((r) => [dmy(r.spent_on), r.amount, labelOf(EXPENSE_CATEGORIES, r.category) + (r.category_other ? ` - ${r.category_other}` : ""), r.site, r.paid_by,
         labelOf(PAY_MODES, r.payment_mode), r.note, who(r.created_by), r.bill_path ? "Yes" : ""]),
     ]);
 
@@ -118,6 +121,11 @@ export default function Expenses() {
         <Field label="Date"><input className="input" type="date" value={f.spent_on} onChange={set("spent_on")} /></Field>
       </div>
       <Field label="Category"><Segmented size="sm" value={f.category} onChange={(v) => setF({ ...f, category: v })} options={EXPENSE_CATEGORIES} /></Field>
+      {f.category === "other" && (
+        <Field label="What was this for? *">
+          <AutoText value={f.category_other} onChange={set("category_other")} placeholder="e.g. EB meter shifting charges" />
+        </Field>
+      )}
       <Field label="Site or customer"><input className="input" value={f.site} onChange={set("site")} placeholder="e.g. Surya, Cuddalore" /></Field>
       <div className="grid gap-3 sm:grid-cols-2">
         <Field label="Paid by"><input className="input" value={f.paid_by} onChange={set("paid_by")} /></Field>
@@ -180,8 +188,8 @@ export default function Expenses() {
                     {labelOf(EXPENSE_CATEGORIES, r.category).slice(0, 2)}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="break-words font-semibold text-slate-900">{r.note || labelOf(EXPENSE_CATEGORIES, r.category)}</p>
-                    <p className="break-words text-[13px] text-slate-500">{[r.site, dmy(r.spent_on), labelOf(PAY_MODES, r.payment_mode)].filter(Boolean).join(" · ")}</p>
+                    <p className="break-words font-semibold text-slate-900">{r.note || r.category_other || labelOf(EXPENSE_CATEGORIES, r.category)}</p>
+                    <p className="break-words text-[13px] text-slate-500">{[labelOf(EXPENSE_CATEGORIES, r.category), r.site, dmy(r.spent_on), labelOf(PAY_MODES, r.payment_mode)].filter(Boolean).join(" · ")}</p>
                     <p className="break-words text-xs text-slate-500">Paid by {r.paid_by || "?"}{isOwner && who(r.created_by) ? ` · entered by ${who(r.created_by)}` : ""}</p>
                   </div>
                   <div className="flex shrink-0 flex-col items-end gap-1">

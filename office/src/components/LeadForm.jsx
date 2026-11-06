@@ -7,7 +7,7 @@ import { AutoText } from "@/components/Extras";
 import { LEAD_SOURCES, LEAD_STATUSES, cleanPhone } from "@/lib/format";
 
 export const EMPTY_LEAD = {
-  name: "", phone: "", address: "", town: "", source: "call", status: "new",
+  name: "", phone: "", address: "", town: "", source: "call", source_other: "", status: "new",
   kw_interest: "", monthly_bill: "", notes: "", next_follow_up: "", assigned_to: "",
 };
 
@@ -23,6 +23,7 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
     e.preventDefault();
     const phone = cleanPhone(f.phone);
     if (f.phone && !/^[6-9]\d{9}$/.test(phone)) return setErr("Enter a 10-digit mobile number.");
+    if (f.source === "other" && !f.source_other.trim()) return setErr("Say where this lead came from.");
     setErr("");
     setBusy(true);
     const row = {
@@ -31,6 +32,7 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
       address: f.address?.trim() || null,
       town: f.town?.trim() || null,
       source: f.source,
+      source_other: f.source === "other" ? f.source_other.trim() || null : null,
       status: f.status,
       kw_interest: f.kw_interest === "" || f.kw_interest == null ? null : Number(f.kw_interest),
       monthly_bill: f.monthly_bill === "" || f.monthly_bill == null ? null : Number(f.monthly_bill),
@@ -52,6 +54,11 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
       <Field label="Where did this lead come from?" className="sm:col-span-2">
         <Segmented size="sm" value={f.source} onChange={(v) => setF({ ...f, source: v })} options={LEAD_SOURCES} />
       </Field>
+      {f.source === "other" && (
+        <Field label="Where exactly? *" className="sm:col-span-2">
+          <AutoText value={f.source_other} onChange={set("source_other")} placeholder="e.g. Newspaper ad, exhibition, friend of a customer" />
+        </Field>
+      )}
       <Field label="Stage" className="sm:col-span-2">
         <Segmented size="sm" value={f.status} onChange={(v) => setF({ ...f, status: v })} options={LEAD_STATUSES} />
       </Field>

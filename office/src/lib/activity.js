@@ -8,7 +8,7 @@ const KIND = {
 };
 const LABELS = {
   leads: {
-    name: "Name", phone: "Mobile", address: "Address", town: "Town", source: "Source", status: "Stage",
+    name: "Name", phone: "Mobile", address: "Address", town: "Town", source: "Source", source_other: "Came from", status: "Stage",
     kw_interest: "System size (kW)", monthly_bill: "EB bill", notes: "Notes", next_follow_up: "Follow-up date", assigned_to: "Assigned to",
   },
   quotes: {
@@ -21,7 +21,7 @@ const LABELS = {
     "extras.struct": "Elevated structure", "extras.pillar": "Concrete pillars", "extras.floors": "Extra floors", "extras.show_table": "Extras table",
   },
   expenses: {
-    amount: "Amount", category: "Category", site: "Site or customer", paid_by: "Paid by", payment_mode: "Paid using",
+    amount: "Amount", category: "Category", category_other: "What it was for", site: "Site or customer", paid_by: "Paid by", payment_mode: "Paid using",
     note: "Note", spent_on: "Date", bill_path: "Bill photo",
   },
   profiles: { role: "Role", perms: "Screens", active: "Access", full_name: "Name", username: "User ID", requested_perms: "Requested screens" },
