@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { Avatar, Icon, Modal, Spinner } from "@/components/ui";
-import { MODULES, ago } from "@/lib/format";
+import { MODULES, ago, isOwnerRole, roleLabel } from "@/lib/format";
 
 const Ctx = createContext(null);
 export const useApp = () => useContext(Ctx);
@@ -70,7 +70,7 @@ export default function AppShell({ children }) {
     const { data: { user } } = await sb.auth.getUser();
     if (!user) return router.replace("/login");
     const { data: profile } = await sb.from("profiles").select("*").eq("id", user.id).single();
-    const member = profile && (profile.role === "owner" || profile.role === "staff") && profile.active !== false;
+    const member = profile && (isOwnerRole(profile.role) || profile.role === "staff") && profile.active !== false;
     let settings = null, team = [], brands = [], requests = 0, signUrl = null;
     if (member) {
       const [s, t, b] = await Promise.all([
@@ -81,7 +81,7 @@ export default function AppShell({ children }) {
       settings = s.data;
       team = t.data || [];
       brands = b.data || [];
-      if (profile.role === "owner") {
+      if (isOwnerRole(profile.role)) {
         const { data: pend } = await sb.from("profiles").select("id").eq("role", "pending").eq("active", true);
         requests = (pend || []).length;
       }
@@ -99,8 +99,8 @@ export default function AppShell({ children }) {
   useEffect(() => { load(); }, [load]);
 
   const profile = state.profile;
-  const isOwner = profile?.role === "owner";
-  const member = !!profile && (profile.role === "owner" || profile.role === "staff") && profile.active !== false;
+  const isOwner = isOwnerRole(profile?.role);
+  const member = !!profile && (isOwnerRole(profile.role) || profile.role === "staff") && profile.active !== false;
   const can = useCallback((m) => isOwner || (member && (profile?.perms || []).includes(m)), [isOwner, member, profile]);
 
   // People waiting for approval: re-check every 15 seconds so their screens open by themselves
@@ -161,7 +161,7 @@ export default function AppShell({ children }) {
   const blocked = hit && !nav.includes(hit);
   const main = nav.filter((n) => n.group !== "admin");
   const admin = nav.filter((n) => n.group === "admin");
-  const roleLabel = isOwner ? "Owner" : "Staff";
+  const roleLabelText = roleLabel(profile.role);
   const who = profile.username ? `ID: ${profile.username}` : profile.email;
   const badge = (n) => (n.href === "/settings" && state.requests > 0 ? state.requests : 0);
 
@@ -208,7 +208,7 @@ export default function AppShell({ children }) {
             <Avatar name={profile.full_name || profile.email} size="sm" />
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-semibold text-slate-900">{profile.full_name}</p>
-              <p className="text-xs text-slate-500">{roleLabel}</p>
+              <p className="text-xs text-slate-500">{roleLabelText}</p>
             </div>
             <button onClick={signOut} title="Sign out" aria-label="Sign out" className="rounded-lg p-2 text-slate-500 hover:bg-white hover:text-red-600">
               <Icon name="logout" className="h-4 w-4" />
@@ -231,7 +231,7 @@ export default function AppShell({ children }) {
                     <div className="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
                       <div className="px-3 py-2">
                         <p className="truncate text-sm font-semibold text-slate-900">{profile.full_name}</p>
-                        <p className="truncate text-xs text-slate-500">{who} · {roleLabel}</p>
+                        <p className="truncate text-xs text-slate-500">{who} · {roleLabelText}</p>
                       </div>
                       <button onClick={signOut} className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50">
                         <Icon name="logout" className="h-4 w-4" />Sign out

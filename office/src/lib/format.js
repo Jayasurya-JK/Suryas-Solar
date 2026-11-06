@@ -136,6 +136,12 @@ export function downloadCsv(filename, rows) {
 }
 
 // ---- staff accounts ----
+// "owner" is the one account that can never be locked out. "admin" has the same powers in the app.
+// "pending" is somebody who asked for access and is still waiting.
+export const ROLE_LABEL = { owner: "Owner", admin: "Admin", staff: "Staff", pending: "Waiting" };
+export const isOwnerRole = (role) => role === "owner" || role === "admin";
+export const roleLabel = (role) => ROLE_LABEL[role] || role || "";
+
 export const MODULES = [
   { id: "leads", label: "Leads", hint: "Customer enquiries and follow-ups", icon: "users" },
   { id: "quotes", label: "Quotes", hint: "Make and send quotations", icon: "doc" },

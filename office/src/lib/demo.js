@@ -1,7 +1,7 @@
 // LOCAL DESIGN PREVIEW ONLY. Used when NEXT_PUBLIC_DEMO=1 (never set on Vercel).
 // A small in-memory stand-in for the Supabase client so every screen can be checked
 // with realistic sample data, in any role, without logging in.
-// Roles: NEXT_PUBLIC_DEMO_ROLE = owner (default) | staff | pending | declined
+// Roles: NEXT_PUBLIC_DEMO_ROLE = owner (default) | admin | staff | pending | declined
 
 const day = (n) => {
   const d = new Date();
@@ -15,6 +15,7 @@ const ALL = ["leads", "quotes", "expenses"];
 const owner = { id: "u1", full_name: "Surya Kumar", email: "owner@example.com", username: null, role: "owner", perms: ALL, requested_perms: [], active: true, last_seen_at: hrs(-0.1), requested_at: ts(-60), created_at: ts(-60) };
 const staff = { id: "u2", full_name: "Ravi Kumar", email: "x+ravi@example.com", username: "ravi", role: "staff", perms: ["leads", "expenses"], requested_perms: ALL, active: true, last_seen_at: hrs(-2), requested_at: ts(-30), created_at: ts(-30) };
 const waiting = { id: "u3", full_name: "Karthik", email: "x+karthik@example.com", username: "karthik", role: "pending", perms: [], requested_perms: ["leads", "expenses"], active: true, last_seen_at: null, requested_at: hrs(-3), created_at: hrs(-3) };
+const admin = { id: "u5", full_name: "Monisha", email: "x+monisha@example.com", username: "monisha", role: "admin", perms: ALL, requested_perms: [], active: true, last_seen_at: hrs(-0.5), requested_at: ts(-10), created_at: ts(-10) };
 const declined = { id: "u4", full_name: "Mohan", email: "x+mohan@example.com", username: "mohan", role: "pending", perms: [], requested_perms: ["quotes"], active: false, decided_at: ts(-1), last_seen_at: null, requested_at: ts(-2), created_at: ts(-2) };
 
 const settingsData = {
@@ -35,7 +36,7 @@ const bom = [{ item: "MMS structure", make: "VRM / DM Power", spec: "Module moun
 const sys = { kw: 3.3, inverter_kw: 3, phase: 1, roof: "RCC (concrete) roof", panel_type: "Bifacial N-type TOPCon, DCR", panel_brand: "Adani / Goldi / Vikram", panel_watt: "555 to 625", panel_count: 6, inverter_brand: "SolarEdge / Sungrow / Fox", brand: "Premier Energies" };
 
 const db = {
-  profiles: [owner, staff, waiting, declined],
+  profiles: [owner, admin, staff, waiting, declined],
   app_settings: [{ id: 1, data: settingsData, quote_prefix: "SS", next_quote_no: 21, updated_at: ts(0) }],
   brands: [
     { id: "b1", name: "Premier Energies", logo_url: "/brands/premier.png", is_default: true, active: true, sort: 1 },
@@ -82,7 +83,7 @@ const db = {
 
 const me = () => {
   const r = process.env.NEXT_PUBLIC_DEMO_ROLE;
-  return r === "staff" ? staff : r === "pending" ? waiting : r === "declined" ? declined : owner;
+  return r === "admin" ? admin : r === "staff" ? staff : r === "pending" ? waiting : r === "declined" ? declined : owner;
 };
 
 function query(table) {

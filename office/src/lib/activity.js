@@ -1,12 +1,11 @@
 import {
-  EXPENSE_CATEGORIES, LEAD_SOURCES, LEAD_STATUSES, MODULES, PAY_MODES, QUOTE_STATUSES, dmy, labelOf, rupees,
+  EXPENSE_CATEGORIES, LEAD_SOURCES, LEAD_STATUSES, MODULES, PAY_MODES, QUOTE_STATUSES, dmy, labelOf, roleLabel, rupees,
 } from "@/lib/format";
 
 const KIND = {
   leads: "lead", quotes: "quote", expenses: "expense", packages: "price package", brands: "brand",
   app_settings: "company settings", profiles: "team member",
 };
-
 const LABELS = {
   leads: {
     name: "Name", phone: "Mobile", address: "Address", town: "Town", source: "Source", status: "Stage",
@@ -53,7 +52,7 @@ export function fmtValue(table, key, v, team = []) {
   if (key === "category") return labelOf(EXPENSE_CATEGORIES, v);
   if (key === "payment_mode") return labelOf(PAY_MODES, v);
   if (key === "assigned_to") return team.find((t) => t.id === v)?.full_name || "someone";
-  if (key === "role") return { owner: "Owner", staff: "Staff", pending: "Waiting" }[v] || v;
+  if (key === "role") return roleLabel(v);
   if (key === "bill_path") return "added";
   if (key === "active") return v ? "On" : "Off";
   return String(v);
@@ -103,7 +102,9 @@ export function describe(entry) {
       tone = "blue";
       if (entry.table_name === "profiles") {
         const role = c.role, act = c.active;
-        if (role && role[0] === "pending" && role[1] === "staff") { verb = "approved access for"; tone = "green"; }
+        if (role && role[0] === "pending" && (role[1] === "staff" || role[1] === "admin")) { verb = "approved access for"; tone = "green"; }
+        else if (role && role[1] === "admin" && role[0] !== "admin") { verb = "made an admin"; tone = "green"; }
+        else if (role && role[0] === "admin" && role[1] === "staff") { verb = "changed to staff for"; }
         else if (act && act[1] === false) { verb = "switched off access for"; tone = "red"; }
         else if (act && act[1] === true) { verb = "switched on access for"; tone = "green"; }
         else if (c.perms) verb = "changed the screens for";

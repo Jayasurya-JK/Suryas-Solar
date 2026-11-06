@@ -34,9 +34,10 @@ They only add things and replace the access rules - no table, row or file is del
 | File | What it does |
 | --- | --- |
 | `staff-access-and-activity.sql` | User IDs, per-screen access, owner approval, "last active", and the activity history |
+| `admin-role.sql` | The `admin` role (same powers as the owner) and the guard that protects the owner account |
 
-This one is already applied to the live project (6 Nov 2026). It is repeatable, so it stays here as the
-setup script for a fresh project.
+Both are already applied to the live project (6 Nov 2026). They are repeatable, so they stay here as the
+setup scripts for a fresh project. Run them in that order.
 
 ### Sign-ups only work if "Confirm email" is off
 
@@ -45,12 +46,23 @@ Staff request access with a User ID, which becomes a hidden address on the busin
 and the person is stuck on "sign-in is not switched on yet". Switch it off, or confirm each account by hand
 in Authentication -> Users.
 
+It is currently **on**, so every access request also sends a confirmation email - and the free plan only
+allows a couple of those per hour. Turning it off is the fix.
+
 The business Gmail (`STAFF_MAIL` in `src/lib/format.js`) must be a real inbox, or staff can never reset a
 password.
 
+### Creating a person without sending them an email
+
+Insert the `auth.users` row with `extensions.crypt(password, extensions.gen_salt('bf'))`, add a matching
+`auth.identities` row (provider `email`), set `email_confirmed_at`, then set their role in `public.profiles`.
+Without the identity row and the confirmation date they cannot sign in.
+
 ## Roles
 
-- **Owner** - sees everything, approves new people, reads the activity history.
+- **Owner** - the one account that can never be locked out. Sees everything, approves new people, reads
+  the activity history.
+- **Admin** - every owner power in the app. Cannot change or switch off the owner account.
 - **Staff** - sees only the screens ticked for them (Leads, Quotes, Expenses), and only their own records.
 - **Pending** - someone who tapped "Request access" on the sign-in page. They see a waiting screen that
   opens by itself once the owner approves. Pending people get nothing until then.

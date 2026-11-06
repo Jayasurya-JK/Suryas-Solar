@@ -401,13 +401,14 @@ function ManageForm({ person, onDone, onCancel }) {
   const sb = supabase();
   const [name, setName] = useState(person.full_name || "");
   const [perms, setPerms] = useState(person.perms || []);
+  const [role, setRole] = useState(person.role === "admin" ? "admin" : "staff");
   const [active, setActive] = useState(person.active !== false);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const save = async () => {
     if (name.trim().length < 2) return setErr("Enter the person's name.");
     setBusy(true);
-    const { error } = await sb.from("profiles").update({ full_name: name.trim(), perms, active }).eq("id", person.id);
+    const { error } = await sb.from("profiles").update({ full_name: name.trim(), perms, active, role }).eq("id", person.id);
     setBusy(false);
     if (error) return setErr(error.message);
     onDone();
@@ -417,11 +418,23 @@ function ManageForm({ person, onDone, onCancel }) {
       <Field label="Name"><input className="input" value={name} onChange={(e) => setName(e.target.value)} /></Field>
       <p className="-mt-2 text-xs text-slate-500">{person.username ? `User ID: ${person.username}` : person.email}</p>
       <div>
+        <span className="label">Role</span>
+        <Segmented full size="sm" value={role} onChange={setRole} options={[
+          { id: "staff", label: "Staff" },
+          { id: "admin", label: "Admin - full access" },
+        ]} />
+        <p className="mt-1.5 text-xs text-slate-500">
+          {role === "admin"
+            ? "Sees every screen, can approve people and read the activity history. Same power as the owner."
+            : "Sees only the screens ticked below, and only their own records."}
+        </p>
+      </div>
+      <div className={role === "admin" ? "pointer-events-none opacity-50" : ""}>
         <span className="label">Screens</span>
         <ScreenSwitches perms={perms} onChange={setPerms} />
+        {role === "admin" && <p className="mt-1 text-xs text-slate-500">An admin already sees every screen.</p>}
       </div>
-      <Switch checked={active} onChange={setActive} label="Access is on" hint="Switch off to stop this person using the app. Their records are kept." />
-      <Link href={`/activity?person=${person.id}`} className="flex items-center justify-between rounded-xl border border-slate-200 px-3.5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">
+      <Switch checked={active} onChange={setActive} label="Access is on" hint="Switch off to stop this person using the app. Their records are kept." />      <Link href={`/activity?person=${person.id}`} className="flex items-center justify-between rounded-xl border border-slate-200 px-3.5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">
         See what {person.full_name?.split(" ")[0] || "this person"} did<Icon name="chevron" className="h-4 w-4 text-slate-400" />
       </Link>
       {err && <Notice tone="red">{err}</Notice>}
@@ -494,16 +507,18 @@ function TeamTab() {
           {people.map((u) => {
             const self = u.id === profile.id;
             const isOwnerRow = u.role === "owner";
+            const isAdminRow = u.role === "admin";
             return (
               <div key={u.id} className="flex items-start gap-3 p-4">
                 <Avatar name={u.full_name || "?"} />
                 <div className="min-w-0 flex-1">
                   <p className="break-words font-semibold text-slate-900">{u.full_name}{self && <span className="ml-1.5 text-xs font-medium text-slate-500">(you)</span>}</p>
                   <p className="break-all text-[13px] text-slate-500">{u.username ? `User ID: ${u.username}` : u.email}</p>
-                  <div className="mt-2"><AccessChips perms={u.perms} owner={isOwnerRow} /></div>
+                  <div className="mt-2"><AccessChips perms={u.perms} owner={isOwnerRow || isAdminRow} /></div>
                   <p className="mt-2 text-xs text-slate-500">{u.last_seen_at ? `Active ${ago(u.last_seen_at)}` : "Never signed in"}</p>
                 </div>
                 <div className="flex shrink-0 flex-col items-end gap-2">
+                  {isOwnerRow ? <Badge tone="pink">Owner</Badge> : isAdminRow ? <Badge tone="violet">Admin</Badge> : null}
                   {u.active === false && <Badge tone="red">Switched off</Badge>}
                   {!isOwnerRow && <button className="btn-ghost !h-9 !px-3.5" onClick={() => setManage(u)}>Manage</button>}
                 </div>
