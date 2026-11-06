@@ -1,43 +1,31 @@
 import { NextResponse } from "next/server";
-import { createServerClient } from "@supabase/ssr";
 
-// Refreshes the login session and sends signed-out visitors to /login.
-// Real data protection is done by the database rules (RLS), not here.
-export async function middleware(request) {
+// A fast gate only: "is there an auth cookie at all?" It deliberately does NOT talk to Supabase.
+//
+// The browser client is the single owner of the session. It refreshes the token when it expires and writes
+// the new cookie itself. This middleware used to build a second Supabase client and call getUser() on every
+// request, so the server and the browser refreshed the same refresh token at the same moment. The token
+// rotates on use, so one of them always lost and was left holding a dead token - that is what kept throwing
+// people back to the login screen.
+//
+// Nothing is lost by skipping the check here: every screen is wrapped in AppShell, which checks the session,
+// and the real protection has always been the database rules (RLS).
+export function middleware(request) {
   // Local design preview with sample data (never enabled on Vercel)
   if (process.env.NEXT_PUBLIC_DEMO === "1") return NextResponse.next();
-  let response = NextResponse.next({ request });
 
-  const sb = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-    {
-      cookies: {
-        getAll: () => request.cookies.getAll(),
-        setAll: (list) => {
-          list.forEach(({ name, value }) => request.cookies.set(name, value));
-          response = NextResponse.next({ request });
-          list.forEach(({ name, value, options }) => response.cookies.set(name, value, options));
-        },
-      },
-    }
-  );
-
-  const { data: { user } } = await sb.auth.getUser();
+  // Supabase may split a large session cookie into .0 / .1 chunks, so match on the name fragment.
+  const signedIn = request.cookies.getAll().some((c) => c.name.includes("-auth-token"));
   const isLogin = request.nextUrl.pathname.startsWith("/login");
 
-  if (!user && !isLogin) {
+  if (!signedIn && !isLogin) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
     url.search = "";
     return NextResponse.redirect(url);
   }
-  if (user && isLogin) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/";
-    return NextResponse.redirect(url);
-  }
-  return response;
+
+  return NextResponse.next();
 }
 
 export const config = {

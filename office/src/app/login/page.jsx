@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 import { Field, Icon, Notice, Segmented } from "@/components/ui";
@@ -40,6 +40,14 @@ export default function Login() {
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
   const fail = (text) => { setMsg({ tone: "red", text }); setBusy(false); };
   const togglePerm = (id) => setPerms((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
+
+  // Still signed in from last time? Skip the form. getSession refreshes an expired token if it can,
+  // which is the one and only place that happens now.
+  useEffect(() => {
+    supabase().auth.getSession()
+      .then(({ data }) => { if (data.session) window.location.href = "/"; })
+      .catch(() => {});
+  }, []);
 
   const signIn = async () => {
     const { error } = await supabase().auth.signInWithPassword({ email: loginEmail(form.id), password: form.password });

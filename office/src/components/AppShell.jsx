@@ -68,9 +68,19 @@ export default function AppShell({ children }) {
   const [state, setState] = useState({ loading: true, profile: null, settings: null, team: [], brands: [], signUrl: null, requests: 0 });
 
   const load = useCallback(async () => {
-    const { data: { user } } = await sb.auth.getUser();
-    if (!user) return router.replace("/login");
-    const { data: profile } = await sb.from("profiles").select("*").eq("id", user.id).single();
+    // getSession reads the cookie and refreshes it if it has expired. It is the only place that refreshes,
+    // so two tabs or the server can never fight over the same refresh token.
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session?.user) {
+      try { await sb.auth.signOut(); } catch {}
+      return router.replace("/login");
+    }
+    const { data: profile, error } = await sb.from("profiles").select("*").eq("id", session.user.id).single();
+    // A dead token comes back as a JWT error rather than an empty row - clear it so the login page starts clean.
+    if (error && /jwt|token|401|PGRST301|not signed in/i.test(`${error.message} ${error.code}`)) {
+      try { await sb.auth.signOut(); } catch {}
+      return router.replace("/login");
+    }
     const member = profile && (isOwnerRole(profile.role) || profile.role === "staff") && profile.active !== false;
     let settings = null, team = [], brands = [], requests = 0, signUrl = null;
     if (member) {

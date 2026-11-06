@@ -81,6 +81,17 @@ The flag is guarded by `private.guard_owner_row`: an admin who calls the API dir
 Staff sign in with a User ID instead of an email. The User ID is mapped to a hidden plus-address on the
 business Gmail (`STAFF_MAIL` in `src/lib/format.js`), because the domain has no mailboxes.
 
+## Staying signed in
+
+A person stays signed in until they tap Sign out. The **browser** client is the only thing that refreshes the
+session; `middleware.js` just checks that the auth cookie exists and never calls Supabase. Do not add a
+server-side `getUser()` there again - the server and the browser then refresh the same refresh token at the
+same time, the token rotates, one of them ends up holding a dead token, and people get thrown back to the
+login screen. That is exactly what was happening before.
+
+`AppShell` calls `sb.auth.getSession()` once per load. It refreshes the token if it has expired, which is the
+one and only refresh point in the app.
+
 ## Profile and the sign-in PIN
 
 `/profile` - reached by tapping your name in the sidebar, or your photo in the phone header - lets a person
