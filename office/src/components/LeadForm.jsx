@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useApp } from "@/components/AppShell";
-import { Field, Notice, Segmented, Select } from "@/components/ui";
+import { Field, Notice, Segmented } from "@/components/ui";
 import { LEAD_SOURCES, LEAD_STATUSES, cleanPhone } from "@/lib/format";
 
 export const EMPTY_LEAD = {
@@ -58,11 +58,9 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
       <Field label="Monthly EB bill (₹)"><input className="input" type="number" value={f.monthly_bill ?? ""} onChange={set("monthly_bill")} /></Field>
       <Field label="Next follow-up"><input className="input" type="date" value={f.next_follow_up || ""} onChange={set("next_follow_up")} /></Field>
       {isOwner && (
-        <Field label="Assigned to">
-          <Select value={f.assigned_to || ""} onChange={set("assigned_to")}>
-            <option value="">Not assigned</option>
-            {team.map((t) => <option key={t.id} value={t.id}>{t.full_name || t.email}</option>)}
-          </Select>
+        <Field label="Assigned to" className="sm:col-span-2">
+          <Segmented size="sm" value={f.assigned_to || ""} onChange={(v) => setF({ ...f, assigned_to: v })}
+            options={[{ id: "", label: "Not assigned" }, ...team.map((t) => ({ id: t.id, label: t.full_name || t.email }))]} />
         </Field>
       )}
       <Field label="Notes" className="sm:col-span-2"><textarea className="input min-h-20" value={f.notes || ""} onChange={set("notes")} /></Field>
