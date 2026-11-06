@@ -18,6 +18,10 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
+  // Leads are field work - the owner and admins do not take assignments, so they are not offered here.
+  const assignable = team.filter((t) => t.role === "staff");
+  const kept = f.assigned_to && !assignable.some((t) => t.id === f.assigned_to) ? team.find((t) => t.id === f.assigned_to) : null;
+  const assignOptions = [{ id: "", label: "Not assigned" }, ...[...assignable, ...(kept ? [kept] : [])].map((t) => ({ id: t.id, label: t.full_name || t.email }))];
 
   const submit = async (e) => {
     e.preventDefault();
@@ -68,7 +72,7 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
       {isOwner && (
         <Field label="Assigned to" className="sm:col-span-2">
           <Segmented size="sm" value={f.assigned_to || ""} onChange={(v) => setF({ ...f, assigned_to: v })}
-            options={[{ id: "", label: "Not assigned" }, ...team.map((t) => ({ id: t.id, label: t.full_name || t.email }))]} />
+            options={assignOptions} />
         </Field>
       )}
       <Field label="Notes" className="sm:col-span-2"><textarea className="input min-h-20" value={f.notes || ""} onChange={set("notes")} /></Field>
