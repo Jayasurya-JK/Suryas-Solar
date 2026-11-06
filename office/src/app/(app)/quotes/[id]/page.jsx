@@ -65,12 +65,13 @@ export default function QuoteEditor() {
     return true;
   };
 
-  const print = async () => {
-    if (dirty && !(await save())) return;
+  // iPhone Safari only allows window.print() inside the tap that started it, so this must stay
+  // synchronous - no await, no state change. The preview is already in the DOM and print:block
+  // reveals it, and it shows the current values, so the PDF is correct even before the save lands.
+  const print = () => {
+    if (dirty) save();
     const old = document.title;
     document.title = `${q.customer?.name || "Quote"} ${q.system?.kw}kW Quotation ${q.ref_no.replace(/\//g, "-")}`;
-    setView("preview");
-    await new Promise((r) => setTimeout(r, 300));
     window.print();
     document.title = old;
     sb.rpc("log_event", { p_action: "pdf", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
