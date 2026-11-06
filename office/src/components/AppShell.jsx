@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { Avatar, Icon, Modal, Spinner } from "@/components/ui";
+import InstallBanner from "@/components/InstallBanner";
 import { ago, isOwnerRole, permLabel, roleLabel } from "@/lib/format";
 
 const Ctx = createContext(null);
@@ -250,6 +251,7 @@ export default function AppShell({ children }) {
 
           <main id="scroll" ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain">
             <div className="mx-auto w-full max-w-7xl px-4 pb-28 pt-5 sm:px-6 sm:pb-10 lg:px-10 lg:pb-12 lg:pt-9">
+              <InstallBanner />
               {blocked ? (
                 <div className="card p-8 text-center text-slate-600">You do not have access to this screen. Please ask the owner.</div>
               ) : children}

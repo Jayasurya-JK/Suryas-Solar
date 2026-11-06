@@ -1,10 +1,14 @@
 export default function manifest() {
   return {
+    id: "/",
     name: "Surya's Solar Office",
     short_name: "Suryas Office",
     description: "Quotes, leads and expenses for Surya's Solar",
     start_url: "/",
+    scope: "/",
+    lang: "en",
     display: "standalone",
+    display_override: ["standalone", "minimal-ui"],
     background_color: "#ffffff",
     theme_color: "#0f4bd6",
     icons: [
