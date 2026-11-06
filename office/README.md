@@ -34,11 +34,11 @@ They only add things and replace the access rules - no table, row or file is del
 | File | What it does |
 | --- | --- |
 | `staff-access-and-activity.sql` | User IDs, per-screen access, owner approval, "last active", and the activity history |
-| `admin-role.sql` | The admin role, the owner-only guards around it, and `guard_owner_row` |
-| `activity-viewers.sql` | Who exactly may read the activity history (`profiles.sees_activity`) |
 | `admin-role.sql` | The `admin` role (same powers as the owner) and the guard that protects the owner account |
+| `activity-viewers.sql` | Who exactly may read the activity history (`profiles.sees_activity`), and the final `guard_owner_row` |
+| `profile-and-pin.sql` | Own-name editing and the PIN functions (`set_my_pin`, `reset_member_pin`) |
 
-Both are already applied to the live project (6 Nov 2026). They are repeatable, so they stay here as the
+All four are already applied to the live project (6 Nov 2026). They are repeatable, so they stay here as the
 setup scripts for a fresh project. Run them in that order.
 
 ### Sign-ups only work if "Confirm email" is off
@@ -48,8 +48,8 @@ Staff request access with a User ID, which becomes a hidden address on the busin
 and the person is stuck on "sign-in is not switched on yet". Switch it off, or confirm each account by hand
 in Authentication -> Users.
 
-It is currently **on**, so every access request also sends a confirmation email - and the free plan only
-allows a couple of those per hour. Turning it off is the fix.
+It is currently **off**, which is what this flow needs. If it is ever turned back on, every access request
+also sends a confirmation email - and the free plan only allows a couple of those per hour.
 
 The business Gmail (`STAFF_MAIL` in `src/lib/format.js`) must be a real inbox, or staff can never reset a
 password.
@@ -63,10 +63,12 @@ Without the identity row and the confirmation date they cannot sign in.
 ## Roles
 
 - **Owner** - the one account that can never be locked out. Sees everything, approves new people.
-- **Admin** - every owner power in the app. Cannot change or switch off the owner account.
+- **Admin** - every owner power in the app, including making another person an admin. Cannot change or
+  switch off the owner account, cannot remove another admin, and cannot see the activity history unless the
+  owner grants it.
 - **Staff** - sees only the screens ticked for them (Leads, Quotes, Expenses), and only their own records.
 - **Pending** - someone who tapped "Request access" on the sign-in page. They see a waiting screen that
-  opens by itself once the owner approves. Pending people get nothing until then.
+  opens by itself once an admin approves. Pending people get nothing until then.
 
 The activity history is narrower than the owner role. Only people with `sees_activity = true` on their
 `profiles` row can open it - the owner always does, and the owner switches it on or off for anyone else in
@@ -78,6 +80,23 @@ The flag is guarded by `private.guard_owner_row`: an admin who calls the API dir
 
 Staff sign in with a User ID instead of an email. The User ID is mapped to a hidden plus-address on the
 business Gmail (`STAFF_MAIL` in `src/lib/format.js`), because the domain has no mailboxes.
+
+## Profile and the sign-in PIN
+
+`/profile` - reached by tapping your name in the sidebar, or your photo in the phone header - lets a person
+change **their own name** and set a **PIN**. The role is shown but not editable; only the owner or an admin
+changes roles.
+
+The PIN is not a second password kept on the side: `public.set_my_pin()` writes a fresh bcrypt hash into
+`auth.users.encrypted_password`, so the PIN *is* the password from then on. Signing in with the User ID and
+the 4 to 6 digit PIN is a normal Supabase password login, so nothing about the session changes. Forgot it?
+The owner or an admin sets a new one in Settings > Team > Manage (`public.reset_member_pin`).
+
+Both functions are `SECURITY DEFINER` and granted to `authenticated` only, so no service-role key is needed
+anywhere in the app. An admin cannot reset the owner's PIN; only the owner can.
+
+A 4 digit PIN is weaker than a password, so treat it as one: the login is rate limited by Supabase per IP,
+and the real protection is still the database rules.
 
 ## Activity history
 

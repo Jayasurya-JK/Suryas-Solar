@@ -24,7 +24,7 @@ function PasswordInput({ value, onChange, autoComplete, placeholder }) {
 }
 
 const signInError = (m = "") => {
-  if (/invalid login/i.test(m)) return "Wrong User ID or password.";
+  if (/invalid login/i.test(m)) return "Wrong User ID, password or PIN.";
   if (/banned/i.test(m)) return "This login has been switched off. Please contact the owner.";
   if (/not confirmed/i.test(m)) return "This login is not ready yet. Please contact the owner.";
   return m || "Could not sign in. Try again.";
@@ -125,9 +125,12 @@ export default function Login() {
             </button>
           )}
 
-          <Field label="Password">
+          <Field label={mode === "signin" ? "Password or PIN" : "Password"}>
             <PasswordInput value={form.password} onChange={set("password")} autoComplete={mode === "signin" ? "current-password" : "new-password"} />
           </Field>
+          {mode === "signin" && (
+            <p className="-mt-2 text-xs text-slate-500">If you have set a PIN, type that here instead of your password.</p>
+          )}
 
           {mode === "request" && (
             <div>
@@ -161,7 +164,7 @@ export default function Login() {
           </button>
         </form>
 
-        {mode === "signin" && <p className="mt-4 text-center text-xs text-slate-500">New here? Tap <b>Request access</b> above. Forgot your password? Ask the owner.</p>}
+        {mode === "signin" && <p className="mt-4 text-center text-xs text-slate-500">New here? Tap <b>Request access</b> above. Forgot your password or PIN? Ask an admin.</p>}
       </div>
     </div>
   );

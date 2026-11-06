@@ -6,7 +6,7 @@ import { useApp } from "@/components/AppShell";
 import Link from "next/link";
 import { Avatar, Badge, Field, FilterTabs, Icon, Modal, Notice, PageHeader, Segmented, Spinner, Switch } from "@/components/ui";
 import { ListSkeleton, AutoText } from "@/components/Extras";
-import { ADMIN_PERM, MODULES, ago, permLabel, rupees } from "@/lib/format";
+import { ADMIN_PERM, MODULES, ago, dmy, permLabel, rupees } from "@/lib/format";
 import { BomRows, LineList, PairList } from "@/components/ListEditors";
 
 const TABS = [
@@ -378,8 +378,8 @@ function ScreenSwitches({ perms, onChange }) {
 function ApproveForm({ person, onDone, onCancel }) {
   const sb = supabase();
   const { profile } = useApp();
-  // Only the owner may hand out admin. Anyone else approving never sees the option.
-  const canGiveAdmin = profile?.role === "owner";
+  // The owner and admins may hand out admin. Staff never see the option.
+  const canGiveAdmin = profile?.role === "owner" || profile?.role === "admin";
   const asked = person.requested_perms || [];
   const [admin, setAdmin] = useState(canGiveAdmin && asked.includes(ADMIN_PERM));
   const askedScreens = asked.filter((p) => p !== ADMIN_PERM);
@@ -404,7 +404,7 @@ function ApproveForm({ person, onDone, onCancel }) {
       </p>
       {canGiveAdmin && (
         <Switch checked={admin} onChange={setAdmin} label="Make an admin (full access)"
-          hint="Every screen, approve people, read the activity history. Only you can do this." />
+          hint="Every screen and can approve people. The activity history stays owner-only." />
       )}
       <div className={admin ? "pointer-events-none opacity-50" : ""}>
         <span className="label">Screens to give</span>
@@ -423,12 +423,17 @@ function ApproveForm({ person, onDone, onCancel }) {
 function ManageForm({ person, onDone, onCancel }) {
   const sb = supabase();
   const { profile, canSeeActivity } = useApp();
-  const canGiveAdmin = profile?.role === "owner";
+  const canGiveAdmin = profile?.role === "owner" || profile?.role === "admin";
+  // An admin may make an admin, but only the owner can take admin away.
+  const canSetRole = canGiveAdmin && (profile?.role === "owner" || person.role !== "admin");
   const [name, setName] = useState(person.full_name || "");
   const [perms, setPerms] = useState(person.perms || []);
   const [role, setRole] = useState(person.role === "admin" ? "admin" : "staff");
   const [active, setActive] = useState(person.active !== false);
   const [sees, setSees] = useState(!!person.sees_activity);
+  const [pin, setPin] = useState("");
+  const [pinBusy, setPinBusy] = useState(false);
+  const [pinMsg, setPinMsg] = useState(null);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const save = async () => {
@@ -442,13 +447,22 @@ function ManageForm({ person, onDone, onCancel }) {
     if (error) return setErr(error.message);
     onDone();
   };
+  const resetPin = async () => {
+    setPinBusy(true);
+    setPinMsg(null);
+    const { error } = await sb.rpc("reset_member_pin", { p_member: person.id, p_pin: pin });
+    setPinBusy(false);
+    if (error) return setPinMsg({ tone: "red", text: error.message });
+    setPin("");
+    setPinMsg({ tone: "green", text: `PIN set. Tell ${person.full_name?.split(" ")[0] || "them"} to use it instead of the password.` });
+  };
   return (
     <div className="space-y-4">
       <Field label="Name"><input className="input" value={name} onChange={(e) => setName(e.target.value)} /></Field>
       <p className="-mt-2 text-xs text-slate-500">{person.username ? `User ID: ${person.username}` : person.email}</p>
       <div>
         <span className="label">Role</span>
-        {canGiveAdmin ? (
+        {canSetRole ? (
           <>
             <Segmented full size="sm" value={role} onChange={setRole} options={[
               { id: "staff", label: "Staff" },
@@ -462,7 +476,8 @@ function ManageForm({ person, onDone, onCancel }) {
           </>
         ) : (
           <p className="text-sm text-slate-600">
-            {role === "admin" ? "Admin - full access" : "Staff"}. Only the owner can change roles.
+            {role === "admin" ? "Admin - full access" : "Staff"}.{" "}
+            {canGiveAdmin ? "Only the owner can remove an admin." : "Only the owner or an admin can change roles."}
           </p>
         )}
       </div>
@@ -479,6 +494,22 @@ function ManageForm({ person, onDone, onCancel }) {
           label="Can see the activity history"
           hint="The full log of who changed what. Off by default, even for an admin."
         />
+      )}
+      {canGiveAdmin && person.role !== "owner" && (
+        <div>
+          <span className="label">Sign-in PIN</span>
+          <p className="mb-2 text-xs text-slate-500">
+            {person.pin_set_at ? `PIN set (${dmy(person.pin_set_at)}).` : "No PIN yet."} A 4 to 6 digit code they type instead of the password. Reset it here if they forget it.
+          </p>
+          <div className="flex gap-2">
+            <input className="input" type="text" inputMode="numeric" maxLength={6} placeholder="New PIN" value={pin}
+              onChange={(e) => setPin(e.target.value.replace(/\D/g, ""))} />
+            <button className="btn-ghost shrink-0" onClick={resetPin} disabled={pinBusy || pin.length < 4}>
+              {pinBusy ? "Saving..." : "Reset PIN"}
+            </button>
+          </div>
+          {pinMsg && <div className="mt-2"><Notice tone={pinMsg.tone}>{pinMsg.text}</Notice></div>}
+        </div>
       )}
       {canSeeActivity && (
         <Link href={`/activity?person=${person.id}`} className="flex items-center justify-between rounded-xl border border-slate-200 px-3.5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">

@@ -208,10 +208,10 @@ export default function AppShell({ children }) {
           </nav>
           <div className="m-3 flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-slate-50/70 p-3">
             <Avatar name={profile.full_name || profile.email} size="sm" />
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-semibold text-slate-900">{profile.full_name}</p>
+            <Link href="/profile" className="min-w-0 flex-1">
+              <p className="truncate text-sm font-semibold text-slate-900 hover:text-primary">{profile.full_name}</p>
               <p className="text-xs text-slate-500">{roleLabelText}</p>
-            </div>
+            </Link>
             <button onClick={signOut} title="Sign out" aria-label="Sign out" className="rounded-lg p-2 text-slate-500 hover:bg-white hover:text-red-600">
               <Icon name="logout" className="h-4 w-4" />
             </button>
@@ -235,6 +235,9 @@ export default function AppShell({ children }) {
                         <p className="truncate text-sm font-semibold text-slate-900">{profile.full_name}</p>
                         <p className="truncate text-xs text-slate-500">{who} · {roleLabelText}</p>
                       </div>
+                      <Link href="/profile" onClick={() => setMenu(false)} className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+                        <Icon name="users" className="h-4 w-4" />My profile
+                      </Link>
                       <button onClick={signOut} className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50">
                         <Icon name="logout" className="h-4 w-4" />Sign out
                       </button>
@@ -294,6 +297,11 @@ export default function AppShell({ children }) {
                 </Link>
               );
             })}
+            <Link href="/profile" onClick={() => setMore(false)} className="flex items-center gap-3 rounded-xl px-3 py-3 hover:bg-slate-50">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700"><Icon name="users" className="h-5 w-5" /></span>
+              <span className="flex-1 text-[15px] font-semibold text-slate-900">My profile</span>
+              <Icon name="chevron" className="h-4 w-4 text-slate-400" />
+            </Link>
             <button onClick={signOut} className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left hover:bg-red-50">
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50 text-red-600"><Icon name="logout" className="h-5 w-5" /></span>
               <span className="text-[15px] font-semibold text-red-600">Sign out</span>

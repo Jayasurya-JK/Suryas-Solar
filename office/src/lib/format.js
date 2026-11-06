@@ -156,7 +156,7 @@ export const MODULES = [
 export const ADMIN_PERM = "admin";
 export const ADMIN_OPTION = {
   id: ADMIN_PERM, label: "Admin - full access",
-  hint: "Every screen, approve people, see the history. The owner decides.",
+  hint: "Every screen and can approve people. The activity history stays owner-only.",
   icon: "cog",
 };
 export const permLabel = (id) =>
