@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { Avatar, Icon, Modal, Spinner } from "@/components/ui";
-import { MODULES, ago, isOwnerRole, roleLabel } from "@/lib/format";
+import { ago, isOwnerRole, permLabel, roleLabel } from "@/lib/format";
 
 const Ctx = createContext(null);
 export const useApp = () => useContext(Ctx);
@@ -28,7 +28,7 @@ function AccessGate({ profile, kind, onRefresh, onSignOut, checkedAt }) {
     off: { icon: "x", title: "Your access is switched off", text: "Please contact the owner to switch it back on." },
     none: { icon: "info", title: "Approved, but no screens yet", text: "The owner has not given you any screens yet. Please ask the owner." },
   }[kind];
-  const asked = (profile?.requested_perms || []).map((p) => MODULES.find((m) => m.id === p)?.label).filter(Boolean);
+  const asked = (profile?.requested_perms || []).map(permLabel);
   return (
     <div className="flex min-h-dvh items-center justify-center bg-gradient-to-b from-primary-50 via-primary-50/60 to-white p-4">
       <div className="card w-full max-w-md p-7 text-center">

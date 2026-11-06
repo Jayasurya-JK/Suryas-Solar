@@ -148,6 +148,16 @@ export const MODULES = [
   { id: "expenses", label: "Expenses", hint: "Record daily spending and bills", icon: "wallet" },
 ];
 
+// Not a screen: asking for this means "make me an admin". Only the owner can grant it.
+export const ADMIN_PERM = "admin";
+export const ADMIN_OPTION = {
+  id: ADMIN_PERM, label: "Admin - full access",
+  hint: "Every screen, approve people, see the history. The owner decides.",
+  icon: "cog",
+};
+export const permLabel = (id) =>
+  id === ADMIN_PERM ? ADMIN_OPTION.label : MODULES.find((m) => m.id === id)?.label || id;
+
 // Staff sign in with a User ID. The login system needs an email, so a User ID is mapped to a
 // hidden plus-address on the business Gmail (the domain itself has no mailboxes). Staff never see it.
 export const STAFF_MAIL = "suryassolarenergy";

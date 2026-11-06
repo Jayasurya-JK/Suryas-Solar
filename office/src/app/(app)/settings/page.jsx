@@ -6,7 +6,7 @@ import { useApp } from "@/components/AppShell";
 import Link from "next/link";
 import { Avatar, Badge, Field, FilterTabs, Icon, Modal, Notice, PageHeader, Segmented, Spinner, Switch } from "@/components/ui";
 import { ListSkeleton } from "@/components/Extras";
-import { MODULES, ago, rupees } from "@/lib/format";
+import { ADMIN_PERM, MODULES, ago, permLabel, rupees } from "@/lib/format";
 import { BomRows, LineList, PairList } from "@/components/ListEditors";
 
 const TABS = [
@@ -352,7 +352,7 @@ function AccessChips({ perms = [], owner = false }) {
   if (!perms.length) return <span className="text-xs text-slate-500">No screens yet</span>;
   return (
     <span className="flex flex-wrap gap-1.5">
-      {perms.map((p) => <span key={p} className="rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-semibold text-primary">{MODULES.find((m) => m.id === p)?.label || p}</span>)}
+      {perms.map((p) => <span key={p} className="rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-semibold text-primary">{permLabel(p)}</span>)}
     </span>
   );
 }
@@ -368,13 +368,22 @@ function ScreenSwitches({ perms, onChange }) {
 
 function ApproveForm({ person, onDone, onCancel }) {
   const sb = supabase();
-  const [perms, setPerms] = useState(person.requested_perms?.length ? person.requested_perms : []);
+  const { profile } = useApp();
+  // Only the owner may hand out admin. Anyone else approving never sees the option.
+  const canGiveAdmin = profile?.role === "owner";
+  const asked = person.requested_perms || [];
+  const [admin, setAdmin] = useState(canGiveAdmin && asked.includes(ADMIN_PERM));
+  const askedScreens = asked.filter((p) => p !== ADMIN_PERM);
+  const [perms, setPerms] = useState(askedScreens.length ? askedScreens : []);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const approve = async () => {
-    if (perms.length === 0) return setErr("Choose at least one screen to give.");
+    if (!admin && perms.length === 0) return setErr("Choose at least one screen to give.");
     setBusy(true);
-    const { error } = await sb.from("profiles").update({ role: "staff", perms, active: true, decided_at: new Date().toISOString() }).eq("id", person.id);
+    const row = admin
+      ? { role: "admin", perms: MODULES.map((m) => m.id), active: true, decided_at: new Date().toISOString() }
+      : { role: "staff", perms, active: true, decided_at: new Date().toISOString() };
+    const { error } = await sb.from("profiles").update(row).eq("id", person.id);
     setBusy(false);
     if (error) return setErr(error.message);
     onDone();
@@ -382,11 +391,16 @@ function ApproveForm({ person, onDone, onCancel }) {
   return (
     <div className="space-y-4">
       <p className="text-sm text-slate-600">
-        <b className="text-slate-900">{person.full_name}</b> asked for: <AccessChips perms={person.requested_perms} />
+        <b className="text-slate-900">{person.full_name}</b> asked for: <AccessChips perms={asked} />
       </p>
-      <div>
+      {canGiveAdmin && (
+        <Switch checked={admin} onChange={setAdmin} label="Make an admin (full access)"
+          hint="Every screen, approve people, read the activity history. Only you can do this." />
+      )}
+      <div className={admin ? "pointer-events-none opacity-50" : ""}>
         <span className="label">Screens to give</span>
-        <ScreenSwitches perms={perms} onChange={setPerms} />
+        <ScreenSwitches perms={admin ? MODULES.map((m) => m.id) : perms} onChange={setPerms} />
+        {admin && <p className="mt-1 text-xs text-slate-500">An admin already sees every screen.</p>}
       </div>
       {err && <Notice tone="red">{err}</Notice>}
       <div className="flex justify-end gap-2">
@@ -399,6 +413,8 @@ function ApproveForm({ person, onDone, onCancel }) {
 
 function ManageForm({ person, onDone, onCancel }) {
   const sb = supabase();
+  const { profile } = useApp();
+  const canGiveAdmin = profile?.role === "owner";
   const [name, setName] = useState(person.full_name || "");
   const [perms, setPerms] = useState(person.perms || []);
   const [role, setRole] = useState(person.role === "admin" ? "admin" : "staff");
@@ -419,15 +435,23 @@ function ManageForm({ person, onDone, onCancel }) {
       <p className="-mt-2 text-xs text-slate-500">{person.username ? `User ID: ${person.username}` : person.email}</p>
       <div>
         <span className="label">Role</span>
-        <Segmented full size="sm" value={role} onChange={setRole} options={[
-          { id: "staff", label: "Staff" },
-          { id: "admin", label: "Admin - full access" },
-        ]} />
-        <p className="mt-1.5 text-xs text-slate-500">
-          {role === "admin"
-            ? "Sees every screen, can approve people and read the activity history. Same power as the owner."
-            : "Sees only the screens ticked below, and only their own records."}
-        </p>
+        {canGiveAdmin ? (
+          <>
+            <Segmented full size="sm" value={role} onChange={setRole} options={[
+              { id: "staff", label: "Staff" },
+              { id: "admin", label: "Admin - full access" },
+            ]} />
+            <p className="mt-1.5 text-xs text-slate-500">
+              {role === "admin"
+                ? "Sees every screen, can approve people and read the activity history. Same power as the owner."
+                : "Sees only the screens ticked below, and only their own records."}
+            </p>
+          </>
+        ) : (
+          <p className="text-sm text-slate-600">
+            {role === "admin" ? "Admin - full access" : "Staff"}. Only the owner can change roles.
+          </p>
+        )}
       </div>
       <div className={role === "admin" ? "pointer-events-none opacity-50" : ""}>
         <span className="label">Screens</span>
@@ -520,7 +544,7 @@ function TeamTab() {
                 <div className="flex shrink-0 flex-col items-end gap-2">
                   {isOwnerRow ? <Badge tone="pink">Owner</Badge> : isAdminRow ? <Badge tone="violet">Admin</Badge> : null}
                   {u.active === false && <Badge tone="red">Switched off</Badge>}
-                  {!isOwnerRow && <button className="btn-ghost !h-9 !px-3.5" onClick={() => setManage(u)}>Manage</button>}
+                  {!isOwnerRow && (profile.role === "owner" || !isAdminRow) && <button className="btn-ghost !h-9 !px-3.5" onClick={() => setManage(u)}>Manage</button>}
                 </div>
               </div>
             );

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 import { Field, Icon, Notice, Segmented } from "@/components/ui";
-import { MODULES, loginEmail, validUserId } from "@/lib/format";
+import { ADMIN_OPTION, MODULES, loginEmail, validUserId } from "@/lib/format";
 
 // Public Web3Forms key (the same one the website forms use). Used only to email the owner about new requests.
 const WEB3FORMS_KEY = "111437b6-7422-4929-b9b3-b0361d387ee0";
@@ -71,7 +71,7 @@ export default function Login() {
       return fail("Your request was created, but sign-in is not switched on yet. Please tell the owner.");
     }
     // Tell the owner by email (best effort; the request is already saved either way)
-    const labels = perms.map((p) => MODULES.find((m) => m.id === p)?.label).join(", ");
+    const labels = perms.map((p) => (p === "admin" ? "Admin (full access)" : MODULES.find((m) => m.id === p)?.label)).join(", ");
     fetch("https://api.web3forms.com/submit", {
       method: "POST", keepalive: true,
       headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -133,7 +133,7 @@ export default function Login() {
             <div>
               <span className="label">Which screens do you need?</span>
               <div className="space-y-2">
-                {MODULES.map((m) => {
+                {[...MODULES, ADMIN_OPTION].map((m) => {
                   const on = perms.includes(m.id);
                   return (
                     <button type="button" key={m.id} onClick={() => togglePerm(m.id)} role="checkbox" aria-checked={on}

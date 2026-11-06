@@ -1,5 +1,5 @@
 import {
-  EXPENSE_CATEGORIES, LEAD_SOURCES, LEAD_STATUSES, MODULES, PAY_MODES, QUOTE_STATUSES, dmy, labelOf, roleLabel, rupees,
+  EXPENSE_CATEGORIES, LEAD_SOURCES, LEAD_STATUSES, MODULES, PAY_MODES, QUOTE_STATUSES, dmy, labelOf, permLabel, roleLabel, rupees,
 } from "@/lib/format";
 
 const KIND = {
@@ -41,7 +41,7 @@ export function fmtValue(table, key, v, team = []) {
   if (v === null || v === undefined || v === "") return "not set";
   if (typeof v === "boolean") return v ? "On" : "Off";
   if (Array.isArray(v)) {
-    if (key === "perms" || key === "requested_perms") return v.length ? v.map((x) => labelOf(MODULES, x)).join(", ") : "none";
+    if (key === "perms" || key === "requested_perms") return v.length ? v.map(permLabel).join(", ") : "none";
     return "updated";
   }
   if (typeof v === "object") return "updated";
