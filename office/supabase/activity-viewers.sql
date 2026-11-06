@@ -1,8 +1,8 @@
--- Restricts the activity history to a named few.
+-- Restricts the activity history to the people the owner names.
 --
 -- Before this, `activity_log` was readable by anyone private.is_owner() accepted, which includes every
--- admin. The business only wants the owner and one named person to read it, so visibility now comes from
--- an explicit flag on the profile instead of the role.
+-- admin. The business only wants the owner plus whoever the owner picks, so visibility now comes from an
+-- explicit flag on the profile instead of the role.
 --
 -- Run after staff-access-and-activity.sql and admin-role.sql.
 
@@ -18,6 +18,32 @@ grant execute on function private.can_see_activity() to authenticated;
 -- `alter` instead of drop-and-create so the policy is never momentarily missing.
 alter policy "owner reads activity" on public.activity_log to authenticated using (private.can_see_activity());
 
--- The owner always keeps it; grant it to the named person as well.
-update public.profiles set sees_activity = true
-where role = 'owner' or username = 'kanimolzhi';
+-- Hands the choice to the owner only. Replaces the version in admin-role.sql.
+create or replace function private.guard_owner_row() returns trigger
+language plpgsql security definer set search_path to 'public' as $$
+declare
+  actor_role public.user_role;
+begin
+  if auth.uid() is null then return NEW; end if;
+  select role into actor_role from public.profiles where id = auth.uid() and active;
+
+  if OLD.role = 'owner' and actor_role is distinct from 'owner' then
+    raise exception 'Only the owner can change the owner account';
+  end if;
+
+  if NEW.role is distinct from OLD.role
+     and (OLD.role = 'admin' or NEW.role = 'admin')
+     and actor_role is distinct from 'owner' then
+    raise exception 'Only the owner can make or remove an admin';
+  end if;
+
+  if NEW.sees_activity is distinct from OLD.sees_activity
+     and actor_role is distinct from 'owner' then
+    raise exception 'Only the owner can change who sees the activity history';
+  end if;
+
+  return NEW;
+end $$;
+
+-- The owner always keeps it; the owner switches it on for anyone else from Settings > Team > Manage.
+update public.profiles set sees_activity = true where role = 'owner';

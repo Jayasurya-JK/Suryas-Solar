@@ -428,12 +428,16 @@ function ManageForm({ person, onDone, onCancel }) {
   const [perms, setPerms] = useState(person.perms || []);
   const [role, setRole] = useState(person.role === "admin" ? "admin" : "staff");
   const [active, setActive] = useState(person.active !== false);
+  const [sees, setSees] = useState(!!person.sees_activity);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const save = async () => {
     if (name.trim().length < 2) return setErr("Enter the person's name.");
     setBusy(true);
-    const { error } = await sb.from("profiles").update({ full_name: name.trim(), perms, active, role }).eq("id", person.id);
+    const patch = { full_name: name.trim(), perms, active, role };
+    // Only the owner hands out the activity history, and the owner always keeps it.
+    if (canGiveAdmin && person.role !== "owner") patch.sees_activity = sees;
+    const { error } = await sb.from("profiles").update(patch).eq("id", person.id);
     setBusy(false);
     if (error) return setErr(error.message);
     onDone();
@@ -452,7 +456,7 @@ function ManageForm({ person, onDone, onCancel }) {
             ]} />
             <p className="mt-1.5 text-xs text-slate-500">
               {role === "admin"
-                ? "Sees every screen, can approve people and read the activity history. Same power as the owner."
+                ? "Sees every screen and can approve people. Same power as the owner, except the activity history."
                 : "Sees only the screens ticked below, and only their own records."}
             </p>
           </>
@@ -468,6 +472,14 @@ function ManageForm({ person, onDone, onCancel }) {
         {role === "admin" && <p className="mt-1 text-xs text-slate-500">An admin already sees every screen.</p>}
       </div>
       <Switch checked={active} onChange={setActive} label="Access is on" hint="Switch off to stop this person using the app. Their records are kept." />
+      {canGiveAdmin && person.role !== "owner" && (
+        <Switch
+          checked={sees}
+          onChange={setSees}
+          label="Can see the activity history"
+          hint="The full log of who changed what. Off by default, even for an admin."
+        />
+      )}
       {canSeeActivity && (
         <Link href={`/activity?person=${person.id}`} className="flex items-center justify-between rounded-xl border border-slate-200 px-3.5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">
           See what {person.full_name?.split(" ")[0] || "this person"} did<Icon name="chevron" className="h-4 w-4 text-slate-400" />
@@ -555,6 +567,7 @@ function TeamTab() {
                 </div>
                 <div className="flex shrink-0 flex-col items-end gap-2">
                   {isOwnerRow ? <Badge tone="pink">Owner</Badge> : isAdminRow ? <Badge tone="violet">Admin</Badge> : null}
+                  {!isOwnerRow && u.sees_activity && <Badge tone="slate">Sees activity</Badge>}
                   {u.active === false && <Badge tone="red">Switched off</Badge>}
                   {!isOwnerRow && (profile.role === "owner" || !isAdminRow) && <button className="btn-ghost !h-9 !px-3.5" onClick={() => setManage(u)}>Manage</button>}
                 </div>

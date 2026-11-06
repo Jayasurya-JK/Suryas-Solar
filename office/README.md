@@ -69,21 +69,21 @@ Without the identity row and the confirmation date they cannot sign in.
   opens by itself once the owner approves. Pending people get nothing until then.
 
 The activity history is narrower than the owner role. Only people with `sees_activity = true` on their
-`profiles` row can open it - today that is the owner and one admin. Everyone else, admins included, does
-not see the Activity screen, the per-lead/per-quote history, or the "see what X did" link.
+`profiles` row can open it - the owner always does, and the owner switches it on or off for anyone else in
+Settings > Team > Manage. Everyone else, admins included, does not see the Activity screen, the per-lead
+and per-quote history, or the "see what X did" link.
 
-```sql
-update public.profiles set sees_activity = true where username = 'someone';
-```
+The flag is guarded by `private.guard_owner_row`: an admin who calls the API directly is rejected with
+"Only the owner can change who sees the activity history".
 
 Staff sign in with a User ID instead of an email. The User ID is mapped to a hidden plus-address on the
 business Gmail (`STAFF_MAIL` in `src/lib/format.js`), because the domain has no mailboxes.
 
 ## Activity history
 
-`/activity` (owner plus anyone with `sees_activity`) lists every change with the field-by-field differences,
-grouped by day, and can be filtered by type, by person (from Settings > Team) or by search. Each lead and
-quote also shows its own history at the bottom, for the same people only.
+`/activity` (owner plus anyone the owner has granted it to) lists every change with the field-by-field
+differences, grouped by day, and can be filtered by type, by person (from Settings > Team) or by search.
+Each lead and quote also shows its own history at the bottom, for the same people only.
 
 Row level security on `activity_log` uses `private.can_see_activity()`, so the restriction holds in the
 database too - a hidden screen is not the only thing stopping someone.
