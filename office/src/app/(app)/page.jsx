@@ -6,8 +6,8 @@ import { useApp } from "@/components/AppShell";
 import { Spinner } from "@/components/ui";
 
 export default function Home() {
-  const { isOwner } = useApp();
+  const { home } = useApp();
   const router = useRouter();
-  useEffect(() => { router.replace(isOwner ? "/dashboard" : "/leads"); }, [isOwner, router]);
+  useEffect(() => { router.replace(home); }, [home, router]);
   return <Spinner />;
 }

@@ -7,6 +7,7 @@ import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import { QuotePreview } from "@/components/QuoteDocument";
 import { BomRows } from "@/components/ListEditors";
+import { HistoryPanel } from "@/components/History";
 import { Field, Icon, Notice, Segmented, Spinner, Switch } from "@/components/ui";
 import { QUOTE_STATUSES, calcQuote, inr, rupees, waLink } from "@/lib/format";
 
@@ -72,6 +73,7 @@ export default function QuoteEditor() {
     await new Promise((r) => setTimeout(r, 300));
     window.print();
     document.title = old;
+    sb.rpc("log_event", { p_action: "pdf", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
   };
 
   const sendWhatsApp = async () => {
@@ -81,6 +83,7 @@ export default function QuoteEditor() {
       (q.show_subsidy ? `\nSubsidy to your bank: ${rupees(calc.central + calc.tn)}\nYour effective cost: ${rupees(calc.net)}` : "") +
       `\n\nFor any doubt, call ${s.phone1 || ""}.\nSurya's Solar, Cuddalore`;
     window.open(q.customer?.phone ? waLink(q.customer.phone, text) : `https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
+    sb.rpc("log_event", { p_action: "whatsapp", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
   };
 
   const remove = async () => {
@@ -210,6 +213,7 @@ export default function QuoteEditor() {
             <BomRows rows={q.bom || []} onChange={(bom) => update({ bom })} startNumber={3} />
           </section>
 
+          <HistoryPanel table="quotes" id={q.id} />
           {isOwner && <button onClick={remove} className="btn-danger w-full"><Icon name="trash" className="h-4 w-4" />Delete quote</button>}
         </div>
 

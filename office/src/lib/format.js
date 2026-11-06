@@ -134,3 +134,49 @@ export function downloadCsv(filename, rows) {
   a.click();
   URL.revokeObjectURL(url);
 }
+
+// ---- staff accounts ----
+export const MODULES = [
+  { id: "leads", label: "Leads", hint: "Customer enquiries and follow-ups", icon: "users" },
+  { id: "quotes", label: "Quotes", hint: "Make and send quotations", icon: "doc" },
+  { id: "expenses", label: "Expenses", hint: "Record daily spending and bills", icon: "wallet" },
+];
+
+// Staff sign in with a User ID. The login system needs an email, so a User ID is mapped to a
+// hidden plus-address on the business Gmail (the domain itself has no mailboxes). Staff never see it.
+export const STAFF_MAIL = "suryassolarenergy";
+export const validUserId = (s) => /^[a-z0-9][a-z0-9._-]{2,19}$/.test(String(s || ""));
+export function loginEmail(value) {
+  const s = String(value || "").trim().toLowerCase();
+  return s.includes("@") ? s : `${STAFF_MAIL}+${s}@gmail.com`;
+}
+
+// "5 min ago", "2 h ago", "yesterday", "03.11.2026"
+export function ago(value) {
+  if (!value) return "Never";
+  const t = new Date(value).getTime();
+  if (isNaN(t)) return "";
+  const m = Math.round((Date.now() - t) / 60000);
+  if (m < 1) return "just now";
+  if (m < 60) return `${m} min ago`;
+  const h = Math.round(m / 60);
+  if (h < 24) return `${h} h ago`;
+  const d = Math.round(h / 24);
+  if (d === 1) return "yesterday";
+  if (d < 7) return `${d} days ago`;
+  return dmy(value);
+}
+
+export const clock = (value) =>
+  value ? new Date(value).toLocaleTimeString("en-IN", { hour: "numeric", minute: "2-digit" }) : "";
+
+// "Today", "Yesterday" or "Fri, 6 Nov"
+export function dayLabel(value) {
+  const d = new Date(value);
+  const t = new Date();
+  const same = (a, b) => a.toDateString() === b.toDateString();
+  const y = new Date(); y.setDate(t.getDate() - 1);
+  if (same(d, t)) return "Today";
+  if (same(d, y)) return "Yesterday";
+  return d.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" });
+}

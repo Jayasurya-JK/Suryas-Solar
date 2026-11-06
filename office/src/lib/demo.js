@@ -1,6 +1,7 @@
 // LOCAL DESIGN PREVIEW ONLY. Used when NEXT_PUBLIC_DEMO=1 (never set on Vercel).
-// A tiny in-memory stand-in for the Supabase client so every screen can be
-// checked with realistic sample data without logging in.
+// A small in-memory stand-in for the Supabase client so every screen can be checked
+// with realistic sample data, in any role, without logging in.
+// Roles: NEXT_PUBLIC_DEMO_ROLE = owner (default) | staff | pending | declined
 
 const day = (n) => {
   const d = new Date();
@@ -8,10 +9,13 @@ const day = (n) => {
   return d.toISOString().slice(0, 10);
 };
 const ts = (n) => new Date(Date.now() + n * 86400000).toISOString();
+const hrs = (n) => new Date(Date.now() + n * 3600000).toISOString();
 
-const owner = { id: "u1", full_name: "Surya Kumar", email: "owner@example.com", role: "owner", created_at: ts(-60) };
-const staff = { id: "u2", full_name: "Ravi", email: "ravi@example.com", role: "staff", created_at: ts(-30) };
-const waiting = { id: "u3", full_name: "Karthik", email: "karthik@example.com", role: "pending", created_at: ts(-1) };
+const ALL = ["leads", "quotes", "expenses"];
+const owner = { id: "u1", full_name: "Surya Kumar", email: "owner@example.com", username: null, role: "owner", perms: ALL, requested_perms: [], active: true, last_seen_at: hrs(-0.1), requested_at: ts(-60), created_at: ts(-60) };
+const staff = { id: "u2", full_name: "Ravi Kumar", email: "x+ravi@example.com", username: "ravi", role: "staff", perms: ["leads", "expenses"], requested_perms: ALL, active: true, last_seen_at: hrs(-2), requested_at: ts(-30), created_at: ts(-30) };
+const waiting = { id: "u3", full_name: "Karthik", email: "x+karthik@example.com", username: "karthik", role: "pending", perms: [], requested_perms: ["leads", "expenses"], active: true, last_seen_at: null, requested_at: hrs(-3), created_at: hrs(-3) };
+const declined = { id: "u4", full_name: "Mohan", email: "x+mohan@example.com", username: "mohan", role: "pending", perms: [], requested_perms: ["quotes"], active: false, decided_at: ts(-1), last_seen_at: null, requested_at: ts(-2), created_at: ts(-2) };
 
 const settingsData = {
   header_line1: "Registered Vendor · PM Surya Ghar: Muft Bijli Yojana",
@@ -31,7 +35,7 @@ const bom = [{ item: "MMS structure", make: "VRM / DM Power", spec: "Module moun
 const sys = { kw: 3.3, inverter_kw: 3, phase: 1, roof: "RCC (concrete) roof", panel_type: "Bifacial N-type TOPCon, DCR", panel_brand: "Adani / Goldi / Vikram", panel_watt: "555 to 625", panel_count: 6, inverter_brand: "SolarEdge / Sungrow / Fox", brand: "Premier Energies" };
 
 const db = {
-  profiles: [owner, staff, waiting],
+  profiles: [owner, staff, waiting, declined],
   app_settings: [{ id: 1, data: settingsData, quote_prefix: "SS", next_quote_no: 21, updated_at: ts(0) }],
   brands: [
     { id: "b1", name: "Premier Energies", logo_url: "/brands/premier.png", is_default: true, active: true, sort: 1 },
@@ -63,26 +67,76 @@ const db = {
     { id: "e3", spent_on: day(-1), amount: 1800, category: "transport", site: "Neyveli", lead_id: null, paid_by: "Surya Kumar", payment_mode: "cash", note: "Mini truck hire", bill_path: null, created_by: "u1", created_at: ts(-1) },
     { id: "e4", spent_on: day(-2), amount: 9000, category: "labour", site: "Vijay Anand, Neyveli", lead_id: null, paid_by: "Surya Kumar", payment_mode: "bank", note: "Installation team, 3 days", bill_path: null, created_by: "u1", created_at: ts(-2) },
   ],
+  activity_log: [
+    { id: 12, at: hrs(-0.2), actor: "u2", actor_name: "Ravi Kumar", table_name: "expenses", record_id: "e1", action: "create", label: "₹4200 material", summary: "Added expense ₹4200 material", changes: null },
+    { id: 11, at: hrs(-0.5), actor: "u2", actor_name: "Ravi Kumar", table_name: "leads", record_id: "l2", action: "update", label: "Meena Rajan", summary: "Edited lead Meena Rajan", changes: { status: ["contacted", "site_visit"], next_follow_up: [null, day(1)], notes: ["", "Roof is 2 floors, needs high structure"] } },
+    { id: 10, at: hrs(-1), actor: "u1", actor_name: "Surya Kumar", table_name: "quotes", record_id: "q1", action: "update", label: "SS/0020/26 · Arun Kumar", summary: "Edited quote SS/0020/26 · Arun Kumar", changes: { status: ["draft", "sent"], price: [200000, 205000], "customer.addr1": ["Muthialpet 2nd St", "Muthialpet"] } },
+    { id: 9, at: hrs(-1.1), actor: "u1", actor_name: "Surya Kumar", table_name: "quotes", record_id: "q1", action: "pdf", label: "SS/0020/26", summary: "Downloaded the PDF of SS/0020/26", changes: null },
+    { id: 8, at: hrs(-2), actor: "u2", actor_name: "Ravi Kumar", table_name: null, record_id: null, action: "login", label: null, summary: "Signed in", changes: null },
+    { id: 7, at: hrs(-3), actor: null, actor_name: "Website form", table_name: "leads", record_id: "l1", action: "create", label: "Surya Prakash", summary: "New website enquiry: Surya Prakash", changes: null },
+    { id: 6, at: hrs(-26), actor: "u2", actor_name: "Ravi Kumar", table_name: "leads", record_id: "l4", action: "create", label: "Lakshmi Narayanan", summary: "Added lead Lakshmi Narayanan", changes: null },
+    { id: 5, at: hrs(-27), actor: "u1", actor_name: "Surya Kumar", table_name: "profiles", record_id: "u2", action: "update", label: "Ravi Kumar", summary: "Edited team member Ravi Kumar", changes: { role: ["pending", "staff"], perms: [[], ["leads", "expenses"]] } },
+    { id: 4, at: hrs(-30), actor: "u1", actor_name: "Surya Kumar", table_name: "expenses", record_id: "x1", action: "delete", label: "₹100 other", summary: "Deleted expense ₹100 other", changes: { deleted: { amount: 100, category: "other", note: "test" } } },
+  ],
+};
+
+const me = () => {
+  const r = process.env.NEXT_PUBLIC_DEMO_ROLE;
+  return r === "staff" ? staff : r === "pending" ? waiting : r === "declined" ? declined : owner;
 };
 
 function query(table) {
   const filters = [];
-  let single = false;
-  let maybe = false;
+  let mode = "select", patch = null, ins = null, single = false, maybe = false;
+  let orderKey = null, asc = true, lim = null, from = null, to = null;
+  const run = () => {
+    const rows = db[table] || (db[table] = []);
+    if (mode === "insert") {
+      const arr = Array.isArray(ins) ? ins : [ins];
+      const made = arr.map((r) => ({ id: "n" + Math.random().toString(36).slice(2, 8), created_at: ts(0), updated_at: ts(0), ...r }));
+      rows.unshift(...made);
+      return { data: single ? made[0] : made, error: null };
+    }
+    const m = rows.filter((r) => filters.every((f) => f(r)));
+    if (mode === "update") { m.forEach((r) => Object.assign(r, patch, { updated_at: ts(0) })); return { data: m, error: null }; }
+    if (mode === "delete") { db[table] = rows.filter((r) => !m.includes(r)); return { data: null, error: null }; }
+    let out = [...m];
+    if (orderKey) out.sort((a, b) => (String(a[orderKey] ?? "") < String(b[orderKey] ?? "") ? -1 : 1) * (asc ? 1 : -1));
+    if (from != null) out = out.slice(from, to + 1);
+    if (lim != null) out = out.slice(0, lim);
+    return { data: single || maybe ? out[0] || null : out, error: null };
+  };
   const q = {
-    select: () => q, order: () => q, limit: () => q, in: () => q, not: () => q,
-    gte: () => q, lt: () => q, lte: () => q,
+    select: () => q,
+    order: (k, o) => { orderKey = k; asc = o?.ascending !== false; return q; },
+    limit: (n) => { lim = n; return q; },
+    range: (a, b) => { from = a; to = b; return q; },
     eq: (k, v) => { filters.push((r) => String(r[k]) === String(v)); return q; },
     neq: (k, v) => { filters.push((r) => String(r[k]) !== String(v)); return q; },
+    in: (k, arr) => { filters.push((r) => arr.map(String).includes(String(r[k]))); return q; },
+    not: (k, op, v) => {
+      if (op === "in") { const list = String(v).replace(/[()]/g, "").split(","); filters.push((r) => !list.includes(String(r[k]))); }
+      return q;
+    },
+    // Only the pattern the Activity screen uses: "a.ilike.%x%,b.ilike.%x%"
+    or: (spec) => {
+      const tests = String(spec).split(",").map((part) => {
+        const [col, , ...rest] = part.split(".");
+        const needle = rest.join(".").replace(/%/g, "").toLowerCase();
+        return (r) => String(r[col] ?? "").toLowerCase().includes(needle);
+      });
+      filters.push((r) => tests.some((t) => t(r)));
+      return q;
+    },
+    gte: (k, v) => { filters.push((r) => String(r[k] ?? "") >= String(v)); return q; },
+    lt: (k, v) => { filters.push((r) => String(r[k] ?? "") < String(v)); return q; },
+    lte: (k, v) => { filters.push((r) => r[k] != null && String(r[k]) <= String(v)); return q; },
     single: () => { single = true; return q; },
     maybeSingle: () => { maybe = true; return q; },
-    insert: () => ({ ...q, select: () => ({ single: () => Promise.resolve({ data: { id: (db[table][0] || {}).id }, error: null }) }), then: (r) => r({ error: null }) }),
-    update: () => ({ eq: () => ({ in: () => Promise.resolve({ error: null }), then: (r) => r({ error: null }) }), neq: () => Promise.resolve({ error: null }) }),
-    delete: () => ({ eq: () => Promise.resolve({ error: null }) }),
-    then: (resolve) => {
-      const rows = (db[table] || []).filter((r) => filters.every((f) => f(r)));
-      resolve({ data: single || maybe ? rows[0] || null : rows, error: null });
-    },
+    insert: (row) => { mode = "insert"; ins = row; return q; },
+    update: (p) => { mode = "update"; patch = p; return q; },
+    delete: () => { mode = "delete"; return q; },
+    then: (res, rej) => Promise.resolve(run()).then(res, rej),
   };
   return q;
 }
@@ -90,9 +144,10 @@ function query(table) {
 export function demoClient() {
   return {
     from: query,
-    rpc: async () => ({ data: "SS/0021/26", error: null }),
+    rpc: async (name) => ({ data: name === "next_quote_ref" ? "SS/0021/26" : null, error: null }),
+    functions: { invoke: async () => ({ data: { ok: true }, error: null }) },
     auth: {
-      getUser: async () => ({ data: { user: { id: owner.id, email: owner.email } } }),
+      getUser: async () => ({ data: { user: { id: me().id, email: me().email } } }),
       signOut: async () => ({}),
       signInWithPassword: async () => ({ error: null }),
       signUp: async () => ({ data: { session: {} }, error: null }),

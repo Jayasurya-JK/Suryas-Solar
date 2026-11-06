@@ -78,9 +78,10 @@ export default function Expenses() {
     if (f.spent_on.startsWith(month)) load(); else setMonth(f.spent_on.slice(0, 7));
   };
 
-  const viewBill = async (path) => {
+  const viewBill = async (path, row) => {
     const { data } = await sb.storage.from("bills").createSignedUrl(path, 300);
     if (data?.signedUrl) window.open(data.signedUrl, "_blank");
+    if (row) sb.rpc("log_event", { p_action: "bill_view", p_table: "expenses", p_record: row.id, p_label: `₹${row.amount} ${row.category}` }).then(() => {}, () => {});
   };
 
   const remove = async (r) => {
@@ -186,7 +187,7 @@ export default function Expenses() {
                   <div className="flex shrink-0 flex-col items-end gap-1">
                     <span className="text-[15px] font-bold text-slate-900">{rupees(r.amount)}</span>
                     <div className="flex gap-0.5">
-                      {r.bill_path && <button onClick={() => viewBill(r.bill_path)} className="rounded-lg p-1.5 text-primary hover:bg-primary-50" title="View bill" aria-label="View bill"><Icon name="camera" className="h-4 w-4" /></button>}
+                      {r.bill_path && <button onClick={() => viewBill(r.bill_path, r)} className="rounded-lg p-1.5 text-primary hover:bg-primary-50" title="View bill" aria-label="View bill"><Icon name="camera" className="h-4 w-4" /></button>}
                       {isOwner && <button onClick={() => remove(r)} className="rounded-lg p-1.5 text-slate-400 hover:bg-red-50 hover:text-red-600" title="Delete" aria-label="Delete"><Icon name="trash" className="h-4 w-4" /></button>}
                     </div>
                   </div>

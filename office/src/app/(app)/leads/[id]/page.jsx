@@ -6,6 +6,7 @@ import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import LeadForm from "@/components/LeadForm";
+import { HistoryPanel } from "@/components/History";
 import { Avatar, Badge, Icon, Segmented, Spinner } from "@/components/ui";
 import { LEAD_SOURCES, LEAD_STATUSES, QUOTE_STATUSES, dmy, labelOf, rupees, waLink } from "@/lib/format";
 
@@ -108,6 +109,7 @@ export default function LeadDetail() {
             )}
             <Link href={`/quotes/new?lead=${lead.id}`} className="btn-ghost mt-3 w-full"><Icon name="plus" className="h-4 w-4" />New quote</Link>
           </div>
+          <HistoryPanel table="leads" id={lead.id} />
           {isOwner && <button onClick={remove} className="btn-danger w-full"><Icon name="trash" className="h-4 w-4" />Delete lead</button>}
         </div>
       </div>

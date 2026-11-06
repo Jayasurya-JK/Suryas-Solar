@@ -3,8 +3,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
-import { Badge, Field, FilterTabs, Icon, Modal, Notice, PageHeader, Segmented, Spinner, Switch } from "@/components/ui";
-import { rupees } from "@/lib/format";
+import Link from "next/link";
+import { Avatar, Badge, Field, FilterTabs, Icon, Modal, Notice, PageHeader, Segmented, Spinner, Switch } from "@/components/ui";
+import { ListSkeleton } from "@/components/Extras";
+import { MODULES, ago, rupees } from "@/lib/format";
 import { BomRows, LineList, PairList } from "@/components/ListEditors";
 
 const TABS = [
@@ -345,62 +347,212 @@ function PackagesTab() {
   );
 }
 
+function AccessChips({ perms = [], owner = false }) {
+  if (owner) return <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-semibold text-accent">Full access</span>;
+  if (!perms.length) return <span className="text-xs text-slate-500">No screens yet</span>;
+  return (
+    <span className="flex flex-wrap gap-1.5">
+      {perms.map((p) => <span key={p} className="rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-semibold text-primary">{MODULES.find((m) => m.id === p)?.label || p}</span>)}
+    </span>
+  );
+}
+
+function ScreenSwitches({ perms, onChange }) {
+  const toggle = (id) => onChange(perms.includes(id) ? perms.filter((x) => x !== id) : [...perms, id]);
+  return (
+    <div className="space-y-2">
+      {MODULES.map((m) => <Switch key={m.id} checked={perms.includes(m.id)} onChange={() => toggle(m.id)} label={m.label} hint={m.hint} />)}
+    </div>
+  );
+}
+
+function ApproveForm({ person, onDone, onCancel }) {
+  const sb = supabase();
+  const [perms, setPerms] = useState(person.requested_perms?.length ? person.requested_perms : []);
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState("");
+  const approve = async () => {
+    if (perms.length === 0) return setErr("Choose at least one screen to give.");
+    setBusy(true);
+    const { error } = await sb.from("profiles").update({ role: "staff", perms, active: true, decided_at: new Date().toISOString() }).eq("id", person.id);
+    setBusy(false);
+    if (error) return setErr(error.message);
+    onDone();
+  };
+  return (
+    <div className="space-y-4">
+      <p className="text-sm text-slate-600">
+        <b className="text-slate-900">{person.full_name}</b> asked for: <AccessChips perms={person.requested_perms} />
+      </p>
+      <div>
+        <span className="label">Screens to give</span>
+        <ScreenSwitches perms={perms} onChange={setPerms} />
+      </div>
+      {err && <Notice tone="red">{err}</Notice>}
+      <div className="flex justify-end gap-2">
+        <button className="btn-ghost" onClick={onCancel}>Cancel</button>
+        <button className="btn-primary" onClick={approve} disabled={busy}>{busy ? "Approving..." : "Approve and give access"}</button>
+      </div>
+    </div>
+  );
+}
+
+function ManageForm({ person, onDone, onCancel }) {
+  const sb = supabase();
+  const [name, setName] = useState(person.full_name || "");
+  const [perms, setPerms] = useState(person.perms || []);
+  const [active, setActive] = useState(person.active !== false);
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState("");
+  const save = async () => {
+    if (name.trim().length < 2) return setErr("Enter the person's name.");
+    setBusy(true);
+    const { error } = await sb.from("profiles").update({ full_name: name.trim(), perms, active }).eq("id", person.id);
+    setBusy(false);
+    if (error) return setErr(error.message);
+    onDone();
+  };
+  return (
+    <div className="space-y-4">
+      <Field label="Name"><input className="input" value={name} onChange={(e) => setName(e.target.value)} /></Field>
+      <p className="-mt-2 text-xs text-slate-500">{person.username ? `User ID: ${person.username}` : person.email}</p>
+      <div>
+        <span className="label">Screens</span>
+        <ScreenSwitches perms={perms} onChange={setPerms} />
+      </div>
+      <Switch checked={active} onChange={setActive} label="Access is on" hint="Switch off to stop this person using the app. Their records are kept." />
+      <Link href={`/activity?person=${person.id}`} className="flex items-center justify-between rounded-xl border border-slate-200 px-3.5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">
+        See what {person.full_name?.split(" ")[0] || "this person"} did<Icon name="chevron" className="h-4 w-4 text-slate-400" />
+      </Link>
+      {err && <Notice tone="red">{err}</Notice>}
+      <div className="flex justify-end gap-2">
+        <button className="btn-ghost" onClick={onCancel}>Cancel</button>
+        <button className="btn-primary" onClick={save} disabled={busy}>{busy ? "Saving..." : "Save"}</button>
+      </div>
+    </div>
+  );
+}
+
 function TeamTab() {
   const sb = supabase();
   const { profile, reload } = useApp();
   const [list, setList] = useState(null);
+  const [approve, setApprove] = useState(null);
+  const [manage, setManage] = useState(null);
+  const [showDeclined, setShowDeclined] = useState(false);
   const load = useCallback(() => sb.from("profiles").select("*").order("created_at").then(({ data }) => setList(data || [])), [sb]);
   useEffect(() => { load(); }, [load]);
+  const done = () => { setApprove(null); setManage(null); load(); reload(); };
 
-  const setRole = async (u, role) => {
-    if (u.id === profile.id) return;
-    await sb.from("profiles").update({ role }).eq("id", u.id);
-    load();
-    reload();
-  };
-  const setName = async (u, full_name) => {
-    const name = full_name.trim();
-    if (!name || name === u.full_name) return;
-    await sb.from("profiles").update({ full_name: name }).eq("id", u.id);
-    load();
-    reload();
+  const decline = async (u) => {
+    if (!confirm(`Decline the request from ${u.full_name}?`)) return;
+    await sb.from("profiles").update({ active: false, decided_at: new Date().toISOString() }).eq("id", u.id);
+    done();
   };
 
-  if (!list) return <Spinner />;
+  if (!list) return <ListSkeleton rows={3} />;
+  const requests = list.filter((u) => u.role === "pending" && u.active !== false);
+  const declined = list.filter((u) => u.role === "pending" && u.active === false);
+  const people = list.filter((u) => u.role !== "pending");
+
   return (
-    <div className="card divide-y divide-slate-100">
-      <div className="p-5">
-        <Notice>To add a staff member, create their login in Supabase (Authentication, Add user) or ask them to use <b>Create an account</b> on the login page. They appear here as <b>Waiting</b> until you set them to <b>Staff</b>. Staff can add leads, quotes and expenses, but cannot see the dashboard, settings or other people&apos;s records.</Notice>
-      </div>
-      {list.map((u) => (
-        <div key={u.id} className="flex flex-wrap items-center justify-between gap-3 p-5">
-          <div className="min-w-0 flex-1 sm:max-w-sm">
-            <input className="input font-semibold" defaultValue={u.full_name || ""} placeholder="Full name"
-              onBlur={(e) => setName(u, e.target.value)} onKeyDown={(e) => e.key === "Enter" && e.currentTarget.blur()} aria-label="Full name" />
-            <p className="mt-1 break-all px-1 text-sm text-slate-500">{u.email}{u.id === profile.id && " · you"}</p>
+    <div className="space-y-6">
+      <Notice>New people tap <b>Request access</b> on the sign-in page and choose the screens they need. Their request appears here. Approve it and their screens open by themselves.</Notice>
+
+      <section>
+        <div className="mb-3 flex items-center justify-between">
+          <h2 className="text-[15px] font-bold text-slate-900">Requests waiting</h2>
+          {requests.length > 0 && <Badge tone="pink">{requests.length}</Badge>}
+        </div>
+        {requests.length === 0 ? (
+          <div className="card p-6 text-center text-sm text-slate-500">No requests waiting.</div>
+        ) : (
+          <div className="grid gap-3 md:grid-cols-2">
+            {requests.map((u) => (
+              <div key={u.id} className="card p-4">
+                <div className="flex items-start gap-3">
+                  <Avatar name={u.full_name || "?"} />
+                  <div className="min-w-0 flex-1">
+                    <p className="break-words font-semibold text-slate-900">{u.full_name}</p>
+                    <p className="break-all text-[13px] text-slate-500">{u.username ? `User ID: ${u.username}` : u.email} · asked {ago(u.requested_at)}</p>
+                  </div>
+                </div>
+                <div className="mt-3"><p className="label">Asked for</p><AccessChips perms={u.requested_perms} /></div>
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  <button className="btn-primary" onClick={() => setApprove(u)}><Icon name="check" className="h-4 w-4" />Approve</button>
+                  <button className="btn-ghost" onClick={() => decline(u)}>Decline</button>
+                </div>
+              </div>
+            ))}
           </div>
-          {u.id === profile.id ? <Badge tone="pink">Owner</Badge> : (
-            <div className="flex items-center gap-2">
-              {u.role === "pending" && <Badge tone="amber">Waiting</Badge>}
-              <Segmented size="sm" value={u.role} onChange={(v) => setRole(u, v)} options={[
-                { id: "pending", label: "No access" }, { id: "staff", label: "Staff" }, { id: "owner", label: "Owner" },
-              ]} />
+        )}
+      </section>
+
+      <section>
+        <h2 className="mb-3 text-[15px] font-bold text-slate-900">Team</h2>
+        <div className="card divide-y divide-slate-100">
+          {people.map((u) => {
+            const self = u.id === profile.id;
+            const isOwnerRow = u.role === "owner";
+            return (
+              <div key={u.id} className="flex items-start gap-3 p-4">
+                <Avatar name={u.full_name || "?"} />
+                <div className="min-w-0 flex-1">
+                  <p className="break-words font-semibold text-slate-900">{u.full_name}{self && <span className="ml-1.5 text-xs font-medium text-slate-500">(you)</span>}</p>
+                  <p className="break-all text-[13px] text-slate-500">{u.username ? `User ID: ${u.username}` : u.email}</p>
+                  <div className="mt-2"><AccessChips perms={u.perms} owner={isOwnerRow} /></div>
+                  <p className="mt-2 text-xs text-slate-500">{u.last_seen_at ? `Active ${ago(u.last_seen_at)}` : "Never signed in"}</p>
+                </div>
+                <div className="flex shrink-0 flex-col items-end gap-2">
+                  {u.active === false && <Badge tone="red">Switched off</Badge>}
+                  {!isOwnerRow && <button className="btn-ghost !h-9 !px-3.5" onClick={() => setManage(u)}>Manage</button>}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {declined.length > 0 && (
+        <section>
+          <button type="button" onClick={() => setShowDeclined(!showDeclined)} className="text-sm font-semibold text-slate-600">
+            {showDeclined ? "Hide" : "Show"} declined requests ({declined.length})
+          </button>
+          {showDeclined && (
+            <div className="card mt-3 divide-y divide-slate-100">
+              {declined.map((u) => (
+                <div key={u.id} className="flex items-center gap-3 p-4">
+                  <Avatar name={u.full_name || "?"} size="sm" />
+                  <div className="min-w-0 flex-1">
+                    <p className="break-words text-sm font-semibold text-slate-900">{u.full_name}</p>
+                    <p className="break-all text-xs text-slate-500">{u.username ? `User ID: ${u.username}` : u.email} · declined {ago(u.decided_at)}</p>
+                  </div>
+                  <button className="btn-ghost !h-9 !px-3.5" onClick={() => setApprove(u)}>Approve</button>
+                </div>
+              ))}
             </div>
           )}
-        </div>
-      ))}
+        </section>
+      )}
+
+      {approve && <Modal title={`Approve ${approve.full_name}`} onClose={() => setApprove(null)}><ApproveForm person={approve} onDone={done} onCancel={() => setApprove(null)} /></Modal>}
+      {manage && <Modal title={manage.full_name} onClose={() => setManage(null)}><ManageForm person={manage} onDone={done} onCancel={() => setManage(null)} /></Modal>}
     </div>
   );
 }
 
 export default function Settings() {
-  const { settings, reload, isOwner } = useApp();
+  const { settings, reload, isOwner, requests } = useApp();
   const [tab, setTab] = useState("company");
+  useEffect(() => {
+    const t = new URLSearchParams(window.location.search).get("tab");
+    if (t && TABS.some((x) => x.id === t)) setTab(t);
+  }, []);
   if (!isOwner) return null;
   return (
     <>
       <PageHeader title="Settings" subtitle="Company details, quote wording, price packages and who can log in." />
-      <div className="mb-5"><FilterTabs tabs={TABS} value={tab} onChange={setTab} /></div>
+      <div className="mb-5"><FilterTabs tabs={TABS.map((t) => (t.id === "team" ? { ...t, n: requests, warn: true } : t))} value={tab} onChange={setTab} /></div>
       {tab === "company" && <CompanyTab key={settings.updated_at} settings={settings} reload={reload} />}
       {tab === "wording" && <WordingTab key={settings.updated_at} settings={settings} reload={reload} />}
       {tab === "packages" && <PackagesTab />}
