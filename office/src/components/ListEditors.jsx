@@ -1,6 +1,7 @@
 "use client";
 
 import { Icon } from "@/components/ui";
+import { AutoText } from "@/components/Extras";
 
 const move = (arr, i, d) => {
   const j = i + d;
@@ -45,7 +46,7 @@ export function PairList({ items = [], onChange, labelPlaceholder = "Heading", t
         <div key={i} className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white p-2">
           <div className="grid min-w-0 flex-1 gap-2 sm:grid-cols-[minmax(0,12rem)_minmax(0,1fr)]">
             <input className="input font-semibold" placeholder={labelPlaceholder} value={x.label} onChange={(e) => set(i, "label", e.target.value)} />
-            <textarea rows={1} className="input grow-text" placeholder={textPlaceholder} value={x.text} onChange={(e) => set(i, "text", e.target.value)} />
+            <AutoText placeholder={textPlaceholder} value={x.text} onChange={(e) => set(i, "text", e.target.value)} />
           </div>
           <RowTools i={i} n={items.length} onMove={(a, d) => onChange(move(items, a, d))} onRemove={(a) => onChange(items.filter((_, j) => j !== a))} />
         </div>
@@ -62,7 +63,7 @@ export function LineList({ items = [], onChange, placeholder = "", addLabel = "A
       {items.map((x, i) => (
         <div key={i} className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white p-2">
           <span className="mt-2 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600">{i + 1}</span>
-          <textarea rows={1} className="input grow-text min-w-0 flex-1" placeholder={placeholder} value={x} onChange={(e) => onChange(items.map((y, j) => (j === i ? e.target.value : y)))} />
+          <AutoText className="min-w-0 flex-1" placeholder={placeholder} value={x} onChange={(e) => onChange(items.map((y, j) => (j === i ? e.target.value : y)))} />
           <RowTools i={i} n={items.length} onMove={(a, d) => onChange(move(items, a, d))} onRemove={(a) => onChange(items.filter((_, j) => j !== a))} />
         </div>
       ))}
@@ -86,7 +87,7 @@ export function BomRows({ rows = [], onChange, startNumber = 1 }) {
             <input className="input font-semibold" placeholder="Item, e.g. ACDB with MCB" value={r.item} onChange={(e) => set(i, "item", e.target.value)} />
             <input className="input" placeholder="Make, e.g. Polycab" value={r.make} onChange={(e) => set(i, "make", e.target.value)} />
             <input className="input" placeholder="Qty" value={r.qty} onChange={(e) => set(i, "qty", e.target.value)} />
-            <textarea rows={1} className="input grow-text sm:col-span-3" placeholder="Specification" value={r.spec} onChange={(e) => set(i, "spec", e.target.value)} />
+            <AutoText className="sm:col-span-3" placeholder="Specification" value={r.spec} onChange={(e) => set(i, "spec", e.target.value)} />
           </div>
         </div>
       ))}

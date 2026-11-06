@@ -377,7 +377,7 @@ function TeamTab() {
           <div className="min-w-0 flex-1 sm:max-w-sm">
             <input className="input font-semibold" defaultValue={u.full_name || ""} placeholder="Full name"
               onBlur={(e) => setName(u, e.target.value)} onKeyDown={(e) => e.key === "Enter" && e.currentTarget.blur()} aria-label="Full name" />
-            <p className="mt-1 truncate px-1 text-sm text-slate-500">{u.email}{u.id === profile.id && " · you"}</p>
+            <p className="mt-1 break-all px-1 text-sm text-slate-500">{u.email}{u.id === profile.id && " · you"}</p>
           </div>
           {u.id === profile.id ? <Badge tone="pink">Owner</Badge> : (
             <div className="flex items-center gap-2">

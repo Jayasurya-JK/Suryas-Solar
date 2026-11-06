@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { ListSkeleton } from "@/components/Extras";
 import { supabase } from "@/lib/supabase";
 import { Avatar, Badge, Empty, FilterTabs, Icon, IconButton, PageHeader, SearchBox, Spinner } from "@/components/ui";
 import { QUOTE_STATUSES, dmy, downloadCsv, labelOf, rupees, today } from "@/lib/format";
@@ -52,13 +53,13 @@ export default function Quotes() {
         <div className="min-w-0 lg:order-1"><FilterTabs tabs={tabs} value={status} onChange={setStatus} /></div>
       </div>
 
-      {!quotes ? <Spinner /> : shown.length === 0 ? (
+      {!quotes ? <ListSkeleton /> : shown.length === 0 ? (
         <Empty icon="doc" title={q ? "No matching quotes" : "No quotes yet"} text={q ? "Try a different name, number or place." : "Make a quote from a lead, or start a new one here."}>
           {!q && <Link href="/quotes/new" className="btn-primary"><Icon name="plus" className="h-4 w-4" />New quote</Link>}
         </Empty>
       ) : (
         <>
-          <div className="card hidden overflow-hidden md:block">
+          <div className="card hidden overflow-x-auto lg:block">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-slate-100 text-left text-[11px] font-bold uppercase tracking-wider text-slate-500">
@@ -92,7 +93,7 @@ export default function Quotes() {
             </table>
           </div>
 
-          <div className="space-y-2.5 md:hidden">
+          <div className="space-y-2.5 lg:hidden">
             {shown.map((x) => {
               const st = QUOTE_STATUSES.find((s) => s.id === x.status);
               return (

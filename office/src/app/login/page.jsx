@@ -45,7 +45,7 @@ export default function Login() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-primary-50 via-primary-50/60 to-white p-4">
+    <div className="flex min-h-dvh items-center justify-center bg-gradient-to-b from-primary-50 via-primary-50/60 to-white p-4">
       <div className="card w-full max-w-sm p-7 shadow-sm">
         <Image src="/logo.png" alt="Surya's Solar" width={200} height={86} className="mx-auto h-auto w-44" priority />
         <p className="mt-2 text-center text-[11px] font-bold uppercase tracking-widest text-slate-400">Office</p>

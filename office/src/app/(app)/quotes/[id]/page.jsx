@@ -118,19 +118,8 @@ export default function QuoteEditor() {
         </div>
       </div>
 
-      {/* phone action bar, sits above the bottom tabs */}
-      <div className="no-print fixed inset-x-0 bottom-[calc(68px+env(safe-area-inset-bottom))] z-20 border-t border-slate-200/80 bg-white/95 px-4 py-2.5 backdrop-blur-md sm:hidden">
-        <div className="grid grid-cols-3 gap-2">
-          <button className={`${dirty ? "btn-accent" : "btn-ghost"} !px-2`} onClick={() => save()} disabled={busy || !dirty}>
-            {busy ? "Saving" : dirty ? "Save" : <><Icon name="check" className="h-4 w-4" />Saved</>}
-          </button>
-          <button className="btn-primary !px-2" onClick={print}><Icon name="print" className="h-4 w-4" />PDF</button>
-          <button className="btn-wa !px-2" onClick={sendWhatsApp}><Icon name="chat" className="h-4 w-4" />Send</button>
-        </div>
-      </div>
-
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,26rem)_minmax(0,1fr)]">
-        <div className={`no-print min-w-0 space-y-4 pb-16 sm:pb-0 ${view === "preview" ? "hidden xl:block" : ""}`}>
+        <div className={`no-print min-w-0 space-y-4 ${view === "preview" ? "hidden xl:block" : ""}`}>
           <section className="card p-5">
             <h2 className="mb-3 font-bold text-slate-900">Customer</h2>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -224,9 +213,20 @@ export default function QuoteEditor() {
           {isOwner && <button onClick={remove} className="btn-danger w-full"><Icon name="trash" className="h-4 w-4" />Delete quote</button>}
         </div>
 
-        <div className={`min-w-0 pb-16 sm:pb-0 xl:sticky xl:top-6 xl:self-start ${view === "edit" ? "hidden print:block xl:block" : ""}`}>
+        <div className={`min-w-0 xl:sticky xl:top-6 xl:self-start ${view === "edit" ? "hidden print:block xl:block" : ""}`}>
           <p className="no-print mb-2 text-xs font-semibold text-slate-500">Preview (this is what the customer gets)</p>
           <QuotePreview quote={q} s={s} brands={brands} signUrl={signUrl} />
+        </div>
+      </div>
+
+      {/* phone action bar: sticks to the bottom of the scrolling area, above the tab bar */}
+      <div className="no-print sticky bottom-0 z-20 -mx-4 mt-4 border-t border-slate-200/80 bg-white px-4 py-2.5 sm:hidden">
+        <div className="grid grid-cols-3 gap-2">
+          <button className={`${dirty ? "btn-accent" : "btn-ghost"} !px-2`} onClick={() => save()} disabled={busy || !dirty}>
+            {busy ? "Saving" : dirty ? "Save" : <><Icon name="check" className="h-4 w-4" />Saved</>}
+          </button>
+          <button className="btn-primary !px-2" onClick={print}><Icon name="print" className="h-4 w-4" />PDF</button>
+          <button className="btn-wa !px-2" onClick={sendWhatsApp}><Icon name="chat" className="h-4 w-4" />Send</button>
         </div>
       </div>
     </>

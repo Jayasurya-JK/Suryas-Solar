@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -23,6 +23,7 @@ export default function AppShell({ children }) {
   const sb = supabase();
   const router = useRouter();
   const path = usePathname();
+  const scrollRef = useRef(null);
   const [menu, setMenu] = useState(false);
   const [state, setState] = useState({ loading: true, profile: null, settings: null, team: [], brands: [], signUrl: null });
 
@@ -58,14 +59,17 @@ export default function AppShell({ children }) {
     router.replace("/login");
   };
 
-  useEffect(() => setMenu(false), [path]);
+  useEffect(() => {
+    setMenu(false);
+    scrollRef.current?.scrollTo(0, 0);
+  }, [path]);
 
-  if (state.loading) return <div className="flex min-h-screen items-center justify-center"><Spinner /></div>;
+  if (state.loading) return <div className="flex min-h-dvh items-center justify-center"><Spinner /></div>;
 
   const { profile } = state;
   if (!profile || profile.role === "pending") {
     return (
-      <div className="flex min-h-screen items-center justify-center p-4">
+      <div className="flex min-h-dvh items-center justify-center p-4">
         <div className="card max-w-md p-8 text-center">
           <Image src="/logo.png" alt="Surya's Solar" width={180} height={77} className="mx-auto mb-6 h-auto w-44" />
           <h1 className="text-xl font-bold">Waiting for approval</h1>
@@ -92,8 +96,8 @@ export default function AppShell({ children }) {
     const active = path.startsWith(n.href);
     return (
       <Link href={n.href}
-        className={`group relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-[14px] font-semibold transition ${active ? "bg-primary-50 text-primary" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"}`}>
-        {active && <span className="absolute -left-3 top-2 bottom-2 w-1 rounded-r-full bg-primary" />}
+        className={`group relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-[14px] font-semibold transition-colors ${active ? "bg-primary-50 text-primary" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"}`}>
+        {active && <span className="absolute -left-3 bottom-2 top-2 w-1 rounded-r-full bg-primary" />}
         <Icon name={n.icon} className={`h-5 w-5 ${active ? "text-primary" : "text-slate-400 group-hover:text-slate-600"}`} />{n.label}
       </Link>
     );
@@ -101,14 +105,15 @@ export default function AppShell({ children }) {
 
   return (
     <Ctx.Provider value={{ ...state, isOwner, reload: load }}>
-      <div className="min-h-screen lg:pl-64">
+      {/* The page itself never scrolls; only the content area does. This keeps the bars still on iPhone Safari. */}
+      <div className="app-root fixed inset-0 flex bg-[#f4f6fa]">
         {/* desktop sidebar */}
-        <aside className="no-print fixed inset-y-0 left-0 hidden w-64 flex-col border-r border-slate-200/80 bg-white lg:flex">
+        <aside className="no-print hidden h-full w-64 shrink-0 flex-col border-r border-slate-200/80 bg-white lg:flex">
           <div className="px-6 pb-6 pt-7">
             <Image src="/logo.png" alt="Surya's Solar" width={180} height={77} className="h-auto w-36" priority />
             <p className="mt-2.5 inline-flex rounded-md bg-slate-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[.18em] text-slate-500">Office</p>
           </div>
-          <nav className="flex-1 space-y-6 overflow-y-auto px-3">
+          <nav className="min-h-0 flex-1 space-y-6 overflow-y-auto px-3">
             <div className="space-y-1">
               <p className="px-3 pb-1 text-[11px] font-bold uppercase tracking-wider text-slate-400">Workspace</p>
               {main.map((n) => <NavLink key={n.href} n={n} />)}
@@ -132,53 +137,57 @@ export default function AppShell({ children }) {
           </div>
         </aside>
 
-        {/* mobile top bar */}
-        <header className="no-print sticky top-0 z-30 border-b border-slate-200/80 bg-white/90 pt-[env(safe-area-inset-top)] backdrop-blur-md lg:hidden">
-          <div className="flex h-14 items-center justify-between px-4">
-          <Image src="/logo.png" alt="Surya's Solar" width={120} height={51} className="h-auto w-[104px]" priority />
-          <div className="relative">
-            <button onClick={() => setMenu(!menu)} className="flex items-center gap-2 rounded-full py-1 pl-1 pr-2 hover:bg-slate-100" aria-label="Account menu">
-              <Avatar name={profile.full_name || profile.email} size="sm" />
-            </button>
-            {menu && (
-              <>
-                <div className="fixed inset-0 z-40" onClick={() => setMenu(false)} />
-                <div className="absolute right-0 top-12 z-50 w-60 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
-                  <div className="px-3 py-2">
-                    <p className="truncate text-sm font-semibold text-slate-900">{profile.full_name}</p>
-                    <p className="truncate text-xs text-slate-500">{profile.email} · {roleLabel}</p>
-                  </div>
-                  <button onClick={signOut} className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50">
-                    <Icon name="logout" className="h-4 w-4" />Sign out
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
-          </div>
-        </header>
+        <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col">
+          {/* phone top bar */}
+          <header className="no-print relative z-30 shrink-0 border-b border-slate-200/80 bg-white pt-[env(safe-area-inset-top)] lg:hidden">
+            <div className="flex h-14 items-center justify-between px-4">
+              <Image src="/logo.png" alt="Surya's Solar" width={120} height={51} className="h-auto w-[104px]" priority />
+              <div className="relative">
+                <button onClick={() => setMenu(!menu)} className="flex items-center rounded-full p-1 hover:bg-slate-100" aria-label="Account menu">
+                  <Avatar name={profile.full_name || profile.email} size="sm" />
+                </button>
+                {menu && (
+                  <>
+                    <div className="fixed inset-0 z-40" onClick={() => setMenu(false)} />
+                    <div className="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
+                      <div className="px-3 py-2">
+                        <p className="truncate text-sm font-semibold text-slate-900">{profile.full_name}</p>
+                        <p className="truncate text-xs text-slate-500">{profile.username ? `ID: ${profile.username}` : profile.email} · {roleLabel}</p>
+                      </div>
+                      <button onClick={signOut} className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50">
+                        <Icon name="logout" className="h-4 w-4" />Sign out
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          </header>
 
-        <main className="mx-auto max-w-7xl px-4 pb-32 pt-5 sm:px-6 lg:px-10 lg:pb-12 lg:pt-9">
-          {blocked ? (
-            <div className="card p-8 text-center text-slate-600">This page is only for the owner.</div>
-          ) : children}
-        </main>
+          <main id="scroll" ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain [-webkit-overflow-scrolling:touch]">
+            <div className="mx-auto w-full max-w-7xl px-4 pb-28 pt-5 sm:px-6 sm:pb-10 lg:px-10 lg:pb-12 lg:pt-9">
+              {blocked ? (
+                <div className="card p-8 text-center text-slate-600">This page is only for the owner.</div>
+              ) : children}
+            </div>
+          </main>
 
-        {/* mobile bottom tabs */}
-        <nav className="no-print fixed inset-x-0 bottom-0 z-30 grid border-t border-slate-200/80 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md lg:hidden"
-          style={{ gridTemplateColumns: `repeat(${nav.length}, minmax(0, 1fr))` }}>
-          {nav.map((n) => {
-            const active = path.startsWith(n.href);
-            return (
-              <Link key={n.href} href={n.href} className="flex flex-col items-center gap-1 pb-2 pt-2 text-[11px] font-semibold">
-                <span className={`flex h-8 w-14 items-center justify-center rounded-full transition ${active ? "bg-primary-50 text-primary" : "text-slate-500"}`}>
-                  <Icon name={n.icon} className="h-[22px] w-[22px]" />
-                </span>
-                <span className={active ? "text-primary" : "text-slate-500"}>{n.label}</span>
-              </Link>
-            );
-          })}
-        </nav>
+          {/* phone bottom tabs */}
+          <nav className="no-print relative z-30 grid shrink-0 select-none border-t border-slate-200/80 bg-white pb-[env(safe-area-inset-bottom)] lg:hidden"
+            style={{ gridTemplateColumns: `repeat(${nav.length}, minmax(0, 1fr))` }}>
+            {nav.map((n) => {
+              const active = path.startsWith(n.href);
+              return (
+                <Link key={n.href} href={n.href} className="flex flex-col items-center gap-1 pb-2 pt-2 text-[11px] font-semibold">
+                  <span className={`flex h-8 w-14 items-center justify-center rounded-full ${active ? "bg-primary-50 text-primary" : "text-slate-500"}`}>
+                    <Icon name={n.icon} className="h-[22px] w-[22px]" />
+                  </span>
+                  <span className={`${active ? "text-primary" : "text-slate-500"} [@media(max-height:500px)]:hidden`}>{n.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
       </div>
     </Ctx.Provider>
   );

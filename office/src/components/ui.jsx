@@ -97,7 +97,7 @@ export function PageHeader({ title, subtitle, children, fab, mobileActions }) {
 }
 
 export function Fab({ label, icon = "plus", onClick, href }) {
-  const cls = "no-print fixed bottom-[84px] right-4 z-30 flex items-center gap-2 rounded-full bg-accent px-5 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(214,0,111,.35)] active:scale-95 sm:hidden";
+  const cls = "no-print fixed bottom-[calc(80px+env(safe-area-inset-bottom))] right-4 z-30 flex items-center gap-2 rounded-full bg-accent px-5 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(214,0,111,.35)] sm:hidden";
   const inner = <><Icon name={icon} className="h-5 w-5" />{label}</>;
   return href ? <a href={href} className={cls}>{inner}</a> : <button type="button" onClick={onClick} className={cls}>{inner}</button>;
 }
@@ -151,7 +151,7 @@ export function Modal({ title, onClose, children, wide = false }) {
   return (
     <div className="fixed inset-0 z-[60] flex items-end justify-center bg-slate-900/50 backdrop-blur-sm sm:items-center sm:overflow-y-auto sm:p-4" onClick={onClose}>
       <div onClick={(e) => e.stopPropagation()}
-        className={`flex max-h-[92vh] w-full flex-col rounded-t-3xl bg-white shadow-2xl sm:my-8 sm:max-h-none sm:rounded-2xl ${wide ? "sm:max-w-3xl" : "sm:max-w-lg"}`}>
+        className={`flex max-h-[92dvh] w-full flex-col rounded-t-3xl bg-white shadow-2xl sm:my-8 sm:max-h-none sm:rounded-2xl ${wide ? "sm:max-w-3xl" : "sm:max-w-lg"}`}>
         <div className="mx-auto mt-2.5 h-1.5 w-10 rounded-full bg-slate-200 sm:hidden" />
         <div className="flex items-center justify-between px-5 pb-3 pt-3 sm:border-b sm:border-slate-100 sm:py-4">
           <h2 className="text-lg font-bold text-slate-900">{title}</h2>

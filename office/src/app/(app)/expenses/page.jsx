@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ListSkeleton, MonthPicker } from "@/components/Extras";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import { Empty, Field, FilterTabs, Icon, IconButton, Modal, Notice, PageHeader, Segmented, Spinner } from "@/components/ui";
@@ -149,12 +150,12 @@ export default function Expenses() {
         <div className="min-w-0 space-y-4">
           <div className="card overflow-hidden">
             <div className="flex items-center justify-between gap-3 bg-gradient-to-br from-slate-900 to-slate-800 p-5 text-white">
-              <div className="min-w-0">
-                <p className="truncate text-xs font-semibold uppercase tracking-wider text-white/60">{cat === "all" ? "Total spent" : labelOf(EXPENSE_CATEGORIES, cat)}<span className="hidden sm:inline"> · {monthLabel}</span></p>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs font-semibold uppercase tracking-wider text-white/70">{cat === "all" ? "Total spent" : labelOf(EXPENSE_CATEGORIES, cat)}<span className="hidden sm:inline"> · {monthLabel}</span></p>
                 <p className="mt-1 text-3xl font-bold tracking-tight">{rupees(total)}</p>
                 <p className="mt-0.5 text-xs text-white/60">{shown.length} entries</p>
               </div>
-              <input type="month" aria-label="Month" className="h-10 w-40 shrink-0 rounded-full sm:w-44 border border-white/20 bg-white/10 px-3 text-sm font-semibold text-white [color-scheme:dark]" value={month} onChange={(e) => setMonth(e.target.value)} />
+              <MonthPicker dark value={month} onChange={setMonth} />
             </div>
             {rows && rows.length > 0 && (
               <div className="px-4 py-3">
@@ -166,7 +167,7 @@ export default function Expenses() {
             )}
           </div>
 
-          {!rows ? <Spinner /> : shown.length === 0 ? (
+          {!rows ? <ListSkeleton rows={4} /> : shown.length === 0 ? (
             <Empty icon="wallet" title="No expenses this month" text="Tap Add expense to record what was spent today.">
               <button className="btn-primary lg:hidden" onClick={() => setSheet(true)}><Icon name="plus" className="h-4 w-4" />Add expense</button>
             </Empty>
@@ -178,9 +179,9 @@ export default function Expenses() {
                     {labelOf(EXPENSE_CATEGORIES, r.category).slice(0, 2)}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="truncate font-semibold text-slate-900">{r.note || labelOf(EXPENSE_CATEGORIES, r.category)}</p>
-                    <p className="truncate text-[13px] text-slate-500">{[r.site, dmy(r.spent_on), labelOf(PAY_MODES, r.payment_mode)].filter(Boolean).join(" · ")}</p>
-                    <p className="truncate text-xs text-slate-400">Paid by {r.paid_by || "?"}{isOwner && who(r.created_by) ? ` · entered by ${who(r.created_by)}` : ""}</p>
+                    <p className="break-words font-semibold text-slate-900">{r.note || labelOf(EXPENSE_CATEGORIES, r.category)}</p>
+                    <p className="break-words text-[13px] text-slate-500">{[r.site, dmy(r.spent_on), labelOf(PAY_MODES, r.payment_mode)].filter(Boolean).join(" · ")}</p>
+                    <p className="break-words text-xs text-slate-500">Paid by {r.paid_by || "?"}{isOwner && who(r.created_by) ? ` · entered by ${who(r.created_by)}` : ""}</p>
                   </div>
                   <div className="flex shrink-0 flex-col items-end gap-1">
                     <span className="text-[15px] font-bold text-slate-900">{rupees(r.amount)}</span>

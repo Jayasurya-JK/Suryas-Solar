@@ -10,17 +10,19 @@
   --color-teal: #179e8f;
   --color-teal-50: #eaf7f5;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
-  /* owner wants stronger text: shift the light greys used for hints and labels one step darker */
+  /* stronger text: shift the light greys used for hints and labels one step darker */
   --color-slate-400: #64748b;
   --color-slate-500: #475569;
   --color-slate-600: #334155;
 }
 
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; touch-action: manipulation; }
 html, body { background: #f4f6fa; color: #0f172a; -webkit-tap-highlight-color: transparent; }
-/* safety net: nothing may make the page scroll sideways on a phone */
-@media screen { body { overflow-x: hidden; } }
+@layer base {
+  button, a, [role="button"], [role="radio"], [role="switch"] { touch-action: manipulation; -webkit-touch-callout: none; }
+}
 
-@utility btn { @apply inline-flex h-10 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold transition active:scale-[.98] disabled:cursor-not-allowed disabled:opacity-50; }
+@utility btn { @apply inline-flex h-10 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50; }
 @utility btn-primary { @apply btn bg-primary text-white hover:bg-primary-900; }
 @utility btn-accent { @apply btn bg-accent text-white hover:opacity-90; }
 @utility btn-ghost { @apply btn border border-slate-200 bg-white text-slate-700 hover:bg-slate-50; }
@@ -30,13 +32,30 @@ html, body { background: #f4f6fa; color: #0f172a; -webkit-tap-highlight-color: t
 @utility card { @apply rounded-2xl border border-slate-200/80 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04),0_1px_6px_rgba(15,23,42,0.03)]; }
 @utility no-scrollbar { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
 @utility label { @apply mb-1 block text-xs font-semibold text-slate-500; }
-@utility input { @apply w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-base text-slate-900 outline-none transition sm:text-sm placeholder:text-slate-400 focus:border-primary focus:ring-4 focus:ring-primary-100; }
+@utility input { @apply block min-h-11 w-full min-w-0 max-w-full appearance-none rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-base text-slate-900 outline-none transition-colors sm:text-sm placeholder:text-slate-400 focus:border-primary focus:ring-4 focus:ring-primary-100; }
+
+@layer base {
+/* iPhone Safari draws date and month boxes with its own width and centred text; make them behave like other boxes */
+input[type="date"], input[type="month"], input[type="time"] {
+  -webkit-appearance: none; appearance: none; display: block; width: 100%; min-width: 0; max-width: 100%; text-align: left; line-height: 1.25;
+}
+input[type="date"], input[type="month"] { display: flex; align-items: center; }
+input[type="date"]::-webkit-date-and-time-value, input[type="month"]::-webkit-date-and-time-value { text-align: left; min-height: 1.25em; margin: 0; }
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type="number"] { -moz-appearance: textfield; }
+input[type="date"]::-webkit-calendar-picker-indicator, input[type="month"]::-webkit-calendar-picker-indicator { opacity: .7; }
+select { text-overflow: ellipsis; }
+}
+
+/* grows to show the whole sentence (see AutoText) */
+textarea.grow-text { resize: none; line-height: 1.4; overflow: hidden; }
 
 @media print {
   .no-print { display: none !important; }
-  html, body { background: #fff; }
-  main { padding: 0 !important; margin: 0 !important; max-width: none !important; }
+  html, body { background: #fff; height: auto !important; overflow: visible !important; }
+  /* undo the app frame so every page of the quote prints */
+  .app-root { position: static !important; display: block !important; height: auto !important; overflow: visible !important; background: #fff !important; }
+  .app-root > div { display: block !important; height: auto !important; overflow: visible !important; }
+  #scroll { overflow: visible !important; height: auto !important; }
+  #scroll > div { padding: 0 !important; margin: 0 !important; max-width: none !important; }
 }
-
-/* text boxes that grow to show the whole sentence (no hidden text on phones) */
-.grow-text { field-sizing: content; min-height: 2.6rem; resize: none; line-height: 1.4; }

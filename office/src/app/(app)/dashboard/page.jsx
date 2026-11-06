@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { CardsSkeleton, MonthPicker } from "@/components/Extras";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import { Avatar, Badge, Icon, IconButton, Spinner, Stat } from "@/components/ui";
@@ -92,7 +93,7 @@ export default function Dashboard() {
           <p className="text-sm font-medium text-slate-500">{new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" })}</p>
           <h1 className="mt-0.5 text-[22px] font-bold tracking-tight text-slate-900 sm:text-[26px]">{greet}{first ? `, ${first}` : ""}</h1>
         </div>
-        <input type="month" aria-label="Month" className="input !h-10 !w-48 !rounded-full !py-0" value={month} onChange={(e) => setMonth(e.target.value)} />
+        <MonthPicker value={month} onChange={setMonth} />
       </div>
 
       <div className="mb-6 grid grid-cols-3 gap-2 sm:flex">
@@ -101,7 +102,7 @@ export default function Dashboard() {
         <Link href="/expenses" className="btn-ghost !h-auto flex-col !gap-1 !rounded-2xl !px-2 py-3 text-xs sm:!h-10 sm:flex-row sm:!gap-2 sm:!rounded-full sm:!px-4 sm:py-0 sm:text-sm"><Icon name="wallet" className="h-5 w-5 sm:h-4 sm:w-4" />Expenses</Link>
       </div>
 
-      {!k ? <Spinner /> : (
+      {!k ? <CardsSkeleton /> : (
         <div className="space-y-5">
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
             <Stat icon="users" label="New leads" value={k.leads} hint={`${k.web} from the website`} />

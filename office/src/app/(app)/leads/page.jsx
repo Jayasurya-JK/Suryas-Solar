@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { ListSkeleton } from "@/components/Extras";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import LeadForm from "@/components/LeadForm";
@@ -92,7 +93,7 @@ export default function Leads() {
         <div className="min-w-0 lg:order-1"><FilterTabs tabs={tabs} value={status} onChange={setStatus} /></div>
       </div>
 
-      {!leads ? <Spinner /> : shown.length === 0 ? (
+      {!leads ? <ListSkeleton /> : shown.length === 0 ? (
         <Empty icon="users" title={q ? "No matching leads" : "No leads here"}
           text={q ? "Try a different name, number or town." : "Add a lead when someone calls or visits. Website enquiries appear here by themselves."}>
           {!q && <button className="btn-primary" onClick={() => setAdding(true)}><Icon name="plus" className="h-4 w-4" />Add lead</button>}
@@ -100,7 +101,7 @@ export default function Leads() {
       ) : (
         <>
           {/* desktop table */}
-          <div className="card hidden overflow-hidden md:block">
+          <div className="card hidden overflow-x-auto lg:block">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-slate-100 text-left text-[11px] font-bold uppercase tracking-wider text-slate-500">
@@ -143,7 +144,7 @@ export default function Leads() {
           </div>
 
           {/* phone cards */}
-          <div className="space-y-2.5 md:hidden">
+          <div className="space-y-2.5 lg:hidden">
             {shown.map((l) => {
               const st = LEAD_STATUSES.find((s) => s.id === l.status);
               return (
