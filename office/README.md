@@ -34,6 +34,8 @@ They only add things and replace the access rules - no table, row or file is del
 | File | What it does |
 | --- | --- |
 | `staff-access-and-activity.sql` | User IDs, per-screen access, owner approval, "last active", and the activity history |
+| `admin-role.sql` | The admin role, the owner-only guards around it, and `guard_owner_row` |
+| `activity-viewers.sql` | Who exactly may read the activity history (`profiles.sees_activity`) |
 | `admin-role.sql` | The `admin` role (same powers as the owner) and the guard that protects the owner account |
 
 Both are already applied to the live project (6 Nov 2026). They are repeatable, so they stay here as the
@@ -60,21 +62,31 @@ Without the identity row and the confirmation date they cannot sign in.
 
 ## Roles
 
-- **Owner** - the one account that can never be locked out. Sees everything, approves new people, reads
-  the activity history.
+- **Owner** - the one account that can never be locked out. Sees everything, approves new people.
 - **Admin** - every owner power in the app. Cannot change or switch off the owner account.
 - **Staff** - sees only the screens ticked for them (Leads, Quotes, Expenses), and only their own records.
 - **Pending** - someone who tapped "Request access" on the sign-in page. They see a waiting screen that
   opens by itself once the owner approves. Pending people get nothing until then.
+
+The activity history is narrower than the owner role. Only people with `sees_activity = true` on their
+`profiles` row can open it - today that is the owner and one admin. Everyone else, admins included, does
+not see the Activity screen, the per-lead/per-quote history, or the "see what X did" link.
+
+```sql
+update public.profiles set sees_activity = true where username = 'someone';
+```
 
 Staff sign in with a User ID instead of an email. The User ID is mapped to a hidden plus-address on the
 business Gmail (`STAFF_MAIL` in `src/lib/format.js`), because the domain has no mailboxes.
 
 ## Activity history
 
-`/activity` (owner only) lists every change with the field-by-field differences, grouped by day, and can be
-filtered by type, by person (from Settings > Team) or by search. Each lead and quote also shows its own
-history at the bottom.
+`/activity` (owner plus anyone with `sees_activity`) lists every change with the field-by-field differences,
+grouped by day, and can be filtered by type, by person (from Settings > Team) or by search. Each lead and
+quote also shows its own history at the bottom, for the same people only.
+
+Row level security on `activity_log` uses `private.can_see_activity()`, so the restriction holds in the
+database too - a hidden screen is not the only thing stopping someone.
 
 Writes are recorded by database triggers (`private.log_change`), so they are captured even if a change is
 made outside the app. Things that change no row - sign-in, PDF download, WhatsApp send, bill photo view -

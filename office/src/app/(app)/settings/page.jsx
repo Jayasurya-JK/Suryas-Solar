@@ -422,7 +422,7 @@ function ApproveForm({ person, onDone, onCancel }) {
 
 function ManageForm({ person, onDone, onCancel }) {
   const sb = supabase();
-  const { profile } = useApp();
+  const { profile, canSeeActivity } = useApp();
   const canGiveAdmin = profile?.role === "owner";
   const [name, setName] = useState(person.full_name || "");
   const [perms, setPerms] = useState(person.perms || []);
@@ -467,9 +467,12 @@ function ManageForm({ person, onDone, onCancel }) {
         <ScreenSwitches perms={perms} onChange={setPerms} />
         {role === "admin" && <p className="mt-1 text-xs text-slate-500">An admin already sees every screen.</p>}
       </div>
-      <Switch checked={active} onChange={setActive} label="Access is on" hint="Switch off to stop this person using the app. Their records are kept." />      <Link href={`/activity?person=${person.id}`} className="flex items-center justify-between rounded-xl border border-slate-200 px-3.5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">
-        See what {person.full_name?.split(" ")[0] || "this person"} did<Icon name="chevron" className="h-4 w-4 text-slate-400" />
-      </Link>
+      <Switch checked={active} onChange={setActive} label="Access is on" hint="Switch off to stop this person using the app. Their records are kept." />
+      {canSeeActivity && (
+        <Link href={`/activity?person=${person.id}`} className="flex items-center justify-between rounded-xl border border-slate-200 px-3.5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">
+          See what {person.full_name?.split(" ")[0] || "this person"} did<Icon name="chevron" className="h-4 w-4 text-slate-400" />
+        </Link>
+      )}
       {err && <Notice tone="red">{err}</Notice>}
       <div className="flex justify-end gap-2">
         <button className="btn-ghost" onClick={onCancel}>Cancel</button>

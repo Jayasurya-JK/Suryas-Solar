@@ -52,24 +52,24 @@ export function ActivityItem({ entry, team, withDate = false, showActor = true }
   );
 }
 
-// Owner-only history of one lead or quote
+// Restricted history of one lead or quote
 export function HistoryPanel({ table, id, title = "History" }) {
   const sb = supabase();
-  const { isOwner, team } = useApp();
+  const { canSeeActivity, team } = useApp();
   const [rows, setRows] = useState(null);
 
   useEffect(() => {
-    if (!isOwner || !id) return;
+    if (!canSeeActivity || !id) return;
     let q = sb.from("activity_log").select("*").eq("record_id", id);
     if (table) q = q.eq("table_name", table);
     q.order("at", { ascending: false }).limit(40).then(({ data }) => setRows(data || []));
-  }, [sb, isOwner, id, table]);
+  }, [sb, canSeeActivity, id, table]);
 
-  if (!isOwner) return null;
+  if (!canSeeActivity) return null;
   return (
     <section className="card p-5">
       <h2 className="mb-1 font-bold text-slate-900">{title}</h2>
-      <p className="mb-2 text-xs text-slate-500">Only you can see this. Who did what, and when.</p>
+      <p className="mb-2 text-xs text-slate-500">Only a few people can see this. Who did what, and when.</p>
       {rows === null ? <div className="h-16 animate-pulse rounded-xl bg-slate-100" /> : rows.length === 0 ? (
         <p className="py-4 text-center text-sm text-slate-500">No history recorded yet.</p>
       ) : (

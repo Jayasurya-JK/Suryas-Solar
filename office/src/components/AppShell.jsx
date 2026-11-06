@@ -16,7 +16,7 @@ const NAV = [
   { href: "/leads", label: "Leads", icon: "users", module: "leads" },
   { href: "/quotes", label: "Quotes", icon: "doc", module: "quotes" },
   { href: "/expenses", label: "Expenses", icon: "wallet", module: "expenses" },
-  { href: "/activity", label: "Activity", icon: "clock", owner: true, group: "admin" },
+  { href: "/activity", label: "Activity", icon: "clock", activity: true, group: "admin" },
   { href: "/settings", label: "Settings", icon: "cog", owner: true, group: "admin" },
 ];
 
@@ -100,6 +100,8 @@ export default function AppShell({ children }) {
 
   const profile = state.profile;
   const isOwner = isOwnerRole(profile?.role);
+  // The activity history is narrower than owner: only the owner and the people explicitly allowed.
+  const canSeeActivity = !!profile && profile.active !== false && (profile.role === "owner" || !!profile.sees_activity);
   const member = !!profile && (isOwnerRole(profile.role) || profile.role === "staff") && profile.active !== false;
   const can = useCallback((m) => isOwner || (member && (profile?.perms || []).includes(m)), [isOwner, member, profile]);
 
@@ -153,7 +155,7 @@ export default function AppShell({ children }) {
   }
   if (!member) return <AccessGate profile={profile} kind="off" onRefresh={load} onSignOut={signOut} />;
 
-  const nav = NAV.filter((n) => (n.owner ? isOwner : isOwner || can(n.module)));
+  const nav = NAV.filter((n) => (n.activity ? canSeeActivity : n.owner ? isOwner : isOwner || can(n.module)));
   if (!isOwner && nav.length === 0) return <AccessGate profile={profile} kind="none" onRefresh={load} onSignOut={signOut} />;
 
   const home = isOwner ? "/dashboard" : nav[0].href;
@@ -183,7 +185,7 @@ export default function AppShell({ children }) {
   const moreActive = admin.some((n) => path.startsWith(n.href));
 
   return (
-    <Ctx.Provider value={{ ...state, isOwner, can, home, reload: load }}>
+    <Ctx.Provider value={{ ...state, isOwner, canSeeActivity, can, home, reload: load }}>
       {/* The page itself never scrolls; only the content area does. This keeps the bars still on iPhone Safari. */}
       <div className="app-root fixed inset-0 flex bg-[#f4f6fa]">
         {/* desktop sidebar */}

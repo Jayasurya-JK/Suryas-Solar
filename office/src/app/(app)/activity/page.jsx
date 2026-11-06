@@ -36,7 +36,7 @@ function Feed() {
   const sb = supabase();
   const router = useRouter();
   const personId = useSearchParams().get("person");
-  const { isOwner, team } = useApp();
+  const { canSeeActivity, team } = useApp();
   const [type, setType] = useState("all");
   const [search, setSearch] = useState("");
   const [term, setTerm] = useState("");
@@ -53,7 +53,7 @@ function Feed() {
   useEffect(() => { setLimit(PAGE); }, [type, term, personId]);
 
   const load = useCallback(async () => {
-    if (!isOwner) return;
+    if (!canSeeActivity) return;
     let q = sb.from("activity_log").select("*").order("at", { ascending: false }).limit(limit);
     const f = TYPE_FILTERS.find((x) => x.id === type);
     if (f?.tables) q = q.in("table_name", f.tables);
@@ -62,7 +62,7 @@ function Feed() {
     if (term) q = q.or(`summary.ilike.%${term}%,label.ilike.%${term}%,actor_name.ilike.%${term}%`);
     const { data } = await q;
     setRows(data || []);
-  }, [sb, isOwner, type, personId, term, limit]);
+  }, [sb, canSeeActivity, type, personId, term, limit]);
 
   useEffect(() => { load(); }, [load]);
 
@@ -84,7 +84,7 @@ function Feed() {
     return out;
   }, [rows]);
 
-  if (!isOwner) return <div className="card p-8 text-center text-slate-600">Only the owner can see the activity history.</div>;
+  if (!canSeeActivity) return <div className="card p-8 text-center text-slate-600">You do not have access to the activity history.</div>;
 
   const filtered = type !== "all" || !!term || !!personId;
   const more = (rows || []).length === limit;
