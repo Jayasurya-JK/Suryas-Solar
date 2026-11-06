@@ -98,6 +98,22 @@ anywhere in the app. An admin cannot reset the owner's PIN; only the owner can.
 A 4 digit PIN is weaker than a password, so treat it as one: the login is rate limited by Supabase per IP,
 and the real protection is still the database rules.
 
+## Installing on a phone (no Play Store)
+
+The app is an installable PWA: `app/manifest.js` (name, icons 192/512, `display: standalone`), a minimal
+`public/sw.js` service worker, an offline page, and an "Install on this phone" strip that appears in the app
+when Chrome says it can install.
+
+To install on Android: open **https://app.suryassolar.com in Chrome** (not the browser inside WhatsApp or
+Instagram - those cannot install), sign in, then tap the Install strip, or Chrome's menu -> **Install app**
+(older Chrome: **Add to Home screen**). If the strip is not there on the first visit, pull to refresh once -
+Chrome needs the service worker active before it offers the install.
+
+The service worker deliberately caches **nothing** except `offline.html`. The app ships several times a day
+and a stale cache would show people an old screen with no obvious way out.
+
+iOS has no install prompt; use Safari's Share -> **Add to Home Screen** (the app shows that hint instead).
+
 ## Activity history
 
 `/activity` (owner plus anyone the owner has granted it to) lists every change with the field-by-field
