@@ -81,6 +81,23 @@ The flag is guarded by `private.guard_owner_row`: an admin who calls the API dir
 Staff sign in with a User ID instead of an email. The User ID is mapped to a hidden plus-address on the
 business Gmail (`STAFF_MAIL` in `src/lib/format.js`), because the domain has no mailboxes.
 
+## Saving a quote as a PDF
+
+The Save as PDF button builds a real `.pdf` file in the browser - no print dialog, so nobody has to hunt for
+"Save as PDF" in a print sheet (which is what people were getting stuck on).
+
+The A4 sheets are already laid out in the DOM, so `src/lib/quotePdf.js` photographs each `.sheet` and stacks
+them into a PDF with `html2canvas-pro` + `jspdf`, both loaded on demand. The file therefore looks exactly like
+the preview. It photographs a hidden full-size copy (`.pdf-source`) rather than the visible one, so it works
+from any screen size without opening anything.
+
+Preview opens the sheets full screen with - / + zoom. On a phone it deliberately starts at 80%, not "fit
+width", because a whole A4 page squeezed into 390px is about 45% and unreadable.
+
+`window.print()` remains only as a fallback (the "Print instead" button if the PDF build ever fails). While
+the preview dialog is open, `body.qd-modal-open` hides the copy behind it so printing cannot produce two sets
+of pages.
+
 ## Staying signed in
 
 A person stays signed in until they tap Sign out. The **browser** client is the only thing that refreshes the

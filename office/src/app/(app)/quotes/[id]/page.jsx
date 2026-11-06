@@ -1,16 +1,18 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
-import { QuotePreview } from "@/components/QuoteDocument";
+import QuoteDocument, { QuotePreview } from "@/components/QuoteDocument";
+import QuotePreviewDialog from "@/components/QuotePreviewDialog";
 import { BomRows } from "@/components/ListEditors";
 import { AutoText } from "@/components/Extras";
 import { HistoryPanel } from "@/components/History";
 import { Field, Icon, Notice, Segmented, Spinner, Switch } from "@/components/ui";
 import { QUOTE_STATUSES, calcQuote, inr, rupees, waLink } from "@/lib/format";
+import { quoteFileName, saveQuotePdf } from "@/lib/quotePdf";
 
 export default function QuoteEditor() {
   const { id } = useParams();
@@ -22,6 +24,9 @@ export default function QuoteEditor() {
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState(null);
   const [view, setView] = useState("edit");
+  const [preview, setPreview] = useState(false);
+  const [pdfBusy, setPdfBusy] = useState(false);
+  const pdfRef = useRef(null);
 
   const load = useCallback(async () => {
     const { data } = await sb.from("quotes").select("*").eq("id", id).maybeSingle();
@@ -66,16 +71,31 @@ export default function QuoteEditor() {
     return true;
   };
 
-  // iPhone Safari only allows window.print() inside the tap that started it, so this must stay
-  // synchronous - no await, no state change. The preview is already in the DOM and print:block
-  // reveals it, and it shows the current values, so the PDF is correct even before the save lands.
-  const print = () => {
+  const logPdf = () =>
+    sb.rpc("log_event", { p_action: "pdf", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
+
+  // Builds a real .pdf file and downloads it. No print dialog, so nobody has to hunt for "Save as PDF".
+  const savePdf = async () => {
     if (dirty) save();
+    setPdfBusy(true);
+    setMsg(null);
+    try {
+      await saveQuotePdf(pdfRef.current, quoteFileName(q));
+      logPdf();
+    } catch {
+      setMsg({ tone: "amber", text: "This phone could not build the PDF. Open Preview and tap Print instead - the same pages come out." });
+    }
+    setPdfBusy(false);
+  };
+
+  // Fallback only: iPhone Safari allows window.print() only inside the tap that started it, so this must
+  // stay synchronous - no await, no state change.
+  const print = () => {
     const old = document.title;
-    document.title = `${q.customer?.name || "Quote"} ${q.system?.kw}kW Quotation ${q.ref_no.replace(/\//g, "-")}`;
+    document.title = quoteFileName(q).replace(/\.pdf$/, "");
     window.print();
     document.title = old;
-    sb.rpc("log_event", { p_action: "pdf", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
+    logPdf();
   };
 
   const sendWhatsApp = async () => {
@@ -113,7 +133,10 @@ export default function QuoteEditor() {
             <button className={dirty ? "btn-accent" : "btn-ghost"} onClick={() => save()} disabled={busy || !dirty}>
               {busy ? "Saving..." : dirty ? "Save changes" : <><Icon name="check" className="h-4 w-4" />Saved</>}
             </button>
-            <button className="btn-primary" onClick={print}><Icon name="print" className="h-4 w-4" />Download PDF</button>
+            <button className="btn-ghost" onClick={() => setPreview(true)}><Icon name="doc" className="h-4 w-4" />Preview</button>
+            <button className="btn-primary" onClick={savePdf} disabled={pdfBusy}>
+              <Icon name="download" className="h-4 w-4" />{pdfBusy ? "Building..." : "Save as PDF"}
+            </button>
             <button className="btn-wa" onClick={sendWhatsApp}><Icon name="chat" className="h-4 w-4" />WhatsApp</button>
           </div>
         </div>
@@ -220,7 +243,12 @@ export default function QuoteEditor() {
         </div>
 
         <div className={`min-w-0 xl:sticky xl:top-6 xl:self-start ${view === "edit" ? "hidden print:block xl:block" : ""}`}>
-          <p className="no-print mb-2 text-xs font-semibold text-slate-500">Preview (this is what the customer gets)</p>
+          <div className="no-print mb-2 flex items-center justify-between gap-2">
+            <p className="text-xs font-semibold text-slate-500">Preview (this is what the customer gets)</p>
+            <button className="btn-ghost !h-8 !px-3 !text-xs" onClick={() => setPreview(true)}>
+              <Icon name="doc" className="h-4 w-4" />Full screen
+            </button>
+          </div>
           <QuotePreview quote={q} s={s} brands={brands} signUrl={signUrl} />
         </div>
       </div>
@@ -231,10 +259,20 @@ export default function QuoteEditor() {
           <button className={`${dirty ? "btn-accent" : "btn-ghost"} !px-2`} onClick={() => save()} disabled={busy || !dirty}>
             {busy ? "Saving" : dirty ? "Save" : <><Icon name="check" className="h-4 w-4" />Saved</>}
           </button>
-          <button className="btn-primary !px-2" onClick={print}><Icon name="print" className="h-4 w-4" />PDF</button>
+          <button className="btn-primary !px-2" onClick={savePdf} disabled={pdfBusy}><Icon name="download" className="h-4 w-4" />{pdfBusy ? "..." : "PDF"}</button>
           <button className="btn-wa !px-2" onClick={sendWhatsApp}><Icon name="chat" className="h-4 w-4" />Send</button>
         </div>
       </div>
+
+      {/* Hidden full-size copy of the sheets. "Save as PDF" photographs this, so it works from any screen
+          size without opening anything. Never shown, never printed. */}
+      <div ref={pdfRef} className="qd-zoom pdf-source" aria-hidden="true">
+        <QuoteDocument quote={q} s={s} brands={brands} signUrl={signUrl} />
+      </div>
+
+      {preview && (
+        <QuotePreviewDialog quote={q} s={s} brands={brands} signUrl={signUrl} onClose={() => setPreview(false)} onPrint={print} />
+      )}
     </>
   );
 }

@@ -98,10 +98,16 @@
 /* hidden copy used only to measure heights for page breaks */
 .qd-measure { position: absolute; left: -10000px; top: 0; visibility: hidden; pointer-events: none; }
 
+/* hidden full-size copy that "Save as PDF" photographs - off-screen, not visibility:hidden, or the
+   screenshot comes out blank */
+.pdf-source { position: fixed; left: -10000px; top: 0; width: 210mm; pointer-events: none; }
+
 @page { size: A4; margin: 0; }
 @media print {
   .qd-zoom { zoom: 1 !important; }
-  .qd-measure { display: none; }
+  .qd-measure, .pdf-source { display: none; }
+  /* one set of pages only: the copy behind the preview dialog is hidden while it is open */
+  body.qd-modal-open .qd-preview { display: none !important; }
   .qd { width: 210mm; }
   .qd .sheet { break-after: page; height: 296.6mm; }
   .qd .sheet:last-child { break-after: auto; }
