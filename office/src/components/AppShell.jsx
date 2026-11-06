@@ -8,6 +8,7 @@ import { supabase } from "@/lib/supabase";
 import { Avatar, Icon, Modal, Spinner } from "@/components/ui";
 import InstallBanner from "@/components/InstallBanner";
 import VersionBar from "@/components/VersionBar";
+import ConfirmHost from "@/components/Confirm";
 import { ago, isOwnerRole, permLabel, roleLabel } from "@/lib/format";
 
 const Ctx = createContext(null);
@@ -368,6 +369,7 @@ export default function AppShell({ children }) {
         </Modal>
       )}
       <VersionBar />
+      <ConfirmHost />
     </Ctx.Provider>
   );
 }

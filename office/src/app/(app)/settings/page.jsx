@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import Link from "next/link";
+import { confirmAction } from "@/components/Confirm";
 import { Avatar, Badge, Field, FilterTabs, Icon, Modal, Notice, PageHeader, Segmented, Spinner, Switch } from "@/components/ui";
 import { ListSkeleton, AutoText } from "@/components/Extras";
 import { ADMIN_PERM, MODULES, ago, dmy, permLabel, rupees } from "@/lib/format";
@@ -96,7 +97,12 @@ function BrandsTab() {
   };
   const toggle = async (b) => { await sb.from("brands").update({ active: !b.active }).eq("id", b.id); done(); };
   const remove = async (b) => {
-    if (!confirm(`Delete brand "${b.name}"? Old quotes keep the name but lose the logo.`)) return;
+    const ok = await confirmAction({
+      title: `Delete ${b.name}?`,
+      text: "Old quotes keep the brand name but lose the logo.",
+      confirmLabel: "Delete brand",
+    });
+    if (!ok) return;
     await sb.from("brands").delete().eq("id", b.id); done();
   };
 
@@ -321,7 +327,12 @@ function PackagesTab() {
   useEffect(() => { load(); }, [load]);
 
   const remove = async (p) => {
-    if (!confirm(`Delete package "${p.name}"? Existing quotes are not affected.`)) return;
+    const ok = await confirmAction({
+      title: `Delete ${p.name}?`,
+      text: "Existing quotes are not affected.",
+      confirmLabel: "Delete package",
+    });
+    if (!ok) return;
     await sb.from("packages").delete().eq("id", p.id);
     load();
   };
@@ -537,7 +548,12 @@ function TeamTab() {
   const done = () => { setApprove(null); setManage(null); load(); reload(); };
 
   const decline = async (u) => {
-    if (!confirm(`Decline the request from ${u.full_name}?`)) return;
+    const ok = await confirmAction({
+      title: "Decline this request?",
+      text: `${u.full_name} will not be able to sign in.`,
+      confirmLabel: "Decline",
+    });
+    if (!ok) return;
     await sb.from("profiles").update({ active: false, decided_at: new Date().toISOString() }).eq("id", u.id);
     done();
   };

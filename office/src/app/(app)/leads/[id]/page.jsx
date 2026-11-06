@@ -6,6 +6,7 @@ import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import LeadForm from "@/components/LeadForm";
+import { confirmAction } from "@/components/Confirm";
 import { HistoryPanel } from "@/components/History";
 import { Avatar, Badge, Icon, Segmented, Spinner } from "@/components/ui";
 import { LEAD_SOURCES, LEAD_STATUSES, QUOTE_STATUSES, dmy, labelOf, rupees, sourceLabel, waLink } from "@/lib/format";
@@ -46,7 +47,12 @@ export default function LeadDetail() {
   };
 
   const remove = async () => {
-    if (!confirm(`Delete lead "${lead.name}"? Quotes for this lead are kept.`)) return;
+    const ok = await confirmAction({
+      title: `Delete ${lead.name}?`,
+      text: "Any quotes for this lead are kept.",
+      confirmLabel: "Delete lead",
+    });
+    if (!ok) return;
     await sb.from("leads").delete().eq("id", id);
     router.replace("/leads");
   };

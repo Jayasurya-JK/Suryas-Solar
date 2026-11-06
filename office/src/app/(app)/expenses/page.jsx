@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AutoText, ListSkeleton, MonthPicker } from "@/components/Extras";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
+import { confirmAction } from "@/components/Confirm";
 import { Empty, Field, FilterTabs, Icon, IconButton, Modal, Notice, PageHeader, Segmented, Spinner } from "@/components/ui";
 import { EXPENSE_CATEGORIES, PAY_MODES, dmy, downloadCsv, labelOf, rupees, today } from "@/lib/format";
 
@@ -88,7 +89,12 @@ export default function Expenses() {
   };
 
   const remove = async (r) => {
-    if (!confirm(`Delete ${rupees(r.amount)} expense?`)) return;
+    const ok = await confirmAction({
+      title: "Delete this expense?",
+      text: `The ${rupees(r.amount)} expense will be removed, with its bill photos. This cannot be undone.`,
+      confirmLabel: "Delete expense",
+    });
+    if (!ok) return;
     if (r.bill_path) await sb.storage.from("bills").remove([r.bill_path]);
     await sb.from("expenses").delete().eq("id", r.id);
     load();

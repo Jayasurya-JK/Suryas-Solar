@@ -7,6 +7,7 @@ import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import QuoteDocument, { QuotePreview } from "@/components/QuoteDocument";
 import QuotePreviewDialog from "@/components/QuotePreviewDialog";
+import { confirmAction } from "@/components/Confirm";
 import { BomRows } from "@/components/ListEditors";
 import { AutoText } from "@/components/Extras";
 import { HistoryPanel } from "@/components/History";
@@ -115,7 +116,12 @@ export default function QuoteEditor() {
   };
 
   const remove = async () => {
-    if (!confirm(`Delete quote ${q.ref_no}? This cannot be undone.`)) return;
+    const ok = await confirmAction({
+      title: `Delete quote ${q.ref_no}?`,
+      text: "This cannot be undone.",
+      confirmLabel: "Delete quote",
+    });
+    if (!ok) return;
     await sb.from("quotes").delete().eq("id", id);
     router.replace("/quotes");
   };
