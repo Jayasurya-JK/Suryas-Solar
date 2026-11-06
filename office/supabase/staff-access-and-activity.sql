@@ -176,6 +176,7 @@ declare who text; sm text;
 begin
   if not private.is_member() then return; end if;
   if p_action not in ('login','logout','pdf','whatsapp','bill_view') then return; end if;
+  if p_table is not null and p_table not in ('leads','quotes','expenses') then return; end if;
   select full_name into who from public.profiles where id = auth.uid();
   sm := case p_action
     when 'login' then 'Signed in'
