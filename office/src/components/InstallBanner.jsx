@@ -15,9 +15,9 @@ export function InstallSteps({ android }) {
         "Already have a Surya's Solar icon on your home screen? Delete it first, reload, then install again - Chrome will not offer it twice.",
       ]
     : [
-        "Open this page in Safari.",
-        "Tap the Share button (the square with an arrow pointing up).",
-        'Scroll down and tap "Add to Home Screen".',
+        "Open this page in Safari. Chrome and Firefox on an iPhone cannot add to the home screen - only Safari can.",
+        "Tap the Share button (the square with an arrow pointing up), at the bottom of the screen.",
+        'Scroll down and tap "Add to Home Screen", then "Add".',
       ];
   return (
     <ol className="mt-2 space-y-1.5 text-xs leading-relaxed text-slate-600">
@@ -38,11 +38,13 @@ export default function InstallBanner() {
   const [hidden, setHidden] = useState(true);
   const [handheld, setHandheld] = useState(false);
   const [android, setAndroid] = useState(false);
+  const [apple, setApple] = useState(false);
   const [showSteps, setShowSteps] = useState(false);
 
   useEffect(() => {
     setHandheld(isHandheld());
     setAndroid(isAndroid());
+    setApple(isIos());
     try {
       if (isStandalone() || localStorage.getItem(DISMISSED) === "1") return;
     } catch {}
@@ -58,6 +60,9 @@ export default function InstallBanner() {
     setHidden(true);
   };
 
+  // iOS has no install event at all, so the steps are always open there. Android shows them only on demand.
+  const stepsOpen = apple || showSteps;
+
   return (
     <div className="mb-4 rounded-2xl border border-primary/25 bg-primary-50 px-3.5 py-3">
       <div className="flex items-center gap-3">
@@ -67,23 +72,23 @@ export default function InstallBanner() {
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-slate-900">Install on this phone</p>
           <p className="text-xs text-slate-600">
-            {ready ? "Opens full screen, no browser bar." : "Two taps - tap How for the steps."}
+            {apple ? "iPhone: from Safari's Share menu - 3 taps, below." : ready ? "Opens full screen, no browser bar." : "Two taps - tap How for the steps."}
           </p>
         </div>
-        {ready ? (
+        {ready && !apple ? (
           <button className="btn-primary !h-9 shrink-0 !px-3.5" onClick={async () => { if (await promptInstall()) dismiss(); }}>
             Install
           </button>
-        ) : (
+        ) : !apple ? (
           <button className="btn-ghost !h-9 shrink-0 !px-3.5" onClick={() => setShowSteps((v) => !v)}>
             {showSteps ? "Hide" : "How"}
           </button>
-        )}
+        ) : null}
         <button onClick={dismiss} aria-label="Not now" className="shrink-0 rounded-full p-1.5 text-slate-500 hover:bg-white">
           <Icon name="x" className="h-4 w-4" />
         </button>
       </div>
-      {(showSteps || (isIos() && !ready)) && <InstallSteps android={android} />}
+      {stepsOpen && <InstallSteps android={android} />}
     </div>
   );
 }
