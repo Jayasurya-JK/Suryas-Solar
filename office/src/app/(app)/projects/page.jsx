@@ -351,7 +351,7 @@ export default function Projects() {
                       {money[r.id].due > 0 && <span className="block font-bold text-red-600">{rupees(money[r.id].due)} pending</span>}
                     </span>
                   ) : (
-                    <span className="shrink-0 font-semibold text-slate-400">No invoice yet</span>
+                    <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-600">No invoice</span>
                   )}
                 </div>
               </Link>
