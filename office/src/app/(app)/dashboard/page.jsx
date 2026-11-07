@@ -96,12 +96,6 @@ export default function Dashboard() {
         <MonthPicker value={month} onChange={setMonth} />
       </div>
 
-      <div className="mb-6 grid grid-cols-3 gap-2 sm:flex">
-        <Link href="/quotes/new" className="btn-accent !h-auto flex-col !gap-1 !rounded-2xl !px-2 py-3 text-xs sm:!h-10 sm:flex-row sm:!gap-2 sm:!rounded-full sm:!px-4 sm:py-0 sm:text-sm"><Icon name="doc" className="h-5 w-5 sm:h-4 sm:w-4" />New quote</Link>
-        <Link href="/leads" className="btn-ghost !h-auto flex-col !gap-1 !rounded-2xl !px-2 py-3 text-xs sm:!h-10 sm:flex-row sm:!gap-2 sm:!rounded-full sm:!px-4 sm:py-0 sm:text-sm"><Icon name="users" className="h-5 w-5 sm:h-4 sm:w-4" />Leads</Link>
-        <Link href="/expenses" className="btn-ghost !h-auto flex-col !gap-1 !rounded-2xl !px-2 py-3 text-xs sm:!h-10 sm:flex-row sm:!gap-2 sm:!rounded-full sm:!px-4 sm:py-0 sm:text-sm"><Icon name="wallet" className="h-5 w-5 sm:h-4 sm:w-4" />Expenses</Link>
-      </div>
-
       {!k ? <CardsSkeleton /> : (
         <div className="space-y-5">
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
