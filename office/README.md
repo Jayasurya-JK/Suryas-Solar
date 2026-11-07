@@ -105,11 +105,21 @@ correct a wrong tap.
 Staff may only mark **today**, and only for themselves - both enforced in the database (`private.is_staff()`
 plus `work_date = current_date`), not just the UI. Back-filling a past day is an admin action.
 
-## Expenses dated in another month
+## Expenses: months, details and bills
 
-The Expenses screen opens on the current month, so an entry dated last month looks missing. After saving,
-the app says which month it went into, and an empty month shows "Nothing dated in September 2026. The newest
-entries are in November 2026" with a button that jumps there.
+The Expenses screen opens on the current month, so an entry dated last month can look missing. Four things
+prevent that:
+
+- An **All months** button next to the month picker shows every entry at once.
+- The total card always lists the other months that hold entries ("Also recorded: October 2026 · 4"), so you
+  can tap straight to them.
+- The add form prints the chosen date in words, offers **Use today**, and warns "goes under October 2026"
+  when the date is outside the open month. After saving it says which month the entry went into.
+- Tapping an entry opens **Expense detail**: amount, date, what it was for, site, who paid, how, the note, who
+  entered it and when, with the bill photo and (for the owner) delete.
+
+Bill photos open **inside the app** in a lightbox. They used to use `window.open`, which an installed app
+blocks, so on a phone a tap on the camera did nothing at all.
 
 ## Follow-ups
 

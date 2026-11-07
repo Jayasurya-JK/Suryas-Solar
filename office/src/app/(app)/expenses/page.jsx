@@ -39,15 +39,23 @@ export default function Expenses() {
   const [cat, setCat] = useState("all");
   const [sheet, setSheet] = useState(false);
   const [otherMonths, setOtherMonths] = useState([]);
+  const [detail, setDetail] = useState(null);
+  const [bill, setBill] = useState(null);
   const fileRef = useRef(null);
 
   const load = useCallback(async () => {
-    const [y, m] = month.split("-").map(Number);
-    const end = new Date(y, m, 1);
-    const endStr = `${end.getFullYear()}-${String(end.getMonth() + 1).padStart(2, "0")}-01`;
-    const { data } = await sb.from("expenses").select("*").gte("spent_on", `${month}-01`).lt("spent_on", endStr)
-      .order("spent_on", { ascending: false }).order("created_at", { ascending: false });
-    setRows(data || []);
+    if (month === "all") {
+      const { data } = await sb.from("expenses").select("*")
+        .order("spent_on", { ascending: false }).order("created_at", { ascending: false });
+      setRows(data || []);
+    } else {
+      const [y, m] = month.split("-").map(Number);
+      const end = new Date(y, m, 1);
+      const endStr = `${end.getFullYear()}-${String(end.getMonth() + 1).padStart(2, "0")}-01`;
+      const { data } = await sb.from("expenses").select("*").gte("spent_on", `${month}-01`).lt("spent_on", endStr)
+        .order("spent_on", { ascending: false }).order("created_at", { ascending: false });
+      setRows(data || []);
+    }
     // Other months that hold entries, so nothing looks lost when the open month is quiet.
     const { data: allDates } = await sb.from("expenses").select("spent_on");
     const tally = {};
@@ -89,15 +97,19 @@ export default function Expenses() {
       // Say which month it went into: an entry dated last month would otherwise vanish from the open month.
       const savedMonth = f.spent_on.slice(0, 7);
       const monthName = new Date(savedMonth + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" });
-      setMsg({ tone: "green", text: savedMonth === month ? "Expense saved." : `Expense saved in ${monthName}.` });
+      setMsg({ tone: "green", text: savedMonth === month || month === "all" ? "Expense saved." : `Expense saved in ${monthName}.` });
       setTimeout(() => setMsg(null), 4000);
-      if (savedMonth === month) load(); else setMonth(savedMonth);
+      if (savedMonth === month || month === "all") load(); else setMonth(savedMonth);
     });
   };
 
+  // The bill opens inside the app. window.open was silently blocked in the installed app, so tapping the
+  // camera did nothing at all.
   const viewBill = async (path, row) => {
-    const { data } = await sb.storage.from("bills").createSignedUrl(path, 300);
-    if (data?.signedUrl) window.open(data.signedUrl, "_blank");
+    setBill({ loading: true, url: null, row });
+    const { data, error } = await sb.storage.from("bills").createSignedUrl(path, 600);
+    if (error || !data?.signedUrl) return setBill({ loading: false, url: null, row, error: error?.message || "Could not open the bill." });
+    setBill({ loading: false, url: data.signedUrl, row });
     if (row) sb.rpc("log_event", { p_action: "bill_view", p_table: "expenses", p_record: row.id, p_label: `₹${row.amount} ${row.category}` }).then(() => {}, () => {});
   };
 
@@ -129,7 +141,7 @@ export default function Expenses() {
         labelOf(PAY_MODES, r.payment_mode), r.note, who(r.created_by), r.bill_path ? "Yes" : ""]),
     ]);
 
-  const monthLabel = new Date(month + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+  const monthLabel = month === "all" ? "all months" : new Date(month + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" });
   const monthNameOf = (m) => new Date(m + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" });
 
   const form = (
@@ -150,8 +162,7 @@ export default function Expenses() {
         )}
         {f.spent_on.slice(0, 7) !== today().slice(0, 7) && (
           <span className="font-semibold text-amber-700">goes under {monthNameOf(f.spent_on.slice(0, 7))}</span>
-        )}
-      </div>
+        )}      </div>
       <Field label="Category"><Segmented size="sm" value={f.category} onChange={(v) => setF((cur) => ({ ...cur, category: v }))} options={EXPENSE_CATEGORIES} /></Field>
       {f.category === "other" && (
         <Field label="What was this for? *">
@@ -200,7 +211,13 @@ export default function Expenses() {
                 <p className="mt-1 text-3xl font-bold tracking-tight">{rupees(total)}</p>
                 <p className="mt-0.5 text-xs text-white/60">{shown.length} entries</p>
               </div>
-              <MonthPicker dark value={month} onChange={setMonth} />
+              <div className="flex shrink-0 flex-col items-end gap-1.5">
+                <MonthPicker dark value={month === "all" ? today().slice(0, 7) : month} onChange={setMonth} />
+                <button type="button" onClick={() => setMonth(month === "all" ? today().slice(0, 7) : "all")}
+                  className={`rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide ${month === "all" ? "bg-white text-slate-900" : "bg-white/10 text-white/80 hover:bg-white/20"}`}>
+                  {month === "all" ? "This month" : "All months"}
+                </button>
+              </div>
             </div>
             {rows && rows.length > 0 && (
               <div className="px-4 py-3">
@@ -237,14 +254,16 @@ export default function Expenses() {
             <div className="card divide-y divide-slate-100">
               {shown.map((r) => (
                 <div key={r.id} className="flex items-center gap-3 p-4">
-                  <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl text-sm font-bold ${CAT_TONE[r.category] || CAT_TONE.other}`}>
-                    {labelOf(EXPENSE_CATEGORIES, r.category).slice(0, 2)}
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <p className="break-words font-semibold text-slate-900">{r.note || r.category_other || labelOf(EXPENSE_CATEGORIES, r.category)}</p>
-                    <p className="break-words text-[13px] text-slate-500">{[labelOf(EXPENSE_CATEGORIES, r.category), r.site, dmy(r.spent_on), labelOf(PAY_MODES, r.payment_mode)].filter(Boolean).join(" · ")}</p>
-                    <p className="break-words text-xs text-slate-500">Paid by {r.paid_by || "?"}{who(r.created_by) ? ` · entered by ${who(r.created_by)}` : ""}</p>
-                  </div>
+                  <button type="button" onClick={() => setDetail(r)} className="flex min-w-0 flex-1 items-center gap-3 text-left">
+                    <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl text-sm font-bold ${CAT_TONE[r.category] || CAT_TONE.other}`}>
+                      {labelOf(EXPENSE_CATEGORIES, r.category).slice(0, 2)}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block break-words font-semibold text-slate-900">{r.note || r.category_other || labelOf(EXPENSE_CATEGORIES, r.category)}</span>
+                      <span className="block break-words text-[13px] text-slate-500">{[labelOf(EXPENSE_CATEGORIES, r.category), r.site, dmy(r.spent_on), labelOf(PAY_MODES, r.payment_mode)].filter(Boolean).join(" · ")}</span>
+                      <span className="block break-words text-xs text-slate-500">Paid by {r.paid_by || "?"}{who(r.created_by) ? ` · entered by ${who(r.created_by)}` : ""}</span>
+                    </span>
+                  </button>
                   <div className="flex shrink-0 flex-col items-end gap-1">
                     <span className="text-[15px] font-bold text-slate-900">{rupees(r.amount)}</span>
                     <div className="flex gap-0.5">
@@ -260,6 +279,48 @@ export default function Expenses() {
       </div>
 
       {sheet && <Modal title="Add expense" onClose={() => setSheet(false)}>{form}</Modal>}
+
+      {detail && (
+        <Modal title="Expense detail" onClose={() => setDetail(null)}>
+          <p className="text-3xl font-bold tracking-tight text-slate-900">{rupees(detail.amount)}</p>
+          <p className="mt-0.5 text-sm text-slate-500">{dmy(detail.spent_on)} · {monthNameOf(String(detail.spent_on).slice(0, 7))}</p>
+          <dl className="mt-4 divide-y divide-slate-100 text-sm">
+            {[
+              ["What it was for", detail.category_other || labelOf(EXPENSE_CATEGORIES, detail.category)],
+              ["Site or customer", detail.site],
+              ["Paid by", detail.paid_by],
+              ["Paid using", labelOf(PAY_MODES, detail.payment_mode)],
+              ["Note", detail.note],
+              ["Entered by", who(detail.created_by)],
+              ["Entered on", detail.created_at ? dmy(detail.created_at) : null],
+            ].filter(([, v]) => v).map(([k, v]) => (
+              <div key={k} className="flex gap-3 py-2">
+                <dt className="w-36 shrink-0 text-slate-500">{k}</dt>
+                <dd className="min-w-0 flex-1 break-words font-semibold text-slate-900">{v}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {detail.bill_path && <button className="btn-ghost flex-1" onClick={() => viewBill(detail.bill_path, detail)}><Icon name="camera" className="h-4 w-4" />View bill photo</button>}
+            <button className="btn-ghost flex-1" onClick={() => setDetail(null)}>Close</button>
+          </div>
+          {isOwner && <button onClick={() => { setDetail(null); remove(detail); }} className="btn-danger mt-2 w-full"><Icon name="trash" className="h-4 w-4" />Delete this expense</button>}
+        </Modal>
+      )}
+
+      {bill && (
+        <Modal title="Bill photo" onClose={() => setBill(null)}>
+          {bill.loading && <div className="flex justify-center py-10"><Spinner /></div>}
+          {bill.error && <Notice tone="red">{bill.error}</Notice>}
+          {bill.url && (
+            <a href={bill.url} target="_blank" rel="noreferrer" className="block">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={bill.url} alt="Bill photo" className="max-h-[70vh] w-full rounded-xl object-contain" />
+              <p className="mt-2 text-center text-xs font-semibold text-primary">Tap the photo to open it full size</p>
+            </a>
+          )}
+        </Modal>
+      )}
     </>
   );
 }
