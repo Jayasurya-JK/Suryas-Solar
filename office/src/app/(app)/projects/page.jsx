@@ -57,8 +57,10 @@ export default function Projects() {
   const { profile, isOwner } = useApp();
   const [rows, setRows] = useState(null);
   const [steps, setSteps] = useState([]);
+  const [invoices, setInvoices] = useState([]);
   const [setup, setSetup] = useState(false);
   const [tab, setTab] = useState("open");
+  const [payTab, setPayTab] = useState("all");
   const [q, setQ] = useState("");
   const [sheet, setSheet] = useState(false);
   const [form, setForm] = useState({ ...BLANK });
@@ -71,16 +73,32 @@ export default function Projects() {
   const portalOnce = useOnce();
 
   const load = useCallback(async () => {
-    const [p, s] = await Promise.all([
+    const [p, s, v] = await Promise.all([
       sb.from("projects").select("*").order("started_on", { ascending: false }),
       sb.from("project_steps").select("project_id, status"),
+      sb.from("project_invoices").select("project_id, amount, outstanding").gt("amount", 0),
     ]);
     if (MISSING_TABLE(p.error)) return setSetup(true);
     setSetup(false);
     setRows(p.data || []);
     setSteps(s.data || []);
+    setInvoices(v.data || []);
   }, [sb]);
   useEffect(() => { load(); }, [load]);
+
+  // One line per project: how much was invoiced and how much is still owed.
+  const money = useMemo(() => {
+    const m = {};
+    invoices.forEach((v) => {
+      if (!v.project_id) return;
+      const cur = m[v.project_id] || { amount: 0, due: 0, count: 0 };
+      cur.amount += Number(v.amount || 0);
+      cur.due += Number(v.outstanding || 0);
+      cur.count += 1;
+      m[v.project_id] = cur;
+    });
+    return m;
+  }, [invoices]);
 
   const progress = useMemo(() => {
     const m = {};
@@ -99,8 +117,11 @@ export default function Projects() {
       hold: list.filter((r) => r.status === "on_hold").length,
       done: list.filter((r) => r.status === "completed").length,
       all: list.length,
+      invoiced: list.filter((r) => (money[r.id]?.count || 0) > 0).length,
+      notInvoiced: list.filter((r) => (money[r.id]?.count || 0) === 0).length,
+      due: list.filter((r) => (money[r.id]?.due || 0) > 0).length,
     };
-  }, [rows]);
+  }, [rows, money]);
 
   const shown = useMemo(() => {
     const needle = q.trim().toLowerCase();
@@ -108,10 +129,23 @@ export default function Projects() {
       if (tab === "open" && r.status !== "open") return false;
       if (tab === "hold" && r.status !== "on_hold") return false;
       if (tab === "done" && r.status !== "completed") return false;
+      const m = money[r.id] || { count: 0, due: 0 };
+      if (payTab === "invoiced" && m.count === 0) return false;
+      if (payTab === "notInvoiced" && m.count > 0) return false;
+      if (payTab === "due" && m.due <= 0) return false;
       if (!needle) return true;
       return `${r.customer} ${r.phone || ""} ${r.town || ""} ${r.ref_no || ""}`.toLowerCase().includes(needle);
     });
-  }, [rows, tab, q]);
+  }, [rows, tab, q, payTab, money]);
+
+  // Money at a glance for whatever is on screen: quoted, received, still to come.
+  const totals = useMemo(() => (shown || []).reduce((a, r) => {
+    const m = money[r.id] || { amount: 0, due: 0 };
+    a.quoted += Number(r.quoted_amount || 0);
+    a.received += Math.max(0, m.amount - m.due);
+    a.pending += m.due;
+    return a;
+  }, { quoted: 0, received: 0, pending: 0 }), [shown, money]);
 
   const set = (k) => (e) => setForm((cur) => ({ ...cur, [k]: e.target.value }));
 
@@ -250,7 +284,23 @@ export default function Projects() {
 
       {msg && <div className="mb-4"><Notice tone={msg.tone}>{msg.text}</Notice></div>}
 
-      <div className="mb-4 flex flex-wrap items-center gap-3">
+      <div className="mb-4 grid grid-cols-3 divide-x divide-slate-200 rounded-2xl border border-slate-200 bg-white text-center">
+        <div className="px-2 py-3">
+          <p className="text-[15px] font-black leading-tight text-slate-900 sm:text-xl">{rupees(totals.quoted)}</p>
+          <p className="mt-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-500 sm:text-[11px]">Quoted</p>
+        </div>
+        <div className="px-2 py-3">
+          <p className="text-[15px] font-black leading-tight text-teal sm:text-xl">{rupees(totals.received)}</p>
+          <p className="mt-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-500 sm:text-[11px]">Received</p>
+        </div>
+        <div className="px-2 py-3">
+          <p className="text-[15px] font-black leading-tight text-red-600 sm:text-xl">{rupees(totals.pending)}</p>
+          <p className="mt-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-500 sm:text-[11px]">Not received</p>
+        </div>
+      </div>
+      <p className="mb-3 text-center text-[11px] text-slate-500">For the {shown.length} project{shown.length === 1 ? "" : "s"} shown. Open one to correct its amount or record a payment.</p>
+
+      <div className="mb-3 flex flex-wrap items-center gap-3">
         <FilterTabs value={tab} onChange={setTab} tabs={[
           { id: "open", label: "Running", n: counts.open },
           { id: "hold", label: "On hold", n: counts.hold },
@@ -258,6 +308,15 @@ export default function Projects() {
           { id: "all", label: "All", n: counts.all },
         ]} />
         <div className="min-w-56 flex-1"><SearchBox value={q} onChange={setQ} placeholder="Search name, phone or number" /></div>
+      </div>
+
+      <div className="mb-4">
+        <FilterTabs value={payTab} onChange={setPayTab} tabs={[
+          { id: "all", label: "Every invoice state" },
+          { id: "notInvoiced", label: "No invoice", n: counts.notInvoiced },
+          { id: "invoiced", label: "Invoice added", n: counts.invoiced },
+          { id: "due", label: "Money pending", n: counts.due, warn: true },
+        ]} />
       </div>
 
       {!rows ? <ListSkeleton rows={4} /> : shown.length === 0 ? (
@@ -284,9 +343,16 @@ export default function Projects() {
                 <div className="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
                   <div className="h-full rounded-full bg-primary" style={{ width: `${pct}%` }} />
                 </div>
-                <div className="mt-2 flex items-center justify-between text-xs text-slate-500">
-                  <span>{p.done} of {p.total} steps</span>
-                  <span className="font-semibold text-slate-700">{rupees(r.quoted_amount)}</span>
+                <div className="mt-2 flex items-center justify-between gap-2 text-xs text-slate-500">
+                  <span className="shrink-0">{p.done} of {p.total} steps</span>
+                  {money[r.id]?.count ? (
+                    <span className="min-w-0 text-right">
+                      <span className="font-semibold text-slate-700">{rupees(money[r.id].amount)}</span>
+                      {money[r.id].due > 0 && <span className="block font-bold text-red-600">{rupees(money[r.id].due)} pending</span>}
+                    </span>
+                  ) : (
+                    <span className="shrink-0 font-semibold text-slate-400">No invoice yet</span>
+                  )}
                 </div>
               </Link>
             );

@@ -153,9 +153,11 @@ export default function ProjectDetail() {
 
   return (
     <>
-      <Link href="/projects" className="mb-4 inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 hover:text-slate-900">
-        <Icon name="back" className="h-4 w-4" />All projects
-      </Link>
+      <div className="sticky top-0 z-20 -mx-4 mb-4 border-b border-slate-200/80 bg-[#f4f6fa]/95 px-4 py-2.5 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-10 lg:px-10">
+        <Link href="/projects" className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900">
+          <Icon name="back" className="h-4 w-4" />All projects
+        </Link>
+      </div>
 
       {msg && (
         <div className="pointer-events-none fixed inset-x-4 top-[4.5rem] z-50 mx-auto max-w-sm lg:top-6">
