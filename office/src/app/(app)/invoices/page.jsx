@@ -45,6 +45,7 @@ export default function Invoices() {
   const [flash, setFlash] = useState(null);
   const [link, setLink] = useState("");
   const [linkBusy, setLinkBusy] = useState(false);
+  const [showLink, setShowLink] = useState(false);
 
   const load = useCallback(async () => {
     const [v, p] = await Promise.all([
@@ -110,6 +111,9 @@ export default function Invoices() {
   }, [inYear, tab, q, projects]);
 
   const list = useMemo(() => Object.values(projects || {}), [projects]);
+
+  // Opening a different invoice must not carry the previous search along.
+  useEffect(() => { setLink(""); setShowLink(false); }, [detail?.id]);
 
   const matches = useMemo(() => {
     const needle = link.trim().toLowerCase();
@@ -250,46 +254,57 @@ export default function Invoices() {
               ))}
             </dl>
 
-            <div className="rounded-xl border border-slate-200 p-3">
-              <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                {projects[detail.project_id] ? "Change the project this invoice belongs to" : "This invoice has no project yet"}
-              </p>
-              <input className="input mt-2" value={link} onChange={(e) => setLink(e.target.value)} placeholder="Search a customer or job number" />
-              {matches.length > 0 && (
-                <ul className="mt-2 divide-y divide-slate-100">
-                  {matches.map((p) => (
-                    <li key={p.id}>
-                      <button type="button" className="flex w-full items-center justify-between gap-2 py-2 text-left text-sm hover:text-primary" disabled={linkBusy} onClick={() => linkTo(p.id)}>
-                        <span className="min-w-0">
-                          <span className="block truncate font-semibold text-slate-800">{p.customer}</span>
-                          <span className="block text-xs text-slate-500">{[p.ref_no, p.town].filter(Boolean).join(" · ")}</span>
-                        </span>
-                        <Icon name="chevron" className="h-4 w-4 shrink-0 text-slate-300" />
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {link.trim() && matches.length === 0 && <p className="mt-2 text-xs text-amber-700">No job matches that name.</p>}
-              {detail.project_id && (
-                <button type="button" className="mt-2 text-xs font-semibold text-slate-500 hover:text-red-600" disabled={linkBusy} onClick={() => linkTo(null)}>
-                  Unlink it from this project
-                </button>
-              )}
-            </div>
+            {projects[detail.project_id] && !showLink ? (
+              <button type="button" onClick={() => setShowLink(true)} className="justify-self-start text-xs font-semibold text-slate-500 hover:text-primary">
+                Wrong customer? Change the project
+              </button>
+            ) : (
+              <div className="rounded-xl border border-slate-200 p-3">
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                  {projects[detail.project_id] ? "Change the project this invoice belongs to" : "This invoice has no project yet"}
+                </p>
+                <input className="input mt-2" value={link} onChange={(e) => setLink(e.target.value)} placeholder="Search a customer or job number" autoFocus />
+                {matches.length > 0 && (
+                  <ul className="mt-2 divide-y divide-slate-100">
+                    {matches.map((p) => (
+                      <li key={p.id}>
+                        <button type="button" className="flex w-full items-center justify-between gap-2 py-2 text-left text-sm hover:text-primary" disabled={linkBusy} onClick={() => linkTo(p.id)}>
+                          <span className="min-w-0">
+                            <span className="block truncate font-semibold text-slate-800">{p.customer}</span>
+                            <span className="block text-xs text-slate-500">{[p.ref_no, p.town].filter(Boolean).join(" · ")}</span>
+                          </span>
+                          <Icon name="chevron" className="h-4 w-4 shrink-0 text-slate-300" />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {link.trim() && matches.length === 0 && <p className="mt-2 text-xs text-amber-700">No job matches that name.</p>}
+                <div className="mt-2 flex flex-wrap gap-3">
+                  {detail.project_id && (
+                    <button type="button" className="text-xs font-semibold text-slate-500 hover:text-red-600" disabled={linkBusy} onClick={() => linkTo(null)}>
+                      Unlink it from this project
+                    </button>
+                  )}
+                  <button type="button" className="text-xs font-semibold text-slate-400 hover:text-slate-700" onClick={() => { setShowLink(false); setLink(""); }}>
+                    Keep it as it is
+                  </button>
+                </div>
+              </div>
+            )}
 
-            <div className="flex flex-wrap gap-2">
+            <div className="grid gap-2">
               {projects[detail.project_id] && (
-                <Link href={`/projects/${detail.project_id}`} className="btn-primary flex-1 text-center" onClick={() => setDetail(null)}>
+                <Link href={`/projects/${detail.project_id}`} className="btn-primary w-full justify-center" onClick={() => setDetail(null)}>
                   <Icon name="sun" className="h-4 w-4" />Open the project
                 </Link>
               )}
               {projects[detail.project_id]?.phone && (
-                <>
-                  <a href={`tel:${projects[detail.project_id].phone}`} className="btn-ghost flex-1 text-center"><Icon name="phone" className="h-4 w-4" />Call</a>
+                <div className="grid grid-cols-2 gap-2">
+                  <a href={`tel:${projects[detail.project_id].phone}`} className="btn-ghost justify-center"><Icon name="phone" className="h-4 w-4" />Call</a>
                   <a href={waLink(projects[detail.project_id].phone, `Hello ${projects[detail.project_id].customer}, this is Surya's Solar, Cuddalore, about invoice ${detail.invoice_no}.`)}
-                    target="_blank" rel="noreferrer" className="btn-ghost flex-1 text-center"><Icon name="chat" className="h-4 w-4" />WhatsApp</a>
-                </>
+                    target="_blank" rel="noreferrer" className="btn-ghost justify-center"><Icon name="chat" className="h-4 w-4" />WhatsApp</a>
+                </div>
               )}
             </div>
           </div>
