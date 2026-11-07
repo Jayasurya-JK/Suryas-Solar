@@ -14,7 +14,7 @@ import { HistoryPanel } from "@/components/History";
 import { Field, Icon, Notice, Segmented, Spinner, Switch } from "@/components/ui";
 import { QUOTE_STATUSES, calcQuote, extrasWithAmounts, rupees, waLink } from "@/lib/format";
 import { useOnce } from "@/lib/useOnce";
-import { quoteFileName, saveQuotePdf } from "@/lib/quotePdf";
+import { buildQuotePdf, canShareFiles, downloadBlob, quoteFileName, saveQuotePdf } from "@/lib/quotePdf";
 
 export default function QuoteEditor() {
   const { id } = useParams();
@@ -130,14 +130,49 @@ export default function QuoteEditor() {
     logPdf();
   };
 
+  // Sending the quotation to the customer: the PDF itself must go, not just a message. On a phone the share
+  // sheet carries the file straight into WhatsApp; a desktop browser cannot share a file, so there the PDF
+  // is saved first and the chat opens with the message, ready for the file to be attached.
   const sendWhatsApp = () => onceSend(async () => {
     if (dirty && !(await save())) return;
     if (q.status === "draft") { await save({ status: "sent" }); setQ((cur) => ({ ...cur, status: "sent" })); }
-    const text = `Hello ${q.customer?.name}, thank you for your enquiry. Please find our quotation ${q.ref_no} for a ${q.system?.kw} kWp rooftop solar system.\n\nTotal price: ${rupees(calc.total)} (GST included)` +
+
+    const text = `Hello ${String(q.customer?.name || "").trim()}, thank you for your enquiry. Please find our quotation ${q.ref_no} (PDF attached) for a ${q.system?.kw} kWp rooftop solar system.\n\nTotal price: ${rupees(calc.total)} (GST included)` +
       (q.show_subsidy ? `\nSubsidy to your bank: ${rupees(calc.central + calc.tn)}\nYour effective cost: ${rupees(calc.net)}` : "") +
       `\n\nFor any doubt, call ${s.phone1 || ""}.\nSurya's Solar, Cuddalore`;
-    window.open(q.customer?.phone ? waLink(q.customer.phone, text) : `https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
-    sb.rpc("log_event", { p_action: "whatsapp", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
+    const name = quoteFileName(q);
+
+    setPdfBusy(true);
+    setMsg(null);
+    let blob = null;
+    try {
+      blob = (await buildQuotePdf(pdfRef.current)).blob;
+    } catch {
+      setPdfBusy(false);
+      setMsg({ tone: "amber", text: "This phone could not build the PDF. Open Preview and tap Print to make one." });
+      return;
+    }
+
+    const file = new File([blob], name, { type: "application/pdf" });
+    if (canShareFiles(file)) {
+      try {
+        await navigator.share({ files: [file], title: `Quotation ${q.ref_no}`, text });
+        logPdf();
+        sb.rpc("log_event", { p_action: "whatsapp", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
+        setMsg({ tone: "green", text: "PDF shared. Pick WhatsApp if the share sheet is still open." });
+        setTimeout(() => setMsg(null), 4000);
+      } catch (e) {
+        // The person closed the share sheet - that is not an error worth shouting about.
+        if (e?.name !== "AbortError") setMsg({ tone: "amber", text: "The share sheet did not open. The PDF is saved - attach it in WhatsApp." });
+        downloadBlob(blob, name);
+      }
+    } else {
+      downloadBlob(blob, name);
+      window.open(q.customer?.phone ? waLink(q.customer.phone, text) : `https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
+      setMsg({ tone: "amber", text: `The PDF is saved as ${name}. In WhatsApp, attach it with the paperclip before you send.` });
+      sb.rpc("log_event", { p_action: "whatsapp", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
+    }
+    setPdfBusy(false);
   });
 
   const remove = async () => {

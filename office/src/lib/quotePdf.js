@@ -13,7 +13,8 @@ export const quoteFileName = (q = {}) => {
 const nextPaint = () =>
   new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
 
-export async function saveQuotePdf(root, filename) {
+// Builds the file and hands back the Blob, without saving it. Sharing on WhatsApp needs the file itself.
+export async function buildQuotePdf(root) {
   if (!root) throw new Error("Nothing to save");
   const sheets = Array.from(root.querySelectorAll(".sheet"));
   if (sheets.length === 0) throw new Error("The quote has no pages yet");
@@ -41,18 +42,37 @@ export async function saveQuotePdf(root, filename) {
       if (i > 0) pdf.addPage();
       pdf.addImage(image, "JPEG", 0, 0, 210, 297, undefined, "FAST");
     }
-
-    const url = URL.createObjectURL(pdf.output("blob"));
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = filename;
-    link.rel = "noopener";
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 60000);
-    return { pages: sheets.length };
+    return { blob: pdf.output("blob"), pages: sheets.length };
   } finally {
     if (zoomed && previousZoom !== null) zoomed.style.zoom = previousZoom;
   }
 }
+
+export function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  link.rel = "noopener";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
+}
+
+export async function saveQuotePdf(root, filename) {
+  const { blob, pages } = await buildQuotePdf(root);
+  downloadBlob(blob, filename);
+  return { pages };
+}
+
+// Can this device send a real file through the share sheet? Android Chrome and iOS Safari can; a desktop
+// browser cannot, so there we save the file and let the person attach it in WhatsApp Web.
+export function canShareFiles(file) {
+  try {
+    return !!(navigator.canShare && navigator.share && navigator.canShare({ files: [file] }));
+  } catch {
+    return false;
+  }
+}
+

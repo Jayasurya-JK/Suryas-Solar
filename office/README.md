@@ -161,6 +161,19 @@ the total jumped to ₹65 lakh. The Settings rates now only prefill a box when a
 number stays editable, and anything above ₹2,00,000 shows a red warning. Older quotes without amounts are
 read from their saved rates, so their totals do not move.
 
+## Sending a quote on WhatsApp
+
+The WhatsApp button now sends the **PDF itself**, not just a message:
+
+- On a phone (Android Chrome, iOS Safari) the share sheet opens with the PDF attached and the message as its
+  caption - pick WhatsApp and the customer receives the file. Verified: a 1 MB `application/pdf` named after
+  the customer and quote number reaches `navigator.share` with the caption.
+- A desktop browser cannot share a file, so there the PDF is saved first and WhatsApp Web opens with the
+  message, with a line telling the person to attach the saved file with the paperclip.
+
+`buildQuotePdf` in `src/lib/quotePdf.js` returns the Blob so the same file can be downloaded (Save as PDF) or
+shared (WhatsApp) without building it twice.
+
 ## Saving a quote as a PDF
 
 The Save as PDF button builds a real `.pdf` file in the browser - no print dialog, so nobody has to hunt for
