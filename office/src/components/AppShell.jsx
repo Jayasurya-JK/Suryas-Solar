@@ -58,7 +58,7 @@ const NAV = [
   { href: "/projects", label: "Projects", icon: "sun", owner: true },
   { href: "/expenses", label: "Expenses", icon: "wallet", module: "expenses" },
   { href: "/applications", label: "Applications", icon: "doc", owner: true, group: "admin" },
-  // Staff mark their own day; admins open it to fill in a missed day. Staff get it as a tab, owner and admins under More.
+  // Staff mark their own day; admins open it to fill in a missed day. Staff get it as a tab, owner and admins in the top bar.
   { href: "/attendance", label: "Attendance", icon: "check", all: true, group: "admin", staffTab: true },
   { href: "/activity", label: "Activity", icon: "clock", activity: true, group: "admin" },
   { href: "/settings", label: "Settings", icon: "cog", owner: true, group: "admin" },
@@ -106,7 +106,6 @@ export default function AppShell({ children }) {
   const path = usePathname();
   const scrollRef = useRef(null);
   const [menu, setMenu] = useState(false);
-  const [more, setMore] = useState(false);
   const [checkedAt, setCheckedAt] = useState(null);
   const [pull, setPull] = useState(0);
   const [refreshing, setRefreshing] = useState(false);
@@ -272,7 +271,6 @@ export default function AppShell({ children }) {
 
   useEffect(() => {
     setMenu(false);
-    setMore(false);
     scrollRef.current?.scrollTo(0, 0);
   }, [path]);
 
@@ -406,8 +404,7 @@ export default function AppShell({ children }) {
     );
   };
 
-  const tabCount = main.length + (admin.length ? 1 : 0);
-  const moreActive = admin.some((n) => path.startsWith(n.href));
+  const tabCount = main.length;
 
   return (
     <Ctx.Provider value={{ ...state, isOwner, canSeeActivity, can, home, reload: load }}>
@@ -471,6 +468,24 @@ export default function AppShell({ children }) {
                 )}
               </div>
             </div>
+            {/* The extra screens sit in a bar of their own, so Applications is one tap away instead of hidden
+                behind More. It scrolls sideways on a narrow phone. */}
+            {admin.length > 0 && (
+              <div className="no-scrollbar flex gap-1.5 overflow-x-auto border-t border-slate-100 px-3 py-2">
+                {admin.map((n) => {
+                  const active = path.startsWith(n.href);
+                  const b = badge(n);
+                  return (
+                    <Link key={n.href} href={n.href}
+                      className={`flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition ${active ? "bg-primary text-white" : "bg-slate-100 text-slate-600"}`}>
+                      <Icon name={n.icon} className="h-3.5 w-3.5" />
+                      {n.label}
+                      {b > 0 && <span className={`rounded-full px-1.5 text-[10px] ${active ? "bg-white/25 text-white" : "bg-accent text-white"}`}>{b}</span>}
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
           </header>
 
           <main id="scroll" ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain"
@@ -512,45 +527,10 @@ export default function AppShell({ children }) {
                 </Link>
               );
             })}
-            {admin.length > 0 && (
-              <button type="button" onClick={() => setMore(true)} className="flex flex-col items-center gap-1 pb-2 pt-2 text-[11px] font-semibold">
-                <span className={`relative flex h-8 w-14 items-center justify-center rounded-full ${moreActive ? "bg-primary-50 text-primary" : "text-slate-500"}`}>
-                  <Icon name="dots" className="h-[22px] w-[22px]" />
-                  {state.requests > 0 && <span className="absolute right-3 top-0.5 h-2.5 w-2.5 rounded-full bg-accent ring-2 ring-white" />}
-                </span>
-                <span className={`${moreActive ? "text-primary" : "text-slate-500"} [@media(max-height:500px)]:hidden`}>More</span>
-              </button>
-            )}
           </nav>
         </div>
       </div>
 
-      {more && (
-        <Modal title="More" onClose={() => setMore(false)}>
-          <div className="space-y-1">
-            {admin.map((n) => {
-              const b = badge(n);
-              return (
-                <Link key={n.href} href={n.href} className="flex items-center gap-3 rounded-xl px-3 py-3 hover:bg-slate-50">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700"><Icon name={n.icon} className="h-5 w-5" /></span>
-                  <span className="flex-1 text-[15px] font-semibold text-slate-900">{n.label}</span>
-                  {b > 0 && <span className="rounded-full bg-accent px-2 py-0.5 text-xs font-bold text-white">{b} waiting</span>}
-                  <Icon name="chevron" className="h-4 w-4 text-slate-400" />
-                </Link>
-              );
-            })}
-            <Link href="/profile" onClick={() => setMore(false)} className="flex items-center gap-3 rounded-xl px-3 py-3 hover:bg-slate-50">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700"><Icon name="users" className="h-5 w-5" /></span>
-              <span className="flex-1 text-[15px] font-semibold text-slate-900">My profile</span>
-              <Icon name="chevron" className="h-4 w-4 text-slate-400" />
-            </Link>
-            <button onClick={signOut} className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left hover:bg-red-50">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50 text-red-600"><Icon name="logout" className="h-5 w-5" /></span>
-              <span className="text-[15px] font-semibold text-red-600">Sign out</span>
-            </button>
-          </div>
-        </Modal>
-      )}
       {askAtt && (
         <Modal title="Attendance for today" onClose={dismissAtt}>
           <p className="text-sm text-slate-600">How is today going? You can change it any time from the Attendance tab.</p>
