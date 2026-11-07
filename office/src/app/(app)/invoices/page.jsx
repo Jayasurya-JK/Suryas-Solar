@@ -42,6 +42,8 @@ export default function Invoices() {
   const [detail, setDetail] = useState(null);
   const [paste, setPaste] = useState(false);
   const [flash, setFlash] = useState(null);
+  const [link, setLink] = useState("");
+  const [linkBusy, setLinkBusy] = useState(false);
 
   const load = useCallback(async () => {
     const [v, p] = await Promise.all([
@@ -60,7 +62,7 @@ export default function Invoices() {
     if (bad) return bad.message;
     await load();
     setPaste(false);
-    setFlash(`${list.length} ${list.length === 1 ? "invoice" : "invoices"} saved from the billing book.`);
+    setFlash({ tone: "green", text: `${list.length} ${list.length === 1 ? "invoice" : "invoices"} saved from the billing book.` });
     return null;
   };
 
@@ -106,6 +108,28 @@ export default function Invoices() {
     });
   }, [inYear, tab, q, projects]);
 
+  const list = useMemo(() => Object.values(projects || {}), [projects]);
+
+  const matches = useMemo(() => {
+    const needle = link.trim().toLowerCase();
+    if (!needle) return [];
+    return list
+      .filter((p) => `${p.customer} ${p.ref_no || ""} ${p.town || ""}`.toLowerCase().includes(needle))
+      .slice(0, 5);
+  }, [list, link]);
+
+  const linkTo = async (projectId) => {
+    if (!detail || linkBusy) return;
+    setLinkBusy(true);
+    const { error: bad } = await sb.from("project_invoices").update({ project_id: projectId }).eq("id", detail.id);
+    setLinkBusy(false);
+    if (bad) return setFlash({ tone: "red", text: bad.message });
+    setRows((prev) => (prev || []).map((v) => (v.id === detail.id ? { ...v, project_id: projectId } : v)));
+    setDetail((d) => (d ? { ...d, project_id: projectId } : d));
+    setLink("");
+    setFlash({ tone: "green", text: projectId ? "Invoice linked to the project." : "Invoice unlinked from its project." });
+  };
+
   if (!isOwner) {
     return (
       <>
@@ -123,7 +147,7 @@ export default function Invoices() {
         <button type="button" className="btn-primary" onClick={() => setPaste(true)}><Icon name="plus" className="h-4 w-4" />Add invoices</button>
       </PageHeader>
 
-      {flash && <Notice tone="green">{flash}</Notice>}
+      {flash && <Notice tone={flash.tone}>{flash.text}</Notice>}
 
       {error && <div className="card p-5 text-sm text-red-600">{error}</div>}
 
@@ -224,6 +248,35 @@ export default function Invoices() {
                 </div>
               ))}
             </dl>
+
+            <div className="rounded-xl border border-slate-200 p-3">
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                {projects[detail.project_id] ? "Change the project this invoice belongs to" : "This invoice has no project yet"}
+              </p>
+              <input className="input mt-2" value={link} onChange={(e) => setLink(e.target.value)} placeholder="Search a customer or job number" />
+              {matches.length > 0 && (
+                <ul className="mt-2 divide-y divide-slate-100">
+                  {matches.map((p) => (
+                    <li key={p.id}>
+                      <button type="button" className="flex w-full items-center justify-between gap-2 py-2 text-left text-sm hover:text-primary" disabled={linkBusy} onClick={() => linkTo(p.id)}>
+                        <span className="min-w-0">
+                          <span className="block truncate font-semibold text-slate-800">{p.customer}</span>
+                          <span className="block text-xs text-slate-500">{[p.ref_no, p.town].filter(Boolean).join(" · ")}</span>
+                        </span>
+                        <Icon name="chevron" className="h-4 w-4 shrink-0 text-slate-300" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {link.trim() && matches.length === 0 && <p className="mt-2 text-xs text-amber-700">No job matches that name.</p>}
+              {detail.project_id && (
+                <button type="button" className="mt-2 text-xs font-semibold text-slate-500 hover:text-red-600" disabled={linkBusy} onClick={() => linkTo(null)}>
+                  Unlink it from this project
+                </button>
+              )}
+            </div>
+
             <div className="flex flex-wrap gap-2">
               {projects[detail.project_id] && (
                 <Link href={`/projects/${detail.project_id}`} className="btn-primary flex-1 text-center" onClick={() => setDetail(null)}>
