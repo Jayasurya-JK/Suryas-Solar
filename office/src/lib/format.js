@@ -63,14 +63,27 @@ export function subsidy(kw) {
 export function calcQuote(q) {
   const ex = q.extras || {};
   const rates = ex.rates || {};
-  const structAmt = ex.struct === "low" ? Number(rates.struct_low) || 0 : ex.struct === "high" ? Number(rates.struct_high) || 0 : 0;
-  const pillarAmt = ex.pillar ? Number(rates.pillar) || 0 : 0;
-  const floorAmt = (Number(ex.floors) || 0) * (Number(rates.per_floor) || 0);
+  // Extras are rupee amounts the person types, not a count multiplied by a rate. A typo in a count used to
+  // turn ₹2,500 a floor into lakhs. Older quotes have no `amounts` and are still read from their rates.
+  const am = ex.amounts;
+  const structAmt = am ? Number(am.struct) || 0
+    : ex.struct === "low" ? Number(rates.struct_low) || 0
+    : ex.struct === "high" ? Number(rates.struct_high) || 0 : 0;
+  const pillarAmt = am ? Number(am.pillar) || 0 : ex.pillar ? Number(rates.pillar) || 0 : 0;
+  const floorAmt = am ? Number(am.floors) || 0 : (Number(ex.floors) || 0) * (Number(rates.per_floor) || 0);
   const total = (Number(q.price) || 0) + structAmt + pillarAmt + floorAmt;
   const s = subsidy(q.system?.kw);
   const central = q.show_subsidy ? s.central : 0;
   const tn = q.show_subsidy && q.tn_topup ? s.tn : 0;
   return { structAmt, pillarAmt, floorAmt, total, central, tn, net: total - central - tn };
+}
+
+// Turns any quote's extras into the rupee-amount shape, so the editor always shows three ₹ boxes. An old
+// quote keeps exactly the numbers it was saved with.
+export function extrasWithAmounts(ex = {}) {
+  if (ex.amounts) return ex;
+  const c = calcQuote({ extras: ex, price: 0, system: {} });
+  return { ...ex, amounts: { struct: c.structAmt, pillar: c.pillarAmt, floors: c.floorAmt } };
 }
 
 export const LEAD_STATUSES = [

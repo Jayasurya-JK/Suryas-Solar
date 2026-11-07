@@ -9,6 +9,7 @@ import { Avatar, Icon, Modal, Spinner } from "@/components/ui";
 import InstallBanner from "@/components/InstallBanner";
 import VersionBar from "@/components/VersionBar";
 import ConfirmHost from "@/components/Confirm";
+import NavProgress from "@/components/NavProgress";
 import { StatusPicker, markAttendance as markAttendanceRow } from "@/components/Attendance";
 import { ago, dmy, isOwnerRole, permLabel, roleLabel, today, waLink } from "@/lib/format";
 
@@ -457,6 +458,7 @@ export default function AppShell({ children }) {
         </Modal>
       )}
       <VersionBar />
+      <NavProgress />
       <ConfirmHost />
     </Ctx.Provider>
   );

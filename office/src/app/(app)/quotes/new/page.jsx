@@ -7,6 +7,7 @@ import { useApp } from "@/components/AppShell";
 import { Field, Icon, Notice, PageHeader, Segmented, Spinner } from "@/components/ui";
 import { AutoText } from "@/components/Extras";
 import { rupees, today } from "@/lib/format";
+import { useOnce } from "@/lib/useOnce";
 
 function NewQuote() {
   const sb = supabase();
@@ -19,6 +20,7 @@ function NewQuote() {
   const [cust, setCust] = useState({ sal: "Sir", name: "", addr1: "", addr2: "", phone: "" });
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
+  const once = useOnce();
 
   useEffect(() => {
     sb.from("packages").select("*").eq("active", true).order("sort").then(({ data }) => {
@@ -34,35 +36,38 @@ function NewQuote() {
 
   const set = (k) => (e) => setCust({ ...cust, [k]: e.target.value });
 
-  const create = async (e) => {
+  const create = (e) => {
     e.preventDefault();
-    setBusy(true);
-    setErr("");
-    const p = packages.find((x) => x.id === pick);
-    const { data: ref, error: refErr } = await sb.rpc("next_quote_ref");
-    if (refErr) { setBusy(false); return setErr(refErr.message); }
-    const row = {
-      ref_no: ref,
-      lead_id: leadId || null,
-      quote_date: today(),
-      valid_days: 10,
-      customer: cust,
-      system: p ? {
-        kw: Number(p.kw), inverter_kw: Number(p.inverter_kw), phase: p.phase, roof: "RCC (concrete) roof",
-        panel_type: p.panel_type, panel_brand: p.panel_brand, panel_watt: p.panel_watt, panel_count: p.panel_count,
-        inverter_brand: p.inverter_brand, brand: defaultBrand,
-      } : { kw: 3, inverter_kw: 3, phase: 1, roof: "RCC (concrete) roof", panel_count: 6, panel_watt: "", brand: defaultBrand },
-      bom: p?.bom || [],
-      price: p ? Number(p.price) : 0,
-      extras: { struct: "none", pillar: false, floors: 0, show_table: false, rates: settings?.data?.extras || {} },
-      show_subsidy: true,
-      tn_topup: true,
-      created_by: profile.id,
-    };
-    const { data, error } = await sb.from("quotes").insert(row).select("id").single();
-    if (error) { setBusy(false); return setErr(error.message); }
-    if (leadId) await sb.from("leads").update({ status: "quote_sent" }).eq("id", leadId).in("status", ["new", "contacted", "site_visit"]);
-    router.replace(`/quotes/${data.id}`);
+    // One quote per tap: on a slow connection a second tap used to take another quote number.
+    return once(async () => {
+      setBusy(true);
+      setErr("");
+      const p = packages.find((x) => x.id === pick);
+      const { data: ref, error: refErr } = await sb.rpc("next_quote_ref");
+      if (refErr) { setBusy(false); return setErr(refErr.message); }
+      const row = {
+        ref_no: ref,
+        lead_id: leadId || null,
+        quote_date: today(),
+        valid_days: 10,
+        customer: cust,
+        system: p ? {
+          kw: Number(p.kw), inverter_kw: Number(p.inverter_kw), phase: p.phase, roof: "RCC (concrete) roof",
+          panel_type: p.panel_type, panel_brand: p.panel_brand, panel_watt: p.panel_watt, panel_count: p.panel_count,
+          inverter_brand: p.inverter_brand, brand: defaultBrand,
+        } : { kw: 3, inverter_kw: 3, phase: 1, roof: "RCC (concrete) roof", panel_count: 6, panel_watt: "", brand: defaultBrand },
+        bom: p?.bom || [],
+        price: p ? Number(p.price) : 0,
+        extras: { struct: "none", show_table: false, rates: settings?.data?.extras || {}, amounts: { struct: 0, pillar: 0, floors: 0 } },
+        show_subsidy: true,
+        tn_topup: true,
+        created_by: profile.id,
+      };
+      const { data, error } = await sb.from("quotes").insert(row).select("id").single();
+      if (error) { setBusy(false); return setErr(error.message); }
+      if (leadId) await sb.from("leads").update({ status: "quote_sent" }).eq("id", leadId).in("status", ["new", "contacted", "site_visit"]);
+      router.replace(`/quotes/${data.id}`);
+    });
   };
 
   if (!packages) return <Spinner />;

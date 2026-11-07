@@ -105,6 +105,12 @@ correct a wrong tap.
 Staff may only mark **today**, and only for themselves - both enforced in the database (`private.is_staff()`
 plus `work_date = current_date`), not just the UI. Back-filling a past day is an admin action.
 
+## Expenses dated in another month
+
+The Expenses screen opens on the current month, so an entry dated last month looks missing. After saving,
+the app says which month it went into, and an empty month shows "Nothing dated in September 2026. The newest
+entries are in November 2026" with a button that jumps there.
+
 ## Follow-ups
 
 Every lead carries a **next follow-up** date. The add-lead form asks for it near the top ("When should we
@@ -120,6 +126,30 @@ attendance ask) and a lead leaves the list as soon as its stage becomes Won or L
 The dashboard is the owner's and admins' screen - it carries company-wide money. Staff open straight onto
 their own first screen (Leads, or Expenses if that is all they have). Any address they do not hold, such as
 `/dashboard` from an old shortcut, quietly redirects there instead of showing a refusal.
+
+## Slow connections
+
+Tapping something on a weak signal used to look like nothing happened, so people tapped again and a second
+record was saved. Two changes prevent that:
+
+- `NavProgress` (in `AppShell`) shows a thin blue bar at the top the moment an internal link or a form is
+  used, and clears when the new screen renders. Sampled at 50 ms on a throttled connection: visible for the
+  whole wait.
+- `useOnce` (in `src/lib/useOnce.js`) wraps every save action - expense, lead, quote, package, approve, PIN,
+  sign-in - so a second tap while the first is still running is ignored. Verified by triple-tapping "Create
+  quote": one quote row, not three.
+
+Every editor also updates state functionally (`setQ(cur => ...)`). Reading the previous value out of the
+render closure meant one field could write a stale copy of the others back, which is how values in one box
+appeared to change by themselves.
+
+## Quote extras are rupee amounts
+
+Structure, pillars and extra floors are typed as **amounts in rupees**, each with its own box. They used to
+be a count multiplied by a rate from Settings, so a digit meant as rupees ("2600") became 2600 floors and
+the total jumped to ₹65 lakh. The Settings rates now only prefill a box when a structure size is chosen; the
+number stays editable, and anything above ₹2,00,000 shows a red warning. Older quotes without amounts are
+read from their saved rates, so their totals do not move.
 
 ## Saving a quote as a PDF
 

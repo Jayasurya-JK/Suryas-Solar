@@ -5,6 +5,7 @@ import { useApp } from "@/components/AppShell";
 import { Field, Notice, Segmented } from "@/components/ui";
 import { AutoText } from "@/components/Extras";
 import { LEAD_SOURCES, LEAD_STATUSES, addDays, cleanPhone, dmy, today } from "@/lib/format";
+import { useOnce } from "@/lib/useOnce";
 
 export const EMPTY_LEAD = {
   name: "", phone: "", address: "", town: "", source: "call", source_other: "", status: "new",
@@ -17,36 +18,39 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
   const [f, setF] = useState({ ...EMPTY_LEAD, ...initial });
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
-  const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
+  const once = useOnce();
+  const set = (k) => (e) => { const v = e.target.value; setF((cur) => ({ ...cur, [k]: v })); };
   // Leads are field work - the owner and admins do not take assignments, so they are not offered here.
   const assignable = team.filter((t) => t.role === "staff");
   const kept = f.assigned_to && !assignable.some((t) => t.id === f.assigned_to) ? team.find((t) => t.id === f.assigned_to) : null;
   const assignOptions = [{ id: "", label: "Not assigned" }, ...[...assignable, ...(kept ? [kept] : [])].map((t) => ({ id: t.id, label: t.full_name || t.email }))];
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
-    const phone = cleanPhone(f.phone);
-    if (f.phone && !/^[6-9]\d{9}$/.test(phone)) return setErr("Enter a 10-digit mobile number.");
-    if (f.source === "other" && !f.source_other.trim()) return setErr("Say where this lead came from.");
-    setErr("");
-    setBusy(true);
-    const row = {
-      name: f.name.trim(),
-      phone: phone || null,
-      address: f.address?.trim() || null,
-      town: f.town?.trim() || null,
-      source: f.source,
-      source_other: f.source === "other" ? f.source_other.trim() || null : null,
-      status: f.status,
-      kw_interest: f.kw_interest === "" || f.kw_interest == null ? null : Number(f.kw_interest),
-      monthly_bill: f.monthly_bill === "" || f.monthly_bill == null ? null : Number(f.monthly_bill),
-      notes: f.notes?.trim() || null,
-      next_follow_up: f.next_follow_up || null,
-      assigned_to: f.assigned_to || null,
-    };
-    const error = await onSave(row);
-    setBusy(false);
-    if (error) setErr(error);
+    return once(async () => {
+      const phone = cleanPhone(f.phone);
+      if (f.phone && !/^[6-9]\d{9}$/.test(phone)) return setErr("Enter a 10-digit mobile number.");
+      if (f.source === "other" && !f.source_other.trim()) return setErr("Say where this lead came from.");
+      setErr("");
+      setBusy(true);
+      const row = {
+        name: f.name.trim(),
+        phone: phone || null,
+        address: f.address?.trim() || null,
+        town: f.town?.trim() || null,
+        source: f.source,
+        source_other: f.source === "other" ? f.source_other.trim() || null : null,
+        status: f.status,
+        kw_interest: f.kw_interest === "" || f.kw_interest == null ? null : Number(f.kw_interest),
+        monthly_bill: f.monthly_bill === "" || f.monthly_bill == null ? null : Number(f.monthly_bill),
+        notes: f.notes?.trim() || null,
+        next_follow_up: f.next_follow_up || null,
+        assigned_to: f.assigned_to || null,
+      };
+      const error = await onSave(row);
+      setBusy(false);
+      if (error) setErr(error);
+    });
   };
 
   return (
@@ -61,7 +65,7 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
             const d = addDays(today(), days);
             const on = f.next_follow_up === d;
             return (
-              <button key={label} type="button" onClick={() => setF({ ...f, next_follow_up: on ? "" : d })} aria-pressed={on}
+              <button key={label} type="button" onClick={() => setF((cur) => ({ ...cur, next_follow_up: on ? "" : d }))} aria-pressed={on}
                 className={`rounded-full border px-3 py-1.5 text-[13px] font-semibold transition ${on ? "border-primary bg-primary-50 text-primary" : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"}`}>
                 {label}
               </button>
@@ -72,7 +76,7 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
         <p className="mt-1 text-xs text-slate-500">{f.next_follow_up ? `Reminder on ${dmy(f.next_follow_up)} when you open the app.` : "Pick a day, or leave it empty if no call is needed."}</p>
       </Field>
       <Field label="Where did this lead come from?" className="sm:col-span-2">
-        <Segmented size="sm" value={f.source} onChange={(v) => setF({ ...f, source: v })} options={LEAD_SOURCES} />
+        <Segmented size="sm" value={f.source} onChange={(v) => setF((cur) => ({ ...cur, source: v }))} options={LEAD_SOURCES} />
       </Field>
       {f.source === "other" && (
         <Field label="Where exactly? *" className="sm:col-span-2">
@@ -80,13 +84,13 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
         </Field>
       )}
       <Field label="Stage" className="sm:col-span-2">
-        <Segmented size="sm" value={f.status} onChange={(v) => setF({ ...f, status: v })} options={LEAD_STATUSES} />
+        <Segmented size="sm" value={f.status} onChange={(v) => setF((cur) => ({ ...cur, status: v }))} options={LEAD_STATUSES} />
       </Field>
       <Field label="System size wanted (kW)"><input className="input" type="number" step="0.1" value={f.kw_interest ?? ""} onChange={set("kw_interest")} /></Field>
       <Field label="Monthly EB bill (₹)"><input className="input" type="number" value={f.monthly_bill ?? ""} onChange={set("monthly_bill")} /></Field>
       {isOwner && (
         <Field label="Assigned to" className="sm:col-span-2">
-          <Segmented size="sm" value={f.assigned_to || ""} onChange={(v) => setF({ ...f, assigned_to: v })}
+          <Segmented size="sm" value={f.assigned_to || ""} onChange={(v) => setF((cur) => ({ ...cur, assigned_to: v }))}
             options={assignOptions} />
         </Field>
       )}

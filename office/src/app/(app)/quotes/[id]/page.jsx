@@ -12,7 +12,8 @@ import { BomRows } from "@/components/ListEditors";
 import { AutoText } from "@/components/Extras";
 import { HistoryPanel } from "@/components/History";
 import { Field, Icon, Notice, Segmented, Spinner, Switch } from "@/components/ui";
-import { QUOTE_STATUSES, calcQuote, inr, rupees, waLink } from "@/lib/format";
+import { QUOTE_STATUSES, calcQuote, extrasWithAmounts, rupees, waLink } from "@/lib/format";
+import { useOnce } from "@/lib/useOnce";
 import { quoteFileName, saveQuotePdf } from "@/lib/quotePdf";
 
 export default function QuoteEditor() {
@@ -28,6 +29,8 @@ export default function QuoteEditor() {
   const [preview, setPreview] = useState(false);
   const [pdfBusy, setPdfBusy] = useState(false);
   const pdfRef = useRef(null);
+  const oncePdf = useOnce();
+  const onceSend = useOnce();
 
   // Lets the app shell know a pull-to-refresh would throw away edits.
   useEffect(() => {
@@ -37,7 +40,8 @@ export default function QuoteEditor() {
 
   const load = useCallback(async () => {
     const { data } = await sb.from("quotes").select("*").eq("id", id).maybeSingle();
-    setQ(data);
+    // Old quotes stored a count and a rate; show them as rupee boxes so nothing is multiplied by a typo.
+    setQ(data ? { ...data, extras: extrasWithAmounts(data.extras || {}) } : data);
     setDirty(false);
   }, [sb, id]);
   useEffect(() => { load(); }, [load]);
@@ -55,10 +59,16 @@ export default function QuoteEditor() {
   const s = settings?.data || {};
   const calc = calcQuote(q);
 
-  const update = (patch) => { setQ((cur) => ({ ...cur, ...patch })); setDirty(true); };
-  const setC = (k) => (e) => update({ customer: { ...q.customer, [k]: e.target.value } });
-  const setS = (k, num) => (e) => update({ system: { ...q.system, [k]: num ? Number(e.target.value) : e.target.value } });
-  const setX = (k, v) => update({ extras: { ...q.extras, [k]: v } });
+  // Every edit goes through the functional form. Reading `q` from the closure meant that on a slow phone one
+  // field could write a stale copy of the others back, which is how an inverter size appeared to change itself.
+  const update = (patch) => { setQ((cur) => ({ ...cur, ...(typeof patch === "function" ? patch(cur) : patch) })); setDirty(true); };
+  const setC = (k) => (e) => { const v = e.target.value; update((cur) => ({ customer: { ...(cur.customer || {}), [k]: v } })); };
+  const setS = (k, num) => (e) => { const v = num ? Number(e.target.value) : e.target.value; update((cur) => ({ system: { ...(cur.system || {}), [k]: v } })); };
+  const setX = (k, v) => update((cur) => ({ extras: { ...(cur.extras || {}), [k]: v } }));
+  const setAmt = (k) => (e) => {
+    const n = Math.max(0, Number(e.target.value) || 0);
+    update((cur) => ({ extras: { ...(cur.extras || {}), amounts: { ...((cur.extras || {}).amounts || {}), [k]: n } } }));
+  };
 
   const save = async (extra = {}) => {
     setBusy(true);
@@ -82,18 +92,18 @@ export default function QuoteEditor() {
     sb.rpc("log_event", { p_action: "pdf", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
 
   // Builds a real .pdf file and downloads it. No print dialog, so nobody has to hunt for "Save as PDF".
-  const savePdf = async () => {
-    if (dirty) save();
+  const savePdf = () => oncePdf(async () => {
     setPdfBusy(true);
     setMsg(null);
     try {
+      if (dirty) await save();
       await saveQuotePdf(pdfRef.current, quoteFileName(q));
       logPdf();
     } catch {
       setMsg({ tone: "amber", text: "This phone could not build the PDF. Open Preview and tap Print instead - the same pages come out." });
     }
     setPdfBusy(false);
-  };
+  });
 
   // Fallback only: iPhone Safari allows window.print() only inside the tap that started it, so this must
   // stay synchronous - no await, no state change.
@@ -105,7 +115,7 @@ export default function QuoteEditor() {
     logPdf();
   };
 
-  const sendWhatsApp = async () => {
+  const sendWhatsApp = () => onceSend(async () => {
     if (dirty && !(await save())) return;
     if (q.status === "draft") { await save({ status: "sent" }); setQ((cur) => ({ ...cur, status: "sent" })); }
     const text = `Hello ${q.customer?.name}, thank you for your enquiry. Please find our quotation ${q.ref_no} for a ${q.system?.kw} kWp rooftop solar system.\n\nTotal price: ${rupees(calc.total)} (GST included)` +
@@ -113,7 +123,7 @@ export default function QuoteEditor() {
       `\n\nFor any doubt, call ${s.phone1 || ""}.\nSurya's Solar, Cuddalore`;
     window.open(q.customer?.phone ? waLink(q.customer.phone, text) : `https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
     sb.rpc("log_event", { p_action: "whatsapp", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
-  };
+  });
 
   const remove = async () => {
     const ok = await confirmAction({
@@ -165,7 +175,7 @@ export default function QuoteEditor() {
             <div className="grid gap-3 sm:grid-cols-2">
               <Field label="Name"><input className="input" value={q.customer?.name || ""} onChange={setC("name")} /></Field>
               <Field label="Address as">
-                <Segmented size="sm" value={q.customer?.sal || "Sir"} onChange={(v) => update({ customer: { ...q.customer, sal: v } })} options={["Sir", "Madam", "Sir/Madam"]} />
+                <Segmented size="sm" value={q.customer?.sal || "Sir"} onChange={(v) => update((cur) => ({ customer: { ...(cur.customer || {}), sal: v } }))} options={["Sir", "Madam", "Sir/Madam"]} />
               </Field>
               <Field label="Address / area" className="sm:col-span-2"><AutoText value={q.customer?.addr1 || ""} onChange={setC("addr1")} /></Field>
               <Field label="Town"><AutoText value={q.customer?.addr2 || ""} onChange={setC("addr2")} /></Field>
@@ -181,7 +191,7 @@ export default function QuoteEditor() {
               <Field label="Panel capacity (kWp)"><input className="input" type="number" step="0.01" value={sys.kw ?? ""} onChange={setS("kw", true)} /></Field>
               <Field label="Inverter size (kW)"><input className="input" type="number" step="0.1" value={sys.inverter_kw ?? ""} onChange={setS("inverter_kw", true)} /></Field>
               <Field label="Phase">
-                <Segmented size="sm" value={sys.phase} onChange={(v) => update({ system: { ...q.system, phase: Number(v) } })} options={[{ id: 1, label: "Single phase" }, { id: 3, label: "Three phase" }]} />
+                <Segmented size="sm" value={sys.phase} onChange={(v) => update((cur) => ({ system: { ...(cur.system || {}), phase: Number(v) } }))} options={[{ id: 1, label: "Single phase" }, { id: 3, label: "Three phase" }]} />
               </Field>
               <Field label="Roof type" className="sm:col-span-2"><AutoText value={sys.roof || ""} onChange={setS("roof")} /></Field>
               <Field label="Panel type" className="sm:col-span-2"><AutoText value={sys.panel_type || ""} onChange={setS("panel_type")} /></Field>
@@ -196,7 +206,7 @@ export default function QuoteEditor() {
                 {brands.filter((b) => b.active || b.name === sys.brand).map((b) => {
                   const on = sys.brand === b.name;
                   return (
-                    <button type="button" key={b.id} onClick={() => update({ system: { ...q.system, brand: b.name } })}
+                    <button type="button" key={b.id} onClick={() => update((cur) => ({ system: { ...(cur.system || {}), brand: b.name } }))}
                       className={`relative flex h-16 flex-col items-center justify-center gap-1 rounded-xl border bg-white px-2 transition ${on ? "border-primary ring-2 ring-primary-100" : "border-slate-200 hover:border-slate-300"}`}>
                       {b.logo_url
                         // eslint-disable-next-line @next/next/no-img-element
@@ -207,7 +217,7 @@ export default function QuoteEditor() {
                     </button>
                   );
                 })}
-                <button type="button" onClick={() => update({ system: { ...q.system, brand: "" } })}
+                <button type="button" onClick={() => update((cur) => ({ system: { ...(cur.system || {}), brand: "" } }))}
                   className={`flex h-16 items-center justify-center rounded-xl border border-dashed text-xs font-semibold ${!sys.brand ? "border-primary text-primary ring-2 ring-primary-100" : "border-slate-300 text-slate-500 hover:bg-slate-50"}`}>
                   No logo
                 </button>
@@ -222,18 +232,26 @@ export default function QuoteEditor() {
             <h2 className="mb-3 font-bold text-slate-900">Price and subsidy</h2>
             <div className="grid gap-3 sm:grid-cols-2">
               <Field label="System price (₹, GST included)"><input className="input" type="number" value={q.price} onChange={(e) => update({ price: e.target.value })} /></Field>
-              <Field label={`Floors above G+1 (₹${inr(ex.rates?.per_floor)} each)`}><input className="input" type="number" min="0" value={ex.floors || 0} onChange={(e) => setX("floors", Number(e.target.value))} /></Field>
+              <Field label="Extra floors (₹)"><input className="input" type="number" min="0" value={ex.amounts?.floors ?? 0} onChange={setAmt("floors")} placeholder="0" /></Field>
               <Field label="Elevated structure" className="sm:col-span-2">
-                <Segmented size="sm" value={ex.struct || "none"} onChange={(v) => setX("struct", v)} options={[
+                <Segmented size="sm" value={ex.struct || "none"} onChange={(v) => {
+                  // The settings' rate only fills the box; the amount stays editable and is never multiplied.
+                  const rate = v === "low" ? ex.rates?.struct_low : v === "high" ? ex.rates?.struct_high : 0;
+                  update((cur) => ({ extras: { ...(cur.extras || {}), struct: v, amounts: { ...((cur.extras || {}).amounts || {}), struct: Number(rate) || 0 } } }));
+                }} options={[
                   { id: "none", label: "Not needed" },
-                  { id: "low", label: `Low height +₹${inr(ex.rates?.struct_low)}` },
-                  { id: "high", label: `High height +₹${inr(ex.rates?.struct_high)}` },
+                  { id: "low", label: "Low height" },
+                  { id: "high", label: "High height" },
                 ]} />
               </Field>
+              <Field label="Elevated structure charge (₹)"><input className="input" type="number" min="0" value={ex.amounts?.struct ?? 0} onChange={setAmt("struct")} placeholder="0" /></Field>
+              <Field label="Concrete pillars charge (₹)"><input className="input" type="number" min="0" value={ex.amounts?.pillar ?? 0} onChange={setAmt("pillar")} placeholder="0" /></Field>
             </div>
+            {(Number(ex.amounts?.struct) > 200000 || Number(ex.amounts?.pillar) > 200000 || Number(ex.amounts?.floors) > 200000) && (
+              <div className="mt-3"><Notice tone="red">One of these extras is above ₹2,00,000. Please check the amount before saving.</Notice></div>
+            )}
             <div className="mt-4 space-y-2">
-              <Switch checked={!!ex.pillar} onChange={(v) => setX("pillar", v)} label={`Concrete pillars +₹${inr(ex.rates?.pillar)}`} hint="Adds the pillar charge to the total" />
-              <Switch checked={!!ex.show_table} onChange={(v) => setX("show_table", v)} label="Show optional extras table" hint="Lists structure, pillar and floor prices for the customer" />
+              <Switch checked={!!ex.show_table} onChange={(v) => setX("show_table", v)} label="Show optional extras table" hint="Lists the usual structure, pillar and floor prices for the customer" />
               <Switch checked={q.show_subsidy} onChange={(v) => update({ show_subsidy: v })} label="Show PM Surya Ghar subsidy" hint="Central subsidy and cost after subsidy" />
               <Switch checked={q.tn_topup} disabled={!q.show_subsidy} onChange={(v) => update({ tn_topup: v })} label="Add Tamil Nadu top-up" hint="Turn off for Puducherry customers" />
             </div>

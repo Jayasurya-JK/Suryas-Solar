@@ -113,9 +113,9 @@ function buildBlocks(q, s, signUrl) {
   const priceRows = [
     <tr key="p"><td><b>{kw} kWp {sys.panel_type} panels with {sys.inverter_kw} kW {phase} on-grid solar power plant, with MMS structure.</b> Supply, installation, testing and commissioning of all items listed above.</td><td className="r">{inr(q.price)}</td></tr>,
   ];
-  if (calc.structAmt > 0) priceRows.push(<tr key="s" className="opt"><td>Add: elevated Galvalume structure, {ex.struct === "high" ? "high" : "low"} height</td><td className="r">{inr(calc.structAmt)}</td></tr>);
+  if (calc.structAmt > 0) priceRows.push(<tr key="s" className="opt"><td>Add: elevated Galvalume structure{ex.struct === "high" ? ", high height" : ex.struct === "low" ? ", low height" : ""}</td><td className="r">{inr(calc.structAmt)}</td></tr>);
   if (calc.pillarAmt > 0) priceRows.push(<tr key="pl" className="opt"><td>Add: concrete pillars for structure</td><td className="r">{inr(calc.pillarAmt)}</td></tr>);
-  if (calc.floorAmt > 0) priceRows.push(<tr key="f" className="opt"><td>Add: extra floor charge ({ex.floors} floor above G+1)</td><td className="r">{inr(calc.floorAmt)}</td></tr>);
+  if (calc.floorAmt > 0) priceRows.push(<tr key="f" className="opt"><td>Add: extra floor charge</td><td className="r">{inr(calc.floorAmt)}</td></tr>);
   priceRows.push(<tr key="t" className="tot"><td>Total price (GST included)</td><td className="r">{inr(calc.total)}</td></tr>);
   if (q.show_subsidy) {
     priceRows.push(<tr key="c" className="subr"><td>Less: PM Surya Ghar central subsidy*</td><td className="r">- {inr(calc.central)}</td></tr>);

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 import { Field, Icon, Notice, Segmented } from "@/components/ui";
 import { ADMIN_OPTION, MODULES, loginEmail, validUserId } from "@/lib/format";
+import { useOnce } from "@/lib/useOnce";
 
 // Public Web3Forms key (the same one the website forms use). Used only to email the owner about new requests.
 const WEB3FORMS_KEY = "111437b6-7422-4929-b9b3-b0361d387ee0";
@@ -37,6 +38,7 @@ export default function Login() {
   const [perms, setPerms] = useState([]);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState(null);
+  const once = useOnce();
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
   const fail = (text) => { setMsg({ tone: "red", text }); setBusy(false); };
   const togglePerm = (id) => setPerms((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
@@ -93,11 +95,15 @@ export default function Login() {
     window.location.href = "/";
   };
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
-    setBusy(true);
-    setMsg(null);
-    if (mode === "signin") await signIn(); else await requestAccess();
+    // A second tap while the first sign-in is still going used to fire a second request and show a
+    // confusing failure when the token arrived twice.
+    return once(async () => {
+      setBusy(true);
+      setMsg(null);
+      if (mode === "signin") await signIn(); else await requestAccess();
+    });
   };
 
   const idLabel = mode === "signin" ? "User ID or email" : useEmail ? "Email" : "Choose a User ID";

@@ -7,6 +7,7 @@ import { useApp } from "@/components/AppShell";
 import { confirmAction } from "@/components/Confirm";
 import { Empty, EntryOnlyNote, Field, FilterTabs, Icon, IconButton, Modal, Notice, PageHeader, Segmented, Spinner } from "@/components/ui";
 import { EXPENSE_CATEGORIES, PAY_MODES, dmy, downloadCsv, labelOf, rupees, today } from "@/lib/format";
+import { useOnce } from "@/lib/useOnce";
 
 // Shrink phone photos to ~1600px JPEG before upload (keeps storage small).
 async function compress(file) {
@@ -37,6 +38,7 @@ export default function Expenses() {
   const [msg, setMsg] = useState(null);
   const [cat, setCat] = useState("all");
   const [sheet, setSheet] = useState(false);
+  const [latest, setLatest] = useState(null);
   const fileRef = useRef(null);
 
   const load = useCallback(async () => {
@@ -46,40 +48,49 @@ export default function Expenses() {
     const { data } = await sb.from("expenses").select("*").gte("spent_on", `${month}-01`).lt("spent_on", endStr)
       .order("spent_on", { ascending: false }).order("created_at", { ascending: false });
     setRows(data || []);
+    // So a month with nothing in it can point at where the newest entries actually are.
+    const { data: last } = await sb.from("expenses").select("spent_on").order("spent_on", { ascending: false }).limit(1);
+    setLatest(last?.[0]?.spent_on ? last[0].spent_on.slice(0, 7) : null);
   }, [sb, month]);
   useEffect(() => { load(); }, [load]);
 
-  const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
+  const set = (k) => (e) => setF((cur) => ({ ...cur, [k]: e.target.value }));
+  const addOnce = useOnce();
 
-  const add = async (e) => {
+  const add = (e) => {
     e.preventDefault();
-    if (!(Number(f.amount) > 0)) return setMsg({ tone: "red", text: "Enter the amount." });
-    if (f.category === "other" && !f.category_other.trim()) return setMsg({ tone: "red", text: "Say what the other expense was." });
-    setBusy(true);
-    setMsg(null);
-    let bill_path = null;
-    if (photo) {
-      const blob = await compress(photo);
-      bill_path = `${profile.id}/${Date.now()}.jpg`;
-      const { error } = await sb.storage.from("bills").upload(bill_path, blob, { contentType: "image/jpeg" });
-      if (error) { setBusy(false); return setMsg({ tone: "red", text: "Photo upload failed: " + error.message }); }
-    }
-    const { error } = await sb.from("expenses").insert({
-      spent_on: f.spent_on, amount: Number(f.amount), category: f.category,
-      category_other: f.category === "other" ? f.category_other.trim() || null : null,
-      site: f.site.trim() || null,
-      paid_by: f.paid_by.trim() || null, payment_mode: f.payment_mode, note: f.note.trim() || null,
-      bill_path, created_by: profile.id,
+    return addOnce(async () => {
+      if (!(Number(f.amount) > 0)) return setMsg({ tone: "red", text: "Enter the amount." });
+      if (f.category === "other" && !f.category_other.trim()) return setMsg({ tone: "red", text: "Say what the other expense was." });
+      setBusy(true);
+      setMsg(null);
+      let bill_path = null;
+      if (photo) {
+        const blob = await compress(photo);
+        bill_path = `${profile.id}/${Date.now()}.jpg`;
+        const { error } = await sb.storage.from("bills").upload(bill_path, blob, { contentType: "image/jpeg" });
+        if (error) { setBusy(false); return setMsg({ tone: "red", text: "Photo upload failed: " + error.message }); }
+      }
+      const { error } = await sb.from("expenses").insert({
+        spent_on: f.spent_on, amount: Number(f.amount), category: f.category,
+        category_other: f.category === "other" ? f.category_other.trim() || null : null,
+        site: f.site.trim() || null,
+        paid_by: f.paid_by.trim() || null, payment_mode: f.payment_mode, note: f.note.trim() || null,
+        bill_path, created_by: profile.id,
+      });
+      setBusy(false);
+      if (error) return setMsg({ tone: "red", text: error.message });
+      setF((cur) => ({ ...EMPTY, spent_on: cur.spent_on, paid_by: cur.paid_by, category: cur.category, category_other: cur.category === "other" ? cur.category_other : "", site: cur.site }));
+      setPhoto(null);
+      if (fileRef.current) fileRef.current.value = "";
+      setSheet(false);
+      // Say which month it went into: an entry dated last month would otherwise vanish from the open month.
+      const savedMonth = f.spent_on.slice(0, 7);
+      const monthName = new Date(savedMonth + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+      setMsg({ tone: "green", text: savedMonth === month ? "Expense saved." : `Expense saved in ${monthName}.` });
+      setTimeout(() => setMsg(null), 4000);
+      if (savedMonth === month) load(); else setMonth(savedMonth);
     });
-    setBusy(false);
-    if (error) return setMsg({ tone: "red", text: error.message });
-    setF({ ...EMPTY, spent_on: f.spent_on, paid_by: f.paid_by, category: f.category, category_other: f.category === "other" ? f.category_other : "", site: f.site });
-    setPhoto(null);
-    if (fileRef.current) fileRef.current.value = "";
-    setMsg({ tone: "green", text: "Expense saved." });
-    setSheet(false);
-    setTimeout(() => setMsg(null), 2000);
-    if (f.spent_on.startsWith(month)) load(); else setMonth(f.spent_on.slice(0, 7));
   };
 
   const viewBill = async (path, row) => {
@@ -126,7 +137,7 @@ export default function Expenses() {
         </Field>
         <Field label="Date"><input className="input" type="date" value={f.spent_on} onChange={set("spent_on")} /></Field>
       </div>
-      <Field label="Category"><Segmented size="sm" value={f.category} onChange={(v) => setF({ ...f, category: v })} options={EXPENSE_CATEGORIES} /></Field>
+      <Field label="Category"><Segmented size="sm" value={f.category} onChange={(v) => setF((cur) => ({ ...cur, category: v }))} options={EXPENSE_CATEGORIES} /></Field>
       {f.category === "other" && (
         <Field label="What was this for? *">
           <AutoText value={f.category_other} onChange={set("category_other")} placeholder="e.g. EB meter shifting charges" />
@@ -135,7 +146,7 @@ export default function Expenses() {
       <Field label="Site or customer"><input className="input" value={f.site} onChange={set("site")} placeholder="e.g. Surya, Cuddalore" /></Field>
       <div className="grid gap-3 sm:grid-cols-2">
         <Field label="Paid by"><input className="input" value={f.paid_by} onChange={set("paid_by")} /></Field>
-        <Field label="Paid using"><Segmented size="sm" value={f.payment_mode} onChange={(v) => setF({ ...f, payment_mode: v })} options={PAY_MODES} /></Field>
+        <Field label="Paid using"><Segmented size="sm" value={f.payment_mode} onChange={(v) => setF((cur) => ({ ...cur, payment_mode: v }))} options={PAY_MODES} /></Field>
       </div>
       <Field label="Note"><input className="input" value={f.note} onChange={set("note")} placeholder="e.g. 10 m DC cable for the Cuddalore site" /></Field>
       <label className={`flex cursor-pointer items-center gap-3 rounded-xl border border-dashed p-3 text-sm transition ${photo ? "border-teal bg-teal-50 text-teal" : "border-slate-300 text-slate-600 hover:bg-slate-50"}`}>
@@ -187,7 +198,15 @@ export default function Expenses() {
           </div>
 
           {!rows ? <ListSkeleton rows={4} /> : shown.length === 0 ? (
-            <Empty icon="wallet" title="No expenses this month" text="Tap Add expense to record what was spent today.">
+            <Empty icon="wallet" title="No expenses this month"
+              text={latest && latest !== month
+                ? `Nothing dated in ${monthLabel}. The newest entries are in ${new Date(latest + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" })}.`
+                : "Tap Add expense to record what was spent today."}>
+              {latest && latest !== month && (
+                <button className="btn-ghost" onClick={() => setMonth(latest)}>
+                  <Icon name="chevron" className="h-4 w-4" />Show {new Date(latest + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" })}
+                </button>
+              )}
               <button className="btn-primary lg:hidden" onClick={() => setSheet(true)}><Icon name="plus" className="h-4 w-4" />Add expense</button>
             </Empty>
           ) : (

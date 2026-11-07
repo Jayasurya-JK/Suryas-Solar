@@ -9,6 +9,7 @@ import { Avatar, Badge, Field, FilterTabs, Icon, Modal, Notice, PageHeader, Segm
 import { ListSkeleton, AutoText } from "@/components/Extras";
 import { ADMIN_PERM, MODULES, ago, dmy, permLabel, rupees } from "@/lib/format";
 import { BomRows, LineList, PairList } from "@/components/ListEditors";
+import { useOnce } from "@/lib/useOnce";
 
 const TABS = [
   { id: "company", label: "Company" },
@@ -283,24 +284,28 @@ function PackageForm({ initial, onDone }) {
   const sb = supabase();
   const [p, setP] = useState({ ...EMPTY_PKG, ...initial, bom: initial.bom || [] });
   const [err, setErr] = useState("");
-  const set = (k, num) => (e) => setP({ ...p, [k]: num ? Number(e.target.value) : e.target.value });
+  const [busy, setBusy] = useState(false);
+  const set = (k, num) => (e) => { const v = num ? Number(e.target.value) : e.target.value; setP((cur) => ({ ...cur, [k]: v })); };
+  const once = useOnce();
 
-  const save = async () => {
+  const save = () => once(async () => {
     if (!p.name.trim()) return setErr("Give the package a name.");
+    setBusy(true);
     const bom = p.bom.filter((r) => r.item.trim());
     const row = { name: p.name, kw: p.kw, inverter_kw: p.inverter_kw, phase: p.phase, panel_count: p.panel_count, panel_watt: p.panel_watt,
       panel_type: p.panel_type, panel_brand: p.panel_brand, inverter_brand: p.inverter_brand, price: p.price, bom, active: p.active, sort: p.sort };
     const { error } = p.id ? await sb.from("packages").update(row).eq("id", p.id) : await sb.from("packages").insert(row);
+    setBusy(false);
     if (error) return setErr(error.message);
     onDone();
-  };
+  });
 
   return (
     <div className="grid gap-3 sm:grid-cols-2">
       <Field label="Package name" className="sm:col-span-2"><input className="input" value={p.name} onChange={set("name")} placeholder="3.3 kWp TOPCon · 3 kW 1 phase" /></Field>
       <Field label="Panel capacity (kWp)"><input className="input" type="number" step="0.01" value={p.kw} onChange={set("kw", true)} /></Field>
       <Field label="Inverter size (kW)"><input className="input" type="number" step="0.1" value={p.inverter_kw} onChange={set("inverter_kw", true)} /></Field>
-      <Field label="Phase"><Segmented size="sm" value={p.phase} onChange={(v) => setP({ ...p, phase: Number(v) })} options={[{ id: 1, label: "Single phase" }, { id: 3, label: "Three phase" }]} /></Field>
+      <Field label="Phase"><Segmented size="sm" value={p.phase} onChange={(v) => setP((cur) => ({ ...cur, phase: Number(v) }))} options={[{ id: 1, label: "Single phase" }, { id: 3, label: "Three phase" }]} /></Field>
       <Field label="Price (₹, GST included)"><input className="input" type="number" value={p.price} onChange={set("price", true)} /></Field>
       <Field label="No. of panels"><input className="input" type="number" value={p.panel_count} onChange={set("panel_count", true)} /></Field>
       <Field label="Panel watt"><input className="input" value={p.panel_watt} onChange={set("panel_watt")} placeholder="e.g. 555 to 625" /></Field>
@@ -309,12 +314,12 @@ function PackageForm({ initial, onDone }) {
       <Field label="Inverter brand"><input className="input" value={p.inverter_brand || ""} onChange={set("inverter_brand")} /></Field>
       <div className="sm:col-span-2">
         <span className="label">Other materials (panels and inverter are added automatically as items 1 and 2)</span>
-        <BomRows rows={p.bom} onChange={(bom) => setP({ ...p, bom })} startNumber={3} />
+        <BomRows rows={p.bom} onChange={(bom) => setP((cur) => ({ ...cur, bom }))} startNumber={3} />
       </div>
       <Field label="Position in list"><input className="input" type="number" value={p.sort} onChange={set("sort", true)} /></Field>
-      <div className="self-end"><Switch checked={p.active} onChange={(v) => setP({ ...p, active: v })} label="Show when making quotes" /></div>
+      <div className="self-end"><Switch checked={p.active} onChange={(v) => setP((cur) => ({ ...cur, active: v }))} label="Show when making quotes" /></div>
       {err && <div className="sm:col-span-2"><Notice tone="red">{err}</Notice></div>}
-      <div className="flex justify-end gap-2 sm:col-span-2"><button className="btn-ghost" onClick={onDone}>Cancel</button><button className="btn-primary" onClick={save}>Save package</button></div>
+      <div className="flex justify-end gap-2 sm:col-span-2"><button className="btn-ghost" onClick={onDone}>Cancel</button><button className="btn-primary" onClick={save} disabled={busy}>{busy ? "Saving..." : "Save package"}</button></div>
     </div>
   );
 }
@@ -414,7 +419,8 @@ function ApproveForm({ person, onDone, onCancel }) {
   const [perms, setPerms] = useState(askedScreens.length ? askedScreens : []);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
-  const approve = async () => {
+  const once = useOnce();
+  const approve = () => once(async () => {
     if (!admin && perms.length === 0) return setErr("Choose at least one screen to give.");
     setBusy(true);
     const row = admin
@@ -424,7 +430,7 @@ function ApproveForm({ person, onDone, onCancel }) {
     setBusy(false);
     if (error) return setErr(error.message);
     onDone();
-  };
+  });
   return (
     <div className="space-y-4">
       <p className="text-sm text-slate-600">
@@ -465,7 +471,8 @@ function ManageForm({ person, onDone, onCancel }) {
   const [pinMsg, setPinMsg] = useState(null);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
-  const save = async () => {
+  const once = useOnce();
+  const save = () => once(async () => {
     if (name.trim().length < 2) return setErr("Enter the person's name.");
     setBusy(true);
     const patch = { full_name: name.trim(), perms, active, role };
@@ -477,8 +484,9 @@ function ManageForm({ person, onDone, onCancel }) {
     setBusy(false);
     if (error) return setErr(error.message);
     onDone();
-  };
-  const resetPin = async () => {
+  });
+  const resetPinOnce = useOnce();
+  const resetPin = () => resetPinOnce(async () => {
     setPinBusy(true);
     setPinMsg(null);
     const { error } = await sb.rpc("reset_member_pin", { p_member: person.id, p_pin: pin });
@@ -486,7 +494,7 @@ function ManageForm({ person, onDone, onCancel }) {
     if (error) return setPinMsg({ tone: "red", text: error.message });
     setPin("");
     setPinMsg({ tone: "green", text: `PIN set. Tell ${person.full_name?.split(" ")[0] || "them"} to use it instead of the password.` });
-  };
+  });
   return (
     <div className="space-y-4">
       <Field label="Name"><input className="input" value={name} onChange={(e) => setName(e.target.value)} /></Field>
