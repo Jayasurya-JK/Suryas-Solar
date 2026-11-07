@@ -331,6 +331,11 @@ One row per job, and each job carries its eleven steps, its payments and a free 
   becomes the first ledger entry, so the balance is right from day one.
 - **Paste a list** (owner) imports the register that is still on paper: one customer per line,
   `Name, Phone, Town, kW, Quoted, Advance, Start date`. No file needed.
+- **Add portal customers** (owner) loads the PM Surya Ghar list already in the app (221 applications) into
+  the register: each job starts at the step its portal status has reached (installation pending = 4 steps
+  done, upload agreement = 6, inspection = 7, subsidy request = 8, disbursed = 10 of 11) and every
+  disbursed job is marked finished. Anyone whose phone number is already in the register is skipped, so it
+  is safe to press twice.
 - Permission is the same model as the other screens: the `projects` module in Settings > Team, with an
   entry-only switch for people who should only see the jobs they added.
 - Until the SQL is run, the screen says so plainly instead of failing.

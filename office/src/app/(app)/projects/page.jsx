@@ -12,6 +12,24 @@ import { useOnce } from "@/lib/useOnce";
 
 const MISSING_TABLE = (e) => /42P01|PGRST205|does not exist/i.test(`${e?.code || ""} ${e?.message || ""}`);
 
+// Where a portal application sits in our eleven steps. Used for the read-only view shown before the
+// projects tables exist, so the screen is never a dead end.
+const PORTAL_DONE = (status) => {
+  const s = String(status || "");
+  if (/Disbursed/i.test(s)) return 10;
+  if (/Subsidy Request/i.test(s)) return 8;
+  if (/Inspection/i.test(s)) return 7;
+  if (/Upload Agreement/i.test(s)) return 6;
+  if (/Installation/i.test(s)) return 4;
+  return 1;
+};
+
+// The portal writes dates as DD-MM-YY.
+const portalDate = (v) => {
+  const m = /^(\d{2})-(\d{2})-(\d{2})$/.exec(String(v || ""));
+  return m ? `20${m[3]}-${m[2]}-${m[1]}` : today();
+};
+
 const BLANK = {
   customer: "", phone: "", town: "", system_kw: "", panel_brand: "", project_type: "residential",
   subsidy: true, quoted_amount: "", advance: "", started_on: today(), notes: "",
@@ -50,6 +68,7 @@ export default function Projects() {
   const [text, setText] = useState("");
   const createOnce = useOnce();
   const importOnce = useOnce();
+  const portalOnce = useOnce();
 
   const load = useCallback(async () => {
     const [p, s] = await Promise.all([
@@ -95,6 +114,63 @@ export default function Projects() {
   }, [rows, tab, q]);
 
   const set = (k) => (e) => setForm((cur) => ({ ...cur, [k]: e.target.value }));
+
+  // One tap puts every PM Surya Ghar customer into the register with the step the job has already reached.
+  const importPortal = () =>
+    portalOnce(async () => {
+      setBusy(true);
+      setMsg(null);
+      let list = [];
+      try {
+        const res = await fetch("/data/pm-surya-ghar.json", { cache: "no-store" });
+        list = await res.json();
+      } catch { list = []; }
+      if (!Array.isArray(list) || list.length === 0) {
+        setBusy(false);
+        return setMsg({ tone: "red", text: "The portal list could not be read." });
+      }
+      const { data: existing } = await sb.from("projects").select("phone");
+      const have = new Set((existing || []).map((p) => p.phone).filter(Boolean));
+      const fresh = list.filter((r) => r.phone && !have.has(r.phone));
+      if (fresh.length === 0) {
+        setBusy(false);
+        return setMsg({ tone: "amber", text: "Everyone from the portal is already in the register." });
+      }
+      const rows = fresh.map((r) => {
+        const done = PORTAL_DONE(r.status);
+        const stage = (PROJECT_STEPS[done] || PROJECT_STEPS[PROJECT_STEPS.length - 1]).key;
+        return {
+          customer: r.name,
+          phone: r.phone,
+          town: r.subdivision || r.circle || null,
+          system_kw: r.kwp || null,
+          quoted_amount: 0,
+          started_on: portalDate(r.submitted),
+          stage,
+          status: /Disbursed/i.test(r.status) ? "completed" : "open",
+          notes: `PM Surya Ghar ${r.app} · consumer ${r.consumer} · ${r.status}`,
+          created_by: profile.id,
+        };
+      });
+      const { data: made, error } = await sb.from("projects").insert(rows).select("id,stage");
+      if (error) {
+        setBusy(false);
+        return setMsg({ tone: "red", text: error.message });
+      }
+      // Tick the steps each job has already passed, one request per group of the same depth.
+      const groups = {};
+      (made || []).forEach((p) => {
+        const done = PROJECT_STEPS.findIndex((s) => s.key === p.stage);
+        if (done > 0) (groups[done] = groups[done] || []).push(p.id);
+      });
+      for (const [done, ids] of Object.entries(groups)) {
+        await sb.from("project_steps").update({ status: "done" }).in("project_id", ids).lte("position", Number(done));
+      }
+      setBusy(false);
+      setMsg({ tone: "green", text: `${(made || []).length} customers added from the portal.` });
+      setTimeout(() => setMsg(null), 6000);
+      load();
+    });
 
   const create = (e) => {
     e.preventDefault();
@@ -158,6 +234,7 @@ export default function Projects() {
       <>
         <PageHeader title="Projects" subtitle="Every customer, from the survey to the last payment." />
         <SetupNeeded title="Projects" />
+        <PortalList />
       </>
     );
   }
@@ -167,6 +244,7 @@ export default function Projects() {
       <PageHeader title="Projects" subtitle="Every customer, from the survey to the last payment."
         fab={{ label: "New project", onClick: () => setSheet(true) }}
         mobileActions={isOwner ? <IconButton icon="download" label="Paste a list" onClick={() => setPaste(true)} /> : null}>
+        {isOwner && <button className="btn-ghost" onClick={importPortal} disabled={busy}><Icon name="sun" className="h-4 w-4" />Add portal customers</button>}
         {isOwner && <button className="btn-ghost" onClick={() => setPaste(true)}><Icon name="plus" className="h-4 w-4" />Paste a list</button>}
       </PageHeader>
 
@@ -258,5 +336,63 @@ export default function Projects() {
         </Modal>
       )}
     </>
+  );
+}
+
+// Before the projects tables exist, the real portal list still makes this screen useful: every customer
+// with the step the job has reached, read-only, newest first.
+function PortalList() {
+  const [rows, setRows] = useState(null);
+  const [q, setQ] = useState("");
+
+  useEffect(() => {
+    fetch("/data/pm-surya-ghar.json", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : []))
+      .then((list) => setRows(Array.isArray(list) ? list : []))
+      .catch(() => setRows([]));
+  }, []);
+
+  const shown = useMemo(() => {
+    const needle = q.trim().toLowerCase();
+    const list = (rows || []).filter((r) => !needle || `${r.name} ${r.phone} ${r.app}`.toLowerCase().includes(needle));
+    return list.slice(0, 60);
+  }, [rows, q]);
+
+  if (!rows || rows.length === 0) return null;
+
+  return (
+    <section className="mt-8">
+      <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <h2 className="font-bold text-slate-900">From your portal list</h2>
+          <p className="text-sm text-slate-500">{rows.length} applications, read-only, newest first. Run the setup file to edit them here.</p>
+        </div>
+        <Link href="/applications" className="btn-ghost !h-9 !px-3"><Icon name="doc" className="h-4 w-4" />Open Applications</Link>
+      </div>
+      <div className="mb-3 max-w-sm"><SearchBox value={q} onChange={setQ} placeholder="Find a customer" /></div>
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        {shown.map((r) => {
+          const done = PORTAL_DONE(r.status);
+          const pct = Math.round((done / PROJECT_STEPS.length) * 100);
+          return (
+            <div key={r.app + r.sr} className="card p-4">
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="truncate font-bold text-slate-900">{r.name}</p>
+                  <p className="truncate text-xs text-slate-500">{r.kwp ? `${Number(r.kwp)} kW · ` : ""}{r.app}</p>
+                </div>
+              </div>
+              <div className="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+                <div className="h-full rounded-full bg-primary" style={{ width: `${pct}%` }} />
+              </div>
+              <div className="mt-2 flex items-center justify-between text-xs text-slate-500">
+                <span>{done} of {PROJECT_STEPS.length} steps</span>
+                <span className="truncate font-semibold text-slate-700">{String(r.status || "").replace(/\s*\(.*\)$/, "")}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 }
