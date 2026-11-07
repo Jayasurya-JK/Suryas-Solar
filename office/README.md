@@ -300,6 +300,21 @@ not logged, so correcting the same day twice does not fill the feed.
 npm run lint
 npm run build
 ```
+## Applications (PM Surya Ghar portal list)
+
+`/applications` is the owner's and admins' copy of the portal's **My Applications** list: every application
+with its real status, so nobody opens the portal to answer "where is this one?".
+
+- Source: the portal export `My_Applications_List.xlsx`, converted to `public/data/pm-surya-ghar.json`
+  (221 applications at the time of writing). To refresh, download the export again, convert the sheet with
+  the same column mapping and replace that file.
+- The screen counts by state, filters by All / In progress / Subsidy received / Returned, searches by name,
+  phone, application or consumer number, and offers Call and WhatsApp on every row. Tapping a row shows all
+  portal fields including consumer number, circle, division and sub division.
+- Access: admin and owner only for now (the request was to keep customer data with the admin and roll it to
+  staff later). The file is behind the same login gate as every other screen; once the Projects tables
+  exist these applications belong in the database, where the rules can restrict rows to admins.
+
 ## Projects: the whole job, end to end
 
 `/projects` holds every customer from the first survey to the last payment - the paper register, in the app.
