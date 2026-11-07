@@ -265,4 +265,4 @@ The partner logos offered on a quote are the ones we actually install: **Premier
 
 Choosing **Tata Power Solar** sets the panel and inverter makes to TPS, and the strip under the logos offers one tap to set the AC/DC boxes and the earthing kit as well - TPS supplies all of those. Structure, cables (including the earthing cable) and UPVC pipe keep their own makes.
 
-"Address as" prints on the name as well: **Sir** gives Mr. Vinoth Raj and "Dear Sir", **Madam** gives Mrs., **Miss** gives Miss (not every woman is a Mrs.), and **Sir/Madam** leaves the name plain so nothing is assumed. Panel warranty is **18 years** product and 30 years performance, editable in Settings > Quote wording.
+"Address as" prints on the name as well: **Sir** gives Mr. Vinoth Raj and "Dear Sir", **Madam** gives Mrs., **Miss** gives Miss (not every woman is a Mrs.), and **Sir/Madam** leaves the name plain so nothing is assumed. Panel warranty is **12 years product and 18 years performance**, with **1 year** free service, editable in Settings > Quote wording.
