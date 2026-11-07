@@ -55,6 +55,7 @@ const NAV = [
   { href: "/dashboard", label: "Dashboard", icon: "chart", owner: true },
   { href: "/leads", label: "Leads", icon: "users", module: "leads" },
   { href: "/quotes", label: "Quotes", icon: "doc", module: "quotes" },
+  { href: "/projects", label: "Projects", icon: "sun", module: "projects" },
   { href: "/expenses", label: "Expenses", icon: "wallet", module: "expenses" },
   // Staff mark their own day; admins open it to fill in a missed day. Staff get it as a tab, owner and admins under More.
   { href: "/attendance", label: "Attendance", icon: "check", all: true, group: "admin", staffTab: true },

@@ -185,8 +185,8 @@ occurred" page. Now:
   30 seconds and skipped while a screen has unsaved edits.
 
 Crashes are written to `public.client_errors` by `src/lib/reportError.js` (kind, message, stack, page,
-device, online state). **The table has to exist first**: paste `supabase/client-errors.sql` into the
-Supabase SQL editor once. Until then reporting fails silently and nothing else changes.
+device, online state). **That table is created by `supabase/projects.sql`** - paste it into the Supabase SQL
+editor once (see Projects below). Until then reporting fails silently and nothing else changes.
 
 The last eight problems on a phone are also kept in its own `localStorage` (`so-errors`) and listed under
 **My profile > Recent problems**, so the cause can be read on the affected phone without the database log.
@@ -300,9 +300,27 @@ not logged, so correcting the same day twice does not fill the feed.
 npm run lint
 npm run build
 ```
-## Quote brands
+## Projects: the whole job, end to end
 
-The partner logos offered on a quote are the ones we actually install: **Premier Energies** (default), **Tata Power Solar**, **Waaree** and **Avaada**. Adani Solar and Microtek are switched off in Settings > Brands rather than deleted, so quotes already issued still print their names.
+`/projects` holds every customer from the first survey to the last payment - the paper register, in the app.
+One row per job, and each job carries its eleven steps, its payments and a free note.
+
+- **Setup, once:** paste `supabase/projects.sql` into the Supabase SQL editor and press Run. It creates
+  `projects`, `project_steps`, `project_payments`, `project_files` and `client_errors`, seeds the eleven
+  steps for every new job, numbers jobs `SSP/0001/26`, and grants the `projects` screen to whoever is given
+  it in Settings > Team. It is idempotent, so running it twice is safe.
+- **Steps** are created by a trigger when the job is saved: survey, quotation, advance, material,
+  installation, wiring, TNEB meter application, meter fixed, subsidy filed, subsidy received, handover.
+  Ticking a step dates it and moves the job's current stage to the next open step.
+- **Money** is a running ledger per job: quoted, received, balance. The advance typed on the first screen
+  becomes the first ledger entry, so the balance is right from day one.
+- **Paste a list** (owner) imports the register that is still on paper: one customer per line,
+  `Name, Phone, Town, kW, Quoted, Advance, Start date`. No file needed.
+- Permission is the same model as the other screens: the `projects` module in Settings > Team, with an
+  entry-only switch for people who should only see the jobs they added.
+- Until the SQL is run, the screen says so plainly instead of failing.
+
+## Quote brandsThe partner logos offered on a quote are the ones we actually install: **Premier Energies** (default), **Tata Power Solar**, **Waaree** and **Avaada**. Adani Solar and Microtek are switched off in Settings > Brands rather than deleted, so quotes already issued still print their names.
 
 Picking a partner writes the makes that partner is responsible for (`src/lib/makes.js`), on a new quote as well as when the partner is changed later. The strip under the logos repeats the rule and offers a one-tap "Set the usual makes" for an older quote.
 

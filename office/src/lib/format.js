@@ -164,7 +164,31 @@ export const roleLabel = (role) => ROLE_LABEL[role] || role || "";
 export const MODULES = [
   { id: "leads", label: "Leads", hint: "Customer enquiries and follow-ups", icon: "users" },
   { id: "quotes", label: "Quotes", hint: "Make and send quotations", icon: "doc" },
+  { id: "projects", label: "Projects", hint: "Installed jobs from survey to subsidy", icon: "sun" },
   { id: "expenses", label: "Expenses", hint: "Record daily spending and bills", icon: "wallet" },
+];
+
+// The eleven steps a rooftop job goes through, in order. The keys match private.seed_project_steps().
+export const PROJECT_STEPS = [
+  { key: "survey", label: "Survey" },
+  { key: "quote", label: "Quotation" },
+  { key: "advance", label: "Advance" },
+  { key: "material", label: "Material" },
+  { key: "install", label: "Installation" },
+  { key: "wiring", label: "Wiring" },
+  { key: "meter_app", label: "Meter applied" },
+  { key: "meter", label: "Meter fixed" },
+  { key: "subsidy", label: "Subsidy filed" },
+  { key: "subsidy_ok", label: "Subsidy received" },
+  { key: "handover", label: "Handover" },
+];
+export const stageLabel = (key) => PROJECT_STEPS.find((s) => s.key === key)?.label || key || "";
+export const PAYMENT_KINDS = [
+  { id: "advance", label: "Advance" },
+  { id: "part", label: "Part payment" },
+  { id: "final", label: "Final" },
+  { id: "subsidy", label: "Subsidy" },
+  { id: "other", label: "Other" },
 ];
 
 // Not a screen: asking for this means "make me an admin". Only the owner can grant it.

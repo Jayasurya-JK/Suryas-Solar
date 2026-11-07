@@ -63,6 +63,7 @@ export default function Expenses() {
   const [editing, setEditing] = useState(null);
   const [editForm, setEditForm] = useState(null);
   const [editMsg, setEditMsg] = useState(null);
+  const [recent, setRecent] = useState([]);
   const saveEditOnce = useOnce();
   const fileRef = useRef(null);
 
@@ -84,6 +85,14 @@ export default function Expenses() {
     const tally = {};
     (allDates || []).forEach((r) => { const k = String(r.spent_on).slice(0, 7); tally[k] = (tally[k] || 0) + 1; });
     setOtherMonths(Object.entries(tally).filter(([k]) => k !== month).map(([k, n]) => ({ month: k, n })).sort((a, b) => (a.month < b.month ? 1 : -1)));
+    // Items typed before, so "concrete cement" or "solar meter" is one tap instead of typing it again.
+    const { data: named } = await sb.from("expenses").select("category_other").not("category_other", "is", null).order("created_at", { ascending: false }).limit(60);
+    const picks = [];
+    (named || []).forEach((r) => {
+      const v = String(r.category_other || "").trim();
+      if (v && !picks.some((x) => x.toLowerCase() === v.toLowerCase())) picks.push(v);
+    });
+    setRecent(picks.slice(0, 10));
   }, [sb, month]);
   useEffect(() => { load(); }, [load]);
 
@@ -219,6 +228,16 @@ export default function Expenses() {
       {f.category === "other" && (
         <Field label="What was this for? *">
           <AutoText value={f.category_other} onChange={set("category_other")} placeholder="e.g. EB meter shifting charges" />
+          {recent.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {recent.map((v) => (
+                <button key={v} type="button" onClick={() => setF((cur) => ({ ...cur, category_other: v }))}
+                  className={`rounded-full border px-2.5 py-1 text-xs font-semibold ${f.category_other === v ? "border-primary bg-primary-50 text-primary" : "border-slate-200 text-slate-600 hover:bg-slate-50"}`}>
+                  {v}
+                </button>
+              ))}
+            </div>
+          )}
         </Field>
       )}
       <Field label="Site or customer"><input className="input" value={f.site} onChange={set("site")} placeholder="e.g. Surya, Cuddalore" /></Field>
@@ -382,6 +401,16 @@ export default function Expenses() {
               <Field label="What was this for? *">
                 <input className="input" value={editForm.category_other}
                   onChange={(e) => setEditForm((cur) => ({ ...cur, category_other: e.target.value }))} />
+                {recent.length > 0 && (
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {recent.map((v) => (
+                      <button key={v} type="button" onClick={() => setEditForm((cur) => ({ ...cur, category_other: v }))}
+                        className={`rounded-full border px-2.5 py-1 text-xs font-semibold ${editForm.category_other === v ? "border-primary bg-primary-50 text-primary" : "border-slate-200 text-slate-600 hover:bg-slate-50"}`}>
+                        {v}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </Field>
             )}
             <Field label="Site or customer">
