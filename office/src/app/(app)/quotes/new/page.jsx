@@ -8,6 +8,7 @@ import { Field, Icon, Notice, PageHeader, Segmented, Spinner } from "@/component
 import { AutoText } from "@/components/Extras";
 import { rupees, today } from "@/lib/format";
 import { useOnce } from "@/lib/useOnce";
+import { applyBrandMakes, applyBrandToSystem } from "@/lib/makes";
 
 function NewQuote() {
   const sb = supabase();
@@ -45,18 +46,20 @@ function NewQuote() {
       const p = packages.find((x) => x.id === pick);
       const { data: ref, error: refErr } = await sb.rpc("next_quote_ref");
       if (refErr) { setBusy(false); return setErr(refErr.message); }
+      // The partner decides the makes from the start, so a new quote never prints an old make.
+      const baseSystem = p ? {
+        kw: Number(p.kw), inverter_kw: Number(p.inverter_kw), phase: p.phase, roof: "RCC (concrete) roof",
+        panel_type: p.panel_type, panel_brand: p.panel_brand, panel_watt: p.panel_watt, panel_count: p.panel_count,
+        inverter_brand: p.inverter_brand, brand: defaultBrand,
+      } : { kw: 3, inverter_kw: 3, phase: 1, roof: "RCC (concrete) roof", panel_count: 6, panel_watt: "", brand: defaultBrand };
       const row = {
         ref_no: ref,
         lead_id: leadId || null,
         quote_date: today(),
         valid_days: 10,
         customer: cust,
-        system: p ? {
-          kw: Number(p.kw), inverter_kw: Number(p.inverter_kw), phase: p.phase, roof: "RCC (concrete) roof",
-          panel_type: p.panel_type, panel_brand: p.panel_brand, panel_watt: p.panel_watt, panel_count: p.panel_count,
-          inverter_brand: p.inverter_brand, brand: defaultBrand,
-        } : { kw: 3, inverter_kw: 3, phase: 1, roof: "RCC (concrete) roof", panel_count: 6, panel_watt: "", brand: defaultBrand },
-        bom: p?.bom || [],
+        system: applyBrandToSystem(baseSystem, defaultBrand),
+        bom: applyBrandMakes(p?.bom || [], defaultBrand),
         price: p ? Number(p.price) : 0,
         extras: { struct: "none", show_table: false, rates: settings?.data?.extras || {}, amounts: { struct: 0, pillar: 0, floors: 0 } },
         show_subsidy: true,

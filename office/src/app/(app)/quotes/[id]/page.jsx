@@ -14,6 +14,7 @@ import { HistoryPanel } from "@/components/History";
 import { Field, Icon, Notice, Segmented, Spinner, Switch } from "@/components/ui";
 import { QUOTE_STATUSES, calcQuote, extrasWithAmounts, rupees, waLink } from "@/lib/format";
 import { useOnce } from "@/lib/useOnce";
+import { TPS_BRAND, applyBrandMakes, applyBrandToSystem } from "@/lib/makes";
 import { buildQuotePdf, canShareFiles, downloadBlob, quoteFileName, saveQuotePdf } from "@/lib/quotePdf";
 
 export default function QuoteEditor() {
@@ -70,22 +71,15 @@ export default function QuoteEditor() {
     update((cur) => ({ extras: { ...(cur.extras || {}), amounts: { ...((cur.extras || {}).amounts || {}), [k]: n } } }));
   };
 
-  // Tata Power Solar supplies the panels, the inverter, the mounting structure, the AC/DC boxes and the
-  // earthing kit, so on a TPS quote every one of those makes reads TPS. Cables (including the earthing cable)
-  // and UPVC keep their own makes. Still editable afterwards.
-  const TPS_BRAND = "Tata Power Solar";
-  const isTpsItem = (item = "") =>
-    /panel|module|inverter|acdb|dcdb|distribution|earthing kit|lightning arrester|mms|mounting structure/i.test(item);
-  const withTps = (cur) => {
-    const system = { ...(cur.system || {}), brand: TPS_BRAND };
-    system.panel_brand = "TPS";
-    system.inverter_brand = "TPS";
-    const bom = (cur.bom || []).map((row) => (isTpsItem(row.item) ? { ...row, make: "TPS" } : row));
-    return { system, bom };
-  };
-  const useTps = () => update((cur) => withTps(cur));
-  const pickBrand = (name) =>
-    update((cur) => (name === TPS_BRAND ? withTps(cur) : { system: { ...(cur.system || {}), brand: name } }));
+  // Picking a partner rewrites the makes that partner is responsible for: Tata Power Solar means TPS right
+  // across the electrical set, any other partner means the module is theirs while structure, earthing kit and
+  // DC cable follow the makes we normally buy. Every row stays editable.
+  const withMakes = (cur, brand) => ({
+    system: applyBrandToSystem(cur.system || {}, brand),
+    bom: applyBrandMakes(cur.bom || [], brand),
+  });
+  const useBrandMakes = () => update((cur) => withMakes(cur, sys.brand || TPS_BRAND));
+  const pickBrand = (name) => update((cur) => withMakes(cur, name));
 
   const save = async (extra = {}) => {
     setBusy(true);
@@ -278,10 +272,14 @@ export default function QuoteEditor() {
                   No logo
                 </button>
               </div>
-              {sys.brand === TPS_BRAND && (
+              {sys.brand && (
                 <div className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
-                  <p className="min-w-0 flex-1 text-xs text-slate-600">TPS supplies the panels, the inverter, the structure, the AC/DC boxes and the earthing kit. Every one of those makes should read TPS.</p>
-                  <button type="button" className="btn-ghost !h-8 shrink-0 !px-3 !text-xs" onClick={useTps}>Set makes to TPS</button>
+                  <p className="min-w-0 flex-1 text-xs text-slate-600">
+                    {sys.brand === TPS_BRAND
+                      ? "TPS supplies the panels, inverter, structure, AC/DC boxes and earthing kit."
+                      : `${sys.brand} supplies the panels. Structure JSW Galvanization, earthing kit pure copper rod, DC cable Polycab.`}
+                  </p>
+                  <button type="button" className="btn-ghost !h-8 shrink-0 !px-3 !text-xs" onClick={useBrandMakes}>Set the usual makes</button>
                 </div>
               )}
             </div>

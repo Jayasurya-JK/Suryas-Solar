@@ -263,6 +263,19 @@ npm run build
 
 The partner logos offered on a quote are the ones we actually install: **Premier Energies** (default), **Tata Power Solar**, **Waaree** and **Avaada**. Adani Solar and Microtek are switched off in Settings > Brands rather than deleted, so quotes already issued still print their names.
 
-Choosing **Tata Power Solar** sets the makes of the panels, inverter, MMS structure, ACDB, DCDB and earthing kit to TPS, because TPS supplies all of those. The strip under the logos offers the same one-tap "Set makes to TPS" for a quote that was created before this rule. Cables (including the earthing cable) and the UPVC pipe keep their own makes.
+Picking a partner writes the makes that partner is responsible for (`src/lib/makes.js`), on a new quote as well as when the partner is changed later. The strip under the logos repeats the rule and offers a one-tap "Set the usual makes" for an older quote.
+
+| Row | Tata Power Solar | Any other partner (Premier, Waaree, Avaada) |
+| --- | --- | --- |
+| Solar module | TPS | the partner chosen |
+| String inverter | TPS | left as it is |
+| MMS structure | TPS | JSW Galvanization |
+| ACDB / DCDB | TPS | left as it is |
+| DC cable | Polycab | Polycab |
+| AC cable, earthing cable | Polycab | Polycab |
+| Earthing kit | TPS | Pure copper rod |
+| UPVC pipe | Reputed make | Reputed make |
+
+Every row stays editable, so a customer asking for a different cable or structure is one tap away.
 
 "Address as" prints on the name as well: **Sir** gives Mr. Vinoth Raj and "Dear Sir", **Madam** gives Mrs., **Miss** gives Miss (not every woman is a Mrs.), and **Sir/Madam** leaves the name plain so nothing is assumed. Panel warranty is **12 years product and 18 years performance**, with **1 year** free service, editable in Settings > Quote wording.
