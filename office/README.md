@@ -316,6 +316,23 @@ with its real status, so nobody opens the portal to answer "where is this one?".
   staff later). The file is behind the same login gate as every other screen; once the Projects tables
   exist these applications belong in the database, where the rules can restrict rows to admins.
 
+## GST invoices (the billing book)
+
+`/invoices` is the billing book itself, in the app: every tax invoice from bill.gogstbill.com with its
+amount, how much of it came in and which job it belongs to.
+
+- The three cards at the top add up whatever the filters are showing: **Invoiced**, **Received** and
+  **Pending**. Changing the year or the tab changes the totals, so "how much is still owed" is one glance.
+- Filters: All / Not paid / Partly paid / Paid / No customer link, plus a search box and one chip per
+  financial year (FY 2026-27, FY 2025-26 ...).
+- Every row opens a sheet with the invoice's own details, a link to its project, and Call and WhatsApp on
+  the customer saved on that project.
+- An invoice with no amount in the billing book is listed as **No amount** and is left out of the totals,
+  because those are placeholders rather than bills.
+- Access: owner and admin. Matching invoices to projects happens when they are loaded (exact name first,
+  then a unique partial name); anything unmatched stays visible under **No customer link**.
+- Loaded so far by hand from the billing site: 172 invoices across FY 2025-26 and FY 2026-27.
+
 ## Projects: the whole job, end to end
 
 `/projects` holds every customer from the first survey to the last payment - the paper register, in the app.

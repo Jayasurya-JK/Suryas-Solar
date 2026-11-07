@@ -61,6 +61,7 @@ const NAV = [
   { href: "/expenses", label: "Expenses", icon: "wallet", module: "expenses", tab: "always" },
   // "Apps" keeps the sixth label whole at 11px on a 320px phone; the full name stays everywhere else.
   { href: "/applications", label: "Applications", tabLabel: "Apps", icon: "clipboard", owner: true, group: "admin", tab: "always" },
+  { href: "/invoices", label: "Invoices", icon: "rupee", owner: true, group: "admin" },
   // Staff mark their own day; admins open it to fill in a missed day. Staff get it as a tab, owner and admins in the menu bar.
   { href: "/attendance", label: "Attendance", icon: "check", all: true, group: "admin", tab: "staff" },
   { href: "/activity", label: "Activity", icon: "clock", activity: true, group: "admin" },
