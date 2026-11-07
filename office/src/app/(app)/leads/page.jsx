@@ -40,24 +40,28 @@ export default function Leads() {
 
   const t = today();
   const due = (l) => l.next_follow_up && l.next_follow_up <= t && isOpen(l);
+  const mine = (l) => l.assigned_to === profile.id || l.created_by === profile.id;
+  const nameOf = (id) => team.find((m) => m.id === id)?.full_name || "";
 
   const shown = useMemo(() => {
     if (!leads) return [];
     const s = q.trim().toLowerCase();
     return leads.filter((l) => {
+      if (status === "mine" && !(l.assigned_to === profile.id || l.created_by === profile.id)) return false;
       if (status === "open" && !isOpen(l)) return false;
       if (status === "due" && !due(l)) return false;
-      if (!["open", "due", "all"].includes(status) && l.status !== status) return false;
+      if (!["open", "due", "all", "mine"].includes(status) && l.status !== status) return false;
       return !s || [l.name, l.phone, l.town, l.address].some((v) => v && v.toLowerCase().includes(s));
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [leads, status, q, t]);
+  }, [leads, status, q, t, profile.id]);
 
   const all = leads || [];
   const count = (fn) => all.filter(fn).length;
   const tabs = [
     { id: "open", label: "Open", n: count(isOpen) },
     { id: "due", label: "Follow up", n: count(due), warn: true },
+    { id: "mine", label: "Mine", n: count(mine) },
     ...LEAD_STATUSES.map((s) => ({ id: s.id, label: s.label, n: count((l) => l.status === s.id) })),
     { id: "all", label: "All", n: all.length },
   ];
@@ -74,7 +78,7 @@ export default function Leads() {
       ["Date", "Name", "Mobile", "Town", "Address", "Source", "Stage", "kW", "EB bill", "Follow-up", "Assigned", "Notes"],
       ...shown.map((l) => [dmy(l.created_at), l.name, l.phone, l.town, l.address, sourceLabel(l),
         labelOf(LEAD_STATUSES, l.status), l.kw_interest, l.monthly_bill, dmy(l.next_follow_up),
-        team.find((m) => m.id === l.assigned_to)?.full_name || "", l.notes]),
+        nameOf(l.assigned_to), l.notes]),
     ]);
 
   const subtitle = leads ? `${count(isOpen)} open · ${count(due)} to follow up today` : "Every enquiry in one place";
@@ -106,7 +110,7 @@ export default function Leads() {
               <thead>
                 <tr className="border-b border-slate-100 text-left text-[11px] font-bold uppercase tracking-wider text-slate-500">
                   <th className="px-5 py-3">Customer</th><th className="px-4 py-3">Town</th><th className="px-4 py-3">Source</th>
-                  <th className="px-4 py-3">Stage</th><th className="px-4 py-3">Follow-up</th><th className="px-4 py-3">Added</th><th className="px-5 py-3" />
+                  <th className="px-4 py-3">Stage</th><th className="px-4 py-3">Assigned</th><th className="px-4 py-3">Follow-up</th><th className="px-4 py-3">Added</th><th className="px-5 py-3" />
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
@@ -126,6 +130,13 @@ export default function Leads() {
                       <td className="px-4 py-3.5 text-slate-600">{l.town || "-"}</td>
                       <td className="px-4 py-3.5">{l.source === "website" ? <Badge tone="pink">Website</Badge> : <span className="text-slate-600">{sourceLabel(l)}</span>}</td>
                       <td className="px-4 py-3.5"><Badge tone={st?.tone}>{st?.label}</Badge></td>
+                      <td className="px-4 py-3.5">
+                        {l.assigned_to ? (
+                          <span className="flex items-center gap-2 text-[13px] text-slate-600">
+                            <Avatar name={nameOf(l.assigned_to) || "?"} size="sm" />{nameOf(l.assigned_to) || "Unknown"}
+                          </span>
+                        ) : <span className="text-slate-400">Anyone</span>}
+                      </td>
                       <td className="px-4 py-3.5 text-[13px]"><FollowUp date={isOpen(l) ? l.next_follow_up : null} t={t} /></td>
                       <td className="px-4 py-3.5 text-slate-500">{dmy(l.created_at)}</td>
                       <td className="px-5 py-3.5">
@@ -157,6 +168,10 @@ export default function Leads() {
                         <Badge tone={st?.tone}>{st?.label}</Badge>
                       </div>
                       <p className="mt-0.5 truncate text-sm text-slate-500">{[l.phone, l.town].filter(Boolean).join(" · ") || "No details"}</p>
+                      <p className="mt-1 flex items-center gap-1.5 truncate text-xs text-slate-500">
+                        <Icon name="users" className="h-3.5 w-3.5 shrink-0" />
+                        {l.assigned_to ? `Assigned to ${nameOf(l.assigned_to) || "a team member"}` : "Not assigned to anyone yet"}
+                      </p>
                     </div>
                   </div>
                   <div className="mt-3 flex items-center justify-between gap-2 border-t border-slate-100 pt-3">

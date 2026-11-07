@@ -67,7 +67,10 @@ Without the identity row and the confirmation date they cannot sign in.
 - **Admin** - every owner power in the app, including making another person an admin. Cannot change or
   switch off the owner account, cannot remove another admin, and cannot see the activity history unless the
   owner grants it.
-- **Staff** - sees only the screens ticked for them (Leads, Quotes, Expenses), and only their own records.
+- **Staff** - sees the screens ticked for them (Leads, Quotes, Expenses). Inside a screen they see the whole
+  team's records, not just their own, so two people following up on the same customer are looking at the same
+  list. What they may change is narrower: any lead or quote on the screens they hold, but only the expenses
+  they entered themselves (for two days), and only the owner can delete.
 - **Pending** - someone who tapped "Request access" on the sign-in page. They see a waiting screen that
   opens by itself once an admin approves. Pending people get nothing until then.
 

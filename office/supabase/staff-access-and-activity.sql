@@ -199,36 +199,38 @@ language sql stable security definer set search_path = public as $$
   select coalesce((select role in ('owner','staff') and active from public.profiles where id = auth.uid()), false)
 $$;
 
--- leads
+-- leads: everyone with the Leads screen sees every lead. Two people following up on the same customer
+-- must not be looking at different lists. Deleting stays with the owner.
 drop policy if exists "read leads" on public.leads;
 drop policy if exists "add leads" on public.leads;
 drop policy if exists "edit leads" on public.leads;
 create policy "read leads" on public.leads for select to authenticated
-  using (private.is_owner() or (private.can('leads') and (created_by = auth.uid() or assigned_to = auth.uid())));
+  using (private.can('leads'));
 create policy "add leads" on public.leads for insert to authenticated
   with check (private.can('leads') and created_by = auth.uid());
 create policy "edit leads" on public.leads for update to authenticated
-  using (private.is_owner() or (private.can('leads') and (created_by = auth.uid() or assigned_to = auth.uid())))
+  using (private.can('leads'))
   with check (private.can('leads'));
 
--- quotes
+-- quotes: one shared list, so a colleague opening the same lead sees the same quotes.
 drop policy if exists "read quotes" on public.quotes;
 drop policy if exists "add quotes" on public.quotes;
 drop policy if exists "edit quotes" on public.quotes;
 create policy "read quotes" on public.quotes for select to authenticated
-  using (private.is_owner() or (private.can('quotes') and created_by = auth.uid()));
+  using (private.can('quotes'));
 create policy "add quotes" on public.quotes for insert to authenticated
   with check (private.can('quotes') and created_by = auth.uid());
 create policy "edit quotes" on public.quotes for update to authenticated
-  using (private.is_owner() or (private.can('quotes') and created_by = auth.uid()))
+  using (private.can('quotes'))
   with check (private.can('quotes'));
 
--- expenses (staff can fix their own entries for 2 days)
+-- expenses: everyone with the Expenses screen sees all team spending, but only the person who entered an
+-- entry (for 2 days) or the owner can change it. Money stays accountable.
 drop policy if exists "read expenses" on public.expenses;
 drop policy if exists "add expenses" on public.expenses;
 drop policy if exists "edit expenses" on public.expenses;
 create policy "read expenses" on public.expenses for select to authenticated
-  using (private.is_owner() or (private.can('expenses') and created_by = auth.uid()));
+  using (private.can('expenses'));
 create policy "add expenses" on public.expenses for insert to authenticated
   with check (private.can('expenses') and created_by = auth.uid());
 create policy "edit expenses" on public.expenses for update to authenticated
@@ -243,6 +245,11 @@ create policy "members read packages" on public.packages for select to authentic
 drop policy if exists "members upload bills" on storage.objects;
 create policy "members upload bills" on storage.objects for insert to authenticated
   with check (bucket_id = 'bills' and private.can('expenses') and (storage.foldername(name))[1] = auth.uid()::text);
+
+-- The bill is the proof behind an expense entry, so anyone who may see the expense list may see its photo.
+drop policy if exists "read own bills or owner" on storage.objects;
+create policy "read own bills or owner" on storage.objects for select to authenticated
+  using (bucket_id = 'bills' and private.can('expenses'));
 
 -- quote numbers
 create or replace function public.next_quote_ref() returns text

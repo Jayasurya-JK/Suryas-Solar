@@ -15,19 +15,24 @@ export default function LeadDetail() {
   const { id } = useParams();
   const sb = supabase();
   const router = useRouter();
-  const { isOwner } = useApp();
+  const { isOwner, can, team } = useApp();
+  const canQuote = can("quotes");
   const [lead, setLead] = useState(undefined);
   const [quotes, setQuotes] = useState([]);
   const [saved, setSaved] = useState(false);
 
   const load = useCallback(async () => {
-    const [{ data: l }, { data: qs }] = await Promise.all([
+    const [{ data: l }, quoteRes] = await Promise.all([
       sb.from("leads").select("*").eq("id", id).maybeSingle(),
-      sb.from("quotes").select("id, ref_no, quote_date, total, net, status, system").eq("lead_id", id).order("created_at", { ascending: false }),
+      // Without the quotes screen the read is refused, so do not ask at all - it would show "No quote yet"
+      // for a lead that does have one.
+      can("quotes")
+        ? sb.from("quotes").select("id, ref_no, quote_date, total, net, status, system").eq("lead_id", id).order("created_at", { ascending: false })
+        : Promise.resolve({ data: [] }),
     ]);
     setLead(l);
-    setQuotes(qs || []);
-  }, [sb, id]);
+    setQuotes(quoteRes.data || []);
+  }, [sb, id, can]);
   useEffect(() => { load(); }, [load]);
 
   if (lead === undefined) return <Spinner />;
@@ -69,12 +74,13 @@ export default function LeadDetail() {
             <h1 className="truncate text-[22px] font-bold tracking-tight text-slate-900">{lead.name}</h1>
             <p className="mt-0.5 text-sm text-slate-500">{[lead.phone, lead.town].filter(Boolean).join(" · ")}</p>
             <p className="text-xs text-slate-400">{sourceLabel(lead)} lead · added {dmy(lead.created_at)}</p>
+            {lead.assigned_to && <p className="mt-1 text-xs font-semibold text-slate-500">Handled by {team.find((m) => m.id === lead.assigned_to)?.full_name || "a team member"}</p>}
           </div>
         </div>
         <div className="mt-4 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap">
           {lead.phone && <a href={`tel:${lead.phone}`} className="btn-ghost"><Icon name="phone" className="h-4 w-4" />Call</a>}
           {lead.phone && <a href={waLink(lead.phone, `Hello ${lead.name}, this is Surya's Solar, Cuddalore.`)} target="_blank" rel="noreferrer" className="btn-wa"><Icon name="chat" className="h-4 w-4" />WhatsApp</a>}
-          <Link href={`/quotes/new?lead=${lead.id}`} className={`btn-accent ${lead.phone ? "" : "col-span-3"}`}><Icon name="doc" className="h-4 w-4" />Quote</Link>
+          {canQuote && <Link href={`/quotes/new?lead=${lead.id}`} className={`btn-accent ${lead.phone ? "" : "col-span-3"}`}><Icon name="doc" className="h-4 w-4" />Quote</Link>}
         </div>
         <div className="mt-4 border-t border-slate-100 pt-4">
           <p className="label">Stage</p>
@@ -91,6 +97,7 @@ export default function LeadDetail() {
           <LeadForm key={lead.updated_at} initial={lead} onSave={save} saveLabel="Save changes" />
         </div>
         <div className="space-y-6">
+          {canQuote && (
           <div className="card p-5">
             <h2 className="mb-3 font-bold text-slate-900">Quotes</h2>
             {quotes.length === 0 ? (
@@ -115,6 +122,7 @@ export default function LeadDetail() {
             )}
             <Link href={`/quotes/new?lead=${lead.id}`} className="btn-ghost mt-3 w-full"><Icon name="plus" className="h-4 w-4" />New quote</Link>
           </div>
+          )}
           <HistoryPanel table="leads" id={lead.id} />
           {isOwner && <button onClick={remove} className="btn-danger w-full"><Icon name="trash" className="h-4 w-4" />Delete lead</button>}
         </div>

@@ -150,7 +150,7 @@ export default function Expenses() {
 
   return (
     <>
-      <PageHeader title="Expenses" subtitle={isOwner ? "All team spending. Staff see only their own entries." : "Add what you spent. No need to post it on WhatsApp."}
+      <PageHeader title="Expenses" subtitle={isOwner ? "All team spending, in one place." : "Everything the team spent. Add yours and the owner sees it straight away."}
         fab={{ label: "Add expense", onClick: () => setSheet(true) }}
         mobileActions={<IconButton icon="download" label="Download Excel" onClick={exportCsv} />}>
         <button className="btn-ghost" onClick={exportCsv}><Icon name="download" className="h-4 w-4" />Excel</button>
@@ -196,7 +196,7 @@ export default function Expenses() {
                   <div className="min-w-0 flex-1">
                     <p className="break-words font-semibold text-slate-900">{r.note || r.category_other || labelOf(EXPENSE_CATEGORIES, r.category)}</p>
                     <p className="break-words text-[13px] text-slate-500">{[labelOf(EXPENSE_CATEGORIES, r.category), r.site, dmy(r.spent_on), labelOf(PAY_MODES, r.payment_mode)].filter(Boolean).join(" · ")}</p>
-                    <p className="break-words text-xs text-slate-500">Paid by {r.paid_by || "?"}{isOwner && who(r.created_by) ? ` · entered by ${who(r.created_by)}` : ""}</p>
+                    <p className="break-words text-xs text-slate-500">Paid by {r.paid_by || "?"}{who(r.created_by) ? ` · entered by ${who(r.created_by)}` : ""}</p>
                   </div>
                   <div className="flex shrink-0 flex-col items-end gap-1">
                     <span className="text-[15px] font-bold text-slate-900">{rupees(r.amount)}</span>
