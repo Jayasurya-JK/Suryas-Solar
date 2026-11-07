@@ -396,7 +396,7 @@ export default function AppShell({ children }) {
     return (
       <Link href={n.href}
         className={`group relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-[14px] font-semibold transition-colors ${active ? "bg-primary-50 text-primary" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"}`}>
-        {active && <span className="absolute -left-3 bottom-2 top-2 w-1 rounded-r-full bg-primary" />}
+        {active && <span className="absolute bottom-2 left-0 top-2 w-1 rounded-full bg-primary" />}
         <Icon name={n.icon} className={`h-5 w-5 ${active ? "text-primary" : "text-slate-400 group-hover:text-slate-600"}`} />
         <span className="flex-1">{n.label}</span>
         {b > 0 && <span className="rounded-full bg-accent px-2 py-0.5 text-[11px] font-bold text-white">{b}</span>}
@@ -490,7 +490,7 @@ export default function AppShell({ children }) {
 
           <main id="scroll" ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain"
             onTouchStart={onPullStart} onTouchMove={onPullMove} onTouchEnd={onPullEnd}>
-            <div className="mx-auto w-full max-w-7xl px-4 pb-28 pt-5 sm:px-6 sm:pb-10 lg:px-10 lg:pb-12 lg:pt-9">
+            <div className="mx-auto w-full max-w-7xl px-4 pb-36 pt-5 sm:px-6 sm:pb-10 lg:px-10 lg:pb-12 lg:pt-9">
               {/* Pull-to-refresh: an installed app has no browser, so no swipe-down reload of its own. */}
               <div className="flex items-start justify-center overflow-hidden transition-[height] duration-150"
                 style={{ height: refreshing ? 48 : pull }}>

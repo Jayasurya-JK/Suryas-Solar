@@ -325,7 +325,7 @@ export default function Projects() {
           <button className="btn-primary" onClick={() => setSheet(true)}><Icon name="plus" className="h-4 w-4" />New project</button>
         </Empty>
       ) : (
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {shown.map((r) => {
             const p = progress[r.id] || { done: 0, total: PROJECT_STEPS.length };
             const pct = p.total ? Math.round((p.done / p.total) * 100) : 0;
@@ -436,7 +436,7 @@ function PortalList() {
         <Link href="/applications" className="btn-ghost !h-9 !px-3"><Icon name="doc" className="h-4 w-4" />Open Applications</Link>
       </div>
       <div className="mb-3 max-w-sm"><SearchBox value={q} onChange={setQ} placeholder="Find a customer" /></div>
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {shown.map((r) => {
           const done = PORTAL_DONE(r.status);
           const pct = Math.round((done / PROJECT_STEPS.length) * 100);

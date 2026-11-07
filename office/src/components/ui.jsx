@@ -101,7 +101,7 @@ export function PageHeader({ title, subtitle, children, fab, mobileActions }) {
 }
 
 export function Fab({ label, icon = "plus", onClick, href }) {
-  const cls = "no-print fixed bottom-[calc(80px+env(safe-area-inset-bottom))] right-4 z-30 flex items-center gap-2 rounded-full bg-accent px-5 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(214,0,111,.35)] sm:hidden";
+  const cls = "no-print fixed bottom-[calc(80px+env(safe-area-inset-bottom))] right-4 z-30 flex items-center gap-2 rounded-full bg-accent px-5 py-3.5 text-sm font-semibold text-white shadow-[0_6px_18px_rgba(214,0,111,.26)] sm:hidden";
   const inner = <><Icon name={icon} className="h-5 w-5" />{label}</>;
   return href ? <a href={href} className={cls}>{inner}</a> : <button type="button" onClick={onClick} className={cls}>{inner}</button>;
 }
