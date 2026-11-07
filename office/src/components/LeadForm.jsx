@@ -29,13 +29,13 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
     e.preventDefault();
     return once(async () => {
       const phone = cleanPhone(f.phone);
-      if (f.phone && !/^[6-9]\d{9}$/.test(phone)) return setErr("Enter a 10-digit mobile number.");
+      if (!/^[6-9]\d{9}$/.test(phone)) return setErr("A lead needs a 10-digit mobile number - we cannot call them otherwise.");
       if (f.source === "other" && !f.source_other.trim()) return setErr("Say where this lead came from.");
       setErr("");
       setBusy(true);
       const row = {
         name: f.name.trim(),
-        phone: phone || null,
+        phone,
         address: f.address?.trim() || null,
         town: f.town?.trim() || null,
         source: f.source,
@@ -56,7 +56,7 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
   return (
     <form onSubmit={submit} className="grid gap-3 sm:grid-cols-2">
       <Field label="Customer name *"><input className="input" required value={f.name} onChange={set("name")} /></Field>
-      <Field label="Mobile"><input className="input" inputMode="tel" value={f.phone || ""} onChange={set("phone")} placeholder="10-digit number" /></Field>
+      <Field label="Mobile *"><input className="input" inputMode="tel" required value={f.phone || ""} onChange={set("phone")} placeholder="10-digit number" /></Field>
       <Field label="Address / area" className="sm:col-span-2"><AutoText value={f.address || ""} onChange={set("address")} /></Field>
       <Field label="Town"><AutoText value={f.town || ""} onChange={set("town")} placeholder="e.g. Cuddalore" /></Field>
       <Field label="When should we call them again?" className="sm:col-span-2">
