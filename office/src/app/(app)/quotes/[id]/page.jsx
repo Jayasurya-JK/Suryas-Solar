@@ -11,7 +11,7 @@ import { confirmAction } from "@/components/Confirm";
 import { BomRows } from "@/components/ListEditors";
 import { AutoText } from "@/components/Extras";
 import { HistoryPanel } from "@/components/History";
-import { Field, Icon, Notice, Segmented, Spinner, Switch } from "@/components/ui";
+import { Field, Icon, Modal, Notice, Segmented, Spinner, Switch } from "@/components/ui";
 import { QUOTE_STATUSES, calcQuote, extrasWithAmounts, rupees, waLink } from "@/lib/format";
 import { useOnce } from "@/lib/useOnce";
 import { TPS_BRAND, applyBrandMakes, applyBrandToSystem } from "@/lib/makes";
@@ -29,6 +29,7 @@ export default function QuoteEditor() {
   const [view, setView] = useState("edit");
   const [preview, setPreview] = useState(false);
   const [pdfBusy, setPdfBusy] = useState(false);
+  const [wa, setWa] = useState(null);
   const pdfRef = useRef(null);
   const oncePdf = useOnce();
   const onceSend = useOnce();
@@ -126,50 +127,65 @@ export default function QuoteEditor() {
     logPdf();
   };
 
-  // Sending the quotation to the customer: the PDF itself must go, not just a message. On a phone the share
-  // sheet carries the file straight into WhatsApp; a desktop browser cannot share a file, so there the PDF
-  // is saved first and the chat opens with the message, ready for the file to be attached.
+  // Sending the quotation to the customer. A browser cannot attach a file to a chosen contact, so the app
+  // offers the two routes a phone actually allows: open the chat on the customer's number (the PDF is saved
+  // for the paperclip), or hand the PDF to the share sheet and pick the contact there.
+  const waText = () => `Hello ${String(q.customer?.name || "").trim()}, thank you for your enquiry. Please find our quotation ${q.ref_no} (PDF attached) for a ${q.system?.kw} kWp rooftop solar system.\n\nTotal price: ${rupees(calc.total)} (GST included)` +
+    (q.show_subsidy ? `\nSubsidy to your bank: ${rupees(calc.central + calc.tn)}\nYour effective cost: ${rupees(calc.net)}` : "") +
+    `\n\nFor any doubt, call ${s.phone1 || ""}.\nSurya's Solar, Cuddalore`;
+
   const sendWhatsApp = () => onceSend(async () => {
     if (dirty && !(await save())) return;
     if (q.status === "draft") { await save({ status: "sent" }); setQ((cur) => ({ ...cur, status: "sent" })); }
 
-    const text = `Hello ${String(q.customer?.name || "").trim()}, thank you for your enquiry. Please find our quotation ${q.ref_no} (PDF attached) for a ${q.system?.kw} kWp rooftop solar system.\n\nTotal price: ${rupees(calc.total)} (GST included)` +
-      (q.show_subsidy ? `\nSubsidy to your bank: ${rupees(calc.central + calc.tn)}\nYour effective cost: ${rupees(calc.net)}` : "") +
-      `\n\nFor any doubt, call ${s.phone1 || ""}.\nSurya's Solar, Cuddalore`;
-    const name = quoteFileName(q);
-
     setPdfBusy(true);
     setMsg(null);
-    let blob = null;
     try {
-      blob = (await buildQuotePdf(pdfRef.current)).blob;
-    } catch {
-      setPdfBusy(false);
-      setMsg({ tone: "amber", text: "This phone could not build the PDF. Open Preview and tap Print to make one." });
-      return;
-    }
-
-    const file = new File([blob], name, { type: "application/pdf" });
-    if (canShareFiles(file)) {
-      try {
-        await navigator.share({ files: [file], title: `Quotation ${q.ref_no}`, text });
-        logPdf();
+      const { blob } = await buildQuotePdf(pdfRef.current);
+      const name = quoteFileName(q);
+      const file = new File([blob], name, { type: "application/pdf" });
+      const phone = String(q.customer?.phone || "").replace(/\D/g, "");
+      // No share support at all (a desktop browser): save the file and open the chat on the number.
+      if (!canShareFiles(file)) {
+        if (phone) downloadBlob(blob, name);
+        window.open(phone ? waLink(phone, waText()) : `https://wa.me/?text=${encodeURIComponent(waText())}`, "_blank");
+        setMsg({ tone: "amber", text: `The PDF is saved as ${name}. In WhatsApp, attach it with the paperclip before you send.` });
         sb.rpc("log_event", { p_action: "whatsapp", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
-        setMsg({ tone: "green", text: "PDF shared. Pick WhatsApp if the share sheet is still open." });
-        setTimeout(() => setMsg(null), 4000);
-      } catch (e) {
-        // The person closed the share sheet - that is not an error worth shouting about.
-        if (e?.name !== "AbortError") setMsg({ tone: "amber", text: "The share sheet did not open. The PDF is saved - attach it in WhatsApp." });
-        downloadBlob(blob, name);
+      } else {
+        setWa({ blob, name, phone, text: waText() });
       }
-    } else {
-      downloadBlob(blob, name);
-      window.open(q.customer?.phone ? waLink(q.customer.phone, text) : `https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
-      setMsg({ tone: "amber", text: `The PDF is saved as ${name}. In WhatsApp, attach it with the paperclip before you send.` });
-      sb.rpc("log_event", { p_action: "whatsapp", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
+    } catch {
+      setMsg({ tone: "amber", text: "This phone could not build the PDF. Open Preview and tap Print to make one." });
     }
     setPdfBusy(false);
   });
+
+  // Route 1: straight to the customer's number. WhatsApp cannot take a file from a link, so it is saved here
+  // and attached with the paperclip in the chat that opens.
+  const waToNumber = () => {
+    if (!wa) return;
+    downloadBlob(wa.blob, wa.name);
+    window.open(waLink(wa.phone, wa.text), "_blank");
+    logPdf();
+    sb.rpc("log_event", { p_action: "whatsapp", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
+    setMsg({ tone: "amber", text: `Chat opened on +91 ${wa.phone}. The PDF is saved as ${wa.name} - attach it with the paperclip.` });
+    setWa(null);
+  };
+
+  // Route 2: the phone's share sheet, which can carry the file itself.
+  const waShareFile = async () => {
+    if (!wa) return;
+    const file = new File([wa.blob], wa.name, { type: "application/pdf" });
+    try {
+      await navigator.share({ files: [file], title: `Quotation ${q.ref_no}`, text: wa.text });
+      logPdf();
+      sb.rpc("log_event", { p_action: "whatsapp", p_table: "quotes", p_record: id, p_label: q.ref_no }).then(() => {}, () => {});
+      setMsg({ tone: "green", text: "PDF shared." });
+    } catch (e) {
+      if (e?.name !== "AbortError") setMsg({ tone: "amber", text: "The share sheet did not open. The quote is still saved - try Chat on the number." });
+    }
+    setWa(null);
+  };
 
   const remove = async () => {
     const ok = await confirmAction({
@@ -362,6 +378,35 @@ export default function QuoteEditor() {
 
       {preview && (
         <QuotePreviewDialog quote={q} s={s} brands={brands} signUrl={signUrl} onClose={() => setPreview(false)} onPrint={print} />
+      )}
+
+      {wa && (
+        <Modal title="Send on WhatsApp" onClose={() => setWa(null)}>
+          <p className="text-sm text-slate-600">
+            Quotation <b className="text-slate-900">{q.ref_no}</b> for {String(q.customer?.name || "").trim() || "the customer"}.
+          </p>
+          {wa.phone ? (
+            <button onClick={waToNumber} className="mt-3 flex w-full items-center gap-3 rounded-xl border border-teal bg-teal-50 p-3 text-left">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal text-white"><Icon name="chat" className="h-5 w-5" /></span>
+              <span className="min-w-0">
+                <span className="block text-sm font-bold text-slate-900">Chat on +91 {wa.phone}</span>
+                <span className="block text-xs text-slate-600">Opens WhatsApp on the customer&apos;s number. The PDF is saved on the phone - attach it with the paperclip.</span>
+              </span>
+            </button>
+          ) : (
+            <p className="mt-3 rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs font-semibold text-amber-800">
+              This quote has no mobile number, so WhatsApp will ask you who to send it to.
+            </p>
+          )}
+          <button onClick={waShareFile} className="mt-2 flex w-full items-center gap-3 rounded-xl border border-slate-200 p-3 text-left hover:bg-slate-50">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-700"><Icon name="doc" className="h-5 w-5" /></span>
+            <span className="min-w-0">
+              <span className="block text-sm font-semibold text-slate-900">Share the PDF file</span>
+              <span className="block text-xs text-slate-500">Pick WhatsApp in the share sheet, then choose the contact. The file goes with it.</span>
+            </span>
+          </button>
+          <button className="btn-ghost mt-3 w-full" onClick={() => setWa(null)}>Cancel</button>
+        </Modal>
       )}
     </>
   );

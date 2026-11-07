@@ -163,13 +163,16 @@ read from their saved rates, so their totals do not move.
 
 ## Sending a quote on WhatsApp
 
-The WhatsApp button now sends the **PDF itself**, not just a message:
+The WhatsApp button sends the **PDF itself**, and it opens on the customer's own number. Tapping it builds the
+file, then asks how to send:
 
-- On a phone (Android Chrome, iOS Safari) the share sheet opens with the PDF attached and the message as its
-  caption - pick WhatsApp and the customer receives the file. Verified: a 1 MB `application/pdf` named after
-  the customer and quote number reaches `navigator.share` with the caption.
-- A desktop browser cannot share a file, so there the PDF is saved first and WhatsApp Web opens with the
-  message, with a line telling the person to attach the saved file with the paperclip.
+- **Chat on +91 94893 45125** - opens WhatsApp on the number saved in the quote (which comes from the lead)
+  with the message ready. WhatsApp cannot take a file from a link, so the PDF is saved at the same moment and
+  attached with the paperclip in the chat that opens.
+- **Share the PDF file** - the phone's share sheet carries the file: pick WhatsApp, then the contact.
+
+A desktop browser cannot share a file, so there it saves the PDF and opens WhatsApp Web on the number with the
+same message. A quote with no mobile number says so, and WhatsApp asks who to send it to.
 
 `buildQuotePdf` in `src/lib/quotePdf.js` returns the Blob so the same file can be downloaded (Save as PDF) or
 shared (WhatsApp) without building it twice.
