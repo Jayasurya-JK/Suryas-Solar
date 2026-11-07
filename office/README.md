@@ -268,6 +268,8 @@ The partner logos offered on a quote are the ones we actually install: **Premier
 
 Picking a partner writes the makes that partner is responsible for (`src/lib/makes.js`), on a new quote as well as when the partner is changed later. The strip under the logos repeats the rule and offers a one-tap "Set the usual makes" for an older quote.
 
+Each partner's artwork lives in `public/brands/<name>.png` and `brands.logo_url` holds that path. Add a partner by dropping the file there, then setting `logo_url` on its row.
+
 | Row | Tata Power Solar | Any other partner (Premier, Waaree, Avaada) |
 | --- | --- | --- |
 | Solar module | TPS | the partner chosen |
