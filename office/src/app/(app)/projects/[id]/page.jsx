@@ -23,6 +23,7 @@ export default function ProjectDetail() {
   const [steps, setSteps] = useState([]);
   const [baseline, setBaseline] = useState([]);
   const [payments, setPayments] = useState([]);
+  const [invoices, setInvoices] = useState([]);
   const [setup, setSetup] = useState(false);
   const [msg, setMsg] = useState(null);
   const [pay, setPay] = useState(false);
@@ -36,10 +37,11 @@ export default function ProjectDetail() {
   const stepsOnce = useOnce();
 
   const load = useCallback(async () => {
-    const [one, s, m] = await Promise.all([
+    const [one, s, m, inv] = await Promise.all([
       sb.from("projects").select("*").eq("id", id).single(),
       sb.from("project_steps").select("*").eq("project_id", id).order("position"),
       sb.from("project_payments").select("*").eq("project_id", id).order("paid_on", { ascending: false }),
+      sb.from("project_invoices").select("*").eq("project_id", id).order("invoice_date", { ascending: false }),
     ]);
     if (MISSING_TABLE(one.error)) return setSetup(true);
     if (one.error) return setMsg({ tone: "red", text: one.error.message });
@@ -48,6 +50,7 @@ export default function ProjectDetail() {
     setSteps(s.data || []);
     setBaseline(s.data || []);
     setPayments(m.data || []);
+    setInvoices(inv.data || []);
   }, [sb, id]);
   useEffect(() => { load(); }, [load]);
 
@@ -254,6 +257,42 @@ export default function ProjectDetail() {
                 ))}
               </ul>
             )}
+          </section>
+
+          <section className="card p-5">
+            <h2 className="font-bold text-slate-900">GST invoices</h2>
+            {(() => {
+              // Zero-value invoices in the billing software are placeholders; they only add noise here.
+              const list = invoices.filter((v) => Number(v.amount) > 0);
+              if (list.length === 0) return <p className="mt-2 text-sm text-slate-500">No invoice from the billing software is linked to this customer.</p>;
+              return (
+                <>
+                  <div className="mt-3 flex items-baseline justify-between">
+                    <span className="text-sm text-slate-500">Invoiced</span>
+                    <span className="font-bold text-slate-900">{rupees(list.reduce((a, x) => a + Number(x.amount || 0), 0))}</span>
+                  </div>
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-sm text-slate-500">Not yet received</span>
+                    <span className={`font-semibold ${list.some((x) => Number(x.outstanding) > 0) ? "text-red-600" : "text-slate-700"}`}>
+                      {rupees(list.reduce((a, x) => a + Number(x.outstanding || 0), 0))}
+                    </span>
+                  </div>
+                  <ul className="mt-3 divide-y divide-slate-100 border-t border-slate-100">
+                    {list.map((v) => (
+                      <li key={v.id} className="flex items-center justify-between gap-2 py-2 text-xs">
+                        <span className="min-w-0">
+                          <span className="block font-semibold text-slate-800">Invoice {v.invoice_no} · {rupees(v.amount)}</span>
+                          <span className="block text-slate-500">
+                            {v.invoice_date ? dmy(v.invoice_date) : ""}
+                            {Number(v.outstanding) > 0 ? ` · ${rupees(v.outstanding)} pending` : " · settled"}
+                          </span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              );
+            })()}
           </section>
 
           <section className="card p-5">
