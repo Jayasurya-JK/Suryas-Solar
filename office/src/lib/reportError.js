@@ -17,6 +17,7 @@ export function reportError(kind, error, extra = {}) {
   if (sent.has(key)) return;
   sent.add(key);
   try { console.error("[office]", kind, error); } catch {}
+  rememberLocally(kind, message);
   try {
     const row = {
       kind: String(kind || "error").slice(0, 40),
@@ -29,6 +30,29 @@ export function reportError(kind, error, extra = {}) {
     };
     supabase().from("client_errors").insert(row).then(() => {}, () => {});
   } catch {}
+}
+
+// The database log needs a table that may not exist yet, so the last few problems are also kept on the
+// phone. Profile > Recent problems shows them, which is what we read when someone says "it is not opening".
+const LOCAL_KEY = "so-errors";
+
+function rememberLocally(kind, message) {
+  try {
+    const list = JSON.parse(localStorage.getItem(LOCAL_KEY) || "[]");
+    list.unshift({ at: new Date().toISOString(), kind: String(kind || ""), message, page: typeof location !== "undefined" ? location.pathname : "" });
+    localStorage.setItem(LOCAL_KEY, JSON.stringify(list.slice(0, 8)));
+  } catch {}
+}
+
+export function readRecentErrors() {
+  try {
+    const list = JSON.parse(localStorage.getItem(LOCAL_KEY) || "[]");
+    return Array.isArray(list) ? list : [];
+  } catch { return []; }
+}
+
+export function clearRecentErrors() {
+  try { localStorage.removeItem(LOCAL_KEY); } catch {}
 }
 
 // Uncaught errors and rejected promises never reach a React boundary - catch them at the window.

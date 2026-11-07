@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import { Avatar, Badge, Notice, PageHeader } from "@/components/ui";
 import { InstallCard } from "@/components/InstallBanner";
+import RecentProblems from "@/components/RecentProblems";
 import { dmy, isOwnerRole, permLabel, roleLabel } from "@/lib/format";
 
 const pinProblem = (pin, again) => {
@@ -130,6 +131,7 @@ export default function Profile() {
         </div>
       </section>
 
+      <RecentProblems />
       <InstallCard />
     </div>
   );

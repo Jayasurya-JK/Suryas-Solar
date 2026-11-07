@@ -27,6 +27,25 @@ const CAT_TONE = {
 
 const EMPTY = { spent_on: "", amount: "", category: "material", category_other: "", site: "", paid_by: "", payment_mode: "cash", note: "" };
 
+// One expense, said once. "Travel speed material" under a Material chip does not need the word Material
+// again on the line below, and the detail sheet should not repeat a note that is the same as its title.
+const titleOf = (r) => r.note || r.category_other || labelOf(EXPENSE_CATEGORIES, r.category);
+const categoryUnlessNamed = (r) => {
+  const cat = labelOf(EXPENSE_CATEGORIES, r.category);
+  return String(titleOf(r) || "").toLowerCase().includes(String(cat).toLowerCase()) ? "" : cat;
+};
+
+const patchFrom = (f) => ({
+  spent_on: f.spent_on,
+  amount: Number(f.amount),
+  category: f.category,
+  category_other: f.category === "other" ? f.category_other.trim() || null : null,
+  site: f.site.trim() || null,
+  paid_by: f.paid_by.trim() || null,
+  payment_mode: f.payment_mode,
+  note: f.note.trim() || null,
+});
+
 export default function Expenses() {
   const sb = supabase();
   const { profile, isOwner, team } = useApp();
@@ -41,6 +60,10 @@ export default function Expenses() {
   const [otherMonths, setOtherMonths] = useState([]);
   const [detail, setDetail] = useState(null);
   const [bill, setBill] = useState(null);
+  const [editing, setEditing] = useState(null);
+  const [editForm, setEditForm] = useState(null);
+  const [editMsg, setEditMsg] = useState(null);
+  const saveEditOnce = useOnce();
   const fileRef = useRef(null);
 
   const load = useCallback(async () => {
@@ -82,10 +105,7 @@ export default function Expenses() {
         if (error) { setBusy(false); return setMsg({ tone: "red", text: "Photo upload failed: " + error.message }); }
       }
       const { error } = await sb.from("expenses").insert({
-        spent_on: f.spent_on, amount: Number(f.amount), category: f.category,
-        category_other: f.category === "other" ? f.category_other.trim() || null : null,
-        site: f.site.trim() || null,
-        paid_by: f.paid_by.trim() || null, payment_mode: f.payment_mode, note: f.note.trim() || null,
+        ...patchFrom(f),
         bill_path, created_by: profile.id,
       });
       setBusy(false);
@@ -105,18 +125,51 @@ export default function Expenses() {
 
   // The bill opens inside the app. window.open was silently blocked in the installed app, so tapping the
   // camera did nothing at all.
-  const viewBill = async (path, row) => {
-    setBill({ loading: true, url: null, row });
+  const viewBill = async (path, row) => {    setBill({ loading: true, url: null, row });
     const { data, error } = await sb.storage.from("bills").createSignedUrl(path, 600);
     if (error || !data?.signedUrl) return setBill({ loading: false, url: null, row, error: error?.message || "Could not open the bill." });
     setBill({ loading: false, url: data.signedUrl, row });
     if (row) sb.rpc("log_event", { p_action: "bill_view", p_table: "expenses", p_record: row.id, p_label: `₹${row.amount} ${row.category}` }).then(() => {}, () => {});
   };
 
+  // Owner and admins may correct any entry; everyone else their own. The database decides for real, so a
+  // save that changes nothing comes back with no rows and is explained instead of failing silently.
+  const canEdit = (r) => isOwner || r.created_by === profile.id;
+
+  const startEdit = (r) => {
+    setDetail(null);
+    setEditMsg(null);
+    setEditing(r);
+    setEditForm({
+      ...EMPTY,
+      amount: String(r.amount),
+      spent_on: r.spent_on,
+      category: r.category,
+      category_other: r.category_other || "",
+      site: r.site || "",
+      paid_by: r.paid_by || "",
+      payment_mode: r.payment_mode || "cash",
+      note: r.note || "",
+    });
+  };
+
+  const saveEdit = () =>
+    saveEditOnce(async () => {
+      if (!(Number(editForm.amount) > 0)) return setEditMsg({ tone: "red", text: "Enter the amount." });
+      if (editForm.category === "other" && !editForm.category_other.trim()) return setEditMsg({ tone: "red", text: "Say what the other expense was." });
+      const { data, error } = await sb.from("expenses").update(patchFrom(editForm)).eq("id", editing.id).select();
+      if (error) return setEditMsg({ tone: "red", text: error.message });
+      if (!data || data.length === 0) return setEditMsg({ tone: "red", text: "This entry can only be changed by the owner or an admin, or by you within two days of adding it." });
+      setEditing(null);
+      setEditForm(null);
+      load();
+      setMsg({ tone: "green", text: "Expense updated." });
+      setTimeout(() => setMsg(null), 4000);
+    });
+
   const remove = async (r) => {
     const ok = await confirmAction({
-      title: "Delete this expense?",
-      text: `The ${rupees(r.amount)} expense will be removed, with its bill photos. This cannot be undone.`,
+      title: "Delete this expense?",      text: `The ${rupees(r.amount)} expense will be removed, with its bill photos. This cannot be undone.`,
       confirmLabel: "Delete expense",
     });
     if (!ok) return;
@@ -125,8 +178,7 @@ export default function Expenses() {
     load();
   };
 
-  const shown = useMemo(() => (rows || []).filter((r) => cat === "all" || r.category === cat), [rows, cat]);
-  const total = shown.reduce((a, r) => a + Number(r.amount), 0);
+  const shown = useMemo(() => (rows || []).filter((r) => cat === "all" || r.category === cat), [rows, cat]);  const total = shown.reduce((a, r) => a + Number(r.amount), 0);
   const byCat = useMemo(() => {
     const m = {};
     (rows || []).forEach((r) => { m[r.category] = (m[r.category] || 0) + Number(r.amount); });
@@ -179,9 +231,8 @@ export default function Expenses() {
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-slate-200"><Icon name={photo ? "check" : "camera"} className="h-5 w-5" /></span>
         <span className="min-w-0 flex-1"><span className="block font-semibold">{photo ? "Bill photo added" : "Add bill photo"}</span><span className="block truncate text-xs opacity-80">{photo ? photo.name : "Optional · take a photo or choose one"}</span></span>
         <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={(e) => setPhoto(e.target.files?.[0] || null)} />
-      </label>
-      {msg && <Notice tone={msg.tone}>{msg.text}</Notice>}
-      <button className="btn-primary h-12 w-full text-base" disabled={busy}>{busy ? "Saving..." : "Save expense"}</button>
+        </label>
+        <button className="btn-primary h-12 w-full text-base" disabled={busy}>{busy ? "Saving..." : "Save expense"}</button>
     </form>
   );
 
@@ -204,6 +255,7 @@ export default function Expenses() {
         </div>
 
         <div className="min-w-0 space-y-4">
+          {msg && <Notice tone={msg.tone}>{msg.text}</Notice>}
           <div className="card overflow-hidden">
             <div className="flex items-center justify-between gap-3 bg-gradient-to-br from-slate-900 to-slate-800 p-5 text-white">
               <div className="min-w-0 flex-1">
@@ -259,8 +311,8 @@ export default function Expenses() {
                       {labelOf(EXPENSE_CATEGORIES, r.category).slice(0, 2)}
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block break-words font-semibold text-slate-900">{r.note || r.category_other || labelOf(EXPENSE_CATEGORIES, r.category)}</span>
-                      <span className="block break-words text-[13px] text-slate-500">{[labelOf(EXPENSE_CATEGORIES, r.category), r.site, dmy(r.spent_on), labelOf(PAY_MODES, r.payment_mode)].filter(Boolean).join(" · ")}</span>
+                      <span className="block break-words font-semibold text-slate-900">{titleOf(r)}</span>
+                      <span className="block break-words text-[13px] text-slate-500">{[categoryUnlessNamed(r), r.site, dmy(r.spent_on), labelOf(PAY_MODES, r.payment_mode)].filter(Boolean).join(" · ")}</span>
                       <span className="block break-words text-xs text-slate-500">Paid by {r.paid_by || "?"}{who(r.created_by) ? ` · entered by ${who(r.created_by)}` : ""}</span>
                     </span>
                   </button>
@@ -268,6 +320,7 @@ export default function Expenses() {
                     <span className="text-[15px] font-bold text-slate-900">{rupees(r.amount)}</span>
                     <div className="flex gap-0.5">
                       {r.bill_path && <button onClick={() => viewBill(r.bill_path, r)} className="rounded-lg p-1.5 text-primary hover:bg-primary-50" title="View bill" aria-label="View bill"><Icon name="camera" className="h-4 w-4" /></button>}
+                      {canEdit(r) && <button onClick={() => startEdit(r)} className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700" title="Edit" aria-label="Edit"><Icon name="pencil" className="h-4 w-4" /></button>}
                       {isOwner && <button onClick={() => remove(r)} className="rounded-lg p-1.5 text-slate-400 hover:bg-red-50 hover:text-red-600" title="Delete" aria-label="Delete"><Icon name="trash" className="h-4 w-4" /></button>}
                     </div>
                   </div>
@@ -290,9 +343,9 @@ export default function Expenses() {
               ["Site or customer", detail.site],
               ["Paid by", detail.paid_by],
               ["Paid using", labelOf(PAY_MODES, detail.payment_mode)],
-              ["Note", detail.note],
+              ["Note", detail.note && detail.note !== (detail.category_other || "") ? detail.note : null],
               ["Entered by", who(detail.created_by)],
-              ["Entered on", detail.created_at ? dmy(detail.created_at) : null],
+              ["Entered on", detail.created_at ? new Date(detail.created_at).toLocaleString("en-IN", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : null],
             ].filter(([, v]) => v).map(([k, v]) => (
               <div key={k} className="flex gap-3 py-2">
                 <dt className="w-36 shrink-0 text-slate-500">{k}</dt>
@@ -301,10 +354,56 @@ export default function Expenses() {
             ))}
           </dl>
           <div className="mt-4 flex flex-wrap gap-2">
+            {canEdit(detail) && <button className="btn-ghost flex-1" onClick={() => startEdit(detail)}><Icon name="pencil" className="h-4 w-4" />Edit</button>}
             {detail.bill_path && <button className="btn-ghost flex-1" onClick={() => viewBill(detail.bill_path, detail)}><Icon name="camera" className="h-4 w-4" />View bill photo</button>}
             <button className="btn-ghost flex-1" onClick={() => setDetail(null)}>Close</button>
           </div>
           {isOwner && <button onClick={() => { setDetail(null); remove(detail); }} className="btn-danger mt-2 w-full"><Icon name="trash" className="h-4 w-4" />Delete this expense</button>}
+        </Modal>
+      )}
+
+      {editing && editForm && (
+        <Modal title="Edit expense" onClose={() => { setEditing(null); setEditForm(null); }}>
+          <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-3">
+              <Field label="Amount (₹)">
+                <input className="input !text-xl !font-bold" type="number" inputMode="decimal" value={editForm.amount}
+                  onChange={(e) => setEditForm((cur) => ({ ...cur, amount: e.target.value }))} />
+              </Field>
+              <Field label="Date">
+                <input className="input" type="date" value={editForm.spent_on}
+                  onChange={(e) => setEditForm((cur) => ({ ...cur, spent_on: e.target.value }))} />
+              </Field>
+            </div>
+            <Field label="Category">
+              <Segmented size="sm" value={editForm.category} onChange={(v) => setEditForm((cur) => ({ ...cur, category: v }))} options={EXPENSE_CATEGORIES} />
+            </Field>
+            {editForm.category === "other" && (
+              <Field label="What was this for? *">
+                <input className="input" value={editForm.category_other}
+                  onChange={(e) => setEditForm((cur) => ({ ...cur, category_other: e.target.value }))} />
+              </Field>
+            )}
+            <Field label="Site or customer">
+              <input className="input" value={editForm.site} onChange={(e) => setEditForm((cur) => ({ ...cur, site: e.target.value }))} />
+            </Field>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Field label="Paid by">
+                <input className="input" value={editForm.paid_by} onChange={(e) => setEditForm((cur) => ({ ...cur, paid_by: e.target.value }))} />
+              </Field>
+              <Field label="Paid using">
+                <Segmented size="sm" value={editForm.payment_mode} onChange={(v) => setEditForm((cur) => ({ ...cur, payment_mode: v }))} options={PAY_MODES} />
+              </Field>
+            </div>
+            <Field label="Note">
+              <input className="input" value={editForm.note} onChange={(e) => setEditForm((cur) => ({ ...cur, note: e.target.value }))} />
+            </Field>
+            {editMsg && <Notice tone={editMsg.tone}>{editMsg.text}</Notice>}
+            <button className="btn-primary h-12 w-full text-base" onClick={saveEdit}>Save changes</button>
+            <p className="text-center text-xs text-slate-500">
+              {isOwner ? "The person who entered it stays on record." : "You can change your own entries for two days."}
+            </p>
+          </div>
         </Modal>
       )}
 

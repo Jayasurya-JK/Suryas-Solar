@@ -117,9 +117,19 @@ prevent that:
   when the date is outside the open month. After saving it says which month the entry went into.
 - Tapping an entry opens **Expense detail**: amount, date, what it was for, site, who paid, how, the note, who
   entered it and when, with the bill photo and (for the owner) delete.
+- **Edit** (pencil, in the list and in the detail sheet) corrects any entry. The owner and admins can change
+  every entry; a staff member can change their own. The database has the final say: an update that is not
+  allowed comes back with no rows, and the sheet says so instead of failing silently.
+- The same words are never printed twice for one entry: "Travel speed material" under a Material chip does
+  not repeat "Material" on the line below, and the detail sheet hides the note when it is the same as what
+  the entry was for. The detail sheet shows the time it was entered, so two entries with the same name on
+  the same day can be told apart.
 
 Bill photos open **inside the app** in a lightbox. They used to use `window.open`, which an installed app
 blocks, so on a phone a tap on the camera did nothing at all.
+
+Saving an expense or an edit used to confirm only inside the add panel, which on a phone is a closed sheet.
+The message now sits at the top of the list, so it is always seen.
 
 ## Follow-ups
 
@@ -177,6 +187,9 @@ occurred" page. Now:
 Crashes are written to `public.client_errors` by `src/lib/reportError.js` (kind, message, stack, page,
 device, online state). **The table has to exist first**: paste `supabase/client-errors.sql` into the
 Supabase SQL editor once. Until then reporting fails silently and nothing else changes.
+
+The last eight problems on a phone are also kept in its own `localStorage` (`so-errors`) and listed under
+**My profile > Recent problems**, so the cause can be read on the affected phone without the database log.
 
 ## Quote extras are rupee amounts
 
