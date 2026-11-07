@@ -331,7 +331,12 @@ amount, how much of it came in and which job it belongs to.
   because those are placeholders rather than bills.
 - Access: owner and admin. Matching invoices to projects happens when they are loaded (exact name first,
   then a unique partial name); anything unmatched stays visible under **No customer link**.
-- Loaded so far by hand from the billing site: 172 invoices across FY 2025-26 and FY 2026-27.
+- **Adding new ones:** press **Add invoices**, open the invoice list on bill.gogstbill.com, select the rows,
+  copy them and paste. Tabs, double spaces and commas all work, and the columns can be in any order
+  because each piece is found by its shape (invoice number, date, amounts, customer name). A preview shows
+  what will be saved and which customer each invoice matched before anything is written. An invoice number
+  that already exists is updated, never duplicated.
+- Loaded so far: 172 invoices across FY 2025-26 and FY 2026-27.
 
 ## Projects: the whole job, end to end
 

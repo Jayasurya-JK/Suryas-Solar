@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ListSkeleton } from "@/components/Extras";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
-import { Badge, Empty, FilterTabs, Icon, Modal, PageHeader, SearchBox } from "@/components/ui";
+import InvoicePaste from "@/components/InvoicePaste";
+import { Badge, Empty, FilterTabs, Icon, IconButton, Modal, Notice, PageHeader, SearchBox } from "@/components/ui";
 import { dmy, rupees, waLink } from "@/lib/format";
 
 const num = (v) => Number(v || 0);
@@ -39,6 +40,8 @@ export default function Invoices() {
   const [q, setQ] = useState("");
   const [fy, setFy] = useState("all");
   const [detail, setDetail] = useState(null);
+  const [paste, setPaste] = useState(false);
+  const [flash, setFlash] = useState(null);
 
   const load = useCallback(async () => {
     const [v, p] = await Promise.all([
@@ -51,6 +54,15 @@ export default function Invoices() {
     setProjects(Object.fromEntries((p.data || []).map((x) => [x.id, x])));
   }, [sb]);
   useEffect(() => { load(); }, [load]);
+
+  const saveInvoices = async (list) => {
+    const { error: bad } = await sb.from("project_invoices").upsert(list, { onConflict: "invoice_no" });
+    if (bad) return bad.message;
+    await load();
+    setPaste(false);
+    setFlash(`${list.length} ${list.length === 1 ? "invoice" : "invoices"} saved from the billing book.`);
+    return null;
+  };
 
   const years = useMemo(
     () => [...new Set((rows || []).map((v) => fyOf(v.invoice_date)).filter(Boolean))].sort().reverse(),
@@ -105,7 +117,13 @@ export default function Invoices() {
 
   return (
     <>
-      <PageHeader title="GST invoices" subtitle="Every tax invoice from the billing book, matched to its customer." />
+      <PageHeader title="GST invoices" subtitle="Every tax invoice from the billing book, matched to its customer."
+        fab={{ label: "Add invoices", onClick: () => setPaste(true) }}
+        mobileActions={<IconButton icon="plus" label="Add invoices" onClick={() => setPaste(true)} />}>
+        <button type="button" className="btn-primary" onClick={() => setPaste(true)}><Icon name="plus" className="h-4 w-4" />Add invoices</button>
+      </PageHeader>
+
+      {flash && <Notice tone="green">{flash}</Notice>}
 
       {error && <div className="card p-5 text-sm text-red-600">{error}</div>}
 
@@ -185,6 +203,8 @@ export default function Invoices() {
           )}
         </>
       )}
+
+      <InvoicePaste open={paste} onClose={() => setPaste(false)} projects={projects} onSave={saveInvoices} />
 
       {detail && (
         <Modal title={`Invoice ${detail.invoice_no}`} onClose={() => setDetail(null)}>
