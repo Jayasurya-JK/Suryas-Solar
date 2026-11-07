@@ -142,6 +142,19 @@ On opening the app, anyone with the Leads screen sees **Follow up today** - ever
 with call and WhatsApp buttons. It is shown once a day per device (the same `localStorage` pattern as the
 attendance ask) and a lead leaves the list as soon as its stage becomes Won or Lost.
 
+## One Projects area, three lenses
+
+Projects, Applications and Invoices are **one register of customers seen three ways**, not three screens with
+their own copies of anything. The tab strip at the top of each (**Jobs · Applications · Invoices**) is the
+only place they are switched, and the bottom bar keeps a single **Projects** tab that stays lit on all three.
+
+- **Jobs** - the work: steps, payments, documents, notes (`/projects`).
+- **Applications** - where that customer's PM Surya Ghar papers stand (`/applications`).
+- **Invoices** - the money billed to that same customer (`/invoices`).
+
+Nothing is duplicated: the job list is the `projects` table, the portal list is the export file, the invoices
+are `project_invoices` rows, and every invoice points at its project. The three URLs still work as deep links.
+
 ## Screens each role gets
 
 The dashboard is the owner's and admins' screen - it carries company-wide money. Staff open straight onto

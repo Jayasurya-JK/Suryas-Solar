@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { ListSkeleton } from "@/components/Extras";
+import ProjectsTabs from "@/components/ProjectsTabs";
 import { Badge, Empty, FilterTabs, Icon, Modal, PageHeader, SearchBox } from "@/components/ui";
 import { dmy, waLink } from "@/lib/format";
 
@@ -77,7 +78,8 @@ export default function Applications() {
 
   return (
     <>
-      <PageHeader title="Applications" subtitle="Every PM Surya Ghar application and where it stands." />
+      <PageHeader title="Applications" subtitle="Where every PM Surya Ghar application stands." />
+      <ProjectsTabs />
 
       {error && <div className="card p-5 text-sm text-red-600">{error}</div>}
 

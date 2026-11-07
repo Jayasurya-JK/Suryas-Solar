@@ -51,18 +51,19 @@ function whyFailed(e) {
 const Ctx = createContext(null);
 export const useApp = () => useContext(Ctx);
 
-// tab: "always" is a bottom tab for everyone who can see it; "staff" only for staff. The rest sit in the
-// menu bar under the phone header and in the Admin group on desktop.
+// tab: "always" is a bottom tab for everyone who can see it; "staff" only for staff. Whatever is left,
+// minus the screens that live inside Projects, is what the burger menu holds.
+// inProjects: reachable as a tab inside the Projects screen, so it gets no entry of its own.
 const NAV = [
   { href: "/dashboard", label: "Dashboard", icon: "chart", owner: true, tab: "always" },
   { href: "/leads", label: "Leads", icon: "users", module: "leads", tab: "always" },
   { href: "/quotes", label: "Quotes", icon: "doc", module: "quotes", tab: "always" },
-  { href: "/projects", label: "Projects", icon: "sun", owner: true, tab: "always" },
+  // One register of customers; Applications and Invoices are lenses on it, not separate screens.
+  { href: "/projects", label: "Projects", icon: "sun", owner: true, tab: "always", also: ["/applications", "/invoices"] },
   { href: "/expenses", label: "Expenses", icon: "wallet", module: "expenses", tab: "always" },
-  // "Apps" keeps the sixth label whole at 11px on a 320px phone; the full name stays everywhere else.
-  { href: "/applications", label: "Applications", tabLabel: "Apps", icon: "clipboard", owner: true, group: "admin", tab: "always" },
-  { href: "/invoices", label: "Invoices", icon: "rupee", owner: true, group: "admin" },
-  // Staff mark their own day; admins open it to fill in a missed day. Staff get it as a tab, owner and admins in the menu bar.
+  { href: "/applications", label: "Applications", icon: "clipboard", owner: true, group: "admin", inProjects: true },
+  { href: "/invoices", label: "Invoices", icon: "rupee", owner: true, group: "admin", inProjects: true },
+  // Staff mark their own day; admins open it to fill in a missed day. Staff get it as a tab, owner and admins in the burger.
   { href: "/attendance", label: "Attendance", icon: "check", all: true, group: "admin", tab: "staff" },
   { href: "/activity", label: "Activity", icon: "clock", activity: true, group: "admin" },
   { href: "/settings", label: "Settings", icon: "cog", owner: true, group: "admin" },
@@ -110,6 +111,7 @@ export default function AppShell({ children }) {
   const path = usePathname();
   const scrollRef = useRef(null);
   const [menu, setMenu] = useState(false);
+  const [apps, setApps] = useState(false);
   const [checkedAt, setCheckedAt] = useState(null);
   const [pull, setPull] = useState(0);
   const [refreshing, setRefreshing] = useState(false);
@@ -388,19 +390,20 @@ export default function AppShell({ children }) {
 
   if (!isOwner && nav.length === 0) return <AccessGate profile={profile} kind="none" onRefresh={load} onSignOut={signOut} />;
 
-  // Bottom bar: every screen this person uses daily, six at most. Attendance is a staff tab only.
+  // Bottom bar: the screens this person uses every day, five at most. Attendance is a staff tab only.
   const tabs = nav.filter((n) => n.tab === "always" || (n.tab === "staff" && !isOwner));
-  // Sidebar keeps its two groups: Workspace, then Admin (Applications included, as before).
-  const main = nav.filter((n) => n.group !== "admin" || (n.tab === "staff" && !isOwner));
-  const admin = nav.filter((n) => n.group === "admin" && !(n.tab === "staff" && !isOwner));
-  // What is left of the admin group once the bottom bar has taken its share.
-  const menuBar = admin.filter((n) => !tabs.includes(n));
+  // Sidebar keeps its two groups. Screens that live inside Projects get no entry of their own.
+  const main = nav.filter((n) => !n.inProjects && (n.group !== "admin" || (n.tab === "staff" && !isOwner)));
+  const admin = nav.filter((n) => n.group === "admin" && !n.inProjects && !(n.tab === "staff" && !isOwner));
+  // The burger menu holds the rest: the screens nobody opens every hour.
+  const more = admin.filter((n) => !tabs.includes(n));
+  const isOn = (n) => path === n.href || path.startsWith(`${n.href}/`) || (n.also || []).some((h) => path === h || path.startsWith(`${h}/`));
   const roleLabelText = roleLabel(profile.role);
   const who = profile.username ? `ID: ${profile.username}` : profile.email;
   const badge = (n) => (n.href === "/settings" && state.requests > 0 ? state.requests : 0);
 
   const NavLink = ({ n }) => {
-    const active = path.startsWith(n.href);
+    const active = isOn(n);
     const b = badge(n);
     return (
       <Link href={n.href}
@@ -454,57 +457,58 @@ export default function AppShell({ children }) {
           <header className="no-print relative z-30 shrink-0 border-b border-slate-200/80 bg-white pt-[env(safe-area-inset-top)] lg:hidden">
             <div className="flex h-14 items-center justify-between px-4">
               <Image src="/logo.png" alt="Surya's Solar" width={120} height={51} className="h-auto w-[104px]" priority />
-              <div className="relative">
-                <button onClick={() => setMenu(!menu)} className="flex items-center rounded-full p-1 hover:bg-slate-100" aria-label="Account menu">
-                  <Avatar name={profile.full_name || profile.email} size="sm" />
-                </button>
-                {menu && (
-                  <>
-                    <div className="fixed inset-0 z-40" onClick={() => setMenu(false)} />
-                    <div className="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
-                      <div className="px-3 py-2">
-                        <p className="truncate text-sm font-semibold text-slate-900">{profile.full_name}</p>
-                        <p className="truncate text-xs text-slate-500">{who} · {roleLabelText}</p>
+              <div className="flex items-center gap-0.5">
+                <div className="relative">
+                  <button onClick={() => { setMenu(!menu); setApps(false); }} className="flex items-center rounded-full p-1 hover:bg-slate-100" aria-label="Account menu">
+                    <Avatar name={profile.full_name || profile.email} size="sm" />
+                  </button>
+                  {menu && (
+                    <>
+                      <div className="fixed inset-0 z-40" onClick={() => setMenu(false)} />
+                      <div className="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
+                        <div className="px-3 py-2">
+                          <p className="truncate text-sm font-semibold text-slate-900">{profile.full_name}</p>
+                          <p className="truncate text-xs text-slate-500">{who} · {roleLabelText}</p>
+                        </div>
+                        <Link href="/profile" onClick={() => setMenu(false)} className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+                          <Icon name="users" className="h-4 w-4" />My profile
+                        </Link>
+                        <button onClick={signOut} className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50">
+                          <Icon name="logout" className="h-4 w-4" />Sign out
+                        </button>
                       </div>
-                      <Link href="/profile" onClick={() => setMenu(false)} className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50">
-                        <Icon name="users" className="h-4 w-4" />My profile
-                      </Link>
-                      {menuBar.length === 1 && menuBar.map((n) => {
-                        const b = badge(n);
-                        const active = path.startsWith(n.href);
-                        return (
-                          <Link key={n.href} href={n.href} onClick={() => setMenu(false)}
-                            className={`flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold hover:bg-slate-50 ${active ? "text-primary" : "text-slate-700"}`}>
-                            <Icon name={n.icon} className="h-4 w-4" />{n.label}
-                            {b > 0 && <span className="ml-auto rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold text-white">{b}</span>}
-                          </Link>
-                        );
-                      })}
-                      <button onClick={signOut} className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50">
-                        <Icon name="logout" className="h-4 w-4" />Sign out
-                      </button>
-                    </div>
-                  </>
+                    </>
+                  )}
+                </div>
+                {more.length > 0 && (
+                  <div className="relative">
+                    <button onClick={() => { setApps(!apps); setMenu(false); }} className="rounded-lg p-1.5 text-slate-600 hover:bg-slate-100" aria-label="All screens" aria-expanded={apps}>
+                      <Icon name="bars" className="h-6 w-6" />
+                    </button>
+                    {apps && (
+                      <>
+                        <div className="fixed inset-0 z-40" onClick={() => setApps(false)} />
+                        <div className="absolute right-0 top-11 z-50 w-60 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
+                          <p className="px-3 pb-1 pt-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400">More screens</p>
+                          {more.map((n) => {
+                            const b = badge(n);
+                            const active = isOn(n);
+                            return (
+                              <Link key={n.href} href={n.href} onClick={() => setApps(false)}
+                                className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold hover:bg-slate-50 ${active ? "text-primary" : "text-slate-700"}`}>
+                                <Icon name={n.icon} className={`h-[18px] w-[18px] ${active ? "text-primary" : "text-slate-400"}`} />
+                                <span className="flex-1">{n.label}</span>
+                                {b > 0 && <span className="rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold text-white">{b}</span>}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
-            {/* A real menu bar: plain words in a thin strip on the header's own white, one hairline under
-                the open screen. A lone item would look lost, so it moves into the avatar menu instead. */}
-            {menuBar.length > 1 && (
-              <nav aria-label="More screens" className="no-scrollbar flex items-center gap-6 overflow-x-auto px-4">
-                {menuBar.map((n) => {
-                  const active = path.startsWith(n.href);
-                  const b = badge(n);
-                  return (
-                    <Link key={n.href} href={n.href}
-                      className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap py-2 leading-5 transition-colors ${active ? "font-bold text-slate-900" : "font-medium text-slate-600 hover:text-slate-900"}`}>
-                      <span className={`border-b-2 pb-0.5 text-[13px] ${active ? "border-primary" : "border-transparent"}`}>{n.label}</span>
-                      {b > 0 && <span className="rounded-full bg-accent px-1.5 text-[10px] font-bold leading-4 text-white">{b}</span>}
-                    </Link>
-                  );
-                })}
-              </nav>
-            )}
           </header>
 
           <main id="scroll" ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain"
@@ -536,14 +540,14 @@ export default function AppShell({ children }) {
           <nav className="no-print relative z-30 grid shrink-0 select-none border-t border-slate-200/80 bg-white pb-[env(safe-area-inset-bottom)] lg:hidden"
             style={{ gridTemplateColumns: `repeat(${tabCount}, minmax(0, 1fr))` }}>
             {tabs.map((n) => {
-              const active = path.startsWith(n.href);
+              const active = isOn(n);
               return (
                 <Link key={n.href} href={n.href} className="flex min-w-0 flex-col items-center gap-1 pb-2 pt-2">
                   <span className={`flex h-8 w-full max-w-14 items-center justify-center rounded-full ${active ? "bg-primary-50 text-primary" : "text-slate-500"}`}>
                     <Icon name={n.icon} className="h-[22px] w-[22px] shrink-0" />
                   </span>
                   <span className={`block w-full whitespace-nowrap text-center text-[10px] font-semibold min-[360px]:text-[11px] ${active ? "text-primary" : "text-slate-500"} [@media(max-height:500px)]:hidden`}>
-                    {n.tabLabel || n.label}
+                    {n.label}
                   </span>
                 </Link>
               );

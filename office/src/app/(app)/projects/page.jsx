@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ListSkeleton } from "@/components/Extras";
+import ProjectsTabs from "@/components/ProjectsTabs";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import SetupNeeded from "@/components/SetupNeeded";
@@ -267,6 +268,7 @@ export default function Projects() {
     return (
       <>
         <PageHeader title="Projects" subtitle="Every customer, from the survey to the last payment." />
+        <ProjectsTabs />
         <SetupNeeded title="Projects" />
         <PortalList />
       </>
@@ -281,6 +283,7 @@ export default function Projects() {
         {isOwner && <button className="btn-ghost" onClick={importPortal} disabled={busy}><Icon name="sun" className="h-4 w-4" />Add portal customers</button>}
         {isOwner && <button className="btn-ghost" onClick={() => setPaste(true)}><Icon name="plus" className="h-4 w-4" />Paste a list</button>}
       </PageHeader>
+      <ProjectsTabs />
 
       {msg && <div className="mb-4"><Notice tone={msg.tone}>{msg.text}</Notice></div>}
 

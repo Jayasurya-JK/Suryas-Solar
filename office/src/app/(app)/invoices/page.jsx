@@ -3,10 +3,11 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ListSkeleton } from "@/components/Extras";
+import ProjectsTabs from "@/components/ProjectsTabs";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import InvoicePaste from "@/components/InvoicePaste";
-import { Badge, Empty, FilterTabs, Icon, IconButton, Modal, Notice, PageHeader, SearchBox } from "@/components/ui";
+import { Badge, Empty, FilterTabs, Icon, Modal, Notice, PageHeader, SearchBox } from "@/components/ui";
 import { dmy, rupees, waLink } from "@/lib/format";
 
 const num = (v) => Number(v || 0);
@@ -142,10 +143,10 @@ export default function Invoices() {
   return (
     <>
       <PageHeader title="GST invoices" subtitle="Every tax invoice from the billing book, matched to its customer."
-        fab={{ label: "Add invoices", onClick: () => setPaste(true) }}
-        mobileActions={<IconButton icon="plus" label="Add invoices" onClick={() => setPaste(true)} />}>
+        fab={{ label: "Add invoices", onClick: () => setPaste(true) }}>
         <button type="button" className="btn-primary" onClick={() => setPaste(true)}><Icon name="plus" className="h-4 w-4" />Add invoices</button>
       </PageHeader>
+      <ProjectsTabs />
 
       {flash && <Notice tone={flash.tone}>{flash.text}</Notice>}
 
@@ -161,7 +162,7 @@ export default function Invoices() {
             ].map((s) => (
               <div key={s.label} className="card flex-1 px-3 py-2.5">
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">{s.label}</p>
-                <p className={`mt-0.5 text-base font-bold sm:text-xl ${s.colour}`}>{s.value}</p>
+                <p className={`mt-0.5 whitespace-nowrap text-[13px] font-bold min-[360px]:text-base sm:text-xl ${s.colour}`}>{s.value}</p>
               </div>
             ))}
           </div>
