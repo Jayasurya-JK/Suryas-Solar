@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
@@ -29,7 +29,7 @@ export default function ProjectDetail() {
   const [edit, setEdit] = useState(false);
   const [form, setForm] = useState(null);
   const [notes, setNotes] = useState("");
-  const stepOnce = useOnce();
+  const busySteps = useRef(new Set());
   const payOnce = useOnce();
   const saveOnce = useOnce();
 
@@ -56,19 +56,27 @@ export default function ProjectDetail() {
   const flash = (tone, text) => { setMsg({ tone, text }); setTimeout(() => setMsg(null), 4000); };
 
   // Ticking a step is the real work: it dates the step and moves the job on to the next open one.
-  const toggleStep = (s) =>
-    stepOnce(async () => {
-      const next = s.status === "done" ? "pending" : "done";
-      const { error } = await sb.from("project_steps")
-        .update({ status: next, done_on: next === "done" ? today() : null })
-        .eq("id", s.id);
-      if (error) return flash("red", error.message);
-      const list = steps.map((x) => (x.id === s.id ? { ...x, status: next } : x));
-      setSteps(list);
-      const moving = list.find((x) => x.status !== "done") || list[list.length - 1];
-      await sb.from("projects").update({ stage: moving.key }).eq("id", id);
-      load();
-    });
+  // Each step guards itself, so several can be ticked in a row without one tap swallowing the next.
+  const toggleStep = async (s) => {
+    if (busySteps.current.has(s.id)) return;
+    busySteps.current.add(s.id);
+    const next = s.status === "done" ? "pending" : "done";
+    // Show the tick at once, then say it is saved: the status line is far above the fold on a phone.
+    setSteps((list) => list.map((x) => (x.id === s.id ? { ...x, status: next, done_on: next === "done" ? today() : null } : x)));
+    flash("green", next === "done" ? `${s.name} - saved` : `${s.name} - reopened`);
+    const { error } = await sb.from("project_steps")
+      .update({ status: next, done_on: next === "done" ? today() : null })
+      .eq("id", s.id);
+    busySteps.current.delete(s.id);
+    if (error) {
+      flash("red", error.message);
+      return load();
+    }
+    const list = steps.map((x) => (x.id === s.id ? { ...x, status: next } : x));
+    const moving = list.find((x) => x.status !== "done") || list[list.length - 1];
+    await sb.from("projects").update({ stage: moving.key }).eq("id", id);
+    load();
+  };
 
   const addPayment = () =>
     payOnce(async () => {
@@ -122,7 +130,13 @@ export default function ProjectDetail() {
         <Icon name="back" className="h-4 w-4" />All projects
       </Link>
 
-      {msg && <div className="mb-4"><Notice tone={msg.tone}>{msg.text}</Notice></div>}
+      {msg && (
+        <div className="pointer-events-none fixed inset-x-4 top-[4.5rem] z-50 mx-auto max-w-sm lg:top-6">
+          <div className={`rounded-xl px-3.5 py-2.5 text-sm font-semibold shadow-lg ${msg.tone === "red" ? "bg-red-600 text-white" : "bg-slate-900 text-white"}`}>
+            {msg.text}
+          </div>
+        </div>
+      )}
 
       <div className="card p-5">
         <div className="flex flex-wrap items-start justify-between gap-4">
@@ -152,7 +166,7 @@ export default function ProjectDetail() {
         <section className="card divide-y divide-slate-100">
           <div className="flex items-center justify-between p-5">
             <h2 className="font-bold text-slate-900">Work steps</h2>
-            <span className="text-xs text-slate-500">Tap a step to tick it</span>
+            <span className="text-xs text-slate-500">Tap to tick - it saves straight away</span>
           </div>
           {steps.map((s) => (
             <button key={s.id} type="button" onClick={() => toggleStep(s)} className="flex w-full items-center gap-3 p-4 text-left hover:bg-slate-50">
