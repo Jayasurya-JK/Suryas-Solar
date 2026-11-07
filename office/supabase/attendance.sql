@@ -53,3 +53,57 @@ create policy "admin changes any day" on public.attendance for update to authent
 
 create policy "admin deletes a day" on public.attendance for delete to authenticated
   using (private.is_owner());
+
+-- Attendance is part of the activity history: every mark, correction and cleared day is logged. Without this
+-- trigger, marking a day left no trace on the Activity screen.
+create or replace function private.log_attendance() returns trigger
+language plpgsql security definer set search_path = public as $$
+declare
+  uid uuid := auth.uid();
+  actor text;
+  target text;
+  d text;
+  st text;
+  prev text;
+  act text;
+  sm text;
+begin
+  select full_name into actor from public.profiles where id = uid;
+
+  if TG_OP = 'DELETE' then
+    select full_name into target from public.profiles where id = OLD.user_id;
+    d := to_char(OLD.work_date, 'DD.MM.YYYY');
+    act := 'delete';
+    sm := 'Cleared the attendance mark of ' || coalesce(target, 'a team member') || ' for ' || d;
+  else
+    select full_name into target from public.profiles where id = NEW.user_id;
+    d := to_char(NEW.work_date, 'DD.MM.YYYY');
+    st := case NEW.status when 'working' then 'Working' when 'partial' then 'Working partially' else 'Leave' end;
+    if TG_OP = 'INSERT' then
+      act := 'create';
+      sm := case when NEW.user_id = uid then 'Marked ' || st || ' for ' || d
+                 else 'Marked ' || coalesce(target, 'a team member') || ' ' || st || ' on ' || d end;
+    else
+      act := 'update';
+      if NEW.status is not distinct from OLD.status and NEW.note is not distinct from OLD.note then
+        return NEW;  -- nothing a person would call a change
+      end if;
+      prev := case OLD.status when 'working' then 'Working' when 'partial' then 'Working partially' else 'Leave' end;
+      sm := case when NEW.user_id = uid then 'Changed the mark from ' || prev || ' to ' || st || ' for ' || d
+                 else 'Changed ' || coalesce(target, 'a team member') || ' from ' || prev || ' to ' || st || ' on ' || d end;
+    end if;
+  end if;
+
+  insert into public.activity_log (actor, actor_name, table_name, record_id, action, label, summary)
+  values (uid,
+          coalesce(actor, case when uid is null then 'System' else 'Unknown' end),
+          'attendance',
+          coalesce(NEW.id, OLD.id),
+          act,
+          left(coalesce(target, 'A team member') || ' · ' || d, 120),
+          sm);
+  return coalesce(NEW, OLD);
+end $$;
+
+create trigger audit_attendance after insert or update or delete on public.attendance
+  for each row execute function private.log_attendance();

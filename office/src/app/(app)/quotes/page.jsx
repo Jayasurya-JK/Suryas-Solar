@@ -5,12 +5,14 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ListSkeleton } from "@/components/Extras";
 import { supabase } from "@/lib/supabase";
-import { Avatar, Badge, Empty, FilterTabs, Icon, IconButton, PageHeader, SearchBox, Spinner } from "@/components/ui";
+import { Avatar, Badge, Empty, EntryOnlyNote, FilterTabs, Icon, IconButton, PageHeader, SearchBox, Spinner } from "@/components/ui";
 import { QUOTE_STATUSES, dmy, downloadCsv, labelOf, rupees, today } from "@/lib/format";
+import { useApp } from "@/components/AppShell";
 
 export default function Quotes() {
   const sb = supabase();
   const router = useRouter();
+  const { profile } = useApp();
   const [quotes, setQuotes] = useState(null);
   const [status, setStatus] = useState("all");
   const [q, setQ] = useState("");
@@ -53,6 +55,10 @@ export default function Quotes() {
         <button className="btn-ghost" onClick={exportCsv}><Icon name="download" className="h-4 w-4" />Excel</button>
         <Link href="/quotes/new" className="btn-primary"><Icon name="plus" className="h-4 w-4" />New quote</Link>
       </PageHeader>
+
+      {(profile.entry_only || []).includes("quotes") && (
+        <EntryOnlyNote>Entry only. You can make quotes. Quotes the team made for other customers are not shown here.</EntryOnlyNote>
+      )}
 
       <div className="mb-4 space-y-3 lg:flex lg:items-center lg:justify-between lg:gap-4 lg:space-y-0">
         <div className="lg:order-2 lg:w-80"><SearchBox value={q} onChange={setQ} placeholder="Search ref, name, mobile or place" /></div>

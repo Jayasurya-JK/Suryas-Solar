@@ -367,21 +367,38 @@ function PackagesTab() {
   );
 }
 
-function AccessChips({ perms = [], owner = false }) {
+function AccessChips({ perms = [], owner = false, entryOnly = [] }) {
   if (owner) return <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-semibold text-accent">Full access</span>;
   if (!perms.length) return <span className="text-xs text-slate-500">No screens yet</span>;
   return (
     <span className="flex flex-wrap gap-1.5">
-      {perms.map((p) => <span key={p} className="rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-semibold text-primary">{permLabel(p)}</span>)}
+      {perms.map((p) => (
+        <span key={p} className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${entryOnly.includes(p) ? "bg-slate-100 text-slate-600" : "bg-primary-50 text-primary"}`}>
+          {permLabel(p)}{entryOnly.includes(p) ? " · entry only" : ""}
+        </span>
+      ))}
     </span>
   );
 }
 
-function ScreenSwitches({ perms, onChange }) {
+// Screens a person holds. When `entryOnly` is passed (the owner managing a staff member) each screen that
+// is switched on gets a second switch: add records but do not see what the rest of the team added.
+function ScreenSwitches({ perms, onChange, entryOnly, onEntryOnly }) {
   const toggle = (id) => onChange(perms.includes(id) ? perms.filter((x) => x !== id) : [...perms, id]);
+  const toggleEntry = (id) => onEntryOnly(entryOnly.includes(id) ? entryOnly.filter((x) => x !== id) : [...entryOnly, id]);
   return (
     <div className="space-y-2">
-      {MODULES.map((m) => <Switch key={m.id} checked={perms.includes(m.id)} onChange={() => toggle(m.id)} label={m.label} hint={m.hint} />)}
+      {MODULES.map((m) => (
+        <div key={m.id}>
+          <Switch checked={perms.includes(m.id)} onChange={() => toggle(m.id)} label={m.label} hint={m.hint} />
+          {entryOnly && perms.includes(m.id) && (
+            <div className="mt-1 pl-3">
+              <Switch checked={entryOnly.includes(m.id)} onChange={() => toggleEntry(m.id)} label="Entry only"
+                hint="They can add here, but do not see what others added." />
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
@@ -439,6 +456,7 @@ function ManageForm({ person, onDone, onCancel }) {
   const canSetRole = canGiveAdmin && (profile?.role === "owner" || person.role !== "admin");
   const [name, setName] = useState(person.full_name || "");
   const [perms, setPerms] = useState(person.perms || []);
+  const [entryOnly, setEntryOnly] = useState(person.entry_only || []);
   const [role, setRole] = useState(person.role === "admin" ? "admin" : "staff");
   const [active, setActive] = useState(person.active !== false);
   const [sees, setSees] = useState(!!person.sees_activity);
@@ -453,6 +471,8 @@ function ManageForm({ person, onDone, onCancel }) {
     const patch = { full_name: name.trim(), perms, active, role };
     // Only the owner hands out the activity history, and the owner always keeps it.
     if (canGiveAdmin && person.role !== "owner") patch.sees_activity = sees;
+    // Entry-only is the owner's decision too. Keep it to screens the person actually has.
+    if (profile?.role === "owner" && person.role !== "owner") patch.entry_only = entryOnly.filter((m) => perms.includes(m));
     const { error } = await sb.from("profiles").update(patch).eq("id", person.id);
     setBusy(false);
     if (error) return setErr(error.message);
@@ -482,7 +502,7 @@ function ManageForm({ person, onDone, onCancel }) {
             <p className="mt-1.5 text-xs text-slate-500">
               {role === "admin"
                 ? "Sees every screen and can approve people. Same power as the owner, except the activity history."
-                : "Sees only the screens ticked below, and only their own records."}
+                : "Sees the screens ticked below. A screen can be marked entry only, so they add records without seeing the team's."}
             </p>
           </>
         ) : (
@@ -494,8 +514,11 @@ function ManageForm({ person, onDone, onCancel }) {
       </div>
       <div className={role === "admin" ? "pointer-events-none opacity-50" : ""}>
         <span className="label">Screens</span>
-        <ScreenSwitches perms={perms} onChange={setPerms} />
+        <ScreenSwitches perms={perms} onChange={setPerms}
+          entryOnly={role === "admin" || profile?.role !== "owner" ? undefined : entryOnly}
+          onEntryOnly={setEntryOnly} />
         {role === "admin" && <p className="mt-1 text-xs text-slate-500">An admin already sees every screen.</p>}
+        {role !== "admin" && profile?.role !== "owner" && <p className="mt-1 text-xs text-slate-500">Only the owner can mark a screen entry only.</p>}
       </div>
       <Switch checked={active} onChange={setActive} label="Access is on" hint="Switch off to stop this person using the app. Their records are kept." />
       {canGiveAdmin && person.role !== "owner" && (
@@ -609,7 +632,7 @@ function TeamTab() {
                 <div className="min-w-0 flex-1">
                   <p className="break-words font-semibold text-slate-900">{u.full_name}{self && <span className="ml-1.5 text-xs font-medium text-slate-500">(you)</span>}</p>
                   <p className="break-all text-[13px] text-slate-500">{u.username ? `User ID: ${u.username}` : u.email}</p>
-                  <div className="mt-2"><AccessChips perms={u.perms} owner={isOwnerRow || isAdminRow} /></div>
+                  <div className="mt-2"><AccessChips perms={u.perms} owner={isOwnerRow || isAdminRow} entryOnly={u.entry_only} /></div>
                   <p className="mt-2 text-xs text-slate-500">{u.last_seen_at ? `Active ${ago(u.last_seen_at)}` : "Never signed in"}</p>
                 </div>
                 <div className="flex shrink-0 flex-col items-end gap-2">

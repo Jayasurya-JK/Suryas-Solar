@@ -7,7 +7,7 @@ import { ListSkeleton } from "@/components/Extras";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import LeadForm from "@/components/LeadForm";
-import { Avatar, Badge, Empty, FilterTabs, Icon, IconButton, Modal, PageHeader, SearchBox, Spinner } from "@/components/ui";
+import { Avatar, Badge, Empty, EntryOnlyNote, FilterTabs, Icon, IconButton, Modal, PageHeader, SearchBox, Spinner } from "@/components/ui";
 import { LEAD_SOURCES, LEAD_STATUSES, dmy, downloadCsv, labelOf, sourceLabel, today, waLink } from "@/lib/format";
 
 const isOpen = (l) => !["won", "lost"].includes(l.status);
@@ -91,6 +91,10 @@ export default function Leads() {
         <button className="btn-ghost" onClick={exportCsv}><Icon name="download" className="h-4 w-4" />Excel</button>
         <button className="btn-primary" onClick={() => setAdding(true)}><Icon name="plus" className="h-4 w-4" />Add lead</button>
       </PageHeader>
+
+      {(profile.entry_only || []).includes("leads") && (
+        <EntryOnlyNote>Entry only. You can add leads and follow up the ones you added. The team&apos;s other leads are not shown here.</EntryOnlyNote>
+      )}
 
       <div className="mb-4 space-y-3 lg:flex lg:items-center lg:justify-between lg:gap-4 lg:space-y-0">
         <div className="lg:w-80 lg:order-2"><SearchBox value={q} onChange={setQ} placeholder="Search name, mobile or town" /></div>

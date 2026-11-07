@@ -37,9 +37,10 @@ They only add things and replace the access rules - no table, row or file is del
 | `admin-role.sql` | The `admin` role (same powers as the owner) and the guard that protects the owner account |
 | `activity-viewers.sql` | Who exactly may read the activity history (`profiles.sees_activity`), and the final `guard_owner_row` |
 | `profile-and-pin.sql` | Own-name editing and the PIN functions (`set_my_pin`, `reset_member_pin`) |
-| `attendance.sql` | Daily attendance table, its grants and rules (staff mark today only; admins back-fill) |
+| `attendance.sql` | Daily attendance table, its grants and rules (staff mark today only; admins back-fill), plus the trigger that logs it |
+| `entry-only.sql` | `profiles.entry_only` - staff who may add records but not see the team's, per screen |
 
-All four are already applied to the live project (6 Nov 2026). They are repeatable, so they stay here as the
+All of them are already applied to the live project (7 Nov 2026). They are repeatable, so they stay here as the
 setup scripts for a fresh project. Run them in that order.
 
 ### Sign-ups only work if "Confirm email" is off
@@ -71,6 +72,11 @@ Without the identity row and the confirmation date they cannot sign in.
   team's records, not just their own, so two people following up on the same customer are looking at the same
   list. What they may change is narrower: any lead or quote on the screens they hold, but only the expenses
   they entered themselves (for two days), and only the owner can delete.
+- **Entry only** - a per-screen switch the owner can set on a staff member (Settings > Team > Manage). On that
+  screen the person can add records but sees only the ones they added, so they key in leads, expenses or quotes
+  without reading the team's. Their own entries stay visible so they can correct a mistake. Enforced in the
+  database (`profiles.entry_only` plus `private.entry_only()`), so calling the API directly does not get around
+  it, and an admin can neither set nor clear it.
 - **Pending** - someone who tapped "Request access" on the sign-in page. They see a waiting screen that
   opens by itself once an admin approves. Pending people get nothing until then.
 
@@ -188,6 +194,11 @@ database too - a hidden screen is not the only thing stopping someone.
 Writes are recorded by database triggers (`private.log_change`), so they are captured even if a change is
 made outside the app. Things that change no row - sign-in, PDF download, WhatsApp send, bill photo view -
 are recorded by the app calling `log_event`.
+
+Attendance is logged by its own trigger (`private.log_attendance`, in `attendance.sql`), because it is a row
+per person per day rather than an edit: "Marked Working for 07.11.2026", "Changed Manojkumar from Working to
+Leave on 04.11.2026", "Cleared the attendance mark of Monisha for 06.11.2026". A save that changes nothing is
+not logged, so correcting the same day twice does not fill the feed.
 
 ## Before pushing
 

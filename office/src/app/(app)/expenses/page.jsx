@@ -5,7 +5,7 @@ import { AutoText, ListSkeleton, MonthPicker } from "@/components/Extras";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import { confirmAction } from "@/components/Confirm";
-import { Empty, Field, FilterTabs, Icon, IconButton, Modal, Notice, PageHeader, Segmented, Spinner } from "@/components/ui";
+import { Empty, EntryOnlyNote, Field, FilterTabs, Icon, IconButton, Modal, Notice, PageHeader, Segmented, Spinner } from "@/components/ui";
 import { EXPENSE_CATEGORIES, PAY_MODES, dmy, downloadCsv, labelOf, rupees, today } from "@/lib/format";
 
 // Shrink phone photos to ~1600px JPEG before upload (keeps storage small).
@@ -155,6 +155,10 @@ export default function Expenses() {
         mobileActions={<IconButton icon="download" label="Download Excel" onClick={exportCsv} />}>
         <button className="btn-ghost" onClick={exportCsv}><Icon name="download" className="h-4 w-4" />Excel</button>
       </PageHeader>
+
+      {(profile.entry_only || []).includes("expenses") && (
+        <EntryOnlyNote>Entry only. You can record what you spent. The team&apos;s other entries are not shown here.</EntryOnlyNote>
+      )}
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,23rem)_minmax(0,1fr)]">
         <div className="card hidden h-fit p-5 lg:sticky lg:top-8 lg:block">

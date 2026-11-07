@@ -4,7 +4,7 @@ import {
 
 const KIND = {
   leads: "lead", quotes: "quote", expenses: "expense", packages: "price package", brands: "brand",
-  app_settings: "company settings", profiles: "team member",
+  app_settings: "company settings", profiles: "team member", attendance: "attendance",
 };
 const LABELS = {
   leads: {
@@ -87,6 +87,17 @@ export function deletedSummary(entry) {
 }
 
 export function describe(entry) {
+  // Attendance rows carry their own sentence ("Marked Working for 07.11.2026"), so the actor name in front of
+  // it reads as plain English and nothing has to be assembled here.
+  if (entry.table_name === "attendance") {
+    return {
+      verb: entry.summary || "changed an attendance mark",
+      subject: "",
+      suffix: "",
+      tone: entry.action === "delete" ? "red" : entry.action === "create" ? "green" : "blue",
+      href: null,
+    };
+  }
   const kind = KIND[entry.table_name] || entry.table_name || "";
   const c = entry.changes || {};
   let verb = "", subject = entry.label || "", suffix = "", tone = "blue";
@@ -130,6 +141,7 @@ export const TYPE_FILTERS = [
   { id: "leads", label: "Leads", tables: ["leads"] },
   { id: "quotes", label: "Quotes", tables: ["quotes"] },
   { id: "expenses", label: "Expenses", tables: ["expenses"] },
+  { id: "attendance", label: "Attendance", tables: ["attendance"] },
   { id: "signins", label: "Sign-ins", actions: ["login", "logout"] },
   { id: "team", label: "Team and settings", tables: ["profiles", "app_settings", "packages", "brands"] },
 ];
