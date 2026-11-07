@@ -691,6 +691,18 @@ export default function Settings() {
     if (t && TABS.some((x) => x.id === t)) setTab(t);
   }, []);
   if (!isOwner) return null;
+  // Company wording lives in one settings row. If that row did not arrive, say so instead of crashing the screen.
+  if (!settings) {
+    return (
+      <>
+        <PageHeader title="Settings" subtitle="Company details, quote wording, price packages and who can log in." />
+        <Notice tone="amber">
+          <span>The company settings did not load. Check the connection, then tap here to try again.</span>
+          <button type="button" onClick={() => reload()} className="ml-2 font-bold underline">Retry</button>
+        </Notice>
+      </>
+    );
+  }
   return (
     <>
       <PageHeader title="Settings" subtitle="Company details, quote wording, price packages and who can log in." />

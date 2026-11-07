@@ -153,6 +153,31 @@ Every editor also updates state functionally (`setQ(cur => ...)`). Reading the p
 render closure meant one field could write a stale copy of the others back, which is how values in one box
 appeared to change by themselves.
 
+### When the connection dies mid-load
+
+The app used to sit on a blank spinner for ever if `auth.getSession()` or the first profile query failed,
+and any screen that threw showed the browser's white "Application error: a client-side exception has
+occurred" page. Now:
+
+- The boot runs its queries in one `Promise.all` (one round trip instead of six) and never renders a
+  spinner without words. After 7 seconds it says the connection is slow and offers **Try again**.
+- A failed boot shows a **No connection** card. It retries by itself after 2, 4, 8, 15 and 30 seconds, and
+  **Try again** recovers the moment the signal is back (verified by blocking every `supabase.co` request,
+  then unblocking it).
+- The last good profile, settings, team and brands are kept in `sessionStorage` (`so-boot-v1`) so reopening
+  the installed app paints the real screens straight away instead of a spinner. Signing out clears it.
+- `app/(app)/error.jsx` catches a screen that throws and shows it in place of just that page - the sidebar
+  and tabs keep working, so nobody is stuck on a dead screen.
+- `app/error.jsx` and `app/global-error.jsx` cover the routes outside the shell and a failure of the root
+  layout. The global one carries its own inline styles because the stylesheet may not have loaded.
+- If the browser asks for a script from a build that is no longer live (`Loading chunk ... failed`, the
+  usual cause of the white error page after a deploy) `watchErrors` reloads once, guarded to one reload per
+  30 seconds and skipped while a screen has unsaved edits.
+
+Crashes are written to `public.client_errors` by `src/lib/reportError.js` (kind, message, stack, page,
+device, online state). **The table has to exist first**: paste `supabase/client-errors.sql` into the
+Supabase SQL editor once. Until then reporting fails silently and nothing else changes.
+
 ## Quote extras are rupee amounts
 
 Structure, pillars and extra floors are typed as **amounts in rupees**, each with its own box. They used to

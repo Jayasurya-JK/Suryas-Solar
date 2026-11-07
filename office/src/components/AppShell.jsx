@@ -10,8 +10,43 @@ import InstallBanner from "@/components/InstallBanner";
 import VersionBar from "@/components/VersionBar";
 import ConfirmHost from "@/components/Confirm";
 import NavProgress from "@/components/NavProgress";
+import AppError from "@/components/AppError";
 import { StatusPicker, markAttendance as markAttendanceRow } from "@/components/Attendance";
 import { ago, dmy, isOwnerRole, permLabel, roleLabel, today, waLink } from "@/lib/format";
+import { reportError } from "@/lib/reportError";
+
+// What the app already knows about this person, kept for the current tab only. Opening the installed app
+// again paints the right screens straight away instead of a spinner while the network catches up.
+const BOOT_KEY = "so-boot-v1";
+const BOOT_MAX_AGE = 12 * 60 * 60 * 1000;
+
+function readBoot() {
+  try {
+    const raw = sessionStorage.getItem(BOOT_KEY);
+    if (!raw) return null;
+    const saved = JSON.parse(raw);
+    if (!saved?.profile || Date.now() - (saved.at || 0) > BOOT_MAX_AGE) return null;
+    return saved;
+  } catch { return null; }
+}
+
+function writeBoot(state) {
+  try {
+    const { profile, settings, team, brands, signUrl } = state;
+    sessionStorage.setItem(BOOT_KEY, JSON.stringify({ profile, settings, team, brands, signUrl, at: Date.now() }));
+  } catch {}
+}
+
+function clearBoot() {
+  try { sessionStorage.removeItem(BOOT_KEY); } catch {}
+}
+
+// A flaky connection shows up as a thrown fetch, not an error object, so normalise both.
+function whyFailed(e) {
+  const m = String(e?.message || e?.reason?.message || e || "");
+  if (/fetch|network|load failed|timeout|aborted/i.test(m)) return "network";
+  return "unknown";
+}
 
 const Ctx = createContext(null);
 export const useApp = () => useContext(Ctx);
@@ -77,61 +112,114 @@ export default function AppShell({ children }) {
   const [askAtt, setAskAtt] = useState(false);
   const [showDue, setShowDue] = useState(false);
   const pullStart = useRef(null);
-  const [state, setState] = useState({ loading: true, profile: null, settings: null, team: [], brands: [], signUrl: null, requests: 0, att: null, due: [] });
+  const [state, setState] = useState({ loading: true, profile: null, settings: null, team: [], brands: [], signUrl: null, requests: 0, att: null, due: [], fail: null, slow: false });
+  const tries = useRef(0);
 
   const load = useCallback(async () => {
     // getSession reads the cookie and refreshes it if it has expired. It is the only place that refreshes,
     // so two tabs or the server can never fight over the same refresh token.
-    const { data: { session } } = await sb.auth.getSession();
+    let session;
+    try {
+      const { data } = await sb.auth.getSession();
+      session = data?.session;
+    } catch (e) {
+      // Losing the network is not a sign-out. Keep whatever is on screen and offer a retry.
+      setState((s) => ({ ...s, loading: false, slow: false, fail: { kind: s.profile ? "offline" : whyFailed(e), at: Date.now(), message: String(e?.message || e || "") } }));
+      return;
+    }
     if (!session?.user) {
+      clearBoot();
       try { await sb.auth.signOut(); } catch {}
       return router.replace("/login");
     }
-    const { data: profile, error } = await sb.from("profiles").select("*").eq("id", session.user.id).single();
-    // A dead token comes back as a JWT error rather than an empty row - clear it so the login page starts clean.
-    if (error && /jwt|token|401|PGRST301|not signed in/i.test(`${error.message} ${error.code}`)) {
-      try { await sb.auth.signOut(); } catch {}
-      return router.replace("/login");
-    }
-    const member = profile && (isOwnerRole(profile.role) || profile.role === "staff") && profile.active !== false;
-    // Staff are asked once a day how the day is going, so their mark is known before they start work.
-    let att = null;
-    if (member && profile.role === "staff") {
-      const { data: row } = await sb.from("attendance").select("status").eq("user_id", session.user.id).eq("work_date", today()).maybeSingle();
-      att = row?.status || null;
-    }
-    let settings = null, team = [], brands = [], requests = 0, signUrl = null, due = [];
-    if (member) {
-      const [s, t, b] = await Promise.all([
-        sb.from("app_settings").select("*").eq("id", 1).single(),
-        sb.from("profiles").select("id, full_name, email, username, role, perms, active").neq("role", "pending").order("full_name"),
-        sb.from("brands").select("*").order("sort"),
-      ]);
-      settings = s.data;
-      team = t.data || [];
-      brands = b.data || [];
-      if (isOwnerRole(profile.role)) {
-        const { data: pend } = await sb.from("profiles").select("id").eq("role", "pending").eq("active", true);
-        requests = (pend || []).length;
+
+    try {
+      const { data: profile, error } = await sb.from("profiles").select("*").eq("id", session.user.id).single();
+      // A dead token comes back as a JWT error rather than an empty row - clear it so the login page starts clean.
+      if (error && /jwt|token|401|PGRST301|not signed in/i.test(`${error.message} ${error.code}`)) {
+        clearBoot();
+        try { await sb.auth.signOut(); } catch {}
+        return router.replace("/login");
       }
-      // Follow-ups promised for today or earlier. Only for people who have the Leads screen.
-      if (isOwnerRole(profile.role) || (profile.perms || []).includes("leads")) {
-        const { data } = await sb.from("leads").select("id, name, phone, town, next_follow_up")
-          .lte("next_follow_up", today()).not("status", "in", "(won,lost)").order("next_follow_up");
-        due = data || [];
-      }
-      // Signature stamp lives in a private bucket; a short-lived link is enough for preview and print.
+      if (error || !profile) throw new Error(error?.message || "Could not read your account");
+
+      const member = (isOwnerRole(profile.role) || profile.role === "staff") && profile.active !== false;
+      const wantsLeads = isOwnerRole(profile.role) || (profile.perms || []).includes("leads");
+      // Everything below only needs the profile, so it goes out together: one round trip instead of six.
+      const [attRes, sRes, tRes, bRes, pendRes, dueRes] = member
+        ? await Promise.all([
+            profile.role === "staff"
+              ? sb.from("attendance").select("status").eq("user_id", session.user.id).eq("work_date", today()).maybeSingle()
+              : null,
+            sb.from("app_settings").select("*").eq("id", 1).maybeSingle(),
+            sb.from("profiles").select("id, full_name, email, username, role, perms, active").neq("role", "pending").order("full_name"),
+            sb.from("brands").select("*").order("sort"),
+            isOwnerRole(profile.role) ? sb.from("profiles").select("id").eq("role", "pending").eq("active", true) : null,
+            wantsLeads
+              ? sb.from("leads").select("id, name, phone, town, next_follow_up").lte("next_follow_up", today()).not("status", "in", "(won,lost)").order("next_follow_up")
+              : null,
+          ])
+        : [null, null, null, null, null, null];
+
+      const settings = sRes?.data || null;
+      // The signature stamp lives in a private bucket; a short-lived link is enough for preview and print.
+      let signUrl = null;
       const signPath = settings?.data?.signature_path;
       if (signPath) {
-        const { data } = await sb.storage.from("assets").createSignedUrl(signPath, 60 * 60 * 12);
-        signUrl = data?.signedUrl || null;
+        try {
+          const { data } = await sb.storage.from("assets").createSignedUrl(signPath, 60 * 60 * 12);
+          signUrl = data?.signedUrl || null;
+        } catch {}
       }
+
+      const next = {
+        loading: false,
+        slow: false,
+        fail: null,
+        profile,
+        settings,
+        team: tRes?.data || [],
+        brands: bRes?.data || [],
+        signUrl,
+        requests: (pendRes?.data || []).length,
+        att: attRes?.data?.status || null,
+        due: dueRes?.data || [],
+      };
+      tries.current = 0;
+      setState(next);
+      setCheckedAt(new Date().toISOString());
+      if (member) writeBoot(next);
+    } catch (e) {
+      reportError("boot", e);
+      setState((s) => ({ ...s, loading: false, slow: false, fail: { kind: s.profile ? "offline" : whyFailed(e), at: Date.now(), message: String(e?.message || e || "") } }));
     }
-    setCheckedAt(new Date().toISOString());
-    setState({ loading: false, profile, settings, team, brands, signUrl, requests, att, due });
   }, [sb, router]);
 
   useEffect(() => { load(); }, [load]);
+
+  // Paint the last known screens immediately, then let load() correct them.
+  useEffect(() => {
+    const saved = readBoot();
+    if (!saved) return;
+    setState((s) => (s.profile ? s : { ...s, loading: false, profile: saved.profile, settings: saved.settings || null, team: saved.team || [], brands: saved.brands || [], signUrl: saved.signUrl || null }));
+  }, []);
+
+  // A failed boot retries by itself with growing gaps; the person can also just tap Try again.
+  useEffect(() => {
+    if (!state.fail) return;
+    if (tries.current >= 5) return;
+    const gap = [2000, 4000, 8000, 15000, 30000][tries.current] || 30000;
+    const t = setTimeout(() => { tries.current += 1; load(); }, gap);
+    return () => clearTimeout(t);
+  }, [state.fail, load]);
+
+  // A spinner with no words feels broken after a few seconds on a weak signal, so say so and offer a way out.
+  useEffect(() => {
+    if (!state.loading) return;
+    const t = setTimeout(() => setState((s) => (s.loading ? { ...s, slow: true } : s)), 7000);
+    return () => clearTimeout(t);
+  }, [state.loading]);
+
 
   const profile = state.profile;
   const isOwner = isOwnerRole(profile?.role);
@@ -221,6 +309,7 @@ export default function AppShell({ children }) {
   const signOut = async () => {
     try { await sb.rpc("log_event", { p_action: "logout" }); } catch {}
     try { sessionStorage.removeItem("so-login"); } catch {}
+    clearBoot();
     await sb.auth.signOut();
     router.replace("/login");
   };
@@ -257,9 +346,37 @@ export default function AppShell({ children }) {
     window.location.reload();
   };
 
-  if (state.loading) return <div className="flex page-min items-center justify-center"><Spinner /></div>;
+  if (state.loading) {
+    return (
+      <div className="flex page-min flex-col items-center justify-center gap-4 p-6 text-center">
+        <Spinner />
+        <p className="text-sm font-semibold text-slate-500">Opening the office...</p>
+        {state.slow && (
+          <>
+            <p className="max-w-xs text-xs text-slate-500">The connection is slow. Still trying - you can wait, or tap below.</p>
+            <button type="button" className="btn-ghost" onClick={() => load()}>Try again</button>
+          </>
+        )}
+      </div>
+    );
+  }
 
-  if (!profile) return <AccessGate profile={null} kind="waiting" onRefresh={load} onSignOut={signOut} checkedAt={checkedAt} />;
+  // Nothing loaded and the server cannot be reached: say it plainly instead of spinning forever.
+  if (!profile) {
+    const offline = state.fail?.kind === "network" || state.fail?.kind === "offline";
+    return (
+      <AppError
+        tone={offline ? "amber" : "red"}
+        title={offline ? "No connection" : "The app could not load"}
+        text={offline
+          ? "The internet signal dropped while opening the office. The app will keep trying by itself - tap Try again, or check your data and Wi-Fi."
+          : "Something went wrong while opening the office. Your data is safe. Tap Try again."}
+        detail={state.fail?.message || ""}
+        onRetry={() => { tries.current = 0; setState((s) => ({ ...s, fail: null, loading: true, slow: false })); load(); }}
+      />
+    );
+  }
+
   if (profile.role === "pending") {
     return <AccessGate profile={profile} kind={profile.active === false ? "declined" : "waiting"} onRefresh={load} onSignOut={signOut} checkedAt={checkedAt} />;
   }
@@ -365,6 +482,13 @@ export default function AppShell({ children }) {
                 )}
               </div>
               {pullNote && <div className="mb-3 rounded-xl bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-800">{pullNote}</div>}
+              {state.fail && !state.loading && (
+                <div className="mb-3 flex items-center gap-2 rounded-xl bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-800">
+                  <Icon name="info" className="h-4 w-4 shrink-0" />
+                  <span className="flex-1">{state.fail.kind === "offline" ? "No connection - showing what was already loaded." : "Could not refresh."}</span>
+                  <button type="button" onClick={() => load()} className="rounded-full border border-amber-300 bg-white px-3 py-1 font-bold text-amber-800">Retry</button>
+                </div>
+              )}
               <InstallBanner />
               {blocked ? (
                 <div className="flex justify-center py-20"><Spinner /></div>
