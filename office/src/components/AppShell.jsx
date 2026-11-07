@@ -10,7 +10,7 @@ import InstallBanner from "@/components/InstallBanner";
 import VersionBar from "@/components/VersionBar";
 import ConfirmHost from "@/components/Confirm";
 import { StatusPicker, markAttendance as markAttendanceRow } from "@/components/Attendance";
-import { ago, isOwnerRole, permLabel, roleLabel, today } from "@/lib/format";
+import { ago, dmy, isOwnerRole, permLabel, roleLabel, today, waLink } from "@/lib/format";
 
 const Ctx = createContext(null);
 export const useApp = () => useContext(Ctx);
@@ -74,8 +74,9 @@ export default function AppShell({ children }) {
   const [refreshing, setRefreshing] = useState(false);
   const [pullNote, setPullNote] = useState("");
   const [askAtt, setAskAtt] = useState(false);
+  const [showDue, setShowDue] = useState(false);
   const pullStart = useRef(null);
-  const [state, setState] = useState({ loading: true, profile: null, settings: null, team: [], brands: [], signUrl: null, requests: 0, att: null });
+  const [state, setState] = useState({ loading: true, profile: null, settings: null, team: [], brands: [], signUrl: null, requests: 0, att: null, due: [] });
 
   const load = useCallback(async () => {
     // getSession reads the cookie and refreshes it if it has expired. It is the only place that refreshes,
@@ -98,7 +99,7 @@ export default function AppShell({ children }) {
       const { data: row } = await sb.from("attendance").select("status").eq("user_id", session.user.id).eq("work_date", today()).maybeSingle();
       att = row?.status || null;
     }
-    let settings = null, team = [], brands = [], requests = 0, signUrl = null;
+    let settings = null, team = [], brands = [], requests = 0, signUrl = null, due = [];
     if (member) {
       const [s, t, b] = await Promise.all([
         sb.from("app_settings").select("*").eq("id", 1).single(),
@@ -112,6 +113,12 @@ export default function AppShell({ children }) {
         const { data: pend } = await sb.from("profiles").select("id").eq("role", "pending").eq("active", true);
         requests = (pend || []).length;
       }
+      // Follow-ups promised for today or earlier. Only for people who have the Leads screen.
+      if (isOwnerRole(profile.role) || (profile.perms || []).includes("leads")) {
+        const { data } = await sb.from("leads").select("id, name, phone, town, next_follow_up")
+          .lte("next_follow_up", today()).not("status", "in", "(won,lost)").order("next_follow_up");
+        due = data || [];
+      }
       // Signature stamp lives in a private bucket; a short-lived link is enough for preview and print.
       const signPath = settings?.data?.signature_path;
       if (signPath) {
@@ -120,7 +127,7 @@ export default function AppShell({ children }) {
       }
     }
     setCheckedAt(new Date().toISOString());
-    setState({ loading: false, profile, settings, team, brands, signUrl, requests, att });
+    setState({ loading: false, profile, settings, team, brands, signUrl, requests, att, due });
   }, [sb, router]);
 
   useEffect(() => { load(); }, [load]);
@@ -131,6 +138,17 @@ export default function AppShell({ children }) {
   const canSeeActivity = !!profile && profile.active !== false && (profile.role === "owner" || !!profile.sees_activity);
   const member = !!profile && (isOwnerRole(profile.role) || profile.role === "staff") && profile.active !== false;
   const can = useCallback((m) => isOwner || (member && (profile?.perms || []).includes(m)), [isOwner, member, profile]);
+
+  const nav = NAV.filter((n) => (n.activity ? canSeeActivity : n.owner ? isOwner : n.all ? member : isOwner || can(n.module)));
+  const home = isOwner ? "/dashboard" : nav[0]?.href || "/login";
+  const hit = NAV.find((n) => path.startsWith(n.href));
+  const blocked = !!hit && !nav.includes(hit);
+
+  // A screen this person does not have (an old shortcut, a tab left open from yesterday) sends them to
+  // their own first screen instead of a wall saying no. Same rule for Leads, Expenses and the dashboard.
+  useEffect(() => {
+    if (blocked && nav.length) router.replace(home);
+  }, [blocked, home, nav.length, router]);
 
   // People waiting for approval: re-check every 15 seconds so their screens open by themselves
   useEffect(() => {
@@ -173,6 +191,19 @@ export default function AppShell({ children }) {
     try { if (localStorage.getItem(`so-att-${today()}`) === "1") return; } catch {}
     setAskAtt(true);
   }, [state.loading, state.att, member, profile]);
+
+  // Then show the follow-ups promised for today, once a day. The day's work is decided from here.
+  useEffect(() => {
+    if (state.loading || !member || askAtt) return;
+    if (!(state.due || []).length) return;
+    try { if (localStorage.getItem(`so-fu-${today()}`) === "1") return; } catch {}
+    setShowDue(true);
+  }, [state.loading, state.due, member, askAtt]);
+
+  const closeDue = () => {
+    try { localStorage.setItem(`so-fu-${today()}`, "1"); } catch {}
+    setShowDue(false);
+  };
 
   const markAtt = async (status) => {
     const { error } = await markAttendanceRow(sb, profile.id, status, "");
@@ -233,12 +264,8 @@ export default function AppShell({ children }) {
   }
   if (!member) return <AccessGate profile={profile} kind="off" onRefresh={load} onSignOut={signOut} />;
 
-  const nav = NAV.filter((n) => (n.activity ? canSeeActivity : n.owner ? isOwner : n.all ? member : isOwner || can(n.module)));
   if (!isOwner && nav.length === 0) return <AccessGate profile={profile} kind="none" onRefresh={load} onSignOut={signOut} />;
 
-  const home = isOwner ? "/dashboard" : nav[0].href;
-  const hit = NAV.find((n) => path.startsWith(n.href));
-  const blocked = hit && !nav.includes(hit);
   const main = nav.filter((n) => n.group !== "admin" || (n.staffTab && !isOwner));
   const admin = nav.filter((n) => n.group === "admin" && !(n.staffTab && !isOwner));
   const roleLabelText = roleLabel(profile.role);
@@ -339,7 +366,7 @@ export default function AppShell({ children }) {
               {pullNote && <div className="mb-3 rounded-xl bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-800">{pullNote}</div>}
               <InstallBanner />
               {blocked ? (
-                <div className="card p-8 text-center text-slate-600">You do not have access to this screen. Please ask the owner.</div>
+                <div className="flex justify-center py-20"><Spinner /></div>
               ) : children}
             </div>
           </main>
@@ -402,6 +429,31 @@ export default function AppShell({ children }) {
           <p className="text-sm text-slate-600">How is today going? You can change it any time from the Attendance tab.</p>
           <div className="mt-4"><StatusPicker value={null} onChange={markAtt} /></div>
           <button className="btn-ghost mt-4 w-full" onClick={dismissAtt}>Not now</button>
+        </Modal>
+      )}
+      {showDue && (
+        <Modal title={`Follow up today (${state.due.length})`} onClose={closeDue}>
+          <p className="text-sm text-slate-600">These customers were promised a call. Ring them before the day gets busy.</p>
+          <ul className="mt-3 divide-y divide-slate-100">
+            {state.due.slice(0, 8).map((l) => (
+              <li key={l.id} className="flex items-center gap-2 py-2.5">
+                <Avatar name={l.name} size="sm" />
+                <Link href={`/leads/${l.id}`} onClick={closeDue} className="min-w-0 flex-1">
+                  <span className="block truncate text-sm font-semibold text-slate-900">{l.name}</span>
+                  <span className="block truncate text-xs text-slate-500">
+                    {[l.town, l.next_follow_up < today() ? `was due ${dmy(l.next_follow_up)}` : "due today"].filter(Boolean).join(" · ")}
+                  </span>
+                </Link>
+                {l.phone && <a href={`tel:${l.phone}`} className="rounded-lg p-2 text-primary hover:bg-primary-50" aria-label={`Call ${l.name}`}><Icon name="phone" className="h-4 w-4" /></a>}
+                {l.phone && <a href={waLink(l.phone, `Hello ${l.name}, this is Surya's Solar, Cuddalore.`)} target="_blank" rel="noreferrer" className="rounded-lg p-2 text-teal hover:bg-teal-50" aria-label={`WhatsApp ${l.name}`}><Icon name="chat" className="h-4 w-4" /></a>}
+              </li>
+            ))}
+          </ul>
+          {state.due.length > 8 && <p className="mt-2 text-xs text-slate-500">{state.due.length - 8} more waiting in Leads.</p>}
+          <div className="mt-4 flex gap-2">
+            <button className="btn-ghost flex-1" onClick={closeDue}>Later</button>
+            <Link href="/leads?status=due" onClick={closeDue} className="btn-primary flex-1 text-center">Open leads</Link>
+          </div>
         </Modal>
       )}
       <VersionBar />

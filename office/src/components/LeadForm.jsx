@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useApp } from "@/components/AppShell";
 import { Field, Notice, Segmented } from "@/components/ui";
 import { AutoText } from "@/components/Extras";
-import { LEAD_SOURCES, LEAD_STATUSES, cleanPhone } from "@/lib/format";
+import { LEAD_SOURCES, LEAD_STATUSES, addDays, cleanPhone, dmy, today } from "@/lib/format";
 
 export const EMPTY_LEAD = {
   name: "", phone: "", address: "", town: "", source: "call", source_other: "", status: "new",
@@ -55,6 +55,22 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
       <Field label="Mobile"><input className="input" inputMode="tel" value={f.phone || ""} onChange={set("phone")} placeholder="10-digit number" /></Field>
       <Field label="Address / area" className="sm:col-span-2"><AutoText value={f.address || ""} onChange={set("address")} /></Field>
       <Field label="Town"><AutoText value={f.town || ""} onChange={set("town")} placeholder="e.g. Cuddalore" /></Field>
+      <Field label="When should we call them again?" className="sm:col-span-2">
+        <div className="flex flex-wrap items-center gap-1.5">
+          {[["Today", 0], ["Tomorrow", 1], ["In 3 days", 3], ["Next week", 7]].map(([label, days]) => {
+            const d = addDays(today(), days);
+            const on = f.next_follow_up === d;
+            return (
+              <button key={label} type="button" onClick={() => setF({ ...f, next_follow_up: on ? "" : d })} aria-pressed={on}
+                className={`rounded-full border px-3 py-1.5 text-[13px] font-semibold transition ${on ? "border-primary bg-primary-50 text-primary" : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"}`}>
+                {label}
+              </button>
+            );
+          })}
+          <input className="input w-auto flex-1 min-w-36" type="date" value={f.next_follow_up || ""} onChange={set("next_follow_up")} aria-label="Next follow-up date" />
+        </div>
+        <p className="mt-1 text-xs text-slate-500">{f.next_follow_up ? `Reminder on ${dmy(f.next_follow_up)} when you open the app.` : "Pick a day, or leave it empty if no call is needed."}</p>
+      </Field>
       <Field label="Where did this lead come from?" className="sm:col-span-2">
         <Segmented size="sm" value={f.source} onChange={(v) => setF({ ...f, source: v })} options={LEAD_SOURCES} />
       </Field>
@@ -68,7 +84,6 @@ export default function LeadForm({ initial = EMPTY_LEAD, onSave, onCancel, saveL
       </Field>
       <Field label="System size wanted (kW)"><input className="input" type="number" step="0.1" value={f.kw_interest ?? ""} onChange={set("kw_interest")} /></Field>
       <Field label="Monthly EB bill (₹)"><input className="input" type="number" value={f.monthly_bill ?? ""} onChange={set("monthly_bill")} /></Field>
-      <Field label="Next follow-up"><input className="input" type="date" value={f.next_follow_up || ""} onChange={set("next_follow_up")} /></Field>
       {isOwner && (
         <Field label="Assigned to" className="sm:col-span-2">
           <Segmented size="sm" value={f.assigned_to || ""} onChange={(v) => setF({ ...f, assigned_to: v })}

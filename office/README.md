@@ -99,6 +99,22 @@ correct a wrong tap.
 Staff may only mark **today**, and only for themselves - both enforced in the database (`private.is_staff()`
 plus `work_date = current_date`), not just the UI. Back-filling a past day is an admin action.
 
+## Follow-ups
+
+Every lead carries a **next follow-up** date. The add-lead form asks for it near the top ("When should we
+call them again?") with Today, Tomorrow, In 3 days and Next week chips, so entering a lead never ends without
+a call date.
+
+On opening the app, anyone with the Leads screen sees **Follow up today** - every lead whose date has arrived,
+with call and WhatsApp buttons. It is shown once a day per device (the same `localStorage` pattern as the
+attendance ask) and a lead leaves the list as soon as its stage becomes Won or Lost.
+
+## Screens each role gets
+
+The dashboard is the owner's and admins' screen - it carries company-wide money. Staff open straight onto
+their own first screen (Leads, or Expenses if that is all they have). Any address they do not hold, such as
+`/dashboard` from an old shortcut, quietly redirects there instead of showing a refusal.
+
 ## Saving a quote as a PDF
 
 The Save as PDF button builds a real `.pdf` file in the browser - no print dialog, so nobody has to hunt for
