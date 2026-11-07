@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
@@ -21,6 +21,7 @@ export default function ProjectDetail() {
   const { isOwner, reload: refreshShell } = useApp();
   const [p, setP] = useState(null);
   const [steps, setSteps] = useState([]);
+  const [baseline, setBaseline] = useState([]);
   const [payments, setPayments] = useState([]);
   const [setup, setSetup] = useState(false);
   const [msg, setMsg] = useState(null);
@@ -29,9 +30,10 @@ export default function ProjectDetail() {
   const [edit, setEdit] = useState(false);
   const [form, setForm] = useState(null);
   const [notes, setNotes] = useState("");
-  const busySteps = useRef(new Set());
+  const [savingSteps, setSavingSteps] = useState(false);
   const payOnce = useOnce();
   const saveOnce = useOnce();
+  const stepsOnce = useOnce();
 
   const load = useCallback(async () => {
     const [one, s, m] = await Promise.all([
@@ -44,6 +46,7 @@ export default function ProjectDetail() {
     setP(one.data);
     setNotes(one.data?.notes || "");
     setSteps(s.data || []);
+    setBaseline(s.data || []);
     setPayments(m.data || []);
   }, [sb, id]);
   useEffect(() => { load(); }, [load]);
@@ -55,28 +58,49 @@ export default function ProjectDetail() {
 
   const flash = (tone, text) => { setMsg({ tone, text }); setTimeout(() => setMsg(null), 4000); };
 
-  // Ticking a step is the real work: it dates the step and moves the job on to the next open one.
-  // Each step guards itself, so several can be ticked in a row without one tap swallowing the next.
-  const toggleStep = async (s) => {
-    if (busySteps.current.has(s.id)) return;
-    busySteps.current.add(s.id);
+  // A tick is only a choice until Save is pressed: a stray tap at the site must never change the job.
+  const changed = useMemo(
+    () => steps.filter((s) => baseline.some((b) => b.id === s.id && b.status !== s.status)),
+    [steps, baseline],
+  );
+  const dirty = changed.length > 0;
+
+  useEffect(() => {
+    window.__soDirty = dirty;
+    return () => { window.__soDirty = false; };
+  }, [dirty]);
+
+  useEffect(() => {
+    if (!dirty) return;
+    const warn = (e) => { e.preventDefault(); e.returnValue = ""; };
+    window.addEventListener("beforeunload", warn);
+    return () => window.removeEventListener("beforeunload", warn);
+  }, [dirty]);
+
+  const toggleStep = (s) => {
     const next = s.status === "done" ? "pending" : "done";
-    // Show the tick at once, then say it is saved: the status line is far above the fold on a phone.
     setSteps((list) => list.map((x) => (x.id === s.id ? { ...x, status: next, done_on: next === "done" ? today() : null } : x)));
-    flash("green", next === "done" ? `${s.name} - saved` : `${s.name} - reopened`);
-    const { error } = await sb.from("project_steps")
-      .update({ status: next, done_on: next === "done" ? today() : null })
-      .eq("id", s.id);
-    busySteps.current.delete(s.id);
-    if (error) {
-      flash("red", error.message);
-      return load();
-    }
-    const list = steps.map((x) => (x.id === s.id ? { ...x, status: next } : x));
-    const moving = list.find((x) => x.status !== "done") || list[list.length - 1];
-    await sb.from("projects").update({ stage: moving.key }).eq("id", id);
-    load();
   };
+
+  const cancelSteps = () => setSteps(baseline);
+
+  const saveSteps = () =>
+    stepsOnce(async () => {
+      setSavingSteps(true);
+      for (const s of changed) {
+        const { error } = await sb.from("project_steps").update({ status: s.status, done_on: s.done_on }).eq("id", s.id);
+        if (error) {
+          setSavingSteps(false);
+          flash("red", error.message);
+          return;
+        }
+      }
+      const moving = steps.find((x) => x.status !== "done") || steps[steps.length - 1];
+      await sb.from("projects").update({ stage: moving.key }).eq("id", id);
+      setSavingSteps(false);
+      flash("green", changed.length === 1 ? "Step saved" : `${changed.length} steps saved`);
+      load();
+    });
 
   const addPayment = () =>
     payOnce(async () => {
@@ -157,28 +181,48 @@ export default function ProjectDetail() {
         </div>
 
         <div className="mt-5">
-          <div className="flex items-center justify-between text-xs font-semibold text-slate-500"><span>{done} of {steps.length} steps done</span><span>{pct}%</span></div>
+          <div className="flex items-center justify-between text-xs font-semibold text-slate-500">
+            <span>{done} of {steps.length} steps done{dirty && <span className="font-bold text-primary"> · not saved</span>}</span>
+            <span>{pct}%</span>
+          </div>
           <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-slate-100"><div className="h-full rounded-full bg-primary" style={{ width: `${pct}%` }} /></div>
         </div>
       </div>
 
       <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)]">
         <section className="card divide-y divide-slate-100">
-          <div className="flex items-center justify-between p-5">
+          <div className="flex flex-wrap items-center justify-between gap-1 p-5">
             <h2 className="font-bold text-slate-900">Work steps</h2>
-            <span className="text-xs text-slate-500">Tap to tick - it saves straight away</span>
+            <span className="text-xs text-slate-500">Tap to choose, then press Save</span>
           </div>
-          {steps.map((s) => (
-            <button key={s.id} type="button" onClick={() => toggleStep(s)} className="flex w-full items-center gap-3 p-4 text-left hover:bg-slate-50">
-              <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border ${s.status === "done" ? "border-teal bg-teal text-white" : "border-slate-200 bg-white text-slate-300"}`}>
-                <Icon name="check" className="h-4 w-4" />
+          {steps.map((s) => {
+            const pending = changed.some((c) => c.id === s.id);
+            return (
+              <button key={s.id} type="button" onClick={() => toggleStep(s)} className={`flex w-full items-center gap-3 p-4 text-left hover:bg-slate-50 ${pending ? "bg-primary-50/60" : ""}`}>
+                <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border ${s.status === "done" ? "border-teal bg-teal text-white" : "border-slate-200 bg-white text-slate-300"}`}>
+                  <Icon name="check" className="h-4 w-4" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className={`block text-sm font-semibold ${s.status === "done" ? "text-slate-400 line-through" : "text-slate-900"}`}>{s.name}</span>
+                  <span className="block text-xs text-slate-500">
+                    {s.status === "done" ? (s.done_on ? `Done ${dmy(s.done_on)}` : "Done") : "Not done"}
+                    {pending && <span className="font-bold text-primary"> · not saved</span>}
+                  </span>
+                </span>
+              </button>
+            );
+          })}
+          {dirty && (
+            <div className="sticky bottom-0 z-10 flex items-center gap-2 border-t border-slate-200 bg-white/95 p-3 backdrop-blur">
+              <span className="min-w-0 flex-1 text-sm font-semibold text-slate-700">
+                {changed.length} change{changed.length > 1 ? "s" : ""} not saved
               </span>
-              <span className="min-w-0 flex-1">
-                <span className={`block text-sm font-semibold ${s.status === "done" ? "text-slate-400 line-through" : "text-slate-900"}`}>{s.name}</span>
-                {s.done_on && <span className="block text-xs text-slate-500">Done {dmy(s.done_on)}</span>}
-              </span>
-            </button>
-          ))}
+              <button type="button" className="btn-ghost !h-10 shrink-0 !px-4" onClick={cancelSteps} disabled={savingSteps}>Cancel</button>
+              <button type="button" className="btn-primary !h-10 shrink-0 !px-5" onClick={saveSteps} disabled={savingSteps}>
+                {savingSteps ? "Saving..." : "Save"}
+              </button>
+            </div>
+          )}
         </section>
 
         <div className="space-y-4">
