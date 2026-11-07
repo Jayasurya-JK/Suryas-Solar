@@ -86,7 +86,7 @@
 .qd .box ol { margin: 0; padding-left: 5mm; list-style: decimal; }
 .qd .box li { margin-bottom: .4mm; }
 .qd .sign { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 3mm; break-inside: avoid; }
-.qd .sign img { height: 15mm; width: auto; display: block; }
+.qd .sign img { height: 14mm; width: auto; display: block; margin: 1mm 0 0.5mm; }
 .qd .accept { border-top: .35mm solid var(--ink); padding-top: 1.5mm; min-width: 62mm; text-align: center; font-size: 8.8pt; color: var(--muted); }
 
 /* on screen: QuotePreview scales the sheets to fill its column, with a gap between pages */
