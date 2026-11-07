@@ -70,12 +70,12 @@ export default function QuoteEditor() {
     update((cur) => ({ extras: { ...(cur.extras || {}), amounts: { ...((cur.extras || {}).amounts || {}), [k]: n } } }));
   };
 
-  // Tata Power Solar supplies the panels, the inverter, the AC/DC boxes and the earthing kit, so on a TPS
-  // quote every one of those makes reads TPS. Structure, cables (including the earthing cable) and UPVC keep
-  // their own makes. Still editable afterwards.
+  // Tata Power Solar supplies the panels, the inverter, the mounting structure, the AC/DC boxes and the
+  // earthing kit, so on a TPS quote every one of those makes reads TPS. Cables (including the earthing cable)
+  // and UPVC keep their own makes. Still editable afterwards.
   const TPS_BRAND = "Tata Power Solar";
   const isTpsItem = (item = "") =>
-    /panel|module|inverter|acdb|dcdb|distribution|earthing kit|lightning arrester/i.test(item);
+    /panel|module|inverter|acdb|dcdb|distribution|earthing kit|lightning arrester|mms|mounting structure/i.test(item);
   const withTps = (cur) => {
     const system = { ...(cur.system || {}), brand: TPS_BRAND };
     system.panel_brand = "TPS";
@@ -280,7 +280,7 @@ export default function QuoteEditor() {
               </div>
               {sys.brand === TPS_BRAND && (
                 <div className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
-                  <p className="min-w-0 flex-1 text-xs text-slate-600">TPS supplies the panels, the inverter, the AC/DC boxes and the earthing kit. Every one of those makes should read TPS.</p>
+                  <p className="min-w-0 flex-1 text-xs text-slate-600">TPS supplies the panels, the inverter, the structure, the AC/DC boxes and the earthing kit. Every one of those makes should read TPS.</p>
                   <button type="button" className="btn-ghost !h-8 shrink-0 !px-3 !text-xs" onClick={useTps}>Set makes to TPS</button>
                 </div>
               )}
