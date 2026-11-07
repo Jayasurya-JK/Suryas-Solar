@@ -51,15 +51,18 @@ function whyFailed(e) {
 const Ctx = createContext(null);
 export const useApp = () => useContext(Ctx);
 
+// tab: "always" is a bottom tab for everyone who can see it; "staff" only for staff. The rest sit in the
+// menu bar under the phone header and in the Admin group on desktop.
 const NAV = [
-  { href: "/dashboard", label: "Dashboard", icon: "chart", owner: true },
-  { href: "/leads", label: "Leads", icon: "users", module: "leads" },
-  { href: "/quotes", label: "Quotes", icon: "doc", module: "quotes" },
-  { href: "/projects", label: "Projects", icon: "sun", owner: true },
-  { href: "/expenses", label: "Expenses", icon: "wallet", module: "expenses" },
-  { href: "/applications", label: "Applications", icon: "doc", owner: true, group: "admin" },
-  // Staff mark their own day; admins open it to fill in a missed day. Staff get it as a tab, owner and admins in the top bar.
-  { href: "/attendance", label: "Attendance", icon: "check", all: true, group: "admin", staffTab: true },
+  { href: "/dashboard", label: "Dashboard", icon: "chart", owner: true, tab: "always" },
+  { href: "/leads", label: "Leads", icon: "users", module: "leads", tab: "always" },
+  { href: "/quotes", label: "Quotes", icon: "doc", module: "quotes", tab: "always" },
+  { href: "/projects", label: "Projects", icon: "sun", owner: true, tab: "always" },
+  { href: "/expenses", label: "Expenses", icon: "wallet", module: "expenses", tab: "always" },
+  // "Apps" keeps the sixth label whole at 11px on a 320px phone; the full name stays everywhere else.
+  { href: "/applications", label: "Applications", tabLabel: "Apps", icon: "clipboard", owner: true, group: "admin", tab: "always" },
+  // Staff mark their own day; admins open it to fill in a missed day. Staff get it as a tab, owner and admins in the menu bar.
+  { href: "/attendance", label: "Attendance", icon: "check", all: true, group: "admin", tab: "staff" },
   { href: "/activity", label: "Activity", icon: "clock", activity: true, group: "admin" },
   { href: "/settings", label: "Settings", icon: "cog", owner: true, group: "admin" },
 ];
@@ -384,8 +387,13 @@ export default function AppShell({ children }) {
 
   if (!isOwner && nav.length === 0) return <AccessGate profile={profile} kind="none" onRefresh={load} onSignOut={signOut} />;
 
-  const main = nav.filter((n) => n.group !== "admin" || (n.staffTab && !isOwner));
-  const admin = nav.filter((n) => n.group === "admin" && !(n.staffTab && !isOwner));
+  // Bottom bar: every screen this person uses daily, six at most. Attendance is a staff tab only.
+  const tabs = nav.filter((n) => n.tab === "always" || (n.tab === "staff" && !isOwner));
+  // Sidebar keeps its two groups: Workspace, then Admin (Applications included, as before).
+  const main = nav.filter((n) => n.group !== "admin" || (n.tab === "staff" && !isOwner));
+  const admin = nav.filter((n) => n.group === "admin" && !(n.tab === "staff" && !isOwner));
+  // What is left of the admin group once the bottom bar has taken its share.
+  const menuBar = admin.filter((n) => !tabs.includes(n));
   const roleLabelText = roleLabel(profile.role);
   const who = profile.username ? `ID: ${profile.username}` : profile.email;
   const badge = (n) => (n.href === "/settings" && state.requests > 0 ? state.requests : 0);
@@ -404,7 +412,7 @@ export default function AppShell({ children }) {
     );
   };
 
-  const tabCount = main.length;
+  const tabCount = tabs.length;
 
   return (
     <Ctx.Provider value={{ ...state, isOwner, canSeeActivity, can, home, reload: load }}>
@@ -460,6 +468,17 @@ export default function AppShell({ children }) {
                       <Link href="/profile" onClick={() => setMenu(false)} className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50">
                         <Icon name="users" className="h-4 w-4" />My profile
                       </Link>
+                      {menuBar.length === 1 && menuBar.map((n) => {
+                        const b = badge(n);
+                        const active = path.startsWith(n.href);
+                        return (
+                          <Link key={n.href} href={n.href} onClick={() => setMenu(false)}
+                            className={`flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold hover:bg-slate-50 ${active ? "text-primary" : "text-slate-700"}`}>
+                            <Icon name={n.icon} className="h-4 w-4" />{n.label}
+                            {b > 0 && <span className="ml-auto rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold text-white">{b}</span>}
+                          </Link>
+                        );
+                      })}
                       <button onClick={signOut} className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50">
                         <Icon name="logout" className="h-4 w-4" />Sign out
                       </button>
@@ -468,23 +487,22 @@ export default function AppShell({ children }) {
                 )}
               </div>
             </div>
-            {/* The extra screens sit in a bar of their own, so Applications is one tap away instead of hidden
-                behind More. It scrolls sideways on a narrow phone. */}
-            {admin.length > 0 && (
-              <div className="no-scrollbar flex gap-1.5 overflow-x-auto border-t border-slate-100 px-3 py-2">
-                {admin.map((n) => {
+            {/* A real menu bar: plain words in a thin strip on the header's own white, one hairline under
+                the open screen. A lone item would look lost, so it moves into the avatar menu instead. */}
+            {menuBar.length > 1 && (
+              <nav aria-label="More screens" className="no-scrollbar flex items-center gap-6 overflow-x-auto px-4">
+                {menuBar.map((n) => {
                   const active = path.startsWith(n.href);
                   const b = badge(n);
                   return (
                     <Link key={n.href} href={n.href}
-                      className={`flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition ${active ? "bg-primary text-white" : "bg-slate-100 text-slate-600"}`}>
-                      <Icon name={n.icon} className="h-3.5 w-3.5" />
-                      {n.label}
-                      {b > 0 && <span className={`rounded-full px-1.5 text-[10px] ${active ? "bg-white/25 text-white" : "bg-accent text-white"}`}>{b}</span>}
+                      className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap py-2 leading-5 transition-colors ${active ? "font-bold text-slate-900" : "font-medium text-slate-600 hover:text-slate-900"}`}>
+                      <span className={`border-b-2 pb-0.5 text-[13px] ${active ? "border-primary" : "border-transparent"}`}>{n.label}</span>
+                      {b > 0 && <span className="rounded-full bg-accent px-1.5 text-[10px] font-bold leading-4 text-white">{b}</span>}
                     </Link>
                   );
                 })}
-              </div>
+              </nav>
             )}
           </header>
 
@@ -516,14 +534,16 @@ export default function AppShell({ children }) {
           {/* phone bottom tabs */}
           <nav className="no-print relative z-30 grid shrink-0 select-none border-t border-slate-200/80 bg-white pb-[env(safe-area-inset-bottom)] lg:hidden"
             style={{ gridTemplateColumns: `repeat(${tabCount}, minmax(0, 1fr))` }}>
-            {main.map((n) => {
+            {tabs.map((n) => {
               const active = path.startsWith(n.href);
               return (
-                <Link key={n.href} href={n.href} className="flex flex-col items-center gap-1 pb-2 pt-2 text-[11px] font-semibold">
-                  <span className={`flex h-8 w-14 items-center justify-center rounded-full ${active ? "bg-primary-50 text-primary" : "text-slate-500"}`}>
-                    <Icon name={n.icon} className="h-[22px] w-[22px]" />
+                <Link key={n.href} href={n.href} className="flex min-w-0 flex-col items-center gap-1 pb-2 pt-2">
+                  <span className={`flex h-8 w-full max-w-14 items-center justify-center rounded-full ${active ? "bg-primary-50 text-primary" : "text-slate-500"}`}>
+                    <Icon name={n.icon} className="h-[22px] w-[22px] shrink-0" />
                   </span>
-                  <span className={`${active ? "text-primary" : "text-slate-500"} [@media(max-height:500px)]:hidden`}>{n.label}</span>
+                  <span className={`block w-full whitespace-nowrap text-center text-[10px] font-semibold min-[360px]:text-[11px] ${active ? "text-primary" : "text-slate-500"} [@media(max-height:500px)]:hidden`}>
+                    {n.tabLabel || n.label}
+                  </span>
                 </Link>
               );
             })}

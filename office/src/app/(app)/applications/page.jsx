@@ -112,19 +112,22 @@ export default function Applications() {
           ) : (
             <div className="card divide-y divide-slate-100">
               {shown.map((r) => (
-                <div key={r.app + r.sr} className="flex items-center gap-3 p-4">
+                <div key={r.app + r.sr} className="flex flex-wrap items-center gap-3 p-4">
                   <button type="button" onClick={() => setDetail(r)} className="flex min-w-0 flex-1 items-center gap-3 text-left">
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-sm font-bold text-primary">
                       {(r.name || "?").trim().slice(0, 2).toUpperCase()}
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block break-words font-semibold text-slate-900">{r.name}</span>
+                      <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                        <span className="break-words font-semibold text-slate-900">{r.name}</span>
+                        <span className="sm:hidden"><Badge tone={STATUS_TONE(r.status)}>{shortStatus(r.status)}</Badge></span>
+                      </span>
                       <span className="block text-[13px] text-slate-500">{[kwp(r.kwp), niceDate(r.submitted)].filter(Boolean).join(" · ")}</span>
-                      <span className="block break-all text-xs text-slate-500">{r.app}{r.subdivision ? ` · ${r.subdivision}` : ""}</span>
+                      <span className="block truncate text-xs text-slate-500">{[r.app, r.subdivision].filter(Boolean).join(" · ")}</span>
                     </span>
                   </button>
-                  <div className="flex shrink-0 flex-col items-end gap-1">
-                    <Badge tone={STATUS_TONE(r.status)}>{shortStatus(r.status)}</Badge>
+                  <div className="flex w-full flex-row items-center justify-end gap-1 min-[360px]:w-auto min-[360px]:shrink-0 min-[360px]:flex-col min-[360px]:items-end">
+                    <span className="hidden sm:block"><Badge tone={STATUS_TONE(r.status)}>{shortStatus(r.status)}</Badge></span>
                     <div className="flex gap-0.5">
                       {r.phone && <a href={`tel:${r.phone}`} className="rounded-lg p-1.5 text-primary hover:bg-primary-50" aria-label={`Call ${r.name}`}><Icon name="phone" className="h-4 w-4" /></a>}
                       {r.phone && <a href={waLink(r.phone, `Hello ${r.name}, this is Surya's Solar, Cuddalore, about your PM Surya Ghar application ${r.app}.`)} target="_blank" rel="noreferrer" className="rounded-lg p-1.5 text-teal hover:bg-teal-50" aria-label={`WhatsApp ${r.name}`}><Icon name="chat" className="h-4 w-4" /></a>}
