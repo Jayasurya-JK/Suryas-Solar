@@ -81,7 +81,7 @@ function NewQuote() {
           <div className="grid gap-3 sm:grid-cols-2">
             <Field label="Customer name *"><input className="input" required value={cust.name} onChange={set("name")} /></Field>
             <Field label="Address as">
-              <Segmented size="sm" value={cust.sal} onChange={(v) => setCust({ ...cust, sal: v })} options={["Sir", "Madam", "Sir/Madam"]} />
+              <Segmented size="sm" value={cust.sal} onChange={(v) => setCust({ ...cust, sal: v })} options={["Sir", "Madam", "Miss", "Sir/Madam"]} />
             </Field>
             <Field label="Address / area" className="sm:col-span-2"><AutoText value={cust.addr1} onChange={set("addr1")} /></Field>
             <Field label="Town *"><AutoText required value={cust.addr2} onChange={set("addr2")} placeholder="e.g. Cuddalore" /></Field>

@@ -35,7 +35,7 @@ export function QuotePreview(props) {
 function buildBlocks(q, s, signUrl) {
   const c = q.customer || {};
   // "Address as: Sir" means the letter says Mr. as well as "Dear Sir" - an issued quote reads Mr. Siva.
-  const prefix = c.sal === "Sir" ? "Mr. " : c.sal === "Madam" ? "Mrs. " : "";
+  const prefix = c.sal === "Sir" ? "Mr. " : c.sal === "Madam" ? "Mrs. " : c.sal === "Miss" ? "Miss " : "";
   const sys = q.system || {};
   const ex = q.extras || {};
   const rates = ex.rates || {};

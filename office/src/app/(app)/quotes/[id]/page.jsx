@@ -225,7 +225,7 @@ export default function QuoteEditor() {
             <div className="grid gap-3 sm:grid-cols-2">
               <Field label="Name"><input className="input" value={q.customer?.name || ""} onChange={setC("name")} /></Field>
               <Field label="Address as">
-                <Segmented size="sm" value={q.customer?.sal || "Sir"} onChange={(v) => update((cur) => ({ customer: { ...(cur.customer || {}), sal: v } }))} options={["Sir", "Madam", "Sir/Madam"]} />
+                <Segmented size="sm" value={q.customer?.sal || "Sir"} onChange={(v) => update((cur) => ({ customer: { ...(cur.customer || {}), sal: v } }))} options={["Sir", "Madam", "Miss", "Sir/Madam"]} />
               </Field>
               <Field label="Address / area" className="sm:col-span-2"><AutoText value={q.customer?.addr1 || ""} onChange={setC("addr1")} /></Field>
               <Field label="Town"><AutoText value={q.customer?.addr2 || ""} onChange={setC("addr2")} /></Field>
