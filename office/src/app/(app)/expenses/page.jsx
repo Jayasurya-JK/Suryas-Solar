@@ -38,7 +38,7 @@ export default function Expenses() {
   const [msg, setMsg] = useState(null);
   const [cat, setCat] = useState("all");
   const [sheet, setSheet] = useState(false);
-  const [latest, setLatest] = useState(null);
+  const [otherMonths, setOtherMonths] = useState([]);
   const fileRef = useRef(null);
 
   const load = useCallback(async () => {
@@ -48,9 +48,11 @@ export default function Expenses() {
     const { data } = await sb.from("expenses").select("*").gte("spent_on", `${month}-01`).lt("spent_on", endStr)
       .order("spent_on", { ascending: false }).order("created_at", { ascending: false });
     setRows(data || []);
-    // So a month with nothing in it can point at where the newest entries actually are.
-    const { data: last } = await sb.from("expenses").select("spent_on").order("spent_on", { ascending: false }).limit(1);
-    setLatest(last?.[0]?.spent_on ? last[0].spent_on.slice(0, 7) : null);
+    // Other months that hold entries, so nothing looks lost when the open month is quiet.
+    const { data: allDates } = await sb.from("expenses").select("spent_on");
+    const tally = {};
+    (allDates || []).forEach((r) => { const k = String(r.spent_on).slice(0, 7); tally[k] = (tally[k] || 0) + 1; });
+    setOtherMonths(Object.entries(tally).filter(([k]) => k !== month).map(([k, n]) => ({ month: k, n })).sort((a, b) => (a.month < b.month ? 1 : -1)));
   }, [sb, month]);
   useEffect(() => { load(); }, [load]);
 
@@ -128,6 +130,7 @@ export default function Expenses() {
     ]);
 
   const monthLabel = new Date(month + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+  const monthNameOf = (m) => new Date(m + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" });
 
   const form = (
     <form onSubmit={add} className="space-y-4">
@@ -136,6 +139,18 @@ export default function Expenses() {
           <input className="input !text-xl !font-bold" type="number" inputMode="decimal" required placeholder="0" value={f.amount} onChange={set("amount")} />
         </Field>
         <Field label="Date"><input className="input" type="date" value={f.spent_on} onChange={set("spent_on")} /></Field>
+      </div>
+      <div className="-mt-1 flex flex-wrap items-center gap-2 text-xs">
+        <span className="font-semibold text-slate-600">{dmy(f.spent_on)}</span>
+        {f.spent_on !== today() && (
+          <button type="button" onClick={() => setF((cur) => ({ ...cur, spent_on: today() }))}
+            className="rounded-full border border-slate-200 px-2.5 py-0.5 font-semibold text-slate-600 hover:bg-slate-50">
+            Use today
+          </button>
+        )}
+        {f.spent_on.slice(0, 7) !== today().slice(0, 7) && (
+          <span className="font-semibold text-amber-700">goes under {monthNameOf(f.spent_on.slice(0, 7))}</span>
+        )}
       </div>
       <Field label="Category"><Segmented size="sm" value={f.category} onChange={(v) => setF((cur) => ({ ...cur, category: v }))} options={EXPENSE_CATEGORIES} /></Field>
       {f.category === "other" && (
@@ -195,16 +210,25 @@ export default function Expenses() {
                 ]} />
               </div>
             )}
+            {otherMonths.length > 0 && (
+              <div className="flex flex-wrap items-center gap-1.5 border-t border-slate-100 px-4 py-3">
+                <span className="text-xs font-semibold text-slate-500">Also recorded:</span>
+                {otherMonths.slice(0, 4).map((o) => (
+                  <button key={o.month} type="button" onClick={() => setMonth(o.month)}
+                    className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-300 hover:bg-slate-50">
+                    {monthNameOf(o.month)} · {o.n}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {!rows ? <ListSkeleton rows={4} /> : shown.length === 0 ? (
             <Empty icon="wallet" title="No expenses this month"
-              text={latest && latest !== month
-                ? `Nothing dated in ${monthLabel}. The newest entries are in ${new Date(latest + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" })}.`
-                : "Tap Add expense to record what was spent today."}>
-              {latest && latest !== month && (
-                <button className="btn-ghost" onClick={() => setMonth(latest)}>
-                  <Icon name="chevron" className="h-4 w-4" />Show {new Date(latest + "-01T00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" })}
+              text={otherMonths.length ? `Nothing dated in ${monthLabel}. Earlier months have ${otherMonths[0].n} entr${otherMonths[0].n === 1 ? "y" : "ies"}.` : "Tap Add expense to record what was spent today."}>
+              {otherMonths.length > 0 && (
+                <button className="btn-ghost" onClick={() => setMonth(otherMonths[0].month)}>
+                  <Icon name="chevron" className="h-4 w-4" />Show {monthNameOf(otherMonths[0].month)}
                 </button>
               )}
               <button className="btn-primary lg:hidden" onClick={() => setSheet(true)}><Icon name="plus" className="h-4 w-4" />Add expense</button>

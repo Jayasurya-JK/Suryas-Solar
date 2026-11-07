@@ -70,6 +70,21 @@ export default function QuoteEditor() {
     update((cur) => ({ extras: { ...(cur.extras || {}), amounts: { ...((cur.extras || {}).amounts || {}), [k]: n } } }));
   };
 
+  // Tata Power Solar supplies the panels, the inverter and the AC/DC boxes, so on a TPS quote every one of
+  // those makes reads TPS. Structure, cables and earthing keep their own makes. Still editable afterwards.
+  const TPS_BRAND = "Tata Power Solar";
+  const isTpsItem = (item = "") => /panel|module|inverter|acdb|dcdb|distribution/i.test(item);
+  const withTps = (cur) => {
+    const system = { ...(cur.system || {}), brand: TPS_BRAND };
+    system.panel_brand = "TPS";
+    system.inverter_brand = "TPS";
+    const bom = (cur.bom || []).map((row) => (isTpsItem(row.item) ? { ...row, make: "TPS" } : row));
+    return { system, bom };
+  };
+  const useTps = () => update((cur) => withTps(cur));
+  const pickBrand = (name) =>
+    update((cur) => (name === TPS_BRAND ? withTps(cur) : { system: { ...(cur.system || {}), brand: name } }));
+
   const save = async (extra = {}) => {
     setBusy(true);
     setMsg(null);
@@ -206,13 +221,17 @@ export default function QuoteEditor() {
                 {brands.filter((b) => b.active || b.name === sys.brand).map((b) => {
                   const on = sys.brand === b.name;
                   return (
-                    <button type="button" key={b.id} onClick={() => update((cur) => ({ system: { ...(cur.system || {}), brand: b.name } }))}
+                    <button type="button" key={b.id} onClick={() => pickBrand(b.name)}
                       className={`relative flex h-16 flex-col items-center justify-center gap-1 rounded-xl border bg-white px-2 transition ${on ? "border-primary ring-2 ring-primary-100" : "border-slate-200 hover:border-slate-300"}`}>
-                      {b.logo_url
-                        // eslint-disable-next-line @next/next/no-img-element
-                        ? <img src={b.logo_url} alt="" className="max-h-7 max-w-full object-contain" />
-                        : <span className="text-sm font-bold text-slate-700">{b.name}</span>}
-                      <span className="text-[10px] font-semibold text-slate-500">{b.name}</span>
+                      {b.logo_url ? (
+                        <>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={b.logo_url} alt="" className="max-h-7 max-w-full object-contain" />
+                          <span className="text-[10px] font-semibold text-slate-500">{b.name}</span>
+                        </>
+                      ) : (
+                        <span className="text-sm font-bold text-slate-700">{b.name}</span>
+                      )}
                       {on && <span className="absolute right-1.5 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-white"><Icon name="check" className="h-3 w-3" /></span>}
                     </button>
                   );
@@ -222,6 +241,12 @@ export default function QuoteEditor() {
                   No logo
                 </button>
               </div>
+              {sys.brand === TPS_BRAND && (
+                <div className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
+                  <p className="min-w-0 flex-1 text-xs text-slate-600">TPS supplies the panels, the inverter and the AC/DC boxes. Every one of those makes should read TPS.</p>
+                  <button type="button" className="btn-ghost !h-8 shrink-0 !px-3 !text-xs" onClick={useTps}>Set makes to TPS</button>
+                </div>
+              )}
             </div>
             {Number(sys.panel_watt) > 0 && Math.abs((Number(sys.panel_watt) * sys.panel_count) / 1000 - sys.kw) > 0.1 && (
               <div className="mt-3"><Notice>{sys.panel_count} panels x {sys.panel_watt} Wp = {((Number(sys.panel_watt) * sys.panel_count) / 1000).toFixed(2)} kWp, but capacity says {sys.kw} kWp. Check before sending.</Notice></div>

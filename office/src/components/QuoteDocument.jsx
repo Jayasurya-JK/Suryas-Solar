@@ -34,6 +34,8 @@ export function QuotePreview(props) {
 
 function buildBlocks(q, s, signUrl) {
   const c = q.customer || {};
+  // "Address as: Sir" means the letter says Mr. as well as "Dear Sir" - an issued quote reads Mr. Siva.
+  const prefix = c.sal === "Sir" ? "Mr. " : c.sal === "Madam" ? "Mrs. " : "";
   const sys = q.system || {};
   const ex = q.extras || {};
   const rates = ex.rates || {};
@@ -63,7 +65,7 @@ function buildBlocks(q, s, signUrl) {
     <div className="parties">
       <div className="pcard">
         <div className="cap">Prepared for</div>
-        <div className="nm">{c.name}</div>
+        <div className="nm">{prefix}{c.name}</div>
         {c.addr1 && <div className="ln">{c.addr1}</div>}
         {c.addr2 && <div className="ln">{c.addr2}</div>}
         {c.phone && <div className="ln">Phone: {c.phone}</div>}
