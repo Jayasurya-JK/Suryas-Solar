@@ -263,6 +263,6 @@ npm run build
 
 The partner logos offered on a quote are the ones we actually install: **Premier Energies** (default), **Tata Power Solar**, **Waaree** and **Avaada**. Adani Solar and Microtek are switched off in Settings > Brands rather than deleted, so quotes already issued still print their names.
 
-Choosing **Tata Power Solar** sets the panel and inverter makes to TPS, and the strip under the logos offers one tap to set the AC/DC box makes as well - TPS supplies all of those. Structure, cable and earthing makes keep their own values.
+Choosing **Tata Power Solar** sets the panel and inverter makes to TPS, and the strip under the logos offers one tap to set the AC/DC boxes and the earthing kit as well - TPS supplies all of those. Structure, cables (including the earthing cable) and UPVC pipe keep their own makes.
 
 "Address as" prints on the name as well: **Sir** gives Mr. Vinoth Raj and "Dear Sir", **Madam** gives Mrs., **Miss** gives Miss (not every woman is a Mrs.), and **Sir/Madam** leaves the name plain so nothing is assumed. Panel warranty is **18 years** product and 30 years performance, editable in Settings > Quote wording.
