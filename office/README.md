@@ -316,6 +316,22 @@ with its real status, so nobody opens the portal to answer "where is this one?".
   staff later). The file is behind the same login gate as every other screen; once the Projects tables
   exist these applications belong in the database, where the rules can restrict rows to admins.
 
+## Documents kept with the job
+
+Every project page has a **Documents** card: Aadhaar, EB bill, signed agreement, site photos, anything the
+job needs, all in one place and reachable from the phone at the site.
+
+- **Setup, once:** run `supabase/documents.sql` in the Supabase SQL editor. It creates a private bucket
+  called `project-files` and the rules around it. Re-running is safe.
+- **One folder per project**, named with the project id. The storage rules read that folder name and ask
+  the projects rules, so a person only opens the documents of jobs they can already see.
+- **Add**: one file or several at a time, up to 15 MB each. Real names are kept on the row; on disk the
+  name is made safe (no spaces or punctuation) so nothing breaks.
+- **Open**: a 10-minute signed link is created on the tap, so the bucket stays private. Nothing is public.
+- **Remove**: owner/admin, or whoever added the job, gets a confirm first; the file and its row go together.
+- Space: the free plan holds 1 GB (roughly 70 customers of documents), the $25 Pro plan holds 100 GB
+  (roughly 8,000 customers). The database itself is nowhere near a limit - documents are what grows.
+
 ## GST invoices (the billing book)
 
 `/invoices` is the billing book itself, in the app: every tax invoice from bill.gogstbill.com with its

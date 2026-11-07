@@ -6,6 +6,7 @@ import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { useApp } from "@/components/AppShell";
 import SetupNeeded from "@/components/SetupNeeded";
+import ProjectDocuments from "@/components/ProjectDocuments";
 import { confirmAction } from "@/components/Confirm";
 import { Badge, Field, Icon, Modal, Notice, Segmented, Spinner } from "@/components/ui";
 import { PAYMENT_KINDS, dmy, labelOf, rupees, stageLabel, today, waLink } from "@/lib/format";
@@ -296,6 +297,8 @@ export default function ProjectDetail() {
               );
             })()}
           </section>
+
+          <ProjectDocuments projectId={id} customer={p.customer} />
 
           <section className="card p-5">
             <h2 className="font-bold text-slate-900">Status</h2>
