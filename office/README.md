@@ -135,7 +135,8 @@ The message now sits at the top of the list, so it is always seen.
 
 Every lead carries a **next follow-up** date. The add-lead form asks for it near the top ("When should we
 call them again?") with Today, Tomorrow, In 3 days and Next week chips, so entering a lead never ends without
-a call date.
+a call date. The **mobile number is required** too - a lead nobody can phone is not a lead, so the form
+refuses to save without a 10-digit number.
 
 On opening the app, anyone with the Leads screen sees **Follow up today** - every lead whose date has arrived,
 with call and WhatsApp buttons. It is shown once a day per device (the same `localStorage` pattern as the
